@@ -1,0 +1,82 @@
+# Bookmark Organizer .gitignore
+
+# Original bookmark files (may contain sensitive data)
+bookmarks_*.html
+*.html.bak
+
+# Generated directories
+BOOKMARK-CHUNKS/
+ANALYSIS/
+ORGANIZED/
+ORGANIZED_SMART/
+ORGANIZED_WITH_DEADLINK_CHECK/
+HTML_SITE/
+HTML_SITE_CLEAN/
+HTML_SITE_*/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Logs
+*.log
+nohup.out
+server.log
+/tmp/bookmark_server.log
+
+# Reports and temporary files
+duplicates_report.json
+accessibility_report.json
+organization_summary.json
+*.tmp
+*.temp
+*.cache
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Backup files
+*.backup
+*.bak
+*.old
+
+# Personal notes or sensitive data
+personal_notes.txt
+notes.txt
+TODO.txt
+PRIVATE.md
+
+# Keep the scripts and documentation
+!bookmark_chunker.py
+!bookmark_analyzer.py
+!bookmark_organizer.py
+!bookmark_organizer_smart.py
+!bookmark_organizer_with_deadlink_check.py
+!bookmark_html_generator.py
+!serve_bookmarks.py
+!serve_bookmarks_clean.py
+!README.md
+!CLAUDE.md
+!1-2-3-HOW-TO-BOOKMARK-ORGANIZER.md
