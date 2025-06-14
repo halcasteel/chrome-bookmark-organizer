@@ -1,0 +1,105 @@
+steps:
+  # Build backend image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - '${_REGION}-docker.pkg.dev/${PROJECT_ID}/bookmark-manager/backend:${SHORT_SHA}'
+      - '-t'
+      - '${_REGION}-docker.pkg.dev/${PROJECT_ID}/bookmark-manager/backend:latest'
+      - '-f'
+      - 'backend/Dockerfile'
+      - '--target'
+      - 'production'
+      - 'backend'
+    id: 'build-backend'
+
+  # Build frontend image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - '${_REGION}-docker.pkg.dev/${PROJECT_ID}/bookmark-manager/frontend:${SHORT_SHA}'
+      - '-t'
+      - '${_REGION}-docker.pkg.dev/${PROJECT_ID}/bookmark-manager/frontend:latest'
+      - '-f'
+      - 'frontend/Dockerfile'
+      - '--target'
+      - 'production'
+      - '--build-arg'
+      - 'VITE_API_URL=${_API_URL}'
+      - 'frontend'
+    id: 'build-frontend'
+
+  # Push images to Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', '--all-tags', '${_REGION}-docker.pkg.dev/${PROJECT_ID}/bookmark-manager/backend']
+    waitFor: ['build-backend']
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', '--all-tags', '${_REGION}-docker.pkg.dev/${PROJECT_ID}/bookmark-manager/frontend']
+    waitFor: ['build-frontend']
+
+  # Deploy backend to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'bookmark-manager-backend'
+      - '--image'
+      - '${_REGION}-docker.pkg.dev/${PROJECT_ID}/bookmark-manager/backend:${SHORT_SHA}'
+      - '--region'
+      - '${_REGION}'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+      - '--add-cloudsql-instances'
+      - '${_CLOUD_SQL_CONNECTION_NAME}'
+      - '--set-env-vars'
+      - 'NODE_ENV=production,DATABASE_URL=${_DATABASE_URL},JWT_SECRET=${_JWT_SECRET},OPENAI_API_KEY=${_OPENAI_API_KEY},GCS_BUCKET_NAME=${_GCS_BUCKET_NAME}'
+      - '--min-instances'
+      - '1'
+      - '--max-instances'
+      - '10'
+      - '--memory'
+      - '1Gi'
+
+  # Deploy frontend to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'bookmark-manager-frontend'
+      - '--image'
+      - '${_REGION}-docker.pkg.dev/${PROJECT_ID}/bookmark-manager/frontend:${SHORT_SHA}'
+      - '--region'
+      - '${_REGION}'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+      - '--port'
+      - '80'
+      - '--min-instances'
+      - '1'
+      - '--max-instances'
+      - '10'
+      - '--memory'
+      - '512Mi'
+
+substitutions:
+  _REGION: us-central1
+  _API_URL: https://bookmark-manager-backend-xxxxx-uc.a.run.app/api
+  _CLOUD_SQL_CONNECTION_NAME: bookmarks-manager-462919:us-central1:bookmark-manager-db
+  _DATABASE_URL: postgresql://admin:admin@localhost:5432/bookmark_manager?host=/cloudsql/bookmarks-manager-462919:us-central1:bookmark-manager-db
+  _GCS_BUCKET_NAME: bookmarks-manager-462919-bookmarks
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+  
+images:
+  - '${_REGION}-docker.pkg.dev/${PROJECT_ID}/bookmark-manager/backend:${SHORT_SHA}'
+  - '${_REGION}-docker.pkg.dev/${PROJECT_ID}/bookmark-manager/backend:latest'
+  - '${_REGION}-docker.pkg.dev/${PROJECT_ID}/bookmark-manager/frontend:${SHORT_SHA}'
+  - '${_REGION}-docker.pkg.dev/${PROJECT_ID}/bookmark-manager/frontend:latest'

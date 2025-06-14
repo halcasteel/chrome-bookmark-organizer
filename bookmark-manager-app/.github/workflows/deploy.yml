@@ -1,0 +1,135 @@
+name: Deploy to Google Cloud
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  PROJECT_ID: bookmarks-manager-462919
+  REGION: us-central1
+  SERVICE_NAME: bookmark-manager
+  
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run backend tests
+      run: npm test --workspace=backend
+    
+    - name: Run frontend tests
+      run: npm test --workspace=frontend
+
+  build-and-deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Authenticate to Google Cloud
+      uses: google-github-actions/auth@v2
+      with:
+        workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+        service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+    
+    - name: Set up Cloud SDK
+      uses: google-github-actions/setup-gcloud@v2
+    
+    - name: Configure Docker for Artifact Registry
+      run: |
+        gcloud auth configure-docker ${REGION}-docker.pkg.dev
+    
+    # Build and push backend image
+    - name: Build backend image
+      run: |
+        docker build -t ${REGION}-docker.pkg.dev/${PROJECT_ID}/bookmark-manager/backend:${{ github.sha }} \
+          -t ${REGION}-docker.pkg.dev/${PROJECT_ID}/bookmark-manager/backend:latest \
+          -f backend/Dockerfile \
+          --target production \
+          backend
+    
+    - name: Push backend image
+      run: |
+        docker push ${REGION}-docker.pkg.dev/${PROJECT_ID}/bookmark-manager/backend:${{ github.sha }}
+        docker push ${REGION}-docker.pkg.dev/${PROJECT_ID}/bookmark-manager/backend:latest
+    
+    # Build and push frontend image
+    - name: Build frontend image
+      run: |
+        docker build -t ${REGION}-docker.pkg.dev/${PROJECT_ID}/bookmark-manager/frontend:${{ github.sha }} \
+          -t ${REGION}-docker.pkg.dev/${PROJECT_ID}/bookmark-manager/frontend:latest \
+          -f frontend/Dockerfile \
+          --target production \
+          --build-arg VITE_API_URL=${{ secrets.PRODUCTION_API_URL }} \
+          frontend
+    
+    - name: Push frontend image
+      run: |
+        docker push ${REGION}-docker.pkg.dev/${PROJECT_ID}/bookmark-manager/frontend:${{ github.sha }}
+        docker push ${REGION}-docker.pkg.dev/${PROJECT_ID}/bookmark-manager/frontend:latest
+    
+    # Deploy backend to Cloud Run
+    - name: Deploy backend to Cloud Run
+      run: |
+        gcloud run deploy ${SERVICE_NAME}-backend \
+          --image ${REGION}-docker.pkg.dev/${PROJECT_ID}/bookmark-manager/backend:${{ github.sha }} \
+          --region ${REGION} \
+          --platform managed \
+          --allow-unauthenticated \
+          --add-cloudsql-instances ${{ secrets.CLOUD_SQL_CONNECTION_NAME }} \
+          --set-env-vars "NODE_ENV=production" \
+          --set-env-vars "DATABASE_URL=${{ secrets.PRODUCTION_DATABASE_URL }}" \
+          --set-env-vars "JWT_SECRET=${{ secrets.JWT_SECRET }}" \
+          --set-env-vars "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" \
+          --set-env-vars "GCS_BUCKET_NAME=${{ secrets.GCS_BUCKET_NAME }}" \
+          --min-instances 1 \
+          --max-instances 10 \
+          --memory 1Gi
+    
+    # Deploy frontend to Cloud Run
+    - name: Deploy frontend to Cloud Run
+      run: |
+        gcloud run deploy ${SERVICE_NAME}-frontend \
+          --image ${REGION}-docker.pkg.dev/${PROJECT_ID}/bookmark-manager/frontend:${{ github.sha }} \
+          --region ${REGION} \
+          --platform managed \
+          --allow-unauthenticated \
+          --port 80 \
+          --min-instances 1 \
+          --max-instances 10 \
+          --memory 512Mi
+    
+    # Deploy file watcher as a Cloud Run job
+    - name: Deploy file watcher job
+      run: |
+        gcloud run jobs create ${SERVICE_NAME}-file-watcher \
+          --image ${REGION}-docker.pkg.dev/${PROJECT_ID}/bookmark-manager/backend:${{ github.sha }} \
+          --region ${REGION} \
+          --command npm,run,watch \
+          --set-cloudsql-instances ${{ secrets.CLOUD_SQL_CONNECTION_NAME }} \
+          --set-env-vars "NODE_ENV=production" \
+          --set-env-vars "DATABASE_URL=${{ secrets.PRODUCTION_DATABASE_URL }}" \
+          --set-env-vars "GCS_BUCKET_NAME=${{ secrets.GCS_BUCKET_NAME }}" \
+          --max-retries 3 \
+          --parallelism 1 \
+          --task-timeout 3600

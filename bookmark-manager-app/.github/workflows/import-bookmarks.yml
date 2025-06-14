@@ -1,0 +1,77 @@
+name: Import Bookmarks
+
+on:
+  push:
+    paths:
+      - 'imports/*.html'
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'  # Run every 6 hours
+
+env:
+  PROJECT_ID: bookmarks-manager-462919
+  REGION: us-central1
+  
+jobs:
+  check-and-import:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Check for bookmark files
+      id: check_files
+      run: |
+        if [ -d "imports" ] && [ "$(ls -A imports/*.html 2>/dev/null)" ]; then
+          echo "found=true" >> $GITHUB_OUTPUT
+          echo "files=$(ls imports/*.html | tr '\n' ' ')" >> $GITHUB_OUTPUT
+        else
+          echo "found=false" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Authenticate to Google Cloud
+      if: steps.check_files.outputs.found == 'true'
+      uses: google-github-actions/auth@v2
+      with:
+        workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+        service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+    
+    - name: Set up Cloud SDK
+      if: steps.check_files.outputs.found == 'true'
+      uses: google-github-actions/setup-gcloud@v2
+    
+    - name: Upload bookmarks to GCS
+      if: steps.check_files.outputs.found == 'true'
+      run: |
+        for file in ${{ steps.check_files.outputs.files }}; do
+          timestamp=$(date +%Y%m%d_%H%M%S)
+          filename=$(basename "$file")
+          destination="gs://${{ secrets.GCS_BUCKET_NAME }}/imports/${timestamp}_${filename}"
+          
+          echo "Uploading $file to $destination"
+          gsutil cp "$file" "$destination"
+          
+          # Move to archive after upload
+          mkdir -p imports/archive
+          mv "$file" "imports/archive/${timestamp}_${filename}"
+        done
+    
+    - name: Trigger import job
+      if: steps.check_files.outputs.found == 'true'
+      run: |
+        gcloud run jobs execute bookmark-manager-file-watcher \
+          --region ${REGION} \
+          --wait
+    
+    - name: Commit archived files
+      if: steps.check_files.outputs.found == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add imports/archive/
+        git diff --staged --quiet || git commit -m "Archive processed bookmark files"
+        git push
