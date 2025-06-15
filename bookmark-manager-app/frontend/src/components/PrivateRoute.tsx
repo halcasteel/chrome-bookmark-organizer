@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
 import { Navigate } from 'react-router-dom'
 import { Box, Spinner, Flex } from '@chakra-ui/react'
-import { useAuth } from '@/contexts/AuthContext'
+import { useAuth } from '../contexts/AuthContext'
 
 interface PrivateRouteProps {
   children: ReactElement

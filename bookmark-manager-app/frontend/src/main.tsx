@@ -16,12 +16,7 @@ const queryClient = new QueryClient({
   },
 })
 
-const rootElement = document.getElementById('root')
-if (!rootElement) {
-  throw new Error('Failed to find the root element')
-}
-
-ReactDOM.createRoot(rootElement).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ColorModeScript initialColorMode={theme.config.initialColorMode} />
     <ChakraProvider theme={theme}>

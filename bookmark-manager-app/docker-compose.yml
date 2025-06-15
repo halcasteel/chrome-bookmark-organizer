@@ -23,6 +23,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
+      target: ${BUILD_TARGET:-development}
     container_name: bookmark-backend
     ports:
       - "3001:3001"
@@ -35,6 +36,7 @@ services:
       OPENAI_API_KEY: ${OPENAI_API_KEY}
       DEFAULT_USER_ID: ${DEFAULT_USER_ID}
       BOOKMARK_IMPORT_DIR: /app/imports
+      CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost:5173,http://localhost:80}
     volumes:
       - ./backend:/app
       - /app/node_modules
@@ -65,10 +67,11 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
+      target: ${BUILD_TARGET:-development}
     container_name: bookmark-file-watcher
     environment:
       NODE_ENV: ${NODE_ENV:-development}
-      DATABASE_URL: postgresql://bookmark_user:${POSTGRES_PASSWORD:-localpassword}@postgres:5432/bookmark_manager
+      DATABASE_URL: postgresql://admin:admin@postgres:5432/bookmark_manager
       DEFAULT_USER_ID: ${DEFAULT_USER_ID}
       BOOKMARK_IMPORT_DIR: /imports
     volumes:

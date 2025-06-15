@@ -1,19 +1,19 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
-import { AuthProvider } from '@/contexts/AuthContext'
-import Layout from '@/components/Layout'
-import PrivateRoute from '@/components/PrivateRoute'
+import { AuthProvider } from './contexts/AuthContext'
+import Layout from './components/Layout'
+import PrivateRoute from './components/PrivateRoute'
 
 // Pages
-import Login from '@/pages/Login'
-import Register from '@/pages/Register'
-import Dashboard from '@/pages/Dashboard'
-import Bookmarks from '@/pages/Bookmarks'
-import Search from '@/pages/Search'
-import Import from '@/pages/Import'
-import Collections from '@/pages/Collections'
-import Settings from '@/pages/Settings'
-import Tags from '@/pages/Tags'
+import Login from './pages/Login'
+import Register from './pages/Register'
+import Dashboard from './pages/Dashboard'
+import Bookmarks from './pages/Bookmarks'
+import Search from './pages/Search'
+import Import from './pages/Import'
+import Collections from './pages/Collections'
+import Settings from './pages/Settings'
+import Tags from './pages/Tags'
 
 const App: React.FC = () => {
   return (

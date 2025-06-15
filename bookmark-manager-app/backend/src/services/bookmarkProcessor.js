@@ -1,4 +1,4 @@
-import { Configuration, OpenAIApi } from 'openai';
+import OpenAI from 'openai';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -22,11 +22,9 @@ class BookmarkProcessor {
       maxRetries: options.maxRetries || 3,
     };
     
-    this.openai = new OpenAIApi(
-      new Configuration({
-        apiKey: process.env.OPENAI_API_KEY,
-      })
-    );
+    this.openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
     
     this.validator = null;
     this.processingQueue = [];
@@ -188,7 +186,7 @@ Provide a JSON response with:
 5. priority: "high", "medium", or "low" based on likely usefulness
 6. contentQuality: Score 1-10 based on the metadata quality`;
 
-      const response = await this.openai.createChatCompletion({
+      const response = await this.openai.chat.completions.create({
         model: 'gpt-3.5-turbo',
         messages: [
           {
@@ -204,7 +202,7 @@ Provide a JSON response with:
         max_tokens: 200,
       });
       
-      const classification = JSON.parse(response.data.choices[0].message.content);
+      const classification = JSON.parse(response.choices[0].message.content);
       
       logDebug('Bookmark classified', { 
         url,
@@ -343,12 +341,12 @@ Provide a JSON response with:
    */
   async generateEmbedding(text) {
     try {
-      const response = await this.openai.createEmbedding({
+      const response = await this.openai.embeddings.create({
         model: 'text-embedding-ada-002',
         input: text.substring(0, 8000), // Limit text length
       });
       
-      return response.data.data[0].embedding;
+      return response.data[0].embedding;
     } catch (error) {
       logError(error, { context: 'BookmarkProcessor.generateEmbedding' });
       return new Array(1536).fill(0); // Return zero vector on error

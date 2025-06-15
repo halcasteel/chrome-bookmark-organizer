@@ -13,7 +13,18 @@ import type {
   AuthResponse
 } from '@/types'
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api'
+// Get API URL from runtime config or environment variable
+const getApiUrl = (): string => {
+  // Check for runtime configuration (injected by Docker)
+  if (typeof window !== 'undefined' && (window as any).__RUNTIME_CONFIG__?.API_URL) {
+    return (window as any).__RUNTIME_CONFIG__.API_URL
+  }
+  
+  // Fall back to build-time environment variable
+  return import.meta.env.VITE_API_URL || 'http://localhost:3001/api'
+}
+
+const API_URL = getApiUrl()
 
 // Create axios instance with proper typing
 const api: AxiosInstance = axios.create({
