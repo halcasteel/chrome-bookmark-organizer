@@ -1,131 +1,87 @@
-# Chrome Bookmark Organizer 📚
+# Bookmark Manager Application
 
-A powerful Python-based tool that transforms your messy browser bookmarks into a beautiful, organized, and searchable web interface. No more dead links cluttering your collection!
+A production-grade bookmark management system with AI-powered classification, semantic search, and automatic URL validation.
 
-![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D20.17.0-brightgreen)](https://nodejs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue)](https://www.typescriptlang.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15%2B-blue)](https://www.postgresql.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## ✨ Features
+## 🚨 Quick Start
 
-- **Smart Organization**: Automatically categorizes bookmarks into 17+ categories (AI/ML, Development, News, etc.)
-- **Duplicate Removal**: Intelligently detects and removes duplicate bookmarks using normalized URLs
-- **Dead Link Detection**: Identifies potentially dead bookmarks without testing every URL
-- **Beautiful Web Interface**: Browse your bookmarks with a clean, searchable HTML interface
-- **Domain Grouping**: Bookmarks grouped by domain with favicons
-- **Fast Processing**: Handles large bookmark files (tested with 4,500+ bookmarks)
-- **Privacy First**: All processing done locally, no external API calls
-
-## 🚀 Quick Start
-
-1. Export your bookmarks from Chrome (Bookmarks Manager → ⋮ → Export bookmarks)
-2. Run the organizer:
 ```bash
-python3 bookmark_organizer_smart.py
-python3 bookmark_html_generator.py
-python3 serve_bookmarks_clean.py
-```
-3. Open http://localhost:8080 in your browser
-
-## 📊 What It Does
-
-Starting with a messy HTML bookmark export file, the organizer:
-
-1. **Chunks** large files into manageable pieces
-2. **Analyzes** and extracts all bookmarks
-3. **Removes** 229 duplicates (in test case)
-4. **Identifies** 144 suspicious/old bookmarks
-5. **Categorizes** 4,183 bookmarks into smart categories
-6. **Generates** a beautiful, searchable website
-
-## 📁 Categories
-
-- 🤖 AI & Machine Learning
-- 💻 Development & Tech
-- ☁️ Cloud & DevOps
-- 🔍 Google Services
-- 📰 News & Media
-- 👥 Social & Professional
-- 🛒 Shopping & E-commerce
-- 🎬 Entertainment & Media
-- 🎓 Learning & Education
-- 📖 Documentation & Reference
-- 🔬 Research & Academic
-- 💰 Business & Finance
-- ⚡ Productivity & Tools
-- ⛵ Sailing & Marine
-- 📱 Tech News & Blogs
-- 🏠 Local & Development
-- 📌 Other
-- ⚠️ Needs Review (suspicious/old bookmarks)
-
-## 🛠️ Components
-
-- `bookmark_chunker.py` - Splits large bookmark files
-- `bookmark_analyzer.py` - Extracts and analyzes bookmarks
-- `bookmark_organizer_smart.py` - Smart categorization and deduplication
-- `bookmark_html_generator.py` - Creates the web interface
-- `serve_bookmarks_clean.py` - Web server for browsing
-
-## 📋 Requirements
-
-- Python 3.8+
-- No external dependencies (uses standard library only)
-
-## 🎯 Smart Features
-
-### Duplicate Detection
-- Normalizes URLs (removes tracking parameters, www prefix)
-- Keeps the most recent version of duplicates
-
-### Suspicious Bookmark Detection
-- Bookmarks older than 5 years
-- Known discontinued services (Google+, Reader, etc.)
-- Personal blog platforms
-- URLs with error keywords
-
-### No URL Testing
-Unlike other tools, this doesn't test thousands of URLs, making it:
-- ⚡ Fast (processes 4,500 bookmarks in seconds)
-- 🔒 Private (no external connections)
-- 🎯 Efficient (uses smart patterns instead)
-
-## 📝 Usage
-
-### Basic Usage
-```bash
-# Process bookmarks from default location
-python3 bookmark_organizer_smart.py
-python3 bookmark_html_generator.py
-python3 serve_bookmarks_clean.py
+cd bookmark-manager-app
+node start-services.js  # THIS IS THE ONLY WAY TO RUN THE APP
 ```
 
-### Custom File
-```bash
-# Edit the input file path in bookmark_analyzer.py
-# Then run the pipeline
+**Note:** The startup script will automatically:
+- Start PostgreSQL (port 5434) and Redis (port 6382) via Docker
+- Run database migrations
+- Start the backend API (port 3001)
+- Start the frontend dev server (port 5173)
+- Stream logs to both console and `logs/` directory
+
+## ⚠️ Current Status
+
+**The application is currently non-functional due to authentication issues.**
+
+See [bookmark-manager-app/CHECKPOINT.md](bookmark-manager-app/CHECKPOINT.md) for current status and [bookmark-manager-app/CHECKLIST.md](bookmark-manager-app/CHECKLIST.md) for pending tasks.
+
+## 📁 Repository Structure
+
+```
+.
+├── bookmark-manager-app/      # Main application
+│   ├── backend/              # Node.js/Express API
+│   ├── frontend/             # React/TypeScript UI
+│   ├── database/             # PostgreSQL schemas
+│   ├── scripts/              # Deployment scripts
+│   ├── docker-compose.yml    # Service definitions
+│   ├── start-services.js     # 🚨 MAIN STARTUP SCRIPT
+│   └── README.md             # Detailed documentation
+├── CLAUDE.md                 # AI assistant context
+└── README.md                 # This file
 ```
 
-## 🔍 Example Output
+## 📋 Documentation
 
-From a 5,806-line bookmark file:
-- ✅ 4,183 organized bookmarks
-- 🗑️ 229 duplicates removed  
-- ⚠️ 144 suspicious bookmarks flagged
-- 📁 18 categories created
-- 🌐 Beautiful web interface generated
+All documentation is in the `bookmark-manager-app/` directory:
 
-## 🤝 Contributing
+- [README.md](bookmark-manager-app/README.md) - Detailed application documentation
+- [CHECKPOINT.md](bookmark-manager-app/CHECKPOINT.md) - Current development status
+- [CHECKLIST.md](bookmark-manager-app/CHECKLIST.md) - Task tracking with priorities
+- [CLAUDE.md](bookmark-manager-app/CLAUDE.md) - AI assistant development context
+- [UNIFIED_LOGGING_GUIDE.md](bookmark-manager-app/UNIFIED_LOGGING_GUIDE.md) - Logging system documentation
 
-Feel free to open issues or submit pull requests. Some ideas:
-- Add more categories
-- Improve suspicious URL patterns
-- Add bookmark export functionality
-- Create browser extension
+## 🛠️ Key Features
+
+- **🔒 Secure Access**: Restricted to @az1.ai emails with mandatory 2FA
+- **🤖 AI Classification**: Automatic categorization using OpenAI
+- **🔍 Semantic Search**: Vector-based search with pgvector
+- **✅ URL Validation**: Asynchronous validation with Puppeteer
+- **📊 Smart Organization**: Collections, tags, and categories
+- **📈 Unified Logging**: Comprehensive logging with real-time monitoring
+- **🔄 Async Processing**: Import progress tracking via WebSockets
+
+## 🏗️ Tech Stack
+
+- **Frontend**: React 18, TypeScript, Vite, Chakra UI
+- **Backend**: Node.js 20+, Express, PostgreSQL 15, Redis
+- **AI/ML**: OpenAI API, pgvector for embeddings
+- **Infrastructure**: Docker, Google Cloud Run ready
+
+## 📌 Important Notes
+
+1. Always use `node start-services.js` to run the application
+2. PostgreSQL runs on port 5434 (non-standard)
+3. Redis runs on port 6382 (non-standard)
+4. Check logs first when debugging: `tail -f logs/unified.log`
+5. The application needs authentication fixes before it's functional
+
+## 🗂️ Archived Content
+
+The old Python-based bookmark organizer tools have been archived to `_archive-old-app/`. These are kept for reference only and are not part of the production application.
 
 ## 📄 License
 
-MIT License - feel free to use this for your own bookmark organization!
-
-## 🙏 Acknowledgments
-
-Built with Python's standard library - no heavy dependencies needed!
+MIT License - See LICENSE file for details.
