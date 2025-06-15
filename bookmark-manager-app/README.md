@@ -7,25 +7,39 @@
 
 A cloud-based bookmark management system with AI-powered classification, semantic search, and automatic URL validation. Built for the @az1.ai domain with mandatory 2FA authentication.
 
+## 🚧 Current Status
+
+**⚠️ Application is currently non-functional due to authentication issues.** Major refactoring in progress to implement production-ready architecture.
+
+### Recent Updates (June 2025)
+- ✅ Implemented unified logging system across entire stack
+- ✅ Created robust startup script with health checks
+- ✅ Consolidated environment configurations
+- ✅ Fixed Redis port conflicts (now using 6382)
+- ✅ Archived 74+ non-essential files for production readiness
+- ✅ Comprehensive dependency analysis completed
+- ❌ Login functionality broken - investigating authentication flow
+
 ## 🌟 Key Features
 
 - **🔒 Secure Access**: Restricted to @az1.ai email addresses with mandatory 2FA
 - **🤖 AI Classification**: Automatic categorization and tagging using OpenAI
 - **🔍 Semantic Search**: Vector-based search using pgvector for finding related content
-- **✅ URL Validation**: Headless browser validation with Puppeteer
+- **✅ URL Validation**: Asynchronous validation with Puppeteer
 - **📊 Smart Organization**: Collections, tags, and AI-generated categories
 - **☁️ Cloud Native**: Deployed on Google Cloud Run with automatic scaling
 - **📱 Responsive Design**: Works seamlessly across all devices
-- **🔄 Auto Import**: Watch folder for automatic bookmark processing
+- **🔄 Import System**: Async processing with real-time progress via WebSockets
+- **📈 Unified Logging**: Comprehensive logging with real-time monitoring
 
 ## 📋 Documentation
 
 - [Software Design Document (SDD)](./SDD.md) - High-level architecture and design
 - [Technical Design Document (TDD)](./TDD.md) - Implementation details and code structure
 - [Deployment Guide](./DEPLOYMENT_GUIDE.md) - Step-by-step deployment instructions
-- [Bookmark Processing](./BOOKMARK_PROCESSING.md) - URL validation and AI classification
-- [Logging Standards](./LOGGING_STANDARDS.md) - Application logging guidelines
-- [TODO List](./TODO-LIST-with-CHECKBOXES.md) - Development roadmap and tasks
+- [Unified Logging Guide](./UNIFIED_LOGGING_GUIDE.md) - Comprehensive logging system
+- [Checkpoint Status](./CHECKPOINT.md) - Current development status
+- [Task Checklist](./CHECKLIST.md) - Pending tasks with checkboxes
 
 ## 🛠️ Tech Stack
 
@@ -50,14 +64,16 @@ A cloud-based bookmark management system with AI-powered classification, semanti
 - **Cloud SQL** for managed PostgreSQL
 - **Cloud Storage** for file uploads
 - **Docker** for containerization
-- **GitHub Actions** for CI/CD
+- **Redis** for job queues and caching
+- **Bull** for async job processing
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
 - Node.js 20.17.0 or higher
-- PostgreSQL 15+ with pgvector extension
+- PostgreSQL 15+ with pgvector extension (port 5434)
+- Redis (port 6382)
 - Docker and Docker Compose
 - Google Cloud SDK (for deployment)
 - OpenAI API key
@@ -66,23 +82,42 @@ A cloud-based bookmark management system with AI-powered classification, semanti
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/bookmark-manager.git
-   cd bookmark-manager
+   git clone https://github.com/halcasteel/chrome-bookmark-organizer.git
+   cd bookmark-manager-app
    ```
 
-2. **Set up the database**
-   ```bash
-   ./scripts/setup-local-db.sh
-   ```
-
-3. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-4. **Configure environment**
+2. **Configure environment**
    ```bash
    cp .env.example .env
+   # Edit .env with your settings
+   ```
+
+3. **🚨 IMPORTANT: Start the application using the unified startup script**
+   ```bash
+   node start-services.js
+   ```
+   
+   **This is the ONLY recommended way to start the application.** The script provides:
+   - ✅ Automatic Docker container management (PostgreSQL & Redis)
+   - ✅ Health checks for all services
+   - ✅ Database migration execution
+   - ✅ Real-time progress with colored output
+   - ✅ Unified logging to `logs/` directory
+   - ✅ Graceful error handling and recovery
+   - ✅ Service dependency management
+   
+   The script will:
+   - Start PostgreSQL on port 5434 with pgvector
+   - Start Redis on port 6382
+   - Run all database migrations
+   - Start backend API on port 3001
+   - Start frontend dev server on port 5173
+   - Stream logs to both console and log files
+
+4. **Monitor the application**
+   - Check unified logs: `tail -f logs/unified.log`
+   - View errors only: `tail -f logs/errors.log`
+   - Access log viewer UI: http://localhost:5173/logs (admin only)
    # Edit .env with your settings
    ```
 

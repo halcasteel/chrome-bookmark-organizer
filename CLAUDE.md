@@ -1,7 +1,25 @@
 # CLAUDE.md - AI Context for Bookmark Organizer Project
 
+## 🚨 IMPORTANT: Active Development Directory
+The main application is in `bookmark-manager-app/`. Always work in that directory.
+
+To start the application:
+```bash
+cd bookmark-manager-app
+node start-services.js  # THIS IS THE ONLY WAY TO RUN THE APP
+```
+
 ## Project Overview
-This is a comprehensive bookmark management system that processes browser bookmark exports (HTML format) and creates an organized, searchable web interface. The system intelligently categorizes bookmarks, removes duplicates, and identifies potentially dead links without testing every URL.
+This repository contains TWO bookmark management systems:
+
+1. **bookmark-manager-app/** - The main production application (React/Node.js)
+   - Full-stack web application with AI features
+   - Currently non-functional due to auth issues
+   - See `bookmark-manager-app/CLAUDE.md` for details
+
+2. **Python bookmark organizers** - Simple HTML bookmark processors
+   - Standalone Python scripts for organizing exported bookmarks
+   - Creates static HTML sites from bookmark files
 
 ## Key Components
 
