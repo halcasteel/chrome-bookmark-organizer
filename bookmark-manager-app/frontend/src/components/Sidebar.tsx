@@ -7,6 +7,7 @@ import {
   VStack,
   Link,
   Icon,
+  IconButton,
   Drawer,
   DrawerBody,
   DrawerHeader,
@@ -25,6 +26,7 @@ import {
   FiFolderPlus,
   FiSettings,
   FiTag,
+  FiX,
 } from 'react-icons/fi'
 import { IconType } from 'react-icons'
 
@@ -106,14 +108,25 @@ const SidebarContent: React.FC<SidebarContentProps> = ({ onClose }) => {
       bg={bg}
       borderRight="1px"
       borderRightColor={borderColor}
-      w="full"
-      h="full"
-      pos="fixed"
+      w="280px"
+      h="100vh"
+      position="fixed"
+      top="0"
+      left="0"
+      overflowY="auto"
+      zIndex={10}
     >
-      <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
+      <Flex h="20" alignItems="center" px="8" justifyContent="space-between">
         <Text fontSize="2xl" fontWeight="bold" color="brand.600">
           Bookmarks
         </Text>
+        <IconButton
+          aria-label="Close menu"
+          icon={<FiX />}
+          size="sm"
+          variant="ghost"
+          onClick={onClose}
+        />
       </Flex>
       
       <VStack spacing={1} align="stretch">
@@ -144,37 +157,28 @@ interface SidebarProps extends BoxProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, ...rest }) => {
-  const isDrawer = rest.display?.base === 'none'
-
-  if (isDrawer) {
-    return (
-      <>
-        <Box {...rest}>
-          <SidebarContent onClose={() => {}} />
-        </Box>
-        <Drawer
-          autoFocus={false}
-          isOpen={isOpen}
-          placement="left"
-          onClose={onClose}
-          returnFocusOnClose={false}
-          onOverlayClick={onClose}
-          size="full"
-        >
-          <DrawerOverlay />
-          <DrawerContent>
-            <DrawerCloseButton />
-            <SidebarContent onClose={onClose} />
-          </DrawerContent>
-        </Drawer>
-      </>
-    )
-  }
+  if (!isOpen) return null
 
   return (
-    <Box {...rest}>
-      <SidebarContent onClose={onClose} />
-    </Box>
+    <>
+      {/* Overlay for mobile */}
+      <Box
+        display={{ base: 'block', lg: 'none' }}
+        position="fixed"
+        top="0"
+        left="0"
+        right="0"
+        bottom="0"
+        bg="blackAlpha.600"
+        zIndex={9}
+        onClick={onClose}
+      />
+      
+      {/* Sidebar */}
+      <Box {...rest}>
+        <SidebarContent onClose={onClose} />
+      </Box>
+    </>
   )
 }
 

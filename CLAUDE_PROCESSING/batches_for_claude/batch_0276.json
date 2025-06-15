@@ -1,0 +1,86 @@
+{
+  "batch_number": 276,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 2750,
+      "domain": "creditkarma.com",
+      "title": "Get your free score and more - Credit Karma",
+      "url": "https://www.creditkarma.com/error",
+      "date_added": "2022-02-03 11:53:31"
+    },
+    {
+      "index": 2,
+      "global_index": 2751,
+      "domain": "fprintf.net",
+      "title": "Vim Commands Cheat Sheet",
+      "url": "https://www.fprintf.net/vimCheatSheet.html",
+      "date_added": "2022-02-03 13:24:58"
+    },
+    {
+      "index": 3,
+      "global_index": 2752,
+      "domain": "factorpad.com",
+      "title": "Vim Cheat Sheet - Learn Vim Commands Plus Vi Shortcuts Faster",
+      "url": "https://factorpad.com/tech/vim-cheat-sheet.html",
+      "date_added": "2022-02-03 13:26:09"
+    },
+    {
+      "index": 4,
+      "global_index": 2753,
+      "domain": "coinmarketcap.com",
+      "title": "Polkadot price today, DOT to USD live, marketcap and chart | CoinMarketCap",
+      "url": "https://coinmarketcap.com/currencies/polkadot-new/",
+      "date_added": "2022-02-04 02:02:41"
+    },
+    {
+      "index": 5,
+      "global_index": 2754,
+      "domain": "github.com",
+      "title": "GitHub - mit-dci/opencbdc-tx: A transaction processor for a hypothetical, general-purpose, central bank digital currency",
+      "url": "https://github.com/mit-dci/opencbdc-tx",
+      "date_added": "2022-02-04 02:08:12"
+    },
+    {
+      "index": 6,
+      "global_index": 2755,
+      "domain": "en.wikipedia.org",
+      "title": "Unspent transaction output - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Unspent_transaction_output",
+      "date_added": "2022-02-04 02:19:47"
+    },
+    {
+      "index": 7,
+      "global_index": 2756,
+      "domain": "openknowledge.worldbank.org",
+      "title": "https://openknowledge.worldbank.org/bitstream/handle/10986/36765/Central-Bank-Digital-Currency-A-Payments-Perspective.txt?sequence=2&isAllowed=y",
+      "url": "https://openknowledge.worldbank.org/bitstream/handle/10986/36765/Central-Bank-Digital-Currency-A-Payments-Perspective.txt?sequence=2&isAllowed=y",
+      "date_added": "2022-02-04 02:26:57"
+    },
+    {
+      "index": 8,
+      "global_index": 2757,
+      "domain": "openknowledge.worldbank.org",
+      "title": "Central Bank Digital Currency : A Payments Perspective",
+      "url": "https://openknowledge.worldbank.org/handle/10986/36765",
+      "date_added": "2022-02-04 02:27:06"
+    },
+    {
+      "index": 9,
+      "global_index": 2758,
+      "domain": "economictimes.indiatimes.com",
+      "title": "Digital Currency: RBI to issue Central Bank Digital Currency in FY23: FM Sitharaman in Budget - The Economic Times",
+      "url": "https://economictimes.indiatimes.com/industry/banking/finance/banking/rbi-to-issue-central-bank-digital-currency-in-fy23-fm-sitharaman-in-budget/articleshow/89267237.cms",
+      "date_added": "2022-02-04 02:32:27"
+    },
+    {
+      "index": 10,
+      "global_index": 2759,
+      "domain": "federalreserve.gov",
+      "title": "The Fed - Money and Payments: The U.S. Dollar in the Age of Digital Transformation",
+      "url": "https://www.federalreserve.gov/publications/money-and-payments-discussion-paper.htm",
+      "date_added": "2022-02-04 02:35:13"
+    }
+  ]
+}

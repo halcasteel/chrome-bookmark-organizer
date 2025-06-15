@@ -1,0 +1,86 @@
+{
+  "batch_number": 234,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 2330,
+      "domain": "chat.openai.com",
+      "title": "ChatGPT",
+      "url": "https://chat.openai.com/c/42f0a656-e392-412d-b5fe-d4eeb2344f0a",
+      "date_added": "2024-04-26 18:06:39"
+    },
+    {
+      "index": 2,
+      "global_index": 2331,
+      "domain": "drive.google.com",
+      "title": "Custom GPTs - Google Drive",
+      "url": "https://drive.google.com/drive/folders/1W2bLG9rYL4qPvZgbJhUCPvs_wN2qvkcs",
+      "date_added": "2024-04-26 18:06:39"
+    },
+    {
+      "index": 3,
+      "global_index": 2332,
+      "domain": "github.com",
+      "title": "automatisch/automatisch: The open source Zapier alternative. Build workflow automation without spending time and money.",
+      "url": "https://github.com/automatisch/automatisch",
+      "date_added": "2024-04-26 18:06:39"
+    },
+    {
+      "index": 4,
+      "global_index": 2333,
+      "domain": "perplexity.ai",
+      "title": "describe a OpenAI with React, automatisch/automatisch , Lanchain, Weikiva and...",
+      "url": "https://www.perplexity.ai/search/describe-a-OpenAI-toZCGpQjSi2TCplAH3ExnQ",
+      "date_added": "2024-04-26 18:06:39"
+    },
+    {
+      "index": 5,
+      "global_index": 2334,
+      "domain": "perplexity.ai",
+      "title": "Describe algorithmic publishing",
+      "url": "https://www.perplexity.ai/search/Describe-algorithmic-publishing-rXu6odqlSUWvh3pbobR08A",
+      "date_added": "2024-04-26 18:53:55"
+    },
+    {
+      "index": 6,
+      "global_index": 2335,
+      "domain": "photos.google.com",
+      "title": "Photo in Skrowl 900 v2 - Google Photos",
+      "url": "https://photos.google.com/share/AF1QipMwsv-YnEb-52gOOsDjeWz_WF9fyGprD7bxfzbMhOyqsNnMpWF2pdXCljacDFcaMQ/photo/AF1QipPoW0Rv_ZFM4GNzFYjx02luN-JozqHbW46-L5DC?key=YXUzVXJxWlMxOE51WmxMeVpVTkgycVhHTkxObU1R",
+      "date_added": "2024-05-02 22:06:54"
+    },
+    {
+      "index": 7,
+      "global_index": 2336,
+      "domain": "scontent-atl3-1.xx.fbcdn.net",
+      "title": "Product photo of Icom 746 Pro",
+      "url": "https://scontent-atl3-1.xx.fbcdn.net/v/t45.5328-4/441950560_980949180428166_1903108806286318234_n.jpg?stp=dst-jpg_p720x720&_nc_cat=109&ccb=1-7&_nc_sid=247b10&_nc_ohc=Gjy91hakw64Q7kNvgFEO-U2&_nc_ht=scontent-atl3-1.xx&oh=00_AYDkByftfoh4sN_vdmoWXnipDUAwJXDw7H4Qk4pJzXgPxg&oe=66AF935C",
+      "date_added": "2024-07-30 23:47:09"
+    },
+    {
+      "index": 8,
+      "global_index": 2337,
+      "domain": "timeanddate.com",
+      "title": "Time Zone Converter – Time Difference Calculator",
+      "url": "https://www.timeanddate.com/worldclock/converter.html?iso=20241026T210000&p1=224&p2=156",
+      "date_added": "2024-10-26 17:11:53"
+    },
+    {
+      "index": 9,
+      "global_index": 2338,
+      "domain": "en.wikipedia.org",
+      "title": "Gödel machine - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/G%C3%B6del_machine",
+      "date_added": "2024-11-18 15:25:42"
+    },
+    {
+      "index": 10,
+      "global_index": 2339,
+      "domain": "github.com",
+      "title": "mattermost/mattermost: Mattermost is an open source platform for secure collaboration across the entire software development lifecycle..",
+      "url": "https://github.com/mattermost/mattermost",
+      "date_added": "2024-11-17 13:53:03"
+    }
+  ]
+}

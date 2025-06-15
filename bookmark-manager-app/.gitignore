@@ -1,5 +1,8 @@
 # Dependencies
 node_modules/
+**/node_modules/
+backend/node_modules/
+frontend/node_modules/
 .pnp
 .pnp.js
 
@@ -57,7 +60,11 @@ yarn-error.log*
 *.tmp
 *.temp
 .tmp/
+tree.txt
+tree-clean.txt
 
 # Database
 *.sql.bak
 postgres_data/
+# Archived files
+_archive/

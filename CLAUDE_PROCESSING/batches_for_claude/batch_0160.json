@@ -1,0 +1,86 @@
+{
+  "batch_number": 160,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 1590,
+      "domain": "accaglobal.com",
+      "title": "Accounting for cryptocurrencies | ACCA Global",
+      "url": "https://www.accaglobal.com/in/en/student/exam-support-resources/professional-exams-study-resources/strategic-business-reporting/technical-articles/cryptocurrencies.html",
+      "date_added": "2022-02-17 19:27:42"
+    },
+    {
+      "index": 2,
+      "global_index": 1591,
+      "domain": "www2.deloitte.com",
+      "title": "The Business Benefit of Using Cryptocurrency | Deloitte US",
+      "url": "https://www2.deloitte.com/us/en/pages/audit/articles/corporates-using-crypto.html",
+      "date_added": "2022-02-17 19:35:54"
+    },
+    {
+      "index": 3,
+      "global_index": 1592,
+      "domain": "www2.deloitte.com",
+      "title": "Corporates investing in crypto | Deloitte US",
+      "url": "https://www2.deloitte.com/us/en/pages/audit/articles/corporates-investing-in-crypto.html",
+      "date_added": "2022-02-17 19:36:16"
+    },
+    {
+      "index": 4,
+      "global_index": 1593,
+      "domain": "sec.gov",
+      "title": "Coinbase S-1 SEC Filing 2021-02-21",
+      "url": "https://www.sec.gov/Archives/edgar/data/1679788/000162828021003168/coinbaseglobalincs-1.htm",
+      "date_added": "2022-02-17 19:42:53"
+    },
+    {
+      "index": 5,
+      "global_index": 1594,
+      "domain": "cryptoconsortium.org",
+      "title": "Crypto Currency Security Standard Auditor (CCSSA)",
+      "url": "https://cryptoconsortium.org/certifications/ccssa/",
+      "date_added": "2022-02-17 19:45:36"
+    },
+    {
+      "index": 6,
+      "global_index": 1595,
+      "domain": "cryptoconsortium.notion.site",
+      "title": "CryptoCurrency Security Standard",
+      "url": "https://cryptoconsortium.notion.site/CryptoCurrency-Security-Standard-e372d9cad52f4615aa3ad0c47c24ea21",
+      "date_added": "2022-02-17 19:48:48"
+    },
+    {
+      "index": 7,
+      "global_index": 1596,
+      "domain": "oradocs-prodapp.cec.ocp.oraclecloud.com",
+      "title": "CS Value Prop - Solution Recommendation | Documents",
+      "url": "https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/folder/FE48F2ACCDCDF476E35FAAAFF6C3FF17C1177A968060/_CS_Value_Prop_-_Solution_Recommendation",
+      "date_added": "2022-02-18 12:55:52"
+    },
+    {
+      "index": 8,
+      "global_index": 1597,
+      "domain": "console.aws.amazon.com",
+      "title": "https://console.aws.amazon.com/billing/home#/bills?year=2013&month=3",
+      "url": "https://console.aws.amazon.com/billing/home#/bills?year=2013&month=3",
+      "date_added": "2022-02-18 20:51:50"
+    },
+    {
+      "index": 9,
+      "global_index": 1598,
+      "domain": "docs.google.com",
+      "title": "payments_due_2022-02-19T01_42_13.700Z-1 - Google Sheets",
+      "url": "https://docs.google.com/spreadsheets/d/10kzLEV0rsoIqZsTrZE4nUMaMetllCh8yig0LxStxAZA/edit#gid=822078073",
+      "date_added": "2022-02-18 21:13:30"
+    },
+    {
+      "index": 10,
+      "global_index": 1599,
+      "domain": "zerofriction.io",
+      "title": "Deconstructing the Parity Multi-Signature Wallet Hack",
+      "url": "https://www.zerofriction.io/post/deconstructing-the-parity-multi-signature-wallet-hack",
+      "date_added": "2022-02-18 23:20:11"
+    }
+  ]
+}

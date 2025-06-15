@@ -1,0 +1,86 @@
+{
+  "batch_number": 100,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 990,
+      "domain": "news.google.com",
+      "title": "Google News",
+      "url": "https://news.google.com/home?hl=en-US&gl=US&ceid=US%3Aen",
+      "date_added": "2023-04-27 10:14:59"
+    },
+    {
+      "index": 2,
+      "global_index": 991,
+      "domain": "nypost.com",
+      "title": "New ChatGPT tool ensures you’re never caught for using AI",
+      "url": "https://nypost.com/2023/04/26/new-chatgpt-tool-ensures-youre-never-caught-for-using-ai/",
+      "date_added": "2023-04-27 10:14:59"
+    },
+    {
+      "index": 3,
+      "global_index": 992,
+      "domain": "admin.google.com",
+      "title": "Admin console",
+      "url": "https://admin.google.com/u/2/?pli=1&rapt=AEjHL4M5zc3KGGJ5uVZu2bpDyYDb1roD_sH2oBu8Gqq6oumZUNuKhpoEQRAvMhJruX4XkHQ8ZA-QL8pxuY-8fgQsWBWSyPwJZg",
+      "date_added": "2023-04-27 10:14:59"
+    },
+    {
+      "index": 4,
+      "global_index": 993,
+      "domain": "sites.google.com",
+      "title": "Google Sites",
+      "url": "https://sites.google.com/u/0/new?pli=1&authuser=0",
+      "date_added": "2023-04-27 10:14:59"
+    },
+    {
+      "index": 5,
+      "global_index": 994,
+      "domain": "drive.google.com",
+      "title": "My Drive - Google Drive",
+      "url": "https://drive.google.com/drive/u/2/my-drive",
+      "date_added": "2023-04-27 10:14:59"
+    },
+    {
+      "index": 6,
+      "global_index": 995,
+      "domain": "meet.google.com",
+      "title": "Google Meet",
+      "url": "https://meet.google.com/?authuser=2",
+      "date_added": "2023-04-27 10:14:59"
+    },
+    {
+      "index": 7,
+      "global_index": 996,
+      "domain": "calendar.google.com",
+      "title": "GRAIL, LLC. - Calendar - Week of April 23, 2023",
+      "url": "https://calendar.google.com/calendar/u/1/r/week",
+      "date_added": "2023-04-27 10:14:59"
+    },
+    {
+      "index": 8,
+      "global_index": 997,
+      "domain": "sites.google.com",
+      "title": "NorCal Eco Divers",
+      "url": "https://sites.google.com/d/1-SVpGhev-pOMj-r_r3OZean9VAhFcylA/p/1XKi6LFsgHAMsX4i3G0dXphh0fReuLFnb/edit",
+      "date_added": "2023-04-27 10:14:59"
+    },
+    {
+      "index": 9,
+      "global_index": 998,
+      "domain": "marine.weather.gov",
+      "title": "Coastal Waters Forecast for Monterey Bay (PZZ535) (Text-Only)",
+      "url": "https://marine.weather.gov/MapClick.php?zoneid=PZZ535&FcstType=dwml&mp=0&TextType=1",
+      "date_added": "2023-04-27 10:14:59"
+    },
+    {
+      "index": 10,
+      "global_index": 999,
+      "domain": "accounts.google.com",
+      "title": "accounts.google.com",
+      "url": "https://accounts.google.com/restart?continue=https%3A%2F%2Fsites.google.com%2Fcasteel.us%2Fnorcal-eco-divers%2Fcalendar-booking&flowName=GlifWebSignIn&flowEntry=AccountChooser",
+      "date_added": "2023-04-27 10:14:59"
+    }
+  ]
+}

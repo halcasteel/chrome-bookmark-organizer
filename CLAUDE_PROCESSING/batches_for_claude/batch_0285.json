@@ -1,0 +1,86 @@
+{
+  "batch_number": 285,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 2840,
+      "domain": "arxiv.org",
+      "title": "2305.16582v2.pdf",
+      "url": "https://arxiv.org/pdf/2305.16582",
+      "date_added": "2024-11-28 09:59:52"
+    },
+    {
+      "index": 2,
+      "global_index": 2841,
+      "domain": "cameronrwolfe.substack.com",
+      "title": "Graph-Based Prompting and Reasoning with Language Models",
+      "url": "https://cameronrwolfe.substack.com/p/graph-based-prompting-and-reasoning",
+      "date_added": "2024-11-28 09:59:56"
+    },
+    {
+      "index": 3,
+      "global_index": 2842,
+      "domain": "content.dataiku.com",
+      "title": "An Architecture Paradigm for LLM-Powered Applications: The Why and How of an LLM Mesh",
+      "url": "https://content.dataiku.com/o-reilly-tech-guide/architecture-paradigm-llm-apps",
+      "date_added": "2024-12-01 17:35:04"
+    },
+    {
+      "index": 4,
+      "global_index": 2843,
+      "domain": "pages.dataiku.com",
+      "title": "The LLM Mesh: A Practical Guide to Using Generative AI in the Enterprise",
+      "url": "https://pages.dataiku.com/oreilly-tech-guide-llm-mesh?_gl=1*rgsbgt*_gcl_aw*R0NMLjE3MzI4ODI3ODguQ2p3S0NBaUE2YVc2QmhCcUVpd0E2S3pEYzNCQkVFeUo2S0IwNnlGZm1lMWpLTzZUNWZaakhKX3ZDUWhmT2ZtUFQwcHRJZU9EWVNoNmdob0NyV0lRQXZEX0J3RQ..*_gcl_au*OTcxMTkzOTgyLjE3MzI4ODI2NDc.*_ga*MTE4Nzk4ODQ2NC4xNzMyODgyNjQ4*_ga_B3YXRYMY48*MTczMjg4MjY0Ny4xLjEuMTczMjg4NDUwMy41OC4wLjA.",
+      "date_added": "2024-12-01 17:35:14"
+    },
+    {
+      "index": 5,
+      "global_index": 2844,
+      "domain": "where-am-i.co",
+      "title": "WHERE AM I - See My Location Now on Google Maps",
+      "url": "https://www.where-am-i.co/",
+      "date_added": "2024-12-12 15:44:05"
+    },
+    {
+      "index": 6,
+      "global_index": 2845,
+      "domain": "chatgpt.com",
+      "title": "EXPERT AI PROMPT ENGINEER - Use Case Prioritization Guide",
+      "url": "https://chatgpt.com/c/6768c6c2-d534-800b-8bc6-7c388ff0804b",
+      "date_added": "2024-12-25 12:57:15"
+    },
+    {
+      "index": 7,
+      "global_index": 2846,
+      "domain": "docs.google.com",
+      "title": "Modular Agentic Design 2024-12-23 v1.0 HC - Google Docs",
+      "url": "https://docs.google.com/document/d/1KXEHmJVOV-G4ay7Lo0MpQq3C_dSSHVzdxjGYkjOI4vU/edit?tab=t.0",
+      "date_added": "2024-12-25 12:57:15"
+    },
+    {
+      "index": 8,
+      "global_index": 2847,
+      "domain": "perplexity.ai",
+      "title": "detailed analysis of neo4j vs arongofb",
+      "url": "https://www.perplexity.ai/search/detailed-analysis-of-neo4j-vs-orQBtR1HTyuonwsAbGa94A",
+      "date_added": "2024-12-25 12:57:15"
+    },
+    {
+      "index": 9,
+      "global_index": 2848,
+      "domain": "arangodb.com",
+      "title": "Comparing ArangoDB AQL to Neo4j Cypher - ArangoDB",
+      "url": "https://arangodb.com/learn/graphs/comparing-arangodb-aql-neo4j-cypher/",
+      "date_added": "2024-12-25 12:57:15"
+    },
+    {
+      "index": 10,
+      "global_index": 2849,
+      "domain": "drive.google.com",
+      "title": "0000 - 00 ANGENTIC SYSTEM AGENT ATTIBUTE LIBRARIES ANALYSIS - Google Drive",
+      "url": "https://drive.google.com/drive/u/0/folders/1RiQdCVNTUMjfNfEga2DwbLRUQfE5xjCH",
+      "date_added": "2024-12-25 12:57:15"
+    }
+  ]
+}

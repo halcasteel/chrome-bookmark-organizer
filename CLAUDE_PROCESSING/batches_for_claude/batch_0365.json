@@ -1,0 +1,86 @@
+{
+  "batch_number": 365,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 3640,
+      "domain": "ycombinator.com",
+      "title": "The 18 mistakes that kill startups : YC Startup Library | Y Combinator",
+      "url": "https://www.ycombinator.com/library/8t-the-18-mistakes-that-kill-startups",
+      "date_added": "2025-01-17 21:44:34"
+    },
+    {
+      "index": 2,
+      "global_index": 3641,
+      "domain": "chatgpt.com",
+      "title": "ChatGPT",
+      "url": "https://chatgpt.com/c/677cecbe-0900-800b-9f3f-5d67f9f356c6",
+      "date_added": "2025-01-17 21:44:34"
+    },
+    {
+      "index": 3,
+      "global_index": 3642,
+      "domain": "thevccorner.com",
+      "title": "The Ultimate Guide to Finding Investors for Your Startup 🚀",
+      "url": "https://www.thevccorner.com/p/the-ultimate-investor-list-of-lists",
+      "date_added": "2025-01-17 21:44:34"
+    },
+    {
+      "index": 4,
+      "global_index": 3643,
+      "domain": "odoo.com",
+      "title": "Login | Odoo",
+      "url": "https://www.odoo.com/web/login?redirect=forum/help-1/where-russian-localization-50207",
+      "date_added": "2025-01-17 21:44:34"
+    },
+    {
+      "index": 5,
+      "global_index": 3644,
+      "domain": "github.com",
+      "title": "ai-az1/VENDORS: Documents that should be stored related to Vendors, Communications, Contracts, NDAs",
+      "url": "https://github.com/ai-az1/VENDORS/tree/main",
+      "date_added": "2025-01-18 21:49:36"
+    },
+    {
+      "index": 6,
+      "global_index": 3645,
+      "domain": "github.com",
+      "title": "ai-az1/formatGDOC: Google Apps Script to format documents in a standardized way with header, footer, title, subtitle and type",
+      "url": "https://github.com/ai-az1/formatGDOC",
+      "date_added": "2025-01-18 21:49:36"
+    },
+    {
+      "index": 7,
+      "global_index": 3646,
+      "domain": "drive.google.com",
+      "title": "Futureprise MVP Introduction - Google Drive",
+      "url": "https://drive.google.com/drive/u/3/folders/1Py61kRL21aNlDgpXJK35qpazHd9NF2ZL",
+      "date_added": "2025-01-18 21:49:36"
+    },
+    {
+      "index": 8,
+      "global_index": 3647,
+      "domain": "docs.google.com",
+      "title": "az1.ai Product Features v.2.0 - Google Docs",
+      "url": "https://docs.google.com/document/d/1p0uYsC5LnDS5N0tkhbSqm7Ep1T1pp3QGOuENLwInMfU/edit?tab=t.0",
+      "date_added": "2025-01-18 21:49:36"
+    },
+    {
+      "index": 9,
+      "global_index": 3648,
+      "domain": "docs.google.com",
+      "title": "az1.ai Product Features v.2.0 Website - Google Docs",
+      "url": "https://docs.google.com/document/d/1SzSjamIxY3IOiINFeb9a-vLRJW13YMVYfAXe7gw2Atg/edit?tab=t.0#heading=h.42mm9skub22z",
+      "date_added": "2025-01-18 21:49:36"
+    },
+    {
+      "index": 10,
+      "global_index": 3649,
+      "domain": "docs.google.com",
+      "title": "FORMATTED_COPY_test8 - Google Docs",
+      "url": "https://docs.google.com/document/d/1spd9pWJ45YcqptBukm8ps6dgQIj886DRzJNSZ_s3JpY/edit?tab=t.0",
+      "date_added": "2025-01-18 21:49:36"
+    }
+  ]
+}

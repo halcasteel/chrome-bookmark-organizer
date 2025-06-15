@@ -10,8 +10,9 @@ import type {
   SearchOptions,
   UploadProgressCallback,
   ApiError,
-  AuthResponse
-} from '@/types'
+  AuthResponse,
+  User
+} from '../types'
 
 // Get API URL from runtime config or environment variable
 const getApiUrl = (): string => {
@@ -113,11 +114,33 @@ export const importService = {
     })
   },
   
+  uploadStreaming: (file: File, onProgress?: UploadProgressCallback) => {
+    const formData = new FormData()
+    formData.append('file', file)
+    formData.append('streaming', 'true')
+    
+    return api.post<{ importId: string; status: string }>('/import/upload/streaming', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+      onUploadProgress: onProgress,
+    })
+  },
+  
   getHistory: () => 
-    api.get<ImportHistory[]>('/import/history'),
+    api.get<{ imports: ImportHistory[] }>('/import/history').then(res => res.data.imports),
   
   getStatus: (importId: string) => 
     api.get<ImportHistory>(`/import/status/${importId}`),
+  
+  getProgress: (importId: string) =>
+    api.get<{ 
+      importId: string
+      phase: string
+      percentComplete: number
+      chunksProcessed: number
+      chunksQueued: number
+      bookmarksImported: number
+      totalBookmarks: number
+    }>(`/import/progress/${importId}`),
 } as const
 
 // Tag service with strict types
@@ -138,7 +161,7 @@ export const tagService = {
 // Collection service with strict types
 export const collectionService = {
   getAll: () => 
-    api.get<Collection[]>('/collections'),
+    api.get<{ collections: Collection[] }>('/collections'),
   
   getOne: (id: string) => 
     api.get<Collection>(`/collections/${id}`),
@@ -183,5 +206,3 @@ export const authService = {
     api.post<{ recoveryCodes: string[]; message: string }>('/auth/recovery-codes'),
 } as const
 
-// Import User type for auth service
-import type { User } from '@/types'

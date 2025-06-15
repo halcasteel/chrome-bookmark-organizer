@@ -1,0 +1,86 @@
+{
+  "batch_number": 156,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 1550,
+      "domain": "tyreglider.co.uk",
+      "title": "How To Use - Tyre Glider",
+      "url": "https://tyreglider.co.uk/how-to-use/",
+      "date_added": "2022-01-17 18:35:45"
+    },
+    {
+      "index": 2,
+      "global_index": 1551,
+      "domain": "polkadot.network",
+      "title": "Technology | Polkadot",
+      "url": "https://polkadot.network/technology/",
+      "date_added": "2022-01-18 20:39:54"
+    },
+    {
+      "index": 3,
+      "global_index": 1552,
+      "domain": "kusama.network",
+      "title": "Kusama, Polkadot's Canary Network",
+      "url": "https://kusama.network/",
+      "date_added": "2022-01-18 20:50:06"
+    },
+    {
+      "index": 4,
+      "global_index": 1553,
+      "domain": "reddit.com",
+      "title": "How to build a custom Polkadot-compatible chain in Go with Gossamer : golang",
+      "url": "https://www.reddit.com/r/golang/comments/nsfrrt/how_to_build_a_custom_polkadotcompatible_chain_in/",
+      "date_added": "2022-01-18 20:52:00"
+    },
+    {
+      "index": 5,
+      "global_index": 1554,
+      "domain": "heynode.com",
+      "title": "Install Node.js Locally with Node Version Manager (nvm) | heynode.com",
+      "url": "https://heynode.com/tutorial/install-nodejs-locally-nvm/",
+      "date_added": "2022-01-18 21:19:40"
+    },
+    {
+      "index": 6,
+      "global_index": 1555,
+      "domain": "pkg.go.dev",
+      "title": "polkadot package - github.com/trustwallet/blockatlas/platform/polkadot - pkg.go.dev",
+      "url": "https://pkg.go.dev/github.com/trustwallet/blockatlas/platform/polkadot",
+      "date_added": "2022-01-18 21:23:37"
+    },
+    {
+      "index": 7,
+      "global_index": 1556,
+      "domain": "plexusrs.com",
+      "title": "How To Build An Amazing DeFi Team | DeFi Hiring Report",
+      "url": "https://www.plexusrs.com/defi-hiring-report/",
+      "date_added": "2022-01-18 21:39:07"
+    },
+    {
+      "index": 8,
+      "global_index": 1557,
+      "domain": "plexusrs.com",
+      "title": "Demand For Rust Has Skyrocketed: What Role Has Polkadot Played? - Plexus Resource Solutions",
+      "url": "https://www.plexusrs.com/demand-rust-skyrocketed-polkadot/",
+      "date_added": "2022-01-18 21:42:34"
+    },
+    {
+      "index": 9,
+      "global_index": 1558,
+      "domain": "parachains.info",
+      "title": "Polkadot & Kusama ecosystem projects directory",
+      "url": "https://parachains.info/",
+      "date_added": "2022-01-18 22:08:16"
+    },
+    {
+      "index": 10,
+      "global_index": 1559,
+      "domain": "polkadot.network",
+      "title": "Polkadot-lightpaper.pdf",
+      "url": "https://polkadot.network/Polkadot-lightpaper.pdf",
+      "date_added": "2022-01-18 22:08:29"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "batch_number": 247,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 2460,
+      "domain": "github.com",
+      "title": "dual-license-templates/README.md at main · lawndoc/dual-license-templates",
+      "url": "https://github.com/lawndoc/dual-license-templates/blob/main/README.md",
+      "date_added": "2024-10-10 12:36:03"
+    },
+    {
+      "index": 2,
+      "global_index": 2461,
+      "domain": "towardsdatascience.com",
+      "title": "How to Choose the Architecture for Your GenAI Application | by Lak Lakshmanan | Oct, 2024 | Towards Data Science",
+      "url": "https://towardsdatascience.com/how-to-choose-the-architecture-for-your-genai-application-6053e862c457",
+      "date_added": "2024-10-05 16:19:08"
+    },
+    {
+      "index": 3,
+      "global_index": 2462,
+      "domain": "towardsdatascience.com",
+      "title": "Prompt Caching in LLMs: Intuition | by Rodrigo Nader | Oct, 2024 | Towards Data Science",
+      "url": "https://towardsdatascience.com/prompt-caching-in-llms-intuition-5cfc151c4420",
+      "date_added": "2024-10-10 00:37:41"
+    },
+    {
+      "index": 4,
+      "global_index": 2463,
+      "domain": "docs.google.com",
+      "title": "DEFAULT_TEMPLATEv.1.0 MAKE COPY TO USE - Google Docs",
+      "url": "https://docs.google.com/document/d/1jL6ASf1PNBsDquaXkV2TQAwJ_jl6C_OAxFJI4LkhqCI/edit?tab=t.0#heading=h.fmdza8ga3awq",
+      "date_added": "2024-10-09 13:09:01"
+    },
+    {
+      "index": 5,
+      "global_index": 2464,
+      "domain": "finance.yahoo.com",
+      "title": "Why Big Tech is racing to be first to get artificial general intelligence",
+      "url": "https://finance.yahoo.com/video/why-big-tech-racing-first-153009690.html",
+      "date_added": "2024-10-06 20:47:38"
+    },
+    {
+      "index": 6,
+      "global_index": 2465,
+      "domain": "notta.ai",
+      "title": "Notta - AI Meeting Notetaker & Audio Transcription",
+      "url": "https://www.notta.ai/en",
+      "date_added": "2024-10-04 12:32:33"
+    },
+    {
+      "index": 7,
+      "global_index": 2466,
+      "domain": "ebay.com",
+      "title": "The Ocean Sailing Yacht Vols 1 & 2 Donald Street 1st eds 1973 1978 HC/DJ | eBay",
+      "url": "https://www.ebay.com/itm/405225515530",
+      "date_added": "2024-10-04 13:21:30"
+    },
+    {
+      "index": 8,
+      "global_index": 2467,
+      "domain": "marineweather.net",
+      "title": "New Smyrna Beach, FL Forecast :: MarineWeather.net",
+      "url": "https://marineweather.net/city/new-smyrna-beach-fl-weather-forecast",
+      "date_added": "2024-10-04 12:23:46"
+    },
+    {
+      "index": 9,
+      "global_index": 2468,
+      "domain": "marineweather.net",
+      "title": "Marine Weather, Tides, Radar - MarineWeather.net",
+      "url": "https://marineweather.net/",
+      "date_added": "2024-10-04 12:22:48"
+    },
+    {
+      "index": 10,
+      "global_index": 2469,
+      "domain": "nhc.noaa.gov",
+      "title": "National Hurricane Center",
+      "url": "https://www.nhc.noaa.gov/",
+      "date_added": "2024-10-04 11:55:22"
+    }
+  ]
+}

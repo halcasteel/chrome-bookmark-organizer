@@ -1,0 +1,86 @@
+{
+  "batch_number": 138,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 1370,
+      "domain": "trailforks.com",
+      "title": "Serra da Canastra National Park Mountain Biking Trails | Trailforks",
+      "url": "https://www.trailforks.com/region/serra-da-canastra-national-park/?activitytype=1&z=10.6&lat=-20.37053&lon=-46.37655",
+      "date_added": "2022-06-26 02:15:39"
+    },
+    {
+      "index": 2,
+      "global_index": 1371,
+      "domain": "www8.garmin.com",
+      "title": "inReach Mini 2 - Battery Information",
+      "url": "https://www8.garmin.com/manuals/webhelp/GUID-802DEF62-EBB2-463C-8C51-C58FB29F89E3/EN-US/GUID-D9DEA9AC-8107-4A2F-9A4E-E5A0B4A7EC3C.html",
+      "date_added": "2022-06-25 23:54:28"
+    },
+    {
+      "index": 3,
+      "global_index": 1372,
+      "domain": "support.dronelink.com",
+      "title": "Dronelink",
+      "url": "https://support.dronelink.com/hc/en-us",
+      "date_added": "2022-06-25 20:35:24"
+    },
+    {
+      "index": 4,
+      "global_index": 1373,
+      "domain": "www8.garmin.com",
+      "title": "inReach®‎ Mini 2 Owner’s Manual",
+      "url": "https://www8.garmin.com/manuals/webhelp/GUID-802DEF62-EBB2-463C-8C51-C58FB29F89E3/EN-US/inReach_Mini_2_OM_EN-US.pdf",
+      "date_added": "2022-06-25 19:41:46"
+    },
+    {
+      "index": 5,
+      "global_index": 1374,
+      "domain": "www8.garmin.com",
+      "title": "inReach Mini 2 - inReach Mini 2",
+      "url": "https://www8.garmin.com/manuals/webhelp/GUID-802DEF62-EBB2-463C-8C51-C58FB29F89E3/EN-US/GUID-8C1A4336-88EA-4F5F-85BA-261FC173CF7B-homepage.html",
+      "date_added": "2022-06-25 19:39:25"
+    },
+    {
+      "index": 6,
+      "global_index": 1375,
+      "domain": "app.slack.com",
+      "title": "Slack | random | GRAIL",
+      "url": "https://app.slack.com/client/T0KHHUL6M/C0KHJH04X?selected_team_id=T0KHHUL6M",
+      "date_added": "2022-06-17 21:51:43"
+    },
+    {
+      "index": 7,
+      "global_index": 1376,
+      "domain": "wwwapps.ups.com",
+      "title": "Tracking | UPS - United States",
+      "url": "https://wwwapps.ups.com/WebTracking/track?track=yes&trackNums=1Z57E7190393982504&requester=ST/trackdetails",
+      "date_added": "2022-06-16 11:49:51"
+    },
+    {
+      "index": 8,
+      "global_index": 1377,
+      "domain": "192.168.8.1",
+      "title": "GL-MT1300 - Overview - LuCI",
+      "url": "http://192.168.8.1/cgi-bin/luci/",
+      "date_added": "2022-06-11 19:43:14"
+    },
+    {
+      "index": 9,
+      "global_index": 1378,
+      "domain": "my.surfshark.com",
+      "title": "Surfshark: my account",
+      "url": "https://my.surfshark.com/vpn/manual-setup/router",
+      "date_added": "2022-06-11 18:43:20"
+    },
+    {
+      "index": 10,
+      "global_index": 1379,
+      "domain": "support.nordvpn.com",
+      "title": "GL.iNet setup with NordVPN | NordVPN support",
+      "url": "https://support.nordvpn.com/Connectivity/Router/1047409122/GL-iNet-setup-with-NordVPN.htm",
+      "date_added": "2022-06-11 18:43:36"
+    }
+  ]
+}

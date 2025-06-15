@@ -26,9 +26,8 @@ import {
 } from '@chakra-ui/react'
 import { FiSearch, FiExternalLink, FiBookmark } from 'react-icons/fi'
 import { useMutation } from '@tanstack/react-query'
-import { searchService } from '@/services/api'
-import { useDebounce } from '@/hooks/useDebounce'
-import type { SearchResult } from '@/types'
+import { searchService } from '../services/api'
+import type { SearchResult } from '../types'
 
 type SearchType = 'semantic' | 'fulltext'
 
@@ -36,7 +35,16 @@ const Search: React.FC = () => {
   const [query, setQuery] = useState('')
   const [searchType, setSearchType] = useState<SearchType>('semantic')
   const [results, setResults] = useState<SearchResult[]>([])
-  const debouncedQuery = useDebounce(query, 500)
+  const [debouncedQuery, setDebouncedQuery] = useState('')
+  
+  // Debounce implementation
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedQuery(query)
+    }, 500)
+    
+    return () => clearTimeout(timer)
+  }, [query])
   const cardBg = useColorModeValue('white', 'gray.800')
   const hoverBg = useColorModeValue('gray.50', 'gray.700')
 

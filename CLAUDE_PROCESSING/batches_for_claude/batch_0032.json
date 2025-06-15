@@ -1,0 +1,86 @@
+{
+  "batch_number": 32,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 310,
+      "domain": "mycpa.cpa.state.tx.us",
+      "title": "Franchise Tax Account Status Search",
+      "url": "https://mycpa.cpa.state.tx.us/coa/",
+      "date_added": "2025-04-04 22:18:17"
+    },
+    {
+      "index": 2,
+      "global_index": 311,
+      "domain": "ycombinator.com",
+      "title": "Requests for Startups | Y Combinator",
+      "url": "https://www.ycombinator.com/rfs",
+      "date_added": "2025-04-04 21:52:02"
+    },
+    {
+      "index": 3,
+      "global_index": 312,
+      "domain": "docs.google.com",
+      "title": "Y Combinator Aplication Document.docx - Google Docs",
+      "url": "https://docs.google.com/document/d/1-dxsw_iNpwPdaCfDFx4dhea5Kmu5gQeu/edit",
+      "date_added": "2025-04-04 10:58:57"
+    },
+    {
+      "index": 4,
+      "global_index": 313,
+      "domain": "perplexity.ai",
+      "title": "Airteltigo cash",
+      "url": "https://www.perplexity.ai/search/airteltigo-cash-HH.umezxR3.uOMDvdlWOLA",
+      "date_added": "2025-04-04 13:30:29"
+    },
+    {
+      "index": 5,
+      "global_index": 314,
+      "domain": "perplexity.ai",
+      "title": "Telecel cash",
+      "url": "https://www.perplexity.ai/search/telecel-cash-.lf5j7SSRCa4k76LCj27MA",
+      "date_added": "2025-04-04 13:30:24"
+    },
+    {
+      "index": 6,
+      "global_index": 315,
+      "domain": "perplexity.ai",
+      "title": "MTN mobile money",
+      "url": "https://www.perplexity.ai/search/mtn-mobile-money-.q4weBJETq2IEnjx5v.otQ",
+      "date_added": "2025-04-04 13:30:16"
+    },
+    {
+      "index": 7,
+      "global_index": 316,
+      "domain": "cointelegraph.com",
+      "title": "AI and blockchain — A match made in heaven",
+      "url": "https://cointelegraph.com/news/ai-and-blockchain-a-match-made-in-heaven",
+      "date_added": "2025-04-04 11:00:55"
+    },
+    {
+      "index": 8,
+      "global_index": 317,
+      "domain": "nytimes.com",
+      "title": "This A.I. Forecast Predicts Storms Ahead - The New York Times",
+      "url": "https://www.nytimes.com/2025/04/03/technology/ai-futures-project-ai-2027.html",
+      "date_added": "2025-04-04 11:00:47"
+    },
+    {
+      "index": 9,
+      "global_index": 318,
+      "domain": "fastcompany.com",
+      "title": "A new AI-related workforce trend is coming: The Great Recalibration",
+      "url": "https://www.fastcompany.com/91307537/a-new-ai-related-workforce-trend-is-coming-the-great-recalibration",
+      "date_added": "2025-04-04 11:00:40"
+    },
+    {
+      "index": 10,
+      "global_index": 319,
+      "domain": "chatgpt.com",
+      "title": "ENHANCED GPT PROMPT ENGINEER LATEST - AI Curriculum Design Insights",
+      "url": "https://chatgpt.com/g/g-67ec32815ffc8191b2f1fa116f67bdda-enhanced-gpt-prompt-engineer-latest/c/67ed1564-8ec4-800b-a8e1-9991e0634093",
+      "date_added": "2025-04-04 11:00:34"
+    }
+  ]
+}

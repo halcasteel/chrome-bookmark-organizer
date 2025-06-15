@@ -1,0 +1,86 @@
+{
+  "batch_number": 79,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 780,
+      "domain": "devhints.io",
+      "title": "Xpath cheatsheet",
+      "url": "https://devhints.io/xpath",
+      "date_added": "2024-01-01 18:39:14"
+    },
+    {
+      "index": 2,
+      "global_index": 781,
+      "domain": "accordbox.com",
+      "title": "Scrapy Tutorial #7: How to use XPath with Scrapy | AccordBox",
+      "url": "https://www.accordbox.com/blog/scrapy-tutorial-7-how-use-xpath-scrapy/#:~:text=Basic%20points%20of%20Xpath,-First%2C%20we%20can&text=For%20example%2C%20we%20can%20use,to%20extract%20info%20for%20us.",
+      "date_added": "2024-01-01 14:35:52"
+    },
+    {
+      "index": 3,
+      "global_index": 782,
+      "domain": "npmjs.com",
+      "title": "mhtml2html - npm",
+      "url": "https://www.npmjs.com/package/mhtml2html",
+      "date_added": "2023-12-30 11:20:06"
+    },
+    {
+      "index": 4,
+      "global_index": 783,
+      "domain": "datacamp.com",
+      "title": "Introduction to LangChain for Data Engineering & Data Applications | DataCamp",
+      "url": "https://www.datacamp.com/tutorial/introduction-to-lanchain-for-data-engineering-and-data-applications",
+      "date_added": "2023-12-29 01:36:21"
+    },
+    {
+      "index": 5,
+      "global_index": 784,
+      "domain": "huggingface.co",
+      "title": "WebSearch - a Hugging Face Space by vsubu1",
+      "url": "https://huggingface.co/spaces/vsubu1/WebSearch",
+      "date_added": "2023-12-29 01:01:01"
+    },
+    {
+      "index": 6,
+      "global_index": 785,
+      "domain": "medium.com",
+      "title": "Pros and Cons of Streamlit. Streamlit is a good tool to quickly… | by Changsin Lee | MLearning.ai | Medium",
+      "url": "https://medium.com/mlearning-ai/pros-and-cons-of-streamlit-8715ca17cc84",
+      "date_added": "2023-12-29 01:06:26"
+    },
+    {
+      "index": 7,
+      "global_index": 786,
+      "domain": "github.com",
+      "title": "ml-tooling/opyrator: 🪄 Turns your machine learning code into microservices with web API, interactive GUI, and more.",
+      "url": "https://github.com/ml-tooling/opyrator",
+      "date_added": "2023-12-29 00:36:16"
+    },
+    {
+      "index": 8,
+      "global_index": 787,
+      "domain": "lukasmasuch.com",
+      "title": "Lukas Masuch",
+      "url": "https://lukasmasuch.com/",
+      "date_added": "2023-12-29 00:34:24"
+    },
+    {
+      "index": 9,
+      "global_index": 788,
+      "domain": "platform.openai.com",
+      "title": "Usage - OpenAI API",
+      "url": "https://platform.openai.com/usage",
+      "date_added": "2023-12-27 13:15:19"
+    },
+    {
+      "index": 10,
+      "global_index": 789,
+      "domain": "github.com",
+      "title": "LukasMasuch/streamlit-pydantic: 🪄 Auto-generate Streamlit UI from Pydantic Models and Dataclasses.",
+      "url": "https://github.com/lukasmasuch/streamlit-pydantic",
+      "date_added": "2023-12-29 00:31:06"
+    }
+  ]
+}

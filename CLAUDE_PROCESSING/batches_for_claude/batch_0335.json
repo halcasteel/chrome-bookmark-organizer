@@ -1,0 +1,86 @@
+{
+  "batch_number": 335,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 3340,
+      "domain": "chatgpt.com",
+      "title": "ChatGPT - AI writing assistant",
+      "url": "https://chatgpt.com/g/g-hQ3gY7Irv-ai-writing-assistant/c/67bda000-3880-800b-8540-90bc95ea0459",
+      "date_added": "2025-02-25 06:45:57"
+    },
+    {
+      "index": 2,
+      "global_index": 3341,
+      "domain": "drive.google.com",
+      "title": "Odoo - Founder and Platform - Google Drive",
+      "url": "https://drive.google.com/drive/u/1/folders/1aOZStMEwvzy-nmSkKW4nz7VYzIKuz25A",
+      "date_added": "2025-02-25 06:45:57"
+    },
+    {
+      "index": 3,
+      "global_index": 3342,
+      "domain": "docs.google.com",
+      "title": "Odoo - Founder and Platform - an Entrepreneurs Journey - Google Docs",
+      "url": "https://docs.google.com/document/d/11XkchKKUAQ3qLDDtttgS4uEiyCJ9yiTwoP1ZHVqMUfU/edit?tab=t.0",
+      "date_added": "2025-02-25 06:45:57"
+    },
+    {
+      "index": 4,
+      "global_index": 3343,
+      "domain": "huggingface.co",
+      "title": "Hugging Face – The AI community building the future.",
+      "url": "https://huggingface.co/welcome",
+      "date_added": "2025-02-12 05:16:25"
+    },
+    {
+      "index": 5,
+      "global_index": 3344,
+      "domain": "cloud.google.com",
+      "title": "Run GPUs in GKE Standard node pools  |  Google Kubernetes Engine (GKE)  |  Google Cloud",
+      "url": "https://cloud.google.com/kubernetes-engine/docs/how-to/gpus",
+      "date_added": "2025-02-24 12:15:11"
+    },
+    {
+      "index": 6,
+      "global_index": 3345,
+      "domain": "cloud.google.com",
+      "title": "About GPUs in Google Kubernetes Engine (GKE)  |  Google Cloud",
+      "url": "https://cloud.google.com/kubernetes-engine/docs/concepts/gpus",
+      "date_added": "2025-02-24 12:20:21"
+    },
+    {
+      "index": 7,
+      "global_index": 3346,
+      "domain": "arangodbhackathon.devpost.com",
+      "title": "Building the Next-Gen Agentic App with GraphRAG & NVIDIA cuGraph: Build the future of GenAI—unleash the power of graph to drive intelligent, adaptive systems on ArangoDB, redefining AI-driven applications and innovation! *Still time to register!* - Devpost",
+      "url": "https://arangodbhackathon.devpost.com/",
+      "date_added": "2025-02-22 06:27:57"
+    },
+    {
+      "index": 8,
+      "global_index": 3347,
+      "domain": "futuria.ai",
+      "title": "Harnessing Agentic AI: Multi-Modal, Multi-Agent Teams for Enhanced Problem Solving and Process Acceleration in Public and Private Sectors",
+      "url": "https://futuria.ai/industries/",
+      "date_added": "2025-02-21 12:45:22"
+    },
+    {
+      "index": 9,
+      "global_index": 3348,
+      "domain": "accelerate.masschallenge.org",
+      "title": "Startup Dashboard - MassChallenge",
+      "url": "https://accelerate.masschallenge.org/startup/54260/dashboard/",
+      "date_added": "2025-02-18 15:29:11"
+    },
+    {
+      "index": 10,
+      "global_index": 3349,
+      "domain": "az1.ai",
+      "title": "az1-logomark.png (64×64)",
+      "url": "https://az1.ai/images/az1-logomark.png",
+      "date_added": "2025-02-18 13:24:38"
+    }
+  ]
+}

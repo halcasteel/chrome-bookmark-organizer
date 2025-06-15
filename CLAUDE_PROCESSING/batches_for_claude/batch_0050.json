@@ -1,0 +1,86 @@
+{
+  "batch_number": 50,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 490,
+      "domain": "subscription.packtpub.com",
+      "title": "Packt Subscription | Advance your knowledge in tech",
+      "url": "https://subscription.packtpub.com/",
+      "date_added": "2024-06-12 15:51:00"
+    },
+    {
+      "index": 2,
+      "global_index": 491,
+      "domain": "localhost:8000",
+      "title": "Welcome to 602MD - Transforming Senior Care",
+      "url": "http://localhost:8000/index.html",
+      "date_added": "2024-06-11 23:42:48"
+    },
+    {
+      "index": 3,
+      "global_index": 492,
+      "domain": "t22.caqualityearlylearning.org",
+      "title": "Welcome to CQEL's Title 22 Tool | Title 22 Tool",
+      "url": "https://t22.caqualityearlylearning.org/",
+      "date_added": "2024-06-11 19:17:33"
+    },
+    {
+      "index": 4,
+      "global_index": 493,
+      "domain": "govt.westlaw.com",
+      "title": "View Document - California Code of Regulations",
+      "url": "https://govt.westlaw.com/calregs/Document/IED4E9BFC5B6111EC9451000D3A7C4BC3?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default)",
+      "date_added": "2024-06-11 23:42:27"
+    },
+    {
+      "index": 5,
+      "global_index": 494,
+      "domain": "drive.google.com",
+      "title": "602MD GROUNDWORK - Google Drive",
+      "url": "https://drive.google.com/drive/u/1/folders/12o_eoK-HlaBHy_BlhBzC59Q3zlG4DVoY",
+      "date_added": "2024-06-11 13:50:00"
+    },
+    {
+      "index": 6,
+      "global_index": 495,
+      "domain": "admin.google.com",
+      "title": "Admin console",
+      "url": "https://admin.google.com/u/5/?rapt=AEjHL4NsdyEchIupfPP-Vfp5uV7syLnJLM40M-HUiUTdBSU1wAx82W3jvIT9Q8ePf2qcpZHV_S0n1AR37Lkl_ZFLE2JaTZ02MrXhVyQcGij_s2nW5b4SOac",
+      "date_added": "2024-06-07 19:13:14"
+    },
+    {
+      "index": 7,
+      "global_index": 496,
+      "domain": "docs.google.com",
+      "title": "CREATE BUSINESS FOLDER STRUCTURE - Google Docs",
+      "url": "https://docs.google.com/document/d/11C9bthQoqsqQ5HDxivMZPzqcFtnPe-WQQyI5b93jrHA/edit",
+      "date_added": "2024-06-07 19:11:39"
+    },
+    {
+      "index": 8,
+      "global_index": 497,
+      "domain": "console.cloud.google.com",
+      "title": "Credentials – APIs & Services – CreateBusinessFolde… – Google Cloud console",
+      "url": "https://console.cloud.google.com/apis/credentials?authuser=5&hl=en&project=ambient-shelter-425721-p5",
+      "date_added": "2024-06-07 19:11:29"
+    },
+    {
+      "index": 9,
+      "global_index": 498,
+      "domain": "console.cloud.google.com",
+      "title": "Settings – Dashboard – CreateBusinessFolde… – Google Cloud console",
+      "url": "https://console.cloud.google.com/iam-admin/settings?authuser=2&hl=en&project=ambient-shelter-425721-p5",
+      "date_added": "2024-06-07 18:03:47"
+    },
+    {
+      "index": 10,
+      "global_index": 499,
+      "domain": "cal.com",
+      "title": "Hal Casteel | Cal.com",
+      "url": "https://cal.com/hal.casteel.602md",
+      "date_added": "2024-06-06 22:44:30"
+    }
+  ]
+}

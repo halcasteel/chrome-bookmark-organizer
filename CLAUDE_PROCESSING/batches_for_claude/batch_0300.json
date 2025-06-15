@@ -1,0 +1,86 @@
+{
+  "batch_number": 300,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 2990,
+      "domain": "music.amazon.com",
+      "title": "music.amazon.com/?ref_=pe_125687630_1167681090",
+      "url": "https://music.amazon.com/?ref_=pe_125687630_1167681090",
+      "date_added": "2025-01-01 16:44:26"
+    },
+    {
+      "index": 2,
+      "global_index": 2991,
+      "domain": "music.amazon.com",
+      "title": "Play Nashville Skyline by Bob Dylan on Amazon Music Unlimited",
+      "url": "https://music.amazon.com/albums/B00138H1PK",
+      "date_added": "2025-01-01 16:44:26"
+    },
+    {
+      "index": 3,
+      "global_index": 2992,
+      "domain": "github.com",
+      "title": "self-developing/notebooks/competitor-analyst.ipynb at main · ai-az1/self-developing",
+      "url": "https://github.com/ai-az1/self-developing/blob/main/notebooks/competitor-analyst.ipynb",
+      "date_added": "2025-01-01 16:44:26"
+    },
+    {
+      "index": 4,
+      "global_index": 2993,
+      "domain": "github.com",
+      "title": "formatGDOC/formatGDOC.3.0.js at main · ai-az1/formatGDOC",
+      "url": "https://github.com/ai-az1/formatGDOC/blob/main/formatGDOC.3.0.js",
+      "date_added": "2025-01-01 16:44:26"
+    },
+    {
+      "index": 5,
+      "global_index": 2994,
+      "domain": "myaccount.google.com",
+      "title": "Google Account",
+      "url": "https://myaccount.google.com/u/4/?utm_source=YouTubeWeb&tab=rk&utm_medium=act&gar=WzgwLCIyMzMzODciXQ&tab=rk&hl=en",
+      "date_added": "2025-01-01 16:44:26"
+    },
+    {
+      "index": 6,
+      "global_index": 2995,
+      "domain": "myaccount.google.com",
+      "title": "Google Account",
+      "url": "https://myaccount.google.com/u/0/?utm_source=YouTubeWeb&tab=rk&utm_medium=act&gar=WzgwLCIyMzMzODciXQ&tab=rk&hl=en&pageId=none&nlr=1",
+      "date_added": "2025-01-01 16:44:26"
+    },
+    {
+      "index": 7,
+      "global_index": 2996,
+      "domain": "studio.youtube.com",
+      "title": "Channel dashboard - YouTube Studio",
+      "url": "https://studio.youtube.com/channel/UCX0o1ZuqlLnGC35H40ViLkw",
+      "date_added": "2025-01-01 16:44:26"
+    },
+    {
+      "index": 8,
+      "global_index": 2997,
+      "domain": "chatgpt.com",
+      "title": "ChatGPT",
+      "url": "https://chatgpt.com/gpts/editor/g-6775aba9a75c81918fb5022f08077816",
+      "date_added": "2025-01-01 16:44:26"
+    },
+    {
+      "index": 9,
+      "global_index": 2998,
+      "domain": "docs.google.com",
+      "title": "az1.ai INVESTMENT to EXIT 4 STRATEGIES - Google Docs",
+      "url": "https://docs.google.com/document/d/1BYNedeQxAA8AOouKZf0n1iWLfDwEHgIAg_zqOKqzbr0/edit?tab=t.0",
+      "date_added": "2025-01-01 06:45:18"
+    },
+    {
+      "index": 10,
+      "global_index": 2999,
+      "domain": "docketai.com",
+      "title": "DocketAI: The World's First AI Sales Engineer",
+      "url": "https://www.docketai.com/",
+      "date_added": "2024-12-30 19:02:53"
+    }
+  ]
+}

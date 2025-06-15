@@ -15,11 +15,9 @@ const pool = new Pool({
   connectionTimeoutMillis: 2000,
 });
 
-// Register pgvector type
-pgvector.registerType(pool);
-
-// Test connection
-pool.on('connect', () => {
+// Register pgvector type and log connection
+pool.on('connect', async (client) => {
+  await pgvector.registerType(client);
   console.log('Database connected successfully');
 });
 

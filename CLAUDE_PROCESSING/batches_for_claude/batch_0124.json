@@ -1,0 +1,86 @@
+{
+  "batch_number": 124,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 1230,
+      "domain": "netsuite.sharepoint.com",
+      "title": "Software Assets",
+      "url": "http://netsuite.sharepoint.com/sites/team-strategicinitiatives/SuiteSuccess%20Asset%20Libraries/Forms/AllItems.aspx?id=%2Fsites%2Fteam-strategicinitiatives%2FSuiteSuccess%20Asset%20Libraries%2FPublished%20Assets_NOAM%2FSoftware&p=true&originalPath=aHR0cHM6Ly9uZXRzdWl0ZS5zaGFyZXBvaW50LmNvbS86Zjovcy90ZWFtLXN0cmF0ZWdpY2luaXRpYXRpdmVzL0VyakQtZnU5MENCR3ZxVXNSY3FLWVhjQkY0YkhQUFJaOXZBN0drejhjYXE0VVE_cnRpbWU9c0FGdGNIQ20xMGc",
+      "date_added": "2020-01-31 12:10:54"
+    },
+    {
+      "index": 2,
+      "global_index": 1231,
+      "domain": "netsuite.sharepoint.com",
+      "title": "Pricing Guidance_All Regions.xlsx",
+      "url": "https://netsuite.sharepoint.com/:x:/r/sites/team-strategicinitiatives/_layouts/15/Doc.aspx?sourcedoc=%7B9ad9b22c-1362-45c9-8186-e350f94341fe%7D&action=default",
+      "date_added": "1969-12-31 19:00:00"
+    },
+    {
+      "index": 3,
+      "global_index": 1232,
+      "domain": "outlook.office365.com",
+      "title": "Outlook NetSuite",
+      "url": "http://outlook.office365.com/calendar/view/day",
+      "date_added": "2020-01-15 14:10:44"
+    },
+    {
+      "index": 4,
+      "global_index": 1233,
+      "domain": "outlook.office365.com",
+      "title": "https://outlook.office365.com/mail/inbox",
+      "url": "http://outlook.office365.com/mail/inbox",
+      "date_added": "2020-01-10 07:00:51"
+    },
+    {
+      "index": 5,
+      "global_index": 1234,
+      "domain": "suitesuccess.publishpath.com",
+      "title": "SuiteSuccess Assets | SuiteSuccess",
+      "url": "https://suitesuccess.publishpath.com/Default.aspx?shortcut=assets",
+      "date_added": "1969-12-31 19:00:00"
+    },
+    {
+      "index": 6,
+      "global_index": 1235,
+      "domain": "netsuite.sharepoint.com",
+      "title": "Software Assets",
+      "url": "https://netsuite.sharepoint.com/sites/team-strategicinitiatives/SuiteSuccess%20Asset%20Libraries/Forms/AllItems.aspx?cid=4d8e35d1-af29-4b19-9fcf-b2c838462f80&RootFolder=%2Fsites%2Fteam-strategicinitiatives%2FSuiteSuccess%20Asset%20Libraries%2FPublished%20Assets_NA%2FSoftware&FolderCTID=0x012000E9AAABBBD2DBC648AE3F29827A1C6A93",
+      "date_added": "1969-12-31 19:00:00"
+    },
+    {
+      "index": 7,
+      "global_index": 1236,
+      "domain": "netsuite.sharepoint.com",
+      "title": "Solution Design Guide_US_SW_EM.docx",
+      "url": "https://netsuite.sharepoint.com/:w:/r/sites/team-strategicinitiatives/_layouts/15/Doc.aspx?sourcedoc=%7BC62D1C8C-1F4B-425C-B3B3-27E08873FA02%7D&file=Solution%20Design%20Guide_US_SW_EM.docx&action=default&mobileredirect=true",
+      "date_added": "1969-12-31 19:00:00"
+    },
+    {
+      "index": 8,
+      "global_index": 1237,
+      "domain": "hub.publishpath.com",
+      "title": "Welcome to the Hub | The Hub",
+      "url": "https://hub.publishpath.com/",
+      "date_added": "1969-12-31 19:00:00"
+    },
+    {
+      "index": 9,
+      "global_index": 1238,
+      "domain": "my.oracle.com",
+      "title": "Holiday",
+      "url": "https://my.oracle.com/site/hr/RegionalSites/U.S./usbenefits/holiday/index.html",
+      "date_added": "2019-11-06 08:48:23"
+    },
+    {
+      "index": 10,
+      "global_index": 1239,
+      "domain": "my.oracle.com",
+      "title": "Global Referral",
+      "url": "https://my.oracle.com/site/hr/Recruiting/GlobalRecruiting/GlobalReferral/index.html",
+      "date_added": "2019-11-14 17:14:35"
+    }
+  ]
+}

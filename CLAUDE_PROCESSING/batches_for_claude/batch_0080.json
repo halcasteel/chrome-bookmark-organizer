@@ -1,0 +1,86 @@
+{
+  "batch_number": 80,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 790,
+      "domain": "app.datacamp.com",
+      "title": "ChatBot workspace",
+      "url": "https://app.datacamp.com/workspace/w/17545ce1-a1fd-442a-be98-54774032f6aa",
+      "date_added": "2023-12-28 22:55:13"
+    },
+    {
+      "index": 2,
+      "global_index": 791,
+      "domain": "clarotvmais.com.br",
+      "title": "Filmes, Séries e Programas de TV Online | Claro tv+",
+      "url": "https://www.clarotvmais.com.br/",
+      "date_added": "2023-12-25 16:25:56"
+    },
+    {
+      "index": 3,
+      "global_index": 792,
+      "domain": "extremelysunnyyk.medium.com",
+      "title": "Rust for Blazing Fast ChatGPT Calls — A Beginner’s Guide | by Yong kang Chia | Nov, 2023 | Medium",
+      "url": "https://extremelysunnyyk.medium.com/rust-for-blazing-fast-chatgpt-calls-a-beginners-guide-to-building-a-leetcode-solver-e42037a83649",
+      "date_added": "2023-12-27 01:31:36"
+    },
+    {
+      "index": 4,
+      "global_index": 793,
+      "domain": "reintech.io",
+      "title": "Building a Real-Time Web App with Rust | Reintech media",
+      "url": "https://reintech.io/blog/building-real-time-web-app-rust",
+      "date_added": "2023-12-26 16:33:20"
+    },
+    {
+      "index": 5,
+      "global_index": 794,
+      "domain": "git-scm.com",
+      "title": "Git - Installing Git",
+      "url": "https://git-scm.com/book/en/v2/Getting-Started-Installing-Git",
+      "date_added": "2023-12-24 08:31:47"
+    },
+    {
+      "index": 6,
+      "global_index": 795,
+      "domain": "github.com",
+      "title": "GitHub",
+      "url": "https://github.com/",
+      "date_added": "2023-12-24 11:37:03"
+    },
+    {
+      "index": 7,
+      "global_index": 796,
+      "domain": "onetcenter.org",
+      "title": "About O*NET at O*NET Resource Center",
+      "url": "https://www.onetcenter.org/overview.html",
+      "date_added": "2023-12-22 12:09:22"
+    },
+    {
+      "index": 8,
+      "global_index": 797,
+      "domain": "services.onetcenter.org",
+      "title": "O*NET Web Services",
+      "url": "https://services.onetcenter.org/",
+      "date_added": "2023-12-22 12:08:29"
+    },
+    {
+      "index": 9,
+      "global_index": 798,
+      "domain": "onetonline.org",
+      "title": "11-3021.00 - Computer and Information Systems Managers",
+      "url": "https://www.onetonline.org/link/summary/11-3021.00",
+      "date_added": "2023-12-22 12:06:53"
+    },
+    {
+      "index": 10,
+      "global_index": 799,
+      "domain": "ilo.org",
+      "title": "Generative AI and Jobs: A global analysis of potential effects on job quantity and quality",
+      "url": "https://www.ilo.org/static/english/intserv/working-papers/wp096/index.html",
+      "date_added": "2023-12-22 11:58:12"
+    }
+  ]
+}

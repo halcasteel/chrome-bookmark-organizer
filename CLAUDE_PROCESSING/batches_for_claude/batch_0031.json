@@ -1,0 +1,86 @@
+{
+  "batch_number": 31,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 300,
+      "domain": "github.com",
+      "title": "ai-az1/llmfp-agentic-application",
+      "url": "https://github.com/ai-az1/llmfp-agentic-application",
+      "date_added": "2025-04-07 12:28:44"
+    },
+    {
+      "index": 2,
+      "global_index": 301,
+      "domain": "localhost:8000",
+      "title": "Markdown Semantic Search",
+      "url": "http://localhost:8000/",
+      "date_added": "2025-04-07 12:28:32"
+    },
+    {
+      "index": 3,
+      "global_index": 302,
+      "domain": "chatgpt.com",
+      "title": "Graph RAG Application Insights",
+      "url": "https://chatgpt.com/c/67f3fb84-a7c0-800b-a131-b02314dbdac1",
+      "date_added": "2025-04-07 12:28:03"
+    },
+    {
+      "index": 4,
+      "global_index": 303,
+      "domain": "sdk.finance",
+      "title": "White-Label FinTech Platform with Source Code: Neobank | Ewallet | Payments | SDK.finance",
+      "url": "https://sdk.finance/",
+      "date_added": "2025-04-06 08:11:29"
+    },
+    {
+      "index": 5,
+      "global_index": 304,
+      "domain": "itexus.com",
+      "title": "Credit Scoring SaaS App for Financial Organizations - Itexus",
+      "url": "https://itexus.com/portfolio/credit-scoring-saas-app-for-financial-organizations/",
+      "date_added": "2025-04-05 21:29:51"
+    },
+    {
+      "index": 6,
+      "global_index": 305,
+      "domain": "incompleteideas.net",
+      "title": "The Bitter Lesson",
+      "url": "http://www.incompleteideas.net/IncIdeas/BitterLesson.html",
+      "date_added": "2025-04-05 19:34:16"
+    },
+    {
+      "index": 7,
+      "global_index": 306,
+      "domain": "windsurf.com",
+      "title": "What is an Agent?",
+      "url": "https://windsurf.com/blog/what-is-an-agent",
+      "date_added": "2025-04-05 19:34:06"
+    },
+    {
+      "index": 8,
+      "global_index": 307,
+      "domain": "windsurf.com",
+      "title": "Cascade | Windsurf (formerly Codeium)",
+      "url": "https://windsurf.com/cascade",
+      "date_added": "2025-04-05 19:33:57"
+    },
+    {
+      "index": 9,
+      "global_index": 308,
+      "domain": "docs.windsurf.com",
+      "title": "Cascade MCP Integration",
+      "url": "https://docs.windsurf.com/windsurf/mcp",
+      "date_added": "2025-04-05 19:33:49"
+    },
+    {
+      "index": 10,
+      "global_index": 309,
+      "domain": "claude.ai",
+      "title": "Analyzing \"The Bitter Lesson\" for AI Architecture - Claude",
+      "url": "https://claude.ai/chat/767cbfb4-5832-47fe-a31c-e2c5a3fdb149",
+      "date_added": "2025-04-05 14:55:35"
+    }
+  ]
+}

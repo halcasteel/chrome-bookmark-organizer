@@ -1,0 +1,86 @@
+{
+  "batch_number": 380,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 3790,
+      "domain": "crunchbase.com",
+      "title": "Crunchbase",
+      "url": "https://www.crunchbase.com/browser-extension-captcha",
+      "date_added": "2025-01-23 10:09:31"
+    },
+    {
+      "index": 2,
+      "global_index": 3791,
+      "domain": "drive.google.com",
+      "title": "AZ1.AI Tech Product Description - Google Drive",
+      "url": "https://drive.google.com/drive/u/3/folders/18gIN7m3AGZDCBusWNeX-3msufNICLr1f",
+      "date_added": "2025-01-23 10:09:31"
+    },
+    {
+      "index": 3,
+      "global_index": 3792,
+      "domain": "drive.google.com",
+      "title": "az1.ai PRODUCT FEATURES (MVP) - Google Drive",
+      "url": "https://drive.google.com/drive/u/3/folders/1rBoC2YS98s5kdaGlgNhF7e2NyAsaiLHl",
+      "date_added": "2025-01-23 10:09:31"
+    },
+    {
+      "index": 4,
+      "global_index": 3793,
+      "domain": "linkedin.com",
+      "title": "(13) Edouard Barbes | LinkedIn",
+      "url": "https://www.linkedin.com/in/edouardbarbes/",
+      "date_added": "2025-01-23 10:09:31"
+    },
+    {
+      "index": 5,
+      "global_index": 3794,
+      "domain": "docs.google.com",
+      "title": "tech-product-description.md - Google Docs",
+      "url": "https://docs.google.com/document/d/1rgcbs_x7pZsFGfPRg_l32WPIjDzyW7bvNqjmh4VXEBI/edit?tab=t.0",
+      "date_added": "2025-01-23 10:09:31"
+    },
+    {
+      "index": 6,
+      "global_index": 3795,
+      "domain": "medium.com",
+      "title": "Cultivating Community: Highlights from Our 2024 Founders Summit | by Anna Shimoda | JetBlue Ventures’ Insights | Medium",
+      "url": "https://medium.com/jetblue-ventures-insights/cultivating-community-highlights-from-our-2024-founders-summit-66a3e1f59986",
+      "date_added": "2025-01-23 10:09:31"
+    },
+    {
+      "index": 7,
+      "global_index": 3796,
+      "domain": "contacts.google.com",
+      "title": "Artem Arakcheev - Google Contacts",
+      "url": "https://contacts.google.com/person/c9166703439659216071",
+      "date_added": "2025-01-23 10:09:31"
+    },
+    {
+      "index": 8,
+      "global_index": 3797,
+      "domain": "perplexity.ai",
+      "title": "Tech Weekend by Founders Village",
+      "url": "https://www.perplexity.ai/search/tech-weekend-by-founders-villa-FnEV2aRUSPSxQwzop4eq9g",
+      "date_added": "2025-01-23 10:09:31"
+    },
+    {
+      "index": 9,
+      "global_index": 3798,
+      "domain": "foundersvillage.co",
+      "title": "Founders Village | The largest active community of Founders and investors in Bay area",
+      "url": "https://www.foundersvillage.co/",
+      "date_added": "2025-01-23 10:09:31"
+    },
+    {
+      "index": 10,
+      "global_index": 3799,
+      "domain": "eventbrite.com",
+      "title": "Tech Weekend by Founders Village | January 2025 | San Francisco Tickets, Thu, Jan 23, 2025 at 4:00 PM | Eventbrite",
+      "url": "https://www.eventbrite.com/e/tech-weekend-by-founders-village-january-2025-san-francisco-tickets-1113339591689?aff=oddtdtcreator",
+      "date_added": "2025-01-23 10:09:31"
+    }
+  ]
+}

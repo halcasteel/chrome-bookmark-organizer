@@ -1,0 +1,86 @@
+{
+  "batch_number": 48,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 470,
+      "domain": "techtarget.com",
+      "title": "What is Pardot? | Definition from TechTarget",
+      "url": "https://www.techtarget.com/whatis/definition/Pardot",
+      "date_added": "2024-12-19 20:22:02"
+    },
+    {
+      "index": 2,
+      "global_index": 471,
+      "domain": "cyberark.com",
+      "title": "Securing Certificates and PKI | CyberArk​",
+      "url": "https://www.cyberark.com/solutions/secure-certificate-management-and-pki/?utm_source=techtarget&utm_medium=paid_display&utm_content=solutions_secure_certificate_management_and_pki&utm_campaign=securing_certificated_lifecycle_management&cq_plac=%7Bplacement%7D&cq_net=%7Bnetwork%7D&cq_plt=gdp",
+      "date_added": "2024-12-19 20:22:02"
+    },
+    {
+      "index": 3,
+      "global_index": 472,
+      "domain": "chatgpt.com",
+      "title": "ChatGPT - EXPERT GPT PROMPT ENGINEER",
+      "url": "https://chatgpt.com/g/g-673d0119b01081919e52d116d1f54e7b-expert-gpt-prompt-engineer/c/67646b6e-4e94-800b-a480-47b932d9bba9",
+      "date_added": "2024-12-19 20:22:02"
+    },
+    {
+      "index": 4,
+      "global_index": 473,
+      "domain": "a16z.com",
+      "title": "AI + a16z | Andreessen Horowitz",
+      "url": "https://a16z.com/ai/",
+      "date_added": "2024-12-19 20:22:02"
+    },
+    {
+      "index": 5,
+      "global_index": 474,
+      "domain": "a16z.com",
+      "title": "Investing in Pomelo Care | Andreessen Horowitz",
+      "url": "https://a16z.com/announcement/investing-in-pomelo-care/",
+      "date_added": "2024-12-19 20:22:02"
+    },
+    {
+      "index": 6,
+      "global_index": 475,
+      "domain": "python.langchain.com",
+      "title": "FAISS — 🦜🔗 LangChain documentation",
+      "url": "https://python.langchain.com/api_reference/community/vectorstores/langchain_community.vectorstores.faiss.FAISS.html",
+      "date_added": "2024-12-19 20:22:02"
+    },
+    {
+      "index": 7,
+      "global_index": 476,
+      "domain": "falkordb.com",
+      "title": "Company Information: Learn About FalkorDB",
+      "url": "https://www.falkordb.com/company/",
+      "date_added": "2024-12-19 20:22:02"
+    },
+    {
+      "index": 8,
+      "global_index": 477,
+      "domain": "claude.ai",
+      "title": "Analyzing JSON Document for Completeness - Claude",
+      "url": "https://claude.ai/chat/490a08de-2c5b-45a0-877c-8cacc7eab9e2",
+      "date_added": "2024-12-19 20:22:02"
+    },
+    {
+      "index": 9,
+      "global_index": 478,
+      "domain": "newtab",
+      "title": "New Tab",
+      "url": "chrome://newtab/",
+      "date_added": "2024-12-19 20:22:02"
+    },
+    {
+      "index": 10,
+      "global_index": 479,
+      "domain": "marcloudconsulting.com",
+      "title": "Ideas For Your Next Pardot Engagement Studio | MarCloud",
+      "url": "https://marcloudconsulting.com/campaign-management/engagement-studio/",
+      "date_added": "2024-12-19 20:22:02"
+    }
+  ]
+}

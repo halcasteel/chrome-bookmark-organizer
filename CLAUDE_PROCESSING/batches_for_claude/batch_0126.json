@@ -1,0 +1,86 @@
+{
+  "batch_number": 126,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 1250,
+      "domain": "pwdreset.corp.netsuite.com",
+      "title": "NS Password change",
+      "url": "https://pwdreset.corp.netsuite.com/RDWeb/Pages/en-US/password.aspx?Error=PasswordSuccess",
+      "date_added": "2020-02-25 09:50:09"
+    },
+    {
+      "index": 2,
+      "global_index": 1251,
+      "domain": "learning.oracle.com",
+      "title": "Oracle - hal.casteel@oracle.com (Harold Casteel)",
+      "url": "https://learning.oracle.com/lmt/lmtLogin.prMenu?in_sessionid=1054193848A03310",
+      "date_added": "2020-03-03 08:49:56"
+    },
+    {
+      "index": 3,
+      "global_index": 1252,
+      "domain": "outlook.office.com",
+      "title": "Mail - Casteel, Hal - Outlook",
+      "url": "https://outlook.office.com/mail/inbox",
+      "date_added": "2020-12-01 13:13:51"
+    },
+    {
+      "index": 4,
+      "global_index": 1253,
+      "domain": "oracle.zoom.us",
+      "title": "Login with SSO - Zoom",
+      "url": "https://oracle.zoom.us/saml/mobile_success?status=success&token=25a05017",
+      "date_added": "2020-12-01 13:13:51"
+    },
+    {
+      "index": 5,
+      "global_index": 1254,
+      "domain": "oracle.zoom.us",
+      "title": "Launch Meeting - Zoom",
+      "url": "https://oracle.zoom.us/j/3212952986?status=success",
+      "date_added": "2020-12-01 13:13:51"
+    },
+    {
+      "index": 6,
+      "global_index": 1255,
+      "domain": "peo-document-repository.appoci.oraclecorp.com",
+      "title": "OraDocs",
+      "url": "http://peo-document-repository.appoci.oraclecorp.com/pages/viewpage.action?spaceKey=AESG&title=Oracle+Document+Cloud+Service+Application+Download",
+      "date_added": "2020-02-07 15:56:55"
+    },
+    {
+      "index": 7,
+      "global_index": 1256,
+      "domain": "my.oracle.com",
+      "title": "https://my.oracle.com/site/fin/gfo/GlobalProcesses/GlobalPayroll/PayrollNew/index.html",
+      "url": "http://my.oracle.com/site/fin/gfo/GlobalProcesses/GlobalPayroll/PayrollNew/index.html",
+      "date_added": "2020-01-15 13:16:12"
+    },
+    {
+      "index": 8,
+      "global_index": 1257,
+      "domain": "oradocs-corp.documents.us2.oraclecloud.com",
+      "title": "Value Prop Solution Rec MASTER April 2020.pptx | Documents",
+      "url": "https://oradocs-corp.documents.us2.oraclecloud.com/documents/fileview/D0D5E249E59A7CA5E0211756F6C3FF17C1177A968060/_Value_Prop_Solution_Rec_MASTER_April_2020.pptx",
+      "date_added": "2020-04-14 08:32:23"
+    },
+    {
+      "index": 9,
+      "global_index": 1258,
+      "domain": "nlcorp.app.netsuite.com",
+      "title": "Home - NetSuite (NetSuite Inc.)",
+      "url": "https://nlcorp.app.netsuite.com/app/center/card.nl?sc=-29&whence=",
+      "date_added": "2020-04-14 08:32:57"
+    },
+    {
+      "index": 10,
+      "global_index": 1259,
+      "domain": "wireless2.fcc.gov",
+      "title": "ULS License - Amateur License - KO4EGQ - Casteel, Harold E",
+      "url": "https://wireless2.fcc.gov/UlsApp/UlsSearch/license.jsp?licKey=4302081",
+      "date_added": "2020-06-15 21:26:27"
+    }
+  ]
+}

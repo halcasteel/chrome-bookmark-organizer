@@ -1,10 +1,12 @@
 import express from 'express';
+import { createServer } from 'http';
 import cors from 'cors';
 import helmet from 'helmet';
 import compression from 'compression';
 import dotenv from 'dotenv';
 import { rateLimit } from 'express-rate-limit';
-import logger, { addRequestId, logHttpRequest } from './utils/logger.js';
+import unifiedLogger from './services/unifiedLogger.js';
+import websocketService from './services/websocketService.js';
 
 // Import routes
 import authRoutes from './routes/auth.js';
@@ -13,6 +15,11 @@ import tagRoutes from './routes/tags.js';
 import collectionRoutes from './routes/collections.js';
 import importRoutes from './routes/import.js';
 import searchRoutes from './routes/search.js';
+import statsRoutes from './routes/stats.js';
+import orchestratorRoutes from './routes/orchestrator.js';
+import adminRoutes from './routes/admin.js';
+import validationRoutes from './routes/validation.js';
+import logRoutes from './routes/logs.js';
 
 // Import middleware
 import { errorHandler } from './middleware/errorHandler.js';
@@ -25,11 +32,8 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Add request ID to all requests
-app.use(addRequestId);
-
-// Log all HTTP requests
-app.use(logHttpRequest);
+// Add unified logging middleware
+app.use(unifiedLogger.expressMiddleware());
 
 // Global middleware
 app.use(helmet());
@@ -48,7 +52,7 @@ const corsOptions = {
     if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
-      logger.warn('CORS request blocked', { origin, allowedOrigins });
+      unifiedLogger.warn('CORS request blocked', { service: 'backend', source: 'cors', origin, allowedOrigins });
       callback(new Error('Not allowed by CORS'));
     }
   },
@@ -80,6 +84,11 @@ app.use('/api/tags', authenticate, tagRoutes);
 app.use('/api/collections', authenticate, collectionRoutes);
 app.use('/api/import', authenticate, importRoutes);
 app.use('/api/search', authenticate, searchRoutes);
+app.use('/api/stats', authenticate, statsRoutes);
+app.use('/api/orchestrator', authenticate, orchestratorRoutes);
+app.use('/api/admin', authenticate, adminRoutes);
+app.use('/api/validation', validationRoutes);
+app.use('/api/logs', logRoutes);
 
 // Public share routes (no auth required)
 app.get('/api/public/collections/:shareToken', async (req, res) => {
@@ -89,36 +98,53 @@ app.get('/api/public/collections/:shareToken', async (req, res) => {
 // Error handling
 app.use(errorHandler);
 
+// Create HTTP server
+const httpServer = createServer(app);
+
+// Initialize WebSocket service
+websocketService.initialize(httpServer);
+
+// Initialize unified logger WebSocket for real-time log streaming
+unifiedLogger.startWebSocketServer(httpServer);
+
+// Register this service with the logger
+unifiedLogger.registerService('backend', {
+  port: PORT,
+  environment: process.env.NODE_ENV || 'development',
+  version: process.env.npm_package_version || '1.0.0'
+});
+
 // Start server
-const server = app.listen(PORT, () => {
-  logger.info('Server started', {
+httpServer.listen(PORT, () => {
+  unifiedLogger.info('Backend server started', {
+    service: 'backend',
+    source: 'server',
     port: PORT,
     environment: process.env.NODE_ENV || 'development',
     database: process.env.DATABASE_URL ? 'Connected' : 'Not configured',
+    redis: process.env.REDIS_URL ? 'Connected' : 'Not configured',
     nodeVersion: process.version,
+    features: {
+      ai: !!process.env.OPENAI_API_KEY,
+      websockets: true,
+      twoFactor: process.env.ENABLE_2FA !== 'false'
+    }
   });
 });
 
 // Handle graceful shutdown
 process.on('SIGTERM', () => {
-  logger.info('SIGTERM signal received: closing HTTP server');
-  server.close(() => {
-    logger.info('HTTP server closed');
+  unifiedLogger.info('SIGTERM signal received: closing HTTP server', {
+    service: 'backend',
+    source: 'process'
+  });
+  httpServer.close(() => {
+    unifiedLogger.info('HTTP server closed', {
+      service: 'backend',
+      source: 'process'
+    });
     process.exit(0);
   });
 });
 
-process.on('unhandledRejection', (reason, promise) => {
-  logger.error('Unhandled Rejection', {
-    reason,
-    promise,
-  });
-});
-
-process.on('uncaughtException', (error) => {
-  logger.error('Uncaught Exception', {
-    error: error.message,
-    stack: error.stack,
-  });
-  process.exit(1);
-});
+// Process error handlers are already in unifiedLogger.js

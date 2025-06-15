@@ -41,3 +41,19 @@ export interface ImportResult {
 }
 
 export type UploadProgressCallback = (progressEvent: AxiosProgressEvent) => void;
+
+export interface DashboardStats {
+  totalBookmarks: number;
+  totalCollections: number;
+  totalTags: number;
+  recentImports: number;
+  bookmarkChange?: number;
+  domainStats?: Array<{
+    domain: string;
+    count: number;
+  }>;
+  recentActivity?: Array<{
+    action: string;
+    timestamp: string;
+  }>;
+}

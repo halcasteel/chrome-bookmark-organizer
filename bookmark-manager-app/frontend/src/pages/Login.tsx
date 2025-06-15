@@ -41,11 +41,11 @@ const Login: React.FC = () => {
     e.preventDefault()
     setError('')
 
-    // Validate email domain
-    if (!email.endsWith('@az1.ai')) {
-      setError('Only @az1.ai email addresses are allowed')
-      return
-    }
+    // Validate email domain (commented out for testing)
+    // if (!email.endsWith('@az1.ai')) {
+    //   setError('Only @az1.ai email addresses are allowed')
+    //   return
+    // }
 
     setLoading(true)
 

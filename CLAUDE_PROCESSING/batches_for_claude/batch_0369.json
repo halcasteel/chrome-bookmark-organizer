@@ -1,0 +1,86 @@
+{
+  "batch_number": 369,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 3680,
+      "domain": "",
+      "title": "view-source:localhost:8000/index.html",
+      "url": "view-source:http://localhost:8000/index.html",
+      "date_added": "2025-02-01 04:18:22"
+    },
+    {
+      "index": 2,
+      "global_index": 3681,
+      "domain": "localhost:8000",
+      "title": "localhost:8000/js/homepage.js",
+      "url": "http://localhost:8000/js/homepage.js",
+      "date_added": "2025-02-01 04:18:22"
+    },
+    {
+      "index": 3,
+      "global_index": 3682,
+      "domain": "drive.google.com",
+      "title": "THRIVESIDE_OFFER-MAPPING - BUSINESS PLAN - Google Drive",
+      "url": "https://drive.google.com/drive/u/6/folders/15L5J-N90Bku5_F_Jq9VkzBN-TN4eDTZe",
+      "date_added": "2025-02-10 23:32:46"
+    },
+    {
+      "index": 4,
+      "global_index": 3683,
+      "domain": "mail.google.com",
+      "title": "Will McKinley - Chat",
+      "url": "https://mail.google.com/chat/u/6/#chat/dm/lBX2VcAAAAE",
+      "date_added": "2025-02-10 23:32:46"
+    },
+    {
+      "index": 5,
+      "global_index": 3684,
+      "domain": "github.com",
+      "title": "az1.ai",
+      "url": "https://github.com/ai-az1",
+      "date_added": "2025-02-10 23:32:46"
+    },
+    {
+      "index": 6,
+      "global_index": 3685,
+      "domain": "gpgtools.org",
+      "title": "GPG Suite",
+      "url": "https://gpgtools.org/",
+      "date_added": "2025-02-10 23:32:46"
+    },
+    {
+      "index": 7,
+      "global_index": 3686,
+      "domain": "qc.vuics.com",
+      "title": "⟨Quantum|Copilot⟩",
+      "url": "https://qc.vuics.com/",
+      "date_added": "2025-02-10 23:32:46"
+    },
+    {
+      "index": 8,
+      "global_index": 3687,
+      "domain": "vuics.com",
+      "title": "Vuics. Voice User Interfaces.",
+      "url": "https://vuics.com/",
+      "date_added": "2025-02-10 23:32:46"
+    },
+    {
+      "index": 9,
+      "global_index": 3688,
+      "domain": "perplexity.ai",
+      "title": "Perplexity",
+      "url": "https://www.perplexity.ai/search/gcp-encryption-key-zNMPfNoCTVOuAUcg4WLQFA",
+      "date_added": "2025-02-10 23:32:46"
+    },
+    {
+      "index": 10,
+      "global_index": 3689,
+      "domain": "drive.google.com",
+      "title": "Home - Google Drive",
+      "url": "https://drive.google.com/drive/u/6/home",
+      "date_added": "2025-02-10 23:32:46"
+    }
+  ]
+}

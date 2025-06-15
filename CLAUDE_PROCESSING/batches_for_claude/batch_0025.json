@@ -1,0 +1,86 @@
+{
+  "batch_number": 25,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 240,
+      "domain": "github.com",
+      "title": "Z3Prover/z3: The Z3 Theorem Prover",
+      "url": "https://github.com/Z3Prover/z3",
+      "date_added": "2025-04-13 22:37:21"
+    },
+    {
+      "index": 2,
+      "global_index": 241,
+      "domain": "az1.ai",
+      "title": "1 new message",
+      "url": "https://az1.ai/product",
+      "date_added": "2025-04-13 18:32:02"
+    },
+    {
+      "index": 3,
+      "global_index": 242,
+      "domain": "claude.ai",
+      "title": "Comparing Neo4j Cypher and ArangoDB AQL Queries - Claude",
+      "url": "https://claude.ai/chat/ed24d887-0ae9-40a7-883b-b1ea0bafcf23",
+      "date_added": "2025-04-13 18:31:33"
+    },
+    {
+      "index": 4,
+      "global_index": 243,
+      "domain": "oanda.com",
+      "title": "Currency Converter | Foreign Exchange Rates | OANDA",
+      "url": "https://www.oanda.com/currency-converter/en/?from=USD&to=BRL&amount=1",
+      "date_added": "2025-04-13 18:21:36"
+    },
+    {
+      "index": 5,
+      "global_index": 244,
+      "domain": "github.com",
+      "title": "constrained-code-output-solution-CYPHER/PROMPTS-for-EXTRACTION/standardized_prompt_examples.md at main · ai-az1/constrained-code-output-solution-CYPHER",
+      "url": "https://github.com/ai-az1/constrained-code-output-solution-CYPHER/blob/main/PROMPTS-for-EXTRACTION/standardized_prompt_examples.md",
+      "date_added": "2025-04-13 06:18:30"
+    },
+    {
+      "index": 6,
+      "global_index": 245,
+      "domain": "chatgpt.com",
+      "title": "Cypher Query Language Basics",
+      "url": "https://chatgpt.com/c/67fb10af-2690-800d-ba0b-093026cb055f",
+      "date_added": "2025-04-13 03:26:18"
+    },
+    {
+      "index": 7,
+      "global_index": 246,
+      "domain": "linkedin.com",
+      "title": "(23) Post | LinkedIn",
+      "url": "https://www.linkedin.com/posts/yoan-sallami_what-is-your-preferred-way-to-generate-with-activity-7316467188050116608-EisW/?utm_source=share&utm_medium=member_android&rcm=ACoAAAZ41sgB3k7zuhezJ4iOAqbyGa3pPaEi5oM",
+      "date_added": "2025-04-13 01:04:55"
+    },
+    {
+      "index": 8,
+      "global_index": 247,
+      "domain": "github.com",
+      "title": "product-value-prop-prompt/README.md at main · ai-az1/product-value-prop-prompt",
+      "url": "https://github.com/ai-az1/product-value-prop-prompt/blob/main/README.md",
+      "date_added": "2025-04-09 18:11:26"
+    },
+    {
+      "index": 9,
+      "global_index": 248,
+      "domain": "localhost:8530",
+      "title": "ArangoDB Web Interface",
+      "url": "http://localhost:8530/_db/contacts_db/_admin/aardvark/index.html#login",
+      "date_added": "2025-04-12 20:31:50"
+    },
+    {
+      "index": 10,
+      "global_index": 249,
+      "domain": "localhost:3003",
+      "title": "Contact Management System",
+      "url": "http://localhost:3003/contacts",
+      "date_added": "2025-04-12 18:31:12"
+    }
+  ]
+}

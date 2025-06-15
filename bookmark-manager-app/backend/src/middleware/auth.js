@@ -13,7 +13,7 @@ export const authenticate = async (req, res, next) => {
     
     // Get user from database
     const result = await query(
-      'SELECT id, email, name, two_factor_enabled, two_factor_verified FROM users WHERE id = $1',
+      'SELECT id, email, name, role, two_factor_enabled, two_factor_verified FROM users WHERE id = $1',
       [decoded.userId]
     );
 
@@ -24,12 +24,13 @@ export const authenticate = async (req, res, next) => {
     const user = result.rows[0];
 
     // Check if user has 2FA enabled and verified
-    if (!user.two_factor_enabled || !user.two_factor_verified) {
-      return res.status(401).json({ 
-        error: '2FA required',
-        requires2FA: true 
-      });
-    }
+    // Commented out - 2FA is now optional
+    // if (!user.two_factor_enabled || !user.two_factor_verified) {
+    //   return res.status(401).json({ 
+    //     error: '2FA required',
+    //     requires2FA: true 
+    //   });
+    // }
 
     // Verify email domain
     if (!user.email.endsWith('@az1.ai')) {

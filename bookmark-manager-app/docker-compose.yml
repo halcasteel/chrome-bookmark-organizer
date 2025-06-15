@@ -19,6 +19,20 @@ services:
       timeout: 5s
       retries: 5
 
+  redis:
+    image: redis:7-alpine
+    container_name: bookmark-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes --maxmemory 512mb --maxmemory-policy allkeys-lru
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   backend:
     build:
       context: ./backend
@@ -31,6 +45,7 @@ services:
       NODE_ENV: ${NODE_ENV:-development}
       PORT: 3001
       DATABASE_URL: postgresql://admin:admin@postgres:5432/bookmark_manager
+      REDIS_URL: redis://redis:6379
       FRONTEND_URL: ${FRONTEND_URL:-http://localhost:5173}
       JWT_SECRET: ${JWT_SECRET:-local-dev-secret}
       OPENAI_API_KEY: ${OPENAI_API_KEY}
@@ -43,6 +58,8 @@ services:
       - bookmark_imports:/app/imports
     depends_on:
       postgres:
+        condition: service_healthy
+      redis:
         condition: service_healthy
     command: npm run dev
 
@@ -98,4 +115,5 @@ services:
 
 volumes:
   postgres_data:
+  redis_data:
   bookmark_imports:

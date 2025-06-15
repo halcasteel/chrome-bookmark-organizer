@@ -1,0 +1,86 @@
+{
+  "batch_number": 239,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 2380,
+      "domain": "claude.ai",
+      "title": "Integrating Human Cognition and AI Frameworks - Claude",
+      "url": "https://claude.ai/chat/4d614132-dc8c-46dc-b1ad-3da067a2f510",
+      "date_added": "2024-12-01 10:08:05"
+    },
+    {
+      "index": 2,
+      "global_index": 2381,
+      "domain": "neo4j.com",
+      "title": "Video: Neo4j Live: HybridAGI – Graph-Powered, Self-Programmable AI - Graph Database & Analytics",
+      "url": "https://neo4j.com/videos/neo4j-live-hybridagi-graph-powered-self-programmable-ai/",
+      "date_added": "2024-11-30 08:36:52"
+    },
+    {
+      "index": 3,
+      "global_index": 2382,
+      "domain": "forbes.com",
+      "title": "Why Anthropic’s Model Context Protocol Is A Big Step In The Evolution Of AI Agents",
+      "url": "https://www.forbes.com/sites/janakirammsv/2024/11/30/why-anthropics-model-context-protocol-is-a-big-step-in-the-evolution-of-ai-agents/",
+      "date_added": "2024-11-30 13:49:53"
+    },
+    {
+      "index": 4,
+      "global_index": 2383,
+      "domain": "docs.google.com",
+      "title": "0000_AI_MESH_WORKS - Google Docs",
+      "url": "https://docs.google.com/document/d/1_umnsaJmiN2XdHqQ2DaZYl6fRyjIRTI2CIgPye3yrg8/edit?tab=t.0#heading=h.k438jvedf7gl",
+      "date_added": "2024-11-30 08:00:59"
+    },
+    {
+      "index": 5,
+      "global_index": 2384,
+      "domain": "discord.com",
+      "title": "(29) Discord | #community | SynaLinks",
+      "url": "https://discord.com/channels/1118241178723291219/1118242341115932722",
+      "date_added": "2024-11-22 19:06:15"
+    },
+    {
+      "index": 6,
+      "global_index": 2385,
+      "domain": "github.com",
+      "title": "SynaLinks/neuro-symbolic-LLMs-handbook: A collection of neuro-symbolic systems, papers and videos",
+      "url": "https://github.com/SynaLinks/neuro-symbolic-LLMs-handbook",
+      "date_added": "2024-11-22 19:04:45"
+    },
+    {
+      "index": 7,
+      "global_index": 2386,
+      "domain": "finance.yahoo.com",
+      "title": "Markets: World Indexes, Futures, Bonds, Currencies, Stocks & ETFs - Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/",
+      "date_added": "2024-11-15 19:16:03"
+    },
+    {
+      "index": 8,
+      "global_index": 2387,
+      "domain": "forum.mattermost.com",
+      "title": "Top topics - Mattermost Discussion Forums",
+      "url": "https://forum.mattermost.com/top?period=monthly",
+      "date_added": "2024-11-17 09:12:33"
+    },
+    {
+      "index": 9,
+      "global_index": 2388,
+      "domain": "docs.restack.io",
+      "title": "Introduction - Restack",
+      "url": "https://docs.restack.io/introduction",
+      "date_added": "2024-11-17 08:57:58"
+    },
+    {
+      "index": 10,
+      "global_index": 2389,
+      "domain": "timeanddate.com",
+      "title": "The Personal World Clock",
+      "url": "https://www.timeanddate.com/worldclock/personal.html",
+      "date_added": "2024-10-31 17:31:37"
+    }
+  ]
+}

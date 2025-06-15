@@ -19,11 +19,12 @@ class ImportService {
   async importFromFile(userId, filePath) {
     logInfo('Starting bookmark import', { userId, filePath });
     
+    let importId;
     try {
       // Create import history record
-      const importId = uuidv4();
+      importId = uuidv4();
       await db.query(
-        `INSERT INTO import_history (id, user_id, file_name, status, total_count) 
+        `INSERT INTO import_history (id, user_id, filename, status, total_count) 
          VALUES ($1, $2, $3, $4, $5)`,
         [importId, userId, path.basename(filePath), 'processing', 0]
       );
@@ -223,8 +224,9 @@ class ImportService {
    */
   async getImportHistory(userId) {
     const result = await db.query(
-      `SELECT id, file_name, status, total_count, processed_count, 
-              created_at, completed_at
+      `SELECT id, filename, status, total_count as total_bookmarks, 
+              processed_count as new_bookmarks, 
+              created_at as started_at, completed_at
        FROM import_history
        WHERE user_id = $1
        ORDER BY created_at DESC

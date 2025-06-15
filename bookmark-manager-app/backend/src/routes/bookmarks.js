@@ -1,6 +1,7 @@
 import express from 'express';
-import db from '../db/index.js';
+import { query, getClient } from '../db/index.js';
 import { logInfo, logError } from '../utils/logger.js';
+import orchestratorService from '../services/orchestratorService.js';
 
 const router = express.Router();
 
@@ -10,61 +11,93 @@ const router = express.Router();
  */
 router.get('/', async (req, res) => {
   try {
-    const { page = 1, limit = 20, search, category, isDeadLink } = req.query;
+    const { page = 1, limit = 20, search, category, isDeadLink, userId } = req.query;
     const offset = (page - 1) * limit;
     
-    let query = `
+    // Admin can view all bookmarks or filter by userId
+    const isAdmin = req.user.role === 'admin';
+    const targetUserId = isAdmin && userId ? userId : req.user.id;
+    
+    let sql = `
       SELECT b.*, 
              bm.category, 
              bm.subcategory,
-             array_agg(DISTINCT t.name) AS tags
+             array_agg(DISTINCT t.name) AS tags,
+             u.email as user_email
       FROM bookmarks b
       LEFT JOIN bookmark_metadata bm ON b.id = bm.bookmark_id
       LEFT JOIN bookmark_tags bt ON b.id = bt.bookmark_id
       LEFT JOIN tags t ON bt.tag_id = t.id
-      WHERE b.user_id = $1 AND b.is_deleted = false
+      LEFT JOIN users u ON b.user_id = u.id
+      WHERE b.is_deleted = false
     `;
     
-    const params = [req.user.userId];
-    let paramIndex = 2;
+    const params = [];
+    let paramIndex = 1;
+    
+    // If not admin or if admin wants specific user's bookmarks
+    if (!isAdmin || userId) {
+      sql += ` AND b.user_id = $${paramIndex}`;
+      params.push(targetUserId);
+      paramIndex++;
+    }
     
     if (search) {
-      query += ` AND (b.title ILIKE $${paramIndex} OR b.description ILIKE $${paramIndex} OR b.url ILIKE $${paramIndex})`;
+      sql += ` AND (b.title ILIKE $${paramIndex} OR b.description ILIKE $${paramIndex} OR b.url ILIKE $${paramIndex})`;
       params.push(`%${search}%`);
       paramIndex++;
     }
     
     if (category) {
-      query += ` AND bm.category = $${paramIndex}`;
+      sql += ` AND bm.category = $${paramIndex}`;
       params.push(category);
       paramIndex++;
     }
     
     if (isDeadLink !== undefined) {
-      query += ` AND b.is_dead = $${paramIndex}`;
+      sql += ` AND b.is_dead = $${paramIndex}`;
       params.push(isDeadLink === 'true');
       paramIndex++;
     }
     
-    query += ` GROUP BY b.id, bm.category, bm.subcategory`;
-    query += ` ORDER BY b.created_at DESC`;
-    query += ` LIMIT $${paramIndex} OFFSET $${paramIndex + 1}`;
+    sql += ` GROUP BY b.id, bm.category, bm.subcategory, u.email`;
+    sql += ` ORDER BY b.created_at DESC`;
+    sql += ` LIMIT $${paramIndex} OFFSET $${paramIndex + 1}`;
     params.push(limit, offset);
     
-    const result = await db.query(query, params);
+    const result = await query(sql, params);
     
     // Get total count
-    const countQuery = `
+    let countSql = `
       SELECT COUNT(DISTINCT b.id) as total
       FROM bookmarks b
       LEFT JOIN bookmark_metadata bm ON b.id = bm.bookmark_id
-      WHERE b.user_id = $1 AND b.is_deleted = false
-      ${search ? `AND (b.title ILIKE $2 OR b.description ILIKE $2 OR b.url ILIKE $2)` : ''}
-      ${category ? `AND bm.category = $${search ? 3 : 2}` : ''}
-      ${isDeadLink !== undefined ? `AND b.is_dead = $${params.length - 1}` : ''}
+      WHERE b.is_deleted = false
     `;
     
-    const countResult = await db.query(countQuery, params.slice(0, -2));
+    const countParams = params.slice(0, -2); // Remove limit and offset
+    
+    // Apply the same filters as the main query
+    if (!isAdmin || userId) {
+      countSql += ` AND b.user_id = $1`;
+    }
+    
+    if (search) {
+      const searchIndex = (!isAdmin || userId) ? 2 : 1;
+      countSql += ` AND (b.title ILIKE $${searchIndex} OR b.description ILIKE $${searchIndex} OR b.url ILIKE $${searchIndex})`;
+    }
+    
+    if (category) {
+      const categoryIndex = params.indexOf(category) + 1;
+      countSql += ` AND bm.category = $${categoryIndex}`;
+    }
+    
+    if (isDeadLink !== undefined) {
+      const deadLinkIndex = params.indexOf(isDeadLink === 'true') + 1;
+      countSql += ` AND b.is_dead = $${deadLinkIndex}`;
+    }
+    
+    const countResult = await query(countSql, countParams);
     const total = parseInt(countResult.rows[0]?.total || 0);
     
     res.json({
@@ -77,7 +110,7 @@ router.get('/', async (req, res) => {
       }
     });
   } catch (error) {
-    logError(error, { context: 'GET /api/bookmarks', userId: req.user.userId });
+    logError(error, { context: 'GET /api/bookmarks', userId: req.user.id });
     res.status(500).json({ error: 'Failed to fetch bookmarks' });
   }
 });
@@ -94,7 +127,7 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ error: 'URL and title are required' });
     }
     
-    const client = await db.getClient();
+    const client = await getClient();
     
     try {
       await client.query('BEGIN');
@@ -104,7 +137,7 @@ router.post('/', async (req, res) => {
         `INSERT INTO bookmarks (user_id, url, title, description, created_at)
          VALUES ($1, $2, $3, $4, CURRENT_TIMESTAMP)
          RETURNING *`,
-        [req.user.userId, url, title, description]
+        [req.user.id, url, title, description]
       );
       
       const bookmark = bookmarkResult.rows[0];
@@ -118,7 +151,7 @@ router.post('/', async (req, res) => {
              VALUES ($1, $2)
              ON CONFLICT (name, user_id) DO UPDATE SET name = EXCLUDED.name
              RETURNING id`,
-            [tagName.toLowerCase(), req.user.userId]
+            [tagName.toLowerCase(), req.user.id]
           );
           
           // Link tag to bookmark
@@ -139,7 +172,17 @@ router.post('/', async (req, res) => {
       
       await client.query('COMMIT');
       
-      logInfo('Bookmark created', { bookmarkId: bookmark.id, userId: req.user.userId });
+      // Queue the bookmark for validation and enrichment using orchestrator
+      await orchestratorService.startWorkflow('standard', [bookmark.id], {
+        userId: req.user.id,
+        priority: 'normal'
+      });
+      
+      logInfo('Bookmark created and queued for validation workflow', { 
+        bookmarkId: bookmark.id, 
+        userId: req.user.id 
+      });
+      
       res.status(201).json(bookmark);
       
     } catch (error) {
@@ -149,8 +192,52 @@ router.post('/', async (req, res) => {
       client.release();
     }
   } catch (error) {
-    logError(error, { context: 'POST /api/bookmarks', userId: req.user.userId });
+    logError(error, { context: 'POST /api/bookmarks', userId: req.user.id });
     res.status(500).json({ error: 'Failed to create bookmark' });
+  }
+});
+
+/**
+ * GET /api/bookmarks/:id
+ * Get a single bookmark by ID
+ */
+router.get('/:id', async (req, res) => {
+  try {
+    const bookmarkId = req.params.id;
+    const isAdmin = req.user.role === 'admin';
+    
+    let sql = `SELECT b.*, 
+              bm.category, 
+              bm.subcategory,
+              array_agg(DISTINCT t.name) AS tags,
+              u.email as user_email
+       FROM bookmarks b
+       LEFT JOIN bookmark_metadata bm ON b.id = bm.bookmark_id
+       LEFT JOIN bookmark_tags bt ON b.id = bt.bookmark_id
+       LEFT JOIN tags t ON bt.tag_id = t.id
+       LEFT JOIN users u ON b.user_id = u.id
+       WHERE b.id = $1 AND b.is_deleted = false`;
+    
+    const params = [bookmarkId];
+    
+    // Non-admin users can only see their own bookmarks
+    if (!isAdmin) {
+      sql += ' AND b.user_id = $2';
+      params.push(req.user.id);
+    }
+    
+    sql += ' GROUP BY b.id, bm.category, bm.subcategory, u.email';
+    
+    const result = await query(sql, params);
+    
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: 'Bookmark not found' });
+    }
+    
+    res.json(result.rows[0]);
+  } catch (error) {
+    logError(error, { context: 'GET /api/bookmarks/:id', userId: req.user.id });
+    res.status(500).json({ error: 'Failed to get bookmark' });
   }
 });
 
@@ -163,14 +250,14 @@ router.put('/:id', async (req, res) => {
     const { title, description, tags } = req.body;
     const bookmarkId = req.params.id;
     
-    const result = await db.query(
+    const result = await query(
       `UPDATE bookmarks 
        SET title = COALESCE($1, title),
            description = COALESCE($2, description),
            updated_at = CURRENT_TIMESTAMP
        WHERE id = $3 AND user_id = $4
        RETURNING *`,
-      [title, description, bookmarkId, req.user.userId]
+      [title, description, bookmarkId, req.user.id]
     );
     
     if (result.rows.length === 0) {
@@ -179,7 +266,7 @@ router.put('/:id', async (req, res) => {
     
     res.json(result.rows[0]);
   } catch (error) {
-    logError(error, { context: 'PUT /api/bookmarks/:id', userId: req.user.userId });
+    logError(error, { context: 'PUT /api/bookmarks/:id', userId: req.user.id });
     res.status(500).json({ error: 'Failed to update bookmark' });
   }
 });
@@ -190,12 +277,12 @@ router.put('/:id', async (req, res) => {
  */
 router.delete('/:id', async (req, res) => {
   try {
-    const result = await db.query(
+    const result = await query(
       `UPDATE bookmarks 
        SET is_deleted = true, updated_at = CURRENT_TIMESTAMP
        WHERE id = $1 AND user_id = $2
        RETURNING id`,
-      [req.params.id, req.user.userId]
+      [req.params.id, req.user.id]
     );
     
     if (result.rows.length === 0) {
@@ -204,7 +291,7 @@ router.delete('/:id', async (req, res) => {
     
     res.json({ message: 'Bookmark deleted successfully' });
   } catch (error) {
-    logError(error, { context: 'DELETE /api/bookmarks/:id', userId: req.user.userId });
+    logError(error, { context: 'DELETE /api/bookmarks/:id', userId: req.user.id });
     res.status(500).json({ error: 'Failed to delete bookmark' });
   }
 });

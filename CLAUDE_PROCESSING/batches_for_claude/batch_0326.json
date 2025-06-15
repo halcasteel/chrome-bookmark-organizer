@@ -1,0 +1,86 @@
+{
+  "batch_number": 326,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 3250,
+      "domain": "calendar.google.com",
+      "title": "asafer.ai - Calendar - Monday, February 17, 2025, today",
+      "url": "https://calendar.google.com/calendar/u/5/r?output=html&action=TEMPLATE&eref=39t6s1pdivkfbogp6man5kdcsl",
+      "date_added": "2025-02-17 00:36:32"
+    },
+    {
+      "index": 2,
+      "global_index": 3251,
+      "domain": "drive.google.com",
+      "title": "BFRD-Carevion-vish.sankaran@carevion.ai - OPPORTUNITIES - Google Drive",
+      "url": "https://drive.google.com/drive/u/5/folders/1FH5nM4VFOwnA_KDonD9DA-xjas1ksyJ-",
+      "date_added": "2025-02-17 00:36:32"
+    },
+    {
+      "index": 3,
+      "global_index": 3252,
+      "domain": "docs.google.com",
+      "title": "Untitled document - Google Docs",
+      "url": "https://docs.google.com/document/d/1ABfFfCAg3jpUHGr0PTkaGgp9DjjOEhOBht9UtpQMHFc/edit?tab=t.0",
+      "date_added": "2025-02-17 00:36:32"
+    },
+    {
+      "index": 4,
+      "global_index": 3253,
+      "domain": "docs.google.com",
+      "title": "Google Forms",
+      "url": "https://docs.google.com/forms/u/5/?ftv=1&folder=1FH5nM4VFOwnA_KDonD9DA-xjas1ksyJ-&tgif=d",
+      "date_added": "2025-02-17 00:36:32"
+    },
+    {
+      "index": 5,
+      "global_index": 3254,
+      "domain": "docs.google.com",
+      "title": "AZ1 - AI-Powered Agents in U.S. Health Insurance Risk Stratification Agent for Early CKD Identification & Intervention: https://carevion.ai - Google Docs",
+      "url": "https://docs.google.com/document/d/1MJe2KfNcwSalKwFnVPoW7R7vC36u3-5ZOYa3vwSQih0/edit?tab=t.0#heading=h.6p6hctrk5fvm",
+      "date_added": "2025-02-17 00:36:32"
+    },
+    {
+      "index": 6,
+      "global_index": 3255,
+      "domain": "carevion.ai",
+      "title": "Carevion",
+      "url": "https://carevion.ai/",
+      "date_added": "2025-02-17 00:36:32"
+    },
+    {
+      "index": 7,
+      "global_index": 3256,
+      "domain": "docs.google.com",
+      "title": "ML development partner reqs - Google Docs",
+      "url": "https://docs.google.com/document/d/1YRaZ1m87tfvKV41Mik2zO9ZXK_RcIcfFKz-ro-TQdbM/edit?tab=t.0",
+      "date_added": "2025-02-17 00:36:32"
+    },
+    {
+      "index": 8,
+      "global_index": 3257,
+      "domain": "chatgpt.com",
+      "title": "Git Docker Setup Guide",
+      "url": "https://chatgpt.com/c/67b0d925-db94-800b-b0ec-c7fba04938dd",
+      "date_added": "2025-02-17 00:36:32"
+    },
+    {
+      "index": 9,
+      "global_index": 3258,
+      "domain": "claude.ai",
+      "title": "Analyzing Project Structure and Reorganization - Claude",
+      "url": "https://claude.ai/chat/d280bbe0-5301-4ce4-9c3e-b86f373f02c4",
+      "date_added": "2025-02-17 00:36:32"
+    },
+    {
+      "index": 10,
+      "global_index": 3259,
+      "domain": "example.com",
+      "title": "Example Domain",
+      "url": "https://example.com/page1",
+      "date_added": "2025-02-17 00:36:32"
+    }
+  ]
+}

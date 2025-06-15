@@ -1,0 +1,86 @@
+{
+  "batch_number": 233,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 2320,
+      "domain": "news.google.com",
+      "title": "news.google.com/rss/topics/CAAqKggKIiRDQkFTRlFvSUwyMHZNRGRqTVhZU0JXVnVMVlZUR2dKVlV5Z0FQAQ?hl=en-US&gl=US&ceid=US:en",
+      "url": "https://news.google.com/rss/topics/CAAqKggKIiRDQkFTRlFvSUwyMHZNRGRqTVhZU0JXVnVMVlZUR2dKVlV5Z0FQAQ?hl=en-US&gl=US&ceid=US:en",
+      "date_added": "2024-04-26 18:05:20"
+    },
+    {
+      "index": 2,
+      "global_index": 2321,
+      "domain": "newscatcherapi.com",
+      "title": "Google News RSS Search Parameters: The Missing Docs - NewsCatcher",
+      "url": "https://www.newscatcherapi.com/blog/google-news-rss-search-parameters-the-missing-documentaiton",
+      "date_added": "2024-04-26 18:05:20"
+    },
+    {
+      "index": 3,
+      "global_index": 2322,
+      "domain": "news.google.com",
+      "title": "news.google.com/rss/search?q=intitle:%27ArtificiaI Intelligence%27+when:1y&hl=en-US&gl=US&ceid=US:en",
+      "url": "https://news.google.com/rss/search?q=intitle:%27ArtificiaI%20Intelligence%27+when:1y&hl=en-US&gl=US&ceid=US:en",
+      "date_added": "2024-04-26 18:05:20"
+    },
+    {
+      "index": 4,
+      "global_index": 2323,
+      "domain": "chromewebstore.google.com",
+      "title": "Linkclump",
+      "url": "https://chromewebstore.google.com/detail/linkclump/lfpjkncokllnfokkgpkobnkbkmelfefj",
+      "date_added": "2024-04-26 18:05:20"
+    },
+    {
+      "index": 5,
+      "global_index": 2324,
+      "domain": "extensions",
+      "title": "Extensions - Linkclump",
+      "url": "chrome://extensions/?id=lfpjkncokllnfokkgpkobnkbkmelfefj",
+      "date_added": "2024-04-26 18:05:20"
+    },
+    {
+      "index": 6,
+      "global_index": 2325,
+      "domain": "iebpjdmgckacbodjpijphcplhebcmeop",
+      "title": "Account | Table Capture",
+      "url": "chrome-extension://iebpjdmgckacbodjpijphcplhebcmeop/account.html",
+      "date_added": "2024-04-26 18:05:20"
+    },
+    {
+      "index": 7,
+      "global_index": 2326,
+      "domain": "georgemike.com",
+      "title": "GeorgeMike.com, Licensing",
+      "url": "https://georgemike.com/licensing?app=dGFibGVjYXB0dXJlcHJv",
+      "date_added": "2024-04-26 18:05:20"
+    },
+    {
+      "index": 8,
+      "global_index": 2327,
+      "domain": "lfpjkncokllnfokkgpkobnkbkmelfefj",
+      "title": "Options",
+      "url": "chrome-extension://lfpjkncokllnfokkgpkobnkbkmelfefj/pages/options.html#",
+      "date_added": "2024-04-26 18:05:20"
+    },
+    {
+      "index": 9,
+      "global_index": 2328,
+      "domain": "perplexity.ai",
+      "title": "How do I bookmarks all open Chrome tabs at once from a keyboard shortcut?",
+      "url": "https://www.perplexity.ai/search/How-do-I-kygvYs4bR5GvRZZVmuLUUQ",
+      "date_added": "2024-04-26 18:05:20"
+    },
+    {
+      "index": 10,
+      "global_index": 2329,
+      "domain": "settings",
+      "title": "Settings",
+      "url": "chrome://settings/content/siteDetails?site=chrome-extension%3A%2F%2Flfpjkncokllnfokkgpkobnkbkmelfefj",
+      "date_added": "2024-04-26 18:05:20"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "batch_number": 125,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 1240,
+      "domain": "learning.oracle.com",
+      "title": "SuitePeople Certification",
+      "url": "https://learning.oracle.com/lmt/clmslearningpathdetails.prMain?in_sessionId=4455384458558093&in_learningPathId=60552527",
+      "date_added": "2019-09-17 08:25:11"
+    },
+    {
+      "index": 2,
+      "global_index": 1241,
+      "domain": "confluence.corp.netsuite.com",
+      "title": "confluence.corp.netsuite.com",
+      "url": "https://confluence.corp.netsuite.com/display/DeptPS/Consultant+Track",
+      "date_added": "1969-12-31 19:00:00"
+    },
+    {
+      "index": 3,
+      "global_index": 1242,
+      "domain": "publicdocs-corp.documents.us2.oraclecloud.com",
+      "title": "Published Bundle Deployment Guides | Documents",
+      "url": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF8393CC407B2DBA4392E219F6C3FF17C1177E4725F3/folder/F539523188651F1117AEA072F6C3FF17C1177E4725F3/_Published_Bundle_Deployment_Guides",
+      "date_added": "1969-12-31 19:00:00"
+    },
+    {
+      "index": 4,
+      "global_index": 1243,
+      "domain": "publicdocs-corp.documents.us2.oraclecloud.com",
+      "title": "Software - SW | Documents",
+      "url": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF8393CC407B2DBA4392E219F6C3FF17C1177E4725F3/folder/FA089DAF43C4C6BA918101DAF6C3FF17C1177E4725F3/_Software_-_SW",
+      "date_added": "1969-12-31 19:00:00"
+    },
+    {
+      "index": 5,
+      "global_index": 1244,
+      "domain": "publicdocs-corp.documents.us2.oraclecloud.com",
+      "title": "Bundle Deployment Guide_US_FF_MM.pdf | Documents",
+      "url": "https://publicdocs-corp.documents.us2.oraclecloud.com/documents/link/LF8393CC407B2DBA4392E219F6C3FF17C1177E4725F3/fileview/DCE629855F1A911808C0D5B9F6C3FF17C1177E4725F3/_Bundle_Deployment_Guide_US_FF_MM.pdf",
+      "date_added": "1969-12-31 19:00:00"
+    },
+    {
+      "index": 6,
+      "global_index": 1245,
+      "domain": "suitesuccess.publishpath.com",
+      "title": "SuiteSuccess Assets | SuiteSuccess",
+      "url": "https://suitesuccess.publishpath.com/assets",
+      "date_added": "1969-12-31 19:00:00"
+    },
+    {
+      "index": 7,
+      "global_index": 1246,
+      "domain": "confluence.corp.netsuite.com",
+      "title": "Consultant Week 1 - Dept: Professional Services - NetSuite",
+      "url": "https://confluence.corp.netsuite.com/display/DeptPS/Consultant+Week+1",
+      "date_added": "1969-12-31 19:00:00"
+    },
+    {
+      "index": 8,
+      "global_index": 1247,
+      "domain": "ougbsbi.oraclecorp.com",
+      "title": "Trainings Status",
+      "url": "https://ougbsbi.oraclecorp.com/pls/apex/f?p=145:20:117421555997000::::P20_TP_ID,P20_SET_VALUES_FROM_72,P20_ILA_USER_ID:10016014,0,2281679200",
+      "date_added": "1969-12-31 19:00:00"
+    },
+    {
+      "index": 9,
+      "global_index": 1248,
+      "domain": "oracle.myhbp.org",
+      "title": "Harvard ManageMentor",
+      "url": "https://oracle.myhbp.org/hmm12/content/persuading_others/overcome_resistance.html",
+      "date_added": "2020-12-01 13:13:51"
+    },
+    {
+      "index": 10,
+      "global_index": 1249,
+      "domain": "linkedin.com",
+      "title": "Your Assigned Courses",
+      "url": "https://www.linkedin.com/learning/me/assigned?u=42751868",
+      "date_added": "2019-09-17 08:42:58"
+    }
+  ]
+}

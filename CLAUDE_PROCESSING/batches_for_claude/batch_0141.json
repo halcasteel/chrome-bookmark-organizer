@@ -1,0 +1,86 @@
+{
+  "batch_number": 141,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 1400,
+      "domain": "google.com",
+      "title": "Google Finance - Stock Market Prices, Real-time Quotes & Business News",
+      "url": "https://www.google.com/finance/",
+      "date_added": "2022-02-24 13:47:42"
+    },
+    {
+      "index": 2,
+      "global_index": 1401,
+      "domain": "sa.www4.irs.gov",
+      "title": "IRS Account",
+      "url": "https://sa.www4.irs.gov/ola/account_balance",
+      "date_added": "2022-02-23 15:13:39"
+    },
+    {
+      "index": 3,
+      "global_index": 1402,
+      "domain": "irs.gov",
+      "title": "Direct Pay Help | Internal Revenue Service",
+      "url": "https://www.irs.gov/payments/direct-pay-help",
+      "date_added": "2022-02-23 15:14:41"
+    },
+    {
+      "index": 4,
+      "global_index": 1403,
+      "domain": "docs.google.com",
+      "title": "2022 Wells Fargo Escrow Difference - Google Sheets",
+      "url": "https://docs.google.com/spreadsheets/d/1nhrW2XaNc_I4tnjGIlxPJcBqgjLSRac8khB90qMJJlg/edit#gid=0",
+      "date_added": "2022-02-24 13:37:13"
+    },
+    {
+      "index": 5,
+      "global_index": 1404,
+      "domain": "csnetsuite.custhelp.com",
+      "title": "US, Latin America, and Russia: Oracle America, Inc.",
+      "url": "https://csnetsuite.custhelp.com/app/answers/answer_view/a_id/1003446",
+      "date_added": "2022-02-24 10:02:17"
+    },
+    {
+      "index": 6,
+      "global_index": 1405,
+      "domain": "app.slack.com",
+      "title": "Slack | Azim Ellam | NetSuite-GBU",
+      "url": "https://app.slack.com/client/T7B18VD43/D01D2AVRJE6",
+      "date_added": "2022-02-19 22:54:06"
+    },
+    {
+      "index": 7,
+      "global_index": 1406,
+      "domain": "doc.rust-lang.org",
+      "title": "The Rust Programming Language - The Rust Programming Language",
+      "url": "https://doc.rust-lang.org/stable/book/",
+      "date_added": "2022-02-15 19:54:58"
+    },
+    {
+      "index": 8,
+      "global_index": 1407,
+      "domain": "lens.google",
+      "title": "Google Lens",
+      "url": "https://lens.google/",
+      "date_added": "2022-02-18 18:02:32"
+    },
+    {
+      "index": 9,
+      "global_index": 1408,
+      "domain": "oim.oraclecorp.com",
+      "title": "Identity Self Service",
+      "url": "https://oim.oraclecorp.com/identity/faces/home",
+      "date_added": "2022-01-24 13:58:45"
+    },
+    {
+      "index": 10,
+      "global_index": 1409,
+      "domain": "oradocs-prodapp.cec.ocp.oraclecloud.com",
+      "title": "000-SOW TO DO | Documents",
+      "url": "https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/folder/FAB1C89B67F408D1E37F07EF09946CDC837E20C6493C/_000-SOW_TO_DO#",
+      "date_added": "2022-01-24 13:50:45"
+    }
+  ]
+}

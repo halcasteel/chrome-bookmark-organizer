@@ -1,0 +1,86 @@
+{
+  "batch_number": 238,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 2370,
+      "domain": "anthropic.com",
+      "title": "Introducing the Model Context Protocol \\ Anthropic",
+      "url": "https://www.anthropic.com/news/model-context-protocol",
+      "date_added": "2024-12-03 19:38:07"
+    },
+    {
+      "index": 2,
+      "global_index": 2371,
+      "domain": "wired.com",
+      "title": "The Beginning of the End of Big Tech | WIRED",
+      "url": "https://www.wired.com/story/the-beginning-of-the-end-of-big-tech/",
+      "date_added": "2024-12-02 22:37:41"
+    },
+    {
+      "index": 3,
+      "global_index": 2372,
+      "domain": "lawyers.justia.com",
+      "title": "James L. Arrasmith, Lawyer in Sacramento, California | Justia",
+      "url": "https://lawyers.justia.com/lawyer/james-l-arrasmith-1668636",
+      "date_added": "2024-12-03 19:32:00"
+    },
+    {
+      "index": 4,
+      "global_index": 2373,
+      "domain": "ft.com",
+      "title": "OpenAI targets 1bn users in next phase of growth",
+      "url": "https://www.ft.com/content/e91cb018-873c-4388-84c0-46e9f82146b4",
+      "date_added": "2024-12-02 22:36:33"
+    },
+    {
+      "index": 5,
+      "global_index": 2374,
+      "domain": "github.com",
+      "title": "python-sdk/README.md at main · modelcontextprotocol/python-sdk",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md",
+      "date_added": "2024-12-01 22:24:37"
+    },
+    {
+      "index": 6,
+      "global_index": 2375,
+      "domain": "washingtonpost.com",
+      "title": "Cash purchases on houses are rising. See where these homes are bought. - Washington Post",
+      "url": "https://www.washingtonpost.com/business/interactive/2024/cash-purchase-house-real-estate-home-buyers/?utm_source=newsshowcase&utm_medium=gnews&utm_campaign=CDAqDwgAKgcICjCO1JQKMLfRdDDNhLID&utm_content=rundown&gaa_at=g&gaa_n=AVINqTxlRgKjdlFQsh4apsHHEVtLcd-UMWSpqLy2KH824BIjzQkXsra-3KVxY_yDPiz2pJEaenu1hZc4J7Q-&gaa_ts=674e894d&gaa_sig=rSfKr-ws7aGecl3JLkn_Fkc10uu6x_AzQ2_fdy8RgIQfOx2sY--x6W9nvxoaYXBob09mLqgDCMaDE06eGxjZag%3D%3D",
+      "date_added": "2024-12-02 22:34:54"
+    },
+    {
+      "index": 7,
+      "global_index": 2376,
+      "domain": "modelcontextprotocol.io",
+      "title": "Introduction - Model Context Protocol",
+      "url": "https://modelcontextprotocol.io/introduction",
+      "date_added": "2024-12-01 22:24:28"
+    },
+    {
+      "index": 8,
+      "global_index": 2377,
+      "domain": "spec.modelcontextprotocol.io",
+      "title": "Model Context Protocol Specification",
+      "url": "https://spec.modelcontextprotocol.io/",
+      "date_added": "2024-12-01 22:24:22"
+    },
+    {
+      "index": 9,
+      "global_index": 2378,
+      "domain": "github.com",
+      "title": "modelcontextprotocol/servers: Model Context Protocol Servers",
+      "url": "https://github.com/modelcontextprotocol/servers",
+      "date_added": "2024-12-01 10:25:09"
+    },
+    {
+      "index": 10,
+      "global_index": 2379,
+      "domain": "salesforcedevops.net",
+      "title": "Anthropic’s Model Context Protocol: Building an ‘ODBC for AI’ in an Accelerating Market - SalesforceDevops.net",
+      "url": "https://salesforcedevops.net/index.php/2024/11/29/anthropics-model-context-protocol/",
+      "date_added": "2024-12-01 22:24:16"
+    }
+  ]
+}

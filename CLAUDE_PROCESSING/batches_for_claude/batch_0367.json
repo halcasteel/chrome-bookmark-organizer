@@ -1,0 +1,86 @@
+{
+  "batch_number": 367,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 3660,
+      "domain": "github.com",
+      "title": "Fuse/README.md at main · krisk/Fuse",
+      "url": "https://github.com/krisk/Fuse/blob/main/README.md",
+      "date_added": "2025-01-18 21:49:36"
+    },
+    {
+      "index": 2,
+      "global_index": 3661,
+      "domain": "perplexity.ai",
+      "title": "gRPC with AutoGen Agent Runtime",
+      "url": "https://www.perplexity.ai/search/grpc-with-autogen-agent-runtim-udterLlOSTeIa8JkFbF3QA",
+      "date_added": "2025-01-18 21:49:36"
+    },
+    {
+      "index": 3,
+      "global_index": 3662,
+      "domain": "news.google.com",
+      "title": "Google News - Overview",
+      "url": "https://news.google.com/stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lveXBTRERSSDNvRkFsMFhvQmt5Z0FQAQ?hl=en-US&gl=US&ceid=US%3Aen",
+      "date_added": "2025-01-18 21:49:36"
+    },
+    {
+      "index": 4,
+      "global_index": 3663,
+      "domain": "bbc.com",
+      "title": "Kristi Noem: Four takeaways from homeland security confirmation hearing",
+      "url": "https://www.bbc.com/news/articles/cpqll1dw2jzo",
+      "date_added": "2025-01-18 21:49:36"
+    },
+    {
+      "index": 5,
+      "global_index": 3664,
+      "domain": "localhost:8000",
+      "title": "az1.ai | Features",
+      "url": "http://localhost:8000/features.html",
+      "date_added": "2025-01-18 21:49:36"
+    },
+    {
+      "index": 6,
+      "global_index": 3665,
+      "domain": "0.0.0.0:8000",
+      "title": "az1.ai | Homepage",
+      "url": "http://0.0.0.0:8000/index.html",
+      "date_added": "2025-01-18 21:49:36"
+    },
+    {
+      "index": 7,
+      "global_index": 3666,
+      "domain": "0.0.0.0:8000",
+      "title": "az1.ai | Homepage",
+      "url": "http://0.0.0.0:8000/",
+      "date_added": "2025-01-18 21:49:36"
+    },
+    {
+      "index": 8,
+      "global_index": 3667,
+      "domain": "0.0.0.0:8000",
+      "title": "az1.ai Product Features v.1.1",
+      "url": "http://0.0.0.0:8000/files/az1.ai_Product_Features_v.1.1.pdf",
+      "date_added": "2025-01-18 21:49:36"
+    },
+    {
+      "index": 9,
+      "global_index": 3668,
+      "domain": "az1.ai",
+      "title": "AI: explainable & trusted",
+      "url": "https://www.az1.ai/agents",
+      "date_added": "2025-01-18 21:49:36"
+    },
+    {
+      "index": 10,
+      "global_index": 3669,
+      "domain": "0.0.0.0:8000",
+      "title": "az1.ai | Blog",
+      "url": "http://0.0.0.0:8000/blog.html",
+      "date_added": "2025-01-18 21:49:36"
+    }
+  ]
+}

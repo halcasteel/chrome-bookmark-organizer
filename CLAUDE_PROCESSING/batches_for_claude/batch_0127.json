@@ -1,0 +1,86 @@
+{
+  "batch_number": 127,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 1260,
+      "domain": "nlcorp.app.netsuite.com",
+      "title": "https://nlcorp.app.netsuite.com/app/common/custom/custrecordentry.nl?rectype=1099&xml=T&id=64649",
+      "url": "https://nlcorp.app.netsuite.com/app/common/custom/custrecordentry.nl?rectype=1099&xml=T&id=64649",
+      "date_added": "2020-07-16 14:28:02"
+    },
+    {
+      "index": 2,
+      "global_index": 1261,
+      "domain": "secure.ethicspoint.com",
+      "title": "EthicsPoint - Oracle Corporation",
+      "url": "https://secure.ethicspoint.com/domain/media/en/gui/31053/index.html",
+      "date_added": "2020-08-03 12:16:07"
+    },
+    {
+      "index": 3,
+      "global_index": 1262,
+      "domain": "my.oracle.com",
+      "title": "cnt2762364",
+      "url": "https://my.oracle.com/site/legal/cnt2762364",
+      "date_added": "2020-08-03 12:17:31"
+    },
+    {
+      "index": 4,
+      "global_index": 1263,
+      "domain": "my.oracle.com",
+      "title": "Ergonomics",
+      "url": "https://my.oracle.com/site/ref/gres/ehs/programs/ergo/index.html",
+      "date_added": "2020-08-03 12:30:05"
+    },
+    {
+      "index": 5,
+      "global_index": 1264,
+      "domain": "myhelp.oracle.com",
+      "title": "Find Answers",
+      "url": "https://myhelp.oracle.com/app/search/kw/ergonomics/okcsSearchSession/ZlVCOVBYUjRYa0U5dE41ZTJPdzc4Y3g0Zk9PU2Y4YXVVTWpiX3hjc0RfU3RiSndNVX5LeWREQzdzWms5OG81flFhQjFTTWlEaG5VbUI4X3Y4TnJDTGw0c1BVRXZrcklIcUVUeXE0OHkxM3Vvc0RSRzdfYUVXSkNMcEZwfl8xNjl1YmNDWDR0MVJ3UWFRIQ!!/page/1/priorTransactionID/693100149/transactionID/693100149",
+      "date_added": "2020-08-03 12:52:03"
+    },
+    {
+      "index": 6,
+      "global_index": 1265,
+      "domain": "myhelp.oracle.com",
+      "title": "Ergonomics - Guide",
+      "url": "https://myhelp.oracle.com/app/answers/answer_view_GA/a_id/108/loc/en_US/g_id/72",
+      "date_added": "2020-08-03 12:52:58"
+    },
+    {
+      "index": 7,
+      "global_index": 1266,
+      "domain": "nlcorp.app.netsuite.com",
+      "title": "DSS | PSER 2.0 Forecast Tracker - Updated Hal Casteel: Results - NetSuite (NetSuite Inc.)",
+      "url": "https://nlcorp.app.netsuite.com/app/common/search/searchresults.nl?searchid=604584&whence=",
+      "date_added": "2020-08-21 11:49:31"
+    },
+    {
+      "index": 8,
+      "global_index": 1267,
+      "domain": "eeho.fa.us2.oraclecloud.com",
+      "title": "My Goals - Career and Performance - Oracle Applications",
+      "url": "https://eeho.fa.us2.oraclecloud.com/hcmUI/faces/FndOverview?macKey=oSLE%2FITejngJXmpR&_afrLoop=6944855399610165&_afrWindowMode=0&_afrWindowId=null&_adf.ctrl-state=13ygpwwdt1_11&_afrFS=16&_afrMT=screen&_afrMFW=1536&_afrMFH=674&_afrMFDW=1536&_afrMFDH=864&_afrMFC=8&_afrMFCI=0&_afrMFM=0&_afrMFR=120&_afrMFG=0&_afrMFS=0&_afrMFO=0",
+      "date_added": "2020-09-08 08:35:27"
+    },
+    {
+      "index": 9,
+      "global_index": 1268,
+      "domain": "confluence.corp.netsuite.com",
+      "title": "Bi-Weekly Call Schedule - Dept: Professional Services - NetSuite",
+      "url": "https://confluence.corp.netsuite.com/pages/viewpage.action?spaceKey=DeptPS&title=Bi-Weekly+Call+Schedule",
+      "date_added": "2020-09-23 12:15:13"
+    },
+    {
+      "index": 10,
+      "global_index": 1269,
+      "domain": "myhelp.oracle.com",
+      "title": "Create a ticket",
+      "url": "https://myhelp.oracle.com/app/ask_confirm/i_id/7730482",
+      "date_added": "2020-09-26 10:58:16"
+    }
+  ]
+}

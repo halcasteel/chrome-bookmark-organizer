@@ -137,6 +137,9 @@ router.post('/login', async (req, res) => {
     }
 
     const { email, password, twoFactorCode } = value;
+    
+    // Ensure twoFactorCode is trimmed if provided
+    const trimmedTwoFactorCode = twoFactorCode ? twoFactorCode.trim() : twoFactorCode;
 
     // Check email domain
     if (!email.endsWith('@az1.ai')) {
@@ -147,11 +150,12 @@ router.post('/login', async (req, res) => {
 
     // Get user
     const userResult = await query(
-      `SELECT id, email, name, password_hash, two_factor_enabled, 
+      `SELECT id, email, name, role, password_hash, two_factor_enabled, 
               two_factor_secret, two_factor_verified 
        FROM users WHERE email = $1`,
       [email]
     );
+
 
     if (userResult.rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
@@ -161,48 +165,51 @@ router.post('/login', async (req, res) => {
 
     // Verify password
     const validPassword = await bcrypt.compare(password, user.password_hash);
+    
     if (!validPassword) {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
-    // Check if 2FA is required
-    if (!user.two_factor_enabled) {
-      return res.status(403).json({ 
-        error: '2FA setup required',
-        requires2FASetup: true 
+    // Check if 2FA is enabled for this user
+    if (user.two_factor_enabled) {
+      // If 2FA is enabled, verify the code
+      if (!trimmedTwoFactorCode) {
+        return res.status(400).json({ 
+          error: '2FA code required',
+          requires2FA: true 
+        });
+      }
+
+      const verified = speakeasy.totp.verify({
+        secret: user.two_factor_secret,
+        encoding: 'base32',
+        token: trimmedTwoFactorCode,
+        window: 2,
       });
+
+      if (!verified) {
+        return res.status(401).json({ error: 'Invalid 2FA code' });
+      }
+
+      // Update last login with 2FA verified
+      await query(
+        'UPDATE users SET two_factor_verified = true, updated_at = CURRENT_TIMESTAMP WHERE id = $1',
+        [user.id]
+      );
+    } else {
+      // No 2FA required, just update last login
+      await query(
+        'UPDATE users SET updated_at = CURRENT_TIMESTAMP WHERE id = $1',
+        [user.id]
+      );
     }
-
-    // Verify 2FA code
-    if (!twoFactorCode) {
-      return res.status(400).json({ 
-        error: '2FA code required',
-        requires2FA: true 
-      });
-    }
-
-    const verified = speakeasy.totp.verify({
-      secret: user.two_factor_secret,
-      encoding: 'base32',
-      token: twoFactorCode,
-      window: 2,
-    });
-
-    if (!verified) {
-      return res.status(401).json({ error: 'Invalid 2FA code' });
-    }
-
-    // Update last login
-    await query(
-      'UPDATE users SET two_factor_verified = true, updated_at = CURRENT_TIMESTAMP WHERE id = $1',
-      [user.id]
-    );
 
     // Generate JWT token
     const token = jwt.sign(
       { 
         userId: user.id, 
         email: user.email,
+        role: user.role,
         twoFactorVerified: true 
       },
       process.env.JWT_SECRET,
@@ -215,6 +222,7 @@ router.post('/login', async (req, res) => {
         id: user.id,
         email: user.email,
         name: user.name,
+        role: user.role,
       },
     });
   } catch (error) {
@@ -235,7 +243,7 @@ router.get('/me', async (req, res) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     
     const result = await query(
-      'SELECT id, email, name, two_factor_enabled FROM users WHERE id = $1',
+      'SELECT id, email, name, role, two_factor_enabled FROM users WHERE id = $1',
       [decoded.userId]
     );
 

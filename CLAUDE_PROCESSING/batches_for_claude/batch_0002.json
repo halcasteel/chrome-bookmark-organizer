@@ -1,0 +1,86 @@
+{
+  "batch_number": 2,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 10,
+      "domain": "scholar.google.com",
+      "title": "‪Dario Amodei‬ - ‪Google Scholar‬",
+      "url": "https://scholar.google.com/citations?user=6-e-ZBEAAAAJ&hl=en",
+      "date_added": "2025-06-11 03:42:54"
+    },
+    {
+      "index": 2,
+      "global_index": 11,
+      "domain": "localhost:3000",
+      "title": "localhost:3000/api/marine?lat=44.8016255&lon=-68.7713289",
+      "url": "http://localhost:3000/api/marine?lat=44.8016255&lon=-68.7713289",
+      "date_added": "2025-06-11 03:39:03"
+    },
+    {
+      "index": 3,
+      "global_index": 12,
+      "domain": "github.com",
+      "title": "AZ1-ai/00-CORE-AZ1",
+      "url": "https://github.com/AZ1-ai/00-CORE-AZ1/",
+      "date_added": "2025-06-11 03:40:00"
+    },
+    {
+      "index": 4,
+      "global_index": 13,
+      "domain": "linkedin.com",
+      "title": "(26) Sam McCandlish | LinkedIn",
+      "url": "https://www.linkedin.com/in/sam-mccandlish/",
+      "date_added": "2025-06-11 03:03:12"
+    },
+    {
+      "index": 5,
+      "global_index": 14,
+      "domain": "fortune.com",
+      "title": "Anthropic researchers predict a ‘pretty terrible decade’ for humans as AI could wipe out white collar jobs | Fortune",
+      "url": "https://fortune.com/2025/06/05/anthropic-ai-automate-jobs-pretty-terrible-decade/",
+      "date_added": "2025-06-10 17:07:32"
+    },
+    {
+      "index": 6,
+      "global_index": 15,
+      "domain": "fortune.com",
+      "title": "Klarna CEO predicts AI-driven job displacement will cause a recession | Fortune Europe",
+      "url": "https://fortune.com/europe/2025/06/09/bnpl-loans-klarna-ceo-predicts-ai-recession/",
+      "date_added": "2025-06-10 17:07:22"
+    },
+    {
+      "index": 7,
+      "global_index": 16,
+      "domain": "techcrunch.com",
+      "title": "Toma’s AI voice agents have taken off at car dealerships -- and attracted funding from a16z | TechCrunch",
+      "url": "https://techcrunch.com/2025/06/05/tomas-ai-voice-agents-have-taken-off-at-car-dealerships-and-attracted-funding-from-a16z/",
+      "date_added": "2025-06-10 14:39:16"
+    },
+    {
+      "index": 8,
+      "global_index": 17,
+      "domain": "techcrunch.com",
+      "title": "Rounded is an AI orchestration platform that lets anyone build an AI voice agent | TechCrunch",
+      "url": "https://techcrunch.com/2025/01/09/rounded-is-an-ai-orchestration-platform-that-lets-anyone-build-an-ai-voice-agent/",
+      "date_added": "2025-06-10 14:39:37"
+    },
+    {
+      "index": 9,
+      "global_index": 18,
+      "domain": "github.com",
+      "title": "Terraform Apply GCP Action · Actions · GitHub Marketplace",
+      "url": "https://github.com/marketplace/actions/terraform-apply-gcp-action",
+      "date_added": "2025-06-10 04:59:41"
+    },
+    {
+      "index": 10,
+      "global_index": 19,
+      "domain": "youtube.com",
+      "title": "(12) GitHub CEO predicts the future of programming...(Full Interview) - YouTube",
+      "url": "https://www.youtube.com/watch?v=3WNukz5-Ch0",
+      "date_added": "2025-06-09 03:28:29"
+    }
+  ]
+}

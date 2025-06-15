@@ -1,0 +1,86 @@
+{
+  "batch_number": 287,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 2860,
+      "domain": "langchain-langchain.vercel.app",
+      "title": "🦜️🔗 LangChain",
+      "url": "https://langchain-langchain.vercel.app/docs/use_cases/more/graph/graph_arangodb_qa.html",
+      "date_added": "2024-12-25 12:57:15"
+    },
+    {
+      "index": 2,
+      "global_index": 2861,
+      "domain": "bookstack.cn",
+      "title": "Introduction - 《ArangoDB v3.6.0 Documentation》 - 书栈网 · BookStack",
+      "url": "https://www.bookstack.cn/read/arangodb-v3.6/7208bee194cc8a3d.md",
+      "date_added": "2024-12-25 12:57:15"
+    },
+    {
+      "index": 3,
+      "global_index": 2862,
+      "domain": "docs.arangodb.com",
+      "title": "ArangoDB Use Cases | ArangoDB Documentation",
+      "url": "https://docs.arangodb.com/3.11/about-arangodb/use-cases/",
+      "date_added": "2024-12-25 12:57:15"
+    },
+    {
+      "index": 4,
+      "global_index": 2863,
+      "domain": "drive.google.com",
+      "title": "templates - Google Drive",
+      "url": "https://drive.google.com/drive/u/0/folders/1UBlOyVC2t7KejHY4KeOhXxS1Rdnb0scd",
+      "date_added": "2024-12-25 12:57:15"
+    },
+    {
+      "index": 5,
+      "global_index": 2864,
+      "domain": "chatgpt.com",
+      "title": "GITHUB ADMINISTRATOR - GitHub Assistance Overview",
+      "url": "https://chatgpt.com/g/g-675d28b494c88191ba2982fb1b2888cc-github-administrator/c/676bd44c-61cc-800b-97d6-a3a44d8281fe",
+      "date_added": "2024-12-25 12:57:15"
+    },
+    {
+      "index": 6,
+      "global_index": 2865,
+      "domain": "claude.ai",
+      "title": "Secure Email Guide for Google Workspace and Node.js - Claude",
+      "url": "https://claude.ai/chat/1e4852ce-2e61-40b7-9800-6585230a756f",
+      "date_added": "2024-12-25 12:57:15"
+    },
+    {
+      "index": 7,
+      "global_index": 2866,
+      "domain": "chatgpt.com",
+      "title": "ChatGPT - GITHUB ADMINISTRATOR",
+      "url": "https://chatgpt.com/g/g-675d28b494c88191ba2982fb1b2888cc-github-administrator/c/676c3367-65b4-800b-a309-5c2e89194334",
+      "date_added": "2024-12-25 12:57:15"
+    },
+    {
+      "index": 8,
+      "global_index": 2867,
+      "domain": "github.com",
+      "title": "System-Administration-How-Tos/email-implementation-guide-using-node.js.v1.0.md at main · ai-az1/System-Administration-How-Tos",
+      "url": "https://github.com/ai-az1/System-Administration-How-Tos/blob/main/email-implementation-guide-using-node.js.v1.0.md",
+      "date_added": "2024-12-25 12:57:15"
+    },
+    {
+      "index": 9,
+      "global_index": 2868,
+      "domain": "chatgpt.com",
+      "title": "ChatGPT",
+      "url": "https://chatgpt.com/c/676c3e2a-3cc4-800b-bad7-41cf20c88bf4",
+      "date_added": "2024-12-25 12:57:15"
+    },
+    {
+      "index": 10,
+      "global_index": 2869,
+      "domain": "calendar.google.com",
+      "title": "asafer.ai - Calendar - Tasks",
+      "url": "https://calendar.google.com/calendar/u/4/r/tasks",
+      "date_added": "2024-12-25 12:57:15"
+    }
+  ]
+}

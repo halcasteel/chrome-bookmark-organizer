@@ -1,0 +1,86 @@
+{
+  "batch_number": 210,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 2090,
+      "domain": "app.smartsheet.com",
+      "title": "Access Denied - Smartsheet.com",
+      "url": "https://app.smartsheet.com/sheets/6M5vmphHCf8rgq5g6M9vGmVqhJ3mPQxQ7fHGmcX1?view=grid&filterId=5729734983214980",
+      "date_added": "2022-08-01 11:05:20"
+    },
+    {
+      "index": 2,
+      "global_index": 2091,
+      "domain": "jira.ti-apps.aws.grail.com",
+      "title": "[SEC-976] Strongpoint 3rd Party Security Review - Internal 3rd party vendor review - Grail, Inc.",
+      "url": "https://jira.ti-apps.aws.grail.com/browse/SEC-976?filter=-2",
+      "date_added": "2022-08-01 17:03:15"
+    },
+    {
+      "index": 3,
+      "global_index": 2092,
+      "domain": "docs.google.com",
+      "title": "Service Now Tickets_7.29.xlsx - Google Sheets",
+      "url": "https://docs.google.com/spreadsheets/d/1vi8JriPJk7zpk0YPpBko-MLnadRU147t/edit#gid=597307498",
+      "date_added": "2022-08-01 17:40:23"
+    },
+    {
+      "index": 4,
+      "global_index": 2093,
+      "domain": "fivetran.com",
+      "title": "NetSuite data connector by Fivetran | Setup Guide",
+      "url": "https://fivetran.com/docs/applications/netsuite-suiteanalytics/setup-guide",
+      "date_added": "2022-08-03 09:52:00"
+    },
+    {
+      "index": 5,
+      "global_index": 2094,
+      "domain": "jira.ti-apps.aws.grail.com",
+      "title": "User Profile: Mariah Heller - Grail, Inc.",
+      "url": "https://jira.ti-apps.aws.grail.com/secure/ViewProfile.jspa?name=mheller",
+      "date_added": "2022-08-03 12:49:02"
+    },
+    {
+      "index": 6,
+      "global_index": 2095,
+      "domain": "docs.google.com",
+      "title": "CorkyVersioin-PSA PPM Evaluation Matrix UPDATED 2022.06.23.xlsx - Google Sheets",
+      "url": "https://docs.google.com/spreadsheets/d/18ub7nIWUPi1dXG5r3G15a2HKfGzQxb2N/edit#gid=305553868",
+      "date_added": "2022-08-03 15:11:52"
+    },
+    {
+      "index": 7,
+      "global_index": 2096,
+      "domain": "docs.google.com",
+      "title": "Notes - FiveTran NetSuite SuiteAnalytics- Scope - Google Docs",
+      "url": "https://docs.google.com/document/d/10QL3v6NuztKiz0KwT6ZRD3e4QYpssU-R9Dek2CQ36RU/edit#",
+      "date_added": "2022-08-03 15:14:31"
+    },
+    {
+      "index": 8,
+      "global_index": 2097,
+      "domain": "docs.google.com",
+      "title": "IT L&D Survey - Google Forms",
+      "url": "https://docs.google.com/forms/d/1MXAFuxEYXkLU6NZ3vk-wkB1PK-pE8TWrnKRWE-q019I/edit#responses",
+      "date_added": "2022-08-04 09:49:06"
+    },
+    {
+      "index": 9,
+      "global_index": 2098,
+      "domain": "drive.google.com",
+      "title": "Service Now Tickets_8.4.2022.xlsx - Google Drive",
+      "url": "https://drive.google.com/file/d/1vi8JriPJk7zpk0YPpBko-MLnadRU147t/view",
+      "date_added": "2022-08-05 10:37:37"
+    },
+    {
+      "index": 10,
+      "global_index": 2099,
+      "domain": "tulip.co",
+      "title": "Tulip | The Industry's Leading Frontline Operations Platform",
+      "url": "https://tulip.co/",
+      "date_added": "2022-08-05 12:10:01"
+    }
+  ]
+}

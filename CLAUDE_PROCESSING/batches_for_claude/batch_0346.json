@@ -1,0 +1,86 @@
+{
+  "batch_number": 346,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 3450,
+      "domain": "downloads",
+      "title": "Download history",
+      "url": "chrome://downloads/",
+      "date_added": "2025-02-03 20:54:47"
+    },
+    {
+      "index": 2,
+      "global_index": 3451,
+      "domain": "perplexity.ai",
+      "title": "Cellular One",
+      "url": "https://www.perplexity.ai/search/cellular-one-1qiDh4cqS7aEybtdZ0YHPQ",
+      "date_added": "2025-02-03 20:54:47"
+    },
+    {
+      "index": 3,
+      "global_index": 3452,
+      "domain": "techspex.com",
+      "title": "About Techspex - TECHSPEX",
+      "url": "https://www.techspex.com/kc/about",
+      "date_added": "2025-02-03 20:54:47"
+    },
+    {
+      "index": 4,
+      "global_index": 3453,
+      "domain": "drive.google.com",
+      "title": "Inventory - Technology - Google Drive",
+      "url": "https://drive.google.com/drive/u/5/folders/1z9Im61uehkZqyXjdhuPpSwZFwswDqG8V",
+      "date_added": "2025-02-03 20:54:47"
+    },
+    {
+      "index": 5,
+      "global_index": 3454,
+      "domain": "chatgpt.com",
+      "title": "Data Types Explanation",
+      "url": "https://chatgpt.com/c/67a15e16-ebe8-800b-8735-ced896e75826",
+      "date_added": "2025-02-03 20:54:47"
+    },
+    {
+      "index": 6,
+      "global_index": 3455,
+      "domain": "chatgpt.com",
+      "title": "Rule of 40 SaaS",
+      "url": "https://chatgpt.com/c/67a16f47-535c-800b-ac97-8a1a005ac7c1",
+      "date_added": "2025-02-03 20:54:47"
+    },
+    {
+      "index": 7,
+      "global_index": 3456,
+      "domain": "itnext.io",
+      "title": "Why Functional Programming Languages Will Never Be Mainstream | by Jeffrey Rennie | Jan, 2025 | ITNEXT",
+      "url": "https://itnext.io/why-functional-programming-languages-will-never-be-mainstream-e1b5a8c9e4d8",
+      "date_added": "2025-02-08 11:49:32"
+    },
+    {
+      "index": 8,
+      "global_index": 3457,
+      "domain": "apple.com",
+      "title": "Refurbished Mac mini Apple M4 Chip with 10-Core CPU and 10-Core GPU, Gigabit Ethernet - Apple (CA)",
+      "url": "https://www.apple.com/ca/shop/product/FCYT4LL/A/Refurbished-Mac-mini-Apple-M4-Chip-with-10-Core-CPU-and-10-Core-GPU-Gigabit-Ethernet-?fnode=accc6cec7ba645cd86f3fa128d659d4a1e73b21f927b610e82ec47c11f062ba3dd029158b10ca3b2b5143dacaa25727df9bd5347b6cd498f1cca41f85660ddc273f44128a8fd1b740402465d72dccad5",
+      "date_added": "2025-02-14 09:26:47"
+    },
+    {
+      "index": 9,
+      "global_index": 3458,
+      "domain": "substack.com",
+      "title": "Clouded Judgement 1.24.25 - The Year of Enterprise AI",
+      "url": "https://substack.com/@cloudedjudgement/p-155575778",
+      "date_added": "2025-02-22 05:03:01"
+    },
+    {
+      "index": 10,
+      "global_index": 3459,
+      "domain": "theregister.com",
+      "title": "How's that open source licensing coming along? That well, huh? • The Register",
+      "url": "https://www.theregister.com/AMP/2025/02/24/open_source_licensing/",
+      "date_added": "2025-02-24 11:11:42"
+    }
+  ]
+}

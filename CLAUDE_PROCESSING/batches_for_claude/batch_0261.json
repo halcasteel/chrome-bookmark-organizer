@@ -1,0 +1,86 @@
+{
+  "batch_number": 261,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 2600,
+      "domain": "onlineocr.net",
+      "title": "Plans and pricing",
+      "url": "https://www.onlineocr.net/service/pricing",
+      "date_added": "2024-07-09 23:30:22"
+    },
+    {
+      "index": 2,
+      "global_index": 2601,
+      "domain": "perplexity.ai",
+      "title": "%s",
+      "url": "https://www.perplexity.ai/search/s-mhPAcjCeRtSMoHiAM_7kKA",
+      "date_added": "2024-07-07 00:15:56"
+    },
+    {
+      "index": 3,
+      "global_index": 2602,
+      "domain": "gist.github.com",
+      "title": "Instructions to get stock Android or LineageOS21 on the Rabbit r1 (July 2024)",
+      "url": "https://gist.github.com/veritas06/462844437bd8c5751b85d99c78c68fd8",
+      "date_added": "2024-07-06 19:41:17"
+    },
+    {
+      "index": 4,
+      "global_index": 2603,
+      "domain": "theverge.com",
+      "title": "Perplexity’s grand theft AI - The Verge",
+      "url": "https://www.theverge.com/2024/6/27/24187405/perplexity-ai-twitter-lie-plagiarism?showComments=1",
+      "date_added": "2024-06-29 14:27:48"
+    },
+    {
+      "index": 5,
+      "global_index": 2604,
+      "domain": "docs.servicenow.com",
+      "title": "Configuring the auto-generation of documents for healthcare cases",
+      "url": "https://docs.servicenow.com/bundle/washingtondc-healthcare-life-sciences/page/product/healthcare-life-sciences/concept/hcls-config-decision-tables.html",
+      "date_added": "2024-06-24 15:29:27"
+    },
+    {
+      "index": 6,
+      "global_index": 2605,
+      "domain": "hl7.org",
+      "title": "Index - FHIR v4.0.1",
+      "url": "https://hl7.org/fhir/R4/index.html",
+      "date_added": "2024-06-20 00:41:12"
+    },
+    {
+      "index": 7,
+      "global_index": 2606,
+      "domain": "mountainproject.com",
+      "title": "Rich Jack and Sassy who are both gone, Rich died on that bad ass BMW. Brian Kew died when we were working the oil fields together in Wyoming to make money to go climbing...I miss um",
+      "url": "https://www.mountainproject.com/photo/108461446/rich-jack-and-sassy-who-are-both-gone-rich-died-on-that-bad-ass-bmw-brian-kew-di",
+      "date_added": "2024-06-14 02:02:32"
+    },
+    {
+      "index": 8,
+      "global_index": 2607,
+      "domain": "lucid.app",
+      "title": "Model databases: Lucidchart",
+      "url": "https://lucid.app/lucidchart/e128ee2c-e94f-4220-a433-bf090d64d51f/edit?invitationId=inv_8be274bc-c3e9-4d53-b94f-8a48626cbc59&page=0_0#",
+      "date_added": "2024-06-17 03:57:08"
+    },
+    {
+      "index": 9,
+      "global_index": 2608,
+      "domain": "app.rocketmoney.com",
+      "title": "Rocket Money | Transaction",
+      "url": "https://app.rocketmoney.com/transactions/detail?id=VHJhbnNhY3Rpb246NTc0NTA1ODc3MjM=",
+      "date_added": "2024-06-15 16:07:43"
+    },
+    {
+      "index": 10,
+      "global_index": 2609,
+      "domain": "apps.docusign.com",
+      "title": "Correct | Docusign",
+      "url": "https://apps.docusign.com/send/prepare/c7bf0dc5-98b4-49bd-b1f3-c46e7046b85e/correct/",
+      "date_added": "2024-06-15 09:46:51"
+    }
+  ]
+}

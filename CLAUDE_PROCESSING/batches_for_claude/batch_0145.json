@@ -1,0 +1,86 @@
+{
+  "batch_number": 145,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 1440,
+      "domain": "tecmint.com",
+      "title": "How to Setup UFW Firewall on Ubuntu and Debian",
+      "url": "https://www.tecmint.com/setup-ufw-firewall-on-ubuntu-and-debian/",
+      "date_added": "2021-12-06 19:29:49"
+    },
+    {
+      "index": 2,
+      "global_index": 1441,
+      "domain": "tecmint.com",
+      "title": "How to Install PgAdmin 4 Debian 10",
+      "url": "https://www.tecmint.com/install-pgadmin-debian-10/",
+      "date_added": "2021-12-06 19:30:18"
+    },
+    {
+      "index": 3,
+      "global_index": 1442,
+      "domain": "pgadmin.org",
+      "title": "Download",
+      "url": "https://www.pgadmin.org/download/pgadmin-4-apt/",
+      "date_added": "2021-12-06 19:30:23"
+    },
+    {
+      "index": 4,
+      "global_index": 1443,
+      "domain": "localhost",
+      "title": "pgAdmin 4",
+      "url": "http://localhost/pgadmin4/browser/",
+      "date_added": "2021-12-06 19:36:54"
+    },
+    {
+      "index": 5,
+      "global_index": 1444,
+      "domain": "127.0.0.1",
+      "title": "pgAdmin 4",
+      "url": "http://127.0.0.1/pgadmin4/login?next=%2Fpgadmin4%2F",
+      "date_added": "2021-12-06 19:37:29"
+    },
+    {
+      "index": 6,
+      "global_index": 1445,
+      "domain": "postgresqltutorial.com",
+      "title": "PostgreSQL Sample Database",
+      "url": "https://www.postgresqltutorial.com/postgresql-sample-database/",
+      "date_added": "2021-12-06 20:08:08"
+    },
+    {
+      "index": 7,
+      "global_index": 1446,
+      "domain": "postgresqltutorial.com",
+      "title": "Connect to PostgreSQL Database",
+      "url": "https://www.postgresqltutorial.com/connect-to-postgresql-database/",
+      "date_added": "2021-12-06 20:16:43"
+    },
+    {
+      "index": 8,
+      "global_index": 1447,
+      "domain": "postgresqltutorial.com",
+      "title": "17 Practical psql Commands That You Don't Want To Miss",
+      "url": "https://www.postgresqltutorial.com/psql-commands/",
+      "date_added": "2021-12-06 20:33:59"
+    },
+    {
+      "index": 9,
+      "global_index": 1448,
+      "domain": "schemaspy.readthedocs.io",
+      "title": "Get Started — SchemaSpy 6.0.0 documentation",
+      "url": "https://schemaspy.readthedocs.io/en/latest/started.html",
+      "date_added": "2021-12-06 20:38:48"
+    },
+    {
+      "index": 10,
+      "global_index": 1449,
+      "domain": "github.com",
+      "title": "Release Release v0.4.0 (Rona midst) · odeke-em/drive · GitHub",
+      "url": "https://github.com/odeke-em/drive/releases/tag/v0.4.0",
+      "date_added": "2021-12-06 21:28:39"
+    }
+  ]
+}

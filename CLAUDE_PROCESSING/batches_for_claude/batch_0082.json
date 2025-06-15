@@ -1,0 +1,86 @@
+{
+  "batch_number": 82,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 810,
+      "domain": "drive.google.com",
+      "title": "TEST_TEMPLATE - Google Drive",
+      "url": "https://drive.google.com/drive/u/0/folders/15y0DsweIsevDuIerQuxww9GcCfdR25qf",
+      "date_added": "2023-12-02 16:20:35"
+    },
+    {
+      "index": 2,
+      "global_index": 811,
+      "domain": "script.google.com",
+      "title": "My Executions - Apps Script",
+      "url": "https://script.google.com/home/executions",
+      "date_added": "2023-12-02 15:21:02"
+    },
+    {
+      "index": 3,
+      "global_index": 812,
+      "domain": "",
+      "title": "2023-12-01_215500_exportGoogleSheetDataToDocPDF_Template_WORKING",
+      "url": "file:///media/fuse/crostini_a459bfe8e178bedb332f4e174687e6e50f76dbd5_termina_penguin/GoogleAppScripts/2023-12-01_215500_exportGoogleSheetDataToDocPDF_Template_WORKING",
+      "date_added": "2023-12-02 15:20:23"
+    },
+    {
+      "index": 4,
+      "global_index": 813,
+      "domain": "docs.google.com",
+      "title": "GAS_list_sort - Google Sheets",
+      "url": "https://docs.google.com/spreadsheets/d/1_REDWhMPLKVDY4ixF8E-hgHdcXuY-MV2GhQRjW3QN_w/edit#gid=1273076598",
+      "date_added": "2023-12-01 08:59:39"
+    },
+    {
+      "index": 5,
+      "global_index": 814,
+      "domain": "sparkfun.com",
+      "title": "SparkFun Electronics",
+      "url": "https://www.sparkfun.com/",
+      "date_added": "2023-11-30 07:38:58"
+    },
+    {
+      "index": 6,
+      "global_index": 815,
+      "domain": "docs.sparkfun.com",
+      "title": "Introduction - Super Headphones Hookup Guide",
+      "url": "https://docs.sparkfun.com/SuperHeadphones/introduction/",
+      "date_added": "2023-11-30 07:39:53"
+    },
+    {
+      "index": 7,
+      "global_index": 816,
+      "domain": "spectrum.ieee.org",
+      "title": "Build Your Own Hi-fi Ear Defenders - IEEE Spectrum",
+      "url": "https://spectrum.ieee.org/hi-fi-ear-defenders",
+      "date_added": "2023-11-30 07:39:39"
+    },
+    {
+      "index": 8,
+      "global_index": 817,
+      "domain": "economist.com",
+      "title": "Welcome to a golden age for workers",
+      "url": "https://www.economist.com/finance-and-economics/2023/11/28/welcome-to-a-golden-age-for-workers",
+      "date_added": "2023-11-30 07:27:06"
+    },
+    {
+      "index": 9,
+      "global_index": 818,
+      "domain": "docs.google.com",
+      "title": "RecursiveListFoldersRoot - Google Sheets",
+      "url": "https://docs.google.com/spreadsheets/d/11fXjpR5h7Y8JT_fVpGoFwWRyeL9aE4LuYa_dZAefO1w/edit#gid=0",
+      "date_added": "2023-11-29 01:41:05"
+    },
+    {
+      "index": 10,
+      "global_index": 819,
+      "domain": "drive.google.com",
+      "title": "TEST_File_Directory_List - Google Drive",
+      "url": "https://drive.google.com/drive/u/0/folders/110OIlutY-EJIThfoHcmivm2iufGLabug",
+      "date_added": "2023-11-28 23:50:48"
+    }
+  ]
+}

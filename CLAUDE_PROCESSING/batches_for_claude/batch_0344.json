@@ -1,0 +1,86 @@
+{
+  "batch_number": 344,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 3430,
+      "domain": "savvycal.com",
+      "title": "Tentative: Hal Casteel <> Ben (PLGeek) - PLG/PLS Consultation",
+      "url": "https://savvycal.com/events/ab0d83f1-c97a-473f-890f-947818d37bed?as=attendee_01JK6VF66H61RMZ4GF7EZGQ7MX&theme=light",
+      "date_added": "2025-02-03 20:54:47"
+    },
+    {
+      "index": 2,
+      "global_index": 3431,
+      "domain": "az1.ai",
+      "title": "az1.ai | Features",
+      "url": "https://az1.ai/features.html",
+      "date_added": "2025-02-03 20:54:47"
+    },
+    {
+      "index": 3,
+      "global_index": 3432,
+      "domain": "chatgpt.com",
+      "title": "CRM Sales Pipeline Analysis",
+      "url": "https://chatgpt.com/c/67a0f5dc-20a4-800b-af6f-018cf825d1ba",
+      "date_added": "2025-02-03 20:54:47"
+    },
+    {
+      "index": 4,
+      "global_index": 3433,
+      "domain": "auth.openai.com",
+      "title": "Login - ChatGPT",
+      "url": "https://auth.openai.com/authorize?audience=https%3A%2F%2Fapi.openai.com%2Fv1&client_id=TdJIcbe16WoTHtN95nyywh5E4yOo6ItG&country_code=BR&device_id=74d1fa2d-3acc-4e4a-858f-de62d9bda73d&ext-oai-did=74d1fa2d-3acc-4e4a-858f-de62d9bda73d&prompt=login&redirect_uri=https%3A%2F%2Fchatgpt.com%2Fapi%2Fauth%2Fcallback%2Fopenai&response_type=code&scope=openid+email+profile+offline_access+model.request+model.read+organization.read+organization.write&screen_hint=login&state=0Ht9qHv8SAhLXvKhFZ3UPAvNYUHuAf7kvp79_x7crbw&flow=treatment",
+      "date_added": "2025-02-03 20:54:47"
+    },
+    {
+      "index": 5,
+      "global_index": 3434,
+      "domain": "drive.google.com",
+      "title": "2025-01-29 Thriveside Meeting - Daniel Perumal - MEETINGS with 3rd PARTIES - Google Drive",
+      "url": "https://drive.google.com/drive/u/5/folders/1bcJvaqfGIvKfH0nOeBUsk772n-r3ox1A",
+      "date_added": "2025-02-03 20:54:47"
+    },
+    {
+      "index": 6,
+      "global_index": 3435,
+      "domain": "drive.google.com",
+      "title": "CRM_SOFTWARE_REQUIREMENTS - PRODUCTS - Google Drive",
+      "url": "https://drive.google.com/drive/u/5/folders/1wWY9Jm4_Pl6TwdfZOk4GZSpZGYYHSPEE",
+      "date_added": "2025-02-03 20:54:47"
+    },
+    {
+      "index": 7,
+      "global_index": 3436,
+      "domain": "docs.google.com",
+      "title": "Agentic Product Manager (APM) - Agent Functional Specifications - Google Docs",
+      "url": "https://docs.google.com/document/d/1QI0D3M-d-PqparAskvuLdMI0eiebzhd4-Xme8Ar85Qw/edit?tab=t.0",
+      "date_added": "2025-02-03 20:54:47"
+    },
+    {
+      "index": 8,
+      "global_index": 3437,
+      "domain": "docs.google.com",
+      "title": "Agentic Product Manager (APM) - Detailed Specification - Google Docs",
+      "url": "https://docs.google.com/document/d/1FjYBKdox-y6fejfOi-DhTxKmipH7_FbLSB0vWpCR_XE/edit?tab=t.0",
+      "date_added": "2025-02-03 20:54:47"
+    },
+    {
+      "index": 9,
+      "global_index": 3438,
+      "domain": "docs.google.com",
+      "title": "2025-02-03_16-45-50_Perplexity.ai_What is the definition of a Product Manager, what do they do,....md - Google Docs",
+      "url": "https://docs.google.com/document/d/1jhSwcejwTFEBiMdjkS-z_xlh7_rC9twSRHTAjuEc07M/edit?tab=t.0",
+      "date_added": "2025-02-03 20:54:47"
+    },
+    {
+      "index": 10,
+      "global_index": 3439,
+      "domain": "en.wikipedia.org",
+      "title": "Product manager - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Product_manager",
+      "date_added": "2025-02-03 20:54:47"
+    }
+  ]
+}

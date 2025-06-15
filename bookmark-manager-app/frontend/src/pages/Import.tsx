@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import {
   Box,
   Heading,
@@ -18,13 +18,50 @@ import {
   ListItem,
   Badge,
   HStack,
+  Stat,
+  StatLabel,
+  StatNumber,
+  StatGroup,
+  Divider,
+  CircularProgress,
+  CircularProgressLabel,
+  useToast,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
 } from '@chakra-ui/react'
-import { FiUploadCloud, FiFile, FiCheck, FiX } from 'react-icons/fi'
+import { FiUploadCloud, FiFile, FiCheck, FiX, FiActivity, FiBookmark, FiClock, FiCheckCircle } from 'react-icons/fi'
 import { useDropzone, FileWithPath } from 'react-dropzone'
-import { useMutation, useQuery } from '@tanstack/react-query'
-import { importService } from '@/services/api'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { importService } from '../services/api'
 import { formatDistanceToNow } from 'date-fns'
-import type { ImportHistory, ImportResult } from '@/types'
+import { useSocket } from '../contexts/SocketContext'
+// Types defined inline to avoid circular imports
+interface ImportHistory {
+  id: string
+  user_id: string
+  filename: string
+  status: 'pending' | 'processing' | 'completed' | 'failed'
+  total_bookmarks?: number
+  new_bookmarks?: number
+  updated_bookmarks?: number
+  failed_bookmarks?: number
+  error_message?: string
+  started_at: string
+  completed_at?: string
+}
+
+interface ImportResult {
+  total: number
+  new: number
+  updated: number
+  failed: number
+  duplicates: number
+}
 
 const Import: React.FC = () => {
   const [uploadProgress, setUploadProgress] = useState(0)
@@ -52,12 +89,10 @@ const Import: React.FC = () => {
     },
   })
 
-  const { data: importHistory, refetch: refetchHistory } = useQuery<ImportHistory[]>({
+  const { data: importHistory, refetch: refetchHistory, isLoading: isLoadingHistory } = useQuery<ImportHistory[]>({
     queryKey: ['import-history'],
-    queryFn: async () => {
-      const response = await importService.getHistory()
-      return response.data
-    },
+    queryFn: () => importService.getHistory(),
+    retry: false,
   })
 
   const onDrop = useCallback((acceptedFiles: FileWithPath[]) => {
@@ -168,11 +203,100 @@ const Import: React.FC = () => {
         </CardBody>
       </Card>
 
+      {/* Import Progress Modal */}
+      <Modal isOpen={isProgressOpen} onClose={() => {}} closeOnOverlayClick={false} size="xl">
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Import Progress</ModalHeader>
+          {activeImport?.phase === 'completed' && <ModalCloseButton />}
+          <ModalBody pb={6}>
+            {activeImport && (
+              <VStack spacing={4} align="stretch">
+                <HStack>
+                  <Icon 
+                    as={getPhaseIcon(activeImport.phase)} 
+                    color={`${getPhaseColor(activeImport.phase)}.500`}
+                    boxSize={6}
+                  />
+                  <Text fontSize="lg" fontWeight="medium">
+                    {getPhaseText(activeImport.phase)}
+                  </Text>
+                </HStack>
+
+                <Progress 
+                  value={activeImport.percentComplete} 
+                  colorScheme={getPhaseColor(activeImport.phase)}
+                  size="lg"
+                  hasStripe
+                  isAnimated={activeImport.phase !== 'completed'}
+                />
+
+                <StatGroup>
+                  {activeImport.chunksTotal && (
+                    <Stat>
+                      <StatLabel>Chunks</StatLabel>
+                      <StatNumber fontSize="lg">
+                        {activeImport.chunksProcessed || 0} / {activeImport.chunksTotal}
+                      </StatNumber>
+                    </Stat>
+                  )}
+                  {activeImport.bookmarksImported !== undefined && (
+                    <Stat>
+                      <StatLabel>Bookmarks Imported</StatLabel>
+                      <StatNumber fontSize="lg">{activeImport.bookmarksImported}</StatNumber>
+                    </Stat>
+                  )}
+                  <Stat>
+                    <StatLabel>Progress</StatLabel>
+                    <StatNumber fontSize="lg">{activeImport.percentComplete}%</StatNumber>
+                  </Stat>
+                </StatGroup>
+
+                {activeImport.phase === 'importing' && activeImport.currentChunk && (
+                  <Alert status="info" size="sm">
+                    <AlertIcon />
+                    <Text fontSize="sm">Processing chunk {activeImport.currentChunk}...</Text>
+                  </Alert>
+                )}
+
+                {activeImport.phase === 'validating' && (
+                  <Alert status="info">
+                    <AlertIcon />
+                    <Box>
+                      <Text>Bookmarks have been imported successfully!</Text>
+                      <Text fontSize="sm" mt={1}>
+                        They are now being queued for validation in the background.
+                      </Text>
+                    </Box>
+                  </Alert>
+                )}
+
+                {activeImport.errors && activeImport.errors.length > 0 && (
+                  <Alert status="warning">
+                    <AlertIcon />
+                    <Box>
+                      <Text>Some errors occurred during import:</Text>
+                      <List fontSize="sm" mt={1}>
+                        {activeImport.errors.slice(0, 3).map((error, idx) => (
+                          <ListItem key={idx}>{error}</ListItem>
+                        ))}
+                      </List>
+                    </Box>
+                  </Alert>
+                )}
+              </VStack>
+            )}
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+
       <Card bg={cardBg}>
         <CardBody>
           <Heading size="md" mb={4}>Import History</Heading>
           
-          {!importHistory || importHistory.length === 0 ? (
+          {isLoadingHistory ? (
+            <Text color="gray.500">Loading history...</Text>
+          ) : !importHistory || importHistory.length === 0 ? (
             <Text color="gray.500">No imports yet</Text>
           ) : (
             <List spacing={3}>

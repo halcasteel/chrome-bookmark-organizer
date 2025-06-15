@@ -1,0 +1,86 @@
+{
+  "batch_number": 93,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 920,
+      "domain": "amazon.com",
+      "title": "Patagonia and Tierra Del Fuego Nautical Gde 2nd Ed: Rolfo, Mariolina: 9788885986343: Amazon.com: Books",
+      "url": "https://www.amazon.com/Patagonia-Tierra-Del-Fuego-Nautical/dp/888598634X",
+      "date_added": "2023-09-16 12:22:15"
+    },
+    {
+      "index": 2,
+      "global_index": 921,
+      "domain": "cruisingworld.com",
+      "title": "Sailing Patagonia in The Winter | Cruising World",
+      "url": "https://www.cruisingworld.com/sailing-patagonia-in-winter/",
+      "date_added": "2023-09-16 12:24:13"
+    },
+    {
+      "index": 3,
+      "global_index": 922,
+      "domain": "bookharbour.com",
+      "title": "Patagonia and Tierra del Fuego by Mariolina Rolfo & Giorgio Ardrizzi",
+      "url": "https://www.bookharbour.com/patagonia-and-tierra-del-fuego-nautical-guide?gclid=CjwKCAjwpJWoBhA8EiwAHZFzflrS1cRXL7H5Qjfz7uMfOzccSS5wBdUgGx0lCEaSF0Ea7gweDQ9x5BoCmwkQAvD_BwE",
+      "date_added": "2023-09-16 12:21:54"
+    },
+    {
+      "index": 4,
+      "global_index": 923,
+      "domain": "rotorriot.com",
+      "title": "Solder Free Built & Tuned Drones",
+      "url": "https://rotorriot.com/collections/solder-free-built-tuned-drones/",
+      "date_added": "2023-09-12 22:20:08"
+    },
+    {
+      "index": 5,
+      "global_index": 924,
+      "domain": "betaflight.com",
+      "title": "Betaflight - Pushing the Limits of UAV Performance | Betaflight",
+      "url": "https://betaflight.com/",
+      "date_added": "2023-09-12 14:48:58"
+    },
+    {
+      "index": 6,
+      "global_index": 925,
+      "domain": "speedybee.com",
+      "title": "SpeedyBee Master 5 V2 HD DJI O3 Air Unit FPV 5 Freestyle drone - Speedy Bee",
+      "url": "https://www.speedybee.com/speedybee-master-5-v2-hd-dji-o3-air-unit-fpv-5-freestyle-drone/",
+      "date_added": "2023-09-12 16:30:21"
+    },
+    {
+      "index": 7,
+      "global_index": 926,
+      "domain": "iflight-rc.eu",
+      "title": "M10 GPS 3D Fix Enhancement – iFlight-RC Europe",
+      "url": "https://iflight-rc.eu/blogs/news/m10-gps-3d-fix-enhancement",
+      "date_added": "2023-09-12 14:49:08"
+    },
+    {
+      "index": 8,
+      "global_index": 927,
+      "domain": "rotorbuilds.com",
+      "title": "AOS LR5 O3 HD - 2105.5 2950kv Motors - 4S - 26 minutes (21700 Lithium Ion)",
+      "url": "https://rotorbuilds.com/build/30826",
+      "date_added": "2023-09-09 23:49:50"
+    },
+    {
+      "index": 9,
+      "global_index": 928,
+      "domain": "getfpv.com",
+      "title": "SpeedyBee Master 5 V2 Drone",
+      "url": "https://www.getfpv.com/speedybee-master-5-v2-drone.html",
+      "date_added": "2023-09-11 12:54:53"
+    },
+    {
+      "index": 10,
+      "global_index": 929,
+      "domain": "oscarliang.com",
+      "title": "Travelling with FPV Drone - My Portable Setup with Charging and Field Repair Kit - Oscar Liang",
+      "url": "https://oscarliang.com/fpv-drone-travel-setup/",
+      "date_added": "2023-09-11 12:51:04"
+    }
+  ]
+}

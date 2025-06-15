@@ -4,6 +4,7 @@ import type { User, LoginResult } from '@/types'
 
 interface AuthContextType {
   user: User | null
+  token: string | null
   loading: boolean
   error: string | null
   login: (email: string, password: string, twoFactorCode?: string) => Promise<LoginResult>
@@ -28,6 +29,7 @@ interface AuthProviderProps {
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null)
+  const [token, setToken] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -37,16 +39,18 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const checkAuth = async (): Promise<void> => {
     try {
-      const token = localStorage.getItem('token')
-      if (token) {
-        api.defaults.headers.common['Authorization'] = `Bearer ${token}`
+      const storedToken = localStorage.getItem('token')
+      if (storedToken) {
+        api.defaults.headers.common['Authorization'] = `Bearer ${storedToken}`
         const response = await authService.me()
         setUser(response.data.user)
+        setToken(storedToken)
       }
     } catch (error) {
       console.error('Auth check failed:', error)
       localStorage.removeItem('token')
       delete api.defaults.headers.common['Authorization']
+      setToken(null)
     } finally {
       setLoading(false)
     }
@@ -65,6 +69,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       localStorage.setItem('token', token)
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`
       setUser(user)
+      setToken(token)
       
       return { success: true }
     } catch (error: any) {
@@ -95,6 +100,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       localStorage.setItem('token', token)
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`
       setUser(user)
+      setToken(token)
       
       return { success: true }
     } catch (error: any) {
@@ -108,10 +114,12 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     localStorage.removeItem('token')
     delete api.defaults.headers.common['Authorization']
     setUser(null)
+    setToken(null)
   }
 
   const value: AuthContextType = {
     user,
+    token,
     loading,
     error,
     login,

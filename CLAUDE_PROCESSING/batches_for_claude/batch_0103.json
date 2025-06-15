@@ -1,0 +1,86 @@
+{
+  "batch_number": 103,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 1020,
+      "domain": "sites.google.com",
+      "title": "NorCal Eco Divers - Calendar",
+      "url": "https://sites.google.com/casteel.us/norcal-eco-divers/calendar?authuser=2",
+      "date_added": "2023-04-27 10:14:59"
+    },
+    {
+      "index": 2,
+      "global_index": 1021,
+      "domain": "tidesandcurrents.noaa.gov",
+      "title": "CO-OPS Map - NOAA Tides & Currents",
+      "url": "https://tidesandcurrents.noaa.gov/map/index.html?id=9413450",
+      "date_added": "2023-04-27 10:14:59"
+    },
+    {
+      "index": 3,
+      "global_index": 1022,
+      "domain": "iframe-generator.com",
+      "title": "iFrame Generator - Free Online iFrame Code Maker Tool",
+      "url": "https://www.iframe-generator.com/",
+      "date_added": "2023-04-27 10:14:59"
+    },
+    {
+      "index": 4,
+      "global_index": 1023,
+      "domain": "",
+      "title": "about:blank",
+      "url": "about:blank",
+      "date_added": "2023-04-27 10:14:59"
+    },
+    {
+      "index": 5,
+      "global_index": 1024,
+      "domain": "linkedin.com",
+      "title": "Daniel messaged you",
+      "url": "https://www.linkedin.com/analytics/profile-views/",
+      "date_added": "2023-04-27 10:14:59"
+    },
+    {
+      "index": 6,
+      "global_index": 1025,
+      "domain": "app.slack.com",
+      "title": "! Liju Raju [EST] - GRAIL - 1 new item - Slack",
+      "url": "https://app.slack.com/client/T0KHHUL6M/D03NU33FURL",
+      "date_added": "2023-04-27 10:14:59"
+    },
+    {
+      "index": 7,
+      "global_index": 1026,
+      "domain": "developers.google.com",
+      "title": "Python quickstart  |  Google Drive  |  Google for Developers",
+      "url": "https://developers.google.com/drive/api/quickstart/python?ref=haihai.ai#authorize_credentials_for_a_desktop_application",
+      "date_added": "2023-05-29 06:07:56"
+    },
+    {
+      "index": 8,
+      "global_index": 1027,
+      "domain": "console.cloud.google.com",
+      "title": "Service accounts – IAM & Admin – HCGPTChatGdrive1 – Google Cloud console",
+      "url": "https://console.cloud.google.com/iam-admin/serviceaccounts?project=hcgptchatgdrive1",
+      "date_added": "2023-05-29 06:07:56"
+    },
+    {
+      "index": 9,
+      "global_index": 1028,
+      "domain": "console.cloud.google.com",
+      "title": "Enable access to APIs – APIs & Services – HCGPTChatGdrive1 – Google Cloud console",
+      "url": "https://console.cloud.google.com/apis/enableflow?project=hcgptchatgdrive1",
+      "date_added": "2023-05-29 06:07:56"
+    },
+    {
+      "index": 10,
+      "global_index": 1029,
+      "domain": "console.cloud.google.com",
+      "title": "APIs & Services – HCGPTChatGdrive1 – Google Cloud console",
+      "url": "https://console.cloud.google.com/apis/credentials/consent?project=hcgptchatgdrive1",
+      "date_added": "2023-05-29 06:07:56"
+    }
+  ]
+}

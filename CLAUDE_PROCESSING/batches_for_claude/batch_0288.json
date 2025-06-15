@@ -1,0 +1,86 @@
+{
+  "batch_number": 288,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 2870,
+      "domain": "admin.google.com",
+      "title": "Artem Arakcheev - Admin Console",
+      "url": "https://admin.google.com/u/4/ac/users/0xvir7l34xra1x/roles?hl=en",
+      "date_added": "2024-12-25 12:57:15"
+    },
+    {
+      "index": 2,
+      "global_index": 2871,
+      "domain": "cloud.google.com",
+      "title": "Cloud Management Console | Google Cloud",
+      "url": "https://cloud.google.com/cloud-console/?utm_source=google&utm_medium=cpc&utm_campaign=latam-BR-all-pt-dr-SKWS-all-all-trial-p-dr-1707800-LUAC0016034&utm_content=text-ad-none-any-DEV_c-CRE_540885994000-ADGP_Hybrid+%7C+SKWS+-+PHR+%7C+Txt_Management+Tools-Console-KWID_43700065922000548-kwd-402499665572&utm_term=KW_cloud%20console-ST_Cloud+Console&gad_source=1&gclid=Cj0KCQiA9667BhDoARIsANnamQa9vfR4YAdGUotgMMWtnIqUV6_FYKehvfE-RBeofgSAgXKvaNlvxWgaAg41EALw_wcB&gclsrc=aw.ds",
+      "date_added": "2024-12-25 12:57:15"
+    },
+    {
+      "index": 3,
+      "global_index": 2872,
+      "domain": "console.cloud.google.com",
+      "title": "Create users – Google Cloud Setup – My First Project – Google Cloud console",
+      "url": "https://console.cloud.google.com/cloud-setup/users-groups?authuser=5&project=proud-gate-445817-n2",
+      "date_added": "2024-12-25 12:57:15"
+    },
+    {
+      "index": 4,
+      "global_index": 2873,
+      "domain": "admin.google.com",
+      "title": "Artem Arakcheev - Admin Console",
+      "url": "https://admin.google.com/u/5/ac/users/0xvir7l34xra1x",
+      "date_added": "2024-12-25 12:57:15"
+    },
+    {
+      "index": 5,
+      "global_index": 2874,
+      "domain": "console.cloud.google.com",
+      "title": "Welcome – FormatDocument4 – Google Cloud console",
+      "url": "https://console.cloud.google.com/welcome/new?project=formatdocument4",
+      "date_added": "2024-12-25 12:57:15"
+    },
+    {
+      "index": 6,
+      "global_index": 2875,
+      "domain": "console.cloud.google.com",
+      "title": "IAM – IAM & Admin – asafer.ai – Google Cloud console",
+      "url": "https://console.cloud.google.com/iam-admin/iam?authuser=5&organizationId=1015420128875&orgonly=true&supportedpurview=organizationId",
+      "date_added": "2024-12-25 12:57:15"
+    },
+    {
+      "index": 7,
+      "global_index": 2876,
+      "domain": "console.cloud.google.com",
+      "title": "Identity & Organization – IAM & Admin – asafer.ai – Google Cloud console",
+      "url": "https://console.cloud.google.com/iam-admin/org-onboarding?authuser=5&organizationId=1015420128875",
+      "date_added": "2024-12-25 12:57:15"
+    },
+    {
+      "index": 8,
+      "global_index": 2877,
+      "domain": "myaccount.google.com",
+      "title": "Security",
+      "url": "https://myaccount.google.com/security?nlr=1",
+      "date_added": "2024-12-25 12:57:15"
+    },
+    {
+      "index": 9,
+      "global_index": 2878,
+      "domain": "myaccount.google.com",
+      "title": "Google Authenticator",
+      "url": "https://myaccount.google.com/u/4/two-step-verification/authenticator?rapt=AEjHL4PkiAjOrr9KzZXqk72AuHBS7uWcV7ZS8OOVKcELS98K7CetnnBnl5DbZp5vWy9Ph-LY7_7J5lW4wCm39a6j4GNWy8hoiCVSc6vVgIVAaNL1-heLO2Y",
+      "date_added": "2024-12-25 12:57:15"
+    },
+    {
+      "index": 10,
+      "global_index": 2879,
+      "domain": "myaccount.google.com",
+      "title": "Google Authenticator",
+      "url": "https://myaccount.google.com/u/5/two-step-verification/authenticator?utm_source=google-account&utm_medium=web&utm_campaign=authenticator-screen&continue=https://myaccount.google.com/u/5/security?origin%3D3&pli=1&rapt=AEjHL4P9DBeEhkn-K8kJMW7qiZ5Y4vjaZ4eQ2WGwqos47TxMGHYbnoZPtam4RMPHgQPNv3_L9K9LrbRJ-919PtgsYj31YUihdWPenaVJyJHklzRHWu5BG04",
+      "date_added": "2024-12-25 12:57:15"
+    }
+  ]
+}

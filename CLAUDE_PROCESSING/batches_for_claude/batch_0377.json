@@ -1,0 +1,86 @@
+{
+  "batch_number": 377,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 3760,
+      "domain": "substack.com",
+      "title": "Sign in to The VC Corner",
+      "url": "https://substack.com/sign-in?redirect=%2F&for_pub=thevccorner&email=hal.casteel%40gmail.com",
+      "date_added": "2025-01-27 11:46:26"
+    },
+    {
+      "index": 2,
+      "global_index": 3761,
+      "domain": "techcrunch.com",
+      "title": "OpenAI may preview its agent tool for users on the $200-per-month Pro plan | TechCrunch",
+      "url": "https://techcrunch.com/2025/01/23/openais-agent-tool-will-be-available-to-users-paying-200-per-month-for-pro/",
+      "date_added": "2025-01-27 11:46:26"
+    },
+    {
+      "index": 3,
+      "global_index": 3762,
+      "domain": "chatgpt.com",
+      "title": "React Kanban Board Setup",
+      "url": "https://chatgpt.com/c/67944547-c954-800b-9254-740611d1d1a7",
+      "date_added": "2025-01-27 11:46:26"
+    },
+    {
+      "index": 4,
+      "global_index": 3763,
+      "domain": "linkedin.com",
+      "title": "(11) Post | Feed | LinkedIn",
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7274811822623330305/",
+      "date_added": "2025-01-27 11:46:26"
+    },
+    {
+      "index": 5,
+      "global_index": 3764,
+      "domain": "app.folk.app",
+      "title": "folk - app",
+      "url": "https://app.folk.app/apps/contacts/network/0d8965fc-e617-484d-91a2-5ea2a735d5cd/groups/3cdf2a25-cf3c-4ab4-aaa7-77f8e373586a/view/2690113b-6019-4308-88b0-e968c4f8f5e1",
+      "date_added": "2025-01-27 11:46:26"
+    },
+    {
+      "index": 6,
+      "global_index": 3765,
+      "domain": "perplexity.ai",
+      "title": "Perplexity",
+      "url": "https://www.perplexity.ai/search/how-do-i-export-all-of-my-cont-k2G705SzTNOYcYfJzHciGA",
+      "date_added": "2025-01-27 11:46:26"
+    },
+    {
+      "index": 7,
+      "global_index": 3766,
+      "domain": "chatgpt.com",
+      "title": "ChatGPT",
+      "url": "https://chatgpt.com/c/6790dfca-aba0-800b-9e20-a0b5c2856a38",
+      "date_added": "2025-01-27 11:47:10"
+    },
+    {
+      "index": 8,
+      "global_index": 3767,
+      "domain": "ninety.io",
+      "title": "404 Not Found",
+      "url": "https://www.ninety.io/hubfs/",
+      "date_added": "2025-01-27 11:47:10"
+    },
+    {
+      "index": 9,
+      "global_index": 3768,
+      "domain": "zettlr.com",
+      "title": "Download for Debian | Zettlr",
+      "url": "https://www.zettlr.com/download/deb64",
+      "date_added": "2025-01-27 11:47:10"
+    },
+    {
+      "index": 10,
+      "global_index": 3769,
+      "domain": "chatgpt.com",
+      "title": "Set up JupyterLab",
+      "url": "https://chatgpt.com/c/67930246-3ef0-800b-b872-50827f56b1a6",
+      "date_added": "2025-01-27 11:47:10"
+    }
+  ]
+}

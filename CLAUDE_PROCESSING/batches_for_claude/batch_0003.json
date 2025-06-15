@@ -1,0 +1,86 @@
+{
+  "batch_number": 3,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 20,
+      "domain": "bloomberg.com",
+      "title": "Meta’s Billion-Dollar Bet Cements Scale AI’s Role as Backbone of AI Market - Bloomberg",
+      "url": "https://www.bloomberg.com/news/articles/2025-06-08/meta-s-billion-dollar-bet-cements-scale-ai-s-role-as-backbone-of-ai-market?embedded-checkout=true",
+      "date_added": "2025-06-09 05:30:16"
+    },
+    {
+      "index": 2,
+      "global_index": 21,
+      "domain": "grok.com",
+      "title": "LlamaIndex vs. Anthropic MCP: Use Cases and Differences - Grok",
+      "url": "https://grok.com/chat/70c94c31-9830-4d52-8776-eb3de9039e3b",
+      "date_added": "2025-06-08 22:46:03"
+    },
+    {
+      "index": 3,
+      "global_index": 22,
+      "domain": "mckinsey.com",
+      "title": "Building and managing an agentic AI workforce | McKinsey",
+      "url": "https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/the-future-of-work-is-agentic",
+      "date_added": "2025-06-08 21:56:35"
+    },
+    {
+      "index": 4,
+      "global_index": 23,
+      "domain": "a16z.com",
+      "title": "Investing in Toma | Andreessen Horowitz",
+      "url": "https://a16z.com/announcement/investing-in-toma/",
+      "date_added": "2025-06-08 22:06:13"
+    },
+    {
+      "index": 5,
+      "global_index": 24,
+      "domain": "autoremarketing.com",
+      "title": "Toma secures $17 million in funding to build AI agents for dealerships | Auto Remarketing",
+      "url": "https://www.autoremarketing.com/ar/technology/toma-secures-17-million-in-funding-to-build-ai-agents-for-dealerships/",
+      "date_added": "2025-06-08 22:06:06"
+    },
+    {
+      "index": 6,
+      "global_index": 25,
+      "domain": "nature.com",
+      "title": "A multimodal conversational agent for DNA, RNA and protein tasks | Nature Machine Intelligence",
+      "url": "https://www.nature.com/articles/s42256-025-01047-1",
+      "date_added": "2025-06-08 22:04:25"
+    },
+    {
+      "index": 7,
+      "global_index": 26,
+      "domain": "cnet.com",
+      "title": "What Is Agentic AI? Everything to Know About Artificial Intelligence Agents - CNET",
+      "url": "https://www.cnet.com/tech/services-and-software/what-is-agentic-ai-everything-to-know-about-artificial-intelligence-agents/",
+      "date_added": "2025-06-08 22:02:29"
+    },
+    {
+      "index": 8,
+      "global_index": 27,
+      "domain": "sloanreview.mit.edu",
+      "title": "To Be a Responsible AI Leader, Focus on Being Responsible | September 19, 2022",
+      "url": "https://sloanreview.mit.edu/projects/to-be-a-responsible-ai-leader-focus-on-being-responsible/",
+      "date_added": "2025-06-08 22:02:16"
+    },
+    {
+      "index": 9,
+      "global_index": 28,
+      "domain": "docs.n8n.io",
+      "title": "n8n Glossary | n8n Docs",
+      "url": "https://docs.n8n.io/glossary/#workflow-n8n",
+      "date_added": "2025-06-03 19:40:33"
+    },
+    {
+      "index": 10,
+      "global_index": 29,
+      "domain": "livescience.com",
+      "title": "AI 'hallucinates' constantly, but there's a solution | Live Science",
+      "url": "https://www.livescience.com/technology/artificial-intelligence/ai-hallucinates-constantly-but-theres-a-solution",
+      "date_added": "2025-06-08 21:54:58"
+    }
+  ]
+}

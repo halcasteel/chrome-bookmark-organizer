@@ -1,0 +1,86 @@
+{
+  "batch_number": 107,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 1060,
+      "domain": "docs.google.com",
+      "title": "Notes - ERP Roadmap Core Team Meeting Notes - Google Docs",
+      "url": "https://docs.google.com/document/d/1pDrtVkv9-W2FrP-cYSLz6B9hBCoCAXgHDxF_g2X63eI/edit#heading=h.byaed3wpxtun",
+      "date_added": "2023-06-06 23:09:41"
+    },
+    {
+      "index": 2,
+      "global_index": 1061,
+      "domain": "cohere.com",
+      "title": "News - Latest Articles & Media Coverage on Generative AI | Cohere",
+      "url": "https://cohere.com/news",
+      "date_added": "2023-06-06 00:46:41"
+    },
+    {
+      "index": 3,
+      "global_index": 1062,
+      "domain": "nextbigfuture.com",
+      "title": "Vicuna is the Current Best Open Source AI Model for Local Computer Installation | NextBigFuture.com",
+      "url": "https://www.nextbigfuture.com/2023/04/vicuna-is-the-current-best-open-source-ai-model-for-local-computer-installation.html",
+      "date_added": "2023-06-06 02:17:35"
+    },
+    {
+      "index": 4,
+      "global_index": 1063,
+      "domain": "sourceforge.net",
+      "title": "Best Open Source Large Language Models (LLM) 2023",
+      "url": "https://sourceforge.net/directory/large-language-models-llm/",
+      "date_added": "2023-06-06 02:15:01"
+    },
+    {
+      "index": 5,
+      "global_index": 1064,
+      "domain": "docs.google.com",
+      "title": "Notes - Tom/Hal 1-1 - Google Docs",
+      "url": "https://docs.google.com/document/d/1WJaxHAcKiPBA4f_q_QNN8UJv7x6D3q9Pc2tIKl5yN4E/edit",
+      "date_added": "2023-06-06 00:47:34"
+    },
+    {
+      "index": 6,
+      "global_index": 1065,
+      "domain": "huggingface.co",
+      "title": "bert-base-multilingual-cased · Hugging Face",
+      "url": "https://huggingface.co/bert-base-multilingual-cased",
+      "date_added": "2023-06-06 00:47:09"
+    },
+    {
+      "index": 7,
+      "global_index": 1066,
+      "domain": "nasdaq.com",
+      "title": "AI startup Cohere in talks to raise funding at $6 bln plus valuation -sources | Nasdaq",
+      "url": "https://www.nasdaq.com/articles/ai-startup-cohere-in-talks-to-raise-funding-at-$6-bln-plus-valuation-sources",
+      "date_added": "2023-06-05 21:40:46"
+    },
+    {
+      "index": 8,
+      "global_index": 1067,
+      "domain": "docs.oracle.com",
+      "title": "NetSuite Applications Suite - SuiteScript",
+      "url": "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/set_1502135122.html",
+      "date_added": "2023-06-06 00:41:57"
+    },
+    {
+      "index": 9,
+      "global_index": 1068,
+      "domain": "docs.oracle.com",
+      "title": "NetSuite Applications Suite - SuiteScript 1.0 to SuiteScript 2.x API Map",
+      "url": "https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_4752722762.html",
+      "date_added": "2023-06-06 00:41:03"
+    },
+    {
+      "index": 10,
+      "global_index": 1069,
+      "domain": "eweek.com",
+      "title": "100+ Top Artificial Intelligence (AI) Companies 2023 | eWEEK",
+      "url": "https://www.eweek.com/artificial-intelligence/ai-companies/",
+      "date_added": "2023-06-06 00:31:36"
+    }
+  ]
+}

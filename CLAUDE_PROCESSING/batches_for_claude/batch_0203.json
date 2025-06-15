@@ -1,0 +1,86 @@
+{
+  "batch_number": 203,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 2020,
+      "domain": "uscis.gov",
+      "title": "Form I-9 Acceptable Documents | USCIS",
+      "url": "https://www.uscis.gov/i-9-central/form-i-9-acceptable-documents",
+      "date_added": "2022-04-28 23:09:13"
+    },
+    {
+      "index": 2,
+      "global_index": 2021,
+      "domain": "app.slack.com",
+      "title": "Slack | File browser | GRAIL",
+      "url": "https://app.slack.com/client/T0KHHUL6M/browse-files/user_profile/U03CMEYLP4P",
+      "date_added": "2022-04-28 23:10:14"
+    },
+    {
+      "index": 3,
+      "global_index": 2022,
+      "domain": "app.slack.com",
+      "title": "Slack | Threads | GRAIL",
+      "url": "https://app.slack.com/client/T0KHHUL6M/threads/user_profile/U03CMEYLP4P",
+      "date_added": "2022-04-30 15:28:18"
+    },
+    {
+      "index": 4,
+      "global_index": 2023,
+      "domain": "galleri.com",
+      "title": "The Galleri Test for Employees of GRAIL | Galleri®",
+      "url": "https://www.galleri.com/grail",
+      "date_added": "2022-05-02 08:16:34"
+    },
+    {
+      "index": 5,
+      "global_index": 2024,
+      "domain": "success.coupa.com",
+      "title": "NetSuite Integration Playbook - Coupa Success Portal",
+      "url": "https://success.coupa.com/Integrate/ERP_Playbooks/NetSuite",
+      "date_added": "2022-05-02 10:23:53"
+    },
+    {
+      "index": 6,
+      "global_index": 2025,
+      "domain": "docs.google.com",
+      "title": "Coupa Netsuite Bundle Notification Registration Form",
+      "url": "https://docs.google.com/forms/d/e/1FAIpQLScwK2kpyybBXKy8YIHh_mdyWKcYU0ZvXWu45K9hEb93xgsXHQ/viewform?vc=0&c=0&w=1&flr=0",
+      "date_added": "2022-05-02 10:28:45"
+    },
+    {
+      "index": 7,
+      "global_index": 2026,
+      "domain": "success.coupa.com",
+      "title": "Implementation Overview - Coupa Success Portal",
+      "url": "https://success.coupa.com/Implement/Overview",
+      "date_added": "2022-05-02 10:32:13"
+    },
+    {
+      "index": 8,
+      "global_index": 2027,
+      "domain": "success.coupa.com",
+      "title": "1.1 Initial Customer Communication - Coupa Success Portal",
+      "url": "https://success.coupa.com/Implement/Overview/01_Mobilize/1.1_Initial_Customer_Communication",
+      "date_added": "2022-05-02 10:48:42"
+    },
+    {
+      "index": 9,
+      "global_index": 2028,
+      "domain": "success.coupa.com",
+      "title": "Implement - Coupa Success Portal",
+      "url": "https://success.coupa.com/Implement",
+      "date_added": "2022-05-02 10:49:48"
+    },
+    {
+      "index": 10,
+      "global_index": 2029,
+      "domain": "coupa.com",
+      "title": "Coupa BSM Platform | Coupa Cloud Platform for Business Spend | Travel and Expense Management, Procurement, and Invoicing",
+      "url": "https://www.coupa.com/solutions/suite-synergy",
+      "date_added": "2022-05-02 10:51:07"
+    }
+  ]
+}

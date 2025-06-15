@@ -1,0 +1,86 @@
+{
+  "batch_number": 98,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 970,
+      "domain": "docs.google.com",
+      "title": "The Business Model Canvas - Google Sheets",
+      "url": "https://docs.google.com/spreadsheets/d/1qgrW-qMcER7dfciWdAZIHDpLPXdAsLGsD6SonKg7oqg/edit?x=20181213#gid=0",
+      "date_added": "2023-06-11 12:03:30"
+    },
+    {
+      "index": 2,
+      "global_index": 971,
+      "domain": "medium.com",
+      "title": "10 Exciting Project Ideas Using Large Language Models (LLMs) for Your Portfolio | by Leonie Monigatti | May, 2023 | Towards Data Science",
+      "url": "https://medium.com/p/970b7ab4cf9e",
+      "date_added": "2023-06-11 09:04:17"
+    },
+    {
+      "index": 3,
+      "global_index": 972,
+      "domain": "onlineexeced.mccombs.utexas.edu",
+      "title": "PG Program in Artificial Intelligence & Machine Learning: Business Applications",
+      "url": "https://onlineexeced.mccombs.utexas.edu/brochures/UT-Austin-Texas-PGP-AIML-Brochure?id=751e1f07-f015-486b-b444-5f63b6b3efd0&utm_source=Brochure&utm_medium=thank-you-page",
+      "date_added": "2023-06-11 07:04:54"
+    },
+    {
+      "index": 4,
+      "global_index": 973,
+      "domain": "zippia.com",
+      "title": "25 Artificial Intelligence Statistics [2023]: Key Facts About AI And The AI Industry - Zippia",
+      "url": "https://www.zippia.com/advice/artificial-intelligence-statistics/#Artificial_Intelligence_Statistics_By_Occupation",
+      "date_added": "2023-06-11 06:36:29"
+    },
+    {
+      "index": 5,
+      "global_index": 974,
+      "domain": "zippia.com",
+      "title": "25+ Incredible Machine Learning Statistics [2023]: Key Facts About The Future Of Technology - Zippia",
+      "url": "https://www.zippia.com/advice/machine-learning-statistics/",
+      "date_added": "2023-06-11 06:36:22"
+    },
+    {
+      "index": 6,
+      "global_index": 975,
+      "domain": "grail.service-now.com",
+      "title": "IT - Something is Broken - Service Portal",
+      "url": "https://grail.service-now.com/sp?id=sc_cat_item&sys_id=f1bc05ae4fa423002445fdb28110c745&sysparm_category=d86f81224fe423002445fdb28110c7dd",
+      "date_added": "2023-06-09 10:17:16"
+    },
+    {
+      "index": 7,
+      "global_index": 976,
+      "domain": "pinecone.io",
+      "title": "Building Custom Tools for LLM Agents | Pinecone",
+      "url": "https://www.pinecone.io/learn/langchain-tools/",
+      "date_added": "2023-06-10 01:07:09"
+    },
+    {
+      "index": 8,
+      "global_index": 977,
+      "domain": "pinecone.io",
+      "title": "LangChain: Introduction and Getting Started | Pinecone",
+      "url": "https://www.pinecone.io/learn/langchain-intro/",
+      "date_added": "2023-06-10 00:55:36"
+    },
+    {
+      "index": 9,
+      "global_index": 978,
+      "domain": "sec.gov",
+      "title": "SEC.gov | Financial Statement and Notes Data Sets",
+      "url": "https://www.sec.gov/about/divisions-offices/division-economic-risk-analysis/data/financial-statement-and-notes-data-set",
+      "date_added": "2023-06-09 10:25:00"
+    },
+    {
+      "index": 10,
+      "global_index": 979,
+      "domain": "github.com",
+      "title": "EleutherAI/the-pile",
+      "url": "https://github.com/EleutherAI/The-Pile",
+      "date_added": "2023-06-09 02:20:41"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "batch_number": 242,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 2410,
+      "domain": "nodejs.org",
+      "title": "Node.js — Run JavaScript Everywhere",
+      "url": "https://nodejs.org/en",
+      "date_added": "2024-10-30 08:58:37"
+    },
+    {
+      "index": 2,
+      "global_index": 2411,
+      "domain": "github.com",
+      "title": "halcasteel/GraphRAG_PROJECT",
+      "url": "https://github.com/halcasteel/GraphRAG_PROJECT",
+      "date_added": "2024-10-30 19:51:24"
+    },
+    {
+      "index": 3,
+      "global_index": 2412,
+      "domain": "github.com",
+      "title": "graphrag-app/frontend at main · halcasteel/graphrag-app",
+      "url": "https://github.com/halcasteel/graphrag-app/tree/main/frontend",
+      "date_added": "2024-10-29 23:30:57"
+    },
+    {
+      "index": 4,
+      "global_index": 2413,
+      "domain": "weaviate.io",
+      "title": "Python | Weaviate",
+      "url": "https://weaviate.io/developers/weaviate/client-libraries/python",
+      "date_added": "2024-10-29 07:44:03"
+    },
+    {
+      "index": 5,
+      "global_index": 2414,
+      "domain": "github.com",
+      "title": "graph-rag/openai+llamaparse/demo_neo4j_vectordb.ipynb at main · Joshua-Yu/graph-rag",
+      "url": "https://github.com/Joshua-Yu/graph-rag/blob/main/openai%2Bllamaparse/demo_neo4j_vectordb.ipynb",
+      "date_added": "2024-10-28 19:41:07"
+    },
+    {
+      "index": 6,
+      "global_index": 2415,
+      "domain": "editions.mydigitalpublication.com",
+      "title": "Seniors Housing Business : ASHA 2024",
+      "url": "https://editions.mydigitalpublication.com/publication/?i=829449&p=11&view=issueViewer",
+      "date_added": "2024-10-28 19:08:14"
+    },
+    {
+      "index": 7,
+      "global_index": 2416,
+      "domain": "ashaliving.org",
+      "title": "2023 ASHA 50 | ASHA",
+      "url": "https://www.ashaliving.org/2023/09/05/2023-asha-50/",
+      "date_added": "2024-10-28 19:07:33"
+    },
+    {
+      "index": 8,
+      "global_index": 2417,
+      "domain": "mcknightsseniorliving.com",
+      "title": "Bill aims to address growing demand for housing, care for California’s older adults - McKnight's Senior Living",
+      "url": "https://www.mcknightsseniorliving.com/news/bill-aims-to-address-growing-demand-for-housing-care-for-californias-older-adults/",
+      "date_added": "2024-10-28 17:07:51"
+    },
+    {
+      "index": 9,
+      "global_index": 2418,
+      "domain": "calendar.google.com",
+      "title": "602MD - Calendar - Week of October 27, 2024",
+      "url": "https://calendar.google.com/calendar/u/2/r?trp=true",
+      "date_added": "2024-10-27 00:24:31"
+    },
+    {
+      "index": 10,
+      "global_index": 2419,
+      "domain": "mcknightsseniorliving.com",
+      "title": "Home - McKnight's Senior Living",
+      "url": "https://www.mcknightsseniorliving.com/",
+      "date_added": "2024-10-28 11:38:07"
+    }
+  ]
+}

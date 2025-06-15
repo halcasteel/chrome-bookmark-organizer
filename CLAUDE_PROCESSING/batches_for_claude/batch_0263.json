@@ -1,0 +1,86 @@
+{
+  "batch_number": 263,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 2620,
+      "domain": "confianzit.com",
+      "title": "Web Development & Mobile App Development Company | Confianz",
+      "url": "https://www.confianzit.com/",
+      "date_added": "2024-06-12 23:35:10"
+    },
+    {
+      "index": 2,
+      "global_index": 2621,
+      "domain": "mckinsey.com",
+      "title": "Adding years to life and life to years | McKinsey",
+      "url": "https://www.mckinsey.com/mhi/our-insights/adding-years-to-life-and-life-to-years#/",
+      "date_added": "2024-06-12 15:53:17"
+    },
+    {
+      "index": 3,
+      "global_index": 2622,
+      "domain": "jobs.lever.co",
+      "title": "PointClickCare - Salesforce Developer III (Netsuite)",
+      "url": "https://jobs.lever.co/pointclickcare/68858419-ea06-490f-96fa-5a309c8262da",
+      "date_added": "2024-06-12 16:21:08"
+    },
+    {
+      "index": 4,
+      "global_index": 2623,
+      "domain": "docs.google.com",
+      "title": "NAVIGATE Files_Folders_Links - Google Sheets",
+      "url": "https://docs.google.com/spreadsheets/d/1jAm_0ceOMuHeQ_EQlzkDv9UPv7deJb_MWm61wvJVyrs/edit#gid=0",
+      "date_added": "2024-06-12 16:01:41"
+    },
+    {
+      "index": 5,
+      "global_index": 2624,
+      "domain": "0.0.0.0:8000",
+      "title": "RCFE Portal - 602MD",
+      "url": "http://0.0.0.0:8000/rcfe-portal.html",
+      "date_added": "2024-06-12 16:01:32"
+    },
+    {
+      "index": 6,
+      "global_index": 2625,
+      "domain": "linkedin.com",
+      "title": "(9) 4 Strategic Levers to Pull for Profitable, Efficient Growth | LinkedIn",
+      "url": "https://www.linkedin.com/pulse/4-strategic-levers-pull-profitable-efficient-growth-evan-goldberg-cvtcc/",
+      "date_added": "2024-06-12 16:01:19"
+    },
+    {
+      "index": 7,
+      "global_index": 2626,
+      "domain": "chatgpt.com",
+      "title": "Business Plan, Financial Model, & VC Pitch Deck - Business Planning Assistance",
+      "url": "https://chatgpt.com/g/g-2JxHEFtNH-business-plan-financial-model-vc-pitch-deck/c/66ec954e-2d00-800b-bad8-64e2609247ea",
+      "date_added": "2024-09-19 17:51:57"
+    },
+    {
+      "index": 8,
+      "global_index": 2627,
+      "domain": "docs.google.com",
+      "title": "User Management Service - STDD Version 1.0 - Google Docs",
+      "url": "https://docs.google.com/document/d/1XfzA7KVNu4BXcUlhlIcCHpCxvGl938oQZrBr0vo_ZTw/edit",
+      "date_added": "2024-09-30 00:10:46"
+    },
+    {
+      "index": 9,
+      "global_index": 2628,
+      "domain": "localhost:8080",
+      "title": "localhost:8080/v1/objects?class=DocumentChunk&filter={\"path\":[\"chunk_id\"],\"operator\":\"Equal\",\"valueInt\":1}",
+      "url": "http://localhost:8080/v1/objects?class=DocumentChunk&filter={%22path%22:[%22chunk_id%22],%22operator%22:%22Equal%22,%22valueInt%22:1}",
+      "date_added": "2024-10-29 23:34:18"
+    },
+    {
+      "index": 10,
+      "global_index": 2629,
+      "domain": "github.com",
+      "title": "GraphRAG_PROJECT/schema-analysis.md at main · halcasteel/GraphRAG_PROJECT",
+      "url": "https://github.com/halcasteel/GraphRAG_PROJECT/blob/main/schema-analysis.md",
+      "date_added": "2024-10-30 19:49:18"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "batch_number": 351,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 3500,
+      "domain": "claude.ai",
+      "title": "Claude",
+      "url": "https://claude.ai/settings/billing",
+      "date_added": "2025-03-10 22:54:10"
+    },
+    {
+      "index": 2,
+      "global_index": 3501,
+      "domain": "console.anthropic.com",
+      "title": "Anthropic Console",
+      "url": "https://console.anthropic.com/settings/keys",
+      "date_added": "2025-03-10 22:54:10"
+    },
+    {
+      "index": 3,
+      "global_index": 3502,
+      "domain": "docs.anthropic.com",
+      "title": "Claude Code overview - Anthropic",
+      "url": "https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview",
+      "date_added": "2025-03-10 22:54:10"
+    },
+    {
+      "index": 4,
+      "global_index": 3503,
+      "domain": "perplexity.ai",
+      "title": "explain how to install aider on debian linux",
+      "url": "https://www.perplexity.ai/search/explain-how-to-install-aider-o-qtbvUVy_Sne.SY0o7lpEiQ",
+      "date_added": "2025-03-10 22:54:10"
+    },
+    {
+      "index": 5,
+      "global_index": 3504,
+      "domain": "info3.citi.com",
+      "title": "Action Required Page",
+      "url": "https://info3.citi.com/1501/tran_Authorized_declined.vm?msgId=AIE-5b25fd1c93208d4d8bb5d5b125337cd7",
+      "date_added": "2025-03-10 22:54:10"
+    },
+    {
+      "index": 6,
+      "global_index": 3505,
+      "domain": "perplexity.ai",
+      "title": "claude.ai api key set",
+      "url": "https://www.perplexity.ai/search/claude-ai-api-key-set-m_SXhGVPQ7SjJJ4WGlukhA",
+      "date_added": "2025-03-10 22:54:10"
+    },
+    {
+      "index": 7,
+      "global_index": 3506,
+      "domain": "perplexity.ai",
+      "title": "litellm.AuthenticationError: AuthenticationError: OpenrouterException - b'{\"error\":{\"message\":\"No auth credentials found\",\"code\":401}}' The API provider is not able to authenticate you. Check your API key",
+      "url": "https://www.perplexity.ai/search/litellm-authenticationerror-au-z0r2qY93SZqmIqy7XzXUWw",
+      "date_added": "2025-03-10 22:54:10"
+    },
+    {
+      "index": 8,
+      "global_index": 3507,
+      "domain": "perplexity.ai",
+      "title": "compare aider and claude coder",
+      "url": "https://www.perplexity.ai/search/compare-aider-and-claude-coder-l1Jeq30IS22XMoSeNGVESQ",
+      "date_added": "2025-03-10 22:54:10"
+    },
+    {
+      "index": 9,
+      "global_index": 3508,
+      "domain": "calendar.google.com",
+      "title": "asafer.ai - Calendar - Wednesday, March 12, 2025",
+      "url": "https://calendar.google.com/calendar/u/4/r/day/2025/3/12",
+      "date_added": "2025-03-10 22:54:10"
+    },
+    {
+      "index": 10,
+      "global_index": 3509,
+      "domain": "perplexity.ai",
+      "title": "Perplexity",
+      "url": "https://www.perplexity.ai/settings/api",
+      "date_added": "2025-03-10 22:54:10"
+    }
+  ]
+}

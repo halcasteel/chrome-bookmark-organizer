@@ -1,0 +1,86 @@
+{
+  "batch_number": 316,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 3150,
+      "domain": "perplexity.ai",
+      "title": "Perplexity",
+      "url": "https://www.perplexity.ai/?login-source=loginButton",
+      "date_added": "2025-02-23 23:23:02"
+    },
+    {
+      "index": 2,
+      "global_index": 3151,
+      "domain": "claude.ai",
+      "title": "Analyze and Extract Key Code Information - Claude",
+      "url": "https://claude.ai/chat/f1056482-4a88-4c64-87ee-314551cd2d7c",
+      "date_added": "2025-02-23 23:23:02"
+    },
+    {
+      "index": 3,
+      "global_index": 3152,
+      "domain": "chatgpt.com",
+      "title": "Barking in Public Summary",
+      "url": "https://chatgpt.com/c/67ba0cbd-a238-800b-9e18-180bda4ddb0f?model=gpt-4o",
+      "date_added": "2025-02-23 23:23:02"
+    },
+    {
+      "index": 4,
+      "global_index": 3153,
+      "domain": "emergence.ai",
+      "title": "Emergence AI",
+      "url": "https://www.emergence.ai/blog/benchmarking-of-ai-agents-a-perspective",
+      "date_added": "2025-02-23 23:23:02"
+    },
+    {
+      "index": 5,
+      "global_index": 3154,
+      "domain": "arxiv.org",
+      "title": "2407.13032",
+      "url": "https://arxiv.org/pdf/2407.13032",
+      "date_added": "2025-02-23 23:23:02"
+    },
+    {
+      "index": 6,
+      "global_index": 3155,
+      "domain": "snap.stanford.edu",
+      "title": "Stanford Large Network Dataset Collection",
+      "url": "https://snap.stanford.edu/data/",
+      "date_added": "2025-02-23 23:23:02"
+    },
+    {
+      "index": 7,
+      "global_index": 3156,
+      "domain": "arxiv.org",
+      "title": "2408.08435",
+      "url": "https://arxiv.org/pdf/2408.08435",
+      "date_added": "2025-02-23 23:23:02"
+    },
+    {
+      "index": 8,
+      "global_index": 3157,
+      "domain": "chatgpt.com",
+      "title": "Rsync Sync Command",
+      "url": "https://chatgpt.com/c/67b75ee1-f158-800b-a063-8f5cce1969ec",
+      "date_added": "2025-02-23 23:23:02"
+    },
+    {
+      "index": 9,
+      "global_index": 3158,
+      "domain": "drive.google.com",
+      "title": "AI AGENT COMPANIES COMPETITIVE ANALYSIS - Google Drive",
+      "url": "https://drive.google.com/drive/u/1/folders/1I1eavWHURbwg6S0T2iSaWmXUFJZYcamE",
+      "date_added": "2025-02-23 23:23:02"
+    },
+    {
+      "index": 10,
+      "global_index": 3159,
+      "domain": "docs.google.com",
+      "title": "Untitled document - Google Docs",
+      "url": "https://docs.google.com/document/d/1agXQOS4txhD7Yxa0KusKjKR-eAJxew6BS7atoaP5E8U/edit?tab=t.0",
+      "date_added": "2025-02-23 23:23:02"
+    }
+  ]
+}

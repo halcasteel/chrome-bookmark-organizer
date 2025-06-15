@@ -1,0 +1,86 @@
+{
+  "batch_number": 224,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 2230,
+      "domain": "docs.google.com",
+      "title": "Copy of IT Change Management : ERP Systems - Google Slides",
+      "url": "https://docs.google.com/presentation/d/1vjNK3Ttv59v6NpwamDiTubOk9gAq0AvAuLKV5qvObkk/edit#slide=id.p",
+      "date_added": "2022-11-16 10:05:59"
+    },
+    {
+      "index": 2,
+      "global_index": 2231,
+      "domain": "docs.google.com",
+      "title": "Copy of NetSuite/Coupa ServiceNow Change Request & ISSUE Report - Receiving fields 11.10.22 - Google Docs",
+      "url": "https://docs.google.com/document/d/1u7_GsMpXmNtiAcUcnGwWTcIBbDz0MxLrdbqGjU_P36g/edit#",
+      "date_added": "2022-11-10 13:30:42"
+    },
+    {
+      "index": 3,
+      "global_index": 2232,
+      "domain": "docs.google.com",
+      "title": "Copy of ERP Change Request Issue Report Template.docx - Google Docs",
+      "url": "https://docs.google.com/document/d/1VPUmJGdZjjosy1MTVbe6qPRHVadBayzU/edit",
+      "date_added": "2022-11-16 11:46:50"
+    },
+    {
+      "index": 4,
+      "global_index": 2233,
+      "domain": "docs.google.com",
+      "title": "ERP_PROCESS_CheckList_Release Process_Draft1B.xlsx - Google Sheets",
+      "url": "https://docs.google.com/spreadsheets/d/1DtLkZ8XuUrROUNzxGkimq--01r8Pp3e8/edit#gid=648963769",
+      "date_added": "2022-11-16 12:14:42"
+    },
+    {
+      "index": 5,
+      "global_index": 2234,
+      "domain": "grail.service-now.com",
+      "title": "CHG0031121 | Change Request | GRAIL | ServiceNow",
+      "url": "https://grail.service-now.com/now/nav/ui/classic/params/target/change_request.do%3Fsys_id%3Dcdada7401b1f15500c5854ae034bcb95%26sysparm_record_target%3Dchange_request%26sysparm_record_row%3D1%26sysparm_record_rows%3D1074%26sysparm_record_list%3DORDERBYDESCnumber",
+      "date_added": "2022-11-17 15:41:25"
+    },
+    {
+      "index": 6,
+      "global_index": 2235,
+      "domain": "docs.google.com",
+      "title": "GRAIL NetSuite New Release by Business Process Stakeholders.xlsx - Google Sheets",
+      "url": "https://docs.google.com/spreadsheets/d/1D_1fJZaBeGCm7VC1U0VslnOycT8ejaXA/edit#gid=1110861041",
+      "date_added": "2022-11-28 08:32:34"
+    },
+    {
+      "index": 7,
+      "global_index": 2236,
+      "domain": "docs.google.com",
+      "title": "UAT Templates_Add On_NOAM_AOM_EN.xlsx - Google Sheets",
+      "url": "https://docs.google.com/spreadsheets/d/16eW-WCkpMtefBZI4etliStGXJcEMxSGW/edit#gid=1216429635",
+      "date_added": "2022-11-28 08:33:27"
+    },
+    {
+      "index": 8,
+      "global_index": 2237,
+      "domain": "docs.google.com",
+      "title": "UAT Templates_NOAM_Manufacturing_EN - Google Sheets",
+      "url": "https://docs.google.com/spreadsheets/d/1IbwC17c9bWt2UPwOIdhCD3Drosr7fSyzVIFILXGAUw0/edit#gid=1862811342",
+      "date_added": "2022-11-28 08:33:20"
+    },
+    {
+      "index": 9,
+      "global_index": 2238,
+      "domain": "docs.google.com",
+      "title": "UAT Templates_NOAM_Software_PRM_EN.xlsx - Google Sheets",
+      "url": "https://docs.google.com/spreadsheets/d/1OA1GnTLGpjHrQoNlZ_D188w40ELAoK7o/edit#gid=928679754",
+      "date_added": "2022-11-28 08:29:44"
+    },
+    {
+      "index": 10,
+      "global_index": 2239,
+      "domain": "docs.google.com",
+      "title": "2022-08-22 NetSuite Finance Procurement Supply Chain System Requirements Input Form Template - Google Sheets",
+      "url": "https://docs.google.com/spreadsheets/d/1rnChCQ9f633fFwJTk-TdlYJR5lKuIBeImF2GjNytfhI/edit#gid=1505764856",
+      "date_added": "2022-11-28 08:29:21"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "batch_number": 15,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 140,
+      "domain": "docs.google.com",
+      "title": "GCP Kubernetes Deletion Guide - Google Docs",
+      "url": "https://docs.google.com/document/d/1Zfexub8Wg4V_Jsle1370Hz_JKPnDjgxhNno14xRyiTk/edit?tab=t.0",
+      "date_added": "2025-05-10 23:32:00"
+    },
+    {
+      "index": 2,
+      "global_index": 141,
+      "domain": "cloud.google.com",
+      "title": "Quickstart: Install the Google Cloud CLI  |  Google Cloud CLI Documentation",
+      "url": "https://cloud.google.com/sdk/docs/install-sdk",
+      "date_added": "2025-05-10 23:25:12"
+    },
+    {
+      "index": 3,
+      "global_index": 142,
+      "domain": "docs.google.com",
+      "title": "AI Agentic Ecosystem-Technical Report - Google Docs",
+      "url": "https://docs.google.com/document/d/1XzX9cnA711HSrP0mYIx_fIntCW4iX9PmMr_-9IjeYbE/edit?tab=t.0",
+      "date_added": "2025-05-10 12:56:18"
+    },
+    {
+      "index": 4,
+      "global_index": 143,
+      "domain": "outshift.cisco.com",
+      "title": "Outshift | Building the Internet of Agents: Introducing AGNTCY.org",
+      "url": "https://outshift.cisco.com/blog/building-the-internet-of-agents-introducing-the-agntcy",
+      "date_added": "2025-05-10 12:41:42"
+    },
+    {
+      "index": 5,
+      "global_index": 144,
+      "domain": "eforms.com",
+      "title": "Florida Residential Purchase Agreement",
+      "url": "https://eforms.com/download/2018/08/Florida-Residential-Real-Estate-Purchase-Agreement.pdf",
+      "date_added": "2025-05-10 08:47:13"
+    },
+    {
+      "index": 6,
+      "global_index": 145,
+      "domain": "docs.google.com",
+      "title": "AZ1.AI Agentic AIi WHITEPAPER - Google Docs",
+      "url": "https://docs.google.com/document/d/1fPNZbsP8jTlDy9ye6oiPkIwN5zdGBwRdgw3UbfpO7Wo/edit?tab=t.0",
+      "date_added": "2025-05-10 06:51:24"
+    },
+    {
+      "index": 7,
+      "global_index": 146,
+      "domain": "dl.watson-orchestrate.ibm.com",
+      "title": "IBM watsonx Orchestrate",
+      "url": "https://dl.watson-orchestrate.ibm.com/login",
+      "date_added": "2025-05-10 04:04:02"
+    },
+    {
+      "index": 8,
+      "global_index": 147,
+      "domain": "dl.watson-orchestrate.ibm.com",
+      "title": "IBM watsonx Orchestrate",
+      "url": "https://dl.watson-orchestrate.ibm.com/settings",
+      "date_added": "2025-05-09 07:02:08"
+    },
+    {
+      "index": 9,
+      "global_index": 148,
+      "domain": "console.saas.ibm.com",
+      "title": "IBM SaaS Console",
+      "url": "https://console.saas.ibm.com/status/overview",
+      "date_added": "2025-05-09 06:56:42"
+    },
+    {
+      "index": 10,
+      "global_index": 149,
+      "domain": "webassessor.com",
+      "title": "LOGIN",
+      "url": "https://www.webassessor.com/wa.do?page=login",
+      "date_added": "2025-05-08 07:12:32"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "batch_number": 341,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 3400,
+      "domain": "thetopcfos.com",
+      "title": "The Top 25 Software CFOs of 2024 - TOP CFOs",
+      "url": "https://thetopcfos.com/the-top-25-software-cfos-of-2024/",
+      "date_added": "2025-01-24 21:25:23"
+    },
+    {
+      "index": 2,
+      "global_index": 3401,
+      "domain": "jupyterlab.readthedocs.io",
+      "title": "Get Started — JupyterLab 4.3.4 documentation",
+      "url": "https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html#what-will-happen-to-the-classic-notebook",
+      "date_added": "2025-01-23 21:30:02"
+    },
+    {
+      "index": 3,
+      "global_index": 3402,
+      "domain": "okmij.org",
+      "title": "Having an Effect",
+      "url": "https://okmij.org/ftp/Computation/having-effect.html#denot",
+      "date_added": "2025-01-24 11:26:23"
+    },
+    {
+      "index": 4,
+      "global_index": 3403,
+      "domain": "quarto.org",
+      "title": "Quarto",
+      "url": "https://quarto.org/",
+      "date_added": "2025-01-23 21:28:06"
+    },
+    {
+      "index": 5,
+      "global_index": 3404,
+      "domain": "okmij.org",
+      "title": "okmij.org/ftp/rss.xml",
+      "url": "https://okmij.org/ftp/rss.xml",
+      "date_added": "2025-01-23 18:25:25"
+    },
+    {
+      "index": 6,
+      "global_index": 3405,
+      "domain": "github.com",
+      "title": "GitHub - Zettlr/Zettlr: Your One-Stop Publication Workbench",
+      "url": "https://github.com/Zettlr/Zettlr?tab=readme-ov-file",
+      "date_added": "2025-01-23 18:49:28"
+    },
+    {
+      "index": 7,
+      "global_index": 3406,
+      "domain": "okmij.org",
+      "title": "Haskell Programming",
+      "url": "https://okmij.org/ftp/Haskell/",
+      "date_added": "2025-01-23 16:08:15"
+    },
+    {
+      "index": 8,
+      "global_index": 3407,
+      "domain": "flickr.com",
+      "title": "Netflix Blocked - Geo Blocking For Netflix Account | Flickr",
+      "url": "https://flickr.com/photos/mikemacmarketing/36643427345/in/photostream/",
+      "date_added": "2025-01-23 17:46:14"
+    },
+    {
+      "index": 9,
+      "global_index": 3408,
+      "domain": "confianzit.com",
+      "title": "About us | Custom Web/Mobile/Software Development Company near charlotte North Carolina",
+      "url": "https://www.confianzit.com/about-us",
+      "date_added": "2025-01-23 16:08:01"
+    },
+    {
+      "index": 10,
+      "global_index": 3409,
+      "domain": "techcrunch.com",
+      "title": "OpenAI launches Operator, an AI agent that performs tasks autonomously | TechCrunch",
+      "url": "https://techcrunch.com/2025/01/23/openai-launches-operator-an-ai-agent-that-performs-tasks-autonomously/",
+      "date_added": "2025-01-24 11:27:59"
+    }
+  ]
+}

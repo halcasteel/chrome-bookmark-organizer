@@ -1,0 +1,86 @@
+{
+  "batch_number": 42,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 410,
+      "domain": "companyenrich.com",
+      "title": "Pricing | Company Enrich",
+      "url": "https://companyenrich.com/pricing",
+      "date_added": "2025-03-13 23:47:04"
+    },
+    {
+      "index": 2,
+      "global_index": 411,
+      "domain": "claude.ai",
+      "title": "NAICS 2022 Data Import Scripts - Claude",
+      "url": "https://claude.ai/chat/a7af3779-6209-47ea-8e18-43a2f140a54d",
+      "date_added": "2025-03-14 00:50:33"
+    },
+    {
+      "index": 3,
+      "global_index": 412,
+      "domain": "127.0.0.1:8000",
+      "title": "127.0.0.1:8000/openapi.json",
+      "url": "http://127.0.0.1:8000/openapi.json",
+      "date_added": "2025-03-10 22:58:15"
+    },
+    {
+      "index": 4,
+      "global_index": 413,
+      "domain": "linkedin.com",
+      "title": "(23) Tim Weerasiri | LinkedIn",
+      "url": "https://www.linkedin.com/in/timweerasiri/",
+      "date_added": "2025-03-13 11:51:48"
+    },
+    {
+      "index": 5,
+      "global_index": 414,
+      "domain": "neweconomies.co",
+      "title": "100 AI Startups To Watch - by Ollie Forsyth - New Economies",
+      "url": "https://www.neweconomies.co/p/100-ai-startups-to-watch?utm_source=post-email-title&publication_id=1283432&post_id=158806026&utm_campaign=email-post-title&isFreemail=true&r=518osx&triedRedirect=true&utm_medium=email",
+      "date_added": "2025-03-12 17:10:27"
+    },
+    {
+      "index": 6,
+      "global_index": 415,
+      "domain": "github.com",
+      "title": "ai-az1/saas-runway-calculator: Funding Calculator",
+      "url": "https://github.com/ai-az1/saas-runway-calculator/tree/main",
+      "date_added": "2025-03-11 14:11:24"
+    },
+    {
+      "index": 7,
+      "global_index": 416,
+      "domain": "docs.google.com",
+      "title": "Copy of SaaS Startups_Runway Calculator_The VC Corner.xlsx - Google Sheets",
+      "url": "https://docs.google.com/spreadsheets/d/1ZLNa2y9NqS9u3ggVFIqlZslIO64gRBCT/edit?gid=1374222542#gid=1374222542",
+      "date_added": "2025-03-11 14:11:17"
+    },
+    {
+      "index": 8,
+      "global_index": 417,
+      "domain": "duckduckgo.com",
+      "title": "Duck.ai",
+      "url": "https://duckduckgo.com/?q=DuckDuckGo+AI+Chat&ia=chat&duckai=1",
+      "date_added": "2025-03-11 14:11:11"
+    },
+    {
+      "index": 9,
+      "global_index": 418,
+      "domain": "127.0.0.1:8000",
+      "title": "runway-projection (890×547)",
+      "url": "http://127.0.0.1:8000/runway-projection?initial_cash=5000&monthly_expenses=4000&monthly_revenue=6000&growth_rate=2",
+      "date_added": "2025-03-10 23:06:43"
+    },
+    {
+      "index": 10,
+      "global_index": 419,
+      "domain": "linkedin.com",
+      "title": "(6) Revenue Per Employee: SaaS vs. VC 📊, YC's Returns by Sector✨, Canva’s $2 Billion Sales Funnel 🛍️ | LinkedIn",
+      "url": "https://www.linkedin.com/pulse/revenue-per-employee-saas-vs-vc-ycs-returns-sector-2-dom%C3%ADnguez-ibar-gpnpf/",
+      "date_added": "2025-03-11 08:52:38"
+    }
+  ]
+}

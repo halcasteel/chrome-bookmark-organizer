@@ -1,0 +1,16 @@
+{
+  "batch_number": 2,
+  "processed_at": "2025-06-14T13:22:00",
+  "categorizations": {
+    "1": "Science & Research",
+    "2": "Programming & Development",
+    "3": "Programming & Development",
+    "4": "Social Media",
+    "5": "News & Media",
+    "6": "News & Media", 
+    "7": "AI & Machine Learning",
+    "8": "AI & Machine Learning",
+    "9": "Cloud & DevOps",
+    "10": "Entertainment"
+  }
+}

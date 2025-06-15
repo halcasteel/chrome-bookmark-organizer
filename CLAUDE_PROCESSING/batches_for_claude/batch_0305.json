@@ -1,0 +1,86 @@
+{
+  "batch_number": 305,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 3040,
+      "domain": "platform.openai.com",
+      "title": "Limits - OpenAI API",
+      "url": "https://platform.openai.com/settings/organization/limits",
+      "date_added": "2025-01-10 08:42:03"
+    },
+    {
+      "index": 2,
+      "global_index": 3041,
+      "domain": "chatgpt.com",
+      "title": "Software Engineer Attributes Tables",
+      "url": "https://chatgpt.com/c/6780ed27-43c8-800b-a6e9-1f888f69379c",
+      "date_added": "2025-01-10 08:42:03"
+    },
+    {
+      "index": 3,
+      "global_index": 3042,
+      "domain": "odoo.com",
+      "title": "Website Appointment: Appointment Confirmed | Odoo",
+      "url": "https://www.odoo.com/calendar/view/3d82272c-beae-4edc-ade7-e4e84dd9e4f8?partner_id=19026224&state=new&date_time=2025-01-10+14%3A00%3A00&duration=1.0&staff_user_id=4706322",
+      "date_added": "2025-01-10 08:42:03"
+    },
+    {
+      "index": 4,
+      "global_index": 3043,
+      "domain": "linkedin.com",
+      "title": "(26) Ayushi Rathore | LinkedIn",
+      "url": "https://www.linkedin.com/in/ayushi-rathore-2137bb254/",
+      "date_added": "2025-01-10 08:42:03"
+    },
+    {
+      "index": 5,
+      "global_index": 3044,
+      "domain": "drive.google.com",
+      "title": "My Drive - Google Drive",
+      "url": "https://drive.google.com/drive/u/3/my-drive",
+      "date_added": "2025-01-10 08:42:03"
+    },
+    {
+      "index": 6,
+      "global_index": 3045,
+      "domain": "drive.google.com",
+      "title": "Leadership_Team - Google Drive",
+      "url": "https://drive.google.com/drive/u/3/folders/0AJ-wGlqk4qe7Uk9PVA",
+      "date_added": "2025-01-10 08:42:03"
+    },
+    {
+      "index": 7,
+      "global_index": 3046,
+      "domain": "drive.google.com",
+      "title": "000_az1.ai_LOGO - Google Drive",
+      "url": "https://drive.google.com/drive/u/0/folders/1onzM3hIGlTJiuGvg0kfTlhd2aOXVN0Y_",
+      "date_added": "2025-01-10 08:42:03"
+    },
+    {
+      "index": 8,
+      "global_index": 3047,
+      "domain": "chatgpt.com",
+      "title": "ChatGPT",
+      "url": "https://chatgpt.com/c/67810408-ebe0-800b-a587-57c1626d2fe2",
+      "date_added": "2025-01-10 08:42:03"
+    },
+    {
+      "index": 9,
+      "global_index": 3048,
+      "domain": "picresize.com",
+      "title": "PicResize - Crop, Resize, Edit images online for free!",
+      "url": "https://picresize.com/en/results#google_vignette",
+      "date_added": "2025-01-10 08:42:03"
+    },
+    {
+      "index": 10,
+      "global_index": 3049,
+      "domain": "canva.com",
+      "title": "Home - Canva",
+      "url": "https://www.canva.com/",
+      "date_added": "2025-01-10 08:42:03"
+    }
+  ]
+}

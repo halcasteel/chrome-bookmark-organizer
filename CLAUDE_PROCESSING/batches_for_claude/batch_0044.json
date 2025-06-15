@@ -1,0 +1,86 @@
+{
+  "batch_number": 44,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 430,
+      "domain": "127.0.0.1:8000",
+      "title": "SaaS Calculator Test",
+      "url": "http://127.0.0.1:8000/static/basic-test-page.html",
+      "date_added": "2025-03-10 23:04:03"
+    },
+    {
+      "index": 2,
+      "global_index": 431,
+      "domain": "127.0.0.1:8000",
+      "title": "SaaS Runway Calculator",
+      "url": "http://127.0.0.1:8000/static/calculator-form.html",
+      "date_added": "2025-03-10 23:03:56"
+    },
+    {
+      "index": 3,
+      "global_index": 432,
+      "domain": "127.0.0.1:8000",
+      "title": "SaaS Runway Calculator API - Swagger UI",
+      "url": "http://127.0.0.1:8000/docs#/calculator/save_scenario_calculator_scenarios_post",
+      "date_added": "2025-03-10 22:58:09"
+    },
+    {
+      "index": 4,
+      "global_index": 433,
+      "domain": "clickhouse.com",
+      "title": "quick-start | ClickHouse Docs",
+      "url": "https://clickhouse.com/docs/getting-started/quick-start",
+      "date_added": "2025-03-10 22:57:46"
+    },
+    {
+      "index": 5,
+      "global_index": 434,
+      "domain": "127.0.0.1:8000",
+      "title": "127.0.0.1:8000/charts/revenue-growth?initial_cash=50000&monthly_revenue=10000&growth_rate=5&months=12",
+      "url": "http://127.0.0.1:8000/charts/revenue-growth?initial_cash=50000&monthly_revenue=10000&growth_rate=5&months=12",
+      "date_added": "2025-03-10 22:57:56"
+    },
+    {
+      "index": 6,
+      "global_index": 435,
+      "domain": "ux247.com",
+      "title": "What is Cognitive Task Analysis - UX24/7",
+      "url": "https://ux247.com/cognitive-task-analysis/",
+      "date_added": "2025-03-14 05:06:17"
+    },
+    {
+      "index": 7,
+      "global_index": 436,
+      "domain": "localhost:8000",
+      "title": "localhost:8000/services/model",
+      "url": "http://localhost:8000/services/model",
+      "date_added": "2025-03-15 16:58:47"
+    },
+    {
+      "index": 8,
+      "global_index": 437,
+      "domain": "paddle.com",
+      "title": "Paddle - Payments, tax and subscription management for SaaS and digital products",
+      "url": "https://www.paddle.com/?utm_medium=website&utm_source=partner&utm_campaign=core_conversions_fy2025_mor_brand_awareness&utm_content=new-economies-newsletter",
+      "date_added": "2025-03-15 16:58:47"
+    },
+    {
+      "index": 9,
+      "global_index": 438,
+      "domain": "workspace.google.com",
+      "title": "Google Meet: Online Web and Video Conferencing Calls | Google Workspace",
+      "url": "https://workspace.google.com/products/meet/",
+      "date_added": "2025-03-15 16:58:47"
+    },
+    {
+      "index": 10,
+      "global_index": 439,
+      "domain": "nscale.com",
+      "title": "AI Marketplace | Nscale",
+      "url": "https://www.nscale.com/product/marketplace",
+      "date_added": "2025-03-15 16:58:47"
+    }
+  ]
+}

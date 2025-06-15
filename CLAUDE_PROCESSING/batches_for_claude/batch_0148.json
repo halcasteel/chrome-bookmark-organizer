@@ -1,0 +1,86 @@
+{
+  "batch_number": 148,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 1470,
+      "domain": "remix-ide.readthedocs.io",
+      "title": "Welcome to Remix’s documentation! — Remix - Ethereum IDE 1 documentation",
+      "url": "https://remix-ide.readthedocs.io/en/latest/#",
+      "date_added": "2021-12-07 12:36:43"
+    },
+    {
+      "index": 2,
+      "global_index": 1471,
+      "domain": "awesomeopensource.com",
+      "title": "The Top 15 Golang Google Drive Open Source Projects on Github",
+      "url": "https://awesomeopensource.com/projects/golang/google-drive",
+      "date_added": "2021-12-07 12:37:47"
+    },
+    {
+      "index": 3,
+      "global_index": 1472,
+      "domain": "developers.google.com",
+      "title": "Files: list  |  Google Drive API  |  Google Developers",
+      "url": "https://developers.google.com/drive/api/v3/reference/files/list",
+      "date_added": "2021-12-07 14:03:05"
+    },
+    {
+      "index": 4,
+      "global_index": 1473,
+      "domain": "remix.ethereum.org",
+      "title": "Remix - Ethereum IDE",
+      "url": "https://remix.ethereum.org/#optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.7+commit.e28d00a7.js",
+      "date_added": "2021-12-07 14:03:47"
+    },
+    {
+      "index": 5,
+      "global_index": 1474,
+      "domain": "consensys.github.io",
+      "title": "Ethereum Smart Contract Best Practices",
+      "url": "https://consensys.github.io/smart-contract-best-practices/",
+      "date_added": "2021-12-07 14:04:54"
+    },
+    {
+      "index": 6,
+      "global_index": 1475,
+      "domain": "datacamp.com",
+      "title": "Psql Commands: 10 Command-line Utilities in PostgreSQL - DataCamp",
+      "url": "https://www.datacamp.com/community/tutorials/10-command-line-utilities-postgresql?utm_source=adwords_ppc&utm_medium=cpc&utm_campaignid=1455363063&utm_adgroupid=65083631748&utm_device=c&utm_keyword=&utm_matchtype=&utm_network=g&utm_adpostion=&utm_creative=278443377095&utm_targetid=aud-392016246653:dsa-429603003980&utm_loc_interest_ms=&utm_loc_physical_ms=1001566&gclid=CjwKCAiAhreNBhAYEiwAFGGKPKpXCOah-2ioAD8-YkDZ6-20sdTnhhiAzxlHPps8SQPPS_ogHKtpxBoCuwwQAvD_BwE",
+      "date_added": "2021-12-07 14:11:01"
+    },
+    {
+      "index": 7,
+      "global_index": 1476,
+      "domain": "en.wikipedia.org",
+      "title": "Ethereum - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ethereum",
+      "date_added": "2021-12-07 14:42:00"
+    },
+    {
+      "index": 8,
+      "global_index": 1477,
+      "domain": "gist.github.com",
+      "title": "Instal geth via PPA on Debian · GitHub",
+      "url": "https://gist.github.com/makevoid/07d51492fa1254cda129d4d0332cf77b",
+      "date_added": "2021-12-07 15:03:43"
+    },
+    {
+      "index": 9,
+      "global_index": 1478,
+      "domain": "linuxconfig.org",
+      "title": "Ethereum Mining on Ubuntu and Debian - Linux Tutorials - Learn Linux Configuration",
+      "url": "https://linuxconfig.org/ethereum-mining-on-ubuntu-18-04-and-debian",
+      "date_added": "2021-12-07 15:05:07"
+    },
+    {
+      "index": 10,
+      "global_index": 1479,
+      "domain": "docs.metamask.io",
+      "title": "Ethereum Provider API | MetaMask Docs",
+      "url": "https://docs.metamask.io/guide/ethereum-provider.html#using-the-provider",
+      "date_added": "2021-12-07 18:19:28"
+    }
+  ]
+}

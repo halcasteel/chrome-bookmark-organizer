@@ -1,0 +1,86 @@
+{
+  "batch_number": 110,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 1090,
+      "domain": "oceannavigator.com",
+      "title": "An Unauthorized Boarding - Ocean Navigator",
+      "url": "https://oceannavigator.com/article/an-unauthorized-boarding/",
+      "date_added": "2023-05-30 20:30:13"
+    },
+    {
+      "index": 2,
+      "global_index": 1091,
+      "domain": "cruisingindigo.com",
+      "title": "Upgrades",
+      "url": "http://www.cruisingindigo.com/upgrades.html",
+      "date_added": "2023-05-30 23:27:15"
+    },
+    {
+      "index": 3,
+      "global_index": 1092,
+      "domain": "yachtworld.com",
+      "title": "1995 Pacific Seacraft Cutter Cruiser for sale - YachtWorld",
+      "url": "https://www.yachtworld.com/yacht/1995-pacific-seacraft-cutter-7847422/",
+      "date_added": "2023-05-30 23:17:09"
+    },
+    {
+      "index": 4,
+      "global_index": 1093,
+      "domain": "web.pdx.edu",
+      "title": "Pacific Seacraft 34 Sailboat - Design and Sailing Characteristics, Outfitting Ideas",
+      "url": "https://web.pdx.edu/~stipakb/Ubiquity.html",
+      "date_added": "2023-05-30 21:46:50"
+    },
+    {
+      "index": 5,
+      "global_index": 1094,
+      "domain": "practical-sailor.com",
+      "title": "Valiant 40: Reshaping the Cruising Hull - Practical Sailor",
+      "url": "https://www.practical-sailor.com/sailboat-reviews/valiant-40-reshaping-the-cruising-hull",
+      "date_added": "2023-05-30 14:58:53"
+    },
+    {
+      "index": 6,
+      "global_index": 1095,
+      "domain": "cruisingworld.com",
+      "title": "Valiant 40 Sailboat Review | Cruising World",
+      "url": "https://www.cruisingworld.com/sailboats/valiant-40/#:~:text=Mast%20above%20water%3A%2055'0,Disp%2FLength%3A%20255",
+      "date_added": "2023-05-30 15:56:09"
+    },
+    {
+      "index": 7,
+      "global_index": 1096,
+      "domain": "python.langchain.com",
+      "title": "Document Loaders — 🦜🔗 LangChain 0.0.181",
+      "url": "https://python.langchain.com/en/latest/modules/indexes/document_loaders.html?ref=haihai.ai",
+      "date_added": "2023-05-28 02:30:14"
+    },
+    {
+      "index": 8,
+      "global_index": 1097,
+      "domain": "blog.langchain.dev",
+      "title": "LangChain + Chroma",
+      "url": "https://blog.langchain.dev/langchain-chroma/",
+      "date_added": "2023-05-28 02:02:36"
+    },
+    {
+      "index": 9,
+      "global_index": 1098,
+      "domain": "haihai.ai",
+      "title": "GPT your GDrive with LangChain",
+      "url": "https://www.haihai.ai/gpt-gdrive/",
+      "date_added": "2023-05-27 23:39:32"
+    },
+    {
+      "index": 10,
+      "global_index": 1099,
+      "domain": "immersivelimit.com",
+      "title": "Adding your OpenAI API Key to System Environment Variables — Immersive Limit",
+      "url": "https://www.immersivelimit.com/tutorials/adding-your-openai-api-key-to-system-environment-variables",
+      "date_added": "2023-05-27 23:26:58"
+    }
+  ]
+}

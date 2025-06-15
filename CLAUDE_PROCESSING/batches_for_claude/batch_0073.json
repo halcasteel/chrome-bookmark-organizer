@@ -1,0 +1,86 @@
+{
+  "batch_number": 73,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 720,
+      "domain": "twilio.com",
+      "title": "Complete Generative AI Glossary for Businesses",
+      "url": "https://www.twilio.com/en-us/resource-center/ai-glossary",
+      "date_added": "2024-01-28 20:27:46"
+    },
+    {
+      "index": 2,
+      "global_index": 721,
+      "domain": "admin.google.com",
+      "title": "Activate Gmail",
+      "url": "https://admin.google.com/u/0/ac/signup/setup/v2/verify/domain_mx",
+      "date_added": "2024-01-28 15:39:58"
+    },
+    {
+      "index": 3,
+      "global_index": 722,
+      "domain": "dcc.godaddy.com",
+      "title": "DNS Management",
+      "url": "https://dcc.godaddy.com/control/dnsmanagement?domainName=asafer.ai",
+      "date_added": "2024-01-28 15:29:27"
+    },
+    {
+      "index": 4,
+      "global_index": 723,
+      "domain": "blogs.nvidia.com",
+      "title": "NeMo Guardrails Keep AI Chatbots on Track | NVIDIA Blogs",
+      "url": "https://blogs.nvidia.com/blog/ai-chatbot-guardrails-nemo/",
+      "date_added": "2024-01-27 01:27:03"
+    },
+    {
+      "index": 5,
+      "global_index": 724,
+      "domain": "embracethered.com",
+      "title": "ChatGPT Plugins: Data Exfiltration via Images & Cross Plugin Request Forgery · Embrace The Red",
+      "url": "https://embracethered.com/blog/posts/2023/chatgpt-webpilot-data-exfil-via-markdown-injection/",
+      "date_added": "2024-01-27 01:25:48"
+    },
+    {
+      "index": 6,
+      "global_index": 725,
+      "domain": "github.com",
+      "title": "GitHub - mitre-atlas/atlas-navigator-data: Scripts and outputs for ATLAS data in STIX JSON and ATT&CK Navigator layer formats",
+      "url": "https://github.com/mitre-atlas/atlas-navigator-data",
+      "date_added": "2024-01-27 01:16:26"
+    },
+    {
+      "index": 7,
+      "global_index": 726,
+      "domain": "nytimes.com",
+      "title": "A Pilates Routine You Can Do Anywhere in Under 10 Minutes - The New York Times",
+      "url": "https://www.nytimes.com/2024/01/12/well/move/pilates-workout-at-home.html",
+      "date_added": "2024-01-26 19:45:28"
+    },
+    {
+      "index": 8,
+      "global_index": 727,
+      "domain": "marketplace.visualstudio.com",
+      "title": "CodiumAI - Integrity Agent powered by GPT-3.5&4 - Visual Studio Marketplace",
+      "url": "https://marketplace.visualstudio.com/items?itemName=Codium.codium",
+      "date_added": "2024-01-26 16:46:05"
+    },
+    {
+      "index": 9,
+      "global_index": 728,
+      "domain": "collaborative-ai.live.ft.com",
+      "title": "Agenda | A Collaborative Approach to AI Implementation and Regulation",
+      "url": "https://collaborative-ai.live.ft.com/agenda",
+      "date_added": "2024-01-26 15:46:32"
+    },
+    {
+      "index": 10,
+      "global_index": 729,
+      "domain": "mybib.com",
+      "title": "AI – MyBib",
+      "url": "https://www.mybib.com/#/projects/XBQrW5/citations",
+      "date_added": "2024-01-07 21:29:28"
+    }
+  ]
+}

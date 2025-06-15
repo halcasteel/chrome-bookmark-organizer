@@ -1,0 +1,86 @@
+{
+  "batch_number": 149,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 1480,
+      "domain": "udemy.com",
+      "title": "Online Courses - Learn Anything, On Your Schedule | Udemy",
+      "url": "https://www.udemy.com/cart/success/713873532/",
+      "date_added": "2021-12-07 20:02:28"
+    },
+    {
+      "index": 2,
+      "global_index": 1481,
+      "domain": "messages.google.com",
+      "title": "Messages for web",
+      "url": "https://messages.google.com/web/conversations/178?pli=1",
+      "date_added": "2021-12-07 20:02:52"
+    },
+    {
+      "index": 3,
+      "global_index": 1482,
+      "domain": "help.crypto.com",
+      "title": "How do I connect my Crypto.com DeFi Wallet to DeFi Swap and other DApps via WalletConnect? | Crypto.com Help Center",
+      "url": "https://help.crypto.com/en/articles/4441462-how-do-i-connect-my-crypto-com-defi-wallet-to-defi-swap-and-other-dapps-via-walletconnect",
+      "date_added": "2021-12-07 20:18:19"
+    },
+    {
+      "index": 4,
+      "global_index": 1483,
+      "domain": "help.crypto.com",
+      "title": "DeFi Swap Geo-Restrictions | Crypto.com Help Center",
+      "url": "https://help.crypto.com/en/articles/4429907-defi-swap-geo-restrictions",
+      "date_added": "2021-12-07 20:20:10"
+    },
+    {
+      "index": 5,
+      "global_index": 1484,
+      "domain": "coin98.com",
+      "title": "Coin98 Finance",
+      "url": "https://coin98.com/",
+      "date_added": "2021-12-08 17:54:53"
+    },
+    {
+      "index": 6,
+      "global_index": 1485,
+      "domain": "cryptotesters.com",
+      "title": "Cryptotesters.com - Wallets",
+      "url": "https://cryptotesters.com/best-non-custodial-wallets",
+      "date_added": "2021-12-08 17:55:05"
+    },
+    {
+      "index": 7,
+      "global_index": 1486,
+      "domain": "crypto.com",
+      "title": "DeFi Swap | Best Token Swap DEX | Crypto.com",
+      "url": "https://crypto.com/defi/swap/",
+      "date_added": "2021-12-08 17:57:44"
+    },
+    {
+      "index": 8,
+      "global_index": 1487,
+      "domain": "crypto.com",
+      "title": "Crypto.com DeFi Wallet | Securely Store and Earn from Your Digital Assets",
+      "url": "https://crypto.com/br/defi-wallet",
+      "date_added": "2021-12-08 17:58:15"
+    },
+    {
+      "index": 9,
+      "global_index": 1488,
+      "domain": "docs.google.com",
+      "title": "COURSE OUTLINE - PART 1 - LEARN TO CODE GO - Google Docs",
+      "url": "https://docs.google.com/document/d/1ckYpi6hcRkaBUEk975f54oGsHYHu7GhzOk7-nOrkNxo/edit#",
+      "date_added": "2021-12-08 18:01:35"
+    },
+    {
+      "index": 10,
+      "global_index": 1489,
+      "domain": "mplayerhq.hu",
+      "title": "MPlayer",
+      "url": "http://www.mplayerhq.hu/DOCS/man/en/mplayer.1.html",
+      "date_added": "2021-12-13 16:13:02"
+    }
+  ]
+}

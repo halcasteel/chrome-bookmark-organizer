@@ -1,0 +1,86 @@
+{
+  "batch_number": 96,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 950,
+      "domain": "morganscloud.com",
+      "title": "The “C” Word—Corrosion - Attainable Adventure Cruising",
+      "url": "https://www.morganscloud.com/2008/10/01/corrosion-and-aluminum-boats/",
+      "date_added": "2023-07-01 16:15:58"
+    },
+    {
+      "index": 2,
+      "global_index": 951,
+      "domain": "noonsite.com",
+      "title": "Noonsite.com - The Ultimate Cruisers Planning Tool",
+      "url": "https://www.noonsite.com/",
+      "date_added": "2023-07-01 15:28:49"
+    },
+    {
+      "index": 3,
+      "global_index": 952,
+      "domain": "yachtworld.com",
+      "title": "1979 Valiant 37 Racer/Cruiser for sale - YachtWorld",
+      "url": "https://www.yachtworld.com/yacht/1979-valiant-37-8898046/",
+      "date_added": "2023-06-28 19:45:45"
+    },
+    {
+      "index": 4,
+      "global_index": 953,
+      "domain": "yachtworld.com",
+      "title": "1999 Crealock 40 Pilothouse Cruiser for sale - YachtWorld",
+      "url": "https://www.yachtworld.com/yacht/1999-crealock-40-pilothouse-8575598/",
+      "date_added": "2023-06-28 23:26:07"
+    },
+    {
+      "index": 5,
+      "global_index": 954,
+      "domain": "yachtworld.com",
+      "title": "1982 Spindrift Pilothouse 43 Pilothouse for sale - YachtWorld",
+      "url": "https://www.yachtworld.com/yacht/1982-spindrift-pilothouse-43-8641967/",
+      "date_added": "2023-06-28 23:16:23"
+    },
+    {
+      "index": 6,
+      "global_index": 955,
+      "domain": "skillshare.com",
+      "title": "Adobe Lightroom Essentials Course | Daniel Scott | Skillshare",
+      "url": "https://www.skillshare.com/en/classes/Adobe-Lightroom-Essentials-Course/1659844683?via=search-layout-grid",
+      "date_added": "2023-06-26 20:09:36"
+    },
+    {
+      "index": 7,
+      "global_index": 956,
+      "domain": "skillshare.com",
+      "title": "Home - Skillshare",
+      "url": "https://www.skillshare.com/en/home?via=paypal",
+      "date_added": "2023-06-26 20:06:29"
+    },
+    {
+      "index": 8,
+      "global_index": 957,
+      "domain": "theguardian.com",
+      "title": "100 years of Le Corbusier: what does he mean to today’s architects? | Le Corbusier | The Guardian",
+      "url": "https://www.theguardian.com/artanddesign/2023/jun/25/100-years-of-le-corbusier-what-does-he-mean-to-todays-architects",
+      "date_added": "2023-06-25 20:45:46"
+    },
+    {
+      "index": 9,
+      "global_index": 958,
+      "domain": "realpython.com",
+      "title": "Python Virtual Environments: A Primer – Real Python",
+      "url": "https://realpython.com/python-virtual-environments-a-primer/",
+      "date_added": "2023-06-23 01:54:21"
+    },
+    {
+      "index": 10,
+      "global_index": 959,
+      "domain": "hub.docker.com",
+      "title": "halcasteel/docker101tutorial general | Docker Hub",
+      "url": "https://hub.docker.com/repository/docker/halcasteel/docker101tutorial/general",
+      "date_added": "2023-06-22 22:53:09"
+    }
+  ]
+}

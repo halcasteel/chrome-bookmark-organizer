@@ -1,0 +1,86 @@
+{
+  "batch_number": 36,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 350,
+      "domain": "localhost:3001",
+      "title": "HarmonyAI",
+      "url": "http://localhost:3001/",
+      "date_added": "2025-03-28 18:44:42"
+    },
+    {
+      "index": 2,
+      "global_index": 351,
+      "domain": "localhost:8080",
+      "title": "localhost:8080/api",
+      "url": "http://localhost:8080/api",
+      "date_added": "2025-03-28 18:44:34"
+    },
+    {
+      "index": 3,
+      "global_index": 352,
+      "domain": "localhost:8529",
+      "title": "ArangoDB Web Interface",
+      "url": "http://localhost:8529/_db/harmonyai/_admin/aardvark/index.html#login",
+      "date_added": "2025-03-28 18:44:28"
+    },
+    {
+      "index": 4,
+      "global_index": 353,
+      "domain": "content.dataiku.com",
+      "title": "Aviva: Powering Insurance With Data, Machine Learning, & AI",
+      "url": "https://content.dataiku.com/bridging-technical-and-business-teams/aviva-use-cases?utm_campaign=GLO+CONTENT+DB+Emails+LoB+2024&utm_medium=email&_hsenc=p2ANqtz-8U4uCB72sFA9nDv_qUMH2REYW4ecVAS_cNW4ah5Lap4IEwHovHcJITf4my3GYI5UnYmDN3&_hsmi=352426145&utm_content=352426145&utm_source=hs_email",
+      "date_added": "2025-03-26 21:00:13"
+    },
+    {
+      "index": 5,
+      "global_index": 354,
+      "domain": "docs.google.com",
+      "title": "Brincando com o IA - Google Docs",
+      "url": "https://docs.google.com/document/d/10Y-bDFtCd7U5tmmE3l29D9F72jLhtp-0rTHxEp4U9UE/edit?tab=t.0",
+      "date_added": "2025-03-26 17:21:58"
+    },
+    {
+      "index": 6,
+      "global_index": 355,
+      "domain": "aistudio.google.com",
+      "title": "Python Web Scraper CLI Script | Google AI Studio",
+      "url": "https://aistudio.google.com/app/u/4/prompts/new_chat?model=gemini-2.5-pro-exp-03-25&pli=1",
+      "date_added": "2025-03-26 11:22:13"
+    },
+    {
+      "index": 7,
+      "global_index": 356,
+      "domain": "app.enhancv.com",
+      "title": "New Resume (2) | Resume Editor",
+      "url": "https://app.enhancv.com/resume/67e2b0115439fee2da78e552",
+      "date_added": "2025-03-26 11:22:35"
+    },
+    {
+      "index": 8,
+      "global_index": 357,
+      "domain": "enhancv.com",
+      "title": "Resume Builder Starting from $14 and 7-Day Free Plan | Enhancv",
+      "url": "https://enhancv.com/pricing/",
+      "date_added": "2025-03-26 01:09:40"
+    },
+    {
+      "index": 9,
+      "global_index": 358,
+      "domain": "drive.google.com",
+      "title": "AZ1-PITCH-DECK-TEMPLATE - Google Drive",
+      "url": "https://drive.google.com/drive/u/4/folders/1rQ2nlQf4Lq73wxjPorkCte6BVMaPokYL",
+      "date_added": "2025-03-26 01:09:13"
+    },
+    {
+      "index": 10,
+      "global_index": 359,
+      "domain": "docs.google.com",
+      "title": "PitchSavior - GS - Dark - Google Slides",
+      "url": "https://docs.google.com/presentation/d/1ziwEYoxzCkVrvoxEL0qLXqWdQpq-45pcw4T0zkHS5D8/edit#slide=id.p1",
+      "date_added": "2025-03-26 01:09:06"
+    }
+  ]
+}

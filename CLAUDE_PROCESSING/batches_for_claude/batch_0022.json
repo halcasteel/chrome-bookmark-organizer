@@ -1,0 +1,86 @@
+{
+  "batch_number": 22,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 210,
+      "domain": "cloud.google.com",
+      "title": "You are now authenticated with the gcloud CLI!  |  Google Cloud CLI Documentation",
+      "url": "https://cloud.google.com/sdk/auth_success",
+      "date_added": "2025-04-18 12:36:01"
+    },
+    {
+      "index": 2,
+      "global_index": 211,
+      "domain": "cloud.google.com",
+      "title": "Cloud Computing Services | Google Cloud",
+      "url": "https://cloud.google.com/?authuser=4&hl=en",
+      "date_added": "2025-04-18 09:15:39"
+    },
+    {
+      "index": 3,
+      "global_index": 212,
+      "domain": "github.com",
+      "title": "ai-az1/gcp-google-translation-markdown-files",
+      "url": "https://github.com/ai-az1/gcp-google-translation-markdown-files",
+      "date_added": "2025-04-18 07:17:14"
+    },
+    {
+      "index": 4,
+      "global_index": 213,
+      "domain": "github.com",
+      "title": "ai-az1/streamlit-financial-modeling-revenue-costs",
+      "url": "https://github.com/ai-az1/streamlit-financial-modeling-revenue-costs#",
+      "date_added": "2025-04-18 07:17:01"
+    },
+    {
+      "index": 5,
+      "global_index": 214,
+      "domain": "claude.ai",
+      "title": "Modular Approach to GCP Translate - Claude",
+      "url": "https://claude.ai/chat/d6e0e46d-bdc2-4ea2-8bba-ae8d189b1cfb",
+      "date_added": "2025-04-18 06:58:33"
+    },
+    {
+      "index": 6,
+      "global_index": 215,
+      "domain": "translate.google.com",
+      "title": "Google Translate",
+      "url": "https://translate.google.com/?sl=ru&tl=en&op=translate",
+      "date_added": "2025-04-18 05:49:29"
+    },
+    {
+      "index": 7,
+      "global_index": 216,
+      "domain": "github.com",
+      "title": "open-codex/codex-cli/scripts at main · ymichael/open-codex",
+      "url": "https://github.com/ymichael/open-codex/tree/main/codex-cli/scripts",
+      "date_added": "2025-04-18 05:38:39"
+    },
+    {
+      "index": 8,
+      "global_index": 217,
+      "domain": "drive.google.com",
+      "title": "EN - Google Drive",
+      "url": "https://drive.google.com/drive/u/4/folders/1addABYq_cAZqgv3wcPDTMRsTLnzZFZwN",
+      "date_added": "2025-04-18 05:37:07"
+    },
+    {
+      "index": 9,
+      "global_index": 218,
+      "domain": "0.0.0.0:8501",
+      "title": "Agentic Financial Modeler",
+      "url": "http://0.0.0.0:8501/",
+      "date_added": "2025-04-18 05:34:52"
+    },
+    {
+      "index": 10,
+      "global_index": 219,
+      "domain": "hesfintech.com",
+      "title": "Online Lending Software & Loan Automation Systems | HES FinTech",
+      "url": "https://hesfintech.com/",
+      "date_added": "2025-04-18 04:59:47"
+    }
+  ]
+}

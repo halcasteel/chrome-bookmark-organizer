@@ -1,0 +1,86 @@
+{
+  "batch_number": 97,
+  "total_batches": 389,
+  "bookmarks": [
+    {
+      "index": 1,
+      "global_index": 960,
+      "domain": "docs.docker.com",
+      "title": "What will you learn in this module? | Docker Documentation",
+      "url": "https://docs.docker.com/language/python/?uuid=AE9BBB3C-74AE-4DE5-BFC0-D34A1A307336",
+      "date_added": "2023-06-21 22:08:48"
+    },
+    {
+      "index": 2,
+      "global_index": 961,
+      "domain": "pwc.com",
+      "title": "Become a leader in AI and Analytics: PwC",
+      "url": "https://www.pwc.com/us/en/tech-effect/ai-analytics/ai-business-survey.html",
+      "date_added": "2023-06-16 01:23:09"
+    },
+    {
+      "index": 3,
+      "global_index": 962,
+      "domain": "towardsdatascience.com",
+      "title": "Towards Data Science",
+      "url": "https://towardsdatascience.com/",
+      "date_added": "2023-06-15 06:44:41"
+    },
+    {
+      "index": 4,
+      "global_index": 963,
+      "domain": "docs.google.com",
+      "title": "Revenue Model at different Subsciption Rates - Google Sheets",
+      "url": "https://docs.google.com/spreadsheets/d/1vjovZ-vFdBtZ0ZXIAC_SsH_IPSUb39dyqY_T_lxt77s/edit#gid=0",
+      "date_added": "2023-06-12 03:07:33"
+    },
+    {
+      "index": 5,
+      "global_index": 964,
+      "domain": "docs.google.com",
+      "title": "00-Basic outline for a business plan for an AI 6 month online course with a premium/freemium model - Google Docs",
+      "url": "https://docs.google.com/document/d/1GduY1Q_CqnWDH5ifKu3hHZlBrZGooct8Er72u8MvcDA/edit",
+      "date_added": "2023-06-12 03:07:41"
+    },
+    {
+      "index": 6,
+      "global_index": 965,
+      "domain": "linkedin.com",
+      "title": "(3) Thank you | LinkedIn",
+      "url": "https://www.linkedin.com/pulse/thank-you-francis-desouza/?utm_source=share&utm_medium=member_ios&utm_campaign=share_via",
+      "date_added": "2023-06-11 16:18:37"
+    },
+    {
+      "index": 7,
+      "global_index": 966,
+      "domain": "sybill.ai",
+      "title": "Magic Summary",
+      "url": "https://www.sybill.ai/magic-summary?mwr=lance-452f",
+      "date_added": "2023-06-11 16:12:21"
+    },
+    {
+      "index": 8,
+      "global_index": 967,
+      "domain": "accidentallyretired.com",
+      "title": "Time Tracking Spreadsheet: become more effective by tracking, optimizing, and focusing your time",
+      "url": "https://accidentallyretired.com/resources/time-log-spreadsheet/847?utm_source=AR%20Calculator&utm_medium=googlesheet&utm_campaign=Time%20Log",
+      "date_added": "2023-06-11 12:40:14"
+    },
+    {
+      "index": 9,
+      "global_index": 968,
+      "domain": "aima.cs.berkeley.edu",
+      "title": "Full Table of Contents for AI: A Modern Approach",
+      "url": "https://aima.cs.berkeley.edu/contents.html",
+      "date_added": "2023-06-10 19:56:08"
+    },
+    {
+      "index": 10,
+      "global_index": 969,
+      "domain": "accidentallyretired.com",
+      "title": "Profit And Loss Statement Template (FREE For Google Sheets & Excel)",
+      "url": "https://accidentallyretired.com/resources/profit-and-loss-statement-template/2811",
+      "date_added": "2023-06-11 12:33:12"
+    }
+  ]
+}
