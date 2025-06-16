@@ -1,5 +1,5 @@
 import OpenAI from 'openai';
-import logger from '../utils/logger.js';
+import unifiedLogger from './unifiedLogger.js';
 
 class OpenAIService {
   constructor() {
@@ -14,16 +14,36 @@ class OpenAIService {
       'Food', 'Sports', 'Arts', 'Reference', 'Government',
       'Tools/Utilities', 'Personal', 'Other'
     ];
+
+    unifiedLogger.info('OpenAIService initialized', {
+      service: 'openaiService',
+      source: 'constructor',
+      configured: !!this.client,
+      categoriesCount: this.categories.length
+    });
   }
 
   /**
    * Categorize a bookmark using OpenAI
    */
   async categorizeBookmark(bookmarkData) {
+    const startTime = Date.now();
+    
     if (!this.client) {
-      logger.warn('OpenAI client not initialized - API key missing');
+      unifiedLogger.warn('OpenAI client not initialized - API key missing', {
+        service: 'openaiService',
+        source: 'categorizeBookmark'
+      });
       return {};
     }
+
+    unifiedLogger.debug('Categorizing bookmark', {
+      service: 'openaiService',
+      source: 'categorizeBookmark',
+      url: bookmarkData.url,
+      hasTitle: !!bookmarkData.title,
+      hasDescription: !!bookmarkData.description
+    });
 
     try {
       const prompt = `
@@ -83,16 +103,25 @@ class OpenAIService {
         result.priority = 'medium';
       }
 
-      logger.info('Bookmark categorized successfully', {
+      unifiedLogger.info('Bookmark categorized successfully', {
+        service: 'openaiService',
+        source: 'categorizeBookmark',
         url: bookmarkData.url,
-        category: result.category
+        category: result.category,
+        subcategory: result.subcategory,
+        tagsCount: result.tags.length,
+        priority: result.priority,
+        duration: Date.now() - startTime
       });
 
       return result;
 
     } catch (error) {
-      logger.error('OpenAI categorization error', {
+      unifiedLogger.error('OpenAI categorization error', {
+        service: 'openaiService',
+        source: 'categorizeBookmark',
         error: error.message,
+        stack: error.stack,
         url: bookmarkData.url
       });
       
@@ -105,6 +134,13 @@ class OpenAIService {
    * Fallback categorization using patterns
    */
   fallbackCategorization(bookmarkData) {
+    const startTime = Date.now();
+    unifiedLogger.debug('Using fallback categorization', {
+      service: 'openaiService',
+      source: 'fallbackCategorization',
+      url: bookmarkData.url
+    });
+
     const url = bookmarkData.url.toLowerCase();
     const title = (bookmarkData.title || '').toLowerCase();
     const combined = `${url} ${title}`;
@@ -151,10 +187,14 @@ class OpenAIService {
       .filter(word => !['the', 'and', 'for', 'with', 'from'].includes(word))
       .slice(0, 5);
 
-    logger.info('Using fallback categorization', {
+    unifiedLogger.info('Fallback categorization completed', {
+      service: 'openaiService',
+      source: 'fallbackCategorization',
       url: bookmarkData.url,
       category,
-      pattern: matchedPattern
+      pattern: matchedPattern,
+      tagsCount: words.length,
+      duration: Date.now() - startTime
     });
 
     return {
@@ -170,9 +210,21 @@ class OpenAIService {
    * Generate embeddings for a bookmark
    */
   async generateEmbedding(text) {
+    const startTime = Date.now();
+
     if (!this.client) {
+      unifiedLogger.debug('OpenAI client not available for embedding', {
+        service: 'openaiService',
+        source: 'generateEmbedding'
+      });
       return null;
     }
+
+    unifiedLogger.debug('Generating embedding', {
+      service: 'openaiService',
+      source: 'generateEmbedding',
+      textLength: text.length
+    });
 
     try {
       const response = await this.client.embeddings.create({
@@ -180,10 +232,22 @@ class OpenAIService {
         input: text.substring(0, 8000) // Limit input length
       });
 
+      unifiedLogger.debug('Embedding generated successfully', {
+        service: 'openaiService',
+        source: 'generateEmbedding',
+        duration: Date.now() - startTime
+      });
+
       return response.data[0].embedding;
 
     } catch (error) {
-      logger.error('Embedding generation error', { error: error.message });
+      unifiedLogger.error('Embedding generation error', {
+        service: 'openaiService',
+        source: 'generateEmbedding',
+        error: error.message,
+        stack: error.stack,
+        textLength: text.length
+      });
       return null;
     }
   }

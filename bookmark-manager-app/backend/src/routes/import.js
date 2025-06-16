@@ -3,7 +3,7 @@ import multer from 'multer';
 import importService from '../services/importService.js';
 import importServiceAsync from '../services/importServiceAsync.js';
 import streamingImportService from '../services/streamingImportService.js';
-import { logInfo, logError } from '../utils/logger.js';
+import unifiedLogger from '../services/unifiedLogger.js';
 
 const router = express.Router();
 
@@ -31,13 +31,21 @@ const upload = multer({
 router.post('/upload', upload.single('file'), async (req, res) => {
   try {
     if (!req.file) {
+      unifiedLogger.warn('Import failed - no file uploaded', {
+        service: 'api',
+        source: 'POST /import/upload',
+        userId: req.user.id
+      });
       return res.status(400).json({ error: 'No file uploaded' });
     }
     
-    logInfo('Bookmark import started', {
+    unifiedLogger.info('Bookmark import started', {
+      service: 'api',
+      source: 'POST /import/upload',
       userId: req.user.id,
       fileName: req.file.originalname,
       fileSize: req.file.size,
+      fileSizeMB: (req.file.size / 1024 / 1024).toFixed(2)
     });
     
     // Save file temporarily
@@ -55,6 +63,17 @@ router.post('/upload', upload.single('file'), async (req, res) => {
     // Clean up temp file
     await fs.unlink(tempPath);
     
+    unifiedLogger.info('Import completed successfully', {
+      service: 'api',
+      source: 'POST /import/upload',
+      userId: req.user.id,
+      importId: result.importId,
+      total: result.total,
+      imported: result.imported,
+      failed: result.failed,
+      fileName: req.file.originalname
+    });
+    
     res.json({
       message: 'Import completed',
       importId: result.importId,
@@ -64,7 +83,13 @@ router.post('/upload', upload.single('file'), async (req, res) => {
       failed: result.failed,
     });
   } catch (error) {
-    logError(error, { context: 'POST /api/import/upload' });
+    unifiedLogger.error('Failed to import bookmarks', error, {
+      service: 'api',
+      source: 'POST /import/upload',
+      userId: req.user.id,
+      fileName: req.file?.originalname,
+      fileSize: req.file?.size
+    });
     res.status(500).json({ error: 'Failed to import bookmarks' });
   }
 });
@@ -75,15 +100,42 @@ router.post('/upload', upload.single('file'), async (req, res) => {
  */
 router.get('/status/:importId', async (req, res) => {
   try {
-    const status = await importService.getImportStatus(req.params.importId);
+    const importId = req.params.importId;
+    
+    unifiedLogger.debug('Checking import status', {
+      service: 'api',
+      source: 'GET /import/status/:importId',
+      userId: req.user.id,
+      importId
+    });
+    const status = await importService.getImportStatus(importId);
     
     if (!status) {
+      unifiedLogger.warn('Import not found', {
+        service: 'api',
+        source: 'GET /import/status/:importId',
+        userId: req.user.id,
+        importId
+      });
       return res.status(404).json({ error: 'Import not found' });
     }
     
+    unifiedLogger.debug('Import status retrieved', {
+      service: 'api',
+      source: 'GET /import/status/:importId',
+      userId: req.user.id,
+      importId,
+      status: status.status
+    });
+    
     res.json(status);
   } catch (error) {
-    logError(error, { context: 'GET /api/import/status/:importId' });
+    unifiedLogger.error('Failed to get import status', error, {
+      service: 'api',
+      source: 'GET /import/status/:importId',
+      userId: req.user.id,
+      importId: req.params.importId
+    });
     res.status(500).json({ error: 'Failed to get import status' });
   }
 });
@@ -94,10 +146,27 @@ router.get('/status/:importId', async (req, res) => {
  */
 router.get('/history', async (req, res) => {
   try {
+    unifiedLogger.info('Fetching import history', {
+      service: 'api',
+      source: 'GET /import/history',
+      userId: req.user.id
+    });
     const history = await importService.getImportHistory(req.user.id);
+    
+    unifiedLogger.info('Import history retrieved', {
+      service: 'api',
+      source: 'GET /import/history',
+      userId: req.user.id,
+      importCount: history.length
+    });
+    
     res.json({ imports: history });
   } catch (error) {
-    logError(error, { context: 'GET /api/import/history' });
+    unifiedLogger.error('Failed to get import history', error, {
+      service: 'api',
+      source: 'GET /import/history',
+      userId: req.user.id
+    });
     res.status(500).json({ error: 'Failed to get import history' });
   }
 });
@@ -109,13 +178,21 @@ router.get('/history', async (req, res) => {
 router.post('/upload-async', upload.single('file'), async (req, res) => {
   try {
     if (!req.file) {
+      unifiedLogger.warn('Async import failed - no file uploaded', {
+        service: 'api',
+        source: 'POST /import/upload-async',
+        userId: req.user.id
+      });
       return res.status(400).json({ error: 'No file uploaded' });
     }
     
-    logInfo('Async bookmark import started', {
+    unifiedLogger.info('Async bookmark import started', {
+      service: 'api',
+      source: 'POST /import/upload-async',
       userId: req.user.id,
       fileName: req.file.originalname,
       fileSize: req.file.size,
+      fileSizeMB: (req.file.size / 1024 / 1024).toFixed(2)
     });
     
     // Save file temporarily
@@ -133,9 +210,23 @@ router.post('/upload-async', upload.single('file'), async (req, res) => {
     // Clean up temp file
     await fs.unlink(tempPath);
     
+    unifiedLogger.info('Async import initiated successfully', {
+      service: 'api',
+      source: 'POST /import/upload-async',
+      userId: req.user.id,
+      importId: result.importId,
+      fileName: req.file.originalname
+    });
+    
     res.json(result);
   } catch (error) {
-    logError(error, { context: 'POST /api/import/upload-async' });
+    unifiedLogger.error('Failed to start async import', error, {
+      service: 'api',
+      source: 'POST /import/upload-async',
+      userId: req.user.id,
+      fileName: req.file?.originalname,
+      fileSize: req.file?.size
+    });
     res.status(500).json({ error: 'Failed to import bookmarks' });
   }
 });
@@ -146,15 +237,42 @@ router.post('/upload-async', upload.single('file'), async (req, res) => {
  */
 router.get('/progress/:importId', async (req, res) => {
   try {
-    const progress = await importServiceAsync.getImportProgress(req.params.importId);
+    const importId = req.params.importId;
+    
+    unifiedLogger.debug('Fetching import progress', {
+      service: 'api',
+      source: 'GET /import/progress/:importId',
+      userId: req.user.id,
+      importId
+    });
+    const progress = await importServiceAsync.getImportProgress(importId);
     
     if (!progress) {
+      unifiedLogger.warn('Import progress not found', {
+        service: 'api',
+        source: 'GET /import/progress/:importId',
+        userId: req.user.id,
+        importId
+      });
       return res.status(404).json({ error: 'Import not found' });
     }
     
+    unifiedLogger.debug('Import progress retrieved', {
+      service: 'api',
+      source: 'GET /import/progress/:importId',
+      userId: req.user.id,
+      importId,
+      progress: progress.progress
+    });
+    
     res.json(progress);
   } catch (error) {
-    logError(error, { context: 'GET /api/import/progress/:importId' });
+    unifiedLogger.error('Failed to get import progress', error, {
+      service: 'api',
+      source: 'GET /import/progress/:importId',
+      userId: req.user.id,
+      importId: req.params.importId
+    });
     res.status(500).json({ error: 'Failed to get import progress' });
   }
 });
@@ -166,13 +284,21 @@ router.get('/progress/:importId', async (req, res) => {
 router.post('/upload/streaming', upload.single('file'), async (req, res) => {
   try {
     if (!req.file) {
+      unifiedLogger.warn('Streaming import failed - no file uploaded', {
+        service: 'api',
+        source: 'POST /import/upload/streaming',
+        userId: req.user.id
+      });
       return res.status(400).json({ error: 'No file uploaded' });
     }
     
-    logInfo('Streaming bookmark import started', {
+    unifiedLogger.info('Streaming bookmark import started', {
+      service: 'api',
+      source: 'POST /import/upload/streaming',
       userId: req.user.id,
       fileName: req.file.originalname,
       fileSize: req.file.size,
+      fileSizeMB: (req.file.size / 1024 / 1024).toFixed(2)
     });
     
     // Save file temporarily
@@ -189,13 +315,28 @@ router.post('/upload/streaming', upload.single('file'), async (req, res) => {
     
     // Don't delete temp file yet - streaming service will handle it
     
+    unifiedLogger.info('Streaming import initiated successfully', {
+      service: 'api',
+      source: 'POST /import/upload/streaming',
+      userId: req.user.id,
+      importId: result.importId,
+      status: result.status,
+      fileName: req.file.originalname
+    });
+    
     res.json({
       message: 'Import started in streaming mode',
       importId: result.importId,
       status: result.status
     });
   } catch (error) {
-    logError(error, { context: 'POST /api/import/upload/streaming' });
+    unifiedLogger.error('Failed to start streaming import', error, {
+      service: 'api',
+      source: 'POST /import/upload/streaming',
+      userId: req.user.id,
+      fileName: req.file?.originalname,
+      fileSize: req.file?.size
+    });
     res.status(500).json({ error: 'Failed to start streaming import' });
   }
 });
@@ -206,15 +347,42 @@ router.post('/upload/streaming', upload.single('file'), async (req, res) => {
  */
 router.get('/stream-progress/:importId', async (req, res) => {
   try {
-    const progress = await streamingImportService.getImportProgress(req.params.importId);
+    const importId = req.params.importId;
+    
+    unifiedLogger.debug('Fetching streaming import progress', {
+      service: 'api',
+      source: 'GET /import/stream-progress/:importId',
+      userId: req.user.id,
+      importId
+    });
+    const progress = await streamingImportService.getImportProgress(importId);
     
     if (!progress) {
+      unifiedLogger.warn('Streaming import not found', {
+        service: 'api',
+        source: 'GET /import/stream-progress/:importId',
+        userId: req.user.id,
+        importId
+      });
       return res.status(404).json({ error: 'Import not found' });
     }
     
+    unifiedLogger.debug('Streaming progress retrieved', {
+      service: 'api',
+      source: 'GET /import/stream-progress/:importId',
+      userId: req.user.id,
+      importId,
+      progress: progress.progress
+    });
+    
     res.json(progress);
   } catch (error) {
-    logError(error, { context: 'GET /api/import/stream-progress/:importId' });
+    unifiedLogger.error('Failed to get streaming progress', error, {
+      service: 'api',
+      source: 'GET /import/stream-progress/:importId',
+      userId: req.user.id,
+      importId: req.params.importId
+    });
     res.status(500).json({ error: 'Failed to get streaming progress' });
   }
 });

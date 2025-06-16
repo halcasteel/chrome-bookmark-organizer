@@ -1,5 +1,5 @@
 import puppeteer from 'puppeteer';
-import { logInfo, logError, logWarn, logDebug } from '../utils/logger.js';
+import unifiedLogger from './unifiedLogger.js';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -25,6 +25,12 @@ class BookmarkValidator {
     
     this.browser = null;
     this.activePages = new Set();
+
+    unifiedLogger.info('BookmarkValidator initialized', {
+      service: 'bookmarkValidator',
+      source: 'constructor',
+      options: this.options
+    });
   }
 
   /**
@@ -32,8 +38,13 @@ class BookmarkValidator {
    * @returns {Promise<void>}
    */
   async initialize() {
+    const startTime = Date.now();
     try {
-      logInfo('Initializing Puppeteer browser', { headless: this.options.headless });
+      unifiedLogger.info('Initializing Puppeteer browser', {
+        service: 'bookmarkValidator',
+        source: 'initialize',
+        headless: this.options.headless
+      });
       
       this.browser = await puppeteer.launch({
         headless: this.options.headless,
@@ -54,9 +65,18 @@ class BookmarkValidator {
       await fs.mkdir(path.join(this.options.outputDir, 'invalid'), { recursive: true });
       await fs.mkdir(path.join(this.options.outputDir, 'pending'), { recursive: true });
       
-      logInfo('Puppeteer browser initialized successfully');
+      unifiedLogger.info('Puppeteer browser initialized successfully', {
+        service: 'bookmarkValidator',
+        source: 'initialize',
+        duration: Date.now() - startTime
+      });
     } catch (error) {
-      logError(error, { context: 'BookmarkValidator.initialize' });
+      unifiedLogger.error('Failed to initialize Puppeteer browser', {
+        service: 'bookmarkValidator',
+        source: 'initialize',
+        error: error.message,
+        stack: error.stack
+      });
       throw error;
     }
   }
@@ -70,10 +90,12 @@ class BookmarkValidator {
     const startTime = Date.now();
     const bookmarkId = crypto.randomBytes(8).toString('hex');
     
-    logDebug('Starting bookmark validation', { 
-      bookmarkId, 
+    unifiedLogger.debug('Starting bookmark validation', {
+      service: 'bookmarkValidator',
+      source: 'validateBookmark',
+      bookmarkId,
       url: bookmark.url,
-      title: bookmark.title 
+      title: bookmark.title
     });
 
     let page;
@@ -141,18 +163,23 @@ class BookmarkValidator {
         await page.screenshot({ path: screenshotPath, fullPage: false });
         result.screenshot = screenshotPath;
         
-        logInfo('Bookmark validated successfully', {
+        unifiedLogger.info('Bookmark validated successfully', {
+          service: 'bookmarkValidator',
+          source: 'validateBookmark',
           bookmarkId,
           url: bookmark.url,
           statusCode: result.statusCode,
           loadTime: result.loadTime,
+          hasMetadata: !!result.metadata.title
         });
       } else {
         result.error = `HTTP ${result.statusCode}`;
-        logWarn('Bookmark validation failed', {
+        unifiedLogger.warn('Bookmark validation failed', {
+          service: 'bookmarkValidator',
+          source: 'validateBookmark',
           bookmarkId,
           url: bookmark.url,
-          statusCode: result.statusCode,
+          statusCode: result.statusCode
         });
       }
       
@@ -160,10 +187,13 @@ class BookmarkValidator {
       result.error = error.message;
       result.loadTime = Date.now() - startTime;
       
-      logError(error, {
-        context: 'BookmarkValidator.validateBookmark',
+      unifiedLogger.error('Error validating bookmark', {
+        service: 'bookmarkValidator',
+        source: 'validateBookmark',
+        error: error.message,
+        stack: error.stack,
         bookmarkId,
-        url: bookmark.url,
+        url: bookmark.url
       });
     } finally {
       if (page) {
@@ -186,7 +216,12 @@ class BookmarkValidator {
    * @returns {Promise<Object>} Extracted metadata
    */
   async extractMetadata(page) {
+    const startTime = Date.now();
     try {
+      unifiedLogger.debug('Extracting metadata from page', {
+        service: 'bookmarkValidator',
+        source: 'extractMetadata'
+      });
       const metadata = await page.evaluate(() => {
         const getMeta = (name) => {
           const element = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
@@ -215,9 +250,23 @@ class BookmarkValidator {
         };
       });
       
+      unifiedLogger.debug('Metadata extracted successfully', {
+        service: 'bookmarkValidator',
+        source: 'extractMetadata',
+        hasTitle: !!metadata.title,
+        hasDescription: !!metadata.description,
+        keywordCount: metadata.keywords?.length || 0,
+        duration: Date.now() - startTime
+      });
+
       return metadata;
     } catch (error) {
-      logError(error, { context: 'BookmarkValidator.extractMetadata' });
+      unifiedLogger.error('Failed to extract metadata', {
+        service: 'bookmarkValidator',
+        source: 'extractMetadata',
+        error: error.message,
+        stack: error.stack
+      });
       return {};
     }
   }
@@ -228,7 +277,13 @@ class BookmarkValidator {
    * @returns {Promise<Array>} Array of validation results
    */
   async validateBatch(bookmarks) {
-    logInfo('Starting batch validation', { count: bookmarks.length });
+    const startTime = Date.now();
+    unifiedLogger.info('Starting batch validation', {
+      service: 'bookmarkValidator',
+      source: 'validateBatch',
+      count: bookmarks.length,
+      maxConcurrent: this.options.maxConcurrent
+    });
     
     const results = [];
     const queue = [...bookmarks];
@@ -244,9 +299,12 @@ class BookmarkValidator {
             processing.delete(promise);
           })
           .catch((error) => {
-            logError(error, { 
-              context: 'BookmarkValidator.validateBatch',
-              url: bookmark.url 
+            unifiedLogger.error('Batch validation error', {
+              service: 'bookmarkValidator',
+              source: 'validateBatch',
+              error: error.message,
+              stack: error.stack,
+              url: bookmark.url
             });
             processing.delete(promise);
           });
@@ -260,10 +318,14 @@ class BookmarkValidator {
       }
     }
     
-    logInfo('Batch validation completed', { 
+    unifiedLogger.info('Batch validation completed', {
+      service: 'bookmarkValidator',
+      source: 'validateBatch',
       total: bookmarks.length,
       valid: results.filter(r => r.valid).length,
       invalid: results.filter(r => !r.valid).length,
+      duration: Date.now() - startTime,
+      avgTimePerBookmark: Math.round((Date.now() - startTime) / bookmarks.length)
     });
     
     return results;
@@ -275,14 +337,23 @@ class BookmarkValidator {
    * @returns {Promise<Object>} Processing summary
    */
   async processBookmarksFile(htmlPath) {
+    const startTime = Date.now();
     try {
-      logInfo('Processing bookmarks file', { path: htmlPath });
+      unifiedLogger.info('Processing bookmarks file', {
+        service: 'bookmarkValidator',
+        source: 'processBookmarksFile',
+        path: htmlPath
+      });
       
       // Read and parse HTML file
       const html = await fs.readFile(htmlPath, 'utf-8');
       const bookmarks = this.parseBookmarksHtml(html);
       
-      logInfo('Parsed bookmarks from HTML', { count: bookmarks.length });
+      unifiedLogger.info('Parsed bookmarks from HTML', {
+        service: 'bookmarkValidator',
+        source: 'processBookmarksFile',
+        count: bookmarks.length
+      });
       
       // Save individual bookmark files to pending directory
       for (const bookmark of bookmarks) {
@@ -314,10 +385,23 @@ class BookmarkValidator {
         JSON.stringify(summary, null, 2)
       );
       
+      unifiedLogger.info('Bookmarks file processed', {
+        service: 'bookmarkValidator',
+        source: 'processBookmarksFile',
+        summary,
+        duration: Date.now() - startTime
+      });
+
       return summary;
       
     } catch (error) {
-      logError(error, { context: 'BookmarkValidator.processBookmarksFile' });
+      unifiedLogger.error('Failed to process bookmarks file', {
+        service: 'bookmarkValidator',
+        source: 'processBookmarksFile',
+        error: error.message,
+        stack: error.stack,
+        htmlPath
+      });
       throw error;
     }
   }
@@ -328,6 +412,12 @@ class BookmarkValidator {
    * @returns {Array} Array of bookmark objects
    */
   parseBookmarksHtml(html) {
+    unifiedLogger.debug('Parsing bookmarks HTML', {
+      service: 'bookmarkValidator',
+      source: 'parseBookmarksHtml',
+      htmlLength: html.length
+    });
+
     const bookmarks = [];
     const linkRegex = /<A\s+[^>]*HREF="([^"]+)"[^>]*>([^<]+)<\/A>/gi;
     const addDateRegex = /ADD_DATE="(\d+)"/i;
@@ -359,6 +449,12 @@ class BookmarkValidator {
    */
   async close() {
     try {
+      unifiedLogger.info('Closing Puppeteer browser', {
+        service: 'bookmarkValidator',
+        source: 'close',
+        activePagesCount: this.activePages.size
+      });
+
       if (this.browser) {
         // Close all active pages
         for (const page of this.activePages) {
@@ -368,10 +464,18 @@ class BookmarkValidator {
         await this.browser.close();
         this.browser = null;
         
-        logInfo('Puppeteer browser closed');
+        unifiedLogger.info('Puppeteer browser closed successfully', {
+          service: 'bookmarkValidator',
+          source: 'close'
+        });
       }
     } catch (error) {
-      logError(error, { context: 'BookmarkValidator.close' });
+      unifiedLogger.error('Error closing Puppeteer browser', {
+        service: 'bookmarkValidator',
+        source: 'close',
+        error: error.message,
+        stack: error.stack
+      });
     }
   }
 }

@@ -1,4 +1,4 @@
-import { logInfo, logError, logWarn } from '../utils/logger.js';
+import unifiedLogger from './unifiedLogger.js';
 import db from '../config/database.js';
 import OpenAI from 'openai';
 import { v4 as uuidv4 } from 'uuid';
@@ -12,12 +12,23 @@ class AsyncProcessor {
     this.validationQueue = [];
     this.enrichmentQueue = [];
     this.isProcessing = false;
+    unifiedLogger.info('AsyncProcessor initialized', {
+      service: 'asyncProcessor',
+      source: 'constructor'
+    });
   }
 
   /**
    * Add bookmark for validation
    */
   queueValidation(bookmarkId, userId) {
+    unifiedLogger.debug('Queuing bookmark for validation', {
+      service: 'asyncProcessor',
+      source: 'queueValidation',
+      bookmarkId,
+      userId,
+      queueLength: this.validationQueue.length + 1
+    });
     this.validationQueue.push({ bookmarkId, userId });
     this.startProcessing();
   }
@@ -26,6 +37,14 @@ class AsyncProcessor {
    * Add bookmark for enrichment
    */
   queueEnrichment(bookmarkId, userId, url, title) {
+    unifiedLogger.debug('Queuing bookmark for enrichment', {
+      service: 'asyncProcessor',
+      source: 'queueEnrichment',
+      bookmarkId,
+      userId,
+      url,
+      queueLength: this.enrichmentQueue.length + 1
+    });
     this.enrichmentQueue.push({ bookmarkId, userId, url, title });
   }
 
@@ -33,7 +52,20 @@ class AsyncProcessor {
    * Start processing queues
    */
   startProcessing() {
-    if (this.isProcessing) return;
+    if (this.isProcessing) {
+      unifiedLogger.debug('Processing already in progress', {
+        service: 'asyncProcessor',
+        source: 'startProcessing'
+      });
+      return;
+    }
+    
+    unifiedLogger.info('Starting queue processing', {
+      service: 'asyncProcessor',
+      source: 'startProcessing',
+      validationQueueSize: this.validationQueue.length,
+      enrichmentQueueSize: this.enrichmentQueue.length
+    });
     
     this.isProcessing = true;
     
@@ -48,17 +80,43 @@ class AsyncProcessor {
    * Process validation queue
    */
   async processValidationQueue() {
+    const startTime = Date.now();
+    unifiedLogger.info('Processing validation queue', {
+      service: 'asyncProcessor',
+      source: 'processValidationQueue',
+      queueSize: this.validationQueue.length
+    });
+
     while (this.validationQueue.length > 0) {
       const batch = this.validationQueue.splice(0, 10); // Process 10 at a time
       
+      unifiedLogger.debug('Processing validation batch', {
+        service: 'asyncProcessor',
+        source: 'processValidationQueue',
+        batchSize: batch.length,
+        remainingQueue: this.validationQueue.length
+      });
+      
       await Promise.all(batch.map(item => 
         this.validateBookmark(item.bookmarkId, item.userId)
-          .catch(err => logError(err, { bookmarkId: item.bookmarkId }))
+          .catch(err => unifiedLogger.error('Validation failed', {
+            service: 'asyncProcessor',
+            source: 'processValidationQueue',
+            error: err.message,
+            stack: err.stack,
+            bookmarkId: item.bookmarkId
+          }))
       ));
       
       // Small delay between batches
       await new Promise(resolve => setTimeout(resolve, 1000));
     }
+    
+    unifiedLogger.info('Validation queue processed', {
+      service: 'asyncProcessor',
+      source: 'processValidationQueue',
+      duration: Date.now() - startTime
+    });
     
     // Continue processing enrichment queue
     setTimeout(() => this.processEnrichmentQueue(), 1000);
@@ -68,8 +126,14 @@ class AsyncProcessor {
    * Validate a single bookmark
    */
   async validateBookmark(bookmarkId, userId) {
+    const startTime = Date.now();
     try {
-      logInfo('Validating bookmark', { bookmarkId });
+      unifiedLogger.debug('Validating bookmark', {
+        service: 'asyncProcessor',
+        source: 'validateBookmark',
+        bookmarkId,
+        userId
+      });
       
       // Get bookmark
       const result = await db.query(
@@ -100,7 +164,13 @@ class AsyncProcessor {
         isValid = response.ok;
         httpStatus = response.status;
       } catch (err) {
-        logWarn('Validation failed', { url: bookmark.url, error: err.message });
+        unifiedLogger.warn('Validation failed', {
+          service: 'asyncProcessor',
+          source: 'validateBookmark',
+          url: bookmark.url,
+          error: err.message,
+          bookmarkId
+        });
       }
       
       // Update bookmark
@@ -116,10 +186,23 @@ class AsyncProcessor {
         this.queueEnrichment(bookmarkId, userId, bookmark.url, bookmark.title);
       }
       
-      logInfo('Bookmark validated', { bookmarkId, isValid, httpStatus });
+      unifiedLogger.info('Bookmark validated', {
+        service: 'asyncProcessor',
+        source: 'validateBookmark',
+        bookmarkId,
+        isValid,
+        httpStatus,
+        duration: Date.now() - startTime
+      });
       
     } catch (error) {
-      logError(error, { context: 'validateBookmark', bookmarkId });
+      unifiedLogger.error('Error validating bookmark', {
+        service: 'asyncProcessor',
+        source: 'validateBookmark',
+        error: error.message,
+        stack: error.stack,
+        bookmarkId
+      });
     }
   }
 
@@ -127,25 +210,57 @@ class AsyncProcessor {
    * Process enrichment queue
    */
   async processEnrichmentQueue() {
+    const startTime = Date.now();
+    unifiedLogger.info('Processing enrichment queue', {
+      service: 'asyncProcessor',
+      source: 'processEnrichmentQueue',
+      queueSize: this.enrichmentQueue.length
+    });
+
     while (this.enrichmentQueue.length > 0) {
       const item = this.enrichmentQueue.shift();
       
+      unifiedLogger.debug('Processing enrichment item', {
+        service: 'asyncProcessor',
+        source: 'processEnrichmentQueue',
+        bookmarkId: item.bookmarkId,
+        remainingQueue: this.enrichmentQueue.length
+      });
+      
       await this.enrichBookmark(item.bookmarkId, item.userId, item.url, item.title)
-        .catch(err => logError(err, { bookmarkId: item.bookmarkId }));
+        .catch(err => unifiedLogger.error('Enrichment failed', {
+          service: 'asyncProcessor',
+          source: 'processEnrichmentQueue',
+          error: err.message,
+          stack: err.stack,
+          bookmarkId: item.bookmarkId
+        }));
       
       // Rate limit for OpenAI
       await new Promise(resolve => setTimeout(resolve, 2000));
     }
     
     this.isProcessing = false;
+    unifiedLogger.info('Enrichment queue processed', {
+      service: 'asyncProcessor',
+      source: 'processEnrichmentQueue',
+      duration: Date.now() - startTime
+    });
   }
 
   /**
    * Enrich a single bookmark with OpenAI
    */
   async enrichBookmark(bookmarkId, userId, url, title) {
+    const startTime = Date.now();
     try {
-      logInfo('Enriching bookmark', { bookmarkId, url });
+      unifiedLogger.debug('Enriching bookmark', {
+        service: 'asyncProcessor',
+        source: 'enrichBookmark',
+        bookmarkId,
+        url,
+        userId
+      });
       
       // Skip if already enriched
       const check = await db.query(
@@ -182,7 +297,13 @@ Respond in JSON format only.`
       try {
         enrichmentData = JSON.parse(completion.choices[0].message.content);
       } catch (err) {
-        logWarn('Failed to parse OpenAI response', { response: completion.choices[0].message.content });
+        unifiedLogger.warn('Failed to parse OpenAI response', {
+          service: 'asyncProcessor',
+          source: 'enrichBookmark',
+          error: err.message,
+          response: completion.choices[0].message.content,
+          bookmarkId
+        });
         return;
       }
       
@@ -261,10 +382,13 @@ Respond in JSON format only.`
         
         await client.query('COMMIT');
         
-        logInfo('Bookmark enriched', { 
+        unifiedLogger.info('Bookmark enriched', {
+          service: 'asyncProcessor',
+          source: 'enrichBookmark',
           bookmarkId,
           category: enrichmentData.category,
-          tags: enrichmentData.tags
+          tags: enrichmentData.tags,
+          duration: Date.now() - startTime
         });
         
       } catch (error) {
@@ -275,7 +399,14 @@ Respond in JSON format only.`
       }
       
     } catch (error) {
-      logError(error, { context: 'enrichBookmark', bookmarkId });
+      unifiedLogger.error('Error enriching bookmark', {
+        service: 'asyncProcessor',
+        source: 'enrichBookmark',
+        error: error.message,
+        stack: error.stack,
+        bookmarkId,
+        url
+      });
     }
   }
 }

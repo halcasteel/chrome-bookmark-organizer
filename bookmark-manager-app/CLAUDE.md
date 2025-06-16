@@ -23,19 +23,25 @@ This script is the **ONLY** supported way to start the application. It handles:
 ## Current State (June 2025)
 
 ### ✅ Completed
-- Unified logging system across entire stack
+- Unified logging system across entire stack (30+ files)
 - Production-ready startup script with comprehensive monitoring
 - Environment configuration consolidation (single .env file)
 - Redis port conflict resolution (now using 6382)
+- PostgreSQL port configuration (now using 5434)
 - Project cleanup - archived 74+ non-essential files
 - Comprehensive dependency analysis
 - WebSocket implementation for real-time updates
 - Async import system with progress tracking
+- Fixed all import path errors for unifiedLogger
+- Added comprehensive error logging throughout codebase
+- Fixed backend crash during login (Winston EPIPE error)
+- Reset admin@az1.ai password to "changeme123"
 
 ### ❌ Known Issues
-- **Authentication is broken** - users cannot log in
+- **Authentication is broken** - users cannot log in properly
+- **WebSocket connections failing** - showing as disconnected in frontend
 - 2FA verification may have issues
-- Some frontend components may not properly connect to backend
+- Some API endpoints return 404 or have CORS issues
 
 ## Architecture Highlights
 
@@ -43,8 +49,14 @@ This script is the **ONLY** supported way to start the application. It handles:
 - Central logger service: `backend/src/services/unifiedLogger.js`
 - Frontend logger: `frontend/src/services/logger.ts`
 - Real-time log viewer: `frontend/src/pages/LogViewer.tsx`
-- All logs stream to `logs/` directory with rotation
-- WebSocket server for live log streaming
+- Log files:
+  - `logs/error.log` - Error level events with rotation
+  - `logs/combined.log` - All events with rotation
+  - `logs/http.log` - HTTP request logs
+- WebSocket server for live log streaming on port 3003
+- Consistent logging format across all services
+- Performance timing with `startTimer()` method
+- Structured context with service/method tagging
 
 ### Service Ports
 - Frontend: 5173
@@ -95,11 +107,12 @@ bookmark-manager-app/
 
 ## Essential Files Count
 - **127 essential files** remain after cleanup
-- 62 source code files
+- 62 source code files (all with unified logging)
 - 21 configuration files
 - 19 deployment/utility scripts
 - 7 documentation files
 - 15 other essential files
+- All non-essential files archived to `_archive/` directory
 
 ## Environment Variables
 Key variables in `.env`:
@@ -149,10 +162,17 @@ When working on this codebase:
 6. Frontend uses strict TypeScript - no `any` types
 7. All database operations should use transactions
 8. WebSocket is used for real-time updates
+9. All logging must use unifiedLogger - never use console.log
+10. Import paths: services use `./unifiedLogger.js`, others use `../services/unifiedLogger.js`
+11. Always include service and method context in log messages
+12. The admin user is admin@az1.ai with password "changeme123"
 
 ## Next Priority Tasks
-1. Fix authentication/login functionality
-2. Verify 2FA implementation
-3. Test bookmark import workflow
-4. Validate AI classification features
-5. Ensure WebSocket connections work properly
+1. Fix authentication/login functionality (highest priority)
+2. Debug WebSocket connection issues
+3. Verify 2FA implementation
+4. Test bookmark import workflow with large files
+5. Validate AI classification features
+6. Ensure all API endpoints are properly connected
+7. Fix CORS issues for WebSocket connections
+8. Test unified logging system under load

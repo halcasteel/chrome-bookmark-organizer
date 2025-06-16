@@ -4,7 +4,7 @@ import { JSDOM } from 'jsdom';
 import Bull from 'bull';
 import { v4 as uuidv4 } from 'uuid';
 import { query } from '../db/index.js';
-import logger from '../utils/logger.js';
+import unifiedLogger from './unifiedLogger.js';
 import websocketService from './websocketService.js';
 
 // Create import queue
@@ -15,12 +15,27 @@ class StreamingImportService {
     this.chunkSize = parseInt(process.env.IMPORT_CHUNK_SIZE) || 100;
     this.currentBookmark = null;
     this.inBookmark = false;
+
+    unifiedLogger.info('StreamingImportService initialized', {
+      service: 'streamingImportService',
+      source: 'constructor',
+      chunkSize: this.chunkSize
+    });
   }
 
   /**
    * Parse HTML file using streaming to handle large files
    */
   async parseBookmarksStream(filePath, importId, userId) {
+    const startTime = Date.now();
+    unifiedLogger.info('Starting stream parsing', {
+      service: 'streamingImportService',
+      source: 'parseBookmarksStream',
+      filePath,
+      importId,
+      userId
+    });
+
     return new Promise((resolve, reject) => {
       const stream = fs.createReadStream(filePath, { encoding: 'utf8' });
       const rl = readline.createInterface({ input: stream });
@@ -60,7 +75,13 @@ class StreamingImportService {
             this.inBookmark = false;
           }
         } catch (error) {
-          logger.error('Error parsing line', { error: error.message, line });
+          unifiedLogger.error('Error parsing line', {
+            service: 'streamingImportService',
+            source: 'parseBookmarksStream',
+            error: error.message,
+            stack: error.stack,
+            lineLength: line.length
+          });
         }
       });
       
@@ -77,10 +98,13 @@ class StreamingImportService {
             [totalBookmarks, chunkId, importId]
           );
           
-          logger.info('Stream parsing complete', { 
-            importId, 
-            totalBookmarks, 
-            totalChunks: chunkId 
+          unifiedLogger.info('Stream parsing complete', {
+            service: 'streamingImportService',
+            source: 'parseBookmarksStream',
+            importId,
+            totalBookmarks,
+            totalChunks: chunkId,
+            duration: Date.now() - startTime
           });
           
           resolve({ totalBookmarks, totalChunks: chunkId });
@@ -90,7 +114,14 @@ class StreamingImportService {
       });
       
       rl.on('error', (error) => {
-        logger.error('Stream reading error', { error: error.message });
+        unifiedLogger.error('Stream reading error', {
+          service: 'streamingImportService',
+          source: 'parseBookmarksStream',
+          error: error.message,
+          stack: error.stack,
+          filePath,
+          importId
+        });
         reject(error);
       });
     });
@@ -123,7 +154,13 @@ class StreamingImportService {
       
       return bookmark;
     } catch (error) {
-      logger.error('Error extracting bookmark', { error: error.message, buffer });
+      unifiedLogger.error('Error extracting bookmark', {
+        service: 'streamingImportService',
+        source: 'extractBookmarkFromBuffer',
+        error: error.message,
+        stack: error.stack,
+        bufferLength: buffer.length
+      });
       return null;
     }
   }
@@ -150,10 +187,13 @@ class StreamingImportService {
     const progressKey = `import:${importId}:progress`;
     await importChunkQueue.client.hincrby(progressKey, 'chunksQueued', 1);
     
-    logger.info('Chunk queued', { 
-      importId, 
-      chunkId, 
-      bookmarkCount: bookmarks.length 
+    unifiedLogger.debug('Chunk queued', {
+      service: 'streamingImportService',
+      source: 'queueChunk',
+      importId,
+      chunkId,
+      bookmarkCount: bookmarks.length,
+      userId
     });
   }
 
@@ -161,7 +201,16 @@ class StreamingImportService {
    * Start streaming import
    */
   async startStreamingImport(userId, filePath) {
+    const startTime = Date.now();
     const importId = uuidv4();
+    
+    unifiedLogger.info('Starting streaming import', {
+      service: 'streamingImportService',
+      source: 'startStreamingImport',
+      importId,
+      userId,
+      filePath
+    });
     
     try {
       // Create import record
@@ -184,10 +233,22 @@ class StreamingImportService {
       // Start streaming parse in background
       this.parseBookmarksStream(filePath, importId, userId)
         .then(result => {
-          logger.info('Streaming import completed', { importId, ...result });
+          unifiedLogger.info('Streaming import completed', {
+            service: 'streamingImportService',
+            source: 'startStreamingImport',
+            importId,
+            ...result,
+            duration: Date.now() - startTime
+          });
         })
         .catch(error => {
-          logger.error('Streaming import failed', { importId, error: error.message });
+          unifiedLogger.error('Streaming import failed', {
+            service: 'streamingImportService',
+            source: 'startStreamingImport',
+            error: error.message,
+            stack: error.stack,
+            importId
+          });
           query(
             'UPDATE import_history SET status = $1, error_message = $2 WHERE id = $3',
             ['failed', error.message, importId]
@@ -201,7 +262,14 @@ class StreamingImportService {
       };
       
     } catch (error) {
-      logger.error('Failed to start streaming import', { error: error.message });
+      unifiedLogger.error('Failed to start streaming import', {
+        service: 'streamingImportService',
+        source: 'startStreamingImport',
+        error: error.message,
+        stack: error.stack,
+        userId,
+        filePath
+      });
       throw error;
     }
   }
@@ -232,9 +300,17 @@ class StreamingImportService {
 
 // Process import chunks
 importChunkQueue.process('process-chunk', async (job) => {
+  const startTime = Date.now();
   const { importId, userId, chunkId, bookmarks } = job.data;
   
-  logger.info('Processing import chunk', { importId, chunkId, count: bookmarks.length });
+  unifiedLogger.info('Processing import chunk', {
+    service: 'streamingImportService',
+    source: 'importChunkQueue.process',
+    importId,
+    chunkId,
+    count: bookmarks.length,
+    userId
+  });
   
   try {
     let imported = 0;
@@ -254,9 +330,13 @@ importChunkQueue.process('process-chunk', async (job) => {
         );
         imported++;
       } catch (error) {
-        logger.warn('Failed to import bookmark', { 
-          url: bookmark.url, 
-          error: error.message 
+        unifiedLogger.warn('Failed to import bookmark', {
+          service: 'streamingImportService',
+          source: 'importChunkQueue.process',
+          url: bookmark.url,
+          error: error.message,
+          importId,
+          chunkId
         });
       }
     }
@@ -290,9 +370,12 @@ importChunkQueue.process('process-chunk', async (job) => {
         ['completed', progress.bookmarksImported, importId]
       );
       
-      logger.info('Import completed', { 
-        importId, 
-        totalBookmarks: progress.bookmarksImported 
+      unifiedLogger.info('Import completed', {
+        service: 'streamingImportService',
+        source: 'importChunkQueue.process',
+        importId,
+        totalBookmarks: progress.bookmarksImported,
+        duration: Date.now() - startTime
       });
       
       // Emit completion event
@@ -301,14 +384,25 @@ importChunkQueue.process('process-chunk', async (job) => {
         chunksProcessed: parseInt(progress.chunksProcessed)
       });
     }
+
+    unifiedLogger.debug('Chunk processed successfully', {
+      service: 'streamingImportService',
+      source: 'importChunkQueue.process',
+      imported,
+      chunkId,
+      duration: Date.now() - startTime
+    });
     
     return { imported, chunkId };
     
   } catch (error) {
-    logger.error('Chunk processing failed', { 
-      importId, 
-      chunkId, 
-      error: error.message 
+    unifiedLogger.error('Chunk processing failed', {
+      service: 'streamingImportService',
+      source: 'importChunkQueue.process',
+      error: error.message,
+      stack: error.stack,
+      importId,
+      chunkId
     });
     throw error;
   }

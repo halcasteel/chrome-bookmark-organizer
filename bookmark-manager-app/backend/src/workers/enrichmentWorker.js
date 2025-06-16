@@ -1,5 +1,5 @@
 import Queue from 'bull';
-import { logInfo, logError } from '../utils/logger.js';
+import unifiedLogger from '../services/unifiedLogger.js';
 import db from '../config/database.js';
 import OpenAI from 'openai';
 import { v4 as uuidv4 } from 'uuid';
@@ -19,7 +19,14 @@ const openai = new OpenAI({
 enrichmentQueue.process('enrich', async (job) => {
   const { bookmarkId, userId, url, title } = job.data;
   
-  logInfo('Starting bookmark enrichment', { bookmarkId, url });
+  unifiedLogger.info('Starting bookmark enrichment job', {
+    service: 'enrichmentWorker',
+    method: 'process',
+    bookmarkId,
+    userId,
+    url,
+    title
+  });
   
   try {
     // First, try to fetch page content for better categorization
@@ -36,7 +43,12 @@ enrichmentQueue.process('enrich', async (job) => {
         .trim()
         .substring(0, 2000); // Limit to 2000 chars
     } catch (err) {
-      logWarn('Failed to fetch page content', { url, error: err.message });
+      unifiedLogger.warn('Failed to fetch page content', {
+        service: 'enrichmentWorker',
+        method: 'process',
+        url,
+        error: err.message
+      });
     }
 
     // Call OpenAI for categorization and tag generation
@@ -73,6 +85,14 @@ Respond in JSON format only.`
     
     const embedding = embeddingResponse.data[0].embedding;
 
+    unifiedLogger.info('AI enrichment completed, updating database', {
+      service: 'enrichmentWorker',
+      method: 'process',
+      bookmarkId,
+      category: enrichmentData.category,
+      tagsCount: enrichmentData.tags?.length || 0
+    });
+    
     // Start transaction to update bookmark and metadata
     const client = await db.getClient();
     try {
@@ -140,45 +160,74 @@ Respond in JSON format only.`
       
       await client.query('COMMIT');
       
-      logInfo('Bookmark enrichment completed', { 
-        bookmarkId,
-        category: enrichmentData.category,
-        tags: enrichmentData.tags
-      });
-      
-      return { 
+      const result = { 
         bookmarkId, 
         enriched: true, 
         data: enrichmentData 
       };
       
+      unifiedLogger.info('Bookmark enrichment completed successfully', {
+        service: 'enrichmentWorker',
+        method: 'process',
+        bookmarkId,
+        category: enrichmentData.category,
+        subcategory: enrichmentData.subcategory,
+        tagsCount: enrichmentData.tags?.length || 0,
+        hasEmbedding: true
+      });
+      
+      return result;
+      
     } catch (error) {
       await client.query('ROLLBACK');
+      unifiedLogger.error('Database transaction failed during enrichment', {
+        service: 'enrichmentWorker',
+        method: 'process',
+        bookmarkId,
+        error: error.message,
+        stack: error.stack
+      });
       throw error;
     } finally {
       client.release();
     }
     
   } catch (error) {
-    logError(error, { context: 'EnrichmentWorker', bookmarkId });
+    unifiedLogger.error('Enrichment job failed', {
+      service: 'enrichmentWorker',
+      method: 'process',
+      bookmarkId,
+      userId,
+      url,
+      error: error.message,
+      stack: error.stack
+    });
     throw error;
   }
 });
 
 // Handle completed jobs
 enrichmentQueue.on('completed', (job, result) => {
-  logInfo('Enrichment job completed', { 
-    jobId: job.id, 
-    bookmarkId: result.bookmarkId 
+  unifiedLogger.info('Enrichment job completed successfully', {
+    service: 'enrichmentWorker',
+    method: 'onCompleted',
+    jobId: job.id,
+    bookmarkId: result.bookmarkId,
+    category: result.data?.category
   });
 });
 
 // Handle failed jobs
 enrichmentQueue.on('failed', (job, err) => {
-  logError(err, { 
-    context: 'Enrichment job failed', 
+  unifiedLogger.error('Enrichment job failed', {
+    service: 'enrichmentWorker',
+    method: 'onFailed',
     jobId: job.id,
-    bookmarkId: job.data.bookmarkId 
+    bookmarkId: job.data.bookmarkId,
+    userId: job.data.userId,
+    url: job.data.url,
+    error: err.message,
+    stack: err.stack
   });
 });
 

@@ -1,12 +1,6 @@
 import OpenAI from 'openai';
 import { query, createEmbedding } from '../db/index.js';
-import winston from 'winston';
-
-const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.json(),
-  transports: [new winston.transports.Console()]
-});
+import unifiedLogger from './unifiedLogger.js';
 
 // Initialize OpenAI client
 const openai = new OpenAI({
@@ -37,17 +31,38 @@ export class EmbeddingService {
     this.useOpenAI = !!process.env.OPENAI_API_KEY;
     this.batchSize = 100;
     this.embeddingCache = new Map();
+
+    unifiedLogger.info('EmbeddingService initialized', {
+      service: 'embeddingService',
+      source: 'constructor',
+      useOpenAI: this.useOpenAI,
+      batchSize: this.batchSize
+    });
   }
 
   // Generate embedding for a single text
   async generateEmbedding(text) {
+    const startTime = Date.now();
+
     if (!text || text.trim().length === 0) {
       throw new Error('Text cannot be empty');
     }
 
+    unifiedLogger.debug('Generating embedding', {
+      service: 'embeddingService',
+      source: 'generateEmbedding',
+      textLength: text.length,
+      useOpenAI: this.useOpenAI
+    });
+
     // Check cache
     const cacheKey = this.getCacheKey(text);
     if (this.embeddingCache.has(cacheKey)) {
+      unifiedLogger.debug('Embedding found in cache', {
+        service: 'embeddingService',
+        source: 'generateEmbedding',
+        cacheKey
+      });
       return this.embeddingCache.get(cacheKey);
     }
 
@@ -64,20 +79,39 @@ export class EmbeddingService {
         embedding = response.data[0].embedding;
       } else {
         // Use local embedder
-        logger.info('Using local embedder (OpenAI API key not configured)');
+        unifiedLogger.info('Using local embedder (OpenAI API key not configured)', {
+          service: 'embeddingService',
+          source: 'generateEmbedding'
+        });
         embedding = localEmbedder.generateEmbedding(text);
       }
 
       // Cache the result
       this.embeddingCache.set(cacheKey, embedding);
+
+      unifiedLogger.debug('Embedding generated successfully', {
+        service: 'embeddingService',
+        source: 'generateEmbedding',
+        duration: Date.now() - startTime,
+        cached: true
+      });
       
       return embedding;
     } catch (error) {
-      logger.error('Error generating embedding:', error);
+      unifiedLogger.error('Error generating embedding', {
+        service: 'embeddingService',
+        source: 'generateEmbedding',
+        error: error.message,
+        stack: error.stack,
+        textLength: text.length
+      });
       
       // Fallback to local embedder if OpenAI fails
       if (this.useOpenAI) {
-        logger.info('Falling back to local embedder');
+        unifiedLogger.info('Falling back to local embedder', {
+          service: 'embeddingService',
+          source: 'generateEmbedding'
+        });
         return localEmbedder.generateEmbedding(text);
       }
       
@@ -87,6 +121,14 @@ export class EmbeddingService {
 
   // Generate embeddings for multiple texts
   async generateEmbeddings(texts) {
+    const startTime = Date.now();
+    unifiedLogger.info('Generating embeddings for multiple texts', {
+      service: 'embeddingService',
+      source: 'generateEmbeddings',
+      count: texts.length,
+      batchSize: this.batchSize
+    });
+
     const results = [];
     
     // Process in batches
@@ -96,7 +138,21 @@ export class EmbeddingService {
         batch.map(text => this.generateEmbedding(text))
       );
       results.push(...batchEmbeddings);
+
+      unifiedLogger.debug('Batch processed', {
+        service: 'embeddingService',
+        source: 'generateEmbeddings',
+        batchIndex: i / this.batchSize,
+        processedCount: Math.min(i + this.batchSize, texts.length)
+      });
     }
+
+    unifiedLogger.info('All embeddings generated', {
+      service: 'embeddingService',
+      source: 'generateEmbeddings',
+      totalCount: results.length,
+      duration: Date.now() - startTime
+    });
     
     return results;
   }
@@ -118,6 +174,13 @@ export class EmbeddingService {
 
   // Store embedding in database
   async storeEmbedding(bookmarkId, embedding) {
+    const startTime = Date.now();
+    unifiedLogger.debug('Storing embedding in database', {
+      service: 'embeddingService',
+      source: 'storeEmbedding',
+      bookmarkId
+    });
+
     const sql = `
       INSERT INTO bookmark_embeddings (bookmark_id, embedding)
       VALUES ($1, $2)
@@ -127,12 +190,29 @@ export class EmbeddingService {
     `;
     
     const result = await query(sql, [bookmarkId, createEmbedding(embedding)]);
+
+    unifiedLogger.debug('Embedding stored successfully', {
+      service: 'embeddingService',
+      source: 'storeEmbedding',
+      bookmarkId,
+      embeddingId: result.rows[0].id,
+      duration: Date.now() - startTime
+    });
+
     return result.rows[0];
   }
 
   // Process bookmark for embedding
   async processBookmark(bookmark) {
+    const startTime = Date.now();
     try {
+      unifiedLogger.debug('Processing bookmark for embedding', {
+        service: 'embeddingService',
+        source: 'processBookmark',
+        bookmarkId: bookmark.id,
+        title: bookmark.title
+      });
+
       // Create text representation
       const text = this.createBookmarkText(bookmark);
       
@@ -142,16 +222,34 @@ export class EmbeddingService {
       // Store in database
       await this.storeEmbedding(bookmark.id, embedding);
       
-      logger.info(`Processed embedding for bookmark ${bookmark.id}`);
+      unifiedLogger.info('Processed embedding for bookmark', {
+        service: 'embeddingService',
+        source: 'processBookmark',
+        bookmarkId: bookmark.id,
+        duration: Date.now() - startTime
+      });
       return true;
     } catch (error) {
-      logger.error(`Error processing bookmark ${bookmark.id}:`, error);
+      unifiedLogger.error('Error processing bookmark', {
+        service: 'embeddingService',
+        source: 'processBookmark',
+        error: error.message,
+        stack: error.stack,
+        bookmarkId: bookmark.id
+      });
       return false;
     }
   }
 
   // Process multiple bookmarks
   async processBookmarks(bookmarks) {
+    const startTime = Date.now();
+    unifiedLogger.info('Processing multiple bookmarks for embeddings', {
+      service: 'embeddingService',
+      source: 'processBookmarks',
+      count: bookmarks.length
+    });
+
     const results = {
       successful: 0,
       failed: 0
@@ -170,16 +268,33 @@ export class EmbeddingService {
         else results.failed++;
       });
     }
+
+    unifiedLogger.info('Finished processing bookmarks', {
+      service: 'embeddingService',
+      source: 'processBookmarks',
+      results,
+      duration: Date.now() - startTime,
+      avgTimePerBookmark: Math.round((Date.now() - startTime) / bookmarks.length)
+    });
     
     return results;
   }
 
   // Search similar bookmarks using vector similarity
   async searchSimilar(queryText, userId, options = {}) {
+    const startTime = Date.now();
     const {
       limit = 20,
       threshold = 0.5
     } = options;
+
+    unifiedLogger.debug('Searching similar bookmarks', {
+      service: 'embeddingService',
+      source: 'searchSimilar',
+      queryLength: queryText.length,
+      userId,
+      options
+    });
     
     // Generate query embedding
     const queryEmbedding = await this.generateEmbedding(queryText);
@@ -195,6 +310,13 @@ export class EmbeddingService {
       threshold,
       limit
     ]);
+
+    unifiedLogger.info('Similar bookmarks search completed', {
+      service: 'embeddingService',
+      source: 'searchSimilar',
+      resultCount: result.rows.length,
+      duration: Date.now() - startTime
+    });
     
     return result.rows;
   }
@@ -213,8 +335,13 @@ export class EmbeddingService {
 
   // Clear embedding cache
   clearCache() {
+    const cacheSize = this.embeddingCache.size;
     this.embeddingCache.clear();
-    logger.info('Embedding cache cleared');
+    unifiedLogger.info('Embedding cache cleared', {
+      service: 'embeddingService',
+      source: 'clearCache',
+      clearedEntries: cacheSize
+    });
   }
 }
 

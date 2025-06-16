@@ -3,19 +3,10 @@ import path from 'path';
 import fs from 'fs/promises';
 import bookmarkImporter from './bookmarkImporter.js';
 import { query } from '../db/index.js';
-import winston from 'winston';
+import unifiedLogger from './unifiedLogger.js';
 import dotenv from 'dotenv';
 
 dotenv.config();
-
-const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.json(),
-  transports: [
-    new winston.transports.Console(),
-    new winston.transports.File({ filename: 'file-watcher.log' })
-  ]
-});
 
 class FileWatcher {
   constructor() {
@@ -23,15 +14,27 @@ class FileWatcher {
     this.watcher = null;
     this.processing = new Set();
     this.defaultUserId = process.env.DEFAULT_USER_ID; // For automated imports
+
+    unifiedLogger.info('FileWatcher initialized', {
+      service: 'fileWatcher',
+      source: 'constructor',
+      watchDir: this.watchDir,
+      hasDefaultUserId: !!this.defaultUserId
+    });
   }
 
   async start() {
+    const startTime = Date.now();
+    unifiedLogger.info('Starting file watcher', {
+      service: 'fileWatcher',
+      source: 'start',
+      watchDir: this.watchDir
+    });
+
     // Ensure watch directory exists
     await fs.mkdir(this.watchDir, { recursive: true });
     await fs.mkdir(path.join(this.watchDir, 'archive'), { recursive: true });
     await fs.mkdir(path.join(this.watchDir, 'failed'), { recursive: true });
-
-    logger.info(`Starting file watcher on directory: ${this.watchDir}`);
 
     // Initialize watcher
     this.watcher = chokidar.watch(this.watchDir, {
@@ -51,16 +54,34 @@ class FileWatcher {
     // Set up event handlers
     this.watcher
       .on('add', (filePath) => this.handleNewFile(filePath))
-      .on('change', (filePath) => logger.info(`File changed: ${filePath}`))
-      .on('unlink', (filePath) => logger.info(`File removed: ${filePath}`))
-      .on('error', (error) => logger.error('Watcher error:', error))
+      .on('change', (filePath) => unifiedLogger.debug('File changed', {
+        service: 'fileWatcher',
+        source: 'watcher.change',
+        filePath
+      }))
+      .on('unlink', (filePath) => unifiedLogger.debug('File removed', {
+        service: 'fileWatcher',
+        source: 'watcher.unlink',
+        filePath
+      }))
+      .on('error', (error) => unifiedLogger.error('Watcher error', {
+        service: 'fileWatcher',
+        source: 'watcher.error',
+        error: error.message,
+        stack: error.stack
+      }))
       .on('ready', () => {
-        logger.info('File watcher ready and monitoring for changes');
+        unifiedLogger.info('File watcher ready and monitoring', {
+          service: 'fileWatcher',
+          source: 'watcher.ready',
+          duration: Date.now() - startTime
+        });
         this.processExistingFiles();
       });
   }
 
   async handleNewFile(filePath) {
+    const startTime = Date.now();
     const filename = path.basename(filePath);
     
     // Check if it's a bookmark file
@@ -70,10 +91,20 @@ class FileWatcher {
 
     // Skip if already processing
     if (this.processing.has(filePath)) {
+      unifiedLogger.debug('File already being processed', {
+        service: 'fileWatcher',
+        source: 'handleNewFile',
+        filePath
+      });
       return;
     }
 
-    logger.info(`New bookmark file detected: ${filename}`);
+    unifiedLogger.info('New bookmark file detected', {
+      service: 'fileWatcher',
+      source: 'handleNewFile',
+      filename,
+      filePath
+    });
     this.processing.add(filePath);
 
     try {
@@ -87,13 +118,26 @@ class FileWatcher {
       // Import bookmarks
       const result = await bookmarkImporter.importFromFile(userId, filePath);
       
-      logger.info(`Import completed: ${JSON.stringify(result)}`);
+      unifiedLogger.info('Import completed', {
+        service: 'fileWatcher',
+        source: 'handleNewFile',
+        filename,
+        result,
+        duration: Date.now() - startTime
+      });
       
       // Send notification if configured
       await this.sendNotification(userId, result);
       
     } catch (error) {
-      logger.error(`Error processing file ${filename}:`, error);
+      unifiedLogger.error('Error processing file', {
+        service: 'fileWatcher',
+        source: 'handleNewFile',
+        error: error.message,
+        stack: error.stack,
+        filename,
+        filePath
+      });
       
       // Move to failed directory
       const failedPath = path.join(this.watchDir, 'failed', filename);
@@ -117,6 +161,11 @@ class FileWatcher {
 
   async getUserIdForFile(filePath) {
     const filename = path.basename(filePath);
+    unifiedLogger.debug('Getting user ID for file', {
+      service: 'fileWatcher',
+      source: 'getUserIdForFile',
+      filename
+    });
     
     // Try to extract user identifier from filename
     // Format: bookmarks_[email]_[timestamp].html
@@ -136,26 +185,47 @@ class FileWatcher {
   }
 
   async processExistingFiles() {
+    const startTime = Date.now();
     try {
       const files = await fs.readdir(this.watchDir);
       const bookmarkFiles = files.filter(f => this.isBookmarkFile(f));
       
       if (bookmarkFiles.length > 0) {
-        logger.info(`Found ${bookmarkFiles.length} existing bookmark files to process`);
+        unifiedLogger.info('Found existing bookmark files', {
+          service: 'fileWatcher',
+          source: 'processExistingFiles',
+          count: bookmarkFiles.length
+        });
         
         for (const file of bookmarkFiles) {
           const filePath = path.join(this.watchDir, file);
           await this.handleNewFile(filePath);
         }
       }
+
+      unifiedLogger.info('Finished processing existing files', {
+        service: 'fileWatcher',
+        source: 'processExistingFiles',
+        duration: Date.now() - startTime
+      });
     } catch (error) {
-      logger.error('Error processing existing files:', error);
+      unifiedLogger.error('Error processing existing files', {
+        service: 'fileWatcher',
+        source: 'processExistingFiles',
+        error: error.message,
+        stack: error.stack
+      });
     }
   }
 
   async sendNotification(userId, importResult) {
     // This could send email, push notification, or update a status dashboard
-    logger.info(`Import notification for user ${userId}: ${JSON.stringify(importResult)}`);
+    unifiedLogger.info('Sending import notification', {
+      service: 'fileWatcher',
+      source: 'sendNotification',
+      userId,
+      importResult
+    });
     
     // You could integrate with services like:
     // - SendGrid for email
@@ -166,7 +236,10 @@ class FileWatcher {
   async stop() {
     if (this.watcher) {
       await this.watcher.close();
-      logger.info('File watcher stopped');
+      unifiedLogger.info('File watcher stopped', {
+        service: 'fileWatcher',
+        source: 'stop'
+      });
     }
   }
 }
@@ -177,20 +250,31 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   
   // Handle graceful shutdown
   process.on('SIGINT', async () => {
-    logger.info('Shutting down file watcher...');
+    unifiedLogger.info('Shutting down file watcher (SIGINT)', {
+      service: 'fileWatcher',
+      source: 'SIGINT'
+    });
     await watcher.stop();
     process.exit(0);
   });
   
   process.on('SIGTERM', async () => {
-    logger.info('Shutting down file watcher...');
+    unifiedLogger.info('Shutting down file watcher (SIGTERM)', {
+      service: 'fileWatcher',
+      source: 'SIGTERM'
+    });
     await watcher.stop();
     process.exit(0);
   });
   
   // Start watching
   watcher.start().catch(error => {
-    logger.error('Failed to start file watcher:', error);
+    unifiedLogger.error('Failed to start file watcher', {
+      service: 'fileWatcher',
+      source: 'startup',
+      error: error.message,
+      stack: error.stack
+    });
     process.exit(1);
   });
 }

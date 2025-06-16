@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
 import db from '../config/database.js';
-import { logInfo, logError, logWarn } from '../utils/logger.js';
+import unifiedLogger from './unifiedLogger.js';
 import { JSDOM } from 'jsdom';
 import orchestratorService from './orchestratorService.js';
 import websocketService from './websocketService.js';
@@ -15,8 +15,16 @@ class ImportServiceAsync {
    * Fast import - parse and store immediately, process later
    */
   async importFromFile(userId, filePath) {
-    logInfo('Starting fast bookmark import', { userId, filePath });
+    unifiedLogger.debug('ImportServiceAsync.importFromFile method entry', {
+      service: 'import',
+      source: 'importFromFileAsync',
+      userId,
+      filePath,
+      fileName: path.basename(filePath),
+      mode: 'async'
+    });
     
+    const startTime = Date.now();
     const importId = uuidv4();
     let client;
     
@@ -32,7 +40,15 @@ class ImportServiceAsync {
       const content = await fs.readFile(filePath, 'utf-8');
       const bookmarks = this.parseBookmarksHtml(content);
       
-      logInfo('Parsed bookmarks from HTML', { count: bookmarks.length });
+      unifiedLogger.info('Successfully parsed bookmarks from HTML (async mode)', {
+        service: 'import',
+        source: 'importFromFileAsync',
+        userId,
+        importId,
+        bookmarkCount: bookmarks.length,
+        parseTime: Date.now() - startTime,
+        fileSize: content.length
+      });
 
       // Update total count
       await db.query(
@@ -61,12 +77,33 @@ class ImportServiceAsync {
           [imported, importId]
         );
         
+        const progress = Math.round((imported / bookmarks.length) * 100);
+        
+        // Log batch progress
+        unifiedLogger.debug('Import batch processed', {
+          service: 'import',
+          source: 'importFromFileAsync',
+          userId,
+          importId,
+          batch: {
+            start: i,
+            end: Math.min(i + batchSize, bookmarks.length),
+            size: batch.length,
+            insertedCount: insertedIds.length
+          },
+          progress: {
+            imported,
+            total: bookmarks.length,
+            percentage: progress
+          }
+        });
+        
         // Emit progress via WebSocket
         websocketService.emitImportProgress(importId, {
           importId,
           total: bookmarks.length,
           imported,
-          percentage: Math.round((imported / bookmarks.length) * 100),
+          percentage: progress,
         });
       }
 
@@ -79,10 +116,17 @@ class ImportServiceAsync {
         workflowType: 'import',
       });
       
-      logInfo('Started orchestrated workflow for import', {
+      unifiedLogger.info('Orchestrated workflow started for imported bookmarks', {
+        service: 'import',
+        source: 'importFromFileAsync',
+        userId,
         importId,
         workflowId,
         bookmarkCount: allInsertedIds.length,
+        workflow: {
+          type: 'standard',
+          context: 'import'
+        }
       });
 
       // Mark import as complete (validation still pending)
@@ -91,11 +135,34 @@ class ImportServiceAsync {
         ['imported', new Date(), importId]
       );
 
-      logInfo('Fast import completed', {
+      const duration = Date.now() - startTime;
+      
+      unifiedLogger.info('Async import completed successfully', {
+        service: 'import',
+        source: 'importFromFileAsync',
+        userId,
         importId,
-        total: bookmarks.length,
-        imported,
+        performance: {
+          duration: `${duration}ms`,
+          bookmarksPerSecond: Math.round((imported / duration) * 1000),
+          mode: 'async-bulk-insert'
+        },
+        results: {
+          total: bookmarks.length,
+          imported,
+          workflowStarted: true,
+          workflowId
+        }
       });
+      
+      // Log performance metrics if operation was slow
+      if (duration > 3000) {
+        unifiedLogger.logPerformance('async-bookmark-import', duration, {
+          service: 'import',
+          userId,
+          bookmarkCount: bookmarks.length
+        });
+      }
 
       return {
         importId,
@@ -110,7 +177,15 @@ class ImportServiceAsync {
         await client.query('ROLLBACK');
       }
       
-      logError(error, { context: 'ImportServiceAsync.importFromFile' });
+      unifiedLogger.error('Async import failed', error, {
+        service: 'import',
+        source: 'importFromFileAsync',
+        userId,
+        filePath,
+        importId,
+        duration: Date.now() - startTime,
+        transactionState: client ? 'rollback' : 'not-started'
+      });
       
       await db.query(
         'UPDATE import_history SET status = $1 WHERE id = $2',
@@ -129,12 +204,26 @@ class ImportServiceAsync {
    * Parse bookmarks from HTML
    */
   parseBookmarksHtml(html) {
+    unifiedLogger.debug('Starting HTML parsing with JSDOM', {
+      service: 'import',
+      source: 'parseBookmarksHtmlAsync',
+      htmlLength: html.length
+    });
+    
+    const parseStartTime = Date.now();
     const dom = new JSDOM(html);
     const document = dom.window.document;
     const bookmarks = [];
+    let skippedCount = 0;
     
     // Find all bookmark links
     const links = document.querySelectorAll('a[href]');
+    
+    unifiedLogger.debug('Found bookmark links in HTML', {
+      service: 'import',
+      source: 'parseBookmarksHtmlAsync',
+      linkCount: links.length
+    });
     
     links.forEach(link => {
       const url = link.getAttribute('href');
@@ -144,6 +233,7 @@ class ImportServiceAsync {
       
       // Skip non-http(s) URLs
       if (!url || (!url.startsWith('http://') && !url.startsWith('https://'))) {
+        skippedCount++;
         return;
       }
 
@@ -166,6 +256,20 @@ class ImportServiceAsync {
       });
     });
 
+    const parseTime = Date.now() - parseStartTime;
+    
+    unifiedLogger.debug('JSDOM parsing completed', {
+      service: 'import',
+      source: 'parseBookmarksHtmlAsync',
+      totalLinks: links.length,
+      validBookmarks: bookmarks.length,
+      skippedUrls: skippedCount,
+      parseTime: `${parseTime}ms`,
+      performance: {
+        bookmarksPerSecond: Math.round((bookmarks.length / parseTime) * 1000)
+      }
+    });
+    
     return bookmarks;
   }
 
@@ -173,7 +277,17 @@ class ImportServiceAsync {
    * Insert batch of bookmarks
    */
   async insertBookmarkBatch(client, userId, bookmarks) {
+    const batchStartTime = Date.now();
     const insertedIds = [];
+    let duplicates = 0;
+    let errors = 0;
+    
+    unifiedLogger.debug('Processing bookmark batch', {
+      service: 'import',
+      source: 'insertBookmarkBatch',
+      userId,
+      batchSize: bookmarks.length
+    });
     
     for (const bookmark of bookmarks) {
       try {
@@ -185,6 +299,7 @@ class ImportServiceAsync {
 
         if (existing.rows.length > 0) {
           insertedIds.push(existing.rows[0].id);
+          duplicates++;
           continue;
         }
 
@@ -221,13 +336,47 @@ class ImportServiceAsync {
         );
 
       } catch (error) {
-        logWarn('Failed to insert bookmark', { 
-          url: bookmark.url, 
-          error: error.message 
+        errors++;
+        unifiedLogger.warn('Failed to insert bookmark in batch', {
+          service: 'import',
+          source: 'insertBookmarkBatch',
+          userId,
+          bookmark: {
+            url: bookmark.url,
+            title: bookmark.title,
+            domain: bookmark.domain
+          },
+          error: {
+            message: error.message,
+            code: error.code
+          },
+          stats: {
+            processed: insertedIds.length + duplicates + errors,
+            total: bookmarks.length
+          }
         });
       }
     }
 
+    const batchTime = Date.now() - batchStartTime;
+    
+    unifiedLogger.debug('Bookmark batch insertion completed', {
+      service: 'import',
+      source: 'insertBookmarkBatch',
+      userId,
+      batchSize: bookmarks.length,
+      results: {
+        inserted: insertedIds.length,
+        duplicates,
+        errors,
+        totalProcessed: insertedIds.length + duplicates + errors
+      },
+      performance: {
+        duration: `${batchTime}ms`,
+        bookmarksPerSecond: Math.round((bookmarks.length / batchTime) * 1000)
+      }
+    });
+    
     return insertedIds;
   }
 
@@ -235,6 +384,12 @@ class ImportServiceAsync {
    * Get import progress
    */
   async getImportProgress(importId) {
+    unifiedLogger.debug('Retrieving detailed import progress', {
+      service: 'import',
+      source: 'getImportProgress',
+      importId
+    });
+    
     const result = await db.query(
       `SELECT 
         ih.*,
@@ -247,6 +402,11 @@ class ImportServiceAsync {
     );
 
     if (result.rows.length === 0) {
+      unifiedLogger.debug('Import not found', {
+        service: 'import',
+        source: 'getImportProgress',
+        importId
+      });
       return null;
     }
 
@@ -269,6 +429,21 @@ class ImportServiceAsync {
           : 0,
       },
     };
+    
+    unifiedLogger.debug('Import progress retrieved', {
+      service: 'import',
+      source: 'getImportProgress',
+      importId,
+      status: importData.status,
+      progress: {
+        total: importData.total_count,
+        imported: importData.imported_count,
+        validated: importData.valid_count,
+        enriched: importData.enriched_count
+      }
+    });
+    
+    return progressData;
   }
 }
 

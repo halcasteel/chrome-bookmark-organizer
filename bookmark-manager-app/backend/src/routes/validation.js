@@ -1,10 +1,48 @@
 import express from 'express';
 import { query } from '../db/index.js';
 import validationService from '../services/validationService.js';
-import logger from '../utils/logger.js';
+import unifiedLogger from '../services/unifiedLogger.js';
 import { authenticate } from '../middleware/auth.js';
 
 const router = express.Router();
+
+/**
+ * GET /api/validation/status
+ * Get validation service status
+ */
+router.get('/status', authenticate, async (req, res) => {
+  try {
+    unifiedLogger.info('Fetching validation service status', {
+      service: 'api',
+      source: 'GET /validation/status',
+      userId: req.user.id
+    });
+
+    const stats = await validationService.getQueueStats();
+    
+    unifiedLogger.info('Validation status retrieved', {
+      service: 'api',
+      source: 'GET /validation/status',
+      userId: req.user.id,
+      queueStats: stats
+    });
+    
+    res.json({
+      status: 'active',
+      queue: stats
+    });
+  } catch (error) {
+    unifiedLogger.error('Failed to get validation status', error, {
+      service: 'api',
+      source: 'GET /validation/status',
+      userId: req.user.id
+    });
+    res.json({
+      status: 'error',
+      message: error.message
+    });
+  }
+});
 
 /**
  * GET /api/validation/unvalidated
@@ -14,6 +52,14 @@ router.get('/unvalidated', authenticate, async (req, res) => {
   try {
     const { page = 1, limit = 50 } = req.query;
     const offset = (page - 1) * limit;
+    
+    unifiedLogger.info('Fetching unvalidated bookmarks', {
+      service: 'api',
+      source: 'GET /validation/unvalidated',
+      userId: req.user.id,
+      page,
+      limit
+    });
     
     const result = await query(`
       SELECT 
@@ -38,17 +84,35 @@ router.get('/unvalidated', authenticate, async (req, res) => {
         (is_valid = false OR last_checked IS NULL)
     `, [req.user.id]);
     
+    const total = parseInt(countResult.rows[0].total);
+    
+    unifiedLogger.info('Unvalidated bookmarks retrieved', {
+      service: 'api',
+      source: 'GET /validation/unvalidated',
+      userId: req.user.id,
+      bookmarkCount: result.rows.length,
+      totalUnvalidated: total,
+      page: parseInt(page),
+      limit: parseInt(limit)
+    });
+    
     res.json({
       bookmarks: result.rows,
       pagination: {
         page: parseInt(page),
         limit: parseInt(limit),
-        total: parseInt(countResult.rows[0].total),
-        pages: Math.ceil(countResult.rows[0].total / limit)
+        total,
+        pages: Math.ceil(total / limit)
       }
     });
   } catch (error) {
-    logger.error('Error fetching unvalidated bookmarks', { error: error.message, userId: req.user.id });
+    unifiedLogger.error('Failed to fetch unvalidated bookmarks', error, {
+      service: 'api',
+      source: 'GET /validation/unvalidated',
+      userId: req.user.id,
+      page: req.query.page,
+      limit: req.query.limit
+    });
     res.status(500).json({ error: 'Failed to fetch unvalidated bookmarks' });
   }
 });
@@ -61,6 +125,13 @@ router.post('/validate/:id', authenticate, async (req, res) => {
   try {
     const { id } = req.params;
     
+    unifiedLogger.info('Manual bookmark validation requested', {
+      service: 'api',
+      source: 'POST /validation/validate/:id',
+      userId: req.user.id,
+      bookmarkId: id
+    });
+    
     // Verify ownership
     const ownerCheck = await query(
       'SELECT user_id FROM bookmarks WHERE id = $1',
@@ -68,10 +139,24 @@ router.post('/validate/:id', authenticate, async (req, res) => {
     );
     
     if (ownerCheck.rows.length === 0) {
+      unifiedLogger.warn('Validation failed - bookmark not found', {
+        service: 'api',
+        source: 'POST /validation/validate/:id',
+        userId: req.user.id,
+        bookmarkId: id
+      });
       return res.status(404).json({ error: 'Bookmark not found' });
     }
     
     if (ownerCheck.rows[0].user_id !== req.user.id && req.user.role !== 'admin') {
+      unifiedLogger.warn('Validation denied - unauthorized', {
+        service: 'api',
+        source: 'POST /validation/validate/:id',
+        userId: req.user.id,
+        bookmarkId: id,
+        ownerId: ownerCheck.rows[0].user_id,
+        isAdmin: req.user.role === 'admin'
+      });
       return res.status(403).json({ error: 'Unauthorized' });
     }
     
@@ -84,12 +169,26 @@ router.post('/validate/:id', authenticate, async (req, res) => {
     // Validate the bookmark
     const result = await validationService.validateBookmark(id);
     
+    unifiedLogger.info('Bookmark validation completed', {
+      service: 'api',
+      source: 'POST /validation/validate/:id',
+      userId: req.user.id,
+      bookmarkId: id,
+      isValid: result.is_valid,
+      isDead: result.is_dead
+    });
+    
     res.json({
       message: 'Validation completed',
       bookmark: result
     });
   } catch (error) {
-    logger.error('Error validating bookmark', { error: error.message, bookmarkId: req.params.id });
+    unifiedLogger.error('Failed to validate bookmark', error, {
+      service: 'api',
+      source: 'POST /validation/validate/:id',
+      userId: req.user.id,
+      bookmarkId: req.params.id
+    });
     res.status(500).json({ error: 'Failed to validate bookmark' });
   }
 });
@@ -102,7 +201,21 @@ router.post('/bulk-validate', authenticate, async (req, res) => {
   try {
     const { bookmarkIds } = req.body;
     
+    unifiedLogger.info('Bulk validation requested', {
+      service: 'api',
+      source: 'POST /validation/bulk-validate',
+      userId: req.user.id,
+      bookmarkCount: bookmarkIds?.length || 0
+    });
+    
     if (!Array.isArray(bookmarkIds) || bookmarkIds.length === 0) {
+      unifiedLogger.warn('Bulk validation failed - invalid bookmarkIds', {
+        service: 'api',
+        source: 'POST /validation/bulk-validate',
+        userId: req.user.id,
+        hasBookmarkIds: !!bookmarkIds,
+        isArray: Array.isArray(bookmarkIds)
+      });
       return res.status(400).json({ error: 'bookmarkIds array required' });
     }
     
@@ -113,6 +226,13 @@ router.post('/bulk-validate', authenticate, async (req, res) => {
     );
     
     if (ownerCheck.rows.length !== bookmarkIds.length) {
+      unifiedLogger.warn('Bulk validation denied - unauthorized for some bookmarks', {
+        service: 'api',
+        source: 'POST /validation/bulk-validate',
+        userId: req.user.id,
+        requestedCount: bookmarkIds.length,
+        authorizedCount: ownerCheck.rows.length
+      });
       return res.status(403).json({ error: 'Unauthorized for some bookmarks' });
     }
     
@@ -133,6 +253,13 @@ router.post('/bulk-validate', authenticate, async (req, res) => {
       failed: results.filter(r => r.status === 'rejected' || !r.value?.is_valid).length
     };
     
+    unifiedLogger.info('Bulk validation completed', {
+      service: 'api',
+      source: 'POST /validation/bulk-validate',
+      userId: req.user.id,
+      summary
+    });
+    
     res.json({
       message: 'Bulk validation completed',
       summary,
@@ -144,7 +271,12 @@ router.post('/bulk-validate', authenticate, async (req, res) => {
       }))
     });
   } catch (error) {
-    logger.error('Error in bulk validation', { error: error.message });
+    unifiedLogger.error('Failed in bulk validation', error, {
+      service: 'api',
+      source: 'POST /validation/bulk-validate',
+      userId: req.user.id,
+      bookmarkCount: req.body.bookmarkIds?.length
+    });
     res.status(500).json({ error: 'Failed to validate bookmarks' });
   }
 });
@@ -157,7 +289,19 @@ router.post('/archive', authenticate, async (req, res) => {
   try {
     const { bookmarkIds } = req.body;
     
+    unifiedLogger.info('Archiving bookmarks requested', {
+      service: 'api',
+      source: 'POST /validation/archive',
+      userId: req.user.id,
+      bookmarkCount: bookmarkIds?.length || 0
+    });
+    
     if (!Array.isArray(bookmarkIds) || bookmarkIds.length === 0) {
+      unifiedLogger.warn('Archive failed - invalid bookmarkIds', {
+        service: 'api',
+        source: 'POST /validation/archive',
+        userId: req.user.id
+      });
       return res.status(400).json({ error: 'bookmarkIds array required' });
     }
     
@@ -169,12 +313,24 @@ router.post('/archive', authenticate, async (req, res) => {
       [req.user.id, bookmarkIds, req.user.id]
     );
     
+    unifiedLogger.info('Bookmarks archived successfully', {
+      service: 'api',
+      source: 'POST /validation/archive',
+      userId: req.user.id,
+      archivedCount: result.rowCount
+    });
+    
     res.json({
       message: 'Bookmarks archived successfully',
       count: result.rowCount
     });
   } catch (error) {
-    logger.error('Error archiving bookmarks', { error: error.message });
+    unifiedLogger.error('Failed to archive bookmarks', error, {
+      service: 'api',
+      source: 'POST /validation/archive',
+      userId: req.user.id,
+      bookmarkCount: req.body.bookmarkIds?.length
+    });
     res.status(500).json({ error: 'Failed to archive bookmarks' });
   }
 });
@@ -187,7 +343,19 @@ router.post('/unarchive', authenticate, async (req, res) => {
   try {
     const { bookmarkIds } = req.body;
     
+    unifiedLogger.info('Unarchiving bookmarks requested', {
+      service: 'api',
+      source: 'POST /validation/unarchive',
+      userId: req.user.id,
+      bookmarkCount: bookmarkIds?.length || 0
+    });
+    
     if (!Array.isArray(bookmarkIds) || bookmarkIds.length === 0) {
+      unifiedLogger.warn('Unarchive failed - invalid bookmarkIds', {
+        service: 'api',
+        source: 'POST /validation/unarchive',
+        userId: req.user.id
+      });
       return res.status(400).json({ error: 'bookmarkIds array required' });
     }
     
@@ -199,12 +367,24 @@ router.post('/unarchive', authenticate, async (req, res) => {
       [bookmarkIds, req.user.id]
     );
     
+    unifiedLogger.info('Bookmarks restored successfully', {
+      service: 'api',
+      source: 'POST /validation/unarchive',
+      userId: req.user.id,
+      restoredCount: result.rowCount
+    });
+    
     res.json({
       message: 'Bookmarks restored successfully',
       count: result.rowCount
     });
   } catch (error) {
-    logger.error('Error unarchiving bookmarks', { error: error.message });
+    unifiedLogger.error('Failed to restore bookmarks', error, {
+      service: 'api',
+      source: 'POST /validation/unarchive',
+      userId: req.user.id,
+      bookmarkCount: req.body.bookmarkIds?.length
+    });
     res.status(500).json({ error: 'Failed to restore bookmarks' });
   }
 });
@@ -215,13 +395,32 @@ router.post('/unarchive', authenticate, async (req, res) => {
  */
 router.delete('/bulk-delete', authenticate, async (req, res) => {
   try {
+    const { bookmarkIds } = req.body;
+    
+    unifiedLogger.warn('Bulk delete requested', {
+      service: 'api',
+      source: 'DELETE /validation/bulk-delete',
+      userId: req.user.id,
+      userRole: req.user.role,
+      bookmarkCount: bookmarkIds?.length || 0
+    });
+    
     if (req.user.role !== 'admin') {
+      unifiedLogger.warn('Bulk delete denied - admin required', {
+        service: 'api',
+        source: 'DELETE /validation/bulk-delete',
+        userId: req.user.id,
+        userRole: req.user.role
+      });
       return res.status(403).json({ error: 'Admin access required' });
     }
     
-    const { bookmarkIds } = req.body;
-    
     if (!Array.isArray(bookmarkIds) || bookmarkIds.length === 0) {
+      unifiedLogger.warn('Bulk delete failed - invalid bookmarkIds', {
+        service: 'api',
+        source: 'DELETE /validation/bulk-delete',
+        userId: req.user.id
+      });
       return res.status(400).json({ error: 'bookmarkIds array required' });
     }
     
@@ -237,12 +436,24 @@ router.delete('/bulk-delete', authenticate, async (req, res) => {
       [bookmarkIds]
     );
     
+    unifiedLogger.warn('Bookmarks permanently deleted', {
+      service: 'api',
+      source: 'DELETE /validation/bulk-delete',
+      adminId: req.user.id,
+      deletedCount: result.rowCount
+    });
+    
     res.json({
       message: 'Bookmarks permanently deleted',
       count: result.rowCount
     });
   } catch (error) {
-    logger.error('Error deleting bookmarks', { error: error.message });
+    unifiedLogger.error('Failed to delete bookmarks', error, {
+      service: 'api',
+      source: 'DELETE /validation/bulk-delete',
+      adminId: req.user.id,
+      bookmarkCount: req.body.bookmarkIds?.length
+    });
     res.status(500).json({ error: 'Failed to delete bookmarks' });
   }
 });
@@ -256,6 +467,15 @@ router.patch('/:id/status', authenticate, async (req, res) => {
     const { id } = req.params;
     const { is_valid, validation_error } = req.body;
     
+    unifiedLogger.info('Manual validation status update requested', {
+      service: 'api',
+      source: 'PATCH /validation/:id/status',
+      userId: req.user.id,
+      bookmarkId: id,
+      newStatus: is_valid,
+      hasError: !!validation_error
+    });
+    
     // Verify ownership
     const ownerCheck = await query(
       'SELECT user_id FROM bookmarks WHERE id = $1',
@@ -263,10 +483,23 @@ router.patch('/:id/status', authenticate, async (req, res) => {
     );
     
     if (ownerCheck.rows.length === 0) {
+      unifiedLogger.warn('Status update failed - bookmark not found', {
+        service: 'api',
+        source: 'PATCH /validation/:id/status',
+        userId: req.user.id,
+        bookmarkId: id
+      });
       return res.status(404).json({ error: 'Bookmark not found' });
     }
     
     if (ownerCheck.rows[0].user_id !== req.user.id && req.user.role !== 'admin') {
+      unifiedLogger.warn('Status update denied - unauthorized', {
+        service: 'api',
+        source: 'PATCH /validation/:id/status',
+        userId: req.user.id,
+        bookmarkId: id,
+        ownerId: ownerCheck.rows[0].user_id
+      });
       return res.status(403).json({ error: 'Unauthorized' });
     }
     
@@ -289,12 +522,25 @@ router.patch('/:id/status', authenticate, async (req, res) => {
       [is_valid, validation_error, id]
     );
     
+    unifiedLogger.info('Validation status updated successfully', {
+      service: 'api',
+      source: 'PATCH /validation/:id/status',
+      userId: req.user.id,
+      bookmarkId: id,
+      newStatus: is_valid
+    });
+    
     res.json({
       message: 'Validation status updated',
       bookmark: result.rows[0]
     });
   } catch (error) {
-    logger.error('Error updating validation status', { error: error.message });
+    unifiedLogger.error('Failed to update validation status', error, {
+      service: 'api',
+      source: 'PATCH /validation/:id/status',
+      userId: req.user.id,
+      bookmarkId: req.params.id
+    });
     res.status(500).json({ error: 'Failed to update validation status' });
   }
 });
@@ -308,6 +554,17 @@ router.post('/:id/categorize', authenticate, async (req, res) => {
     const { id } = req.params;
     const { category, subcategory, tags, priority } = req.body;
     
+    unifiedLogger.info('Manual categorization requested', {
+      service: 'api',
+      source: 'POST /validation/:id/categorize',
+      userId: req.user.id,
+      bookmarkId: id,
+      category,
+      subcategory,
+      tagCount: tags?.length || 0,
+      priority
+    });
+    
     // Verify ownership
     const ownerCheck = await query(
       'SELECT user_id FROM bookmarks WHERE id = $1',
@@ -315,10 +572,23 @@ router.post('/:id/categorize', authenticate, async (req, res) => {
     );
     
     if (ownerCheck.rows.length === 0) {
+      unifiedLogger.warn('Categorization failed - bookmark not found', {
+        service: 'api',
+        source: 'POST /validation/:id/categorize',
+        userId: req.user.id,
+        bookmarkId: id
+      });
       return res.status(404).json({ error: 'Bookmark not found' });
     }
     
     if (ownerCheck.rows[0].user_id !== req.user.id && req.user.role !== 'admin') {
+      unifiedLogger.warn('Categorization denied - unauthorized', {
+        service: 'api',
+        source: 'POST /validation/:id/categorize',
+        userId: req.user.id,
+        bookmarkId: id,
+        ownerId: ownerCheck.rows[0].user_id
+      });
       return res.status(403).json({ error: 'Unauthorized' });
     }
     
@@ -341,11 +611,26 @@ router.post('/:id/categorize', authenticate, async (req, res) => {
         priority = EXCLUDED.priority
     `, [id, category, subcategory, priority || 'medium']);
     
+    unifiedLogger.info('Categorization updated successfully', {
+      service: 'api',
+      source: 'POST /validation/:id/categorize',
+      userId: req.user.id,
+      bookmarkId: id,
+      category,
+      subcategory
+    });
+    
     res.json({
       message: 'Categorization updated successfully'
     });
   } catch (error) {
-    logger.error('Error updating categorization', { error: error.message });
+    unifiedLogger.error('Failed to update categorization', error, {
+      service: 'api',
+      source: 'POST /validation/:id/categorize',
+      userId: req.user.id,
+      bookmarkId: req.params.id,
+      categoryData: req.body
+    });
     res.status(500).json({ error: 'Failed to update categorization' });
   }
 });
@@ -356,6 +641,13 @@ router.post('/:id/categorize', authenticate, async (req, res) => {
  */
 router.get('/stats', authenticate, async (req, res) => {
   try {
+    unifiedLogger.info('Fetching validation statistics', {
+      service: 'api',
+      source: 'GET /validation/stats',
+      userId: req.user.id,
+      isAdmin: req.user.role === 'admin'
+    });
+    
     const stats = await validationService.getValidationStats();
     
     // Get user-specific stats
@@ -372,12 +664,24 @@ router.get('/stats', authenticate, async (req, res) => {
       WHERE user_id = $1 AND is_deleted = false
     `, [req.user.id]);
     
+    unifiedLogger.info('Validation stats retrieved', {
+      service: 'api',
+      source: 'GET /validation/stats',
+      userId: req.user.id,
+      userStats: userStats.rows[0],
+      includesSystemStats: req.user.role === 'admin'
+    });
+    
     res.json({
       system: req.user.role === 'admin' ? stats : null,
       user: userStats.rows[0]
     });
   } catch (error) {
-    logger.error('Error fetching validation stats', { error: error.message });
+    unifiedLogger.error('Failed to fetch validation stats', error, {
+      service: 'api',
+      source: 'GET /validation/stats',
+      userId: req.user.id
+    });
     res.status(500).json({ error: 'Failed to fetch statistics' });
   }
 });

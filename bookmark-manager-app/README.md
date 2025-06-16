@@ -12,13 +12,17 @@ A cloud-based bookmark management system with AI-powered classification, semanti
 **⚠️ Application is currently non-functional due to authentication issues.** Major refactoring in progress to implement production-ready architecture.
 
 ### Recent Updates (June 2025)
-- ✅ Implemented unified logging system across entire stack
-- ✅ Created robust startup script with health checks
-- ✅ Consolidated environment configurations
+- ✅ Implemented unified logging system across entire stack (30+ files)
+- ✅ Created robust startup script with health checks and real-time monitoring
+- ✅ Consolidated environment configurations (single .env file)
 - ✅ Fixed Redis port conflicts (now using 6382)
+- ✅ Fixed PostgreSQL port conflicts (now using 5434)
 - ✅ Archived 74+ non-essential files for production readiness
 - ✅ Comprehensive dependency analysis completed
+- ✅ Fixed all import path errors for unified logger
+- ✅ Added comprehensive error logging throughout codebase
 - ❌ Login functionality broken - investigating authentication flow
+- ❌ WebSocket connections failing - debugging in progress
 
 ## 🌟 Key Features
 
@@ -37,9 +41,10 @@ A cloud-based bookmark management system with AI-powered classification, semanti
 - [Software Design Document (SDD)](./SDD.md) - High-level architecture and design
 - [Technical Design Document (TDD)](./TDD.md) - Implementation details and code structure
 - [Deployment Guide](./DEPLOYMENT_GUIDE.md) - Step-by-step deployment instructions
-- [Unified Logging Guide](./UNIFIED_LOGGING_GUIDE.md) - Comprehensive logging system
+- [Logging Standards](./LOGGING_STANDARDS.md) - Comprehensive logging system documentation
 - [Checkpoint Status](./CHECKPOINT.md) - Current development status
-- [Task Checklist](./CHECKLIST.md) - Pending tasks with checkboxes
+- [Task Checklist](./TODO-LIST-with-CHECKBOXES.md) - Pending tasks with checkboxes
+- [Claude AI Context](./CLAUDE.md) - AI assistant context and instructions
 
 ## 🛠️ Tech Stack
 
@@ -115,11 +120,10 @@ A cloud-based bookmark management system with AI-powered classification, semanti
    - Stream logs to both console and log files
 
 4. **Monitor the application**
-   - Check unified logs: `tail -f logs/unified.log`
-   - View errors only: `tail -f logs/errors.log`
+   - Check combined logs: `tail -f logs/combined.log`
+   - View errors only: `tail -f logs/error.log`
+   - Check HTTP requests: `tail -f logs/http.log`
    - Access log viewer UI: http://localhost:5173/logs (admin only)
-   # Edit .env with your settings
-   ```
 
 5. **Create admin user**
    ```bash
@@ -153,20 +157,28 @@ npm run validate-bookmarks:test
 bookmark-manager-app/
 ├── backend/              # Express API server
 │   ├── src/
+│   │   ├── agents/      # AI processing agents
+│   │   ├── config/      # Configuration files
+│   │   ├── db/          # Database connection and migrations
+│   │   ├── middleware/  # Auth, validation, error handling
 │   │   ├── routes/      # API endpoints
-│   │   ├── services/    # Business logic
-│   │   ├── middleware/  # Auth, validation, etc.
-│   │   └── utils/       # Logging, helpers
+│   │   ├── services/    # Business logic & unified logger
+│   │   ├── utils/       # Helper utilities
+│   │   └── workers/     # Background job processors
 │   └── scripts/         # Utility scripts
 ├── frontend/            # React application
 │   ├── src/
 │   │   ├── pages/      # Route components
 │   │   ├── components/ # Reusable UI components
-│   │   ├── services/   # API client
+│   │   ├── contexts/   # React contexts (Auth, Socket)
+│   │   ├── services/   # API client & logger
 │   │   └── types/      # TypeScript definitions
 │   └── public/         # Static assets
 ├── database/           # SQL schemas and migrations
 ├── scripts/            # Deployment and setup scripts
+├── logs/               # Application logs (gitignored)
+├── _archive/           # Archived files (gitignored)
+├── start-services.js   # Main startup script
 └── imports/            # Bookmark import directory
 ```
 
@@ -179,12 +191,18 @@ bookmark-manager-app/
 NODE_ENV=development
 PORT=3001
 DATABASE_URL=postgresql://admin:admin@localhost:5434/bookmark_manager
+POSTGRES_PORT=5434
+REDIS_URL=redis://localhost:6382
+REDIS_PORT=6382
 JWT_SECRET=your-secret-key
 OPENAI_API_KEY=your-openai-key
+ENABLE_2FA=true
+LOG_LEVEL=info
 
 # Frontend
 VITE_API_URL=http://localhost:3001/api
 VITE_APP_NAME=Bookmark Manager
+VITE_WS_URL=ws://localhost:3001
 ```
 
 ## 🚢 Deployment
@@ -248,9 +266,22 @@ npm run validate-bookmarks sample-bookmarks.html <user-id>
 
 ## 📊 Monitoring
 
-- **Logs**: Structured JSON logging with Winston
-- **Metrics**: Request latency, error rates, bookmark statistics
-- **Alerts**: Failed imports, dead links, authentication failures
+### Unified Logging System
+- **Winston Logger**: Centralized logging with structured output
+- **Log Levels**: error, warn, info, http, debug
+- **Log Files**:
+  - `logs/error.log` - Error level events only
+  - `logs/combined.log` - All log events
+  - `logs/http.log` - HTTP request logs
+- **Real-time Monitoring**: WebSocket-based log streaming
+- **Log Viewer UI**: Built-in web interface at `/logs`
+
+### Metrics
+- Request latency tracking
+- Database query performance
+- Import job progress
+- Validation success rates
+- Authentication attempts
 
 ## 🤝 Contributing
 

@@ -1,12 +1,19 @@
 import express from 'express';
 import { query } from '../db/index.js';
-import { logError } from '../utils/logger.js';
+import unifiedLogger from '../services/unifiedLogger.js';
 
 const router = express.Router();
 
 // Middleware to check admin role
 const requireAdmin = (req, res, next) => {
   if (req.user.role !== 'admin') {
+    unifiedLogger.warn('Admin access denied', {
+      service: 'api',
+      source: 'admin-middleware',
+      userId: req.user?.id,
+      userRole: req.user?.role,
+      path: req.path
+    });
     return res.status(403).json({ error: 'Admin access required' });
   }
   next();
@@ -18,6 +25,11 @@ const requireAdmin = (req, res, next) => {
  */
 router.get('/users', requireAdmin, async (req, res) => {
   try {
+    unifiedLogger.info('Fetching all users with stats', {
+      service: 'api',
+      source: 'GET /admin/users',
+      adminId: req.user.id
+    });
     const result = await query(`
       SELECT 
         u.id,
@@ -36,9 +48,20 @@ router.get('/users', requireAdmin, async (req, res) => {
       ORDER BY u.created_at DESC
     `);
     
+    unifiedLogger.info('Users retrieved successfully', {
+      service: 'api',
+      source: 'GET /admin/users',
+      adminId: req.user.id,
+      userCount: result.rows.length
+    });
+    
     res.json({ users: result.rows });
   } catch (error) {
-    logError(error, { context: 'GET /api/admin/users' });
+    unifiedLogger.error('Failed to get users', error, {
+      service: 'api',
+      source: 'GET /admin/users',
+      adminId: req.user.id
+    });
     res.status(500).json({ error: 'Failed to get users' });
   }
 });
@@ -49,6 +72,11 @@ router.get('/users', requireAdmin, async (req, res) => {
  */
 router.get('/stats', requireAdmin, async (req, res) => {
   try {
+    unifiedLogger.info('Fetching system-wide statistics', {
+      service: 'api',
+      source: 'GET /admin/stats',
+      adminId: req.user.id
+    });
     // Total bookmarks
     const totalBookmarks = await query(`
       SELECT COUNT(*) as total FROM bookmarks WHERE is_deleted = false
@@ -92,14 +120,28 @@ router.get('/stats', requireAdmin, async (req, res) => {
       ORDER BY count DESC
     `);
     
-    res.json({
+    const stats = {
       totalBookmarks: totalBookmarks.rows[0].total,
       status: bookmarkStatus.rows[0],
       recentImports: recentImports.rows,
       categories: categories.rows
+    };
+    
+    unifiedLogger.info('System stats retrieved successfully', {
+      service: 'api',
+      source: 'GET /admin/stats',
+      adminId: req.user.id,
+      totalBookmarks: stats.totalBookmarks,
+      categoryCount: stats.categories.length
     });
+    
+    res.json(stats);
   } catch (error) {
-    logError(error, { context: 'GET /api/admin/stats' });
+    unifiedLogger.error('Failed to get statistics', error, {
+      service: 'api',
+      source: 'GET /admin/stats',
+      adminId: req.user.id
+    });
     res.status(500).json({ error: 'Failed to get statistics' });
   }
 });
@@ -113,7 +155,21 @@ router.post('/users/:userId/bookmarks/transfer', requireAdmin, async (req, res) 
     const { userId } = req.params;
     const { targetUserId } = req.body;
     
+    unifiedLogger.info('Bookmark transfer requested', {
+      service: 'api',
+      source: 'POST /admin/users/:userId/bookmarks/transfer',
+      adminId: req.user.id,
+      fromUserId: userId,
+      toUserId: targetUserId
+    });
+    
     if (!targetUserId) {
+      unifiedLogger.warn('Bookmark transfer failed - missing target user', {
+        service: 'api',
+        source: 'POST /admin/users/:userId/bookmarks/transfer',
+        adminId: req.user.id,
+        fromUserId: userId
+      });
       return res.status(400).json({ error: 'Target user ID required' });
     }
     
@@ -124,6 +180,14 @@ router.post('/users/:userId/bookmarks/transfer', requireAdmin, async (req, res) 
     );
     
     if (users.rows.length !== 2) {
+      unifiedLogger.warn('Bookmark transfer failed - users not found', {
+        service: 'api',
+        source: 'POST /admin/users/:userId/bookmarks/transfer',
+        adminId: req.user.id,
+        fromUserId: userId,
+        toUserId: targetUserId,
+        foundUsers: users.rows.length
+      });
       return res.status(404).json({ error: 'One or both users not found' });
     }
     
@@ -133,12 +197,27 @@ router.post('/users/:userId/bookmarks/transfer', requireAdmin, async (req, res) 
       [targetUserId, userId]
     );
     
+    unifiedLogger.info('Bookmarks transferred successfully', {
+      service: 'api',
+      source: 'POST /admin/users/:userId/bookmarks/transfer',
+      adminId: req.user.id,
+      fromUserId: userId,
+      toUserId: targetUserId,
+      bookmarkCount: result.rows.length
+    });
+    
     res.json({
       message: 'Bookmarks transferred successfully',
       count: result.rows.length
     });
   } catch (error) {
-    logError(error, { context: 'POST /api/admin/users/:userId/bookmarks/transfer' });
+    unifiedLogger.error('Failed to transfer bookmarks', error, {
+      service: 'api',
+      source: 'POST /admin/users/:userId/bookmarks/transfer',
+      adminId: req.user.id,
+      fromUserId: req.params.userId,
+      toUserId: req.body.targetUserId
+    });
     res.status(500).json({ error: 'Failed to transfer bookmarks' });
   }
 });
@@ -151,6 +230,13 @@ router.delete('/bookmarks/:id', requireAdmin, async (req, res) => {
   try {
     const { id } = req.params;
     
+    unifiedLogger.warn('Hard delete bookmark requested', {
+      service: 'api',
+      source: 'DELETE /admin/bookmarks/:id',
+      adminId: req.user.id,
+      bookmarkId: id
+    });
+    
     // Delete related data first
     await query('DELETE FROM bookmark_tags WHERE bookmark_id = $1', [id]);
     await query('DELETE FROM bookmark_metadata WHERE bookmark_id = $1', [id]);
@@ -161,15 +247,37 @@ router.delete('/bookmarks/:id', requireAdmin, async (req, res) => {
     const result = await query('DELETE FROM bookmarks WHERE id = $1 RETURNING *', [id]);
     
     if (result.rows.length === 0) {
+      unifiedLogger.warn('Hard delete failed - bookmark not found', {
+        service: 'api',
+        source: 'DELETE /admin/bookmarks/:id',
+        adminId: req.user.id,
+        bookmarkId: id
+      });
       return res.status(404).json({ error: 'Bookmark not found' });
     }
+    
+    unifiedLogger.warn('Bookmark permanently deleted', {
+      service: 'api',
+      source: 'DELETE /admin/bookmarks/:id',
+      adminId: req.user.id,
+      bookmarkId: id,
+      deletedBookmark: {
+        url: result.rows[0].url,
+        title: result.rows[0].title
+      }
+    });
     
     res.json({ 
       message: 'Bookmark permanently deleted',
       bookmark: result.rows[0]
     });
   } catch (error) {
-    logError(error, { context: 'DELETE /api/admin/bookmarks/:id' });
+    unifiedLogger.error('Failed to delete bookmark', error, {
+      service: 'api',
+      source: 'DELETE /admin/bookmarks/:id',
+      adminId: req.user.id,
+      bookmarkId: req.params.id
+    });
     res.status(500).json({ error: 'Failed to delete bookmark' });
   }
 });

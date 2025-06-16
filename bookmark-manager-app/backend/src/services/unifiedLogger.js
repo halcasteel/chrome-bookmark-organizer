@@ -5,6 +5,24 @@ import fs from 'fs';
 import { EventEmitter } from 'events';
 import { WebSocketServer } from 'ws';
 
+// Safe JSON stringifier that handles circular references
+function safeStringify(obj, indent = 2) {
+  const seen = new WeakSet();
+  return JSON.stringify(obj, (key, value) => {
+    if (typeof value === 'object' && value !== null) {
+      if (seen.has(value)) {
+        return '[Circular Reference]';
+      }
+      seen.add(value);
+    }
+    // Limit string length to prevent huge logs
+    if (typeof value === 'string' && value.length > 1000) {
+      return value.substring(0, 1000) + '... [truncated]';
+    }
+    return value;
+  }, indent);
+}
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -46,17 +64,32 @@ class UnifiedLoggerService extends EventEmitter {
       winston.format.json()
     );
 
-    // Pretty print for console
+    // Pretty print for console with safer serialization
     const consoleFormat = winston.format.combine(
       winston.format.timestamp({ format: 'HH:mm:ss.SSS' }),
       winston.format.colorize({ all: true }),
       winston.format.printf(({ timestamp, level, service, source, message, metadata }) => {
-        const serviceName = service ? `[${service}]` : '';
-        const sourceName = source ? `[${source}]` : '';
-        const meta = metadata && Object.keys(metadata).length ? 
-          '\n  ' + JSON.stringify(metadata, null, 2).split('\n').join('\n  ') : '';
-        
-        return `${timestamp} ${level} ${serviceName}${sourceName} ${message}${meta}`;
+        try {
+          const serviceName = service ? `[${service}]` : '';
+          const sourceName = source ? `[${source}]` : '';
+          
+          // Safer metadata serialization using our safeStringify function
+          let meta = '';
+          if (metadata && Object.keys(metadata).length) {
+            try {
+              // Use safeStringify to handle circular references
+              const safeMetadata = JSON.parse(safeStringify(metadata));
+              meta = '\n  ' + safeStringify(safeMetadata, 2).split('\n').join('\n  ');
+            } catch (e) {
+              meta = '\n  [Metadata serialization error]';
+            }
+          }
+          
+          return `${timestamp} ${level} ${serviceName}${sourceName} ${message}${meta}`;
+        } catch (error) {
+          // Fallback if formatting fails
+          return `${timestamp} ${level} ${message} [Format error: ${error.message}]`;
+        }
       })
     );
 

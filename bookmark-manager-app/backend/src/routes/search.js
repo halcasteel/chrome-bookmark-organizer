@@ -1,6 +1,6 @@
 import express from 'express';
 import db from '../config/database.js';
-import { logInfo, logError } from '../utils/logger.js';
+import unifiedLogger from '../services/unifiedLogger.js';
 
 const router = express.Router();
 
@@ -20,6 +20,18 @@ router.post('/', async (req, res) => {
       limit = 20,
       offset = 0,
     } = req.body;
+    
+    unifiedLogger.info('Performing bookmark search', {
+      service: 'api',
+      source: 'POST /search',
+      userId: req.user.userId,
+      hasQuery: !!query,
+      hasCategory: !!category,
+      tagCount: tags?.length || 0,
+      hasDateRange: !!(dateFrom || dateTo),
+      limit,
+      offset
+    });
     
     let searchQuery = `
       SELECT DISTINCT b.*,
@@ -86,6 +98,16 @@ router.post('/', async (req, res) => {
     
     const result = await db.query(searchQuery, params);
     
+    unifiedLogger.info('Search completed successfully', {
+      service: 'api',
+      source: 'POST /search',
+      userId: req.user.userId,
+      resultCount: result.rows.length,
+      query,
+      limit,
+      offset
+    });
+    
     res.json({
       results: result.rows,
       query,
@@ -93,7 +115,12 @@ router.post('/', async (req, res) => {
       offset,
     });
   } catch (error) {
-    logError(error, { context: 'POST /api/search' });
+    unifiedLogger.error('Search failed', error, {
+      service: 'api',
+      source: 'POST /search',
+      userId: req.user.userId,
+      searchParams: req.body
+    });
     res.status(500).json({ error: 'Search failed' });
   }
 });
@@ -106,7 +133,21 @@ router.post('/semantic', async (req, res) => {
   try {
     const { query, limit = 20, similarityThreshold = 0.7 } = req.body;
     
+    unifiedLogger.info('Performing semantic search', {
+      service: 'api',
+      source: 'POST /search/semantic',
+      userId: req.user.userId,
+      queryLength: query?.length || 0,
+      limit,
+      similarityThreshold
+    });
+    
     if (!query) {
+      unifiedLogger.warn('Semantic search failed - missing query', {
+        service: 'api',
+        source: 'POST /search/semantic',
+        userId: req.user.userId
+      });
       return res.status(400).json({ error: 'Query is required' });
     }
     
@@ -114,13 +155,25 @@ router.post('/semantic', async (req, res) => {
     // 1. Generate embedding for the query using OpenAI
     // 2. Search using pgvector similarity
     
+    unifiedLogger.info('Semantic search placeholder response', {
+      service: 'api',
+      source: 'POST /search/semantic',
+      userId: req.user.userId,
+      status: 'not_implemented'
+    });
+    
     res.json({
       message: 'Semantic search endpoint - implementation pending',
       query,
       results: [],
     });
   } catch (error) {
-    logError(error, { context: 'POST /api/search/semantic' });
+    unifiedLogger.error('Semantic search failed', error, {
+      service: 'api',
+      source: 'POST /search/semantic',
+      userId: req.user.userId,
+      query: req.body.query
+    });
     res.status(500).json({ error: 'Semantic search failed' });
   }
 });
@@ -133,7 +186,21 @@ router.get('/suggestions', async (req, res) => {
   try {
     const { q } = req.query;
     
+    unifiedLogger.debug('Fetching search suggestions', {
+      service: 'api',
+      source: 'GET /search/suggestions',
+      userId: req.user.userId,
+      query: q,
+      queryLength: q?.length || 0
+    });
+    
     if (!q || q.length < 2) {
+      unifiedLogger.debug('No suggestions - query too short', {
+        service: 'api',
+        source: 'GET /search/suggestions',
+        userId: req.user.userId,
+        queryLength: q?.length || 0
+      });
       return res.json({ suggestions: [] });
     }
     
@@ -148,11 +215,26 @@ router.get('/suggestions', async (req, res) => {
       [req.user.userId, `%${q}%`]
     );
     
+    const suggestions = result.rows.map(row => row.title);
+    
+    unifiedLogger.debug('Search suggestions retrieved', {
+      service: 'api',
+      source: 'GET /search/suggestions',
+      userId: req.user.userId,
+      query: q,
+      suggestionCount: suggestions.length
+    });
+    
     res.json({
-      suggestions: result.rows.map(row => row.title),
+      suggestions,
     });
   } catch (error) {
-    logError(error, { context: 'GET /api/search/suggestions' });
+    unifiedLogger.error('Failed to get suggestions', error, {
+      service: 'api',
+      source: 'GET /search/suggestions',
+      userId: req.user.userId,
+      query: req.query.q
+    });
     res.status(500).json({ error: 'Failed to get suggestions' });
   }
 });

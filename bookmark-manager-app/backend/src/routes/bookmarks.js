@@ -1,6 +1,6 @@
 import express from 'express';
 import { query, getClient } from '../db/index.js';
-import { logInfo, logError } from '../utils/logger.js';
+import unifiedLogger from '../services/unifiedLogger.js';
 import orchestratorService from '../services/orchestratorService.js';
 
 const router = express.Router();
@@ -13,6 +13,14 @@ router.get('/', async (req, res) => {
   try {
     const { page = 1, limit = 20, search, category, isDeadLink, userId } = req.query;
     const offset = (page - 1) * limit;
+    
+    unifiedLogger.info('Fetching bookmarks', {
+      service: 'api',
+      source: 'GET /bookmarks',
+      userId: req.user.id,
+      isAdmin: req.user.role === 'admin',
+      filters: { page, limit, search, category, isDeadLink, userId }
+    });
     
     // Admin can view all bookmarks or filter by userId
     const isAdmin = req.user.role === 'admin';
@@ -100,6 +108,16 @@ router.get('/', async (req, res) => {
     const countResult = await query(countSql, countParams);
     const total = parseInt(countResult.rows[0]?.total || 0);
     
+    unifiedLogger.info('Bookmarks retrieved successfully', {
+      service: 'api',
+      source: 'GET /bookmarks',
+      userId: req.user.id,
+      bookmarkCount: result.rows.length,
+      totalCount: total,
+      page: parseInt(page),
+      limit: parseInt(limit)
+    });
+    
     res.json({
       bookmarks: result.rows,
       pagination: {
@@ -110,7 +128,12 @@ router.get('/', async (req, res) => {
       }
     });
   } catch (error) {
-    logError(error, { context: 'GET /api/bookmarks', userId: req.user.id });
+    unifiedLogger.error('Failed to fetch bookmarks', error, {
+      service: 'api',
+      source: 'GET /bookmarks',
+      userId: req.user.id,
+      filters: req.query
+    });
     res.status(500).json({ error: 'Failed to fetch bookmarks' });
   }
 });
@@ -123,7 +146,24 @@ router.post('/', async (req, res) => {
   try {
     const { url, title, description, tags = [], collectionId } = req.body;
     
+    unifiedLogger.info('Creating new bookmark', {
+      service: 'api',
+      source: 'POST /bookmarks',
+      userId: req.user.id,
+      url,
+      title,
+      tagCount: tags.length,
+      hasCollection: !!collectionId
+    });
+    
     if (!url || !title) {
+      unifiedLogger.warn('Bookmark creation failed - missing required fields', {
+        service: 'api',
+        source: 'POST /bookmarks',
+        userId: req.user.id,
+        hasUrl: !!url,
+        hasTitle: !!title
+      });
       return res.status(400).json({ error: 'URL and title are required' });
     }
     
@@ -178,9 +218,15 @@ router.post('/', async (req, res) => {
         priority: 'normal'
       });
       
-      logInfo('Bookmark created and queued for validation workflow', { 
-        bookmarkId: bookmark.id, 
-        userId: req.user.id 
+      unifiedLogger.info('Bookmark created and queued for validation workflow', {
+        service: 'api',
+        source: 'POST /bookmarks',
+        userId: req.user.id,
+        bookmarkId: bookmark.id,
+        url: bookmark.url,
+        title: bookmark.title,
+        tagCount: tags.length,
+        collectionId
       });
       
       res.status(201).json(bookmark);
@@ -192,7 +238,12 @@ router.post('/', async (req, res) => {
       client.release();
     }
   } catch (error) {
-    logError(error, { context: 'POST /api/bookmarks', userId: req.user.id });
+    unifiedLogger.error('Failed to create bookmark', error, {
+      service: 'api',
+      source: 'POST /bookmarks',
+      userId: req.user.id,
+      bookmarkData: req.body
+    });
     res.status(500).json({ error: 'Failed to create bookmark' });
   }
 });
@@ -205,6 +256,14 @@ router.get('/:id', async (req, res) => {
   try {
     const bookmarkId = req.params.id;
     const isAdmin = req.user.role === 'admin';
+    
+    unifiedLogger.info('Fetching single bookmark', {
+      service: 'api',
+      source: 'GET /bookmarks/:id',
+      userId: req.user.id,
+      bookmarkId,
+      isAdmin
+    });
     
     let sql = `SELECT b.*, 
               bm.category, 
@@ -231,12 +290,32 @@ router.get('/:id', async (req, res) => {
     const result = await query(sql, params);
     
     if (result.rows.length === 0) {
+      unifiedLogger.warn('Bookmark not found', {
+        service: 'api',
+        source: 'GET /bookmarks/:id',
+        userId: req.user.id,
+        bookmarkId,
+        isAdmin
+      });
       return res.status(404).json({ error: 'Bookmark not found' });
     }
     
+    unifiedLogger.info('Bookmark retrieved successfully', {
+      service: 'api',
+      source: 'GET /bookmarks/:id',
+      userId: req.user.id,
+      bookmarkId,
+      bookmarkOwnerId: result.rows[0].user_id
+    });
+    
     res.json(result.rows[0]);
   } catch (error) {
-    logError(error, { context: 'GET /api/bookmarks/:id', userId: req.user.id });
+    unifiedLogger.error('Failed to get bookmark', error, {
+      service: 'api',
+      source: 'GET /bookmarks/:id',
+      userId: req.user.id,
+      bookmarkId: req.params.id
+    });
     res.status(500).json({ error: 'Failed to get bookmark' });
   }
 });
@@ -250,6 +329,16 @@ router.put('/:id', async (req, res) => {
     const { title, description, tags } = req.body;
     const bookmarkId = req.params.id;
     
+    unifiedLogger.info('Updating bookmark', {
+      service: 'api',
+      source: 'PUT /bookmarks/:id',
+      userId: req.user.id,
+      bookmarkId,
+      hasTitle: !!title,
+      hasDescription: !!description,
+      hasTags: !!tags
+    });
+    
     const result = await query(
       `UPDATE bookmarks 
        SET title = COALESCE($1, title),
@@ -261,12 +350,33 @@ router.put('/:id', async (req, res) => {
     );
     
     if (result.rows.length === 0) {
+      unifiedLogger.warn('Update failed - bookmark not found', {
+        service: 'api',
+        source: 'PUT /bookmarks/:id',
+        userId: req.user.id,
+        bookmarkId
+      });
       return res.status(404).json({ error: 'Bookmark not found' });
     }
     
+    unifiedLogger.info('Bookmark updated successfully', {
+      service: 'api',
+      source: 'PUT /bookmarks/:id',
+      userId: req.user.id,
+      bookmarkId,
+      updatedTitle: result.rows[0].title,
+      updatedDescription: result.rows[0].description
+    });
+    
     res.json(result.rows[0]);
   } catch (error) {
-    logError(error, { context: 'PUT /api/bookmarks/:id', userId: req.user.id });
+    unifiedLogger.error('Failed to update bookmark', error, {
+      service: 'api',
+      source: 'PUT /bookmarks/:id',
+      userId: req.user.id,
+      bookmarkId: req.params.id,
+      updateData: req.body
+    });
     res.status(500).json({ error: 'Failed to update bookmark' });
   }
 });
@@ -277,21 +387,47 @@ router.put('/:id', async (req, res) => {
  */
 router.delete('/:id', async (req, res) => {
   try {
+    const bookmarkId = req.params.id;
+    
+    unifiedLogger.info('Soft deleting bookmark', {
+      service: 'api',
+      source: 'DELETE /bookmarks/:id',
+      userId: req.user.id,
+      bookmarkId
+    });
     const result = await query(
       `UPDATE bookmarks 
        SET is_deleted = true, updated_at = CURRENT_TIMESTAMP
        WHERE id = $1 AND user_id = $2
        RETURNING id`,
-      [req.params.id, req.user.id]
+      [bookmarkId, req.user.id]
     );
     
     if (result.rows.length === 0) {
+      unifiedLogger.warn('Delete failed - bookmark not found', {
+        service: 'api',
+        source: 'DELETE /bookmarks/:id',
+        userId: req.user.id,
+        bookmarkId
+      });
       return res.status(404).json({ error: 'Bookmark not found' });
     }
     
+    unifiedLogger.info('Bookmark deleted successfully', {
+      service: 'api',
+      source: 'DELETE /bookmarks/:id',
+      userId: req.user.id,
+      bookmarkId
+    });
+    
     res.json({ message: 'Bookmark deleted successfully' });
   } catch (error) {
-    logError(error, { context: 'DELETE /api/bookmarks/:id', userId: req.user.id });
+    unifiedLogger.error('Failed to delete bookmark', error, {
+      service: 'api',
+      source: 'DELETE /bookmarks/:id',
+      userId: req.user.id,
+      bookmarkId: req.params.id
+    });
     res.status(500).json({ error: 'Failed to delete bookmark' });
   }
 });

@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import pg from 'pg';
 import dotenv from 'dotenv';
+import unifiedLogger from '../services/unifiedLogger.js';
 
 dotenv.config();
 
@@ -16,24 +17,43 @@ async function migrate() {
   });
 
   try {
-    console.log('Connecting to database...');
+    unifiedLogger.info('Connecting to database...', {
+      service: 'script',
+      source: 'migrate'
+    });
     await client.connect();
 
     // Read schema file
     const schemaPath = path.join(__dirname, '../../../database/schema.sql');
-    console.log('Reading schema from:', schemaPath);
+    unifiedLogger.info('Reading schema from:', {
+      service: 'script',
+      source: 'migrate',
+      schemaPath
+    });
     const schema = await fs.readFile(schemaPath, 'utf8');
 
-    console.log('Applying database schema...');
+    unifiedLogger.info('Applying database schema...', {
+      service: 'script',
+      source: 'migrate'
+    });
     await client.query(schema);
 
     // Verify pgvector is installed
     const result = await client.query("SELECT * FROM pg_extension WHERE extname = 'vector'");
     if (result.rows.length > 0) {
-      console.log('✅ pgvector extension is installed');
+      unifiedLogger.info('✅ pgvector extension is installed', {
+        service: 'script',
+        source: 'migrate'
+      });
     } else {
-      console.log('❌ pgvector extension is NOT installed');
-      console.log('Please ensure pgvector is enabled in your PostgreSQL instance');
+      unifiedLogger.warn('❌ pgvector extension is NOT installed', {
+        service: 'script',
+        source: 'migrate'
+      });
+      unifiedLogger.warn('Please ensure pgvector is enabled in your PostgreSQL instance', {
+        service: 'script',
+        source: 'migrate'
+      });
     }
 
     // Check tables
@@ -43,12 +63,23 @@ async function migrate() {
       ORDER BY tablename
     `);
     
-    console.log('\nCreated tables:');
-    tables.rows.forEach(row => console.log(`  - ${row.tablename}`));
+    unifiedLogger.info('Created tables:', {
+      service: 'script',
+      source: 'migrate',
+      tables: tables.rows.map(row => row.tablename)
+    });
 
-    console.log('\n✅ Database migration completed successfully!');
+    unifiedLogger.info('✅ Database migration completed successfully!', {
+      service: 'script',
+      source: 'migrate'
+    });
   } catch (error) {
-    console.error('❌ Migration failed:', error);
+    unifiedLogger.error('❌ Migration failed:', {
+      service: 'script',
+      source: 'migrate',
+      error: error.message,
+      stack: error.stack
+    });
     process.exit(1);
   } finally {
     await client.end();

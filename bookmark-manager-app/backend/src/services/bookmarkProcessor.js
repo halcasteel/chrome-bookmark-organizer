@@ -2,7 +2,7 @@ import OpenAI from 'openai';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { logInfo, logError, logWarn, logDebug } from '../utils/logger.js';
+import unifiedLogger from './unifiedLogger.js';
 import db from '../config/database.js';
 import BookmarkValidator from './bookmarkValidator.js';
 
@@ -29,6 +29,12 @@ class BookmarkProcessor {
     this.validator = null;
     this.processingQueue = [];
     this.isProcessing = false;
+
+    unifiedLogger.info('BookmarkProcessor initialized', {
+      service: 'bookmarkProcessor',
+      source: 'constructor',
+      options: this.options
+    });
   }
 
   /**
@@ -36,8 +42,12 @@ class BookmarkProcessor {
    * @returns {Promise<void>}
    */
   async initialize() {
+    const startTime = Date.now();
     try {
-      logInfo('Initializing BookmarkProcessor');
+      unifiedLogger.info('Initializing BookmarkProcessor', {
+        service: 'bookmarkProcessor',
+        source: 'initialize'
+      });
       
       // Initialize validator
       this.validator = new BookmarkValidator();
@@ -47,9 +57,18 @@ class BookmarkProcessor {
       await fs.mkdir(path.join(this.options.validationDir, 'processed'), { recursive: true });
       await fs.mkdir(path.join(this.options.validationDir, 'failed'), { recursive: true });
       
-      logInfo('BookmarkProcessor initialized successfully');
+      unifiedLogger.info('BookmarkProcessor initialized successfully', {
+        service: 'bookmarkProcessor',
+        source: 'initialize',
+        duration: Date.now() - startTime
+      });
     } catch (error) {
-      logError(error, { context: 'BookmarkProcessor.initialize' });
+      unifiedLogger.error('Failed to initialize BookmarkProcessor', {
+        service: 'bookmarkProcessor',
+        source: 'initialize',
+        error: error.message,
+        stack: error.stack
+      });
       throw error;
     }
   }
@@ -61,8 +80,14 @@ class BookmarkProcessor {
    * @returns {Promise<Object>} Processing results
    */
   async processHtmlFile(htmlPath, userId) {
+    const startTime = Date.now();
     try {
-      logInfo('Processing HTML bookmark file', { path: htmlPath, userId });
+      unifiedLogger.info('Processing HTML bookmark file', {
+        service: 'bookmarkProcessor',
+        source: 'processHtmlFile',
+        path: htmlPath,
+        userId
+      });
       
       // Validate bookmarks
       const validationSummary = await this.validator.processBookmarksFile(htmlPath);
@@ -72,7 +97,11 @@ class BookmarkProcessor {
       const validFiles = await fs.readdir(validDir);
       const validJsonFiles = validFiles.filter(f => f.endsWith('.json'));
       
-      logInfo('Processing valid bookmarks', { count: validJsonFiles.length });
+      unifiedLogger.info('Processing valid bookmarks', {
+        service: 'bookmarkProcessor',
+        source: 'processHtmlFile',
+        count: validJsonFiles.length
+      });
       
       const processedResults = [];
       
@@ -82,9 +111,11 @@ class BookmarkProcessor {
         const batchResults = await this.processBatch(batch, userId);
         processedResults.push(...batchResults);
         
-        logInfo('Processed batch', { 
+        unifiedLogger.info('Processed batch', {
+          service: 'bookmarkProcessor',
+          source: 'processHtmlFile',
           batchIndex: i / this.options.batchSize,
-          processed: batchResults.length 
+          processed: batchResults.length
         });
       }
       
@@ -102,10 +133,24 @@ class BookmarkProcessor {
         JSON.stringify(report, null, 2)
       );
       
+      unifiedLogger.info('HTML file processing completed', {
+        service: 'bookmarkProcessor',
+        source: 'processHtmlFile',
+        report,
+        duration: Date.now() - startTime
+      });
+
       return report;
       
     } catch (error) {
-      logError(error, { context: 'BookmarkProcessor.processHtmlFile' });
+      unifiedLogger.error('Failed to process HTML file', {
+        service: 'bookmarkProcessor',
+        source: 'processHtmlFile',
+        error: error.message,
+        stack: error.stack,
+        htmlPath,
+        userId
+      });
       throw error;
     }
   }
@@ -117,6 +162,14 @@ class BookmarkProcessor {
    * @returns {Promise<Array>} Processing results
    */
   async processBatch(fileNames, userId) {
+    const startTime = Date.now();
+    unifiedLogger.debug('Processing bookmark batch', {
+      service: 'bookmarkProcessor',
+      source: 'processBatch',
+      fileCount: fileNames.length,
+      userId
+    });
+
     const results = [];
     
     for (const fileName of fileNames) {
@@ -143,9 +196,13 @@ class BookmarkProcessor {
         });
         
       } catch (error) {
-        logError(error, { 
-          context: 'BookmarkProcessor.processBatch',
-          fileName 
+        unifiedLogger.error('Failed to process bookmark file', {
+          service: 'bookmarkProcessor',
+          source: 'processBatch',
+          error: error.message,
+          stack: error.stack,
+          fileName,
+          userId
         });
         
         results.push({
@@ -155,6 +212,14 @@ class BookmarkProcessor {
         });
       }
     }
+
+    unifiedLogger.debug('Batch processing completed', {
+      service: 'bookmarkProcessor',
+      source: 'processBatch',
+      successCount: results.filter(r => r.success).length,
+      failureCount: results.filter(r => !r.success).length,
+      duration: Date.now() - startTime
+    });
     
     return results;
   }
@@ -165,8 +230,16 @@ class BookmarkProcessor {
    * @returns {Promise<Object>} Classification result
    */
   async classifyBookmark(validationData) {
+    const startTime = Date.now();
     try {
       const { metadata, url } = validationData;
+
+      unifiedLogger.debug('Classifying bookmark', {
+        service: 'bookmarkProcessor',
+        source: 'classifyBookmark',
+        url,
+        hasMetadata: !!metadata
+      });
       
       const prompt = `Analyze this bookmark and provide classification:
 
@@ -204,16 +277,26 @@ Provide a JSON response with:
       
       const classification = JSON.parse(response.choices[0].message.content);
       
-      logDebug('Bookmark classified', { 
+      unifiedLogger.debug('Bookmark classified', {
+        service: 'bookmarkProcessor',
+        source: 'classifyBookmark',
         url,
         category: classification.category,
         subcategory: classification.subcategory,
+        tagsCount: classification.tags.length,
+        duration: Date.now() - startTime
       });
       
       return classification;
       
     } catch (error) {
-      logError(error, { context: 'BookmarkProcessor.classifyBookmark' });
+      unifiedLogger.error('Failed to classify bookmark', {
+        service: 'bookmarkProcessor',
+        source: 'classifyBookmark',
+        error: error.message,
+        stack: error.stack,
+        url: validationData?.url
+      });
       
       // Return default classification on error
       return {
@@ -235,6 +318,15 @@ Provide a JSON response with:
    * @returns {Promise<Object>} Created bookmark
    */
   async storeBookmark(validationData, classification, userId) {
+    const startTime = Date.now();
+    unifiedLogger.debug('Storing bookmark in database', {
+      service: 'bookmarkProcessor',
+      source: 'storeBookmark',
+      url: validationData.url,
+      category: classification.category,
+      userId
+    });
+
     const client = await db.getClient();
     
     try {
@@ -318,16 +410,29 @@ Provide a JSON response with:
       
       await client.query('COMMIT');
       
-      logInfo('Bookmark stored successfully', { 
+      unifiedLogger.info('Bookmark stored successfully', {
+        service: 'bookmarkProcessor',
+        source: 'storeBookmark',
         bookmarkId,
         url: validationData.url,
         category: classification.category,
+        tagsCount: classification.tags.length,
+        hasEmbedding: !!(validationData.metadata.description || classification.summary),
+        duration: Date.now() - startTime
       });
       
       return { id: bookmarkId };
       
     } catch (error) {
       await client.query('ROLLBACK');
+      unifiedLogger.error('Failed to store bookmark', {
+        service: 'bookmarkProcessor',
+        source: 'storeBookmark',
+        error: error.message,
+        stack: error.stack,
+        url: validationData.url,
+        userId
+      });
       throw error;
     } finally {
       client.release();
@@ -340,15 +445,33 @@ Provide a JSON response with:
    * @returns {Promise<Array>} Embedding vector
    */
   async generateEmbedding(text) {
+    const startTime = Date.now();
     try {
+      unifiedLogger.debug('Generating embedding', {
+        service: 'bookmarkProcessor',
+        source: 'generateEmbedding',
+        textLength: text.length
+      });
+
       const response = await this.openai.embeddings.create({
         model: 'text-embedding-ada-002',
         input: text.substring(0, 8000), // Limit text length
       });
+
+      unifiedLogger.debug('Embedding generated', {
+        service: 'bookmarkProcessor',
+        source: 'generateEmbedding',
+        duration: Date.now() - startTime
+      });
       
       return response.data[0].embedding;
     } catch (error) {
-      logError(error, { context: 'BookmarkProcessor.generateEmbedding' });
+      unifiedLogger.error('Failed to generate embedding', {
+        service: 'bookmarkProcessor',
+        source: 'generateEmbedding',
+        error: error.message,
+        stack: error.stack
+      });
       return new Array(1536).fill(0); // Return zero vector on error
     }
   }
@@ -387,12 +510,18 @@ Provide a JSON response with:
    * @returns {Promise<void>}
    */
   async processPendingBookmarks(userId) {
+    const startTime = Date.now();
     try {
       const pendingDir = path.join(this.options.validationDir, 'pending');
       const files = await fs.readdir(pendingDir);
       const pendingFiles = files.filter(f => f.endsWith('.json'));
       
-      logInfo('Processing pending bookmarks', { count: pendingFiles.length });
+      unifiedLogger.info('Processing pending bookmarks', {
+        service: 'bookmarkProcessor',
+        source: 'processPendingBookmarks',
+        count: pendingFiles.length,
+        userId
+      });
       
       for (const file of pendingFiles) {
         const filePath = path.join(pendingDir, file);
@@ -404,14 +533,29 @@ Provide a JSON response with:
         // Remove from pending
         await fs.unlink(filePath);
         
-        logDebug('Processed pending bookmark', { 
+        unifiedLogger.debug('Processed pending bookmark', {
+          service: 'bookmarkProcessor',
+          source: 'processPendingBookmarks',
           id: bookmarkData.id,
-          valid: validationResult.valid,
+          valid: validationResult.valid
         });
       }
+
+      unifiedLogger.info('Pending bookmarks processed', {
+        service: 'bookmarkProcessor',
+        source: 'processPendingBookmarks',
+        processedCount: pendingFiles.length,
+        duration: Date.now() - startTime
+      });
       
     } catch (error) {
-      logError(error, { context: 'BookmarkProcessor.processPendingBookmarks' });
+      unifiedLogger.error('Failed to process pending bookmarks', {
+        service: 'bookmarkProcessor',
+        source: 'processPendingBookmarks',
+        error: error.message,
+        stack: error.stack,
+        userId
+      });
     }
   }
 
@@ -421,13 +565,26 @@ Provide a JSON response with:
    */
   async cleanup() {
     try {
+      unifiedLogger.info('Starting BookmarkProcessor cleanup', {
+        service: 'bookmarkProcessor',
+        source: 'cleanup'
+      });
+
       if (this.validator) {
         await this.validator.close();
       }
       
-      logInfo('BookmarkProcessor cleanup completed');
+      unifiedLogger.info('BookmarkProcessor cleanup completed', {
+        service: 'bookmarkProcessor',
+        source: 'cleanup'
+      });
     } catch (error) {
-      logError(error, { context: 'BookmarkProcessor.cleanup' });
+      unifiedLogger.error('Failed to cleanup BookmarkProcessor', {
+        service: 'bookmarkProcessor',
+        source: 'cleanup',
+        error: error.message,
+        stack: error.stack
+      });
     }
   }
 }

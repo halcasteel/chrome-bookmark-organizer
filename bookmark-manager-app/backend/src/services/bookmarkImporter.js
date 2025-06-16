@@ -3,21 +3,27 @@ import crypto from 'crypto';
 import { query, transaction } from '../db/index.js';
 import embeddingService from './embeddingService.js';
 import metadataExtractor from './metadataExtractor.js';
-import winston from 'winston';
-
-const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.json(),
-  transports: [new winston.transports.Console()]
-});
+import unifiedLogger from './unifiedLogger.js';
 
 export class BookmarkImporter {
   constructor() {
     this.batchSize = 100;
+    unifiedLogger.info('BookmarkImporter initialized', {
+      service: 'bookmarkImporter',
+      source: 'constructor',
+      batchSize: this.batchSize
+    });
   }
 
   // Parse Chrome bookmarks HTML file
   async parseBookmarksHTML(htmlContent) {
+    const startTime = Date.now();
+    unifiedLogger.debug('Parsing bookmarks HTML', {
+      service: 'bookmarkImporter',
+      source: 'parseBookmarksHTML',
+      contentLength: htmlContent.length
+    });
+
     const dom = new JSDOM(htmlContent);
     const document = dom.window.document;
     const bookmarks = [];
@@ -43,17 +49,36 @@ export class BookmarkImporter {
           });
         } catch (error) {
           // Skip invalid URLs
-          logger.warn(`Invalid URL skipped: ${url}`);
+          unifiedLogger.warn('Invalid URL skipped', {
+            service: 'bookmarkImporter',
+            source: 'parseBookmarksHTML',
+            url,
+            error: error.message
+          });
         }
       }
     });
 
-    logger.info(`Parsed ${bookmarks.length} bookmarks from HTML`);
+    unifiedLogger.info('Bookmarks parsed from HTML', {
+      service: 'bookmarkImporter',
+      source: 'parseBookmarksHTML',
+      bookmarkCount: bookmarks.length,
+      duration: Date.now() - startTime
+    });
     return bookmarks;
   }
 
   // Import bookmarks for a user
   async importBookmarks(userId, htmlContent, filename) {
+    const startTime = Date.now();
+    unifiedLogger.info('Starting bookmark import', {
+      service: 'bookmarkImporter',
+      source: 'importBookmarks',
+      userId,
+      filename,
+      contentLength: htmlContent.length
+    });
+
     const importId = await this.createImportRecord(userId, filename, htmlContent.length);
     
     try {
@@ -79,7 +104,13 @@ export class BookmarkImporter {
         results.errors.push(...batchResult.errors);
 
         // Update progress
-        logger.info(`Progress: ${i + batch.length}/${bookmarks.length} bookmarks processed`);
+        unifiedLogger.info('Import progress', {
+          service: 'bookmarkImporter',
+          source: 'importBookmarks',
+          processed: i + batch.length,
+          total: bookmarks.length,
+          percentComplete: Math.round(((i + batch.length) / bookmarks.length) * 100)
+        });
       }
 
       // Update import record
@@ -88,12 +119,27 @@ export class BookmarkImporter {
       // Process embeddings in background
       this.processEmbeddingsAsync(userId);
 
+      unifiedLogger.info('Bookmark import completed', {
+        service: 'bookmarkImporter',
+        source: 'importBookmarks',
+        importId,
+        results,
+        duration: Date.now() - startTime
+      });
+
       return {
         importId,
         ...results
       };
     } catch (error) {
-      logger.error('Import failed:', error);
+      unifiedLogger.error('Import failed', {
+        service: 'bookmarkImporter',
+        source: 'importBookmarks',
+        error: error.message,
+        stack: error.stack,
+        importId,
+        userId
+      });
       await this.updateImportRecord(importId, 'failed', null, error.message);
       throw error;
     }
@@ -101,6 +147,14 @@ export class BookmarkImporter {
 
   // Process a batch of bookmarks
   async processBatch(userId, bookmarks) {
+    const startTime = Date.now();
+    unifiedLogger.debug('Processing bookmark batch', {
+      service: 'bookmarkImporter',
+      source: 'processBatch',
+      userId,
+      batchSize: bookmarks.length
+    });
+
     const results = {
       new: 0,
       updated: 0,
@@ -144,7 +198,14 @@ export class BookmarkImporter {
             results.new++;
           }
         } catch (error) {
-          logger.error(`Error processing bookmark ${bookmark.url}:`, error);
+          unifiedLogger.error('Error processing bookmark', {
+            service: 'bookmarkImporter',
+            source: 'processBatch',
+            error: error.message,
+            stack: error.stack,
+            url: bookmark.url,
+            userId
+          });
           results.failed++;
           results.errors.push({
             url: bookmark.url,
@@ -154,22 +215,54 @@ export class BookmarkImporter {
       }
     });
 
+    unifiedLogger.debug('Batch processing completed', {
+      service: 'bookmarkImporter',
+      source: 'processBatch',
+      results,
+      duration: Date.now() - startTime
+    });
+
     return results;
   }
 
   // Create import record
   async createImportRecord(userId, filename, fileSize) {
+    unifiedLogger.debug('Creating import record', {
+      service: 'bookmarkImporter',
+      source: 'createImportRecord',
+      userId,
+      filename,
+      fileSize
+    });
+
     const sql = `
       INSERT INTO import_history (user_id, filename, file_size, status)
       VALUES ($1, $2, $3, 'processing')
       RETURNING id
     `;
     const result = await query(sql, [userId, filename, fileSize]);
-    return result.rows[0].id;
+    const importId = result.rows[0].id;
+
+    unifiedLogger.info('Import record created', {
+      service: 'bookmarkImporter',
+      source: 'createImportRecord',
+      importId,
+      userId
+    });
+
+    return importId;
   }
 
   // Update import record
   async updateImportRecord(importId, status, results = null, error = null) {
+    unifiedLogger.debug('Updating import record', {
+      service: 'bookmarkImporter',
+      source: 'updateImportRecord',
+      importId,
+      status,
+      hasResults: !!results,
+      hasError: !!error
+    });
     const sql = `
       UPDATE import_history 
       SET status = $1,
@@ -195,6 +288,12 @@ export class BookmarkImporter {
 
   // Process embeddings asynchronously
   async processEmbeddingsAsync(userId) {
+    unifiedLogger.debug('Starting async embedding processing', {
+      service: 'bookmarkImporter',
+      source: 'processEmbeddingsAsync',
+      userId
+    });
+
     // Get bookmarks without embeddings
     const sql = `
       SELECT b.* 
@@ -207,14 +306,25 @@ export class BookmarkImporter {
     const result = await query(sql, [userId]);
     
     if (result.rows.length > 0) {
-      logger.info(`Processing embeddings for ${result.rows.length} bookmarks`);
+      unifiedLogger.info('Processing embeddings for bookmarks', {
+        service: 'bookmarkImporter',
+        source: 'processEmbeddingsAsync',
+        bookmarkCount: result.rows.length,
+        userId
+      });
       
       // Process in background
       setImmediate(async () => {
         try {
           await embeddingService.processBookmarks(result.rows);
         } catch (error) {
-          logger.error('Error processing embeddings:', error);
+          unifiedLogger.error('Error processing embeddings', {
+            service: 'bookmarkImporter',
+            source: 'processEmbeddingsAsync',
+            error: error.message,
+            stack: error.stack,
+            userId
+          });
         }
       });
     }
@@ -229,7 +339,13 @@ export class BookmarkImporter {
       const content = await fs.readFile(filePath, 'utf-8');
       const filename = path.basename(filePath);
       
-      logger.info(`Importing bookmarks from file: ${filename}`);
+      unifiedLogger.info('Importing bookmarks from file', {
+        service: 'bookmarkImporter',
+        source: 'importFromFile',
+        filename,
+        filePath,
+        userId
+      });
       const result = await this.importBookmarks(userId, content, filename);
       
       // Archive the processed file
@@ -240,17 +356,34 @@ export class BookmarkImporter {
       const archivePath = path.join(archiveDir, `${timestamp}_${filename}`);
       await fs.rename(filePath, archivePath);
       
-      logger.info(`Archived processed file to: ${archivePath}`);
+      unifiedLogger.info('Archived processed file', {
+        service: 'bookmarkImporter',
+        source: 'importFromFile',
+        archivePath,
+        originalPath: filePath
+      });
       
       return result;
     } catch (error) {
-      logger.error(`Error importing from file ${filePath}:`, error);
+      unifiedLogger.error('Error importing from file', {
+        service: 'bookmarkImporter',
+        source: 'importFromFile',
+        error: error.message,
+        stack: error.stack,
+        filePath,
+        userId
+      });
       throw error;
     }
   }
 
   // Detect and handle duplicates
   async detectDuplicates(userId) {
+    unifiedLogger.debug('Detecting duplicate bookmarks', {
+      service: 'bookmarkImporter',
+      source: 'detectDuplicates',
+      userId
+    });
     const sql = `
       SELECT url, COUNT(*) as count
       FROM bookmarks
@@ -265,6 +398,13 @@ export class BookmarkImporter {
 
   // Merge duplicate bookmarks
   async mergeDuplicates(userId) {
+    const startTime = Date.now();
+    unifiedLogger.info('Starting duplicate merge process', {
+      service: 'bookmarkImporter',
+      source: 'mergeDuplicates',
+      userId
+    });
+
     const duplicates = await this.detectDuplicates(userId);
     let mergedCount = 0;
 
@@ -294,7 +434,14 @@ export class BookmarkImporter {
       }
     }
 
-    logger.info(`Merged ${mergedCount} duplicate bookmarks`);
+    unifiedLogger.info('Duplicate merge completed', {
+      service: 'bookmarkImporter',
+      source: 'mergeDuplicates',
+      mergedCount,
+      duplicateUrls: duplicates.length,
+      userId,
+      duration: Date.now() - startTime
+    });
     return mergedCount;
   }
 }

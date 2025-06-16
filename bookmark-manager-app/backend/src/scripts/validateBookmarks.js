@@ -3,7 +3,7 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 import BookmarkProcessor from '../services/bookmarkProcessor.js';
-import { logInfo, logError } from '../utils/logger.js';
+import unifiedLogger from '../services/unifiedLogger.js';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -19,6 +19,14 @@ async function main() {
   const args = process.argv.slice(2);
   
   if (args.length < 2) {
+    unifiedLogger.error('Usage: node validateBookmarks.js <html-file-path> <user-id>', {
+      service: 'script',
+      source: 'validateBookmarks'
+    });
+    unifiedLogger.error('Example: node validateBookmarks.js /path/to/bookmarks.html 123e4567-e89b-12d3-a456-426614174000', {
+      service: 'script',
+      source: 'validateBookmarks'
+    });
     console.error('Usage: node validateBookmarks.js <html-file-path> <user-id>');
     console.error('Example: node validateBookmarks.js /path/to/bookmarks.html 123e4567-e89b-12d3-a456-426614174000');
     process.exit(1);
@@ -26,7 +34,7 @@ async function main() {
   
   const [htmlPath, userId] = args;
   
-  logInfo('Starting bookmark validation', { htmlPath, userId });
+  unifiedLogger.info('Starting bookmark validation', { service: 'script', source: 'validateBookmarks', htmlPath, userId });
   
   const processor = new BookmarkProcessor({
     validationDir: path.join(__dirname, '../../../../bookmark-validation'),
@@ -41,7 +49,24 @@ async function main() {
     // Process the HTML file
     const report = await processor.processHtmlFile(htmlPath, userId);
     
-    logInfo('Processing completed', report);
+    unifiedLogger.info('Processing completed', { service: 'script', source: 'validateBookmarks', report });
+    
+    unifiedLogger.info('Bookmark processing report generated', {
+      service: 'script',
+      source: 'validateBookmarks',
+      report: {
+        totalBookmarks: report.totalBookmarks,
+        validBookmarks: report.validBookmarks,
+        invalidBookmarks: report.invalidBookmarks,
+        processedCount: report.processedCount,
+        failedCount: report.failedCount,
+        categories: report.classifications?.categories,
+        topTags: report.classifications?.tags ? Object.entries(report.classifications.tags)
+          .sort(([,a], [,b]) => b - a)
+          .slice(0, 10) : undefined
+      },
+      reportPath: path.join(processor.options.validationDir, 'processing-report.json')
+    });
     
     console.log('\n=== Bookmark Processing Report ===');
     console.log(`Total Bookmarks: ${report.totalBookmarks}`);
@@ -70,7 +95,13 @@ async function main() {
     console.log(`\nFull report saved to: ${path.join(processor.options.validationDir, 'processing-report.json')}`);
     
   } catch (error) {
-    logError(error, { context: 'validateBookmarks.main' });
+    // Error already logged below
+    unifiedLogger.error('Error processing bookmarks', {
+      service: 'script',
+      source: 'validateBookmarks',
+      error: error.message,
+      stack: error.stack
+    });
     console.error('Error processing bookmarks:', error.message);
     process.exit(1);
   } finally {

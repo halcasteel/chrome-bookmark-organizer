@@ -1,7 +1,7 @@
 import EventEmitter from 'events';
 import Bull from 'bull';
 import db from '../config/database.js';
-import { logInfo, logError, logWarn } from '../utils/logger.js';
+import unifiedLogger from './unifiedLogger.js';
 import websocketService from './websocketService.js';
 
 // Redis configuration
@@ -47,12 +47,25 @@ class OrchestratorService extends EventEmitter {
     
     // Initialize monitoring
     this.initializeMonitoring();
+
+    unifiedLogger.info('OrchestratorService initialized', {
+      service: 'orchestratorService',
+      source: 'constructor',
+      queues: Object.keys(this.queues),
+      workflows: Object.keys(this.workflows)
+    });
   }
 
   /**
    * Initialize monitoring for all queues and agents
    */
   initializeMonitoring() {
+    unifiedLogger.debug('Initializing monitoring', {
+      service: 'orchestratorService',
+      source: 'initializeMonitoring',
+      agentTypes: Object.keys(this.queues)
+    });
+
     Object.entries(this.queues).forEach(([agentType, queue]) => {
       // Monitor queue events
       queue.on('completed', (job, result) => {
@@ -86,11 +99,14 @@ class OrchestratorService extends EventEmitter {
     const workflowId = `workflow_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     const workflow = this.workflows[workflowType] || this.workflows.standard;
     
-    logInfo('Starting workflow', { 
-      workflowId, 
-      type: workflowType, 
+    unifiedLogger.info('Starting workflow', {
+      service: 'orchestratorService',
+      source: 'startWorkflow',
+      workflowId,
+      type: workflowType,
       bookmarkCount: bookmarkIds.length,
-      agents: workflow 
+      agents: workflow,
+      options
     });
     
     // Create workflow record
@@ -140,11 +156,14 @@ class OrchestratorService extends EventEmitter {
     const agentType = agents[currentAgent];
     const queue = this.queues[agentType];
     
-    logInfo('Executing agent in workflow', { 
-      workflowId, 
-      agentType, 
-      step: currentAgent + 1, 
-      totalSteps: agents.length 
+    unifiedLogger.info('Executing agent in workflow', {
+      service: 'orchestratorService',
+      source: 'executeNextAgent',
+      workflowId,
+      agentType,
+      step: currentAgent + 1,
+      totalSteps: agents.length,
+      bookmarkCount: bookmarkIds.length
     });
     
     // Add jobs for each bookmark
@@ -187,6 +206,15 @@ class OrchestratorService extends EventEmitter {
     const workflow = this.activeWorkflows.get(workflowId);
     
     if (!workflow) return;
+
+    unifiedLogger.debug('Agent completed', {
+      service: 'orchestratorService',
+      source: 'handleAgentCompletion',
+      agentType,
+      workflowId,
+      bookmarkId,
+      jobId: job.id
+    });
     
     // Update progress
     workflow.progress[agentType].completed++;
@@ -217,11 +245,15 @@ class OrchestratorService extends EventEmitter {
     
     if (!workflow) return;
     
-    logError(error, { 
-      context: 'Agent failure', 
-      agentType, 
-      workflowId, 
-      bookmarkId 
+    unifiedLogger.error('Agent failure', {
+      service: 'orchestratorService',
+      source: 'handleAgentFailure',
+      error: error.message,
+      stack: error.stack,
+      agentType,
+      workflowId,
+      bookmarkId,
+      jobId: job.id
     });
     
     // Update progress
@@ -254,10 +286,13 @@ class OrchestratorService extends EventEmitter {
    * Handle agent stalled
    */
   handleAgentStalled(agentType, job) {
-    logWarn('Agent stalled', { 
-      agentType, 
-      jobId: job.id, 
-      data: job.data 
+    unifiedLogger.warn('Agent stalled', {
+      service: 'orchestratorService',
+      source: 'handleAgentStalled',
+      agentType,
+      jobId: job.id,
+      workflowId: job.data.workflowId,
+      bookmarkId: job.data.bookmarkId
     });
     
     // Could implement recovery logic here
@@ -288,10 +323,14 @@ class OrchestratorService extends EventEmitter {
     workflow.endTime = Date.now();
     workflow.duration = workflow.endTime - workflow.startTime;
     
-    logInfo('Workflow completed', {
+    unifiedLogger.info('Workflow completed', {
+      service: 'orchestratorService',
+      source: 'completeWorkflow',
       workflowId,
       duration: workflow.duration,
       bookmarkCount: workflow.bookmarkIds.length,
+      type: workflow.type,
+      agentsExecuted: workflow.agents.length
     });
     
     // Emit completion event
@@ -321,9 +360,13 @@ class OrchestratorService extends EventEmitter {
     workflow.duration = workflow.endTime - workflow.startTime;
     workflow.failureReason = reason;
     
-    logError(new Error(reason), {
-      context: 'Workflow failed',
+    unifiedLogger.error('Workflow failed', {
+      service: 'orchestratorService',
+      source: 'failWorkflow',
+      error: reason,
       workflowId,
+      type: workflow.type,
+      duration: workflow.duration
     });
     
     this.emit('workflow:failed', {
@@ -395,6 +438,12 @@ class OrchestratorService extends EventEmitter {
    * Perform health check on all agents
    */
   async performHealthCheck() {
+    const startTime = Date.now();
+    unifiedLogger.debug('Performing health check', {
+      service: 'orchestratorService',
+      source: 'performHealthCheck'
+    });
+
     const health = {
       agents: {},
       workflows: {
@@ -492,15 +541,21 @@ class OrchestratorService extends EventEmitter {
         }
       }
       
-      logInfo('Workflow results persisted', {
+      unifiedLogger.info('Workflow results persisted', {
+        service: 'orchestratorService',
+        source: 'persistWorkflowResults',
         workflowId: workflow.id,
         bookmarkCount: Object.keys(workflow.results).length,
+        updatedBookmarks: Object.keys(workflow.results).length
       });
       
     } catch (error) {
-      logError(error, { 
-        context: 'Failed to persist workflow results',
-        workflowId: workflow.id,
+      unifiedLogger.error('Failed to persist workflow results', {
+        service: 'orchestratorService',
+        source: 'persistWorkflowResults',
+        error: error.message,
+        stack: error.stack,
+        workflowId: workflow.id
       });
     }
   }
@@ -545,7 +600,11 @@ class OrchestratorService extends EventEmitter {
     const queue = this.queues[agentType];
     if (queue) {
       await queue.pause();
-      logInfo(`Agent ${agentType} paused`);
+      unifiedLogger.info('Agent paused', {
+        service: 'orchestratorService',
+        source: 'pauseAgent',
+        agentType
+      });
     }
   }
 
@@ -553,7 +612,11 @@ class OrchestratorService extends EventEmitter {
     const queue = this.queues[agentType];
     if (queue) {
       await queue.resume();
-      logInfo(`Agent ${agentType} resumed`);
+      unifiedLogger.info('Agent resumed', {
+        service: 'orchestratorService',
+        source: 'resumeAgent',
+        agentType
+      });
     }
   }
 
@@ -561,10 +624,28 @@ class OrchestratorService extends EventEmitter {
    * Clean up completed jobs
    */
   async cleanup() {
+    const startTime = Date.now();
+    unifiedLogger.info('Starting cleanup', {
+      service: 'orchestratorService',
+      source: 'cleanup',
+      queueCount: Object.keys(this.queues).length
+    });
+
     for (const [agentType, queue] of Object.entries(this.queues)) {
-      await queue.clean(3600000); // Clean jobs older than 1 hour
-      logInfo(`Cleaned up ${agentType} queue`);
+      const removed = await queue.clean(3600000); // Clean jobs older than 1 hour
+      unifiedLogger.debug('Cleaned up queue', {
+        service: 'orchestratorService',
+        source: 'cleanup',
+        agentType,
+        removedCount: removed.length
+      });
     }
+
+    unifiedLogger.info('Cleanup completed', {
+      service: 'orchestratorService',
+      source: 'cleanup',
+      duration: Date.now() - startTime
+    });
   }
 }
 

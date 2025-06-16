@@ -4,6 +4,7 @@ import { AuthProvider } from './contexts/AuthContext'
 import { SocketProvider } from './contexts/SocketContext'
 import Layout from './components/Layout'
 import PrivateRoute from './components/PrivateRoute'
+import './utils/debugWebSocket' // Load debug utility
 
 // Pages
 import Login from './pages/Login'

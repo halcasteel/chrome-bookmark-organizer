@@ -1,6 +1,6 @@
 import express from 'express';
 import db from '../config/database.js';
-import { logInfo, logError } from '../utils/logger.js';
+import unifiedLogger from '../services/unifiedLogger.js';
 
 const router = express.Router();
 
@@ -10,6 +10,11 @@ const router = express.Router();
  */
 router.get('/', async (req, res) => {
   try {
+    unifiedLogger.info('Fetching user tags', {
+      service: 'api',
+      source: 'GET /tags',
+      userId: req.user.userId
+    });
     const result = await db.query(
       `SELECT t.*, COUNT(bt.bookmark_id) as usage_count
        FROM tags t
@@ -20,9 +25,20 @@ router.get('/', async (req, res) => {
       [req.user.userId]
     );
     
+    unifiedLogger.info('Tags retrieved successfully', {
+      service: 'api',
+      source: 'GET /tags',
+      userId: req.user.userId,
+      tagCount: result.rows.length
+    });
+    
     res.json({ tags: result.rows });
   } catch (error) {
-    logError(error, { context: 'GET /api/tags' });
+    unifiedLogger.error('Failed to fetch tags', error, {
+      service: 'api',
+      source: 'GET /tags',
+      userId: req.user.userId
+    });
     res.status(500).json({ error: 'Failed to fetch tags' });
   }
 });
@@ -35,7 +51,19 @@ router.post('/', async (req, res) => {
   try {
     const { name } = req.body;
     
+    unifiedLogger.info('Creating new tag', {
+      service: 'api',
+      source: 'POST /tags',
+      userId: req.user.userId,
+      tagName: name
+    });
+    
     if (!name) {
+      unifiedLogger.warn('Tag creation failed - missing name', {
+        service: 'api',
+        source: 'POST /tags',
+        userId: req.user.userId
+      });
       return res.status(400).json({ error: 'Tag name is required' });
     }
     
@@ -47,9 +75,22 @@ router.post('/', async (req, res) => {
       [name.toLowerCase(), req.user.userId]
     );
     
+    unifiedLogger.info('Tag created successfully', {
+      service: 'api',
+      source: 'POST /tags',
+      userId: req.user.userId,
+      tagId: result.rows[0].id,
+      tagName: result.rows[0].name
+    });
+    
     res.status(201).json(result.rows[0]);
   } catch (error) {
-    logError(error, { context: 'POST /api/tags' });
+    unifiedLogger.error('Failed to create tag', error, {
+      service: 'api',
+      source: 'POST /tags',
+      userId: req.user.userId,
+      tagName: req.body.name
+    });
     res.status(500).json({ error: 'Failed to create tag' });
   }
 });
@@ -60,18 +101,44 @@ router.post('/', async (req, res) => {
  */
 router.delete('/:id', async (req, res) => {
   try {
+    const tagId = req.params.id;
+    
+    unifiedLogger.info('Deleting tag', {
+      service: 'api',
+      source: 'DELETE /tags/:id',
+      userId: req.user.userId,
+      tagId
+    });
     const result = await db.query(
       'DELETE FROM tags WHERE id = $1 AND user_id = $2 RETURNING id',
-      [req.params.id, req.user.userId]
+      [tagId, req.user.userId]
     );
     
     if (result.rows.length === 0) {
+      unifiedLogger.warn('Tag deletion failed - not found', {
+        service: 'api',
+        source: 'DELETE /tags/:id',
+        userId: req.user.userId,
+        tagId
+      });
       return res.status(404).json({ error: 'Tag not found' });
     }
     
+    unifiedLogger.info('Tag deleted successfully', {
+      service: 'api',
+      source: 'DELETE /tags/:id',
+      userId: req.user.userId,
+      tagId
+    });
+    
     res.json({ message: 'Tag deleted successfully' });
   } catch (error) {
-    logError(error, { context: 'DELETE /api/tags/:id' });
+    unifiedLogger.error('Failed to delete tag', error, {
+      service: 'api',
+      source: 'DELETE /tags/:id',
+      userId: req.user.userId,
+      tagId: req.params.id
+    });
     res.status(500).json({ error: 'Failed to delete tag' });
   }
 });

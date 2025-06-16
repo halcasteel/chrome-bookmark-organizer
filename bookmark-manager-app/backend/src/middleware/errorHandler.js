@@ -1,4 +1,4 @@
-import { logError } from '../utils/logger.js';
+import unifiedLogger from '../services/unifiedLogger.js';
 
 /**
  * Custom error class for application errors
@@ -20,17 +20,32 @@ export class AppError extends Error {
  * @param {Function} next - Express next function
  */
 export const errorHandler = (err, req, res, next) => {
+  unifiedLogger.info('Error handler middleware invoked', {
+    service: 'middleware',
+    method: 'errorHandler',
+    url: req.originalUrl,
+    method: req.method,
+    errorName: err.name,
+    statusCode: err.statusCode
+  });
+  
   // Default error values
   let statusCode = err.statusCode || 500;
   let message = err.message || 'Internal Server Error';
   
   // Log the error
-  logError(err, {
+  unifiedLogger.error('Request error occurred', {
+    service: 'middleware',
+    method: 'errorHandler',
     url: req.originalUrl,
-    method: req.method,
+    httpMethod: req.method,
     ip: req.ip,
     userId: req.user?.userId,
     statusCode,
+    errorName: err.name,
+    errorMessage: err.message,
+    error: err.message,
+    stack: err.stack
   });
   
   // Specific error handling
@@ -52,7 +67,7 @@ export const errorHandler = (err, req, res, next) => {
   }
   
   // Send error response
-  res.status(statusCode).json({
+  const errorResponse = {
     error: {
       message,
       status: statusCode,
@@ -62,13 +77,31 @@ export const errorHandler = (err, req, res, next) => {
       }),
     },
     timestamp: new Date().toISOString(),
+  };
+  
+  unifiedLogger.info('Sending error response', {
+    service: 'middleware',
+    method: 'errorHandler',
+    statusCode,
+    message,
+    url: req.originalUrl
   });
+  
+  res.status(statusCode).json(errorResponse);
 };
 
 /**
  * Handle 404 errors
  */
 export const notFoundHandler = (req, res, next) => {
+  unifiedLogger.warn('Route not found', {
+    service: 'middleware',
+    method: 'notFoundHandler',
+    url: req.originalUrl,
+    method: req.method,
+    ip: req.ip
+  });
+  
   const error = new AppError(`Route ${req.originalUrl} not found`, 404);
   next(error);
 };
@@ -79,5 +112,15 @@ export const notFoundHandler = (req, res, next) => {
  * @returns {Function} Express middleware function
  */
 export const asyncHandler = (fn) => (req, res, next) => {
-  Promise.resolve(fn(req, res, next)).catch(next);
+  Promise.resolve(fn(req, res, next)).catch((error) => {
+    unifiedLogger.error('Async handler caught error', {
+      service: 'middleware',
+      method: 'asyncHandler',
+      url: req.originalUrl,
+      httpMethod: req.method,
+      error: error.message,
+      stack: error.stack
+    });
+    next(error);
+  });
 };

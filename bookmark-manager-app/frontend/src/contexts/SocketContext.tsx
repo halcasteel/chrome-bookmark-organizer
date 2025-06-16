@@ -67,6 +67,19 @@ export const SocketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     newSocket.on('connect_error', (error) => {
       console.error('WebSocket connection error:', error.message)
       console.error('Error type:', error.type)
+      console.error('Full error:', error)
+      
+      // Check if it's an auth error
+      if (error.message.includes('Authentication') || error.message.includes('token')) {
+        console.error('Authentication issue detected. Token:', token?.substring(0, 20) + '...')
+        toast({
+          title: 'WebSocket Connection Failed',
+          description: 'Authentication error. Please try logging in again.',
+          status: 'error',
+          duration: 5000,
+          isClosable: true,
+        })
+      }
     })
 
     // Import progress updates

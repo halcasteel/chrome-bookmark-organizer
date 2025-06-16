@@ -6,6 +6,7 @@ import QRCode from 'qrcode';
 import { query } from '../db/index.js';
 import { requireAz1Email } from '../middleware/auth.js';
 import Joi from 'joi';
+import unifiedLogger from '../services/unifiedLogger.js';
 
 const router = express.Router();
 
@@ -74,7 +75,12 @@ router.post('/register', requireAz1Email, async (req, res) => {
       },
     });
   } catch (error) {
-    console.error('Registration error:', error);
+    unifiedLogger.error('Registration error', {
+      service: 'auth',
+      source: 'register',
+      error: error.message,
+      stack: error.stack
+    });
     res.status(500).json({ error: 'Registration failed' });
   }
 });
@@ -122,17 +128,40 @@ router.post('/enable-2fa', requireAz1Email, async (req, res) => {
 
     res.json({ message: '2FA enabled successfully' });
   } catch (error) {
-    console.error('2FA enable error:', error);
+    unifiedLogger.error('2FA enable error', {
+      service: 'auth',
+      source: 'enable-2fa',
+      error: error.message,
+      stack: error.stack
+    });
     res.status(500).json({ error: 'Failed to enable 2FA' });
   }
 });
 
 // Login
 router.post('/login', async (req, res) => {
+  const requestId = req.id || `login-${Date.now()}`;
+  
   try {
+    unifiedLogger.info('Login attempt started', {
+      service: 'auth',
+      source: 'login',
+      requestId,
+      email: req.body.email,
+      ip: req.ip,
+      userAgent: req.get('user-agent')
+    });
+
     // Validate input
     const { error, value } = loginSchema.validate(req.body);
     if (error) {
+      unifiedLogger.warn('Login validation failed', {
+        service: 'auth',
+        source: 'login-validation',
+        requestId,
+        email: req.body.email,
+        error: error.details[0].message
+      });
       return res.status(400).json({ error: error.details[0].message });
     }
 
@@ -143,10 +172,24 @@ router.post('/login', async (req, res) => {
 
     // Check email domain
     if (!email.endsWith('@az1.ai')) {
+      unifiedLogger.warn('Login denied - invalid email domain', {
+        service: 'auth',
+        source: 'login-domain-check',
+        requestId,
+        email,
+        domain: email.split('@')[1]
+      });
       return res.status(403).json({ 
         error: 'Access restricted to @az1.ai email addresses only' 
       });
     }
+
+    unifiedLogger.debug('Fetching user from database', {
+      service: 'auth',
+      source: 'login-user-lookup',
+      requestId,
+      email
+    });
 
     // Get user
     const userResult = await query(
@@ -158,22 +201,57 @@ router.post('/login', async (req, res) => {
 
 
     if (userResult.rows.length === 0) {
+      unifiedLogger.warn('Login failed - user not found', {
+        service: 'auth',
+        source: 'login-user-not-found',
+        requestId,
+        email
+      });
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
     const user = userResult.rows[0];
+    
+    unifiedLogger.debug('Verifying password', {
+      service: 'auth',
+      source: 'login-password-check',
+      requestId,
+      userId: user.id,
+      email: user.email
+    });
 
     // Verify password
     const validPassword = await bcrypt.compare(password, user.password_hash);
     
     if (!validPassword) {
+      unifiedLogger.warn('Login failed - invalid password', {
+        service: 'auth',
+        source: 'login-password-failed',
+        requestId,
+        userId: user.id,
+        email: user.email
+      });
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
     // Check if 2FA is enabled for this user
     if (user.two_factor_enabled) {
+      unifiedLogger.debug('2FA enabled for user', {
+        service: 'auth',
+        source: 'login-2fa-check',
+        requestId,
+        userId: user.id,
+        has2FACode: !!trimmedTwoFactorCode
+      });
+      
       // If 2FA is enabled, verify the code
       if (!trimmedTwoFactorCode) {
+        unifiedLogger.info('Login requires 2FA code', {
+          service: 'auth',
+          source: 'login-2fa-required',
+          requestId,
+          userId: user.id
+        });
         return res.status(400).json({ 
           error: '2FA code required',
           requires2FA: true 
@@ -188,8 +266,22 @@ router.post('/login', async (req, res) => {
       });
 
       if (!verified) {
+        unifiedLogger.warn('Invalid 2FA code provided', {
+          service: 'auth',
+          source: 'login-2fa-failed',
+          requestId,
+          userId: user.id,
+          codeLength: trimmedTwoFactorCode.length
+        });
         return res.status(401).json({ error: 'Invalid 2FA code' });
       }
+
+      unifiedLogger.info('2FA verification successful', {
+        service: 'auth',
+        source: 'login-2fa-success',
+        requestId,
+        userId: user.id
+      });
 
       // Update last login with 2FA verified
       await query(
@@ -204,6 +296,16 @@ router.post('/login', async (req, res) => {
       );
     }
 
+    unifiedLogger.info('Generating JWT token', {
+      service: 'auth',
+      source: 'login-token-generation',
+      requestId,
+      userId: user.id,
+      email: user.email,
+      role: user.role,
+      twoFactorEnabled: user.two_factor_enabled
+    });
+
     // Generate JWT token
     const token = jwt.sign(
       { 
@@ -216,6 +318,16 @@ router.post('/login', async (req, res) => {
       { expiresIn: '24h' }
     );
 
+    unifiedLogger.info('Login successful', {
+      service: 'auth',
+      source: 'login-success',
+      requestId,
+      userId: user.id,
+      email: user.email,
+      role: user.role,
+      tokenExpiry: '24h'
+    });
+
     res.json({
       token,
       user: {
@@ -226,12 +338,27 @@ router.post('/login', async (req, res) => {
       },
     });
   } catch (error) {
-    console.error('Login error:', error);
+    unifiedLogger.error('Login error', {
+      service: 'auth',
+      source: 'login-error',
+      requestId,
+      email: req.body?.email,
+      error: error.message,
+      stack: error.stack
+    });
     res.status(500).json({ error: 'Login failed' });
   }
 });
 
 // Get current user
+// Check auth status
+router.get('/status', (req, res) => {
+  res.json({ 
+    authenticated: false,
+    message: 'Authentication endpoint active'
+  });
+});
+
 router.get('/me', async (req, res) => {
   try {
     const token = req.headers.authorization?.replace('Bearer ', '');

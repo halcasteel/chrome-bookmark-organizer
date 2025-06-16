@@ -1,5 +1,5 @@
 import Queue from 'bull';
-import { logInfo, logError } from '../utils/logger.js';
+import unifiedLogger from '../services/unifiedLogger.js';
 import db from '../config/database.js';
 import validationService from '../services/validationService.js';
 import dotenv from 'dotenv';
@@ -26,7 +26,13 @@ const enrichmentQueue = new Queue('bookmark-enrichment', {
 validationQueue.process('validate', async (job) => {
   const { bookmarkId, userId, importId } = job.data;
   
-  logInfo('Starting bookmark validation', { bookmarkId });
+  unifiedLogger.info('Starting bookmark validation job', {
+    service: 'validationWorker',
+    method: 'validate',
+    bookmarkId,
+    userId,
+    importId
+  });
   
   try {
     // Use the validation service for consistent validation logic
@@ -50,54 +56,93 @@ validationQueue.process('validate', async (job) => {
       });
     }
     
-    logInfo('Bookmark validation completed', { 
-      bookmarkId, 
-      isValid: result.is_valid,
-      enriched: result.enriched
-    });
-    
-    return { 
+    const jobResult = { 
       bookmarkId, 
       isValid: result.is_valid, 
       enriched: result.enriched 
     };
     
+    unifiedLogger.info('Bookmark validation completed successfully', {
+      service: 'validationWorker',
+      method: 'validate',
+      bookmarkId,
+      isValid: result.is_valid,
+      enriched: result.enriched,
+      queuedForEnrichment: result.is_valid && !result.enriched && process.env.OPENAI_CATEGORIZATION_ENABLED === 'true'
+    });
+    
+    return jobResult;
+    
   } catch (error) {
-    logError(error, { context: 'ValidationWorker', bookmarkId });
+    unifiedLogger.error('Validation job failed', {
+      service: 'validationWorker',
+      method: 'validate',
+      bookmarkId,
+      userId,
+      importId,
+      error: error.message,
+      stack: error.stack
+    });
     throw error;
   }
 });
 
 // Process batch validation jobs
 validationQueue.process('validateBatch', async (job) => {
-  logInfo('Processing validation batch');
+  unifiedLogger.info('Processing validation batch job', {
+    service: 'validationWorker',
+    method: 'validateBatch',
+    jobId: job.id
+  });
   
   try {
     const results = await validationService.processValidationQueue();
     
-    logInfo('Validation batch completed', results);
+    unifiedLogger.info('Validation batch completed successfully', {
+      service: 'validationWorker',
+      method: 'validateBatch',
+      processed: results.processed || 0,
+      successful: results.successful || 0,
+      failed: results.failed || 0
+    });
     
     return results;
   } catch (error) {
-    logError(error, { context: 'Validation batch failed' });
+    unifiedLogger.error('Validation batch job failed', {
+      service: 'validationWorker',
+      method: 'validateBatch',
+      jobId: job.id,
+      error: error.message,
+      stack: error.stack
+    });
     throw error;
   }
 });
 
 // Handle completed jobs
 validationQueue.on('completed', (job, result) => {
-  logInfo('Validation job completed', { 
-    jobId: job.id, 
-    bookmarkId: result.bookmarkId 
+  unifiedLogger.info('Validation job completed successfully', {
+    service: 'validationWorker',
+    method: 'onCompleted',
+    jobId: job.id,
+    jobType: job.name,
+    bookmarkId: result.bookmarkId,
+    isValid: result.isValid
   });
 });
 
 // Handle failed jobs
 validationQueue.on('failed', (job, err) => {
-  logError(err, { 
-    context: 'Validation job failed', 
+  unifiedLogger.error('Validation job failed', {
+    service: 'validationWorker',
+    method: 'onFailed',
     jobId: job.id,
-    bookmarkId: job.data.bookmarkId 
+    jobType: job.name,
+    bookmarkId: job.data.bookmarkId,
+    userId: job.data.userId,
+    attempts: job.attemptsMade,
+    error: err.message,
+    stack: err.stack
   });
 });
 

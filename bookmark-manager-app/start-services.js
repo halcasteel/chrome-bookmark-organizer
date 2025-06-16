@@ -449,7 +449,7 @@ async function startBackend() {
     return true;
   }
   
-  const backendPath = path.join(__dirname, '..');
+  const backendPath = path.join(__dirname, 'backend');
   await log.initLogFile('backend', path.join(config.logDir, 'backend.log'));
   
   const env = {
@@ -517,7 +517,7 @@ async function startFrontend() {
     return true;
   }
   
-  const frontendPath = path.join(__dirname, '../../frontend');
+  const frontendPath = path.join(__dirname, 'frontend');
   await log.initLogFile('frontend', path.join(config.logDir, 'frontend.log'));
   
   const env = {

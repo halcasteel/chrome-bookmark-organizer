@@ -1,6 +1,6 @@
 import express from 'express';
 import { query } from '../db/index.js';
-import { logError } from '../utils/logger.js';
+import unifiedLogger from '../services/unifiedLogger.js';
 
 const router = express.Router();
 
@@ -11,6 +11,12 @@ const router = express.Router();
 router.get('/dashboard', async (req, res) => {
   try {
     const userId = req.user.id;
+    
+    unifiedLogger.info('Fetching dashboard statistics', {
+      service: 'api',
+      source: 'GET /stats/dashboard',
+      userId
+    });
     
     // Get total bookmarks
     const bookmarksResult = await query(
@@ -48,7 +54,7 @@ router.get('/dashboard', async (req, res) => {
       [userId]
     );
     
-    res.json({
+    const stats = {
       totalBookmarks: parseInt(bookmarksResult.rows[0]?.total || 0),
       totalCollections: parseInt(collectionsResult.rows[0]?.total || 0),
       totalTags: parseInt(tagsResult.rows[0]?.total || 0),
@@ -56,9 +62,26 @@ router.get('/dashboard', async (req, res) => {
       domainStats: domainStatsResult.rows,
       bookmarkChange: 0, // TODO: Calculate percentage change
       recentActivity: [] // TODO: Add activity tracking
+    };
+    
+    unifiedLogger.info('Dashboard stats retrieved successfully', {
+      service: 'api',
+      source: 'GET /stats/dashboard',
+      userId,
+      totalBookmarks: stats.totalBookmarks,
+      totalCollections: stats.totalCollections,
+      totalTags: stats.totalTags,
+      recentImports: stats.recentImports,
+      topDomainsCount: stats.domainStats.length
     });
+    
+    res.json(stats);
   } catch (error) {
-    logError(error, { context: 'GET /api/stats/dashboard', userId: req.user.id });
+    unifiedLogger.error('Failed to fetch dashboard stats', error, {
+      service: 'api',
+      source: 'GET /stats/dashboard',
+      userId: req.user.id
+    });
     res.status(500).json({ error: 'Failed to fetch dashboard stats' });
   }
 });

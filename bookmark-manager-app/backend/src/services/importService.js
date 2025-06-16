@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
 import db from '../config/database.js';
-import { logInfo, logError, logWarn, logDebug } from '../utils/logger.js';
+import unifiedLogger from './unifiedLogger.js';
 import BookmarkProcessor from './bookmarkProcessor.js';
 
 /**
@@ -17,8 +17,15 @@ class ImportService {
    * @returns {Promise<Object>} Import result
    */
   async importFromFile(userId, filePath) {
-    logInfo('Starting bookmark import', { userId, filePath });
+    unifiedLogger.debug('ImportService.importFromFile method entry', {
+      service: 'import',
+      source: 'importFromFile',
+      userId,
+      filePath,
+      fileName: path.basename(filePath)
+    });
     
+    const startTime = Date.now();
     let importId;
     try {
       // Create import history record
@@ -39,7 +46,14 @@ class ImportService {
         [bookmarks.length, importId]
       );
 
-      logInfo('Parsed bookmarks from HTML', { count: bookmarks.length });
+      unifiedLogger.info('Successfully parsed bookmarks from HTML', {
+        service: 'import',
+        source: 'importFromFile',
+        userId,
+        importId,
+        bookmarkCount: bookmarks.length,
+        parseTime: Date.now() - startTime
+      });
 
       // Use BookmarkProcessor for validation and classification
       const processor = new BookmarkProcessor();
@@ -54,12 +68,33 @@ class ImportService {
           ['completed', processingReport.processedCount, new Date(), importId]
         );
         
-        logInfo('Import completed', {
+        const duration = Date.now() - startTime;
+        
+        unifiedLogger.info('Import completed successfully', {
+          service: 'import',
+          source: 'importFromFile',
+          userId,
           importId,
-          total: processingReport.totalBookmarks,
-          processed: processingReport.processedCount,
-          failed: processingReport.failedCount,
+          performance: {
+            duration: `${duration}ms`,
+            bookmarksPerSecond: Math.round((processingReport.processedCount / duration) * 1000)
+          },
+          results: {
+            total: processingReport.totalBookmarks,
+            processed: processingReport.processedCount,
+            failed: processingReport.failedCount,
+            duplicates: 0
+          }
         });
+        
+        // Log performance metrics if operation was slow
+        if (duration > 5000) {
+          unifiedLogger.logPerformance('bookmark-import', duration, {
+            service: 'import',
+            userId,
+            bookmarkCount: processingReport.totalBookmarks
+          });
+        }
         
         return {
           importId,
@@ -74,7 +109,14 @@ class ImportService {
       }
 
     } catch (error) {
-      logError(error, { context: 'ImportService.importFromFile', userId, filePath });
+      unifiedLogger.error('Import failed', error, {
+        service: 'import',
+        source: 'importFromFile',
+        userId,
+        filePath,
+        importId,
+        duration: Date.now() - startTime
+      });
       
       // Update import history on error
       if (importId) {
@@ -94,6 +136,13 @@ class ImportService {
    * @returns {Array} Parsed bookmarks
    */
   parseBookmarksHtml(html) {
+    unifiedLogger.debug('Starting HTML bookmark parsing', {
+      service: 'import',
+      source: 'parseBookmarksHtml',
+      htmlLength: html.length
+    });
+    
+    const parseStartTime = Date.now();
     const bookmarks = [];
     const linkRegex = /<A\s+[^>]*HREF="([^"]+)"[^>]*>([^<]+)<\/A>/gi;
     const addDateRegex = /ADD_DATE="(\d+)"/i;
@@ -117,7 +166,18 @@ class ImportService {
       });
     }
     
-    logDebug('Parsed bookmarks from HTML', { count: bookmarks.length });
+    const parseTime = Date.now() - parseStartTime;
+    
+    unifiedLogger.debug('HTML parsing completed', {
+      service: 'import',
+      source: 'parseBookmarksHtml',
+      bookmarkCount: bookmarks.length,
+      parseTime: `${parseTime}ms`,
+      performance: {
+        bookmarksPerSecond: Math.round((bookmarks.length / parseTime) * 1000)
+      }
+    });
+    
     return bookmarks;
   }
 
@@ -130,7 +190,13 @@ class ImportService {
    * @deprecated Use BookmarkProcessor instead
    */
   async processBookmarks(userId, bookmarks, importId) {
-    logWarn('Using legacy bookmark processing', { userId, count: bookmarks.length });
+    unifiedLogger.warn('Using deprecated legacy bookmark processing method', {
+      service: 'import',
+      source: 'processBookmarks',
+      userId,
+      importId,
+      bookmarkCount: bookmarks.length
+    });
     
     let imported = 0;
     let duplicates = 0;
@@ -180,10 +246,20 @@ class ImportService {
         imported++;
         
         if (imported % 100 === 0) {
-          logInfo('Import progress', {
-            imported,
-            total,
-            percentage: Math.round((imported / total) * 100),
+          const progress = Math.round((imported / total) * 100);
+          
+          unifiedLogger.info('Import progress update', {
+            service: 'import',
+            source: 'processBookmarks',
+            userId,
+            importId,
+            progress: {
+              imported,
+              total,
+              percentage: progress,
+              duplicates,
+              failed
+            }
           });
           
           await db.query(
@@ -193,20 +269,37 @@ class ImportService {
         }
 
       } catch (error) {
-        logError(error, {
-          context: 'ImportService.processBookmarks',
-          url: bookmark.url,
-          title: bookmark.title,
+        unifiedLogger.error('Failed to process bookmark', error, {
+          service: 'import',
+          source: 'processBookmarks',
+          userId,
+          importId,
+          bookmark: {
+            url: bookmark.url,
+            title: bookmark.title
+          },
+          progress: {
+            imported,
+            failed: failed + 1,
+            total
+          }
         });
         failed++;
       }
     }
 
-    logInfo('Legacy import complete', {
-      imported,
-      duplicates,
-      failed,
-      total,
+    unifiedLogger.info('Legacy import process completed', {
+      service: 'import',
+      source: 'processBookmarks',
+      userId,
+      importId,
+      results: {
+        total,
+        imported,
+        duplicates,
+        failed,
+        successRate: `${Math.round((imported / total) * 100)}%`
+      }
     });
     
     return {
@@ -223,6 +316,12 @@ class ImportService {
    * @returns {Promise<Array>} Import history records
    */
   async getImportHistory(userId) {
+    unifiedLogger.debug('Retrieving import history', {
+      service: 'import',
+      source: 'getImportHistory',
+      userId
+    });
+    
     const result = await db.query(
       `SELECT id, filename, status, total_count as total_bookmarks, 
               processed_count as new_bookmarks, 
@@ -234,6 +333,13 @@ class ImportService {
       [userId]
     );
 
+    unifiedLogger.debug('Import history retrieved', {
+      service: 'import',
+      source: 'getImportHistory',
+      userId,
+      recordCount: result.rows.length
+    });
+    
     return result.rows;
   }
 
@@ -243,6 +349,12 @@ class ImportService {
    * @returns {Promise<Object>} Import status
    */
   async getImportStatus(importId) {
+    unifiedLogger.debug('Retrieving import status', {
+      service: 'import',
+      source: 'getImportStatus',
+      importId
+    });
+    
     const result = await db.query(
       `SELECT id, file_name, status, total_count, processed_count,
               created_at, completed_at
@@ -251,7 +363,17 @@ class ImportService {
       [importId]
     );
 
-    return result.rows[0] || null;
+    const status = result.rows[0] || null;
+    
+    unifiedLogger.debug('Import status retrieved', {
+      service: 'import',
+      source: 'getImportStatus',
+      importId,
+      found: !!status,
+      status: status?.status
+    });
+    
+    return status;
   }
 }
 

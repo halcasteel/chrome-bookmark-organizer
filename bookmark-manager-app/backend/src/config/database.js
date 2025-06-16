@@ -1,6 +1,6 @@
 import pg from 'pg';
 import dotenv from 'dotenv';
-import { logInfo, logError } from '../utils/logger.js';
+import unifiedLogger from '../services/unifiedLogger.js';
 
 dotenv.config();
 
@@ -18,11 +18,11 @@ const pool = new Pool({
 
 // Log pool events
 pool.on('connect', () => {
-  logInfo('Database pool: client connected');
+  unifiedLogger.info('Database pool: client connected');
 });
 
 pool.on('error', (err) => {
-  logError(err, { context: 'Database pool error' });
+  unifiedLogger.error('Database pool error', { error: err.message, stack: err.stack });
 });
 
 /**
@@ -39,7 +39,7 @@ export const query = async (text, params) => {
     
     // Log slow queries
     if (duration > 1000) {
-      logInfo('Slow query detected', {
+      unifiedLogger.info('Slow query detected', {
         query: text,
         duration,
         rows: res.rowCount,
@@ -48,8 +48,9 @@ export const query = async (text, params) => {
     
     return res;
   } catch (error) {
-    logError(error, {
-      context: 'Database query error',
+    unifiedLogger.error('Database query error', {
+      error: error.message,
+      stack: error.stack,
       query: text,
       params,
     });
@@ -68,7 +69,10 @@ export const getClient = async () => {
   
   // Set a timeout of 5 seconds, after which we will log this client's last query
   const timeout = setTimeout(() => {
-    console.error('A client has been checked out for more than 5 seconds!');
+    unifiedLogger.error('A client has been checked out for more than 5 seconds!', {
+      service: 'database',
+      source: 'client-timeout'
+    });
   }, 5000);
   
   // Monkey patch the query method to keep track of the last query executed

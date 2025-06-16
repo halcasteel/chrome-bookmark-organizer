@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 import Bull from 'bull';
-import { logInfo, logError } from '../utils/logger.js';
+import unifiedLogger from '../services/unifiedLogger.js';
 import orchestratorService from '../services/orchestratorService.js';
 import validationAgent from '../agents/validationAgent.js';
 import enrichmentAgent from '../agents/enrichmentAgent.js';
@@ -24,12 +24,18 @@ const workers = new Map();
  * Start all autonomous agents
  */
 async function startWorkers() {
-  logInfo('Starting autonomous agents and orchestrator...');
+  unifiedLogger.info('Starting autonomous agents and orchestrator', {
+    service: 'workers',
+    method: 'startWorkers'
+  });
   
   try {
     // Initialize WebSocket service if needed
     if (!websocketService.io) {
-      logInfo('WebSocket service not initialized, skipping real-time updates');
+      unifiedLogger.warn('WebSocket service not initialized, skipping real-time updates', {
+        service: 'workers',
+        method: 'startWorkers'
+      });
     }
     
     // Start validation agent
@@ -38,7 +44,12 @@ async function startWorkers() {
       return await validationAgent.process(job);
     });
     workers.set('validation', validationWorker);
-    logInfo('Validation agent started');
+    unifiedLogger.info('Validation agent started successfully', {
+      service: 'workers',
+      method: 'startWorkers',
+      agent: 'validation',
+      concurrency: 5
+    });
     
     // Start enrichment agent
     const enrichmentWorker = new Bull('bookmark-enrichment', redisConfig);
@@ -46,7 +57,12 @@ async function startWorkers() {
       return await enrichmentAgent.process(job);
     });
     workers.set('enrichment', enrichmentWorker);
-    logInfo('Enrichment agent started');
+    unifiedLogger.info('Enrichment agent started successfully', {
+      service: 'workers',
+      method: 'startWorkers',
+      agent: 'enrichment',
+      concurrency: 3
+    });
     
     // Start categorization agent (placeholder for now)
     const categorizationWorker = new Bull('bookmark-categorization', redisConfig);
@@ -55,7 +71,12 @@ async function startWorkers() {
       return { bookmarkId: job.data.bookmarkId, categorized: true };
     });
     workers.set('categorization', categorizationWorker);
-    logInfo('Categorization agent started');
+    unifiedLogger.info('Categorization agent started successfully', {
+      service: 'workers',
+      method: 'startWorkers',
+      agent: 'categorization',
+      concurrency: 5
+    });
     
     // Start embedding agent (placeholder for now)
     const embeddingWorker = new Bull('bookmark-embedding', redisConfig);
@@ -64,7 +85,12 @@ async function startWorkers() {
       return { bookmarkId: job.data.bookmarkId, embedded: true };
     });
     workers.set('embedding', embeddingWorker);
-    logInfo('Embedding agent started');
+    unifiedLogger.info('Embedding agent started successfully', {
+      service: 'workers',
+      method: 'startWorkers',
+      agent: 'embedding',
+      concurrency: 3
+    });
     
     // Start screenshot agent (placeholder for now)
     const screenshotWorker = new Bull('bookmark-screenshot', redisConfig);
@@ -73,23 +99,49 @@ async function startWorkers() {
       return { bookmarkId: job.data.bookmarkId, screenshot: false };
     });
     workers.set('screenshot', screenshotWorker);
-    logInfo('Screenshot agent started');
+    unifiedLogger.info('Screenshot agent started successfully', {
+      service: 'workers',
+      method: 'startWorkers',
+      agent: 'screenshot',
+      concurrency: 2
+    });
     
     // Log orchestrator status
-    logInfo('All autonomous agents started successfully');
+    unifiedLogger.info('All autonomous agents started successfully', {
+      service: 'workers',
+      method: 'startWorkers',
+      totalAgents: workers.size,
+      agents: Array.from(workers.keys())
+    });
     
     // Set up periodic orchestrator health checks
     setInterval(async () => {
-      const health = await orchestratorService.performHealthCheck();
-      logInfo('Orchestrator health check', { 
-        agents: Object.keys(health.agents).length,
-        workflows: health.workflows.active,
-      });
+      try {
+        const health = await orchestratorService.performHealthCheck();
+        unifiedLogger.info('Orchestrator health check completed', {
+          service: 'workers',
+          method: 'healthCheck',
+          agentsCount: Object.keys(health.agents).length,
+          activeWorkflows: health.workflows.active,
+          status: 'healthy'
+        });
+      } catch (error) {
+        unifiedLogger.error('Orchestrator health check failed', {
+          service: 'workers',
+          method: 'healthCheck',
+          error: error.message,
+          stack: error.stack
+        });
+      }
     }, 60000); // Every minute
     
     // Handle graceful shutdown
     process.on('SIGTERM', async () => {
-      logInfo('SIGTERM received, shutting down agents...');
+      unifiedLogger.info('SIGTERM received, shutting down agents', {
+        service: 'workers',
+        method: 'shutdown',
+        activeAgents: workers.size
+      });
       
       // Clean up browser resources
       await validationAgent.cleanup();
@@ -97,19 +149,38 @@ async function startWorkers() {
       // Close all workers
       for (const [name, worker] of workers) {
         await worker.close();
-        logInfo(`${name} agent stopped`);
+        unifiedLogger.info('Agent stopped successfully', {
+          service: 'workers',
+          method: 'shutdown', 
+          agent: name
+        });
       }
+      
+      unifiedLogger.info('All agents shutdown complete', {
+        service: 'workers',
+        method: 'shutdown'
+      });
       
       process.exit(0);
     });
     
     // Handle uncaught errors
     process.on('unhandledRejection', (error) => {
-      logError(error, { context: 'Unhandled rejection in workers' });
+      unifiedLogger.error('Unhandled rejection in workers', {
+        service: 'workers',
+        method: 'unhandledRejection',
+        error: error.message,
+        stack: error.stack
+      });
     });
     
   } catch (error) {
-    logError(error, { context: 'Failed to start workers' });
+    unifiedLogger.error('Failed to start workers', {
+      service: 'workers',
+      method: 'startWorkers',
+      error: error.message,
+      stack: error.stack
+    });
     process.exit(1);
   }
 }

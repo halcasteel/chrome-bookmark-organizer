@@ -2,7 +2,7 @@ import { query } from '../db/index.js';
 import fetch from 'node-fetch';
 import * as cheerio from 'cheerio';
 import crypto from 'crypto';
-import logger from '../utils/logger.js';
+import unifiedLogger from './unifiedLogger.js';
 import openaiService from './openaiService.js';
 
 class ValidationService {
@@ -10,12 +10,27 @@ class ValidationService {
     this.timeout = parseInt(process.env.VALIDATION_TIMEOUT_MS) || 10000;
     this.maxRetries = parseInt(process.env.VALIDATION_MAX_RETRIES) || 3;
     this.batchSize = parseInt(process.env.VALIDATION_BATCH_SIZE) || 50;
+
+    unifiedLogger.info('ValidationService initialized', {
+      service: 'validationService',
+      source: 'constructor',
+      timeout: this.timeout,
+      maxRetries: this.maxRetries,
+      batchSize: this.batchSize
+    });
   }
 
   /**
    * Validate a single bookmark
    */
   async validateBookmark(bookmarkId) {
+    const startTime = Date.now();
+    unifiedLogger.debug('Starting bookmark validation', {
+      service: 'validationService',
+      source: 'validateBookmark',
+      bookmarkId
+    });
+
     try {
       // Get bookmark details
       const result = await query(
@@ -32,7 +47,12 @@ class ValidationService {
       // Skip if already validated recently (within 24 hours)
       if (bookmark.last_checked && 
           new Date() - new Date(bookmark.last_checked) < 24 * 60 * 60 * 1000) {
-        logger.info('Bookmark recently validated, skipping', { bookmarkId });
+        unifiedLogger.info('Bookmark recently validated, skipping', {
+          service: 'validationService',
+          source: 'validateBookmark',
+          bookmarkId,
+          lastChecked: bookmark.last_checked
+        });
         return bookmark;
       }
       
@@ -70,7 +90,9 @@ class ValidationService {
           });
         } else if (!content.text || content.text.length <= 50) {
           // Page loaded but has minimal content
-          logger.warn('Page has minimal content, skipping AI categorization', {
+          unifiedLogger.warn('Page has minimal content, skipping AI categorization', {
+            service: 'validationService',
+            source: 'validateBookmark',
             bookmarkId,
             url: bookmark.url,
             contentLength: content.text?.length || 0
@@ -118,12 +140,15 @@ class ValidationService {
           `, [bookmarkId, aiData.category, aiData.subcategory, aiData.priority || 'medium']);
         }
         
-        logger.info('Bookmark validated successfully', { 
-          bookmarkId, 
+        unifiedLogger.info('Bookmark validated successfully', {
+          service: 'validationService',
+          source: 'validateBookmark',
+          bookmarkId,
           url: bookmark.url,
           httpStatus: content.status,
           hasContent: content.text?.length > 50,
-          enriched: !!aiData.category 
+          enriched: !!aiData.category,
+          duration: Date.now() - startTime
         });
         
         return { ...bookmark, is_valid: true, enriched: !!aiData.category };
@@ -135,7 +160,13 @@ class ValidationService {
       }
       
     } catch (error) {
-      logger.error('Validation service error', { bookmarkId, error: error.message });
+      unifiedLogger.error('Validation service error', {
+        service: 'validationService',
+        source: 'validateBookmark',
+        error: error.message,
+        stack: error.stack,
+        bookmarkId
+      });
       throw error;
     }
   }
@@ -144,6 +175,14 @@ class ValidationService {
    * Fetch URL content with timeout
    */
   async fetchWithTimeout(url, timeout = this.timeout) {
+    const startTime = Date.now();
+    unifiedLogger.debug('Fetching URL with timeout', {
+      service: 'validationService',
+      source: 'fetchWithTimeout',
+      url,
+      timeout
+    });
+
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), timeout);
     
@@ -172,6 +211,14 @@ class ValidationService {
         .trim()
         .substring(0, 5000);
       
+      unifiedLogger.debug('URL fetched successfully', {
+        service: 'validationService',
+        source: 'fetchWithTimeout',
+        status: response.status,
+        contentLength: html.length,
+        duration: Date.now() - startTime
+      });
+
       return {
         status: response.status,
         html,
@@ -179,6 +226,14 @@ class ValidationService {
       };
     } catch (error) {
       clearTimeout(timeoutId);
+      unifiedLogger.error('URL fetch failed', {
+        service: 'validationService',
+        source: 'fetchWithTimeout',
+        error: error.message,
+        stack: error.stack,
+        url,
+        duration: Date.now() - startTime
+      });
       throw error;
     }
   }
@@ -213,7 +268,12 @@ class ValidationService {
       const result = await openaiService.categorizeBookmark(bookmarkData);
       return result;
     } catch (error) {
-      logger.error('AI categorization failed', { error: error.message });
+      unifiedLogger.error('AI categorization failed', {
+        service: 'validationService',
+        source: 'categorizeWithAI',
+        error: error.message,
+        stack: error.stack
+      });
       return {};
     }
   }
@@ -302,8 +362,10 @@ class ValidationService {
       WHERE id = $1
     `, [bookmarkId, isDead, httpStatus, JSON.stringify([errorData])]);
     
-    logger.warn('Bookmark validation failed', { 
-      bookmarkId, 
+    unifiedLogger.warn('Bookmark validation failed', {
+      service: 'validationService',
+      source: 'handleValidationError',
+      bookmarkId,
       errorType,
       httpStatus,
       isDead,
@@ -337,15 +399,23 @@ class ValidationService {
    * Process validation queue
    */
   async processValidationQueue() {
+    const startTime = Date.now();
     try {
       const pendingBookmarks = await this.getPendingBookmarks();
       
       if (pendingBookmarks.length === 0) {
-        logger.info('No bookmarks pending validation');
+        unifiedLogger.info('No bookmarks pending validation', {
+          service: 'validationService',
+          source: 'processValidationQueue'
+        });
         return { processed: 0, successful: 0, failed: 0 };
       }
       
-      logger.info(`Processing ${pendingBookmarks.length} bookmarks for validation`);
+      unifiedLogger.info('Processing bookmarks for validation', {
+        service: 'validationService',
+        source: 'processValidationQueue',
+        count: pendingBookmarks.length
+      });
       
       const results = {
         processed: 0,
@@ -377,11 +447,21 @@ class ValidationService {
         }
       }
       
-      logger.info('Validation queue processed', results);
+      unifiedLogger.info('Validation queue processed', {
+        service: 'validationService',
+        source: 'processValidationQueue',
+        results,
+        duration: Date.now() - startTime
+      });
       return results;
       
     } catch (error) {
-      logger.error('Error processing validation queue', { error: error.message });
+      unifiedLogger.error('Error processing validation queue', {
+        service: 'validationService',
+        source: 'processValidationQueue',
+        error: error.message,
+        stack: error.stack
+      });
       throw error;
     }
   }
@@ -399,7 +479,12 @@ class ValidationService {
       RETURNING id
     `);
     
-    logger.info(`Marked ${result.rowCount} bookmarks for revalidation`);
+    unifiedLogger.info('Marked bookmarks for revalidation', {
+      service: 'validationService',
+      source: 'revalidateOldBookmarks',
+      count: result.rowCount,
+      days
+    });
     return result.rowCount;
   }
 
@@ -407,6 +492,11 @@ class ValidationService {
    * Get validation statistics
    */
   async getValidationStats() {
+    unifiedLogger.debug('Getting validation statistics', {
+      service: 'validationService',
+      source: 'getValidationStats'
+    });
+
     const stats = await query(`
       SELECT 
         COUNT(*) as total,

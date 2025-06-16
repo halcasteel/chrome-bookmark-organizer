@@ -1,6 +1,6 @@
 import puppeteer from 'puppeteer';
 import db from '../config/database.js';
-import { logInfo, logError, logWarn } from '../utils/logger.js';
+import unifiedLogger from '../services/unifiedLogger.js';
 
 /**
  * Validation Agent - Autonomous agent for URL validation
@@ -21,6 +21,11 @@ class ValidationAgent {
    * Initialize browser instance
    */
   async initBrowser() {
+    unifiedLogger.info('Initializing browser instance', {
+      service: 'validationAgent',
+      method: 'initBrowser'
+    });
+    
     if (this.browser) return this.browser;
     
     if (this.browserPromise) return this.browserPromise;
@@ -42,6 +47,11 @@ class ValidationAgent {
     this.browser = await this.browserPromise;
     this.browserPromise = null;
     
+    unifiedLogger.info('Browser initialized successfully', {
+      service: 'validationAgent',
+      method: 'initBrowser'
+    });
+    
     return this.browser;
   }
 
@@ -51,7 +61,12 @@ class ValidationAgent {
   async process(job) {
     const { bookmarkId, workflowId } = job.data;
     
-    logInfo('Validation agent processing bookmark', { bookmarkId, workflowId });
+    unifiedLogger.info('Processing validation job', {
+      service: 'validationAgent',
+      method: 'process',
+      bookmarkId,
+      workflowId
+    });
     
     try {
       // Get bookmark details
@@ -75,7 +90,7 @@ class ValidationAgent {
       // Report progress
       await job.progress(100);
       
-      return {
+      const jobResult = {
         bookmarkId,
         url: bookmark.url,
         isValid: validationResult.isValid,
@@ -83,10 +98,26 @@ class ValidationAgent {
         timestamp: new Date(),
       };
       
+      unifiedLogger.info('Validation job completed successfully', {
+        service: 'validationAgent',
+        method: 'process',
+        bookmarkId,
+        url: bookmark.url,
+        isValid: validationResult.isValid,
+        statusCode: validationResult.metadata?.statusCode,
+        hasRedirect: validationResult.metadata?.redirected
+      });
+      
+      return jobResult;
+      
     } catch (error) {
-      logError(error, { 
-        context: 'Validation agent error', 
-        bookmarkId 
+      unifiedLogger.error('Validation job failed', {
+        service: 'validationAgent',
+        method: 'process',
+        bookmarkId,
+        workflowId,
+        error: error.message,
+        stack: error.stack
       });
       throw error;
     }
@@ -96,6 +127,12 @@ class ValidationAgent {
    * Validate a URL
    */
   async validateUrl(url) {
+    unifiedLogger.info('Starting URL validation', {
+      service: 'validationAgent',
+      method: 'validateUrl',
+      url
+    });
+    
     const browser = await this.initBrowser();
     const page = await browser.newPage();
     
@@ -149,7 +186,7 @@ class ValidationAgent {
                      responseStatus < 400 && 
                      !isErrorPage;
       
-      return {
+      const result = {
         isValid,
         metadata: {
           statusCode: responseStatus,
@@ -168,9 +205,27 @@ class ValidationAgent {
         },
       };
       
+      unifiedLogger.info('URL validation completed successfully', {
+        service: 'validationAgent',
+        method: 'validateUrl',
+        url,
+        isValid,
+        statusCode: responseStatus,
+        redirected: finalUrl !== url,
+        loadTime: timing.loadTime
+      });
+      
+      return result;
+      
     } catch (error) {
       // Handle specific error types
       if (error.message.includes('net::ERR_NAME_NOT_RESOLVED')) {
+        unifiedLogger.warn('URL validation failed - DNS error', {
+          service: 'validationAgent',
+          method: 'validateUrl',
+          url,
+          errorType: 'DNS_ERROR'
+        });
         return {
           isValid: false,
           metadata: {
@@ -181,6 +236,12 @@ class ValidationAgent {
       }
       
       if (error.message.includes('net::ERR_CONNECTION_REFUSED')) {
+        unifiedLogger.warn('URL validation failed - connection refused', {
+          service: 'validationAgent',
+          method: 'validateUrl',
+          url,
+          errorType: 'CONNECTION_REFUSED'
+        });
         return {
           isValid: false,
           metadata: {
@@ -191,6 +252,12 @@ class ValidationAgent {
       }
       
       if (error.message.includes('Navigation timeout')) {
+        unifiedLogger.warn('URL validation failed - timeout', {
+          service: 'validationAgent',
+          method: 'validateUrl',
+          url,
+          errorType: 'TIMEOUT'
+        });
         return {
           isValid: false,
           metadata: {
@@ -201,6 +268,14 @@ class ValidationAgent {
       }
       
       // Generic error
+      unifiedLogger.error('URL validation failed with generic error', {
+        service: 'validationAgent',
+        method: 'validateUrl',
+        url,
+        error: error.message,
+        stack: error.stack
+      });
+      
       return {
         isValid: false,
         metadata: {
@@ -243,6 +318,14 @@ class ValidationAgent {
   async updateBookmarkStatus(bookmarkId, validationResult) {
     const { isValid, metadata } = validationResult;
     
+    unifiedLogger.info('Updating bookmark validation status', {
+      service: 'validationAgent',
+      method: 'updateBookmarkStatus',
+      bookmarkId,
+      isValid,
+      statusCode: metadata?.statusCode
+    });
+    
     await db.query(
       `UPDATE bookmarks 
        SET is_valid = $1,
@@ -275,15 +358,34 @@ class ValidationAgent {
         bookmarkId,
       ]
     );
+    
+    unifiedLogger.info('Bookmark validation status updated successfully', {
+      service: 'validationAgent',
+      method: 'updateBookmarkStatus',
+      bookmarkId,
+      isValid,
+      statusCode: metadata?.statusCode
+    });
   }
 
   /**
    * Cleanup resources
    */
   async cleanup() {
+    unifiedLogger.info('Cleaning up validation agent resources', {
+      service: 'validationAgent',
+      method: 'cleanup',
+      hasBrowser: !!this.browser
+    });
+    
     if (this.browser) {
       await this.browser.close();
       this.browser = null;
+      
+      unifiedLogger.info('Browser resources cleaned up successfully', {
+        service: 'validationAgent',
+        method: 'cleanup'
+      });
     }
   }
 }
