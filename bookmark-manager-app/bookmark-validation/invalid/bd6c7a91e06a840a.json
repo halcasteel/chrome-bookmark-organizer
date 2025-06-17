@@ -1,0 +1,25 @@
+{
+  "id": "bd6c7a91e06a840a",
+  "originalBookmark": {
+    "url": "https://www.zdnet.com/article/programming-languages-aws-explains-why-rust-is-so-important/",
+    "title": "AWS: Here&#39;s why we are investing in the Rust programming language | ZDNet",
+    "addDate": "2022-02-24T22:48:45.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB50lEQVQ4jb2SO2hTcRhHz/e/t/E2aR5tYrFpxUDEioJdilMdnH2hi1CVunUQxL1Luzg46FAFO+hgFymCgyIuHQSHgIhCpFpKRRCbV1NDbpImuY+/Q4N0ECwBPfCNZ/h9HPgXaFDdSKLB6EpcAgOtBbToWcx8igutlLzOpa3rALNg/kGVzu2wBvs34GYpwvtCHF3vR+ctMn+bYxZCjBkjicnQzO1rVjA41C6Xadbrrk4dJvptdfzZ/MOr5GtDYZHPDTy8hv0C0FjhCZRqyOYB7sdCvTeKg2kSSy/d6t07EjxzTtmPF/zY2YtGVsvKyStTZqA/8cFttbOIiqJ1VQwZ1T551U4EHhQ2tiuh85c878snVVtcVCrST3slqyhvur1O65iPfutiDClDTSCMg2/6nl/F9ZYFoHRq7Gli/tHlZtV2NKbpfMygEfqOHHWyt6Zl5nvp3iuJrJvaiwMD2vffIdIncEgAcqOJ06ZdWd5Wpi+Gqfx6TYvV41FzzLiFNAxyuR8cPwE/AQsiQahuAWEFsLC6+cbDzQT9Jr5TawcsVAynZ19Y7HqPetL0mCyD3Xl8syMD2L+rKw4z1TqILo+gi0m+FpLMVQZJ7zmodYgWkjzfGmZ6bYDIrtBUt2kbendpe5R2sv6f/AI/e8iSqbMeXQAAAABJRU5ErkJggg=="
+  },
+  "url": "https://www.zdnet.com/article/programming-languages-aws-explains-why-rust-is-so-important/",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 30733,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "AWS: Here&#39;s why we are investing in the Rust programming language | ZDNet",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T06:06:34.193Z"
+}

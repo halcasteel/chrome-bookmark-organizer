@@ -1,0 +1,25 @@
+{
+  "id": "38f84d5992aca07c",
+  "originalBookmark": {
+    "url": "http://0.0.0.0:8000/files/az1.ai_Product_Features_v.1.1.pdf",
+    "title": "az1.ai Product Features v.1.1",
+    "addDate": "2025-01-20T12:22:00.000Z",
+    "icon": null
+  },
+  "url": "http://0.0.0.0:8000/files/az1.ai_Product_Features_v.1.1.pdf",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 2885,
+  "error": "net::ERR_CONNECTION_REFUSED at http://0.0.0.0:8000/files/az1.ai_Product_Features_v.1.1.pdf",
+  "metadata": {
+    "title": "az1.ai Product Features v.1.1",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T09:26:39.417Z"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "6ad65405d2a9572c",
+  "originalBookmark": {
+    "url": "https://www.biodiversitylibrary.org/",
+    "title": "Biodiversity Heritage Library",
+    "addDate": "2022-07-16T16:03:34.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAU0lEQVQ4jWP8/OMFAymAiSTV5Grg5ZCAIIgQnAFnI4tAbfj848XnHy+QJajmJBZkq+EhhscqFriTIOogDDw6qeQkTABXwDj4YpolrmYpbW0gWQMAh3AgLWYWx9IAAAAASUVORK5CYII="
+  },
+  "url": "https://www.biodiversitylibrary.org/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 8794,
+  "error": null,
+  "metadata": {
+    "title": "Biodiversity Heritage Library",
+    "description": "The Biodiversity Heritage Library works collaboratively to make biodiversity literature openly available to the world as part of a global biodiversity community.",
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://www.biodiversitylibrary.org/favicon.ico",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/6ad65405d2a9572c-screenshot.png",
+  "timestamp": "2025-06-17T05:38:52.869Z"
+}

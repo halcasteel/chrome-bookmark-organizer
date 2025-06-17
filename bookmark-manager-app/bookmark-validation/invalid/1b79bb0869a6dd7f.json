@@ -1,0 +1,25 @@
+{
+  "id": "1b79bb0869a6dd7f",
+  "originalBookmark": {
+    "url": "file:///Users/hcasteel/Downloads/NehalRaoResume2022.pdf",
+    "title": "Nehal Rao Resume January-2022.docx Microsoft Word",
+    "addDate": "2022-05-02T22:50:28.000Z",
+    "icon": null
+  },
+  "url": "file:///Users/hcasteel/Downloads/NehalRaoResume2022.pdf",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 530,
+  "error": "net::ERR_FILE_NOT_FOUND at file:///Users/hcasteel/Downloads/NehalRaoResume2022.pdf",
+  "metadata": {
+    "title": "Nehal Rao Resume January-2022.docx Microsoft Word",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T06:33:12.192Z"
+}

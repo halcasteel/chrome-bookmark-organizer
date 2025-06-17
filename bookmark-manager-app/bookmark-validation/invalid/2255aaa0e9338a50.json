@@ -1,0 +1,25 @@
+{
+  "id": "2255aaa0e9338a50",
+  "originalBookmark": {
+    "url": "https://www.pymnts.com/",
+    "title": "PYMNTS.com | Breaking News, Trends and Analysis",
+    "addDate": "2024-03-21T21:51:28.000Z",
+    "icon": null
+  },
+  "url": "https://www.pymnts.com/",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 31195,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "PYMNTS.com | Breaking News, Trends and Analysis",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T04:19:43.671Z"
+}

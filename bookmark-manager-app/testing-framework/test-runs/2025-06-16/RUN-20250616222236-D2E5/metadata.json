@@ -1,0 +1,36 @@
+{
+  "runId": "RUN-20250616222236-D2E5",
+  "startedAt": "2025-06-16T22:22:36.604Z",
+  "environment": {
+    "node_version": "v20.17.0",
+    "platform": "linux",
+    "arch": "x64",
+    "hostname": "penguin",
+    "user": "halcasteel",
+    "cwd": "/home/halcasteel/BOOKMARKS/bookmark-manager-app",
+    "env_vars": {},
+    "memory": {
+      "rss": 86827008,
+      "heapTotal": 37695488,
+      "heapUsed": 20773152,
+      "external": 3548668,
+      "arrayBuffers": 66956
+    },
+    "timestamp": "2025-06-16T22:22:36.604Z",
+    "git": {
+      "commit": "b906fcd27dc5f9ae45c1af111ac84ade0ef3284a",
+      "branch": "main",
+      "status": "M bookmark-manager-app/backend/package.json\n M bookmark-manager-app/backend/src/index.js\n M bookmark-manager-app/backend/src/routes/admin.js\n D bookmark-manager-app/backend/src/scripts/testBookmarkValidation.js\n M bookmark-manager-app/backend/src/services/unifiedLogger.js\n M bookmark-manager-app/backend/src/services/websocketService.js\n D bookmark-manager-app/backend/src/utils/logger.js\n D bookmark-manager-app/backend/src/utils/unifiedLogger.js\n D bookmark-manager-app/backend/test-websocket-auth.js\n M bookmark-manager-app/frontend/src/App.tsx\n M bookmark-manager-app/frontend/src/components/Sidebar.tsx\n M bookmark-manager-app/frontend/src/pages/Settings.tsx\n D bookmark-manager-app/frontend/src/services/logger.ts\n M bookmark-manager-app/package-lock.json\n M bookmark-manager-app/package.json\n M bookmark-manager-app/start-services.js\n?? bookmark-manager-app/.github/workflows/e2e-tests.yml\n?? bookmark-manager-app/ADMIN_DASHBOARD_IMPLEMENTATION.md\n?? bookmark-manager-app/CRITICAL_ISSUES_CHECKLIST_2025-06-16.md\n?? bookmark-manager-app/E2E_TESTING_GUIDE.md\n?? bookmark-manager-app/ISSUES_2025-06-16-0111.txt\n?? bookmark-manager-app/backend/src/db/migrations/add-logs-tables.sql\n?? bookmark-manager-app/backend/src/services/aiLogAnalysisService.js\n?? bookmark-manager-app/backend/src/services/logIngestionService.js\n?? bookmark-manager-app/backend/tests/test-websocket-auth.js\n?? bookmark-manager-app/backend/tests/test-websocket-client.js\n?? bookmark-manager-app/backend/tests/testBookmarkValidation.js\n?? bookmark-manager-app/database/logs-schema.sql\n?? bookmark-manager-app/deploy-app.sh\n?? bookmark-manager-app/frontend/src/components/admin/\n?? bookmark-manager-app/frontend/src/pages/AdminDashboard.tsx\n?? bookmark-manager-app/frontend/src/services/logger.tsx\n?? bookmark-manager-app/playwright.config.js\n?? bookmark-manager-app/run-e2e-tests.sh\n?? bookmark-manager-app/scripts/log-helpers.sh\n?? bookmark-manager-app/test-admin-api.sh\n?? bookmark-manager-app/testing-framework/\n?? bookmark-manager-app/tests/\n?? bookmark-manager-app/vitest.config.js"
+    }
+  },
+  "testPlanChecksum": "527aeab990263636ca3b8860c718a3f69830aaaab6df35b67676a0778bad269d",
+  "testPlanPath": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/testing-framework/test-runs/2025-06-16/RUN-20250616222236-D2E5/test-plan.json",
+  "config": {
+    "database": {
+      "connectionString": "postgresql://admin:admin@localhost:5434/bookmark_manager"
+    },
+    "headless": false,
+    "slowMo": 100,
+    "recordVideo": true
+  }
+}

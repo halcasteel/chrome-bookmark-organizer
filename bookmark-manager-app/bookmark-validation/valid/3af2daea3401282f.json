@@ -1,0 +1,30 @@
+{
+  "id": "3af2daea3401282f",
+  "originalBookmark": {
+    "url": "https://openai.com/product/dall-e-2",
+    "title": "DALL·E 2",
+    "addDate": "2023-04-25T15:53:52.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACuklEQVQ4jXWTP0irZxTGf+f9LHEJF4zWC/ciikMdDGhSLA5iBvlwTNRBwclqwWI7FTI66RAopUJRaCsBvaBmCC4ZFMGAlQyCQatDKC1SETQggv/In+89HW4ECb3P8g7nPOecF56fUJOqioioqr631s5YayNA0HEcAc5FJAv8JiJ/v/RSL1WdsdZe6idUrVZvVPW7epOpvT+/NJZKpUoqlfLW1tZssVi0lUrFq5v1+4u3QUSsqn4NfA94T09Psri42DA4OKjWWkZHR+nv75e7uztGRkas67oGmFLVP0XkJ1HVt0Ae+BxgYWFBent7tbm5WTKZDK7r8vDwQFtbmy4tLcn09LQXCoVQ1QcRCTcAU0BruVyurqysOPv7+zo0NCSpVIpoNEomk8EYQyAQkGAwqLlczoRCIUTkDTBjPM/7EtDd3V1aW1tlcnJSyuUyNzc3bG9vc3l5SU9PD67rcnJyIqenpwIIoMBXxlr7BcDFxYXp6OjQ5+dn8vk8nZ2dJBIJkskkGxsbJJNJ5ufn8fv9msvlFMBa22scx6kADAwMkE6nicViXF9fc3R0xP39PYVCgfb2dsLhMDs7O0SjUc7Pz6kNwBhj/gIIBoOmWq1KPB5neHiYsbExIpEIq6urVCoVWlpaKJVK7O3tSXd3twUQkWMDHNX+ZJuamjQWi2mhUODs7IxEIkE0GqWxsRG/38/6+rp2dXVpX1+f89Evf4iqvrXWnhhjAvl8XpeXl53Z2Vl9fHyU4+Njrq6umJubI51OayAQkPHxcVTVisg9EJZaor4FfgE4ODiwW1tbxufz6eHhIRMTE9ze3uLz+SQej1trrWeM+Qz4QUR+fB3llfrsF4tFu7m5abPZrKeq9lXpw2sMUNWXS6Y8z/v3UzCp6nU9TPI/RL4DvgEi1tpgbcuZ4zhZ4FcR+ec1zv8Bi6nSrY3ELyMAAAAASUVORK5CYII="
+  },
+  "url": "https://openai.com/product/dall-e-2",
+  "valid": true,
+  "statusCode": 308,
+  "loadTime": 8737,
+  "error": null,
+  "metadata": {
+    "title": "DALL·E 2 | OpenAI",
+    "description": "DALL·E 2 is an AI system that can create realistic images and art from a description in natural language.",
+    "keywords": [],
+    "ogImage": "https://images.ctfassets.net/kftzwdyauwt9/a9c10400-3e5e-4190-c542b8f4e140/6b2881b588bd3d0312f6b56e5d84ae4f/dall-e-2-poster.jpg?w=1600&h=900&fit=fill",
+    "favicon": "https://openai.com/favicon.ico",
+    "language": "en-US",
+    "author": null,
+    "canonical": "https://openai.com/index/dall-e-2/",
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/3af2daea3401282f-screenshot.png",
+  "timestamp": "2025-06-17T05:15:44.119Z"
+}

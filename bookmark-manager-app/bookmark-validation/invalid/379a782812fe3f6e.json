@@ -1,0 +1,25 @@
+{
+  "id": "379a782812fe3f6e",
+  "originalBookmark": {
+    "url": "https://my.cigna.com/web/public/guest?userstatus=logoff",
+    "title": "myCigna - Get Access to Your Personal Health Information",
+    "addDate": "2022-05-17T22:23:13.000Z",
+    "icon": null
+  },
+  "url": "https://my.cigna.com/web/public/guest?userstatus=logoff",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 32189,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "myCigna - Get Access to Your Personal Health Information",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T05:43:25.418Z"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "de1e74a3d33c4a41",
+  "originalBookmark": {
+    "url": "chrome://newtab/",
+    "title": "New Tab",
+    "addDate": "2025-01-11T10:00:58.000Z",
+    "icon": null
+  },
+  "url": "chrome://newtab/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 13891,
+  "error": null,
+  "metadata": {
+    "title": "New Tab",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/de1e74a3d33c4a41-screenshot.png",
+  "timestamp": "2025-06-17T08:10:06.684Z"
+}

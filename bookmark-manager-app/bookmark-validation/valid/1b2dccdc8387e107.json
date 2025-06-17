@@ -1,0 +1,30 @@
+{
+  "id": "1b2dccdc8387e107",
+  "originalBookmark": {
+    "url": "https://www.anthropic.com/claude",
+    "title": "Meet Claude \\ Anthropic",
+    "addDate": "2024-12-20T01:22:02.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4nJxTTWsaURQ9bxxpQEFptuqu0U39BZVshIIGGiqua0g3oZtm0/6G2EL6G9KNuzSNsaSpuEp3khaiYyF+LNykqGMzUseMzuS9G0YmJiEkBx68d+95596574xsGPpzyzKzAIvifjiWJPaOnZ////2AyzYqXGBo8g1zRhljtCzLmp7F3j47YMk3XR4MBrT8fj8kSYKqqvB4PPB6vbMiTJq9PB6Pkc1+xPJyCltbn9HpdLC29gYbGx8oJzhOXBEQ1ZrNFgqFb2i1Wtje/gJZlhEIBJDP5yknOLcKCBSLRd6+hmQygXq9gaOjX7ybFzg70yg3C8nZvqr2qXokEsH6+lvMzz/Gzs5XRKNPEQ6HKSc4zs+YCrhcLpTLZVQqVYRCIRpiMBjE4eFP9Ho9LC0lUK0qxBHcKwJC0TAMqjAc6tjf/47V1dfUfrfbxcHBD8TjcXqJvb0Cce0uZHt4Jyd1lEolLC7GsLKSoaQgbm5+wu5uHul0GrHYM+I0Gk0sLDzBZDK5FBBQFIXePZN5hUQiyd97wqtIOD39i1wuh3a7jVTqJWq1P8QVAtQ9d6Jlm0fXdfh8PrjdbjKMiI9GI2iaRu2LeL//D3Nzj6ammlrZaV+n2+6wtSWGeEw7HjBN85rfnfEbODU+P/aeb6q4PxTxO18AAAD//z6d1HcAAAAGSURBVAMA8a8KtRt4r3gAAAAASUVORK5CYII="
+  },
+  "url": "https://www.anthropic.com/claude",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 13629,
+  "error": null,
+  "metadata": {
+    "title": "Meet Claude \\ Anthropic",
+    "description": "Claude is AI for all of us. Whether you're brainstorming alone or building with a team of thousands, Claude is here to help.",
+    "keywords": [],
+    "ogImage": "https://cdn.prod.website-files.com/67ce28cfec624e2b733f8a52/683097a0da6da94490361d68_open-graph-claude.jpg",
+    "favicon": "https://cdn.prod.website-files.com/67ce28cfec624e2b733f8a52/681d52619fec35886a7f1a70_favicon.png",
+    "language": "en",
+    "author": null,
+    "canonical": "https://www.anthropic.com/claude",
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/1b2dccdc8387e107-screenshot.png",
+  "timestamp": "2025-06-17T04:04:26.067Z"
+}

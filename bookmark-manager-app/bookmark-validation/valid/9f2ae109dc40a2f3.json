@@ -1,0 +1,32 @@
+{
+  "id": "9f2ae109dc40a2f3",
+  "originalBookmark": {
+    "url": "https://code.visualstudio.com/docs/setup/linux",
+    "title": "Running Visual Studio Code on Linux",
+    "addDate": "2024-09-10T19:04:04.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAByUlEQVQ4jY2TPWsUURiFnzvORhAM4xcBq1nQRbsNloJkSwvB+AfUwtpJIxLBmTWdEXeDPyDYC9vYiIEZLAVdFcQyUygYEbJoiuzH3GMxu9nZRNh94TT33nPO+3Vh1liNq6Xw3W7l9d6m39r1R8dmJvLjrdtkNOkOvMq1qwAIErLBijvdees+AzVzlpAObpZw3NgBoNH2/0t++DbEZk2sZQyK8Bwa30LM3DbrX55MkB+8CVEWIYEEViAlslCE4fnXbdAwA5NiejW+/wxxuDMhaKjz9Hp04dUfFY9dTK+GLcVIPsjHOm0c16O/D64DUgejZdZvJJC7FsNhZTGl169hlWIFGI9zC3DiJHT7CVl/kWc5edT+IvIp7KRgS3B2AeaO5w/nT8P8GQ8NJhyPZhC0fOTEkPns/IC9v3nDrMDaKnJi1to3xwqagIM1MVY+EhzjE79/lcnsxlhEPsa0WPscjjIowsXqJRCCNnhxKxj6BNTbHQxhwTni0celg/rNaDgAQcujudw5skhROwKNRfYz/MuVQ9OdFtGHAJkGAroZ/qWLh5o4VeBKE6u7SJ18G4clQAKqzfYbAVbfV0um1DpfLqdGqqf3TiUA/wAgk+Xoq33GIQAAAABJRU5ErkJggg=="
+  },
+  "url": "https://code.visualstudio.com/docs/setup/linux",
+  "valid": true,
+  "statusCode": 304,
+  "loadTime": 3464,
+  "error": null,
+  "metadata": {
+    "title": "Visual Studio Code on Linux",
+    "description": "Get Visual Studio Code up and running on Linux.",
+    "keywords": [
+      ""
+    ],
+    "ogImage": "https://code.visualstudio.com/opengraphimg/opengraph-docs.png",
+    "favicon": "https://code.visualstudio.com/assets/favicon.ico",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "article",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/9f2ae109dc40a2f3-screenshot.png",
+  "timestamp": "2025-06-17T07:10:53.185Z"
+}

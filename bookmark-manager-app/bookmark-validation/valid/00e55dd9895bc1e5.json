@@ -1,0 +1,30 @@
+{
+  "id": "00e55dd9895bc1e5",
+  "originalBookmark": {
+    "url": "https://online.adp.com/signin/v1/?APPID=RDBX&productId=80e309c3-70c6-bae1-e053-3505430b5495&returnURL=https://my.adp.com/&callingAppId=RDBX&TARGET=-SM-https://my.adp.com/static/redbox/",
+    "title": "ADP",
+    "addDate": "2023-01-03T20:46:27.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAACEklEQVQ4jZWSP0xTURTGz3n39q/aGkN9oaaESlsSEtKFgdSBgakGVjRpdIGNFQaIDpoQSDV2gGgIKRMTYRIHUrvWQaxLTUSICUNjS63Q19q+tu++exyqWF3Ebzvfd85Zfh8SEfyPOAAQESJe5BIRORFhZyJCRemOOy8Qf+UAJCVSxyZCRKnrolpFIiJCzi0eDwCI01PZbiOiRVUBAKWUICUgto6PD8fGeF8fcq44HEY+bx0YcI2OFtfXHcGg0DRk7ObGBkopSUqFsU8TEzZV7ZmZMTWtkc2ahkG6no/HfQsLtkCAqlU9l6uk0wqZpsKYlk433mT6k0ltb6+aSqHVWt7ZAc7Vu3dEo27xek/W1myhkD0QACmEFOJDOJx/+ODLysp7n68QjxNRu1DIulza61Tj4ODkxfNcKFRMPPt4K6IgY1+TSVOInnv3zbOz69PTV8bHjVLp2/Y2d7vtQ0MWVaVW2zM3933/najVuFmrlTc3e2dnj6ammMUi6nV7KFRcWmpVKr6nTw6jt6/FYtRul1dXnYODwZe7+DkW017t2vv9zpER7/Ly0eQkNZvuaBQajer+W9KbaLMZpdLA1tblSAQAuHN42Or3E0nv/DxzX+1dXKxlMoQoGbvx6LEzHC4kEtzpvBSJEBF0wHWjPef6l86pczKMnx5jqCgkxO+yKAogkmkiAHDe6duFOtct5d8rf+oHL1MOqAAxC9oAAAAASUVORK5CYII="
+  },
+  "url": "https://online.adp.com/signin/v1/?APPID=RDBX&productId=80e309c3-70c6-bae1-e053-3505430b5495&returnURL=https://my.adp.com/&callingAppId=RDBX&TARGET=-SM-https://my.adp.com/static/redbox/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 23591,
+  "error": null,
+  "metadata": {
+    "title": "Sign In | MyADP",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://online.adp.com/favicon.ico",
+    "language": "en-US",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/00e55dd9895bc1e5-screenshot.png",
+  "timestamp": "2025-06-17T05:18:17.366Z"
+}

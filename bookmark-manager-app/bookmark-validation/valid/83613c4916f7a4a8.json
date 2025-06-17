@@ -1,0 +1,30 @@
+{
+  "id": "83613c4916f7a4a8",
+  "originalBookmark": {
+    "url": "https://learning.oreilly.com/library/view/the-developers-playbook/9781098162191/ch03.html#neural_networks",
+    "title": "3. Architectures and Trust Boundaries | The Developer&#39;s Playbook for Large Language Model Security",
+    "addDate": "2024-01-26T04:17:07.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABnklEQVQ4jcXRP2jTQRjG8c/98mszqZVCdTEqCK1NWrUtiH9ACuIkiGAXp+Lu3C6Cm0LBoYiri4N0cawgdnWQiCZtWnQQBME/VHSxxCa/c0hT0qZ7Xzi4e973vtw9D/tdYbewaqg/03smcizKNhK5lQ3pxwnlzUhYVhpHoSFdOuf9721AJKkZvZ6JsxhDviX7gYWcxoO6fD7VXMQgYWZEZS5tA5aVbhGf4DCqrRUP4QLhbiYtJLKHxBwhkKWQworhQibcQx/hUcbcqMrPsvE0r34J85EbCW8xHTnZo/Fy24OKkenAU7yq652aUP7T6UtV6SbhOaqJ7FrRyq92L2lR4vCWD693X24NZW/wmXgcR3f2dh7iXlFlki09dKXWBqy1Bk2uGTzQPZScx4nIl0TzexegIV3CauDqpp7ZVUP9sGAqV1W62BTvb8X64rS19U7A9pMqRm4HHuMg3hEqZH2EyzgSWAyad4pq3zoBufZm0pXagPVPOIWzmCAMox54FjRnimpfd3+vy5QPRgdSxppiIYh/E9kyakW1f3sZvP/1H/uFgIkjQXmTAAAAAElFTkSuQmCC"
+  },
+  "url": "https://learning.oreilly.com/library/view/the-developers-playbook/9781098162191/ch03.html#neural_networks",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 23112,
+  "error": null,
+  "metadata": {
+    "title": "3. Architectures and Trust Boundaries - The Developer's Playbook for Large Language Model Security [Book]",
+    "description": " Chapter 3. Architectures and Trust Boundaries Unlike traditional web applications that rely on predefined algorithms and static databases, LLMs utilize massive neural networks to generate dynamic, context-aware responses. This seismic …  - Selection from The Developer's Playbook for Large Language Model Security [Book]",
+    "keywords": [],
+    "ogImage": "https://www.oreilly.com/library/cover/9781098162191/1200w630h/",
+    "favicon": "https://www.oreilly.com/favicon.ico",
+    "language": "en",
+    "author": null,
+    "canonical": "https://www.oreilly.com/library/view/the-developers-playbook/9781098162191/ch03.html",
+    "contentType": "article",
+    "siteName": "O’Reilly Online Learning",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/83613c4916f7a4a8-screenshot.png",
+  "timestamp": "2025-06-17T04:29:17.197Z"
+}

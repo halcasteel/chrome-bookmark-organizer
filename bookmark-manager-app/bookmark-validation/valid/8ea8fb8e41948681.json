@@ -1,0 +1,30 @@
+{
+  "id": "8ea8fb8e41948681",
+  "originalBookmark": {
+    "url": "https://chromewebstore.google.com/detail/folkx/akeepikolhaikilagiekmegfhefcbohd",
+    "title": "folkX - Chrome Web Store",
+    "addDate": "2024-12-26T06:17:42.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACxUlEQVQ4jaVTQYscVRis+t7r3p7pzDDOuGYJRFY28eDNXRQED6KBePImiuQikn8gqKiHIOSQQ3IRPfgPchAxFw8KKkJAMEt2I0E0IzHELJuJM/u6e6Z7Xr/3eQgr3lPHKqgqCgp4RHA2mz1F8oXlchkBMIRAY4ySNMYYhhAAQFU1HGoANE1TUdWr1nv/ynA4/KIsS4gISAIAmqYJMUZPEqqaZFlmDlNDCMjzHJPJ5KzEGBvnXHDO+dls5uu6DlVVXdvZ2VkbjUa90WjU293dXauq6pe6rsN0OvXOOe+cCyQbS1JERIwxIMm2bQngxObm5qelc1VERGxjvmiak23birWWqqoiIiTFioj+f5MYgkK1T/INNQZQAU2Ati2UjBQhVFVVISJqvfc0xjCq0jxkqVlHXVVFLcuH5nlOOdITLOZEDBpBxhjpvac1xhwuA+3mjFWB5puv4a/9LGFyHwQgwxHss89j5dSrMPkRoqr+a22zLENiDVo7hN4eo7x4HuHPP2jSFGItoAAm+2hvbIM/fau9dz9Gur6BDgUiAhFVZZIiub+v8/MfIdwewwweQwTBqgSqCsETTAbwv97CwXvvo/1rD5KmSAC1PnrmYnDuxlc8XezpibzHuTvQ/vpxhOdeQnK0g15zFU15B5JsKMp/EPcuqz79AWLwtINsoH+7ff1scVMnW8f5yXd3tLv1DLdfv4DL41XiAHhz6zU93f+QKG4CZoW6/DH4xduq2RMqaNrurrvL4A7Clxv9eH3NxvrFM/HS9qqOf3sQxuMH4cKV1fh78VaLRYihYIt6GmR5i4vGZIL5cq9sa0gnSZuOtZ+//KSdDtYMFdIfDU1/ODRMYYrkqMXjXWP6Ytm3aQw1ihL3LI69c6W8fvZU5uVY9LX/YcXzDCfo+CWLplYASE2ObryHMCsYtBuJJFnMF3dPruP7R30z/gWWA4bsbgJgoQAAAABJRU5ErkJggg=="
+  },
+  "url": "https://chromewebstore.google.com/detail/folkx/akeepikolhaikilagiekmegfhefcbohd",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 9675,
+  "error": null,
+  "metadata": {
+    "title": "folkX - Chrome Web Store",
+    "description": "folkX lets you add contacts to your folk from anywhere on the web, including LinkedIn, Sales Navigator, Gmail threads and more.",
+    "keywords": [],
+    "ogImage": "https://lh3.googleusercontent.com/NxnjtnQEnzufbT84KON_FMZmtdeRGFmKGk57nHgJ7I4lpE649bojhNsIisCLAe-qqcWcMI7M1P6I0wlrdJOkgRTMdQ=s128-rj-sc0x00ffffff",
+    "favicon": "https://ssl.gstatic.com/chrome/webstore/images/icon_48px.png",
+    "language": "en-US",
+    "author": null,
+    "canonical": "https://chromewebstore.google.com/detail/folkx/akeepikolhaikilagiekmegfhefcbohd",
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/8ea8fb8e41948681-screenshot.png",
+  "timestamp": "2025-06-17T07:49:21.845Z"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "eac23873400d03c3",
+  "originalBookmark": {
+    "url": "https://gordonbell.azurewebsites.net/",
+    "title": "Gordon Bell&#39;s Home Page",
+    "addDate": "2025-02-27T20:55:13.000Z",
+    "icon": null
+  },
+  "url": "https://gordonbell.azurewebsites.net/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 4599,
+  "error": null,
+  "metadata": {
+    "title": "Gordon Bell's Home Page",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/eac23873400d03c3-screenshot.png",
+  "timestamp": "2025-06-17T08:54:56.758Z"
+}

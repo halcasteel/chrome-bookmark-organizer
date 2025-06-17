@@ -21,6 +21,22 @@ export default defineConfig({
       '/api': {
         target: 'http://localhost:3001',
         changeOrigin: true,
+      },
+      '/socket.io': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+        ws: true,
+        // Additional options to fix WebSocket upgrade
+        configure: (proxy, options) => {
+          proxy.on('error', (err) => {
+            console.error('Proxy error:', err);
+          });
+          proxy.on('proxyReqWs', (proxyReq, req, socket) => {
+            socket.on('error', (err) => {
+              console.error('WebSocket error:', err);
+            });
+          });
+        }
       }
     }
   },

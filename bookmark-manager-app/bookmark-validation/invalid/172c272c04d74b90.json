@@ -1,0 +1,25 @@
+{
+  "id": "172c272c04d74b90",
+  "originalBookmark": {
+    "url": "https://ougbsbi.oraclecorp.com/pls/apex/f?p=145:20:117421555997000::::P20_TP_ID,P20_SET_VALUES_FROM_72,P20_ILA_USER_ID:10016014,0,2281679200",
+    "title": "Trainings Status",
+    "addDate": "1970-01-01T00:00:00.000Z",
+    "icon": null
+  },
+  "url": "https://ougbsbi.oraclecorp.com/pls/apex/f?p=145:20:117421555997000::::P20_TP_ID,P20_SET_VALUES_FROM_72,P20_ILA_USER_ID:10016014,0,2281679200",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 1306,
+  "error": "net::ERR_NAME_NOT_RESOLVED at https://ougbsbi.oraclecorp.com/pls/apex/f?p=145:20:117421555997000::::P20_TP_ID,P20_SET_VALUES_FROM_72,P20_ILA_USER_ID:10016014,0,2281679200",
+  "metadata": {
+    "title": "Trainings Status",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T05:25:18.963Z"
+}

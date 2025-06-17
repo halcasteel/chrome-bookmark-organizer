@@ -1,0 +1,30 @@
+{
+  "id": "06d1fced1b39ab45",
+  "originalBookmark": {
+    "url": "https://hunter.io/welcome/upgrade?from=domain_search_related_companies",
+    "title": "Upgrade your Hunter account",
+    "addDate": "2024-12-30T01:13:14.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABcElEQVR4nKRTsUoDQRB9ezkFE0EQEbHzkoBYi1iJRbASFZF4CaJioZDCr7AUET9BoglXiFiIhQRrCwtLycXGwsJCLC9x13dn5GKyFwh5MMvczL6Zt7N7plJKoA+Y2uj2RBxe4hqxRhZyYBFK1lCuPeu2GtoC9cQ+1wy+TRtKnQDiCBEQHUfIpdZIKtKL02SzSQNCWChV36IV5NMzsJMPJF81ya15k/ECIhXY6RU2c/g92Jb3z12lrdM8CLmA0uvjfwV5a5zkcw3ZL3+MsrvB7mdBXhkV5Kw9HMya4ZZscgdQk/TYSTgalR+Me8GeEA3aF+dyyrO5RThKUkkmGFknxkhuj/kKRqnMMgOyD4kt9AKl7qDqhd8hrk4PY6j+jnD6ESRUIHADSbJTe/mTAox8Sr48r0uBe8RQwIVbbU+ED8lO5rkWNeRb3sRyROGWh1R2L3nP8/SeWvKctnGILhDav3FzagnC2KWXYuG53gv0gB8AAAD//5v3zpMAAAAGSURBVAMAKTKFD5r8y7sAAAAASUVORK5CYII="
+  },
+  "url": "https://hunter.io/welcome/upgrade?from=domain_search_related_companies",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 8129,
+  "error": null,
+  "metadata": {
+    "title": "Upgrade your Hunter account",
+    "description": "Like thousands of leading companies, connect to more people with a premium Hunter account. Choose the plan that fits best your needs.",
+    "keywords": [],
+    "ogImage": "https://hunter.io/assets/social_card/default-d06ff682b93b61db6b56968567844e2cd33f7d6a832e7a2dbe1c830a55872c32.jpg",
+    "favicon": "https://hunter.io/assets/favicon/favicon-35c267ca9f2a39f1c9d7118c8533e74385d9e7a4fad1ced75fd51442ecfbceb2.ico",
+    "language": "en",
+    "author": null,
+    "canonical": "https://hunter.io/welcome/upgrade",
+    "contentType": "website",
+    "siteName": "Hunter",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/06d1fced1b39ab45-screenshot.png",
+  "timestamp": "2025-06-17T07:55:14.527Z"
+}

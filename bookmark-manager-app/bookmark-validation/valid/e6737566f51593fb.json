@@ -1,0 +1,30 @@
+{
+  "id": "e6737566f51593fb",
+  "originalBookmark": {
+    "url": "https://wasmbyexample.dev/examples/hello-world/hello-world.assemblyscript.en-us.html",
+    "title": "Wasm By Example",
+    "addDate": "2022-01-21T05:08:17.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABtUlEQVQ4jdWTP0+TURTGf+e9b1ssBWqJJCaUlGKoQU3DoDBKXHRBonFxcFMn/TRuTrq5OPA1mBhMBFMQUvsnr1iMf5C3vec4lMYqrc4+yzk3ec4v5557rjy8fWicVozZvefrZ9cBHq211szkFZD80xgOKAZImsjTx6utQ3WImTwZVPw3AAI3VGQJBSAzzDcUcKKhhT0F/zL8ZwAz0O7QUO2ee3kvqh8CMIPcuYDy1RAXwkI5ZLrgOJMWFpcSpEe7cXklQWpE4AQe9gMy48LNuymaNWX1foqdLc/mRofrt5JETeXOgxHGJoSD6Bvv3ngC6etABD5FSjuGYsmRHhUmpwIKFxyNmiebE6KGZ3OjzfxCePoKIvD9q9H6qJSvJai+V4IASpcd+xUlP+s4iIzdLc/cRUcyNWCIvgP1qnJpMaTytkM7hulZR73qmSk6SldCllcSnM87JqcCVAc844c9TzuGvYonaihfPhvxD8jmhNcvjnj57IhmTSnOh5iB9P9GM0hnhMKcY2fbMzYhjGeFelXJFxy72x2Oj2Gm6PDeqO3r74D+XXCum5t152MKgfu1DwJIAD8B8xOthHoH9bEAAAAASUVORK5CYII="
+  },
+  "url": "https://wasmbyexample.dev/examples/hello-world/hello-world.assemblyscript.en-us.html",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 7618,
+  "error": null,
+  "metadata": {
+    "title": "Wasm By Example",
+    "description": "A hands-on introduction into WebAssembly ( Wasm ). Containing simple wasm examples and wasm tutorials on how to implement concepts and various tasks using WebAssembly.",
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://wasmbyexample.dev/favicon.ico",
+    "language": null,
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/e6737566f51593fb-screenshot.png",
+  "timestamp": "2025-06-17T05:59:47.730Z"
+}

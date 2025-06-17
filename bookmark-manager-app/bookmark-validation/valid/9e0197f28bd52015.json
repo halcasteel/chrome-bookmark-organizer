@@ -1,0 +1,30 @@
+{
+  "id": "9e0197f28bd52015",
+  "originalBookmark": {
+    "url": "https://www.zerofriction.io/post/deconstructing-the-parity-multi-signature-wallet-hack",
+    "title": "Deconstructing the Parity Multi-Signature Wallet Hack",
+    "addDate": "2022-02-19T04:20:11.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACm0lEQVQ4jYWTP2idVRjGf897zr03qUYJ2IYILUIToqkure3SSpeICi4OQcS4iJPgYpcSlwuldBPrULqo0EBruaOLVDM5iNEiCEK5bRYJKk3T0hh6/+T73tfh+27o1nc5cA7nOb/nec8rHquZmbdah08e/wgvFtxjXCIkCcA9kEKEgCgtJYPUzYCAeG1pefops2uEn3Z3ACKAqMRFEFGtALkxxu5w+H2uH7d98JVZOj3o75Abrfq2gQIQIhCCCGTmw6L/5Y2V818IYOGDz05ZxE/hRSmzO7i1Syv6DcdKWURIFnhFYimybdxYOfcLQEXg/qrMQrlhHlz94er5b3lStRebsOm5UtVcLYR7rLO4mI5NTtrNbjfYvz84kY80Wvka7kmYe7iTUrMon/84A5ilwxGFIrxQGet0OuVNCNpAG+fEey9GtnkeFSBH+1rEsOgyuPurzZ38cMJ9OFPFztb2vX9v15DOnwggG7PycMrohzQMj1uF6X3O/vjQDh48MAMcEMJSY31t9crWns9OFVyYXoqyFI00VpiWi837x/hk5TcAI8esZGNVg2OdUdupmUCSvSBLKjN/4cNvaH/3iDZW02keSJLYLcrbewE+eOAAE4fyZG+3fGV3XPenN1oXT52b3enQEe2KLrvzshQRHghbqwMsRy7++/rtQwyeeTh/59m1uX+mjv68+Eeiw3B0nnPOU2VZhLtL4vWFpeXs4U2AkMqt37fffLrX6j3Xm3hnW73LG51OD9oG7YqgdN+0lKwY9gcpN8+IOGNmtftg+t4EskQvFTsM+hfrXxQjAvPwC2B3G83xVkS9717NgjuRDRrpb8LfXb3+ebcOeE9AAG8sLR8N2afymMKilKSIavZcccsHcWn1+oXu4+ij+h8jPUdj31GcjwAAAABJRU5ErkJggg=="
+  },
+  "url": "https://www.zerofriction.io/post/deconstructing-the-parity-multi-signature-wallet-hack",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 15786,
+  "error": null,
+  "metadata": {
+    "title": "Deconstructing the Parity Multi-Signature Wallet Hack",
+    "description": "May 21, 2021 - Zero Friction performed an investigation of the Parity Multi-Signature Wallet Hack where the hackers siphoned over 150,000 ETH with a current market value exceeding $405M, and as of May 20, 2021, the following were observed:1. The timestamps of one of the initial three inbound transfers from Wallet #1, #2 and #3, and the outbound transfers to the eight addresses indicates that the hackers may be of Eastern region. 2. Most of the stolen funds have been liquidated across several exc",
+    "keywords": [],
+    "ogImage": "https://static.wixstatic.com/media/85c327_493ab89f17174b97bb98d2eb805825b0~mv2.png/v1/fill/w_625,h_536,al_c,lg_1,q_85/85c327_493ab89f17174b97bb98d2eb805825b0~mv2.png",
+    "favicon": "https://static.wixstatic.com/ficons/85c327_db6240ea27c5489986c03ca04a6d01d1%7Emv2.ico",
+    "language": "en",
+    "author": null,
+    "canonical": "https://www.zerofriction.io/post/deconstructing-the-parity-multi-signature-wallet-hack",
+    "contentType": "article",
+    "siteName": "Zero Friction LLC",
+    "publishedTime": "2022-01-01T15:33:41.442Z",
+    "modifiedTime": "2022-01-17T02:08:43.537Z"
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/9e0197f28bd52015-screenshot.png",
+  "timestamp": "2025-06-17T06:03:31.585Z"
+}

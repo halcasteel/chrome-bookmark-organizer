@@ -1,0 +1,25 @@
+{
+  "id": "43280f8390f196fe",
+  "originalBookmark": {
+    "url": "https://claude.ai/chat/5669fc14-c730-4171-924b-22f2a30e37fe",
+    "title": "Architectural Review of Google Apps Script - Claude",
+    "addDate": "2025-01-13T21:13:08.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACYElEQVQ4jY2TzWvUVxiFn3N/k5n4AdoiVpTWD6ymBlRsAlWLmyq4cGHEaRKRblposRsDIRN1EyzUsS24caELVwqJRhEUFP8AQVCRCKnJNCpFqEFKbLEkTpzfPS6cyCSK9uzOe9/7vPfCeWGGSoW2zlJX+7YpP9iTzw51tTXN7JtSqDWPOvKzjI9Y8aTz+QQgea69Urz0vwAfH+ufMJwClg8vT1peVbUC6wHA/UL+k+FC681SoW3P1J0MwL1C26aE2FGpZDodJg6FmP3a8gHDhZK1kOCBh/t3zp8kXAMaUPS0F2TEhNHWJBNvy/XN0RwWbPijq7UFewkwMFmfOw00gM6sKp7rnQb4tNh3J60k68GDcrwSxFLEn1EcslhEdAtmB/D787Tuh9pvq9a4pyeUxu/tQxSBOdVyGcgBKWIjZlJmg6HRIVzRUHf7duEvFBkzPDX8K3k2cARYVsOvVGFZ4C74RproRMZ4KNhLY9D8QFygSBaUM5jpeoq5iLhO8N9Ow5PPfu4b1IwmRrrzK1OHo5hmxGIgqR7dsnQee3OALw0fIHdmakM0Xhd+Ss0+m+MSgHOg9cBiYBn22nRW3L2axkqpPLzqr9zjkdeA8Wy4hag4agtys+ErpKIijxFzgbUS/yQT4fLd9P6udb/1Ds1M4p5nY/OakiStExzOKLYqeo2l0UqMHcAiW2PIZ+uT8sU3orz66NmB7If/zY0Ovba+XVnsHyGoSTDa+Gv/KPCjcHcM2auV6G/eugtJ+YWEv2v4pe/V8tifS3G0OqAPaa+z5WdV4PtVKrR+/+Bg+0fv6nkJeHMA2HVTxIkAAAAASUVORK5CYII="
+  },
+  "url": "https://claude.ai/chat/5669fc14-c730-4171-924b-22f2a30e37fe",
+  "valid": false,
+  "statusCode": 403,
+  "loadTime": 4558,
+  "error": "HTTP 403",
+  "metadata": {
+    "title": "Architectural Review of Google Apps Script - Claude",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T08:16:10.110Z"
+}

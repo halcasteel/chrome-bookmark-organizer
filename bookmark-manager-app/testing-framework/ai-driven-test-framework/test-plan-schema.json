@@ -1,0 +1,221 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AI-Driven Test Plan Schema",
+  "description": "Comprehensive test plan format for AI-driven headless browser testing with full traceability",
+  "type": "object",
+  "required": ["testPlan", "testSuites"],
+  "properties": {
+    "testPlan": {
+      "type": "object",
+      "required": ["id", "name", "version", "description", "metadata"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^TP-\\d{8}-\\d{6}$" },
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "description": { "type": "string" },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "createdBy": { "type": "string" },
+            "createdAt": { "type": "string", "format": "date-time" },
+            "approvedBy": { "type": "string" },
+            "approvalDate": { "type": "string", "format": "date-time" },
+            "tags": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      }
+    },
+    "testSuites": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "testCases"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^TS-\\d{4}$" },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "priority": { "enum": ["critical", "high", "medium", "low"] },
+          "testCases": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/testCase"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "testCase": {
+      "type": "object",
+      "required": ["id", "name", "type", "steps", "expectedResults"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^TC-\\d{6}$" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "type": { "enum": ["functional", "regression", "smoke", "sanity", "integration", "e2e"] },
+        "priority": { "enum": ["critical", "high", "medium", "low"] },
+        "preconditions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "description": { "type": "string" },
+              "setupSteps": { "type": "array", "items": { "$ref": "#/definitions/actionStep" } }
+            }
+          }
+        },
+        "steps": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/testStep" }
+        },
+        "expectedResults": {
+          "type": "object",
+          "properties": {
+            "successCriteria": { "type": "array", "items": { "type": "string" } },
+            "failureCriteria": { "type": "array", "items": { "type": "string" } },
+            "performanceCriteria": {
+              "type": "object",
+              "properties": {
+                "maxResponseTime": { "type": "number" },
+                "maxMemoryUsage": { "type": "number" },
+                "maxCPUUsage": { "type": "number" }
+              }
+            }
+          }
+        },
+        "testData": {
+          "type": "object",
+          "properties": {
+            "inputs": { "type": "object" },
+            "fixtures": { "type": "array", "items": { "type": "string" } },
+            "environment": { "type": "object" }
+          }
+        },
+        "aiInstructions": {
+          "type": "object",
+          "properties": {
+            "context": { "type": "string" },
+            "debuggingHints": { "type": "array", "items": { "type": "string" } },
+            "commonIssues": { "type": "array", "items": { "type": "string" } },
+            "recoveryStrategies": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      }
+    },
+    "testStep": {
+      "type": "object",
+      "required": ["stepNumber", "action", "validation"],
+      "properties": {
+        "stepNumber": { "type": "integer", "minimum": 1 },
+        "stepId": { "type": "string" },
+        "description": { "type": "string" },
+        "action": { "$ref": "#/definitions/actionStep" },
+        "validation": { "$ref": "#/definitions/validationStep" },
+        "errorHandling": {
+          "type": "object",
+          "properties": {
+            "retryCount": { "type": "integer", "default": 0 },
+            "retryDelay": { "type": "integer", "default": 1000 },
+            "fallbackAction": { "$ref": "#/definitions/actionStep" },
+            "criticalError": { "type": "boolean", "default": false }
+          }
+        },
+        "aiContext": {
+          "type": "object",
+          "properties": {
+            "purposeOfStep": { "type": "string" },
+            "dataFlowDescription": { "type": "string" },
+            "dependsOn": { "type": "array", "items": { "type": "string" } },
+            "impacts": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      }
+    },
+    "actionStep": {
+      "type": "object",
+      "required": ["type", "target"],
+      "properties": {
+        "type": {
+          "enum": [
+            "navigate", "click", "type", "select", "hover", "rightClick",
+            "doubleClick", "drag", "drop", "scroll", "wait", "screenshot",
+            "executeScript", "switchFrame", "switchWindow", "acceptAlert",
+            "dismissAlert", "uploadFile", "downloadFile", "clearCookies",
+            "setLocalStorage", "apiCall", "databaseQuery", "customAction"
+          ]
+        },
+        "target": {
+          "type": "object",
+          "properties": {
+            "selector": { "type": "string" },
+            "selectorType": { "enum": ["css", "xpath", "id", "name", "text", "role", "testId"] },
+            "alternativeSelectors": { "type": "array", "items": { "type": "string" } },
+            "iframe": { "type": "string" },
+            "shadowRoot": { "type": "boolean" }
+          }
+        },
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "value": { "type": "string" },
+            "url": { "type": "string" },
+            "coordinates": { 
+              "type": "object",
+              "properties": {
+                "x": { "type": "number" },
+                "y": { "type": "number" }
+              }
+            },
+            "options": { "type": "object" },
+            "timeout": { "type": "integer", "default": 30000 },
+            "waitBefore": { "type": "integer" },
+            "waitAfter": { "type": "integer" }
+          }
+        },
+        "networkConditions": {
+          "type": "object",
+          "properties": {
+            "throttle": { "enum": ["none", "slow-3g", "fast-3g", "slow-4g", "fast-4g"] },
+            "offline": { "type": "boolean" },
+            "latency": { "type": "integer" }
+          }
+        }
+      }
+    },
+    "validationStep": {
+      "type": "object",
+      "required": ["type", "expected"],
+      "properties": {
+        "type": {
+          "enum": [
+            "elementExists", "elementNotExists", "elementVisible", "elementHidden",
+            "textEquals", "textContains", "textMatches", "attributeEquals",
+            "attributeContains", "cssPropertyEquals", "urlEquals", "urlContains",
+            "titleEquals", "titleContains", "cookieExists", "localStorageEquals",
+            "consoleLogContains", "networkRequestMade", "responseStatusEquals",
+            "responseBodyContains", "databaseRecordExists", "customValidation"
+          ]
+        },
+        "target": { "$ref": "#/definitions/actionStep/properties/target" },
+        "expected": {
+          "oneOf": [
+            { "type": "string" },
+            { "type": "number" },
+            { "type": "boolean" },
+            { "type": "object" },
+            { "type": "array" }
+          ]
+        },
+        "operator": { "enum": ["equals", "contains", "matches", "greaterThan", "lessThan"] },
+        "extractData": {
+          "type": "object",
+          "properties": {
+            "variableName": { "type": "string" },
+            "dataType": { "enum": ["text", "attribute", "property", "screenshot", "html"] }
+          }
+        }
+      }
+    }
+  }
+}

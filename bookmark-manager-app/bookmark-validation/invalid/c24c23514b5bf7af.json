@@ -1,0 +1,25 @@
+{
+  "id": "c24c23514b5bf7af",
+  "originalBookmark": {
+    "url": "chrome-extension://bpmcpldpdmajfigpchkicefoigmkfalc/views/app.html",
+    "title": "Dakin",
+    "addDate": "2022-07-21T05:28:09.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAz1JREFUOI1NUktonGUUPfd+/2P+zPwz03FqHcdoS1uktE6x1RT7INqitaOIz1YQxIVmUY1IWxcKgRBEY4uolUgI3QQEoVZESkxA6ENIJLoRxY3VTUMSo2SSmck8/sf3XRdJMWd77jnccziEVRAAAQD/wvEDZFk9MNINSGGNngfTdYnjkfqrFyfXawi3cP6Ym05v+AiEHlZssxaIltVLRTCKYLSJIGakVquexpvjwapLPxi5Y3bGz40hZR2hWmhCE0szajExAwDEaHTYnnGUTeI7rOqtK5WVehmV8UjhGiT13J7zkjEnVA3BStS0NnoZPrnrSZzZ/TRe3HYIW7NF3Fie5cV2DYmYwqrvb08ayoWnfh+jxwZkX927MTXnf21m+Ad+KH8ff/no29KZyv8fD0BFN+T5sffp6twf5tnMonkn9Qs/EC8dVJ1HznyYUoXd6eX95g7nLr50/BkUk3lqRyGYGUSEt06fQlrb9Mbjr8jevz+ggcQ07ky1VU0jwUTUrRFILWrwy9sfpoKXpyCKkbAd1KpVjI6OYuvmLfhm/FvkyKUTO45SLQS1QyWK0M0ANkkcE4Po3rtDMWLg2hbq9ToGBwcxPDyMRCKBTz7+FGQJgvQhYQXSWgjAJmt9ThgGAVhaWsa5c2cxPT2Nrq4ulMtlWJYFIwILQLROwgAWSNliAPltJiQixsWvLmFiYgKlUgl9fX0oFovQOgQTI16aIhiIrUgALKjNh9/dq2yvxIj0zUWhJ/Y4cKlFmdzt6O3txcZ8HnHUgmV7kPBfCX99DZCm8VxRUYTLdHCguc+11RRBm0ZgeGeR+OxLHdjgrb4otzbbnpXWzy+QVH407JBRJKwN9hMAdL9XH0qkUifjZiNotMW5LSV0tGTL/fcYPJj5Hrw8ifDmKEn7HyGLwmRW3JUKPvefwuuEfuFti7A7C63vnA7vsG42TKS1VNsO590FfLFzC3wWaIZhxZTMGm5VccUjlPETIkY/mT8/o2BmfrYcNoMhUY52E77K+Tb5LhHZWbI9RakkK8c2OqhjaPYvlKmMgPph1uYqBJAAwCMDzQPKUT2RVt1ZNVe4sGMX0k5tHoTr2mCko4zJtW6IAPkPn1Zkn70N3IAAAAAASUVORK5CYII="
+  },
+  "url": "chrome-extension://bpmcpldpdmajfigpchkicefoigmkfalc/views/app.html",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 2174,
+  "error": "net::ERR_BLOCKED_BY_CLIENT at chrome-extension://bpmcpldpdmajfigpchkicefoigmkfalc/views/app.html",
+  "metadata": {
+    "title": "Dakin",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T06:16:37.101Z"
+}

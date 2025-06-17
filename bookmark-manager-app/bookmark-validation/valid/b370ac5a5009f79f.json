@@ -1,0 +1,30 @@
+{
+  "id": "b370ac5a5009f79f",
+  "originalBookmark": {
+    "url": "https://www.sailcut.com/handbook/en/",
+    "title": "The Sailcut CAD Handbook",
+    "addDate": "2024-05-04T02:35:26.000Z",
+    "icon": null
+  },
+  "url": "https://www.sailcut.com/handbook/en/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 3819,
+  "error": null,
+  "metadata": {
+    "title": "The Sailcut CAD Handbook",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/b370ac5a5009f79f-screenshot.png",
+  "timestamp": "2025-06-17T04:12:16.639Z"
+}

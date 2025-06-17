@@ -1,0 +1,30 @@
+{
+  "id": "8369088eb3db4884",
+  "originalBookmark": {
+    "url": "https://www.google.com/search?q=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DeYVwMQiKFSU&rlz=1CAMFAZ_enUS1083&sourceid=chrome&ie=UTF-8",
+    "title": "https://www.youtube.com/watch?v=eYVwMQiKFSU",
+    "addDate": "2024-05-10T01:16:31.000Z",
+    "icon": null
+  },
+  "url": "https://www.google.com/search?q=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DeYVwMQiKFSU&rlz=1CAMFAZ_enUS1083&sourceid=chrome&ie=UTF-8",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 6811,
+  "error": null,
+  "metadata": {
+    "title": "https://www.google.com/search?q=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DeYVwMQiKFSU&rlz=1CAMFAZ_enUS1083&sourceid=chrome&ie=UTF-8&sei=FetQaNalH5WMwbkP6YKIuAU",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/8369088eb3db4884-screenshot.png",
+  "timestamp": "2025-06-17T04:12:03.782Z"
+}

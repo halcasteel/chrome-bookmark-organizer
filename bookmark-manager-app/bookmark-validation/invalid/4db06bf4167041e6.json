@@ -1,0 +1,25 @@
+{
+  "id": "4db06bf4167041e6",
+  "originalBookmark": {
+    "url": "http://127.0.0.1:8000/openapi.json",
+    "title": "127.0.0.1:8000/openapi.json",
+    "addDate": "2025-03-11T02:54:10.000Z",
+    "icon": null
+  },
+  "url": "http://127.0.0.1:8000/openapi.json",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 957,
+  "error": "net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8000/openapi.json",
+  "metadata": {
+    "title": "127.0.0.1:8000/openapi.json",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T08:49:22.583Z"
+}

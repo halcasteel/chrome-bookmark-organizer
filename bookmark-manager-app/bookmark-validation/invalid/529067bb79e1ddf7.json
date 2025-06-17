@@ -1,0 +1,25 @@
+{
+  "id": "529067bb79e1ddf7",
+  "originalBookmark": {
+    "url": "https://web.az1.ai/login%60",
+    "title": "web.az1.ai",
+    "addDate": "2025-01-21T20:33:38.000Z",
+    "icon": null
+  },
+  "url": "https://web.az1.ai/login%60",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 1688,
+  "error": "net::ERR_NAME_NOT_RESOLVED at https://web.az1.ai/login%60",
+  "metadata": {
+    "title": "web.az1.ai",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T09:23:47.288Z"
+}

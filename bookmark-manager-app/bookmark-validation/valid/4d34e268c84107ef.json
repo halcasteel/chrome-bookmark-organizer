@@ -1,0 +1,30 @@
+{
+  "id": "4d34e268c84107ef",
+  "originalBookmark": {
+    "url": "https://manpages.ubuntu.com/manpages/bionic/man1/pdftotext.1.html",
+    "title": "Ubuntu Manpage: pdftotext - Portable Document Format (PDF) to text converter (version 3.03)",
+    "addDate": "2022-08-24T21:05:37.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADOklEQVQ4jVWTX2gcVRTGv3Pnzmx29k8S3HV3yWpaCcWHoiQBjQarxYSWTUQJ9a0WH6QEVMSCohSxUkHEWg2CpQhSUEQUrVrJi6lVQ1HabhMJGIw1Jm3adFPadJPdmZ2Ze+/xwYTG3+t3fk/f+QhrMEAE8OzQ5nYZeLsJpk+x6AQYkmiC7aYf7ZbWTwrHJufWbwGAsIGFUu5FC/olgAuKBCJDTARYKiDLrwF27Conm98pfrd4eN0RDAgAuDSQ/SAh9OGGQcEzImpUl3W0fA1BZQkqdZtO7T8WiZ5S3vWr7y483nYEAA4AQhJg5gdzLyShnruuKIQKLeN7MvnwE4h3b4deXUa0OC9SO3Zbwk3ryz8f17e7avhiKTdz52jlPZodKrRLLyyzEK2RV2fZ1iHc+/sR79qORO8AmYaHcGaSG7//itr41whmysZ2U0Tgakwmu2luILu/CXhzNQgVjLKKI2NwtnRifk8XwVthVgHc3sco88wbHMxPY/GVIcB2dEqS9GEdEGDRH4UhE0DxrkepaWsPVd4eJnVxmnWjTkZrqn75MV/76HVK3NdPiUeGiGtVUiRYEPqs54t43976QKz44U8EBkyjjpUvRmCMJiEdEBEoESe98BfLTB5q6RKCC1Nk7BggRFb8VwYBwgIDBGasVfw/GACbtYxu/Y6wE8lJM/0b5nZ1GO/0CXY7t1HsnocI3iqzUWBm6Mp1dh8sUbq0h4zSBK2NIwgSpiwU65PSdoiNZv/cSfh/nOHcq0dZ3nE3iZjLAsTpXU9Tdu9Brp8d4/qpr5iSzWzDEDON0T8785sEojKEaIm8Ostih3B7diB+7za4vQPEfh3h31PsT55Gffw4gj/Lxk6kSICrjpTd1siF2s19W9JRWuidvrCVqd4gf2KcoCOY1RtoTIzDP38K2WffItmcMSs/fK4z6aQMmF5r+35plBgQBJiFwfyRBKLhm4pgQJGpLQvWWpiQ4Wy6y2T2HjTeL9/YzplRhG7L0fy3l4fX3FtcGSzsI45eBnNufUwgQKqApF8DbKfCidZDbSeuHFp3aENNRABffbJ9c1DznyLBfZpFNxPIBp+D44w58dZPc59NzW6c87/NMpPlLrZ/hwAAAABJRU5ErkJggg=="
+  },
+  "url": "https://manpages.ubuntu.com/manpages/bionic/man1/pdftotext.1.html",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 3981,
+  "error": null,
+  "metadata": {
+    "title": "Ubuntu Manpage: pdftotext - Portable Document Format (PDF) to text converter (version 3.03)",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://assets.ubuntu.com/v1/cb22ba5d-favicon-16x16.png",
+    "language": "en",
+    "author": "Canonical",
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/4d34e268c84107ef-screenshot.png",
+  "timestamp": "2025-06-17T05:37:02.121Z"
+}

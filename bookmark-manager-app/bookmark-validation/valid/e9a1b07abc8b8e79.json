@@ -1,0 +1,36 @@
+{
+  "id": "e9a1b07abc8b8e79",
+  "originalBookmark": {
+    "url": "https://zilliz.com/serverless",
+    "title": "Zilliz Cloud Serverless, cost-efficient vectorDB for GenAI apps",
+    "addDate": "2025-01-16T00:19:26.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACgUlEQVQ4jX2TTWxMURTHf+femXmvY9pKRSslYiFSQiKRUPGRCotqGotGbSUSBGnYSER8PBEWwkJU2EhESKTY+IqFxrDwlSARoaQLC0pnVM10pvPx5r1jQRqt8t+c5OZ/fueee86FSeShBuDJzvyZh9tGugG0U+1kXjPx4P2hzPrWru8JgFTKSnrQoRO1yTTyX4Ci4nmeGRqSI/lcvAsgPeREhjJRvYYELUmC385xRceoHmo8JOxpLy+tBOZ26Z2dPTiXowHUDVqS2RK3LibJgoSTAv7UqTXaUzH0pyxpjbAnI3xZ+pVV21+I39yhKyoOR0d9jr29Lr3itWhkYARprEYzJWpsnlKijmDU5UHWkgribBgusKXPcLfK4axvWFm2nBuNcfpjjPy4Gxxfq5vLLlsG4UoeFgYOXT+UXAYuFCzLfeXR6xuyd1wLJ9dqd95AzkJeqC5HaMWlPl2mMGJw8xYtOpiicDesJSnVNIjLFEkQEIdIGfANlARbhnRROZnyaSlW0ZYNCYsW1GU40kBbELCMCHeIMUIUiP71iGqWbeREAC1FQ9J32WqnUVMxnBKXV5EZbPYNlz/skktjLWxbotHPM0gUqthdhB0l4XGuxK5gJivcOnoqyk1NMCdlWD1cpDSrhvinLFkGEBpRAWju0HU47M/5HHhzXR7jqWkq0Es1C1Q4LtNpQGjq2yodE0c+yR6omb2P2niMTWE9zcbwrW8+B5t+8Kni0N7fJk/x1OCNX6ix5F/hV5x3Rc80XdXzAIvu68HFyfAZnmdQHSs84TP9piYxdKo1UxGZGlYACuXvp40NDuN5ISL6D8AfuiZBtCok5qAA/c/rci9XRe9NtP0E9lAIeq9akqMAAAAASUVORK5CYII="
+  },
+  "url": "https://zilliz.com/serverless",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 17875,
+  "error": null,
+  "metadata": {
+    "title": "Zilliz Cloud Serverless Vector Database for GenAI Apps",
+    "description": "Zilliz Cloud Serverless Vector Database: Grow your GenAI apps with hassle-free infrastructure management and save up to 50x in cost.",
+    "keywords": [
+      "Serverless vector database",
+      "Zilliz Cloud",
+      "Zilliz Cloud serverless",
+      "serverless database",
+      "Managed Milvus"
+    ],
+    "ogImage": "https://assets.zilliz.com/medium_serverless_page_cover_d8d3872318.png",
+    "favicon": "https://zilliz.com/favicon.svg",
+    "language": "en",
+    "author": null,
+    "canonical": "https://zilliz.com/serverless",
+    "contentType": "WebSite",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/e9a1b07abc8b8e79-screenshot.png",
+  "timestamp": "2025-06-17T08:58:13.090Z"
+}

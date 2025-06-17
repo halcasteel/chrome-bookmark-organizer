@@ -1,0 +1,25 @@
+{
+  "id": "5f7c05b18e0b6cf1",
+  "originalBookmark": {
+    "url": "https://www.srpd.io/",
+    "title": "www.srpd.io",
+    "addDate": "2025-01-16T00:19:26.000Z",
+    "icon": null
+  },
+  "url": "https://www.srpd.io/",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 2426,
+  "error": "net::ERR_NAME_NOT_RESOLVED at https://www.srpd.io/",
+  "metadata": {
+    "title": "www.srpd.io",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T08:59:14.255Z"
+}

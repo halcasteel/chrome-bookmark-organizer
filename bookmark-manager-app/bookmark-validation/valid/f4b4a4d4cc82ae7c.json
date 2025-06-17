@@ -1,0 +1,30 @@
+{
+  "id": "f4b4a4d4cc82ae7c",
+  "originalBookmark": {
+    "url": "https://doc.rust-lang.org/book/",
+    "title": "The Rust Programming Language - The Rust Programming Language",
+    "addDate": "2022-01-21T04:46:13.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABrUlEQVQ4jY2Tv2tUURCFv3lJ3JUYQS2UoKtWQYkgKqksrEyphWCl1Rb2YmWhaIiNha3/gj8wqW0NEgw2RjRCsHExgoVBkshmN1+aubA8LDIw3HmPuWfOnJkb1EydAi4BfUCgyrPEQ0AnIubqd1EPqR33ZrfUqPJiJMY9YBzYTl/Iyr+Aj8mqm7nNiLDO4L26k76snlO31DvqbP7vq3/VU2prWI2IUJ0AJoGd7HMRuAi8AjaA60CkLwB/gHfVAIFHwIFMWM+zBXxJoFaCC7wBLgBHI6kPAavAyUzqAyupw5lkcLh0CpwG7gNjhcE0cALoZeW3wFNgHngGHEnQAJZT1CvAiyLe6xToX47orrqagk2rXXU7cx6qk+oPdbRSG8D5ZNIA1oDPwAjwGGhnTDKYB24AHyJiA7WdyF21l8gz6kt1JRl1k01HbapLarvQ/7THzVN9ro6rv9VjAMPAceBrbljZ+17GZUMrYAuYBa4B3yJiTQ3UdfWmuk/drzb+4011JBkvqQ/K+EO9DTzJWcdA1br1gYPAJnA5In4WVVHPAlcHWqiDDD6auYj4Xj52AZc2k56m9TuXAAAAAElFTkSuQmCC"
+  },
+  "url": "https://doc.rust-lang.org/book/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 8019,
+  "error": null,
+  "metadata": {
+    "title": "The Rust Programming Language - The Rust Programming Language",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://doc.rust-lang.org/book/favicon-de23e50b.svg",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/f4b4a4d4cc82ae7c-screenshot.png",
+  "timestamp": "2025-06-17T05:59:41.200Z"
+}

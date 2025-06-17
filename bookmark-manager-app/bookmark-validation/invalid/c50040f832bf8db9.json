@@ -1,0 +1,25 @@
+{
+  "id": "c50040f832bf8db9",
+  "originalBookmark": {
+    "url": "http://127.0.0.1:8080/",
+    "title": "Markdown Server",
+    "addDate": "2024-11-22T17:41:31.000Z",
+    "icon": null
+  },
+  "url": "http://127.0.0.1:8080/",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 1775,
+  "error": "net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8080/",
+  "metadata": {
+    "title": "Markdown Server",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T06:56:15.909Z"
+}

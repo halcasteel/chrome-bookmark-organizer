@@ -1,0 +1,25 @@
+{
+  "id": "548039bff7469877",
+  "originalBookmark": {
+    "url": "file:///Users/hcasteel/",
+    "title": "file:///Users/hcasteel/",
+    "addDate": "2025-01-10T13:42:03.000Z",
+    "icon": null
+  },
+  "url": "file:///Users/hcasteel/",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 653,
+  "error": "net::ERR_FILE_NOT_FOUND at file:///Users/hcasteel/",
+  "metadata": {
+    "title": "file:///Users/hcasteel/",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T08:03:55.730Z"
+}

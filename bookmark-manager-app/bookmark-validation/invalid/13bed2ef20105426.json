@@ -1,0 +1,25 @@
+{
+  "id": "13bed2ef20105426",
+  "originalBookmark": {
+    "url": "https://hyperswitch.io/",
+    "title": "Open Source Payment Orchestrator | Juspay Hyperswitch",
+    "addDate": "2025-04-21T00:45:34.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACpElEQVQ4jVWTz2tcdRTFP/d+35tJZpKFmsEfRawrlRZculEbELpRi4q6ERWrtCuL8Q/QqbhTKlZcpDY1aFfNSiG6cCVCQII/WuzShdDWFH+QTNvMm3nve4+LSRu863sO555zrnFz+nL6FgB8of3UHKCOB/yXq22GzaWYvn2NxQ+/h34DMjAB2P/An+hBuhwneBKni4H/egO7NgS3MfjPKL+fl3qrN0kMyTATn+ogXc7i9LhB4DjGyH/6c9uG4665J9JUUipRbt6Lpd67IHPMxGntp8MKDT22qShwSv6G/DyVrtLttYRCeVgzHtRWdt7x1zaOTRT0VbCH7yiZp2JEQYnzFw1Pc8TW/fCVt81bh0zNAUUtC2V5Mjxt53H1iHMXB3EepyJjFBQENa9zxNbpq4gz95zIp+fmRfGKpamh3B3VgRezqWi95cAzJAyoaZNo+Iajtso5JfrW8MK5BPK8NPdlRPMBRddNBnUlwSGn5CEyAI4jjG9BxspOvCsvZjgOyONac5ZmWMk9GSGL5k5HzOysGgGIzQkQsVuSAAuafwfAdcMcAzPkwD8YIALHCPaBiUXSLoEMZMzO7cHsNiliUgMLJ7OGY5PUCRKH+Uh7OWr1Lfw8CUye7FWKqWSKRqkkKH8zTmkfzo9kphFBSYFxkcwCl/mBK2ROWc1Ll55I01Nfk6s20QSt2VL1cGFS5c90kg5vMmCEkSgodmz9nRke5auNe1OnvWq5mlOMxxQzbUVzPth8LIGMp1hDzNNhLyMCkRFOYsbPbyWv6hNGc4diNCbNtGVpM2o9x/J9f9itO0+qR5dFEs9SA1kByC9uJdsaYMlF0TWwC01dvcHy3evQd9t1efKefK6XEQvUPIyEX9gIu56NVuuyKM5EM/iY5fs3QQ4W/wEjpkBNB2ExSgAAAABJRU5ErkJggg=="
+  },
+  "url": "https://hyperswitch.io/",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 31462,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "Open Source Payment Orchestrator | Juspay Hyperswitch",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T02:17:56.873Z"
+}

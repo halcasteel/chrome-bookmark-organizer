@@ -1,0 +1,25 @@
+{
+  "id": "3755eacb7bb4b3a9",
+  "originalBookmark": {
+    "url": "https://www.apollo.io/demo",
+    "title": "Get a demo | Apollo",
+    "addDate": "2025-01-10T20:51:00.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAClklEQVQ4jU2TQWicVRSFv3Pf+yeTphljLZVq6CJtAkololiKxSQiuNGNSN3UhYsGLLrQhSIIgih1p9RFRYqCUEXQleBCqYrZGFFaKoh0ShGrpagtgsrkT2bevS7+mcS3eot3zr33O/fJzy5+Q9JBIpxAIEUEkogIgM27JCACEUhGiVXFD0sRJQBiJAaBIHxoYILhk00TkJKwKBERAqTGXUgBHqSWkVoGHpTiNCoiQooQUSIyQylE0yVB8SBPZj7/8hrJxAP378SSoFfwvsusmRIgb8mRJDwCmdhYKzz9WpexVmJlvsMb717m8YduZnbvBGXdZdZ0nRmeESgvQXVjxYmTP3Pxcg3Aex9dYfdNLdqVUESDq2kA+bmlGNH2CKyVuHq1Zu/Dqxx9ZDeDEpz+9Hf++OoQ2yYzg7VCU70pamxBIELYmPHc65doVcaTh2/h2SPTSGL55QtQWRPG/zQqZxdDwKAEVSfz9cp1lpbPc+qlOb749i862zP33D7J8itdVt65k/sO7aD/z4CcRAAmCQcsiX7PWX61y73zHWZuHefDz/5kbs84R49MMzPd5tjxLoPasdRoJGEjcGmq4uT7v3LxlzUee3AXx453uWPfBM88sYcw8faLc/x4qcdbH/xGmqrwEs129r9fiNRO/NT9l/2PfseQJ1UWZ07Ns3BwB+t/Dxibqjj81Hk+PnONC58cYHZmglIXskwBqN/3OPH8Pm1rJ9Y3nIW7b2D/bR1Kr5Cz8A3nzRdmWbhrirouzVKaQn5u0cORtROMG81wQO2Ueiuy8MAqg+0J1hyvCzIiK0kQ+HqJ0isapWTWfKLNH2mi9B2/7qREyJCSZDGIVUyNWyZyFjkLM6EhaQ0zNxM5EzICEzGI1f8AJYI2ygOFJF0AAAAASUVORK5CYII="
+  },
+  "url": "https://www.apollo.io/demo",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 30603,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "Get a demo | Apollo",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T08:06:05.264Z"
+}

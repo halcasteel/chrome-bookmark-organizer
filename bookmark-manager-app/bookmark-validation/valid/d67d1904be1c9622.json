@@ -1,0 +1,30 @@
+{
+  "id": "d67d1904be1c9622",
+  "originalBookmark": {
+    "url": "https://hextropian.systems/",
+    "title": "Hextropian Systems",
+    "addDate": "2024-12-27T14:30:09.000Z",
+    "icon": null
+  },
+  "url": "https://hextropian.systems/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 2190,
+  "error": null,
+  "metadata": {
+    "title": "Hextropian Systems",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/d67d1904be1c9622-screenshot.png",
+  "timestamp": "2025-06-17T07:52:41.747Z"
+}

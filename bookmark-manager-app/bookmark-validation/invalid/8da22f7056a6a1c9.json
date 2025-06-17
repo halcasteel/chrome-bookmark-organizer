@@ -1,0 +1,25 @@
+{
+  "id": "8da22f7056a6a1c9",
+  "originalBookmark": {
+    "url": "https://collaborative-ai.live.ft.com/agenda",
+    "title": "Agenda | A Collaborative Approach to AI Implementation and Regulation",
+    "addDate": "2024-01-26T20:46:32.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAACQklEQVQ4jS2OXW9UVRhGn+fd+8yZGYZO2zCUD6Ne4A298VIEglibaAI3BGJijP9Rf4AJH4mSmIk13BFSK3SqQLVDOzNnzt77fbyg92utLObxTwKChwRaZcxzi0FeuSWVGE2uTA7cUvZZ8G50uoAsqO4tUlOVBHlVdQqt5NxKnW7dNo0z1726ZMUSqqbNjx79+nD8x9bWrbNWdnZ+39z89MXLvWG/3x2s/vJ0vH37xquXu4vF/Ifvv7Mqp2G/d2nj4s7Os48vf/j5Z9dvXrvenJwMur3trZuj0ejpb+OrVz/Z/vLWmbqT5tOI4qRbp657g7XV9SBbXz+3cf5Coa+urRAHg+GKyUfnhl99cSOgxBwCQ2hCOCnl58dP0uHBmdWVB9/eb6b/+aIR0bqE4Mt2fW1o9GjIVKKWlZXNKx+sXLmw//a1L46wnFmva8qkTDRl9+QKER6pUMVOJ8bLGxdHa2cvzT8qTWKoEPrs9K2qGfuwZRGMlYFKxd6+OZwdvvlzby+1y2iicjA2ufwzeX3892R/sptICoHJQrB3R9Pl7PjenW8mr/6aHU/NJMmiHUz2Z9N/7939em/3+cm7oyoGiEzjH91iqPuhqrRskJeeWxnhjtizqs9gKK3ywnOCxQgX5bmZpblXFCSQcg9Gz20p7iqBgAotABYtGCBCpBsASDCjCW4UUII5XCIBQooSAJAiAadoAEhKBgIOkUaAlAQiEhRFUHgvGeinYyIpCk6+r0CKIAEIggII6TQAECQEgMIpYsD/07xKAabzxW0AAAAASUVORK5CYII="
+  },
+  "url": "https://collaborative-ai.live.ft.com/agenda",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 31108,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "Agenda | A Collaborative Approach to AI Implementation and Regulation",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T04:28:59.430Z"
+}

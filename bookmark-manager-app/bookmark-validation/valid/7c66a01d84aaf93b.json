@@ -1,0 +1,30 @@
+{
+  "id": "7c66a01d84aaf93b",
+  "originalBookmark": {
+    "url": "https://script.google.com/home/executions",
+    "title": "My Executions - Apps Script",
+    "addDate": "2023-12-02T20:21:02.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAC4ElEQVQ4jaWTS2hVZxSF197nP+fkvpIYTUxiokbEGDWx1SZtB/VZg69BQIKKYlsDOhMtBYtOzkBQBJ10UBBKoLQSow4UtYKUSiQ+IsH4ioqi+CLeXvFxk3Puvefx7w4C2kxCod9wL/bimyxgPBxwu7QbAGjMvV0MOMLj/v5XaLyw4dH6eQHrTyfWVZ66Rj9lAaDpB0lkCWspCu4/OWzdHKMhAmrvhgEADYObF3wyVHtpq175q30hexwCAxCuqgy7dq1GV2sj9zTulUVqjA7JaI9DXPMivXT57HWlHdVt6Ht2q3Wh98X8bBt0SRxrdywJcKzfLP7rnl72rwIh6abp7wxoWoenLQ9rLx+7dVp6Hl71hvKv4/ZAyYrqOeC3BSXbO/18JuurCQnuZXHAABD+mfxWZrUMltQ23ZYL+LFvzy99afZvDGQGE+FIDuKWb1Fl3gadD3D3pcTejOjHZRNUD5MDDQAshW00/0QR1R+JEMN+6aBTc+PeHTNWrEn7gDepUiI06NDXqaQNpYzzf+ygwgcDEn0WD7ZBP9gZ+S77SNKaPXZ/a1DQIcxAm25LBD/OwiGHfgiQeRYAGA4EAGiF3oeX53dR7mrcirEVuRw1+OnSqYmcG+i42LlmDQkMZpuiMHj+LodeAGACRAByp6Hq7fIDnfpe1Wa46rEkwUbo219ZzymwZrzXr6eUhFKIlFUENtS5foc8OMLK+3xmjVte/RunUguimd385veprmXXcGzV0CssfFGxLPVEn8jszqeMWLFOeTJcCGCqUf1Rg+zId4mN3yxWR8+k1KTJlnC+wheUvT9Zm/KP16c/87O5Kq4v7G0D/9wRQxSGaTeDiwAAh7TSbA3kr1+JigzDKM55pthFIIOZbEnK4ORkdAjY1NyfuVjaZCT/JoCMzt6DNAwIASQEACON1V9HWn8ZlFdqVhY0hBgiMIFgWJsVtsp+39zln0Sdv7IOnUe2U/A/N/iRfwCuAkVRb0/qGQAAAABJRU5ErkJggg=="
+  },
+  "url": "https://script.google.com/home/executions",
+  "valid": true,
+  "statusCode": 302,
+  "loadTime": 10012,
+  "error": null,
+  "metadata": {
+    "title": "Apps Script  |  Google for Developers",
+    "description": "Develop high-quality, cloud-based solutions with ease.",
+    "keywords": [],
+    "ogImage": "https://www.gstatic.com/devrel-devsite/prod/v7aeef7f1393bb1d75a4489145c511cdd5aeaa8e13ad0a83ec1b5b03612e66330/developers/images/opengraph/white.png",
+    "favicon": "https://www.gstatic.com/devrel-devsite/prod/v7aeef7f1393bb1d75a4489145c511cdd5aeaa8e13ad0a83ec1b5b03612e66330/developers/images/favicon-new.png",
+    "language": "en",
+    "author": null,
+    "canonical": "https://developers.google.com/apps-script",
+    "contentType": "website",
+    "siteName": "Google for Developers",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/7c66a01d84aaf93b-screenshot.png",
+  "timestamp": "2025-06-17T04:39:42.775Z"
+}

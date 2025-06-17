@@ -1,0 +1,25 @@
+{
+  "id": "83ba211527dc22f6",
+  "originalBookmark": {
+    "url": "http://localhost:8083/",
+    "title": "WebHarvest",
+    "addDate": "2025-05-06T11:53:28.000Z",
+    "icon": null
+  },
+  "url": "http://localhost:8083/",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 2270,
+  "error": "net::ERR_CONNECTION_REFUSED at http://localhost:8083/",
+  "metadata": {
+    "title": "WebHarvest",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T02:14:31.003Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "6267018cd59c59fd",
+  "originalBookmark": {
+    "url": "http://192.168.8.1/#/clients",
+    "title": "GL.iNet Admin Panel",
+    "addDate": "2022-06-11T21:45:37.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAByUlEQVQ4jaWTz2sTYRCGn9nsakOTdlMbSpuQalahoCCWEvSiFD0ECt4F/wzp0Wsj9uiteBXUoyAEb70Y8FZEbSE/lBjaxmxKY7LpbnY/LyZN8FAaB+byzfcM78zLyMK7lxsi6gmgc77oKSWbkny75Y0BD5ro4qhxYQBdFyc489d6JkNI09goFP6paZqjOCtXEykMX1hLXuHN2kOMExnUdHHUSMfsUprHyzeYCU/wrd7gaX6bRDRC8aBJp+Xy4WuJoO0jfQXiBPTz5kycXHaV/E6RLz9/sTI/T2oiioZQqtlkr6aZC08yzGjiKPp5J7nA767Lq+0dJIDiYRNrygSgXLW5vZig03YZZnRtaIR0zKRy0EQcxbXZGJ+KNayYyVG7S9AJuDQZplS1GWZGFLjdHpfjJrlH91mMT1Ou2lizMco1G8v8q+RHY1TBsI0vXhc4PuqSmpsGBeVKg5hxkVqjher45D/u8b3SRLxTZuBCSBMyywk+7+2jfMXKksfu7iEPbln0XJ+oYbBfb+EeewMHgNMdKBTJqQh3M2la7RPWc+8JByGa9Q6RCwaVmo3X9kfmB5Dr956PvpwzdHFU77+Oia56JorxzlnY/AP+EOwUtEQ/cAAAAABJRU5ErkJggg=="
+  },
+  "url": "http://192.168.8.1/#/clients",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 30968,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "GL.iNet Admin Panel",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T05:41:55.743Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "84c12b25ed6403c3",
+  "originalBookmark": {
+    "url": "http://localhost:3000/",
+    "title": "React App",
+    "addDate": "2024-11-15T03:17:48.000Z",
+    "icon": null
+  },
+  "url": "http://localhost:3000/",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 1694,
+  "error": "net::ERR_CONNECTION_REFUSED at http://localhost:3000/",
+  "metadata": {
+    "title": "React App",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T06:59:53.902Z"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "a58780ff78fae451",
+  "originalBookmark": {
+    "url": "https://admin.google.com/u/0/ac/signup/setup/v2/verify/domain_mx",
+    "title": "Activate Gmail",
+    "addDate": "2024-01-28T20:39:58.000Z",
+    "icon": null
+  },
+  "url": "https://admin.google.com/u/0/ac/signup/setup/v2/verify/domain_mx",
+  "valid": true,
+  "statusCode": 302,
+  "loadTime": 11083,
+  "error": null,
+  "metadata": {
+    "title": "Sign in - Google Accounts",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": "en-US",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/a58780ff78fae451-screenshot.png",
+  "timestamp": "2025-06-17T04:28:15.162Z"
+}

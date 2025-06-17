@@ -1,0 +1,30 @@
+{
+  "id": "465a99cec804be7c",
+  "originalBookmark": {
+    "url": "https://play.rust-lang.org/",
+    "title": "Rust Playground",
+    "addDate": "2022-01-21T04:49:54.000Z",
+    "icon": null
+  },
+  "url": "https://play.rust-lang.org/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 8064,
+  "error": null,
+  "metadata": {
+    "title": "Rust Playground",
+    "description": "A browser interface to the Rust compiler to experiment with the language",
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/465a99cec804be7c-screenshot.png",
+  "timestamp": "2025-06-17T05:59:45.325Z"
+}

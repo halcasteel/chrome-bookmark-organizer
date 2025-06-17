@@ -1,0 +1,25 @@
+{
+  "id": "dbd92588919a9973",
+  "originalBookmark": {
+    "url": "https://example.com/page1",
+    "title": "Example Domain",
+    "addDate": "2025-02-17T05:36:32.000Z",
+    "icon": null
+  },
+  "url": "https://example.com/page1",
+  "valid": false,
+  "statusCode": 404,
+  "loadTime": 4425,
+  "error": "HTTP 404",
+  "metadata": {
+    "title": "Example Domain",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T08:27:19.206Z"
+}

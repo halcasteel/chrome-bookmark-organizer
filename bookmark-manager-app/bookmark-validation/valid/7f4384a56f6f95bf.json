@@ -1,0 +1,30 @@
+{
+  "id": "7f4384a56f6f95bf",
+  "originalBookmark": {
+    "url": "https://www.ebay.com/mye/myebay/v2/purchase",
+    "title": "My eBay - Purchases",
+    "addDate": "2023-10-09T19:44:43.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAd0lEQVQ4jWNgwA7UGRgYtjMwMHyG4u1QMaKACgMDwysGBoZMBgYGHijOhIqpEGPAOgYGhhws4vlQOYLgM9RWdCABlUMBjAwMDP+JMRUXYKJEMwMDAwPLUyMLFAFpo1ko/K/eBij8iZyi1HXBqAFUMGDgExLFBgAA+5IRVVj3iMsAAAAASUVORK5CYII="
+  },
+  "url": "https://www.ebay.com/mye/myebay/v2/purchase",
+  "valid": true,
+  "statusCode": 302,
+  "loadTime": 16776,
+  "error": null,
+  "metadata": {
+    "title": "Sign in or Register | eBay",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": "en",
+    "author": null,
+    "canonical": "https://www.ebay.com/signin/",
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/7f4384a56f6f95bf-screenshot.png",
+  "timestamp": "2025-06-17T04:47:40.367Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "021e16a533413871",
+  "originalBookmark": {
+    "url": "https://www.csc.lsu.edu/~gb/BibWJ95.pdf",
+    "title": "404 Not Found",
+    "addDate": "2024-12-26T17:55:34.000Z",
+    "icon": null
+  },
+  "url": "https://www.csc.lsu.edu/~gb/BibWJ95.pdf",
+  "valid": false,
+  "statusCode": 404,
+  "loadTime": 4734,
+  "error": "HTTP 404",
+  "metadata": {
+    "title": "404 Not Found",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T07:50:41.297Z"
+}

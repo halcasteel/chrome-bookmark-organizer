@@ -1,0 +1,30 @@
+{
+  "id": "aec343afc63eb8f4",
+  "originalBookmark": {
+    "url": "http://localhost:8847/",
+    "title": "Secure Terminal - AZ1",
+    "addDate": "2025-06-02T14:55:15.000Z",
+    "icon": null
+  },
+  "url": "http://localhost:8847/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 16326,
+  "error": null,
+  "metadata": {
+    "title": "Secure Terminal - AZ1",
+    "description": "Secure Cloud Development Terminal",
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "http://localhost:8847/terminal-icon.svg",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/aec343afc63eb8f4-screenshot.png",
+  "timestamp": "2025-06-17T03:35:43.345Z"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "5cb210c7c0fa1c7f",
+  "originalBookmark": {
+    "url": "https://www.skinboats.org/tutorials-",
+    "title": "The Skinboat School | Home",
+    "addDate": "2022-12-20T02:56:24.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAHUlEQVQ4jWP8//8/IwMFgIkSzaMGjBowasBgMgAAZ6YDHjftVz8AAAAASUVORK5CYII="
+  },
+  "url": "https://www.skinboats.org/tutorials-",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 7977,
+  "error": null,
+  "metadata": {
+    "title": "Skin Boat Tutorials",
+    "description": "online Tutorials to help skin boat school students and the public with there skin on frame boat projects",
+    "keywords": [
+      "boat school",
+      "boats",
+      "canoes",
+      "kayak",
+      "kayaks",
+      "school",
+      "skin boats",
+      "skinboats"
+    ],
+    "ogImage": null,
+    "favicon": "https://static.parastorage.com/client/pfavico.ico",
+    "language": "en",
+    "author": null,
+    "canonical": "https://www.skinboats.org/tutorials-",
+    "contentType": "website",
+    "siteName": "skinboat",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/5cb210c7c0fa1c7f-screenshot.png",
+  "timestamp": "2025-06-17T05:20:56.621Z"
+}

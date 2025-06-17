@@ -1,0 +1,30 @@
+{
+  "id": "9ac01811f6dd7c9c",
+  "originalBookmark": {
+    "url": "https://messages.google.com/web/conversations/85",
+    "title": "Messages for web",
+    "addDate": "2025-01-31T01:21:37.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACfklEQVQ4jWWST2hcVRTGf999b94kDTXTTixYaceoCF0FiiniUrQi4h90pV0oCIKLugh1KQ60VKoLS/duxIVYNSBYQd2KWAVFaV1oW1oQ1DYTStKkb+5793PxZjqBfJt7z+Ge75zvu0dggfzesl9CLA03vQDKkIURwhgQZWuKH9Zu1SdPHGl9Z1uSLID3l/2OMvr1EHIBgJsDbbm3CpBIZcnrb72oD8HSyc/8fCtnOUVcxjr9cnUQrt1Yp0qJZjoAeURW7e3uzA890I3znWzxlaf4PQeOBcO/N8v64+//zP4ZrIMEGhcHT2Yg//Wv6/Gna5vFod7Mq3D3kt79NG0MqzR15puLrKxuoOmRCI8cGMO4IZZd1szOdgZPH3jwiVBkmvrx0g1WBuuE6RZO2AnblpOxaXII1wnXFtRput2eSy3eDsq4dGVlw2SZbYMwWKNu0OSE0ygHmKyt6BweDzHyUXQrgBMIjBrT1Ggfk6BGwsiPXrdLnbgrzBWcvnlr42fyqWDXCcHooRoDZRQaP1KC20Pm79njfd1Z1/B3eO05rR3cv/+Dh3q9QFJNrCBGiLWJUZO4ci5xoLfPi/fNV8oJOH0i+g5Hd9NaNV+uVRz+7/ogIudMkGw7DxmdmRl2tos82wFVyW/lJo/d+aYn+9491+GrVsEjw01qiQwgb0MIjfK6hmF0Jfh2WOuNL47p6nhxBfLhvvd0Zv11FnQwlo4hU0hOp2Rfrq0sKES144Wzbxbnx3WTRek70Fd69pT3ThecCxkLrrgd4eHPl3SBbfDWdd1OsqPgXJazMKx4lHs5f3mVcP8u0tmLmL7SdsKtJMAzxz3/8hn/8cJpL046bsf/G91BOvFdHSIAAAAASUVORK5CYII="
+  },
+  "url": "https://messages.google.com/web/conversations/85",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 8028,
+  "error": null,
+  "metadata": {
+    "title": "Google Messages for web",
+    "description": "Use Google Messages for web to send SMS, MMS, and RCS messages from your computer. Open the Messages app on your Android phone to get started.",
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://ssl.gstatic.com/android-messages-web/images/2022.3/1x/messages_2022_96dp.png",
+    "language": "en-US",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/9ac01811f6dd7c9c-screenshot.png",
+  "timestamp": "2025-06-17T09:13:32.172Z"
+}

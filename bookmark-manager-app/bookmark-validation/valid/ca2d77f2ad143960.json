@@ -1,0 +1,34 @@
+{
+  "id": "ca2d77f2ad143960",
+  "originalBookmark": {
+    "url": "https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/nano-super-developer-kit/",
+    "title": "Jetson Orin Nano Super Developer Kit | NVIDIA",
+    "addDate": "2025-03-06T20:59:47.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABfElEQVQ4jdXSPUjVcRTG8c/5eW/eXgwSIhoFtzAae0GMQATNuRtSBBE0KlRLLUFTCdFaSUTQGzaEWIJDQzWaQy1FBJKDtBiiQnnv/9eSkXjFqaFnPOc83+E8D/+9otHw/EPHWlqNbGZenlddAxh6amu5RXeRdESWM+1BL/Y0AiwuOJrgzD2Viy9dKbWYLGiP7HumLzEv6cQglhpB0tC4jt17vYtQaSo7LbRhX6nkVJF9UpiMMJM4grl1gFKTR5ip192p10wF48KLWs2DHRX3M2NFduPLgg94tg6QuYXO0hYZs5nW3989vPTDdHA8h/62na7ibITH+PkHMNzjLl7V627nbCC4HHTL3uYwFpxI2c1MNei63uOkpB8FJCHPfVNN1CIMp7pqzt5HMhXZgcyTHN5sX7FfMntpwjWFUaS1PcjiwoSBFM7l7GuEkXq2GJQiOSjrRRfKf8fYsEiDz/WVm42ieaOyrQJKjRYfp73etc2hjYyrWln2ebObf69fqWl8p2SII3gAAAAASUVORK5CYII="
+  },
+  "url": "https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/nano-super-developer-kit/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 28339,
+  "error": null,
+  "metadata": {
+    "title": "Jetson Orin Nano Super Developer Kit | NVIDIA",
+    "description": "The NVIDIA Jetson Orin Nano™ Super Developer Kit is a compact, yet powerful computer that redefines generative AI for small edge devices",
+    "keywords": [
+      "Jetson Orin Nano Super Developer Kit",
+      "NVIDIA",
+      "AI Supercomputer"
+    ],
+    "ogImage": "https://www.nvidia.com/content/dam/en-zz/Solutions/autonomous-machines/embedded-systems/nano-super-developer-kit/jetson-orin-nano-super-developer-kit-og.jpg",
+    "favicon": null,
+    "language": "en-us",
+    "author": null,
+    "canonical": "https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/nano-super-developer-kit/",
+    "contentType": "Website",
+    "siteName": "NVIDIA",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/ca2d77f2ad143960-screenshot.png",
+  "timestamp": "2025-06-17T08:52:38.248Z"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "c76c444a80b8ed27",
+  "originalBookmark": {
+    "url": "https://corefy.com/integrations/payment-providers",
+    "title": "Payments Service Providers • Online Payment Solutions Providers • Corefy",
+    "addDate": "2025-04-10T11:48:52.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABoklEQVQ4jW2SMWsUURSFv/N2NjOb1SQWIigKQcRCbCz0B6hYJf/BvyCIKawkhWkWtLAKBKzFIqX+h9ilCaKQXnZXktmdydxjMeuSrB4ePB587517z7uKsEQYB50O/1UEEhI2sm0jAZyWRCzSEv1lgBZT0xgxHPHqLftf+TUC/UUBs9Jn8xmD16xexiYzdMTWDrsDspus35pZt2/b/Dhm7x3FEh+2iQDbZekbj9y56r1PUdUuJ1FVUVUxmURV++PnSNd8/aHL0rYzm6pmOKbpcf+uuhmdpJRmvabEvTuKnNFvqpo8J2utJQimU9uKsJgCEbmkydSEZgxk0oVAJMRU3x8AWj+QitZtDqSFBP9VG8Bc2flzBDYm9+0DwJHbFy7YZO1mQ6LIJZGSlAoggUSRizRjBEmim3GpT6o4PHJ9Rl27XVXtqubboTsla6ssdUFkTUOvx8YTdgc8f6k375E0/7izhp/HiiEbjykKmkBNY4nRmBfb7H9hfAJiVraRuLLC5lN2tlhbhYXhOzldzARIieXeueFrx7vtKaVFulUTSCRh8wfR6uBuqF8F3gAAAABJRU5ErkJggg=="
+  },
+  "url": "https://corefy.com/integrations/payment-providers",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 34122,
+  "error": null,
+  "metadata": {
+    "title": "Payments Service Providers • Online Payment Solutions Providers • Corefy",
+    "description": "Payments Service Providers — Work with payment providers that are considered safe and cover the needs of all geographies of your interest. Offer more payment options to your customers",
+    "keywords": [],
+    "ogImage": "https://corefy.com/build/media/images/opengraphs/payment-providers.2dbeda012004e99286f2b25dff693d1c.png",
+    "favicon": "https://corefy.com/build/media/images/favicons/favicon-32x32.a07d59ee1a48a886544efc609335d443.png",
+    "language": "en",
+    "author": null,
+    "canonical": "https://corefy.com/integrations/payment-providers",
+    "contentType": "website",
+    "siteName": "Corefy",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/c76c444a80b8ed27-screenshot.png",
+  "timestamp": "2025-06-17T02:22:53.247Z"
+}

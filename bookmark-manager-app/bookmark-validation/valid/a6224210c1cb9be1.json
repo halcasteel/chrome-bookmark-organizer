@@ -1,0 +1,37 @@
+{
+  "id": "a6224210c1cb9be1",
+  "originalBookmark": {
+    "url": "https://www.youtube.com/watch?v=Vx0k0g4rFFE&feature=youtu.be",
+    "title": "MassChallenge — AZ1 Elevator Pitch - YouTube",
+    "addDate": "2025-02-18T15:38:57.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhUlEQVQ4ja3Tv2pUQRTH8c+Ze9e4CAGNlSSa2CmCGE0hgm/gA9j5BlY+RawFGwtbH0IkiGCwEMQ2aFIFokGUGHfvjMXcTTapZPHAMH84Z+bM+f5OQCGQ1HnKbvf7D+XkuYIclEnwTFaIqIsbS5xZI1+gOUceoiWa3rXDmHRA94v0jT+b4dN2FKsPSC9wsTqnOkXURI8ynlieLPbIj6JYfUNzn25EpN67MKpJpIZ8FBR1lEwzoNtIlKt0mdJQEhq61sqV1mAwkH8MpNQS7bFPaWpMLCfSQn251kOK4Gd4/DC8fs7dO+T94DBIcfy/SJSFhLPH/4uY3GPcce8mGy959YzlRYyImKY2TLMinFiL3xj21S5KqS+0DW8/8mSdd+/7ROcoeRrJQRS3tolLtfgRtdAdK0vs7IbRPmm+yGUKYZnob6cltmgWT2Jsiq0vPcb5KYzRY9RjHG+1WKdcI50SUtsr3qkWyapCyx7xtJfy9cvMrZHO4x+kHN853Ayfv/6vZpq9nf8CnF2KWbg2p58AAAAASUVORK5CYII="
+  },
+  "url": "https://www.youtube.com/watch?v=Vx0k0g4rFFE&feature=youtu.be",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 14694,
+  "error": null,
+  "metadata": {
+    "title": "MassChallenge — AZ1 Elevator Pitch - YouTube",
+    "description": "Hal Casteel, CEO and Artem Arakcheev, CTO pitch AZ1 Agents-as-a-Service for MassChallenge Healthcare U.S. Early Stage Programs.",
+    "keywords": [
+      "video",
+      "sharing",
+      "camera phone",
+      "video phone",
+      "free",
+      "upload"
+    ],
+    "ogImage": "https://i.ytimg.com/vi/Vx0k0g4rFFE/maxresdefault.jpg",
+    "favicon": "https://www.youtube.com/s/desktop/606e092f/img/logos/favicon_32x32.png",
+    "language": "en",
+    "author": null,
+    "canonical": "https://www.youtube.com/watch?v=Vx0k0g4rFFE",
+    "contentType": "video.other",
+    "siteName": "YouTube",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/a6224210c1cb9be1-screenshot.png",
+  "timestamp": "2025-06-17T08:36:56.573Z"
+}

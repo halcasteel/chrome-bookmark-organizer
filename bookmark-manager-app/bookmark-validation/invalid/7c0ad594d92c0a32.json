@@ -1,0 +1,25 @@
+{
+  "id": "7c0ad594d92c0a32",
+  "originalBookmark": {
+    "url": "https://pwdreset.corp.netsuite.com/RDWeb/Pages/en-US/password.aspx?Error=PasswordSuccess",
+    "title": "NS Password change",
+    "addDate": "2020-02-25T14:50:09.000Z",
+    "icon": null
+  },
+  "url": "https://pwdreset.corp.netsuite.com/RDWeb/Pages/en-US/password.aspx?Error=PasswordSuccess",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 493,
+  "error": "net::ERR_NAME_NOT_RESOLVED at https://pwdreset.corp.netsuite.com/RDWeb/Pages/en-US/password.aspx?Error=PasswordSuccess",
+  "metadata": {
+    "title": "NS Password change",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T05:25:25.832Z"
+}

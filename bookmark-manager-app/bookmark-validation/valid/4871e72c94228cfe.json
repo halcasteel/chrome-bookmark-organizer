@@ -1,0 +1,30 @@
+{
+  "id": "4871e72c94228cfe",
+  "originalBookmark": {
+    "url": "https://www.ycombinator.com/rfs",
+    "title": "Requests for Startups | Y Combinator",
+    "addDate": "2025-04-04T14:58:44.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABfklEQVQ4jX3Tv4oUQRAG8F/NDueunFxwiBiIKAbCJWYGPoCBgb6EPoGIiXAYimamYuwLHIIIgiJGvoEP4Bmd+I+9mWmD7tntWf/0MHTR9VXVV19XR7qtR5Q/lf1/K1XY1KwCxrBAE+uUsXFmUiIaUSCpuHos07pWMS0TfcGM2BCNVD4YJCe2OX2eriLdYfcc8+2MycmTJGUGUXgkYbbg3hv2rvMLS1y4yt1XzE5mTIz1RTORZqvh8Atvn3NrP/d6jJv7fHjB58OMSWtyjXoNA9s4eMzOWS5f4+IeZy5x8Cj7hmES0q5UHQVrG45+8PIJN+6z/Mnrp3z9zk6zTlBuItKdlYTVCroZDz8SDQ+u0PZsAqNmoPLPgqOOT+/plnzr2J3R95tzYCpi3UogyvA0SFX1ymxrOms7Mmh+iuMthupsKrt2pUAIqdzyMDDHu2eknkWl/ogpcVnEv1AT8iCRk6Xq/J8Mxu5Ha1H4DkOtz4RB+8cTrh91mt75ylfJ+RtlR4kMxEmS0gAAAABJRU5ErkJggg=="
+  },
+  "url": "https://www.ycombinator.com/rfs",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 30844,
+  "error": null,
+  "metadata": {
+    "title": "Requests for Startups | Y Combinator",
+    "description": "Y Combinator is looking for startups working on these ideas. If you're working on something we're interested in, we'd love to hear from you.",
+    "keywords": [],
+    "ogImage": "https://bookface-public.s3.us-west-2.amazonaws.com/rfs_image.png",
+    "favicon": "https://bookface-static.ycombinator.com/assets/ycdc/favicon-c8a914eeeba9fe6f7a863b35608b55aeedd7c1ff409c97b9ecb96b7a6c278d70.ico",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": "Y Combinator",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/4871e72c94228cfe-screenshot.png",
+  "timestamp": "2025-06-17T02:28:29.525Z"
+}

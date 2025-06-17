@@ -1,0 +1,30 @@
+{
+  "id": "1125523cd8044906",
+  "originalBookmark": {
+    "url": "https://www.techspex.com/kc/about",
+    "title": "About Techspex - TECHSPEX",
+    "addDate": "2025-02-04T01:54:47.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABsklEQVQ4jWP8//8/AymAiSTVdNHA/O7du82bNx8+fHj16tUHjp7U09T6tXLOCX/Pv8ys/7iEHlXUsHJycKgovZg04cWmLfwGhizv379/9+7d5cuXxSQlQ6OjOXfveNU5UcI1hNfIVVBT6d6jKz86r6l8eH27b7JQSiwjHzfD////nz17pqikOGf+/P///z+pqDzDyvL9yKH//////////cWTt9ydb7EKXnbz/f3u9f///5kYGBi+ff/G8J/h769fDAwMAhlZv7xCj9o63y1M/fP9s4CeGb+jJ+Pvf7KR4UwCQv/+MTAxMDAwMjDC/cQtL2O5YZlha+mH6Yu/Xbnz7dqVR4tm/mT793TRwr/vXjIyMTAxMDD8////48ePv379YmBgeHnu6OXspGeLdv+3dmOT4n1RWs4nLCW3dN7nq1cedfcw/P7DwsDAwM3N3dXZqW9g8Ov3H4bfjH/ZOLgCfNSyU14vWPzi0CWVpXPZ/NxkmZl+fPj05e1bxs+fPx85dJiBgeHHjx9fvnxg42L7y8HPLy2hzcdzr7BCSUXze1Twpbs3/3NxMbKwMX//wTgM0hIAF8nIBr1xffMAAAAASUVORK5CYII="
+  },
+  "url": "https://www.techspex.com/kc/about",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 10748,
+  "error": null,
+  "metadata": {
+    "title": "About Techspex - TECHSPEX",
+    "description": "Techspex is a leading online machine tool database and resource hub, designed to connect manufacturers, job shops, and end users with the latest information on machine tool technology.",
+    "keywords": [],
+    "ogImage": "https://d2n4wb9orp1vta.cloudfront.net/cms//brand/techx/build/about/759x155/gettyimages-139933722.1681228807668.1681228831992.jpg",
+    "favicon": null,
+    "language": "en",
+    "author": null,
+    "canonical": "https://www.techspex.com/kc/about",
+    "contentType": "website",
+    "siteName": "About Techspex",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/1125523cd8044906-screenshot.png",
+  "timestamp": "2025-06-17T08:46:42.901Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "aaf3a180c26e4d60",
+  "originalBookmark": {
+    "url": "about:blank",
+    "title": "about:blank",
+    "addDate": "2023-04-27T14:15:37.000Z",
+    "icon": null
+  },
+  "url": "about:blank",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 2635,
+  "error": "Cannot read properties of null (reading 'status')",
+  "metadata": {
+    "title": "about:blank",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T05:06:30.887Z"
+}

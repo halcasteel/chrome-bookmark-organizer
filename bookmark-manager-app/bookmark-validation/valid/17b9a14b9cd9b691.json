@@ -1,0 +1,30 @@
+{
+  "id": "17b9a14b9cd9b691",
+  "originalBookmark": {
+    "url": "https://unstructured.io/",
+    "title": "Unstructured | Get your data LLM-ready.",
+    "addDate": "2025-04-07T16:35:27.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABuElEQVQ4jVWSvU5VQRSFv7Vn7uECDUasrAxg1MKYqA9A7xNY0GrHK/gGmljZW/gE9hZCjAUxFpIYG5HCPwQR7u/Msjjn3uhu9mTttScz397a2K3YSAA20J3b+FexkbJt1BW6vtbUxf8X2RkbAttATFwNCQKBKxQiqKntw4QlqGTV06PDB5sHW3eGH3bVSD2N9ncPtu5+ebhZT4/IAltdtiTXyXB/j/HA5ycKWZQ/x+NP72kWXadIrS0ASbKliP4ikiKDZUckpOgvzgwCRQdDMraNjWhrptVmqgHHHJ9mOF2rbWSX0mKShVqY5PbzoZkPiORpQcwg264y1W6fiyxbpEa5MZSjH+liBsr3r0hqFtRbsCUEzmBJdVLy6kpz5dpw79vPZ4/q4Dej0a/nj7H7V2+l1RWfTSNFBa29LhHUaYnlPHj76nD7nodn8znHyqXLT1/2r9/2cEokQOs7pSuWquU8fPfm+MWT8eePyr1m/eaF+9vN2o16NlXq8Ghjp8xXx6XGUlaino8ckZZ6HlGHU0JIAYZstTMEEzk8mLQAqC4nE0nKqd3TdtK5y+72UimDsQXkNFM17/kLFPEHhURm2ukAAAAASUVORK5CYII="
+  },
+  "url": "https://unstructured.io/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 21930,
+  "error": null,
+  "metadata": {
+    "title": "Unstructured | Get your data LLM-ready.",
+    "description": "Unstructured helps you get your data ready for AI by transforming it into a format that large language models can understand. Easily connect your data to LLMs.",
+    "keywords": [],
+    "ogImage": "https://framerusercontent.com/assets/ly1J5WIRnI6UzlBMDJJDHBzgYmU.jpg",
+    "favicon": "https://framerusercontent.com/images/rtrmzbHSOCWsROyIe28h9BEa7HE.jpg",
+    "language": "en",
+    "author": null,
+    "canonical": "https://unstructured.io/",
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/17b9a14b9cd9b691-screenshot.png",
+  "timestamp": "2025-06-17T03:50:23.539Z"
+}

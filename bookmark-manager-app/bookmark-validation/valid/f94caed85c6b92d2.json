@@ -1,0 +1,46 @@
+{
+  "id": "f94caed85c6b92d2",
+  "originalBookmark": {
+    "url": "https://www.newyorkfed.org/research/capital_markets/ycfaq#/interactive",
+    "title": "The Yield Curve as a Leading Indicator - FEDERAL RESERVE BANK of NEW YORK",
+    "addDate": "2022-12-02T17:38:27.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAArklEQVQ4jWMsbFvAQBIobFvwHwYK2xbAucgMZDbTycsP4Jr7KuPhXGQGMpsJrto6qpGBgeHosnpMEYgghMtkrqsAkTbXVShqXwhXba6rgCxS1L4QIoKwAS6B388smI7Gz2W0imzAbyS6DXA/EAuQ4wE5+DG5kAiB+gESZHCAlXt0Wb11VCMLRAge/GixgaYT4Qd4aGLlIscVejwQBFA/oIV6X2U8spMgXAib5HgAABXXnnP+mn/tAAAAAElFTkSuQmCC"
+  },
+  "url": "https://www.newyorkfed.org/research/capital_markets/ycfaq#/interactive",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 18398,
+  "error": null,
+  "metadata": {
+    "title": "The Yield Curve as a Leading Indicator - FEDERAL RESERVE BANK of NEW YORK",
+    "description": "This model uses the slope of the yield curve, or the “term spread” between long- and short-term interest rates, to calculate the probability of a recession in the United States twelve months ahead.",
+    "keywords": [
+      "asset-backed securities",
+      "banks",
+      "bonds",
+      "capital markets",
+      "capital structure",
+      "cash flow sensitivity",
+      "corporate",
+      "corporate bonds",
+      "credit",
+      "credit risk",
+      "debt",
+      "derivatives",
+      "equity",
+      "yield",
+      "yield curve"
+    ],
+    "ogImage": "https://www.newyorkfed.org/medialibrary/media/research/amec/img/amec_2021_yield%20curve",
+    "favicon": "https://www.newyorkfed.org/medialibrary/media/favicon.ico",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/f94caed85c6b92d2-screenshot.png",
+  "timestamp": "2025-06-17T06:24:44.036Z"
+}

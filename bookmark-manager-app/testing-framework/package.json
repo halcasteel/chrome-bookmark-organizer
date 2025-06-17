@@ -1,0 +1,25 @@
+{
+  "name": "@bookmark-manager/testing-framework",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Unified testing framework for Bookmark Manager",
+  "main": "core/test-runner.js",
+  "scripts": {
+    "test": "node core/test-runner.js all",
+    "discover": "node core/test-runner.js discover",
+    "tdd": "node core/test-runner.js tdd"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.24.0",
+    "@babel/traverse": "^7.24.0",
+    "glob": "^10.3.10",
+    "supertest": "^6.3.4",
+    "vitest": "^1.2.2",
+    "nyc": "^15.1.0",
+    "nodemon": "^3.0.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.41.0",
+    "@types/node": "^20.11.5"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "7198771ef297eb21",
+  "originalBookmark": {
+    "url": "http://localhost:8000/services/model",
+    "title": "localhost:8000/services/model",
+    "addDate": "2025-03-15T20:58:47.000Z",
+    "icon": null
+  },
+  "url": "http://localhost:8000/services/model",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 3251,
+  "error": "net::ERR_CONNECTION_REFUSED at http://localhost:8000/services/model",
+  "metadata": {
+    "title": "localhost:8000/services/model",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T04:03:00.121Z"
+}

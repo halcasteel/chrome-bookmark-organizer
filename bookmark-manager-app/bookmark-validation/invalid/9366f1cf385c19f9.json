@@ -1,0 +1,25 @@
+{
+  "id": "9366f1cf385c19f9",
+  "originalBookmark": {
+    "url": "http://localhost:8080/",
+    "title": "Directory listing for /",
+    "addDate": "2024-12-20T01:22:02.000Z",
+    "icon": null
+  },
+  "url": "http://localhost:8080/",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 1087,
+  "error": "net::ERR_CONNECTION_REFUSED at http://localhost:8080/",
+  "metadata": {
+    "title": "Directory listing for /",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T04:06:56.758Z"
+}

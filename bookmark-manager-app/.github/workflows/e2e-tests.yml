@@ -1,0 +1,86 @@
+name: E2E Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: admin
+          POSTGRES_PASSWORD: admin
+          POSTGRES_DB: bookmark_manager
+        ports:
+          - 5434:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6382:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: |
+        npm ci
+        npm run test:install
+    
+    - name: Setup environment
+      run: |
+        cp .env.example .env
+        echo "DATABASE_URL=postgresql://admin:admin@localhost:5434/bookmark_manager" >> .env
+        echo "REDIS_URL=redis://localhost:6382" >> .env
+        echo "JWT_SECRET=test-secret-key" >> .env
+        echo "ENABLE_2FA=false" >> .env
+    
+    - name: Run database migrations
+      run: |
+        npm run migrate
+    
+    - name: Build application
+      run: |
+        npm run build
+    
+    - name: Run E2E tests
+      run: |
+        npm run test:ci
+    
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: playwright-report
+        path: playwright-report/
+        retention-days: 30
+    
+    - name: Upload test videos
+      uses: actions/upload-artifact@v3
+      if: failure()
+      with:
+        name: test-videos
+        path: test-results/**/*.webm
+        retention-days: 7

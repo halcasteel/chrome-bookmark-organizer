@@ -1,0 +1,30 @@
+{
+  "id": "d4734ea58e9aed22",
+  "originalBookmark": {
+    "url": "https://nodejs.org/en",
+    "title": "Node.js — Run JavaScript Everywhere",
+    "addDate": "2024-10-30T12:58:37.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACrklEQVQ4jW1TO4hdVRRda5977ptfJpnJJBajjZ1iYSeCCQhqIIWVSSEYoiKIIEEEsTGMiWAhCBZ2FmKZsUhQI1iMgRQB04mkES0iQsZ83nPm3XffveeevSyubwzBDYezD5y9WGvvvYj/ghsCNwgHgFcuPn/ck302nXo7qfL737+59Q0AYAOGjf4PABAATlxA2DyJDACvf/vCEwLPdhkv5QSmVqirLAu8ADTnLr129QYA4AQCNpE5Q3r18pFDZbn0rjLfZrSFyd+tulbKHdDUmRYLKntlxs99mD6++M6V0R6D098de3lpOZ6H2aPNOCEn79qkkFsxJ6BNrrb2HAor5vYVgPQbuu6jzVNbXwa8uLbv4UdWr64cnjvcVilJMHcGOeAOeBYkwDOCZ0ld7ooyrFU7fjw+vvaFPfXcAQ5H7fjurcaLEIJ6RYJASIRAOEkAEiBZmFbZx7vdZLGcj1YsPiQrZHfu1dZlwUBA4l6P2V8i5C7kLEwn2SBwMTay7T+2yShOmoR7o5oWCKkn0Z8ZHUBONk1majMAsSoGtIOrB4HCxei4+2eHtnGYzUDuD4GUvEMPZ8J8XcNG9UiKGeaGtEsNtxMZZgMioD6TSBGwnhBIqllelB1Yv00ECVV0FuLwTlIzcZkB0r/VAEiI3r/kdAEaLFW03fXg3CkHpmhm7HIrDP/qSOvnAFJ7beiV5SIGQ+ZCXSHZjWdvjzUq3/Kcfw9lEa0gx6Ouq6sMM1KuXofQkWQxX0TP/ivF09ffu34rAMDNrZs/rzyz8lWp0mh8krGYS41jYSnIHXInLYaQksZd45/sVLtvXPvg2k97qzwzBgAcPX/0MUaelXTy0PrA4oBop6409a+bqZ/74cyVX/7XTA9a9ekPjxzbvxo/XV4tyianM5dO/Xj5vkKfLck/RIONDf/f6e4AAAAASUVORK5CYII="
+  },
+  "url": "https://nodejs.org/en",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 8486,
+  "error": null,
+  "metadata": {
+    "title": "Node.js — Run JavaScript Everywhere",
+    "description": "Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
+    "keywords": [],
+    "ogImage": "https://nodejs.org/en/next-data/og/announcement/Node.js%20%E2%80%94%20Run%20JavaScript%20Everywhere",
+    "favicon": "https://nodejs.org/static/images/favicons/favicon.png",
+    "language": "en-GB",
+    "author": null,
+    "canonical": "https://nodejs.org/en",
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/d4734ea58e9aed22-screenshot.png",
+  "timestamp": "2025-06-17T07:01:22.697Z"
+}

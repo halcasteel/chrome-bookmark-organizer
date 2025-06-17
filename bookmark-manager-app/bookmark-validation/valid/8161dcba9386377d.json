@@ -1,0 +1,30 @@
+{
+  "id": "8161dcba9386377d",
+  "originalBookmark": {
+    "url": "https://en.wikipedia.org/wiki/G%C3%B6del_machine",
+    "title": "Gödel machine - Wikipedia",
+    "addDate": "2024-11-18T20:25:42.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABO0lEQVQ4jaWTMaoCMRCG/wnvDtELmHaxdAmIXcheZA9hYeMNxNZqsc81lu0X+2VLTzBj8V5C8uQ9UAcG5k+YP5kvhPATzCx4IZRSBAD0TnNuQu82J5NPmgFADcMAay2UUjifzwAA733S8zzDWgtrLeZ5xvV6xXK5hPcet9vte/5pmoSIJIQgURtj5HQ6CTOLc06maRJmFmaWuq5TjVg454qNrutEay0hBDkej8V6NC4M+r4XANL3fdo0xogxJul4UK4TxPV6Decc9vt9ArTb7XC/35MehgFVVZUUc7cQghCRjOOYTtNaS9d1wszStm3BgpnlKzfz3mO1WuFyuWCz2aBpGlhrcTgcsN1uAQCLxeLvG0RIRJRmjS9U13XB5wlinlrrgnTbtk/w/jWIDPL8PXvMzz9TzuLVZgB4AExRsO8ga8hoAAAAAElFTkSuQmCC"
+  },
+  "url": "https://en.wikipedia.org/wiki/G%C3%B6del_machine",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 9264,
+  "error": null,
+  "metadata": {
+    "title": "Gödel machine - Wikipedia",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://en.wikipedia.org/static/favicon/wikipedia.ico",
+    "language": "en",
+    "author": null,
+    "canonical": "https://en.wikipedia.org/wiki/G%C3%B6del_machine",
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/8161dcba9386377d-screenshot.png",
+  "timestamp": "2025-06-17T06:53:21.508Z"
+}

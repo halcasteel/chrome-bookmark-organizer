@@ -1,0 +1,30 @@
+{
+  "id": "93cc25080d922ad9",
+  "originalBookmark": {
+    "url": "https://www.postgresql.org/docs/current/index.html",
+    "title": "PostgreSQL: Documentation: 14: PostgreSQL 14.1 Documentation",
+    "addDate": "2021-12-07T05:33:09.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA9UlEQVQ4jZWS0XnEIAyDf+gitwnajLCZ2KSb0AdCIOF6/eonwEaWZAfOSCk1SQDYptYa1rc1Rh4gAOScGwhjQAiQ4DCA+4sAg8cdU0oJIaXU0NGzZ0jC9rPx+ZGlkYmd4l78LoxB8wYQf+si6TqvzDRFYnsAaEXAPhvc/uv0YPgAtVai7XudB9mnLF9GLoUhjnH8J8Q0OS5o1+nd7KHPf6RG43glLiFd0qGnhXc5OeeWUmpxonUWYwdslrV6aphvN/0559ZpzoK7lQIfrL59NLBv6QTr5t0BtkXa2D4kPKf2EWAf8b7yX38xgO9DrxcvoJSySf4B88l47f6ELfQAAAAASUVORK5CYII="
+  },
+  "url": "https://www.postgresql.org/docs/current/index.html",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 9319,
+  "error": null,
+  "metadata": {
+    "title": "PostgreSQL: Documentation: 17: PostgreSQL 17.5 Documentation",
+    "description": "PostgreSQL 17.5 Documentation The PostgreSQL Global Development Group Copyright © 1996–2025 The PostgreSQL Global Development Group Legal Notice Table of …",
+    "keywords": [],
+    "ogImage": "https://www.postgresql.org/media/img/about/press/elephant.png",
+    "favicon": "https://www.postgresql.org/favicon.ico",
+    "language": "en",
+    "author": null,
+    "canonical": "https://www.postgresql.org/docs/current/index.html",
+    "contentType": "article",
+    "siteName": "PostgreSQL Documentation",
+    "publishedTime": "2025-05-08T13:16:29",
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/93cc25080d922ad9-screenshot.png",
+  "timestamp": "2025-06-17T05:48:29.626Z"
+}

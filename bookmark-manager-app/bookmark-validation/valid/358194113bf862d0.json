@@ -1,0 +1,30 @@
+{
+  "id": "358194113bf862d0",
+  "originalBookmark": {
+    "url": "https://platform.openai.com/account/api-keys",
+    "title": "API keys - OpenAI API",
+    "addDate": "2023-05-19T21:55:53.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABl0lEQVQ4jYXTT2jPYRwH8Nf2G81qaJuTFGtSaCcmBzUuEm6snYYsB4ddHFZSHEdOcqEdpk0oKdHWXJZCth3G/Mu/aKypnxK5qInL+8e3OfjUt+d5vs/z+Xzef56Hv1GVcRUu4xO+YQLt/hOljMvwGsPYkv+n8Au3cRVHFiZXOtfiSpIrcRjPMYqDSX6Ie2lWydWFuXTajHV4gGnsyZmmQuFxnKsstuMHejCFFvTiYvY3YgjvgmQ1VmRdX42TOJuKi7AY3/ECp4PiJprxEZM4gXksgZnALuFpOvTgJfaHwjV0B9H6UCijDt7kILzFjojVVeDciccYiDtwF+cFzqNA34RL0aKjUOAAjmJbaMDOUFWLzymyIZvd8Xw39uEVjmFl7kkJbSjXoAFfMJbvVgp8zbwvjvxMs6rMd0VgSzGLRqyJVe8xGMGgH8cj8HQozRT0MISRAueGjHvjzATWYmvsexKx/0RTbLuPQxFsDM8K9sk1v47qBc8ALMeZILmT23kh1FqDshwhFR7gv5USrbiBDxF0PBdOAYHf30hkqVg0/8MAAAAASUVORK5CYII="
+  },
+  "url": "https://platform.openai.com/account/api-keys",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 7734,
+  "error": null,
+  "metadata": {
+    "title": "OpenAI Platform",
+    "description": "Explore resources, tutorials, API docs, and dynamic examples to get the most out of OpenAI's developer platform.",
+    "keywords": [],
+    "ogImage": "https://cdn.openai.com/API/images/platform-opengraph.png",
+    "favicon": "https://platform.openai.com/favicon-platform-alt.png",
+    "language": "en-US",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/358194113bf862d0-screenshot.png",
+  "timestamp": "2025-06-17T06:49:40.985Z"
+}

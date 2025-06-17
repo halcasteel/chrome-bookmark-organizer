@@ -1,0 +1,25 @@
+{
+  "id": "6986de09a05a85b1",
+  "originalBookmark": {
+    "url": "http://ostechnix.com/youtube-dl-tutorial-with-examples-for-beginners/",
+    "title": "https://www.ostechnix.com/youtube-dl-tutorial-with-examples-for-beginners/",
+    "addDate": "2020-02-06T03:03:38.000Z",
+    "icon": null
+  },
+  "url": "http://ostechnix.com/youtube-dl-tutorial-with-examples-for-beginners/",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 31463,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "https://www.ostechnix.com/youtube-dl-tutorial-with-examples-for-beginners/",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T07:26:35.230Z"
+}

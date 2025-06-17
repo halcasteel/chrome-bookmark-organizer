@@ -1,0 +1,25 @@
+{
+  "id": "c9665f45420f6a15",
+  "originalBookmark": {
+    "url": "http://localhost:8000/",
+    "title": "az1.ai | Homepage",
+    "addDate": "2025-01-21T05:57:01.000Z",
+    "icon": null
+  },
+  "url": "http://localhost:8000/",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 3434,
+  "error": "net::ERR_CONNECTION_REFUSED at http://localhost:8000/",
+  "metadata": {
+    "title": "az1.ai | Homepage",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T09:22:52.272Z"
+}

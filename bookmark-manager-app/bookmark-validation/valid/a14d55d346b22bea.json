@@ -1,0 +1,33 @@
+{
+  "id": "a14d55d346b22bea",
+  "originalBookmark": {
+    "url": "https://incolumitas.com/2023/10/01/the-state-of-this-blog/",
+    "title": "incolumitas.com – The State of this Blog",
+    "addDate": "2023-12-29T14:30:00.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABRElEQVQ4jaWTMUgCcRTGf3ceFxYdkoUNYThELW5JWyRE0dAQDg3V2OoUNAQ1hEJrDeHeHOEUJLhUS1BDUEgRRQiWJ6Vnltf1t0E4Cwns/MbH+37v8fGelAkPrIO8Bqj8TyaImJQJ+6sOzDZEbsMMoMptmAFQAJS+fnoWo+iJOKJSBkCbimC95KmZJtrkXJOxsLeN9ZRFBpC7PXhmF+hdXrUb3MEQHYERPrP3GOkkH9cXaNMRjHQSI51EGMXGBgDm4x2do+O4gyHeL89skKXnsPQcamCYmhBUzk9+bdLIwOUiv7uJb2ULSe1oOYMfIUq8naao3l7hXYo6AdT1vLOBNjOP4vU5A3y9FtATcbrGJloCKADCKFI+PrSLpaN91MEhzIcbuybKJYzUQRNAyoT9tZZG/aG2L1Guf5VjmTKImEOICSL2DXaSaNaMj3JeAAAAAElFTkSuQmCC"
+  },
+  "url": "https://incolumitas.com/2023/10/01/the-state-of-this-blog/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 5971,
+  "error": null,
+  "metadata": {
+    "title": "incolumitas.com – The State of this Blog",
+    "description": "An update regarding the state of this blog",
+    "keywords": [
+      "Update",
+      "News"
+    ],
+    "ogImage": "/theme/img/me-on-chasseral.webp",
+    "favicon": "https://incolumitas.com/theme/favicon/favicon.ico",
+    "language": "en",
+    "author": "Nikolai Tschacher",
+    "canonical": null,
+    "contentType": "article",
+    "siteName": "incolumitas.com",
+    "publishedTime": "2023-10-01 18:05:00+02:00",
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/a14d55d346b22bea-screenshot.png",
+  "timestamp": "2025-06-17T04:35:36.713Z"
+}

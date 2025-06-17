@@ -1,0 +1,30 @@
+{
+  "id": "1f9254f225b8ed3e",
+  "originalBookmark": {
+    "url": "https://www.google.com/maps/dir/36.6024147,-121.9023385/Mascorini+Place,+CA/Gaviota,+CA/Santa+Monica,+CA/@34.5496457,-120.4350313,8.72z/data=!4m22!4m21!1m1!4e1!1m5!1m1!1s0x809270ba3ea91a75:0xb49800fef94c6141!2m2!1d-121.5238279!2d36.3560728!1m5!1m1!1s0x80eeb2664b792afd:0xa59bededc5a03225!2m2!1d-120.2148716!2d34.4716558!1m5!1m1!1s0x80c2a4cec2910019:0xb4170ab5ff23f5ab!2m2!1d-118.4911912!2d34.0194543!3e0?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+    "title": "Your location to Santa Monica, CA - Google Maps",
+    "addDate": "2024-12-15T23:49:15.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACt0lEQVQ4jY2TXUhUQRiG32/OnLMej7uuBZWGZlE3ZpR1YSD9ieBdZRQUWVFRQvR7Y0K0rFDURRlhUEEEQdiv6FWRFRQEdaFlQUV6IxRG9KPhuu6eMzNfF7uKlUHfzczFvO8838z7ESYVAwQAMw4MLJF27nYCLwrYWLNynZeFIautKxbtAZgA4nENTdITwCQa0/sLOXECViisgjQ8m1BakA9iPar8ZOxprKAlq2MAEAAQz6z8ZU1l/e6fD88PCS+s/KTKy3FROm0aSKWU0coLedGz1THemRGz+I2gv3J+pCA38s4TujBWtI/bZqxTxXluh+dYyjBvIUEgeCIVbv84VL1x4buFSACA4CxF1I2sFFLOThgLscFLOD12cu+L5vwtj4/lbYNM7xLsWencRyZdeK3EebN2FTLoQmITCHcAElScI8gkjC14zafP9cdbbyUX77UBoKFh+u0VZ3pOpWZeLSI7ZCxFJRnu1ULiTmarLZPwR4XIqRo0eTWD0eR9u6yh4XIvQFxzZW75sPch31DSWDpEbIIUAODtExYADADogXA3yr/5Xu1Hg0C4jsO3uIt2fH0Y3kORZ+1GJjwLktnXJjCmGwBwG4YAgBlEBE4/kB1OhNcHIxTYDmxIjeaRStwdmQNX+4pcW+qU7urZ3F47/pVicpAcSx01SSTIgQVfofV7ub4+VKpd4ytYFpnAjCmJpuwD0kQOiMDMIKpBn69wSNpKdPjz1MXRMooKnxgAOZZlfNX4emP7KwCEeKb1CQIicDwO4dbqq/d+FLecCypkiDQT2AjXkSoV3Hy5tfMC4pnQTRXl8YEgHOx3llY1PZeSKgzA0NynHL28t65z+M/j4i+DZhC3LgiYgsOGoUGADvSR3rrO4ezt/1GcIVvWVte97MaG9/+kBSCnNGjOTpugSzBwsqZTWvwC9FkjnHrnD/UAAAAASUVORK5CYII="
+  },
+  "url": "https://www.google.com/maps/dir/36.6024147,-121.9023385/Mascorini+Place,+CA/Gaviota,+CA/Santa+Monica,+CA/@34.5496457,-120.4350313,8.72z/data=!4m22!4m21!1m1!4e1!1m5!1m1!1s0x809270ba3ea91a75:0xb49800fef94c6141!2m2!1d-121.5238279!2d36.3560728!1m5!1m1!1s0x80eeb2664b792afd:0xa59bededc5a03225!2m2!1d-120.2148716!2d34.4716558!1m5!1m1!1s0x80c2a4cec2910019:0xb4170ab5ff23f5ab!2m2!1d-118.4911912!2d34.0194543!3e0?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 23945,
+  "error": null,
+  "metadata": {
+    "title": "36.6024147, -121.9023385 to Santa Monica, CA - Google Maps",
+    "description": "Find local businesses, view maps and get driving directions in Google Maps.",
+    "keywords": [],
+    "ogImage": "https://maps.google.com/maps/api/staticmap?center=35.27824994%2C-122.81532635&zoom=6&size=900x900&markers=34.0118828%2C-118.4915504&sensor=false&client=google-maps-frontend&signature=1_6RLfFGC7sEbfAN28O_gkSXGsg",
+    "favicon": "https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": "Google Maps",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/1f9254f225b8ed3e-screenshot.png",
+  "timestamp": "2025-06-17T07:23:19.804Z"
+}

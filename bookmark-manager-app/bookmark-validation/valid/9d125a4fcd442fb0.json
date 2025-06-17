@@ -1,0 +1,30 @@
+{
+  "id": "9d125a4fcd442fb0",
+  "originalBookmark": {
+    "url": "https://www.timeanddate.com/",
+    "title": "timeanddate.com",
+    "addDate": "2024-10-31T21:39:31.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACUklEQVQ4jW2TT29VVRTF176vlT9BnZEovOjEgXXiAGc2MDFEmIkhcWL8ADBxYKITR0aMX8ChGBMkHVASkyYSBjRpgwpJrQEkleS1KArlyYM+vG3POevnoPc1N8hKTs7O3met5Oy9dqgBUEWEm/hNSYcl7Zc0JmlZ0oWIuNTUIyJQm9zcB4BpYJ3/YwP4oREXEE+SjwEPm8cGUiqQCmCnJjfCiSdFDgADAGdsFxvMcNE8umrALtmbBextoSMjcge4CGCTVoe3bRcDLotv4auvY3AB8v1lO6cMGPsasLuSdAg4CGLhrwudL2bf4+bqj5IUUYbIAySi3F6kf2pS9fzpquneRJGOV5KORqgTgv3PT7BzfE+c/fXzqNM6evFksO+TkIKH330Y5KTxl9+QJRGhjv22cJ4uwL8pJ4DfV39mbvmcAcro2NQ/TXn9l++38sO6sJFc8BUxfDB7eqn2q1/fzJ9d/tuPEgzuD3zt+vXmqxmXrc65Ln785bT7r53I6dR5D9i4Vanq9F7YE9o1Jr75baBBvckzO6tYWFjQ3bv31O8/0Pz8nHCR68eqv50VVYdqoqsd6tyIDO92pKls/OcwxUvPjksRsba2xszMjHLOmpycVLfbFSD/8Y+qvc+V2DE+JutjcefO7mLfAIPz1jTtArCyskKv1wOglGa0QMFQyj2gO/LCO2w1KwG5Edl2XhMbKBRvtt24bUfg05ZVE5Btl1JKaURTq/5Vew3aIh8Avacs0gh94CO1EK2NjIgA2CfpfUmHJL3SlJckzUk6ExFLbYH/ALh2obw+VeJKAAAAAElFTkSuQmCC"
+  },
+  "url": "https://www.timeanddate.com/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 22854,
+  "error": null,
+  "metadata": {
+    "title": "timeanddate.com",
+    "description": "Welcome to the world's top site for time, time zones, and astronomy. Organize your life with free online info and tools you can rely on. No sign-up needed. ",
+    "keywords": [],
+    "ogImage": "https://c.tadst.com/gfx/og/tadlogo-facebook.png",
+    "favicon": "https://c.tadst.com/favicon-48x48.png",
+    "language": "en",
+    "author": null,
+    "canonical": "https://www.timeanddate.com/",
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/9d125a4fcd442fb0-screenshot.png",
+  "timestamp": "2025-06-17T07:00:40.578Z"
+}

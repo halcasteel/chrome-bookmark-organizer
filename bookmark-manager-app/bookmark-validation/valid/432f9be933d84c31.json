@@ -1,0 +1,30 @@
+{
+  "id": "432f9be933d84c31",
+  "originalBookmark": {
+    "url": "https://www.onetcenter.org/overview.html",
+    "title": "About O*NET at O*NET Resource Center",
+    "addDate": "2023-12-22T17:09:22.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACEUlEQVQ4jaWTS2tTQRiGnznJSQw5TZoQTBolNY3YgthNxU1Eimiki4pgce+mLkS6EOxGV4K1kYIgLvoDdKebBlx0oXhBFIqIKFIvlMZetGlzMUlNcjLjImmThoiLfvDBzPDNwzu878AuS7Q9HYwHsMqDgBvIYmpfeXZt9f+A2sXLwHkgBDiBArAIPMLU7reCGoDYrT6qWhzB8D/1KmaoaqPNEAsA0ckOLMRRYgRVx0pAtTT0oskuvBdmWElIACsADnUCxLnQXgOA1XSBgMcJwGa5gsOm4zIcACR/5YazZI4DTxsAyZmQ33AOHYsAsLyepz/iB8BrWJn/keXQfjeJNwvMJ1MuhDrZAAxM64j0geanuu05zLK9vvOxvJ4HIF80KZcVCBXemrVuLRbX8jx++ZkeXxG/scHzT2E2yxV6fB/o9km0QoqzhwVHgwrTlME7d4cinUeefKu5cOr2TeA6Emw2QV8gR8BV2la0R1d0OkwuRpcY7M2ouiMfkWq05kL4NAhGENiqEn5m7CQzTjJFKxKBQ69i2CVf1ly8/e7KhDylKa+r9BCbPldTMDCt405PoXFlh++ybRrukfVcZe5SpZGDlYSkO/YOIbsQon97VLQ06gHScoPXY7mdQQJYmM0TjM2ikwThBRz1+ORAvAcm+KNN8GJ8o1lO+88UnezAWd2H1HxoMkXBssSr8d9tZ3dbfwHbXrTSjiPggQAAAABJRU5ErkJggg=="
+  },
+  "url": "https://www.onetcenter.org/overview.html",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 16863,
+  "error": null,
+  "metadata": {
+    "title": "About O*NET at O*NET Resource Center",
+    "description": "O*NET Resource Center is a workforce professional, developer, and research portal with data, tools, websites, technical documentation, and customer support information.",
+    "keywords": [],
+    "ogImage": "https://www.onetcenter.org/shared/image/promo/center.jpg",
+    "favicon": "https://www.onetcenter.org/favicon-32x32.png?v=20201126",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/432f9be933d84c31-screenshot.png",
+  "timestamp": "2025-06-17T04:37:51.364Z"
+}

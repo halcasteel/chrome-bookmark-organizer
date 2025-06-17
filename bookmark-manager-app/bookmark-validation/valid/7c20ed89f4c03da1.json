@@ -1,0 +1,30 @@
+{
+  "id": "7c20ed89f4c03da1",
+  "originalBookmark": {
+    "url": "https://en.wikipedia.org/wiki/Product_manager",
+    "title": "Product manager - Wikipedia",
+    "addDate": "2025-02-04T01:54:47.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABO0lEQVQ4jaWTMaoCMRCG/wnvDtELmHaxdAmIXcheZA9hYeMNxNZqsc81lu0X+2VLTzBj8V5C8uQ9UAcG5k+YP5kvhPATzCx4IZRSBAD0TnNuQu82J5NPmgFADcMAay2UUjifzwAA733S8zzDWgtrLeZ5xvV6xXK5hPcet9vte/5pmoSIJIQgURtj5HQ6CTOLc06maRJmFmaWuq5TjVg454qNrutEay0hBDkej8V6NC4M+r4XANL3fdo0xogxJul4UK4TxPV6Decc9vt9ArTb7XC/35MehgFVVZUUc7cQghCRjOOYTtNaS9d1wszStm3BgpnlKzfz3mO1WuFyuWCz2aBpGlhrcTgcsN1uAQCLxeLvG0RIRJRmjS9U13XB5wlinlrrgnTbtk/w/jWIDPL8PXvMzz9TzuLVZgB4AExRsO8ga8hoAAAAAElFTkSuQmCC"
+  },
+  "url": "https://en.wikipedia.org/wiki/Product_manager",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 3411,
+  "error": null,
+  "metadata": {
+    "title": "Product manager - Wikipedia",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://en.wikipedia.org/static/favicon/wikipedia.ico",
+    "language": "en",
+    "author": null,
+    "canonical": "https://en.wikipedia.org/wiki/Product_manager",
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/7c20ed89f4c03da1-screenshot.png",
+  "timestamp": "2025-06-17T08:46:04.960Z"
+}

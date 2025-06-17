@@ -1,0 +1,30 @@
+{
+  "id": "ca300bcdb4c9f7db",
+  "originalBookmark": {
+    "url": "https://www.bbraunusa.com/en.html",
+    "title": "B. Braun Medical Inc.",
+    "addDate": "2024-03-15T06:50:19.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAA60lEQVQ4jWP8//8/AymAhYGBYcOLmxc/v8SlQp6TP0FGH85lhNjAuLUZj6kGfBL7LWIFWDkYGBiYMKUdhOUhCC5y4dOLwmu7EE5CA/st4iCMA28fOp5YBGE/+P4BwsBiA7JVcLYCpwBhDQfePoQwBFg56tXscDrpwfcPC59cOvD2AUSDAZ9EvIwePhsUOAXqVe38xdUhwQLxseHh2R9+/8DnpAJFc3hQQrRNfHCKgB8M+CSQo+zA2wcENEAMRhPB4unG24fgRsIDioGBwV9cHbuGhlsH8TgPmviQ4wgNKHAK2AvLwz3DSGryBgBCtldzpSHAUgAAAABJRU5ErkJggg=="
+  },
+  "url": "https://www.bbraunusa.com/en.html",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 15243,
+  "error": null,
+  "metadata": {
+    "title": "B. Braun: A leading medical technology company",
+    "description": "B. Braun Medical Inc. develops, manufactures and markets innovative medical products and services to the healthcare industry.",
+    "keywords": [],
+    "ogImage": "https://www.bbraunusa.com/content/dam/b-braun/en_us/website-6/home-page/Web 6.0 Homepage Image_2.26.24.jpg",
+    "favicon": "https://www.bbraunusa.com/etc.clientlibs/settings/wcm/designs/clientlibs/bbraun/bbraun.static/resources/img/bbraun-redesign_favicon.ico",
+    "language": "en",
+    "author": null,
+    "canonical": "https://www.bbraunusa.com/en.html",
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/ca300bcdb4c9f7db-screenshot.png",
+  "timestamp": "2025-06-17T04:21:28.214Z"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "56e23a7305bcc27a",
+  "originalBookmark": {
+    "url": "https://hunter.io/users/sign_up?from=chrome_extension&utm_source=chrome_extension&utm_medium=chrome_extension&utm_campaign=extension&utm_content=new_install",
+    "title": "Sign up • Hunter",
+    "addDate": "2024-12-31T00:03:14.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABcElEQVR4nKRTsUoDQRB9ezkFE0EQEbHzkoBYi1iJRbASFZF4CaJioZDCr7AUET9BoglXiFiIhQRrCwtLycXGwsJCLC9x13dn5GKyFwh5MMvczL6Zt7N7plJKoA+Y2uj2RBxe4hqxRhZyYBFK1lCuPeu2GtoC9cQ+1wy+TRtKnQDiCBEQHUfIpdZIKtKL02SzSQNCWChV36IV5NMzsJMPJF81ya15k/ECIhXY6RU2c/g92Jb3z12lrdM8CLmA0uvjfwV5a5zkcw3ZL3+MsrvB7mdBXhkV5Kw9HMya4ZZscgdQk/TYSTgalR+Me8GeEA3aF+dyyrO5RThKUkkmGFknxkhuj/kKRqnMMgOyD4kt9AKl7qDqhd8hrk4PY6j+jnD6ESRUIHADSbJTe/mTAox8Sr48r0uBe8RQwIVbbU+ED8lO5rkWNeRb3sRyROGWh1R2L3nP8/SeWvKctnGILhDav3FzagnC2KWXYuG53gv0gB8AAAD//5v3zpMAAAAGSURBVAMAKTKFD5r8y7sAAAAASUVORK5CYII="
+  },
+  "url": "https://hunter.io/users/sign_up?from=chrome_extension&utm_source=chrome_extension&utm_medium=chrome_extension&utm_campaign=extension&utm_content=new_install",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 18379,
+  "error": null,
+  "metadata": {
+    "title": "Sign up • Hunter",
+    "description": "Create a free Hunter account and connect with the people that matter for your business.",
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://hunter.io/assets/favicon/favicon-35c267ca9f2a39f1c9d7118c8533e74385d9e7a4fad1ced75fd51442ecfbceb2.ico",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/56e23a7305bcc27a-screenshot.png",
+  "timestamp": "2025-06-17T07:59:21.253Z"
+}

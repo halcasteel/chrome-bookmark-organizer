@@ -1,0 +1,30 @@
+{
+  "id": "e969cccd67e2d1b0",
+  "originalBookmark": {
+    "url": "https://towardsdatascience.com/",
+    "title": "Towards Data Science",
+    "addDate": "2023-06-15T10:44:41.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACE0lEQVQ4jaWTzUtVURTFf/vcz/c0MsTSFAnEBgohkRFRRBBNHDYR+xj0B2Q0MQgahaNGOWvUqEE4iAZBTmqUQREIhSRmkilq5Mfz+d6999x7TgN9+gwVoTU5m73PWpuz9zrS3TugEVxrrRUR4QCouhupgxD2w64C1tod5165HQL/FioQEfZ7l6qQlQjGmK1YBFzHoVSOiXWKUgqlBMdROxoqay0iQqxTwsBHgCjRxEnKwp8VBvv76Ll4muVCkcJamaXVImaTY63FrQSB5/L43k1W1ko8ejpM87F62lsbudzdyezCEjVhwLUr50izjJHRMRKdoZRsCJTjhK6TJzh76iQT03O0tzYx2H+dQrGEMZbFpVUG7/Rx6UwHwyMfcB2HWKeAoIw1BL7H16kZ1ksRQ89fMzkzT1PDEW49GGLy5zx1h/K8ePOeH7OLNDbUoZTA5syVsD3l9XLE3Rs9dLa1sFwo8uT+bTraWnAdh6P1h5n7vczV810cb6gnSVNEBKe588JDpUTpNGN86pdkmeHjl++Mjn0jTjSv3n1ibGKaMPCoyQU8e/mWz+NTBL4nQCrdvQPaYl3ARomWKE6ozYekmSFONK6j8D0PnWYkWuN7LvkwsCKItURuxSzGGPJhQG0uJDMG3xNqcsHWzgPfQ0kOay2ZMVi7wXOrHWeMwezizI1Vb9cqOWBboDq5l6UrqBb/79/4F8oL91tUVF3QAAAAAElFTkSuQmCC"
+  },
+  "url": "https://towardsdatascience.com/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 30960,
+  "error": null,
+  "metadata": {
+    "title": "Towards Data Science",
+    "description": "Your home for data science and AI. The world’s leading publication for data science, data analytics, data engineering, machine learning, and artificial intelligence professionals.",
+    "keywords": [],
+    "ogImage": "https://towardsdatascience.com/wp-content/uploads/2025/02/default-image.jpg",
+    "favicon": "https://towardsdatascience.com/wp-content/uploads/2025/02/cropped-Favicon-32x32.png",
+    "language": "en-US",
+    "author": null,
+    "canonical": "https://towardsdatascience.com/",
+    "contentType": "website",
+    "siteName": "Towards Data Science",
+    "publishedTime": null,
+    "modifiedTime": "2025-04-08T13:19:40+00:00"
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/e969cccd67e2d1b0-screenshot.png",
+  "timestamp": "2025-06-17T04:58:51.289Z"
+}

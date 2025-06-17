@@ -1,0 +1,30 @@
+{
+  "id": "d256d4e77ab68c3d",
+  "originalBookmark": {
+    "url": "https://simonwillison.net/2024/Oct/21/claude-artifacts/#extract-urls",
+    "title": "Everything I built with Claude Artifacts this week",
+    "addDate": "2024-10-23T08:29:34.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAfUlEQVQ4jWNgoBAwMjAwMCyatPc/PkVxec6MuORYYIyDe05gVWDvYoHXBUxEuBIvYEEXwGYjshfRvYNhAAMDA4OCqgRW2x7cfoEhRn0vELIR3TtwA3CFtlewNVbxbWuPIlyAHDCE0gQ6oE0YYPM70QaQ6h3aRiMDUmjTDAAA3OImErUFDDoAAAAASUVORK5CYII="
+  },
+  "url": "https://simonwillison.net/2024/Oct/21/claude-artifacts/#extract-urls",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 17837,
+  "error": null,
+  "metadata": {
+    "title": "Everything I built with Claude Artifacts this week",
+    "description": "I’m a huge fan of Claude’s Artifacts feature, which lets you prompt Claude to create an interactive Single Page App (using HTML, CSS and JavaScript) and then view the result …",
+    "keywords": [],
+    "ogImage": "https://static.simonwillison.net/static/2024/claude-artifacts/sqlite-wasm.jpg",
+    "favicon": null,
+    "language": "en-gb",
+    "author": "Simon Willison",
+    "canonical": "https://simonwillison.net/2024/Oct/21/claude-artifacts/",
+    "contentType": "article",
+    "siteName": "Simon Willison’s Weblog",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/d256d4e77ab68c3d-screenshot.png",
+  "timestamp": "2025-06-17T07:44:57.425Z"
+}

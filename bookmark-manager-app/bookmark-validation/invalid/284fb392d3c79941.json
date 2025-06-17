@@ -1,0 +1,25 @@
+{
+  "id": "284fb392d3c79941",
+  "originalBookmark": {
+    "url": "https://www.ycombinator.com/rfs",
+    "title": "Requests for Startups | Y Combinator",
+    "addDate": "2025-04-04T14:58:44.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABfklEQVQ4jX3Tv4oUQRAG8F/NDueunFxwiBiIKAbCJWYGPoCBgb6EPoGIiXAYimamYuwLHIIIgiJGvoEP4Bmd+I+9mWmD7tntWf/0MHTR9VXVV19XR7qtR5Q/lf1/K1XY1KwCxrBAE+uUsXFmUiIaUSCpuHos07pWMS0TfcGM2BCNVD4YJCe2OX2eriLdYfcc8+2MycmTJGUGUXgkYbbg3hv2rvMLS1y4yt1XzE5mTIz1RTORZqvh8Atvn3NrP/d6jJv7fHjB58OMSWtyjXoNA9s4eMzOWS5f4+IeZy5x8Cj7hmES0q5UHQVrG45+8PIJN+6z/Mnrp3z9zk6zTlBuItKdlYTVCroZDz8SDQ+u0PZsAqNmoPLPgqOOT+/plnzr2J3R95tzYCpi3UogyvA0SFX1ymxrOms7Mmh+iuMthupsKrt2pUAIqdzyMDDHu2eknkWl/ogpcVnEv1AT8iCRk6Xq/J8Mxu5Ha1H4DkOtz4RB+8cTrh91mt75ylfJ+RtlR4kMxEmS0gAAAABJRU5ErkJggg=="
+  },
+  "url": "https://www.ycombinator.com/rfs",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 30962,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "Requests for Startups | Y Combinator",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T03:52:38.495Z"
+}

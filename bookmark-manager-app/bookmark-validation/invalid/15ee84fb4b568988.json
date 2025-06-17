@@ -1,0 +1,25 @@
+{
+  "id": "15ee84fb4b568988",
+  "originalBookmark": {
+    "url": "file:///Users/hcasteel/Downloads/2022-05-20%20IT%20All%20Hands.pdf",
+    "title": "2022-05-20 IT All Hands",
+    "addDate": "2022-05-21T00:39:27.000Z",
+    "icon": null
+  },
+  "url": "file:///Users/hcasteel/Downloads/2022-05-20%20IT%20All%20Hands.pdf",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 656,
+  "error": "net::ERR_FILE_NOT_FOUND at file:///Users/hcasteel/Downloads/2022-05-20%20IT%20All%20Hands.pdf",
+  "metadata": {
+    "title": "2022-05-20 IT All Hands",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T06:45:23.804Z"
+}

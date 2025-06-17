@@ -1,0 +1,25 @@
+{
+  "id": "a4ed71296ecf3cb4",
+  "originalBookmark": {
+    "url": "https://confluence.corp.netsuite.com/display/DeptPS/Consultant+Track",
+    "title": "confluence.corp.netsuite.com",
+    "addDate": "1970-01-01T00:00:00.000Z",
+    "icon": null
+  },
+  "url": "https://confluence.corp.netsuite.com/display/DeptPS/Consultant+Track",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 895,
+  "error": "net::ERR_CERT_AUTHORITY_INVALID at https://confluence.corp.netsuite.com/display/DeptPS/Consultant+Track",
+  "metadata": {
+    "title": "confluence.corp.netsuite.com",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T05:24:45.422Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "fe8f50d8973439e1",
+  "originalBookmark": {
+    "url": "https://www.newline.co/fullstack-rust",
+    "title": "Fullstack Rust: The Complete Guide to Building Apps with Rust - # Learn to build Rust apps",
+    "addDate": "2022-01-12T05:50:34.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACa0lEQVQ4jY2TvUtbURjGf+fkXK8RXZK0tVJa0pJKSAQx3aqiW6HoIGTpZnTI4uQH9j8o2BacJGbK4hRFcapIFAeX0tJStdKKrR9g8LNoQyP35p4O0VjJUJ/xnOc87/M+73vE834dsc72Rg62Flvz4qPL8i+ipY0DPHB+8+z8Jy4cAEReIY4U96sptD00l3w1rkHR/+J7Zn4r0d7c5NAQqgcBoClCINDFowtoDd9WP2OsphmI2Auq8uu75ranDq/fvkIpg5vAsmxeDkBmM9UsT/J7RjD0GKUMbNumUCj8V8AwFIFgA7tnGBI0UkrOz88ZGhpienr6Ri6klGhAXnZsmia5XI7R0VFOTk7KHjiOU+5Og9RQTAaIx+Ps7OwwMzNT4qRSKYaHh4nH48RiMTY3N68EFMgKmeMiehobG+ns7GR8fJyjoyMAlpeXmZycxOfzMTs7y9zc3GVxtMdG3pYfuBybEILe3l6y2SxTU1PFIkrh9/vp6+ujrq6O09PTIhfQpo00+YUozR3C4TBdXV0kk0kODw9RSuE4Tim4sjCvr0nRRU9PD8fHx6TTaaqqqnC73QghqK6uxjTNa3xVJgkEg0Gi0SiJRIKxsTFisRher5dkMonX670uIABH6zKR7u5uNjY2cLlcBAIBAEKhUOne0Q4SjbpXWWm9X101LNvGUFeGAoEAExMTGEb5etuWzcr6Gr47Hkvsd3Rk3mxvt1stLdSHwyBE6S8JIdDofyIWoB2+rK8wf7zMo+jdBaGj0chBPj+SyWZbd/N/XDlq2befoJEIYN80WKtxF0W0xPH8QDR9KngitUsVt9yDfwGoEu27Y6iuNQAAAABJRU5ErkJggg=="
+  },
+  "url": "https://www.newline.co/fullstack-rust",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 31513,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "Fullstack Rust: The Complete Guide to Building Apps with Rust - # Learn to build Rust apps",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T05:56:28.494Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "937a929cf13aff5e",
+  "originalBookmark": {
+    "url": "https://www.expedia.com/Checkout/V1/MultiItemBookingConfirmation?tripid=bdd75d5e-911d-5597-81ce-0f77e480b37e&c=d4c908ac-6f6d-4e2e-80c8-e47758499e86",
+    "title": "Expedia: Confirmation",
+    "addDate": "2022-07-13T01:10:26.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB4ElEQVQ4jY2Ty2pTURSGv7WyT1rxiti0NPVSL5WCFDNy7siZUwe+QEdFo8VZdaJgDepEodP6Bo58AYemOmishRQxQoqioFLtOclaDk7S5qS2uGDDZrO/f11Yv/jqpUNGXAaZBob4v/gC/lzJV0IHngUGAVT3Jt3BnSGQWSNxaa+WmiDDArQM1hrC701B/gUDRw87xYJ3n5oBpADQasPiy8CTxZAK9CiIOCpgDmeOOwtzMWPDjjmFAIgqLL1XXr3OMVpwRLYyoAqNprD+TcCh/gm+/xDGRhwcCQBmMHnaWJiLM3BO4U1NufM4T/MriKanN0L3MpCHwYFtWBSWasrdZxEfPgoTJ52fGxAnWYGMXmfCiEB1Wbk5H/F2RZmaMB7c6PRt2fEG+kIEqjWl/Cji3Yoydd6o3E44e8Jw7//dV4EIJC14+iJQXe7AtxIuThpt2wlnKjCDXxtC22C86Fy93GbmeovSpOG7wFsCqlBvCOX5PCPHnPszCQf3O1FIhbs7YQ77Bjwz7EC6YBInQmM9/ZlTiAKZnt2FIwfg2pUW40XH0qq2V3kzhrXPSj5yTo36Dk9sxlCrKxfOGVEuzQo0pb1autc1UxeyXXoWpXcef8AfBiVfMWJAps32tnMPvGXnv4f1x8dyE8+gAAAAAElFTkSuQmCC"
+  },
+  "url": "https://www.expedia.com/Checkout/V1/MultiItemBookingConfirmation?tripid=bdd75d5e-911d-5597-81ce-0f77e480b37e&c=d4c908ac-6f6d-4e2e-80c8-e47758499e86",
+  "valid": false,
+  "statusCode": 429,
+  "loadTime": 17344,
+  "error": "HTTP 429",
+  "metadata": {
+    "title": "Expedia: Confirmation",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T05:39:24.914Z"
+}

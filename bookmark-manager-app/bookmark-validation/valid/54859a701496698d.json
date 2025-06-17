@@ -1,0 +1,30 @@
+{
+  "id": "54859a701496698d",
+  "originalBookmark": {
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK209639/",
+    "title": "Current Legislative and Regulatory Framework in the United States - Direct-To-Consumer Genetic Testing - NCBI Bookshelf",
+    "addDate": "2022-04-07T17:38:55.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABy0lEQVQ4jaWSS0hUcRjFf/dhN2usOzmXXhSBMo6TOOPQg+kBUfaCFi4UXISLBAmJFiEtWohISIqLiBZteuwikiKiXIVUMqVMlk4W0kVRcXHRMmuwuaNz/y1iNmH1h872fOcHh+/Af0rZG9/fHgqFLyqKYvxuZl3XefrkUehrcbSGSO1tMt8mGLxVy5w9lL/Rqo+e6F0pDKDpuk/T9bXT7553sjlajS9QiX9HjPEXNwEBoP4pnFdpabDZsqxKUvfPgcixbtNugofP5H31nx0VRYvvO3CN2U8jTCVvAFB2sgPTNKUAABuKrYPl5TtPk3zYytKiQ0GhRcmpNmkAQFVsV5dpqh4fey8BsH1PM/5tFdKAVYaxMVwRbcPuu6MszLxCUQuI1F+VBgAsL2fTgCo0Yw0AOTctDchkMtODrxNXCB5rwheI4OV+MHLvgjQg+WaghaKi1YSOXwZg4mU3C864FODz3GyfPTbWQ7iuA93w436fZLinCyS+IIRY6h9InCdQFmNr7NeAUo9bgDSA7gnhqn9Zo23b1+cd5wNHGvsBjS+Tz5hKPMj76vvUcKsnhLtSOOu6zmjqbTslhxpYvyXO4vwoQ3fPAp5MdSn9BEYclw4vPzbxAAAAAElFTkSuQmCC"
+  },
+  "url": "https://www.ncbi.nlm.nih.gov/books/NBK209639/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 7243,
+  "error": null,
+  "metadata": {
+    "title": "Current Legislative and Regulatory Framework in the United States - Direct-To-Consumer Genetic Testing - NCBI Bookshelf",
+    "description": "The following federal laws—the 1976 Medical Device Amendments to the Food, Drug, and Cosmetic Act, the Clinical Laboratory Improvement Amendments, the Health Insurance Portability and Accountability Act, and the Genetic Information Nondiscrimination Act—are most relevant to the oversight of DTC genetic testing. At the present time, however, only the latter explicitly applies to such tests.",
+    "keywords": [],
+    "ogImage": "https://www.ncbi.nlm.nih.gov/corehtml/pmc/pmcgifs/bookshelf/thumbs/th-nap13021-lrg.png",
+    "favicon": "https://www.ncbi.nlm.nih.gov/favicon.ico",
+    "language": "en",
+    "author": null,
+    "canonical": "https://www.ncbi.nlm.nih.gov/books/NBK209639/",
+    "contentType": "book",
+    "siteName": "NCBI Bookshelf",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/54859a701496698d-screenshot.png",
+  "timestamp": "2025-06-17T06:10:34.600Z"
+}

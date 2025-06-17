@@ -1,0 +1,30 @@
+{
+  "id": "6e288440803ace35",
+  "originalBookmark": {
+    "url": "https://scholar.google.com/citations?hl=en&user=gHp0pu4AAAAJ",
+    "title": "‪Sam McCandlish‬ - ‪Google Scholar‬",
+    "addDate": "2025-06-10T19:14:59.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABt0lEQVQ4jbWSP0gbYRjGn/c+7xJzQpJB0NiaDME/W0HQwUVMR0EcLNSh6NKtmw6CIG2holAREbpWJ11EUTpIN6kOpWqxWCgFFUIrxj8x7dnc5e57XZKQXC8Ogs/48jy/93tePuA+xcwJZk7cJaid/3FmXi5njeF3B9cnF9lZZta8vOQRbtk7litvVs0HZ3+lbiR3EapRjVdDzacdraFeItqvCLBsHlzczs3Nb1p+yRAAYCR3806SA90R83lPdCzgF9NlAGYOHaZ4YXLd7P7x29FLoUVAXvEG3Rh/1rTV9FAfIKIzYubEx2/20tsPlm7a7HdXcgMAQFMV60VfzHjSFemv8jpMWCe0RDQwMxDvAKSN/e8/cZq6Knp8qsKeFVIZqTfXq3BkOVQowN7XA4QDslDhKRGdlx0x5/DrqTVn9OqfFF4vq9GkHOlRJ6p9YqwwK6tQpeCysVY4jhSeAKHA9mu4KJ0pLs9//8Ildg/cgK26IKxK6UgIOQCbFQFEtP0oii9CgekOqwrMthg2iOjzrU9m5mD6Gu93jvD4VxpafrPVFsNGMIAhIsrcCigBtQPozPf+5N5c0A0BBbZh8cQqegAAAABJRU5ErkJggg=="
+  },
+  "url": "https://scholar.google.com/citations?hl=en&user=gHp0pu4AAAAJ",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 3557,
+  "error": null,
+  "metadata": {
+    "title": "‪Sam McCandlish‬ - ‪Google Scholar‬",
+    "description": "‪Anthropic‬ - ‪‪Cited by 80,915‬‬ - ‪Machine Learning‬ - ‪Artificial Intelligence‬ - ‪Theoretical Physics‬",
+    "keywords": [],
+    "ogImage": "https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=gHp0pu4AAAAJ&citpid=5",
+    "favicon": "https://scholar.google.com/favicon.ico",
+    "language": null,
+    "author": null,
+    "canonical": "https://scholar.google.com/citations?user=gHp0pu4AAAAJ&hl=en",
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/6e288440803ace35-screenshot.png",
+  "timestamp": "2025-06-17T03:28:33.037Z"
+}

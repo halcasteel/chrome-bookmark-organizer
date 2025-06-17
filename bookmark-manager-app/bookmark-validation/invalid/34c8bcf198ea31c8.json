@@ -1,0 +1,25 @@
+{
+  "id": "34c8bcf198ea31c8",
+  "originalBookmark": {
+    "url": "https://arxiv.org/pdf/2411.01747",
+    "title": "2411.01747v1.pdf",
+    "addDate": "2024-11-28T14:59:44.000Z",
+    "icon": null
+  },
+  "url": "https://arxiv.org/pdf/2411.01747",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 30531,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "2411.01747v1.pdf",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T07:45:11.025Z"
+}

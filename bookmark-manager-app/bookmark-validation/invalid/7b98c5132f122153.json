@@ -1,0 +1,25 @@
+{
+  "id": "7b98c5132f122153",
+  "originalBookmark": {
+    "url": "https://docs.companyenrich.com/reference/post_companies-search",
+    "title": "Search companies",
+    "addDate": "2025-03-18T00:44:24.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABS0lEQVQ4jaWSv0sCYRzGP+/blZ6cYLXoEIQQtAQODdEgBC7RYlOTuDSFBNHQ4NwYUa0RSXv9Af2ChpCGaL2ClBIqSi7IPMvzriWk80RIv+PL9/nwPN/nFb6MviJgHVD535gOZIU/o1e7EDchsgcxgCp7EAOgtHscUAT76QiJ8QDXD1+c6p9snhhYtuPZ9ThQpCCXjjAf0wj6JSNDCtNRldXEIH1SdAZIKdhNhUnGNACK5TpXxRoAU1GV5ZkQrQwXYCkeYmEyCEDJsJjdKbF2+MpbpQFAfCzA3ITWIYLXIeDN7ZL4M3pzQ0rBXircdFEs18kXaoR+y7q4q7J1ZvD3lq4WbNth8eAZnyJIxjRGh/uxHbh9+SZfMNk+f6e1CE8Llu2Qzj1xdFPho2bzaFhc3ptsHBs02tToitDN9PwTJWD2oDelA9kuIaYD2R8FBWvZCcydHwAAAABJRU5ErkJggg=="
+  },
+  "url": "https://docs.companyenrich.com/reference/post_companies-search",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 36144,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "Search companies",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T02:37:57.657Z"
+}

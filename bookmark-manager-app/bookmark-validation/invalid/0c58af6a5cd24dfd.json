@@ -1,0 +1,25 @@
+{
+  "id": "0c58af6a5cd24dfd",
+  "originalBookmark": {
+    "url": "https://grok.com/chat/09301247-afb2-4891-a397-89e05433d877",
+    "title": "Glean&#39;s AI Search Platform Overview - Grok",
+    "addDate": "2025-06-03T18:23:59.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABw0lEQVR4nGyTyyvEURTH5/cz5JXYWSAhIeQVZWHhURY2oiZZoDyykDILJUu7sZCN8jd4rC0sbCxtyEKeNSXMmEyZRsz8fM44V7dpbn0659xzv/fce+7v5/flGJ7nuWIdx0lr7GBc4pS1pgzT6OYSi9AS5+N7Rix5yMNdhLg/ewMRsqADdwG6oJD4DnsCx+QjxHv4F/g3jlXZkUqMVcIQ5EMUElANTzAGAZiCJki5WeIZwh0IwwS0QCu0QwMMwCacsf5HtH49tojLcbfgBUbleNbNLsmvYHchrWSGazrOGIQq2BaxNE+bJScMYtZgCb6hzhQWselDs6yFU302eYkU/jL+OIwQ72Ov5DrMF5sreLpBgdqk7CwNYlFA7z7E3Jdu/AmV/1ewTnCrfo8eu082QRhUsRQrgTZ5EeYSmQ2sr+scPmCDxfXYe3IHKvRp16UHFXCkRVwn6xnfCF+hV6snNV+KmdVXuIZ+cvFMD8yni53WBk3COswzJx9PTBtcCw8wJ2JT1K9iObLceYL4nfhZF3dCke/vK5TqIfJhI85cjUB2HoZDJmN2Er9GXypijmznzQbd2Ecmo1Yv8uxf1zRMjC2W8QsAAP//agYoWwAAAAZJREFUAwD3hff51bGh2QAAAABJRU5ErkJggg=="
+  },
+  "url": "https://grok.com/chat/09301247-afb2-4891-a397-89e05433d877",
+  "valid": false,
+  "statusCode": 403,
+  "loadTime": 7005,
+  "error": "HTTP 403",
+  "metadata": {
+    "title": "Glean&#39;s AI Search Platform Overview - Grok",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T02:06:13.784Z"
+}

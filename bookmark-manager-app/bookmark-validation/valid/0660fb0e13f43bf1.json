@@ -1,0 +1,30 @@
+{
+  "id": "0660fb0e13f43bf1",
+  "originalBookmark": {
+    "url": "https://modelcontextprotocol.io/introduction",
+    "title": "Introduction - Model Context Protocol",
+    "addDate": "2024-12-02T03:24:28.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAATpJREFUOI2V079LW2EUxvFPUkSHQsVBEaGK0g7+WhJR/wKVjkVonUxooLipq9FJXBU3cVY3C9K9Swcnd4XSqV0KBaXVQtu4nMhryCV6lgPnPd/nee5976V5PYn+Ekf4iFcxy6WL+Qz4H4r4jKvoh3gdTFuG8Z1zEX9QxhCm8B6fkt1cK7iE5/iPt3iDv5FkJgsuBLyIftyE0HjA+6jiGvONUQpxUMJAAo+ihnUMYjLmp2mCafxGJYHLGEng3jCoYBZndfN8vOVldOAn3mE44Cr6cIkVdOEHltIEXdE38AFjAa8l8Co68Q3bzW4iF24nmMBCXGEdfobvCZxvhKEHX3EQ0K94tDq80wxurAHs4Rhz6H4M3Ph1deICuw+BU5H2WN7CeYZ4SxF4gS/YzBLJilSL5Yv4D54m83t1C9XoRMlcPd6KAAAAAElFTkSuQmCC"
+  },
+  "url": "https://modelcontextprotocol.io/introduction",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 28085,
+  "error": null,
+  "metadata": {
+    "title": "Introduction - Model Context Protocol",
+    "description": "Get started with the Model Context Protocol (MCP)",
+    "keywords": [],
+    "ogImage": "https://raw.githubusercontent.com/modelcontextprotocol/docs/2eb6171ddbfeefde349dc3b8d5e2b87414c26250/images/og-image.png",
+    "favicon": "https://mintlify.s3-us-west-1.amazonaws.com/mcp/_generated/favicon/favicon-32x32.png?v=3",
+    "language": "en",
+    "author": null,
+    "canonical": "https://modelcontextprotocol.io/introduction",
+    "contentType": "website",
+    "siteName": "Model Context Protocol",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/0660fb0e13f43bf1-screenshot.png",
+  "timestamp": "2025-06-17T06:57:52.825Z"
+}

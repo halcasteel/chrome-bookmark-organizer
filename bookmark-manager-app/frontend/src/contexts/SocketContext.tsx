@@ -40,46 +40,104 @@ export const SocketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   const [importProgress, setImportProgress] = useState<Map<string, ImportProgress>>(new Map())
 
   useEffect(() => {
-    if (!token) return
+    if (!token) {
+      console.log('No token available, skipping WebSocket connection')
+      return
+    }
 
-    const socketUrl = import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:3001'
+    // Fix: Connect through the same origin to use Vite proxy
+    const socketUrl = window.location.origin
     console.log('Connecting to WebSocket at:', socketUrl)
     console.log('With token:', token?.substring(0, 20) + '...')
     
+    // Fix: Improved Socket.IO client configuration
     const newSocket = io(socketUrl, {
       auth: { token },
-      transports: ['websocket', 'polling'], // Allow both transports
+      transports: ['polling', 'websocket'], // Fix: Start with polling first
       reconnection: true,
       reconnectionDelay: 1000,
       reconnectionAttempts: 5,
+      path: '/socket.io/', // Fix: Ensure proper path
+      forceNew: true, // Fix: Force new connection
+      timeout: 20000, // Fix: Add connection timeout
+      autoConnect: true,
+      // Fix: Add query params for debugging
+      query: {
+        clientVersion: '4.8.1',
+        timestamp: Date.now().toString()
+      }
     })
 
+    // Fix: Add more detailed connection monitoring
     newSocket.on('connect', () => {
-      console.log('WebSocket connected')
+      console.log('WebSocket connected successfully!')
+      console.log('Socket ID:', newSocket.id)
+      console.log('Transport:', newSocket.io.engine.transport.name)
+      console.log('Protocol:', newSocket.io.engine.protocol)
       setConnected(true)
+      
+      // Clear any previous error toasts
+      toast.closeAll()
+    })
+
+    // Fix: Monitor connection confirmation from server
+    newSocket.on('connection_confirmed', (data) => {
+      console.log('Connection confirmed by server:', data)
     })
 
     newSocket.on('disconnect', (reason) => {
       console.log('WebSocket disconnected:', reason)
       setConnected(false)
+      
+      // Only show toast for unexpected disconnects
+      if (reason === 'io server disconnect' || reason === 'io client disconnect') {
+        return
+      }
+      
+      toast({
+        title: 'WebSocket Disconnected',
+        description: `Connection lost: ${reason}`,
+        status: 'warning',
+        duration: 3000,
+        isClosable: true,
+      })
     })
 
+    // Fix: Enhanced error handling
     newSocket.on('connect_error', (error) => {
-      console.error('WebSocket connection error:', error.message)
-      console.error('Error type:', error.type)
-      console.error('Full error:', error)
+      console.error('WebSocket connection error:', {
+        message: error.message,
+        type: error.type,
+        data: (error as any).data,
+        context: (error as any).context
+      })
+      
+      // Fix: Check for frame header error specifically
+      if (error.message.includes('Invalid frame header')) {
+        console.error('Frame header error detected - this might be due to a proxy or protocol mismatch')
+      }
       
       // Check if it's an auth error
       if (error.message.includes('Authentication') || error.message.includes('token')) {
         console.error('Authentication issue detected. Token:', token?.substring(0, 20) + '...')
         toast({
-          title: 'WebSocket Connection Failed',
-          description: 'Authentication error. Please try logging in again.',
+          title: 'WebSocket Authentication Failed',
+          description: 'Please try logging in again.',
           status: 'error',
           duration: 5000,
           isClosable: true,
         })
       }
+    })
+
+    // Fix: Monitor transport changes
+    newSocket.io.on('upgrade', (transport) => {
+      console.log('Transport upgraded to:', transport.name)
+    })
+
+    // Fix: Monitor engine errors
+    newSocket.io.engine.on('error', (error) => {
+      console.error('Engine error:', error)
     })
 
     // Import progress updates
@@ -97,6 +155,18 @@ export const SocketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         title: 'Import completed',
         description: `Successfully imported ${data.imported} bookmarks`,
         status: 'success',
+        duration: 5000,
+        isClosable: true,
+      })
+    })
+
+    // Import error
+    newSocket.on('import:error', (data) => {
+      console.error('Import error:', data)
+      toast({
+        title: 'Import failed',
+        description: data.error?.message || 'An error occurred during import',
+        status: 'error',
         duration: 5000,
         isClosable: true,
       })
@@ -120,18 +190,23 @@ export const SocketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     setSocket(newSocket)
 
     return () => {
+      console.log('Cleaning up WebSocket connection')
       newSocket.disconnect()
     }
-  }, [token])
+  }, [token, toast])
 
   const subscribeToImport = (importId: string) => {
-    if (socket) {
+    if (socket && connected) {
+      console.log('Subscribing to import:', importId)
       socket.emit('subscribe:import', importId)
+    } else {
+      console.warn('Cannot subscribe - socket not connected')
     }
   }
 
   const unsubscribeFromImport = (importId: string) => {
-    if (socket) {
+    if (socket && connected) {
+      console.log('Unsubscribing from import:', importId)
       socket.emit('unsubscribe:import', importId)
     }
   }

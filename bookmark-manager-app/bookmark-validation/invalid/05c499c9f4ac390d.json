@@ -1,0 +1,25 @@
+{
+  "id": "05c499c9f4ac390d",
+  "originalBookmark": {
+    "url": "file:///Users/hcasteel/Downloads/GRAIL%20Identity%20and%20Access%20Management%20(IAM)%20Policy.pdf",
+    "title": "GRAIL Identity and Access Management (IAM) Policy.pdf",
+    "addDate": "2022-05-21T00:39:27.000Z",
+    "icon": null
+  },
+  "url": "file:///Users/hcasteel/Downloads/GRAIL%20Identity%20and%20Access%20Management%20(IAM)%20Policy.pdf",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 1016,
+  "error": "net::ERR_FILE_NOT_FOUND at file:///Users/hcasteel/Downloads/GRAIL%20Identity%20and%20Access%20Management%20(IAM)%20Policy.pdf",
+  "metadata": {
+    "title": "GRAIL Identity and Access Management (IAM) Policy.pdf",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T06:44:32.739Z"
+}

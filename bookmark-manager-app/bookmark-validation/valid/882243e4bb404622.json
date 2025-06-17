@@ -1,0 +1,45 @@
+{
+  "id": "882243e4bb404622",
+  "originalBookmark": {
+    "url": "https://codebeautify.org/jsonviewer",
+    "title": "Best JSON Viewer and JSON Beautifier Online",
+    "addDate": "2025-02-02T13:50:54.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABuklEQVQ4jZVSTcsxYRQ+524WPtJTUsJOalZ2U1LWZG9nw8LKD5gapaxkYTsL9v6LJCkWFMlHKUxNhOYe5zyLeZPe3t5yrc65z9d9znUhM8M3UD4LPBsREfH9/rYREQCQiBCRiIQQ78q/3E8Ir4EX3u12m80GAIQQzOw4zuPxYObX6+UNYWbwnP1+X6vVMpmMpmnVavVwOBBRt9stlUrMzMxERETMLABAStloNM7nc7/f7/f7q9XKMAxEfD6fUkrbtufz+XsZRQixXC5ns5lpmul0GgB6vd7xeGRmn893uVw6nc5oNMpms81mUwihMPP5fAaAcDjsui4Rqaqqqqr3Y8dx6vX66XQql8v5fD6XyymIGAwGpZT3+11RFAAYDoeWZRWLRSllPB5PJBKhUCgWi223W2YWzKyqajKZNE1zt9ut12td1weDAQAoimJZluu6UsrL5RKJRBBRIaJAINBqtXRdr1QqUsqfnx/DMDw2bNtut9vT6TSVSmUyGWZG72RCiNvtNplMmFnTtEAgAACLxeJ6vfr9/vF4XCgUotEoEX3BNDOjl/qZ59HsXd1j6t3uj5a+Veu/FfYf/ALbiyjwNUKhNAAAAABJRU5ErkJggg=="
+  },
+  "url": "https://codebeautify.org/jsonviewer",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 10807,
+  "error": null,
+  "metadata": {
+    "title": "Best JSON Viewer and JSON Beautifier Online",
+    "description": "Online JSON Viewer, JSON Beautifier and Formatter to beautify and tree view of JSON data - It works as JSON Pretty Print to pretty print JSON data.",
+    "keywords": [
+      "json viewer",
+      "json beautifier",
+      "json pretty print",
+      "online json viewer",
+      "pretty json",
+      "format json",
+      "json reader",
+      "json pretty",
+      "pretty print json",
+      "beautify json",
+      "json file viewer",
+      "prettify json",
+      "json converter",
+      "json viewer online"
+    ],
+    "ogImage": "https://codebeautify.org/img/cb/jsonviewer.png",
+    "favicon": "https://codebeautify.org/img/cb.png",
+    "language": "en",
+    "author": "Jimmy",
+    "canonical": "https://codebeautify.org/jsonviewer",
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/882243e4bb404622-screenshot.png",
+  "timestamp": "2025-06-17T08:40:46.579Z"
+}

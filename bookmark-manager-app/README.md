@@ -9,9 +9,41 @@ A cloud-based bookmark management system with AI-powered classification, semanti
 
 ## 🚧 Current Status
 
-**⚠️ Application is currently non-functional due to authentication issues.** Major refactoring in progress to implement production-ready architecture.
+**🔄 Architecture Migration in Progress**: Transitioning to A2A-compliant agent system
+**📋 Migration Timeline**: 8-week systematic refactoring following Google A2A standard
+**📖 Documentation**: See `AGENT_ARCHITECTURE_DESIGN_A2A.md` and `MIGRATION_CHECKLIST.md`
 
-### Recent Updates (June 2025)
+### Migration Overview
+We are moving from a custom orchestrator system to Google's **A2A (Agent2Agent) standard** to enable:
+- ✅ Industry-standard agent interoperability
+- ✅ Task-centric workflow management 
+- ✅ Immutable artifact tracking
+- ✅ Real-time progress streaming via SSE
+- ✅ Enterprise-grade security and scalability
+- ✅ Future integration with other A2A-compliant systems
+
+**Current Phase**: Phase 2 - Agent Migration (Week 2-3)
+**Completed**: 
+- ✅ A2A base agent class with full test coverage
+- ✅ A2A task manager with integration tests
+- ✅ Import agent migrated to A2A pattern
+- ✅ Validation agent with Playwright browser pool
+- ✅ Enrichment agent with AI integration
+- ✅ Categorization agent with smart classification
+- ✅ Database schema for A2A (tasks, artifacts, messages)
+- ✅ Agent discovery endpoints
+- ✅ Comprehensive A2A test suite created
+- ✅ REAL TESTING philosophy implemented - NO MOCKS
+- ✅ Production optimizations (browser pool, caching, concurrency)
+- ✅ All tests use real database, filesystem, and services
+
+**In Progress**:
+- 🚧 Create Embedding Agent for vector search
+- 🚧 Register agents with Task Manager
+- 🚧 Update API routes to use A2A Task Manager
+- 🚧 Integrate A2A system with main application
+
+### Recent Updates (June 17, 2025)
 - ✅ Implemented unified logging system across entire stack (30+ files)
 - ✅ Created robust startup script with health checks and real-time monitoring
 - ✅ Consolidated environment configurations (single .env file)
@@ -21,8 +53,16 @@ A cloud-based bookmark management system with AI-powered classification, semanti
 - ✅ Comprehensive dependency analysis completed
 - ✅ Fixed all import path errors for unified logger
 - ✅ Added comprehensive error logging throughout codebase
-- ❌ Login functionality broken - investigating authentication flow
-- ❌ WebSocket connections failing - debugging in progress
+- ✅ Implemented REAL TESTING philosophy - removed all mocks
+- ✅ Created comprehensive A2A test suite with 100% real services
+- ✅ Fixed all UUID validation errors in tests
+- ✅ Resolved test data conflicts with unique data per test
+- ✅ Fixed frontend dependencies (replaced lucide-react with Chakra UI icons)
+- ✅ Added A2A Import page to frontend navigation
+- ✅ Created comprehensive database schema improvements migration
+- ✅ Added 13 new performance indexes and data integrity constraints
+- ⚠️ WebSocket verification fails but doesn't affect functionality
+- ℹ️ Dashboard shows no bookmarks (expected - none imported yet)
 
 ## 🌟 Key Features
 
@@ -77,11 +117,16 @@ A cloud-based bookmark management system with AI-powered classification, semanti
 ### Prerequisites
 
 - Node.js 20.17.0 or higher
-- PostgreSQL 15+ with pgvector extension (port 5434)
-- Redis (port 6382)
-- Docker and Docker Compose
-- Google Cloud SDK (for deployment)
-- OpenAI API key
+- Docker and Docker Compose (for PostgreSQL & Redis)
+- Google Cloud SDK (for deployment only)
+- OpenAI API key (optional - falls back to Claude Code)
+
+### Important Notes
+- **Database is currently empty** - import bookmarks after setup
+- **Use the unified startup script** - never start services individually
+- **Non-standard ports**: PostgreSQL (5434), Redis (6382)
+- **Admin credentials**: admin@az1.ai / changeme123
+- **Frontend uses Chakra UI** - all icons from @chakra-ui/icons
 
 ### Installation
 
@@ -144,12 +189,17 @@ A cloud-based bookmark management system with AI-powered classification, semanti
 # Run all tests
 npm test
 
+# Run A2A tests specifically
+npm run test:a2a
+
 # Run linting
 ./scripts/lint-all.sh
 
 # Test bookmark validation
 npm run validate-bookmarks:test
 ```
+
+**Note**: All tests follow the REAL TESTING philosophy - no mocks, no stubs, only real services. Tests use actual database connections, real file I/O, and live Redis instances.
 
 ## 📁 Project Structure
 

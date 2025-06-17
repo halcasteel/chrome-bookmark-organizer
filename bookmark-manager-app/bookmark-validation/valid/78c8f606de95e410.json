@@ -1,0 +1,30 @@
+{
+  "id": "78c8f606de95e410",
+  "originalBookmark": {
+    "url": "https://medium.com/geekculture/develop-rest-apis-in-go-using-gorilla-mux-5869b2179a18#id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjkzNDFhYmM0MDkyYjZmYzAzOGU0MDNjOTEwMjJkZDNlNDQ1MzliNTYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJuYmYiOjE2Mzg4NTI4MjAsImF1ZCI6IjIxNjI5NjAzNTgzNC1rMWs2cWUwNjBzMnRwMmEyamFtNGxqZGNtczAwc3R0Zy5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjEwMjY0MjUxNjQwMDkzODAxODczOSIsImVtYWlsIjoiaGFsLmNhc3RlZWxAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF6cCI6IjIxNjI5NjAzNTgzNC1rMWs2cWUwNjBzMnRwMmEyamFtNGxqZGNtczAwc3R0Zy5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsIm5hbWUiOiJIYWwgQ2FzdGVlbCIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS0vQU9oMTRHaVFaWkZkX3BRWjFvRWg0MlJWZzN4amctNEJTWksxVHpMa0xiMGY1dzg9czk2LWMiLCJnaXZlbl9uYW1lIjoiSGFsIiwiZmFtaWx5X25hbWUiOiJDYXN0ZWVsIiwiaWF0IjoxNjM4ODUzMTIwLCJleHAiOjE2Mzg4NTY3MjAsImp0aSI6IjliZDg2OTkwNTNhODVjYjU0Y2UxY2Y4M2UyZjI2NGFiZTYyMjM4ODEifQ.fhsNYez4UFP-JtUtGzJKKzV9oXLQywK7bV7ra1aJjVFylSGycXLrBBzBl4Zn4et9VTbrZNkZJjgVzWQuEqtA7Vl_kal1vw5ARKLbRQnH-dDfcYiy9SGK5_QIFNQKoNj_dafW48v7hAPD34D8cwT5k034KZSz2gnaGoXf9Ax7zYTRyXZIrLsYGbKyz_owZTkoWArmJreNdD-Ef46bSQl2ufWscmZ4rag6rF08Uzaq3WSPOjh0k0cd6xxYJjNILL66NyPVDTLnrq02KXtOXPwFdqTB50GqOLDeIw889k6AYvW-pM2ZXQfUgjhBLkITF35gJTrjYY_1jSWKd2ga6su7EA",
+    "title": "Develop REST APIs in Go using Gorilla Mux | by Bijesh O S | Geek Culture | Medium",
+    "addDate": "2021-12-07T05:06:11.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABlElEQVQ4jaWTsaoiQRBFT3e/mUFBmET8BH/ABQN/wFARFBTBSJjAVDQQzIwe7IcYjGBgZiCYGhr4ASZmBsLYrzZQm9G3y8puQdNwq2717erbAJ9AAljgC5C/rK977RX4VHeQ+654L1ytTnVWxphHM4wxTwxjzAN7kAUQdZek+DcFolMk1e/3ieOY5XLJcDgkm806RrPZZDAYAOD7vrrnFEopCYJA5vO5vMZ2u5VMJiOlUslhrVZLOp2OjMdjAeRDRGg0GtTrdZIkQamboOv1SrlcJooi8vk8IoK1lna7zfF4JAxDAD4AqtUq1lo3LKUUSimstdRqNc7ns8sVi8WnIWsAz/PcyelQSmGMQWv9hIm4x7o1WK1WaK2dTGstSZKgtWaxWLDb7VzucDhwOp24XC6uo/i+L3Ecfxvifr+XMAylUqk4rNvtSq/Xk8lk8vDPzRBBEMhoNJL1ei2bzUZms5kUCgVn4SiKZDqdiud5EgSB5HK594z0euffGckBr1ZOk/9gZf7XyhggBH6kVb9BFm5f+ucvMhDxQnv5W1IAAAAASUVORK5CYII="
+  },
+  "url": "https://medium.com/geekculture/develop-rest-apis-in-go-using-gorilla-mux-5869b2179a18#id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjkzNDFhYmM0MDkyYjZmYzAzOGU0MDNjOTEwMjJkZDNlNDQ1MzliNTYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJuYmYiOjE2Mzg4NTI4MjAsImF1ZCI6IjIxNjI5NjAzNTgzNC1rMWs2cWUwNjBzMnRwMmEyamFtNGxqZGNtczAwc3R0Zy5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjEwMjY0MjUxNjQwMDkzODAxODczOSIsImVtYWlsIjoiaGFsLmNhc3RlZWxAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF6cCI6IjIxNjI5NjAzNTgzNC1rMWs2cWUwNjBzMnRwMmEyamFtNGxqZGNtczAwc3R0Zy5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsIm5hbWUiOiJIYWwgQ2FzdGVlbCIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS0vQU9oMTRHaVFaWkZkX3BRWjFvRWg0MlJWZzN4amctNEJTWksxVHpMa0xiMGY1dzg9czk2LWMiLCJnaXZlbl9uYW1lIjoiSGFsIiwiZmFtaWx5X25hbWUiOiJDYXN0ZWVsIiwiaWF0IjoxNjM4ODUzMTIwLCJleHAiOjE2Mzg4NTY3MjAsImp0aSI6IjliZDg2OTkwNTNhODVjYjU0Y2UxY2Y4M2UyZjI2NGFiZTYyMjM4ODEifQ.fhsNYez4UFP-JtUtGzJKKzV9oXLQywK7bV7ra1aJjVFylSGycXLrBBzBl4Zn4et9VTbrZNkZJjgVzWQuEqtA7Vl_kal1vw5ARKLbRQnH-dDfcYiy9SGK5_QIFNQKoNj_dafW48v7hAPD34D8cwT5k034KZSz2gnaGoXf9Ax7zYTRyXZIrLsYGbKyz_owZTkoWArmJreNdD-Ef46bSQl2ufWscmZ4rag6rF08Uzaq3WSPOjh0k0cd6xxYJjNILL66NyPVDTLnrq02KXtOXPwFdqTB50GqOLDeIw889k6AYvW-pM2ZXQfUgjhBLkITF35gJTrjYY_1jSWKd2ga6su7EA",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 33005,
+  "error": null,
+  "metadata": {
+    "title": "Develop REST APIs in Go using Gorilla Mux | by Bijesh O S | Geek Culture | Medium",
+    "description": "An introduction on how to develop REST APIs in Go using Gorilla Mux",
+    "keywords": [],
+    "ogImage": "https://miro.medium.com/v2/resize:fit:1200/1*oBn-ROC_CF_pheuqczMWiQ.jpeg",
+    "favicon": "https://miro.medium.com/v2/5d8de952517e8160e40ef9841c781cdc14a5db313057fa3c3de41c6f5b494b19",
+    "language": "en",
+    "author": "Bijesh O S",
+    "canonical": "https://medium.com/geekculture/develop-rest-apis-in-go-using-gorilla-mux-5869b2179a18",
+    "contentType": "article",
+    "siteName": "Medium",
+    "publishedTime": "2021-07-12T11:32:55.763Z",
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/78c8f606de95e410-screenshot.png",
+  "timestamp": "2025-06-17T05:47:59.754Z"
+}

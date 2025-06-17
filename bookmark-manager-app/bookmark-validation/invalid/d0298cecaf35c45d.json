@@ -1,0 +1,25 @@
+{
+  "id": "d0298cecaf35c45d",
+  "originalBookmark": {
+    "url": "http://127.0.0.1:8000/static/calculator-form.html",
+    "title": "SaaS Runway Calculator",
+    "addDate": "2025-03-11T02:54:10.000Z",
+    "icon": null
+  },
+  "url": "http://127.0.0.1:8000/static/calculator-form.html",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 1455,
+  "error": "net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8000/static/calculator-form.html",
+  "metadata": {
+    "title": "SaaS Runway Calculator",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T08:49:58.711Z"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "13e5cea421f63b1d",
+  "originalBookmark": {
+    "url": "chrome://settings/content/siteDetails?site=chrome-extension%3A%2F%2Flfpjkncokllnfokkgpkobnkbkmelfefj",
+    "title": "Settings",
+    "addDate": "2024-04-26T22:05:20.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAArElEQVR42mOgGZAueZkOxKugOJ10A4pfnJQqfvEfhEFsghoUi9/LS5e8apEqe60uW/7SXarkxReYASA2SAwkB1IDUovNyWshGghjkFoUzbLFr+wwFb78J1388igIg9jo8iA9cANkSl+pAhXeRtYsVfbCDyYPYiMbAlIL0oPiCqXyd/xSJS9/QxUcRfciSAwkB1IDUgsSo9gAir1AcSBSHI2UJyTKkzLlmYlyAADKPCQgydd0qwAAAABJRU5ErkJggg=="
+  },
+  "url": "chrome://settings/content/siteDetails?site=chrome-extension%3A%2F%2Flfpjkncokllnfokkgpkobnkbkmelfefj",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 20278,
+  "error": null,
+  "metadata": {
+    "title": "Settings",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/13e5cea421f63b1d-screenshot.png",
+  "timestamp": "2025-06-17T06:52:54.187Z"
+}

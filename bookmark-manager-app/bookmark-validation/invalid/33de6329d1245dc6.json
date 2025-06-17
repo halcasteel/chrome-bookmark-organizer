@@ -1,0 +1,25 @@
+{
+  "id": "33de6329d1245dc6",
+  "originalBookmark": {
+    "url": "https://wellfound.com/company/workhelix/jobs",
+    "title": "WorkHelix Jobs | Wellfound (formerly AngelList Talent)",
+    "addDate": "2024-01-23T04:12:10.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABy0lEQVQ4jaWTv45SURDGf3OBZEOMdlta6NabWNNoaAwGH4GCah9g9xF4ATsJG0v/vAAKJHRkTYjFhgIKjSbSkOCaIMIKZz4L7r3LrrtaOMmXzJwz35kzZ76DpANJU0khhutm8628qaQDkzQDbgEOWIy/mWJEwA+TlCwkRElKDzEzNilgZpfyAIsSgiTcXZLMzHD3lJj6kuG+Wd0UkcV9mdnFzSWRxJf8q+UlInc3M2O1WtFqtZhMJpgZ7Xab4XAIwPuTEz6cnmLjr8zeNlEImIQAQghar9cKIahQKKhWq2mxWMjMVKlUJEkP9vdVf/Va/ualPu7dU1gs5O4KISib9JvJZCiXy4xGIzqdDqVSiSiK6Pf7zJdLnj56iO3ucvfxE2xnB+LWLH44oihiMBhweHhIPp+nWq3S6/UYj8fkcjkajQbr5Tn8WpK5fQfiBya5SoJisahsNqv5fK56vS5AL46P5e6aPn+mL3v3FX5etIC7p4G7azAYqNvtSpKm06mazaa+n53J3XX++ZNm7Xfy9VqKeRZLNBXMdeO7Nk7GCGib7O6EEFJSCCHdkzuJkEwCM90o5W0Jb8n6Dy3992eKgCPg25XNf5GJOUe/Actcvz6sef9CAAAAAElFTkSuQmCC"
+  },
+  "url": "https://wellfound.com/company/workhelix/jobs",
+  "valid": false,
+  "statusCode": 403,
+  "loadTime": 21324,
+  "error": "HTTP 403",
+  "metadata": {
+    "title": "WorkHelix Jobs | Wellfound (formerly AngelList Talent)",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T04:31:45.546Z"
+}

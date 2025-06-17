@@ -1,0 +1,30 @@
+{
+  "id": "e553220bfc00c413",
+  "originalBookmark": {
+    "url": "https://www.google.com/maps/dir/Santa+Monica,+CA/Austin,+TX/Winter+Park,+FL/@29.1552001,-103.6073635,5.43z/data=!4m20!4m19!1m5!1m1!1s0x80c2a4cec2910019:0xb4170ab5ff23f5ab!2m2!1d-118.4911912!2d34.0194543!1m5!1m1!1s0x8644b599a0cc032f:0x5d9b464bd469d57a!2m2!1d-97.7430608!2d30.267153!1m5!1m1!1s0x88e7701bdba629c5:0xc63f82952cf5ee20!2m2!1d-81.3392352!2d28.5999998!3e0?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+    "title": "Santa Monica, CA to Winter Park, FL - Google Maps",
+    "addDate": "2024-12-15T23:49:15.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACt0lEQVQ4jY2TXUhUQRiG32/OnLMej7uuBZWGZlE3ZpR1YSD9ieBdZRQUWVFRQvR7Y0K0rFDURRlhUEEEQdiv6FWRFRQEdaFlQUV6IxRG9KPhuu6eMzNfF7uKlUHfzczFvO8838z7ESYVAwQAMw4MLJF27nYCLwrYWLNynZeFIautKxbtAZgA4nENTdITwCQa0/sLOXECViisgjQ8m1BakA9iPar8ZOxprKAlq2MAEAAQz6z8ZU1l/e6fD88PCS+s/KTKy3FROm0aSKWU0coLedGz1THemRGz+I2gv3J+pCA38s4TujBWtI/bZqxTxXluh+dYyjBvIUEgeCIVbv84VL1x4buFSACA4CxF1I2sFFLOThgLscFLOD12cu+L5vwtj4/lbYNM7xLsWencRyZdeK3EebN2FTLoQmITCHcAElScI8gkjC14zafP9cdbbyUX77UBoKFh+u0VZ3pOpWZeLSI7ZCxFJRnu1ULiTmarLZPwR4XIqRo0eTWD0eR9u6yh4XIvQFxzZW75sPch31DSWDpEbIIUAODtExYADADogXA3yr/5Xu1Hg0C4jsO3uIt2fH0Y3kORZ+1GJjwLktnXJjCmGwBwG4YAgBlEBE4/kB1OhNcHIxTYDmxIjeaRStwdmQNX+4pcW+qU7urZ3F47/pVicpAcSx01SSTIgQVfofV7ub4+VKpd4ytYFpnAjCmJpuwD0kQOiMDMIKpBn69wSNpKdPjz1MXRMooKnxgAOZZlfNX4emP7KwCEeKb1CQIicDwO4dbqq/d+FLecCypkiDQT2AjXkSoV3Hy5tfMC4pnQTRXl8YEgHOx3llY1PZeSKgzA0NynHL28t65z+M/j4i+DZhC3LgiYgsOGoUGADvSR3rrO4ezt/1GcIVvWVte97MaG9/+kBSCnNGjOTpugSzBwsqZTWvwC9FkjnHrnD/UAAAAASUVORK5CYII="
+  },
+  "url": "https://www.google.com/maps/dir/Santa+Monica,+CA/Austin,+TX/Winter+Park,+FL/@29.1552001,-103.6073635,5.43z/data=!4m20!4m19!1m5!1m1!1s0x80c2a4cec2910019:0xb4170ab5ff23f5ab!2m2!1d-118.4911912!2d34.0194543!1m5!1m1!1s0x8644b599a0cc032f:0x5d9b464bd469d57a!2m2!1d-97.7430608!2d30.267153!1m5!1m1!1s0x88e7701bdba629c5:0xc63f82952cf5ee20!2m2!1d-81.3392352!2d28.5999998!3e0?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 19693,
+  "error": null,
+  "metadata": {
+    "title": "Santa Monica, CA to Winter Park, FL - Google Maps",
+    "description": null,
+    "keywords": [],
+    "ogImage": "https://maps.google.com/maps/api/staticmap?center=29.48966572%2C-121.39057095&zoom=3&size=900x900&markers=34.0118828%2C-118.4915504%7C28.5949767%2C-81.3508787&sensor=false&client=google-maps-frontend&signature=3FLCHEIl8Mjqr2dUU-zxSjlDWAg",
+    "favicon": "https://www.google.com/images/branding/product/ico/maps15_bnuw3a_32dp.ico",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": "Santa Monica to Winter Park",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/e553220bfc00c413-screenshot.png",
+  "timestamp": "2025-06-17T07:23:30.509Z"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "275e754e244ff87b",
+  "originalBookmark": {
+    "url": "https://www.wals.com.br/atelie",
+    "title": "Atelier | Wals",
+    "addDate": "2022-07-17T01:30:43.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABUUlEQVQ4jY3TMWsVURAF4O/lvSWoiBBIExFJIRZCLMTUNtbapUplI0IQO60CNrELUQgExN5fYJ9fENAyBEMQEQtRMaDm5dqcKzfLCzqwzJ2ZM2fO3N3lpI3y/Mum4geTkjD3HyTTbdMQx1jCKu5OmtDgb2Mbl2szrKDgeeIuBFMNURe/GeyTynw/iZ1G0SSr97OOcR530nyEd43Mi9jDI1zpKZnBp0pwL/sXvA3gKt4nV/CytwJ8SM13/E5wK5MWE//AL7zBbG+1vwSlIbiZ4uvkjkJQcCPkQ5zFx9QdNwSXcA2HicepjfG4mf4suTIKcBD/FF9xBhtYxoWA1xp1s1GzVlf42Ugt+IwFbCU+jNzS4A9y2VabQsEXXM+0AV41tXFzflH3mcdDPIhfSL59ZSvYTeN+cCMM+t96tXon7fk8zmWdb31wF8bOyb+yWnda/AesJmLZ7gQ2AgAAAABJRU5ErkJggg=="
+  },
+  "url": "https://www.wals.com.br/atelie",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 18127,
+  "error": null,
+  "metadata": {
+    "title": null,
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/275e754e244ff87b-screenshot.png",
+  "timestamp": "2025-06-17T05:38:14.206Z"
+}

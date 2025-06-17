@@ -1,0 +1,35 @@
+{
+  "id": "434616abaac6aba8",
+  "originalBookmark": {
+    "url": "https://reintech.io/blog/building-real-time-web-app-rust",
+    "title": "Building a Real-Time Web App with Rust | Reintech media",
+    "addDate": "2023-12-26T21:33:20.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACi0lEQVQ4jXXTP0zTQRQH8O+7u1/7a6FawmRCLcbNxEUnNo2biYvwQxdI41AoaKIxGsDBRg2Jm6QKhqlxIdpEiVXQQYMh/DFxZmDBBEMcTEwL9Nff3f1+50CBtuqNL/d57+XeO+C/xzAAGM2osXsZLw8A2exebLjftO/fon/RLAzLgoKRATkUsljO4py5Uk2NT4WG7qSrJ1vtUNGT6uX489CDvxI4MLwA8kcG5fWwZeWCwPc541wp1V+RwVIsYn3inHVyDuxW1DXRiF/xAsgfS8thS4hcEGifM8E913UqCBaPRCIrRNRJBHie/4Z8OUeNuHcPh8TTwPg+Z4KrquzZJb0csyIrjJDkjCCVflf6Lnpy8+TVEhgCyDTjalX2BH5oJRwJVokoIRhBaV3cXBO9+QWqAobYPh4dlBlRj1UNR80qESVqld9urv04wAAZBpC5O6AuRG1r0tSwJ6VTDfRyOGJWCUhwTlBaz4pfwskvnDjAAMAAQ2S2v0npv7CE4FXlXvaVXo5Z9lciJAQnSKWLpQ1xNVsgWY8b9iB9yUTbj6nTTOktFrUXiZAUgiClfv1o0uo+XC4K6ifHAMBxDJ8uUsVT21ssai8RIWkJgifVTMVVN+8Py4m+vp8tzbjWQe0RB8wpSwQfQegQgkFKf6ZU4oPxuP7QGhVd5R31edfd7X6SbysBMHUdkBlLyzNCBHMg6hCcQSld+L3Db8SP6llLiC7XAwCicChumjtgAEAcmZYIS3JGUMqfffjM6m2LyluxVnHeGMDX+r3liouPp6mhOgAIwFC5jNtE8rgxzFv/sn4lC8M8b2eivM3OghCUNkR3bp685gk0/sCUsR3HhA43E0iljJ06t2HXx5rPH4CrSVuh2M/+AAAAAElFTkSuQmCC"
+  },
+  "url": "https://reintech.io/blog/building-real-time-web-app-rust",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 30851,
+  "error": null,
+  "metadata": {
+    "title": "Building a Real-Time Web App with Rust | Reintech media",
+    "description": "Master the art of building a real-time web application using Rust with our comprehensive tutorial. Includes code snippets and examples.\n",
+    "keywords": [
+      "Rust",
+      "Real-Time Web App",
+      "Software Development",
+      "Rust developers"
+    ],
+    "ogImage": "https://reintech.io/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBc0hEIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b747500797c4af6aa785813feb7000bb0ba7df31/xy2ooahc9gaoulgbbr6q52uarvrg\n",
+    "favicon": "https://reintech.io/assets/home_page/_src/icons/yellow_mini_logo-3f999b5e8c490b4112514a05955f538da06eab6279ba8e8e51dd1a7b324c6a38.svg",
+    "language": "en",
+    "author": "Arthur C. Codex",
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": "2023-09-16 12:00:15 UTC",
+    "modifiedTime": "2023-09-16 12:00:15 UTC"
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/434616abaac6aba8-screenshot.png",
+  "timestamp": "2025-06-17T04:37:26.655Z"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "022682daa14169d0",
+  "originalBookmark": {
+    "url": "https://arxiv.org/pdf/2501.00663",
+    "title": "2501.00663v1.pdf",
+    "addDate": "2025-01-18T22:25:18.000Z",
+    "icon": null
+  },
+  "url": "https://arxiv.org/pdf/2501.00663",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 5169,
+  "error": null,
+  "metadata": {
+    "title": null,
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/022682daa14169d0-screenshot.png",
+  "timestamp": "2025-06-17T09:27:07.492Z"
+}

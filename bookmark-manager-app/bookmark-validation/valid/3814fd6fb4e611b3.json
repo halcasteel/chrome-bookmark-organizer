@@ -1,0 +1,30 @@
+{
+  "id": "3814fd6fb4e611b3",
+  "originalBookmark": {
+    "url": "https://dl.watson-orchestrate.ibm.com/settings",
+    "title": "IBM watsonx Orchestrate",
+    "addDate": "2025-05-09T11:02:08.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAC10lEQVQ4jXVTW0hUURRd+9zrndLMTNRKMAopeilk1EcfTcJMmTJiOFYf0V9EH2EFFQQ1RUVQ2Qui6DuSRisNjRJKCqTC6E1YIVH0sIeFOd6599xzdh93xsxo/ZzDYm/OWvvsRRhBTAAxDQDFq+/OzMiwqjzScyQUFKteW9vtg/GVb8bWkk8wAcRzVz2YYmUHjrnkLXGhX0h2P0hoVsRFDF3qkbo/gKEGXKzpT/dQ+rK8trdMWtxqs9M5lFR7e9sWfsQo5EY7iw3DOKAFBR3pVSXioWcAiAAgXPumAKa+4zKdDTaXnIqBNAAgesnA13xCV1ABxACQt7ZriyZvq8OJpcNNNR8JAGrr3p5n09owrBLdkrhEEn1LesMXelpKj6Zcsq80LoB6lVd/a4cSSv5sCh0X68OcNQ5WhalFD4EOWzy+VGjaZpIxq7zuechvBvkK6hXA9P35txMmm58QvpEFICbWRfoLKytfBzAGZdXdRWO5NHKqLuSi/FomYdKaR1BqAL+aQ6nHUnKXC+Tkd4IMCz9fB4GH8k971EIO3QQoW4DBMIQBRE34w2P//EUgw4JSLpDNAAvfCgsg7kGzAkFgY3lPZkPwx6T/Sa2o7v3XRmVHYEbkXiEQE7Q5+GVCdm6g+se7iS3nHsKj1Hellowr6/rCGioqiS7aCDz2MLjYM2mPZKfw64AoFWe6CoYMbUydXJxoIBBHwYY/A38g15tndBLTqwxhNo4j+6kJ2pkBY5Gpxa3+m2UJAoCDK3iqO97ulkDjoauZp9PrHQzCyM8Hx+OkUpyoWNO3xdHOJs9Ry+63LegfWeX9Nc4CTWhPwulyWe5ubM17P9p2JPJumra8fdJAyHVlze0rs58ATH+F6UiYCwaz7JMuySWS8dQl+cEFkwNV5JA3Pwnvnmsntnd0zPs8KkypgIJFOgO7Il9KWGRWJYU32yUPNuuXg47dfrl9el+qeiTOvwHRdlaKVupANgAAAABJRU5ErkJggg=="
+  },
+  "url": "https://dl.watson-orchestrate.ibm.com/settings",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 31387,
+  "error": null,
+  "metadata": {
+    "title": "IBM watsonx Orchestrate",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://dl.watson-orchestrate.ibm.com/favicon/wo-dark-favicon.png",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/3814fd6fb4e611b3-screenshot.png",
+  "timestamp": "2025-06-17T02:13:02.415Z"
+}

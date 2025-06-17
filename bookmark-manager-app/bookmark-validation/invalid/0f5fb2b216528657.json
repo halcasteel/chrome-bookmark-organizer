@@ -1,0 +1,25 @@
+{
+  "id": "0f5fb2b216528657",
+  "originalBookmark": {
+    "url": "https://oim.oraclecorp.com/identity/faces/home",
+    "title": "Identity Self Service",
+    "addDate": "2022-01-24T18:58:45.000Z",
+    "icon": null
+  },
+  "url": "https://oim.oraclecorp.com/identity/faces/home",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 1608,
+  "error": "net::ERR_NAME_NOT_RESOLVED at https://oim.oraclecorp.com/identity/faces/home",
+  "metadata": {
+    "title": "Identity Self Service",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T05:44:45.858Z"
+}

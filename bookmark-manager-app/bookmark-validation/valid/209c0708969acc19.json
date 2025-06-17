@@ -1,0 +1,30 @@
+{
+  "id": "209c0708969acc19",
+  "originalBookmark": {
+    "url": "https://www.eraser.io/diagramgpt",
+    "title": "DiagramGPT – AI diagram generator",
+    "addDate": "2024-10-15T03:01:23.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABgUlEQVQ4jcWSPYpUURCFv1P3vtdven4EIwUn0RWIggwIoswCjExchAsw0FRD92AmBroBN2AkookGIgMaaDA93a9fv3uPwcyITmIwiicpThXUz6kD/xv6lfgEF/iwYPGv8LPzhyu7Z2pXLvSl1AkwRpe2v378svn4Vb001PPzoS9NSACr2ripB0GzscjHq7+b8myaJzdKKaVAPTvpGk83HuS8pWjrw3a/rGQ3AG1yldZl11kGeL9za2eS0m5fCkAjMUpkSylCQmqQhJRtgGq1U7lfPA8AN3Gvi2TDCjCm+gjV2Laxj3MVJddhsSw5PYm3129ey6Tbs3G0TPqzaC7RrYddX3y+s/0mUuT7azlaY0UoQpJEOoyKEKEIgRJIRGo89JWaHgFk4OrBWOaAqw+/IrEqpjV1qNWyywI8AIp22pR+9vLT3YuvAeXVsl6ulKaLpWENgAULkhXnVnvfx36Tedl7GsNQAcZ2S97vvh1d5NMb6aR9fxfseMJJK+v0k/8afgCpery9c8b3agAAAABJRU5ErkJggg=="
+  },
+  "url": "https://www.eraser.io/diagramgpt",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 31220,
+  "error": null,
+  "metadata": {
+    "title": "DiagramGPT – AI diagram generator",
+    "description": "Generate technical diagrams in seconds from plain English or code snippet prompts. Diagrams include sequence diagrams, flow charts, entity relationship diagrams, cloud architecture diagrams, data flow diagrams, network diagrams, and more. Try Eraser's AI diagram maker for free.",
+    "keywords": [],
+    "ogImage": "https://cdn.prod.website-files.com/62d58a323cbc396f06a780aa/6461c0ba600af0cbd0144c75_diagram-gpt-thumbnail.png",
+    "favicon": "https://cdn.prod.website-files.com/62d58a323cbc396f06a780aa/62dd392ad0fe361616a22ed3_Favicon%2032x32.png",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/209c0708969acc19-screenshot.png",
+  "timestamp": "2025-06-17T07:03:55.911Z"
+}

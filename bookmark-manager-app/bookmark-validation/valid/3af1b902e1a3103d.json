@@ -1,0 +1,30 @@
+{
+  "id": "3af1b902e1a3103d",
+  "originalBookmark": {
+    "url": "https://snap.stanford.edu/data/",
+    "title": "Stanford Large Network Dataset Collection",
+    "addDate": "2025-02-22T22:33:50.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABWUlEQVQ4jZWSzyuDcRzHX9/n2YZkzcqvjMkwP2pLlKK5oZSLHES57aZd3RwUB/4DN0cHLVFOLkL2B2iYuDAS88xmPPbM18GP8DB5H1/1+r4/9f6KUNjPvxIK++WPyWXl+ricR66NyoebVxYK+5VfXxIK1d04m6jqwlr8gS35hLoByvxUdKAWfODfG7L3aCdUdmIp/Ix/asjpHCxztEI2jWqjpheESZDPiPe2iwhbU9xdIkBK+hcpbfh60vEqe3PEd0GSjnO6QeYKFQQkomgx00mbk2hnuNbpmaG4EmcrNjuPGhLsbhwek2DoAM8G9loc9Ti9GBn2l1CstIzhaDQJgVniuzQO42x+w74gbRM8pUgcIg2E9avgC+ILfh/BUoRqw1LIzjR6EncfnqG8wwFC5TZGZAEjx/k2Ja68w73mKYXMocDDDXryrwbAFcA7wnUUzyDl7YD47/d+Abuhg3gYEI1qAAAAAElFTkSuQmCC"
+  },
+  "url": "https://snap.stanford.edu/data/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 9214,
+  "error": null,
+  "metadata": {
+    "title": "Stanford Large Network Dataset Collection",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/3af1b902e1a3103d-screenshot.png",
+  "timestamp": "2025-06-17T09:29:42.196Z"
+}

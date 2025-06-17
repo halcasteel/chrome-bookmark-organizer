@@ -1,0 +1,30 @@
+{
+  "id": "cd9810155c4e09b9",
+  "originalBookmark": {
+    "url": "https://ihub.image.canon/configure/view",
+    "title": "image.canon",
+    "addDate": "2023-01-03T20:40:55.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABcElEQVQ4jWP8//8/Ayr49+HjjwNHfl24wqIgy5MQhSbL8B8VvK/vuM8g+Fhe77m9zyMRuTfpmWgK0DW8za984eTz98OH/////7py6amOzNe1S7BreJ+Q9amlA93CurSXAZqf57Wga/gyddpzEYFfVy6hafj7+cO33YteRYt/mpaM0PCxtvyFAt/H8nRkpb/vP3xf3/G+vuP3/Ye/H114k8X69+0DqIaXOrwf61BUv6/veMgvf59B8D6D4EN++ff1He9rmH8/OPD//38WBgYGRqF/jDz/IAH6bcPWDw2dfx4+RoTyx08fGjuZxcSY5W9zhxgw/v///8uk1J9Hl3A4R3+ccv3X5evoAY8E2PR1GP//////24cf+yf/vX/wTe45uByLvKxAQzkDAwOahYzIMf2AUQjOljp/kM1Al4GB4c+DR08UDQhrUPj/Dqs4Ey7nfpowHY1BwAaIFxkYGH5dvEKsBqwAxUk88ZH4VfPERwIA8GJLoQfH9cUAAAAASUVORK5CYII="
+  },
+  "url": "https://ihub.image.canon/configure/view",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 24064,
+  "error": null,
+  "metadata": {
+    "title": "Canon ID",
+    "description": "Canon ID is your account to connect your Canon products, services and apps.",
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://myid.canon/prd/1.1.50.7/canonid-assets/favicon/favicon.ico",
+    "language": null,
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/cd9810155c4e09b9-screenshot.png",
+  "timestamp": "2025-06-17T05:19:43.279Z"
+}

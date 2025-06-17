@@ -1,0 +1,30 @@
+{
+  "id": "1c1aa8ec74a575ed",
+  "originalBookmark": {
+    "url": "https://docs.companyenrich.com/reference/post_companies-search",
+    "title": "Search companies",
+    "addDate": "2025-03-18T00:44:24.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABS0lEQVQ4jaWSv0sCYRzGP+/blZ6cYLXoEIQQtAQODdEgBC7RYlOTuDSFBNHQ4NwYUa0RSXv9Af2ChpCGaL2ClBIqSi7IPMvzriWk80RIv+PL9/nwPN/nFb6MviJgHVD535gOZIU/o1e7EDchsgcxgCp7EAOgtHscUAT76QiJ8QDXD1+c6p9snhhYtuPZ9ThQpCCXjjAf0wj6JSNDCtNRldXEIH1SdAZIKdhNhUnGNACK5TpXxRoAU1GV5ZkQrQwXYCkeYmEyCEDJsJjdKbF2+MpbpQFAfCzA3ITWIYLXIeDN7ZL4M3pzQ0rBXircdFEs18kXaoR+y7q4q7J1ZvD3lq4WbNth8eAZnyJIxjRGh/uxHbh9+SZfMNk+f6e1CE8Llu2Qzj1xdFPho2bzaFhc3ptsHBs02tToitDN9PwTJWD2oDelA9kuIaYD2R8FBWvZCcydHwAAAABJRU5ErkJggg=="
+  },
+  "url": "https://docs.companyenrich.com/reference/post_companies-search",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 10954,
+  "error": null,
+  "metadata": {
+    "title": "Search companies",
+    "description": "Cost: 1 credit per company returned. 1 credit minimum if no results are found. Searches companies based on given criteria. You can search by name, domain, industry, employees, revenue, founded year, and more. At most 100 companies are returned per request. If you need more results, please use the pa...",
+    "keywords": [],
+    "ogImage": "https://files.readme.io/3f181abd5292bb8f210bbe04dafbf6449ce7c62d3fa6e098ea3074cd289ec896-companyenrich_logo_big.svg",
+    "favicon": "https://files.readme.io/edc6646bd16445ace73a0869447ceef3e87681e6cbccb9807eddfd3bd8cfe940-favicon.ico",
+    "language": "en",
+    "author": null,
+    "canonical": "https://docs.companyenrich.com/reference/post_companies-search",
+    "contentType": "website",
+    "siteName": "Company Enrich",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/1c1aa8ec74a575ed-screenshot.png",
+  "timestamp": "2025-06-17T04:00:41.432Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "f9ed0a2e9e0d55e1",
+  "originalBookmark": {
+    "url": "https://www.youtube.com/watch?v=DhFx17s4a2E",
+    "title": "The Road from Karakol - YouTube",
+    "addDate": "2022-05-13T02:49:27.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAm0lEQVQ4jcWS0Q2DMAxEH1EHyAZkBI/ACmzAiGxAR2AEs0E2CB8QhNo4FeWDk6zYse8SW4an0WQngQdkDzuj/r2fcwPxuE0wJEgXbchk+YOcTRwQboxA3Knvb6hCZ40DgOCq+m0L0wTjCKH80bpAhvdmqi6wLND3WxuqxZIXMJsCIhCjmQbUAWVp+EXmePzOIlmrLGzxJ8qr/ChWer9uIfFnXlEAAAAASUVORK5CYII="
+  },
+  "url": "https://www.youtube.com/watch?v=DhFx17s4a2E",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 31922,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "The Road from Karakol - YouTube",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T06:14:37.533Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "fed540a9eef25046",
+  "originalBookmark": {
+    "url": "https://www.sparkfun.com/nvidia-jetson-orin-nano-developer-kit.html",
+    "title": "NVIDIA Jetson Orin™ Nano Super Developer Kit",
+    "addDate": "2025-03-06T21:00:23.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAACLklEQVQ4jT2SzYuNcRiG7/v5/c55nZnDmEmTz2SEBUrNkibKR1ayEgtlISll4WMx5b+wtJylBWU2FjKrEQpNk2JC6ITBGMacc97zPs9tMbj2d113XZQkiUQIvZAQOaWsQOkwhmem32ENIYmimCUJhIJidtCSL/z4MHGzevqcY0e3nDzF/hoSJRECAUnhoYiIKMtKne678Rsvtg69P3ls6e1cu1yWysqrKuQKl0ySIAGSgF5UHbReDhdF6rYLKf1c/Dr9KFkS9Fe+CheYREQwG4CF+5ML168U3o7Nm+vrhn58/Lr91kQaGXF4yEwIhhzOHN+mH725c3fw4JE1V6/1Ul7VamlmpvjU+vJwigQiMmgpxIDRlp5MzV08lV7Ool4f2LObuchhA+wDovf5tVRBoJAZ4bRM+/742XCn2/9gsvV9Xq9mG2U303LlILiuQSYqwjyLdEOSUi+M9dr856V7t1flpuUkRUfq1gY27TsusTKvhWWQkmgUpIiUbaAocsUccvW+/Eb/+XPN0VF3z6QbMgWQAggCENhedlbRqZfdZv/as2fWX7pc0d1AMQNZFBlEElyMXx34/kONscOp2di4d2cxsssDKQQCRoG5MplcynVqsdNunruw5dpV9DUAA+BeEYRZJgUBzCaECOPiMvzE6Q3j42E1VMtATTSCNAMgEgEac5KJgGLwwKHVO7Z5LcnLZAVgXDm1wkqiEt17AHvwwsxV0uuRANBgBsS/3X/+ANv9V1/8Esr3AAAAAElFTkSuQmCC"
+  },
+  "url": "https://www.sparkfun.com/nvidia-jetson-orin-nano-developer-kit.html",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 30721,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "NVIDIA Jetson Orin™ Nano Super Developer Kit",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T08:52:25.679Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "43529d3a6643af65",
+  "originalBookmark": {
+    "url": "https://www.united.com/en/us/manageres/tripdetails",
+    "title": "View Your Itinerary &amp; Trip Details - United Airlines Reservations",
+    "addDate": "2024-07-10T21:01:06.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAACgUlEQVQ4jZWRXUhTcRiH39Zkeprz5I51Jlubc7otWh5tGpmJSSMVtCywVimEiASFDSkI+pQgCSLrTgwML5Iu+sCrBlppLhFDj6ioYSvdhme1ua+znf07c3XhMMS66L1/fvA87xbY1wn/c8LmE3oAYDmenveePprtdIen7T4bzfwL2Jqcdfy7L6pRpKnlkqEJRqfanoolXW3IY7nYgiO4GRCoZOJULCmKYh4/Z3cGl5jQtN3XN7SoJMUtZsNfAAJPUZJiluN1KrymVKlT4TcaCwBg2u7DkoWbGQGBixYZVqfCPX40TDNOd/j8nff0vLfndtkSE4qiWEWxYoPDHDrE8/E9mnTFTjEfi19vLIj/ggiKdb6YJQmsoliRr5XaJt1shE8Ax8wXrzRQb8dc7U/pvTnpX1yhk+UqxK+SxDaHO/yBZlbjIBQK1gMICDxlcHy5rdl4kCIB4F73RLXFWrh7R32VRqvE7c6gx8/la4k/f/g0+8NGM32D3242FRj1GfS8FwA6eqcA4O4FYxTFFhm2plQpI7BlTwQABI9aD8gIjNJKHz+f8YVQCUVSWumbjw4Hw65NKknxhkotD0a6b5V5A8hGM9UWa+3hrLZmo4zAjuyXV1usTbW6ZJHw81JALZckAKM+AwAumw0AUF6YOTi+/My6UGfK7h91pktEHj/y+DmPH/mDKFFp1Fs0MOYKRX7WmdT9o66X777m7kprv1T05PVcCUXe75k8V5XDodWRqURZgYzA8nKl9VW5lcWKGbvvbKWmvDCzo3eK0kqHaUYtl0jTRCuB6JoxAAjqTNkOhm19ONL1aq7FbPAG0KlrA0532HLGsBJERn1GW9c4y/Hr0r8BTzQfrX/+LegAAAAASUVORK5CYII="
+  },
+  "url": "https://www.united.com/en/us/manageres/tripdetails",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 30994,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "View Your Itinerary &amp; Trip Details - United Airlines Reservations",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T07:19:10.635Z"
+}

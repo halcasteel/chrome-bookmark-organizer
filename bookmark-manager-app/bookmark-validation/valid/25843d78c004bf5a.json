@@ -1,0 +1,30 @@
+{
+  "id": "25843d78c004bf5a",
+  "originalBookmark": {
+    "url": "https://admin.google.com/u/1/ac/users/2dlolyb4dnxyho/security",
+    "title": "az 1 - Admin Console",
+    "addDate": "2024-01-29T07:04:21.000Z",
+    "icon": null
+  },
+  "url": "https://admin.google.com/u/1/ac/users/2dlolyb4dnxyho/security",
+  "valid": true,
+  "statusCode": 302,
+  "loadTime": 8294,
+  "error": null,
+  "metadata": {
+    "title": "Sign in - Google Accounts",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": "en-US",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/25843d78c004bf5a-screenshot.png",
+  "timestamp": "2025-06-17T04:27:56.924Z"
+}

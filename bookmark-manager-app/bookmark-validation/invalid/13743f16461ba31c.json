@@ -1,0 +1,25 @@
+{
+  "id": "13743f16461ba31c",
+  "originalBookmark": {
+    "url": "view-source:chrome://os-settings/bluetoothDeviceDetail?id=%2Forg%2Fbluez%2Fhci0%2Fdev_0C_C4_13_04_5D_C7",
+    "title": "view-source:chrome://os-settings/bluetoothDeviceDetail?id=%2Forg%2Fbluez%2Fhci0%2Fdev_0C_C4_13_04_5D_C7",
+    "addDate": "2022-11-23T23:03:29.000Z",
+    "icon": null
+  },
+  "url": "view-source:chrome://os-settings/bluetoothDeviceDetail?id=%2Forg%2Fbluez%2Fhci0%2Fdev_0C_C4_13_04_5D_C7",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 986,
+  "error": "net::ERR_INVALID_URL at view-source:chrome://os-settings/bluetoothDeviceDetail?id=%2Forg%2Fbluez%2Fhci0%2Fdev_0C_C4_13_04_5D_C7",
+  "metadata": {
+    "title": "view-source:chrome://os-settings/bluetoothDeviceDetail?id=%2Forg%2Fbluez%2Fhci0%2Fdev_0C_C4_13_04_5D_C7",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T06:16:39.454Z"
+}

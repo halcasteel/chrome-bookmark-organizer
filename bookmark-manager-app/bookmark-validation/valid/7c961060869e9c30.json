@@ -1,0 +1,42 @@
+{
+  "id": "7c961060869e9c30",
+  "originalBookmark": {
+    "url": "https://www.youtube.com/watch?v=jQRMN3PfYgE",
+    "title": "Tech Titan: Sol Eun, Uiflow - YouTube",
+    "addDate": "2024-06-12T19:54:48.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABx0lEQVQ4jZ2TQWtTQRDHfzO7yUsNKSG0heJJ0YKnCvVSkHrV7+BBeu7Vk9+lH8CLN6EXk4Lo1V48lGClFBELGmmSmr73djy8fS8vll4c+LO7s7OzM///LhQmBmrg+uDtZrgIBQQAKyf/YQbiBexFt9t9niSP7ji3umrW7og0UfWL0ZaOzGYjmBxn2c/BdPpJxuNz+vDwFxxnqmaqZs4V8L5AuS6haqmqXcDpO3jCEN4YmEFmkMcxrSCSGqSh8GcGIY52Am91Ce5HJ5EYBRwbG45222HmUHVS+DX2DhASuKu3oAeolGSqCiDs7gqHh8L2thCCxOQSbxFAO9BToClzNQSJokwmsLUFgwHs78P6eklnlQho6c0axUKbTVhZgUYjHpeqCwE8kMWFxYNF9uVlGA5hbw8ODuqJzajqnPENPtfYDxU2N4OtrRVzkVDfC0V8/h2G/g98AR7ESkJF8tFRcYdzkOf15iRW6y/hlD48voCz+BbmELFrvhrG8OMjPBOAV3D7qXM791R73Var00qSJRoNTyifB5Dn+eVsNv19dTX+mmWj93n+4SWciM1LKkmqy7RoImFBqPqPfH39K7t/4A18f74nAH8Bjm35s3ZkOjEAAAAASUVORK5CYII="
+  },
+  "url": "https://www.youtube.com/watch?v=jQRMN3PfYgE",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 30210,
+  "error": null,
+  "metadata": {
+    "title": "Tech Titan: Sol Eun, Uiflow - YouTube",
+    "description": "Uiflow is a foundation for enterprise to create applications in a rapid fashion. Sol Eun, Co-Founder & CEO, explains how the visual design experience facilit...",
+    "keywords": [
+      "Tech Titans",
+      "programming",
+      "coding",
+      "languages",
+      "platforms",
+      "mobile",
+      "web",
+      "apps",
+      "digital",
+      "technology",
+      "design"
+    ],
+    "ogImage": "https://i.ytimg.com/vi/jQRMN3PfYgE/maxresdefault.jpg",
+    "favicon": "https://www.youtube.com/s/desktop/606e092f/img/logos/favicon_32x32.png",
+    "language": "en",
+    "author": null,
+    "canonical": "https://www.youtube.com/watch?v=jQRMN3PfYgE",
+    "contentType": "video.other",
+    "siteName": "YouTube",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/7c961060869e9c30-screenshot.png",
+  "timestamp": "2025-06-17T07:21:49.312Z"
+}

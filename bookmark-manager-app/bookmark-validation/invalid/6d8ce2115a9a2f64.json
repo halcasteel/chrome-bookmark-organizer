@@ -1,0 +1,25 @@
+{
+  "id": "6d8ce2115a9a2f64",
+  "originalBookmark": {
+    "url": "https://afforai.com/",
+    "title": "Logically.app - Everything you need to write a kick-ass paper in one place (formerly Afforai)",
+    "addDate": "2025-06-06T23:46:57.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACaElEQVQ4jXWTvUscURTFz515M2ELg2k0js2ChY6VrmuwFLHZRoQIUWI6U5jCLa0iIU2EGC3MfyIoCtpEtNpCEDJsI0tc3ZVtsgS/Zt49KdZd/Eh+8Jp33z3v3nPfA8nPJOvWWstHNLceh+7O1kl+ElW9EREfAIrFIorFIlzXxejoKFKpFFQVjuOgXC4jiiL0hX3oDrpxxw2stUqS69/X6XmeBkGg2WyWA4MDPDk5oapyd3eXXUEXXeNqEAS6t7dHkkyShCCppVKJ/jOfnS87GUURrbWcfTfLufdzVFUOZgYJgG3P2wiA2WyWcRyTpDoApFQq4fbmlkNDQ+jt7YXjOJh+M41yuYwkSVCr1WA8AxGB53uoVCuM4xgAxCEJcQQAxCYW1lqQxPX1Nay1MMZgcnISSZyg/ruO+DbG1OspafpjRAT3EZHWarLydQU9PT04PDjEyMgI5j/MgyQAwPwruYnruhAR+L6P/EIe+YV8K0YSjuM0BAjiMalUCoVCARMTEyAJqxaqinQ6jaWPSwiCoNEiAAgat94XMp7BRfUCGxsbT8SjnxF2dnZgjHnYwv3yLi8vMfxqGMtflkESqgoRwebWJtZW13B8fIxMJgNDElQ+MI8krLXo6OjA2NjYA/Hx8XHs/9hHtVpt+CAibH/RDpJU1ZaZxjWw1rYSm7FCoYBarcYwDCEiNKoqYV/Imbczsr21zVwuB9d15ez8DKe/TpHL5RojE4Akj46OsLi4KOl0GtZaEVVNRMQFgIPDA1TOK43xGAPP83B1ddWqKkkS9Pf3IwzD5juIQfIbyT8kn3zn/6Gq9i5n5S8HKLskS/oKBQAAAABJRU5ErkJggg=="
+  },
+  "url": "https://afforai.com/",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 38036,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "Logically.app - Everything you need to write a kick-ass paper in one place (formerly Afforai)",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T02:02:14.340Z"
+}

@@ -32,12 +32,18 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [token, setToken] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [isCheckingAuth, setIsCheckingAuth] = useState(false)
 
   useEffect(() => {
-    checkAuth()
+    if (!isCheckingAuth) {
+      checkAuth()
+    }
   }, [])
 
   const checkAuth = async (): Promise<void> => {
+    if (isCheckingAuth) return
+    
+    setIsCheckingAuth(true)
     try {
       const storedToken = localStorage.getItem('token')
       if (storedToken) {
@@ -53,6 +59,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       setToken(null)
     } finally {
       setLoading(false)
+      setIsCheckingAuth(false)
     }
   }
 

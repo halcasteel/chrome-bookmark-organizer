@@ -1,0 +1,9 @@
+{
+  "id": "238c536cb31e3e3d",
+  "url": "https://cloud.google.com/kubernetes-engine/docs/how-to/gpus?authuser=1",
+  "title": "Run GPUs in GKE Standard node pools  |  Google Kubernetes Engine (GKE)  |  Google Cloud",
+  "addDate": "2025-02-24T17:08:01.000Z",
+  "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB0UlEQVQ4jb2SPWhTURTHf+fmvSh+FETQ+oEuWdQMUhsQdKiBxlXBRAkipTgIbk6NAcnSwa10bREVBGkUB13ShhoEF79wUDedjPiBgk0bTN5793R4fa2N0QqCZ7rc/8f5n3Mv/GPJ74DPg6mDorIfQEXfbJt5+vKvDD6lD2VEZAxkXwfxtVV7afvs8+mf782qrunUkIipdIoBFA482HOmkh6dH+qa4GOmP2kCeQG4S4rHgt4Jj3Lq/t7TR24lLgB4Fu2rFTe/AnAig/ju+RE3MeeaLS2w5quT+D627ng7NCgxfjs2PQ5cBFxRGQHOLifwZ9xzFq6JEOtIXnZiXl6O4Q+UdL1xF94DWwFP4fzD4qabplWJJ1WY7CIGNM6XcE+1kvwQeLYEuAKTA6ONpDGODkdzq9oJJ+btsNgs6F3nm5+THO3IzvGCPKoTkYlBh8WrulNAFsCx7i7JND/8mmSlBq8u7Ax8rYdPIGWj0IzAtrSO/kkM4Pt2maM2aIpfjZ9Q9B5ArdUbFOZSTyCKbeh5d31FbcXB6GEI9yViTwqAV3WnHrV6s8VGP/7qv0XP2xvdo4iUZy9vzBkAJ+blrzT6Cp6a+lojoNQRCra9Ib8m97/UIrtZpE0pOY75AAAAAElFTkSuQmCC",
+  "status": "pending",
+  "createdAt": "2025-06-17T03:25:27.806Z"
+}

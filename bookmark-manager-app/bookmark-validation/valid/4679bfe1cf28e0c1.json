@@ -1,0 +1,30 @@
+{
+  "id": "4679bfe1cf28e0c1",
+  "originalBookmark": {
+    "url": "https://github.com/Joshua-Yu/graph-rag/blob/main/openai%2Bllamaparse/demo_neo4j_vectordb.ipynb",
+    "title": "graph-rag/openai+llamaparse/demo_neo4j_vectordb.ipynb at main · Joshua-Yu/graph-rag",
+    "addDate": "2024-10-28T23:41:07.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABcUlEQVQ4jY3TO2tVURAF4LXvzeOqEATBQqsgCGLhAyWx0V9hYSv4Y6IEtUhA0EJrUUSwsQn+ATshgo9bKJaCMSJJ/Gzm4OFgxIENs/eaNe+dJEFLCS7hAd5jGz9Kv4+l7CeYxWoROvlVp5NtrGDUJ44wj+f+Xx5XwFHn5E4BL3ENG9jCR3wo/VVhL8p2pSMv4yd2sVZvMziOSZ1jmCvsdtl+x7mZJDeSzFVFuxgn2Wutfeq16DNaYbtJxkkOJrkevK1GbeNkry/9ybTujkV8K87rVH0wxey+Y/rjbIzNcvB1lKQlkeRQkgP9yH8htySTJAvFG4+STAs/kmSptaaaOCxhprUmyXKSoxV0GtyrdLaqjFP/yOA03mCvyl4PztflLp6U/hRnBsSHvX7t1OjPdgbrBVzArVqoxZ6DE4N1htXhKm/gHa7i4iD1Cb70nDwrzmho9KhndLiHLVSfdrDWbeVwPJ1+GTcx6b3N1y+8MuT8Bs7LR9lce+lpAAAAAElFTkSuQmCC"
+  },
+  "url": "https://github.com/Joshua-Yu/graph-rag/blob/main/openai%2Bllamaparse/demo_neo4j_vectordb.ipynb",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 12265,
+  "error": null,
+  "metadata": {
+    "title": "graph-rag/openai+llamaparse/demo_neo4j_vectordb.ipynb at main · Joshua-Yu/graph-rag · GitHub",
+    "description": "Graph based retrieval + GenAI = Better RAG in production - graph-rag/openai+llamaparse/demo_neo4j_vectordb.ipynb at main · Joshua-Yu/graph-rag",
+    "keywords": [],
+    "ogImage": "https://opengraph.githubassets.com/f0d9c8b7fca1c4aa35ef8f49fd99ec6436c298840e1b15abd6e0617e63b9ac7d/Joshua-Yu/graph-rag",
+    "favicon": "https://github.githubassets.com/favicons/favicon.svg",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "object",
+    "siteName": "GitHub",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/4679bfe1cf28e0c1-screenshot.png",
+  "timestamp": "2025-06-17T07:01:33.408Z"
+}

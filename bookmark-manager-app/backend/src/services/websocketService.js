@@ -19,15 +19,56 @@ class WebSocketService {
       transports: ['websocket', 'polling']
     });
     
+    // Fix: Ensure proper Socket.IO initialization with explicit configuration
     this.io = new Server(server, {
       cors: {
         origin: corsOrigins,
         credentials: true,
         methods: ['GET', 'POST'],
+        allowedHeaders: ['content-type', 'authorization']
       },
-      transports: ['websocket', 'polling'],
+      transports: ['polling', 'websocket'], // Fix: Start with polling, then upgrade
+      allowEIO3: true, // Fix: Allow Engine.IO v3 clients
       pingTimeout: 60000,
       pingInterval: 25000,
+      path: '/socket.io/', // Fix: Ensure proper path
+      serveClient: false, // Fix: Don't serve client files
+      cookie: false, // Fix: Disable cookies to prevent conflicts
+      // Fix: Add upgrade timeout and max HTTP buffer size
+      upgradeTimeout: 10000,
+      maxHttpBufferSize: 1e6,
+      // Fix: Allow requests from Vite dev server
+      allowRequest: (req, callback) => {
+        // Always allow requests in development
+        callback(null, true);
+      }
+    });
+
+    // Fix: Add engine-level error handling
+    this.io.engine.on('connection_error', (err) => {
+      unifiedLogger.error('Engine.IO connection error', {
+        service: 'websocket',
+        source: 'engine_error',
+        error: err.message,
+        type: err.type,
+        req: err.req ? {
+          url: err.req.url,
+          headers: err.req.headers
+        } : undefined
+      });
+    });
+
+    // Fix: Handle pre-upgrade errors
+    this.io.engine.on('headers', (headers, req) => {
+      // Add CORS headers for WebSocket upgrade
+      // Only set the origin that matches the request
+      const origin = req.headers.origin;
+      if (origin && corsOrigins.includes(origin)) {
+        headers['Access-Control-Allow-Origin'] = origin;
+        headers['Access-Control-Allow-Credentials'] = 'true';
+      }
+      // Fix: Add WebSocket-specific headers for Vite proxy
+      headers['X-Powered-By'] = 'Socket.IO';
     });
 
     // Log engine configuration
@@ -41,11 +82,11 @@ class WebSocketService {
       });
     });
 
-    // Authentication middleware
+    // Authentication middleware with better error handling
     this.io.use(async (socket, next) => {
       const startTime = Date.now();
       try {
-        const token = socket.handshake.auth.token;
+        const token = socket.handshake.auth.token || socket.handshake.headers.authorization?.replace('Bearer ', '');
         const clientIp = socket.handshake.address;
         const userAgent = socket.handshake.headers['user-agent'];
         
@@ -56,17 +97,22 @@ class WebSocketService {
           tokenPrefix: token?.substring(0, 20),
           clientIp,
           userAgent,
-          transport: socket.conn.transport.name
+          transport: socket.conn.transport.name,
+          protocol: socket.conn.protocol,
+          headers: Object.keys(socket.handshake.headers)
         });
         
         if (!token) {
-          const error = new Error('Authentication required');
+          const error = new Error('Authentication required - No token provided');
+          error.data = { code: 'NO_TOKEN' };
           unifiedLogger.error('WebSocket auth failed - no token', {
             service: 'websocket',
             source: 'auth',
             error: error.message,
             clientIp,
-            userAgent
+            userAgent,
+            authHeader: socket.handshake.auth,
+            headers: socket.handshake.headers
           });
           return next(error);
         }
@@ -85,16 +131,21 @@ class WebSocketService {
         next();
       } catch (err) {
         const authTime = Date.now() - startTime;
+        const error = new Error('Invalid token');
+        error.data = { code: 'INVALID_TOKEN', details: err.message };
+        
         unifiedLogger.error('WebSocket auth failed - invalid token', {
           service: 'websocket',
           source: 'auth',
           error: err.message,
           errorType: err.name,
           authTimeMs: authTime,
+          tokenPrefix: socket.handshake.auth.token?.substring(0, 20),
+          jwtSecret: process.env.JWT_SECRET ? 'Set' : 'Not set',
           clientIp: socket.handshake.address,
           userAgent: socket.handshake.headers['user-agent']
         });
-        next(new Error('Invalid token'));
+        next(error);
       }
     });
 
@@ -109,6 +160,7 @@ class WebSocketService {
         userId, 
         socketId: socket.id,
         transport: socket.conn.transport.name,
+        protocol: socket.conn.protocol,
         remoteAddress: socket.handshake.address,
         userAgent: socket.handshake.headers['user-agent'],
         query: socket.handshake.query
@@ -119,7 +171,8 @@ class WebSocketService {
         socketId: socket.id, 
         userId,
         timestamp: new Date(),
-        transport: socket.conn.transport.name
+        transport: socket.conn.transport.name,
+        protocol: socket.conn.protocol
       };
       socket.emit('connection_confirmed', confirmData);
       
@@ -507,6 +560,16 @@ class WebSocketService {
    */
   emitOrchestratorHealth(health) {
     const startTime = Date.now();
+    
+    // Check if WebSocket is initialized
+    if (!this.io) {
+      unifiedLogger.debug('WebSocket not initialized, skipping health emission', {
+        service: 'websocket',
+        source: 'emitOrchestratorHealth'
+      });
+      return;
+    }
+    
     try {
       // Emit to subscribers
       this.io.to('orchestrator:health').emit('orchestrator:health', health);

@@ -1,0 +1,558 @@
+{
+  "testPlan": {
+    "id": "TP-20251216-180000",
+    "name": "Bookmark Manager - User Authentication Test Plan",
+    "version": "1.0.0",
+    "description": "Comprehensive test plan for user authentication including login, 2FA, and session management",
+    "metadata": {
+      "createdBy": "ai-test-generator",
+      "createdAt": "2025-12-16T18:00:00Z",
+      "tags": ["authentication", "security", "critical"]
+    }
+  },
+  "testSuites": [
+    {
+      "id": "TS-0001",
+      "name": "User Login Test Suite",
+      "description": "Tests for basic email/password login functionality",
+      "priority": "critical",
+      "testCases": [
+        {
+          "id": "TC-000001",
+          "name": "Successful Login with Valid Credentials",
+          "description": "Verify user can login with correct email and password",
+          "type": "functional",
+          "priority": "critical",
+          "preconditions": [
+            {
+              "description": "Test user exists in database",
+              "setupSteps": [
+                {
+                  "type": "databaseQuery",
+                  "target": {},
+                  "parameters": {
+                    "query": "INSERT INTO users (email, password_hash, name) VALUES ('test@az1.ai', '$2b$10$YourHashHere', 'Test User') ON CONFLICT DO NOTHING"
+                  }
+                }
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "stepNumber": 1,
+              "stepId": "navigate-to-login",
+              "description": "Navigate to login page",
+              "action": {
+                "type": "navigate",
+                "target": {},
+                "parameters": {
+                  "url": "http://localhost:5173/login",
+                  "waitAfter": 2000
+                }
+              },
+              "validation": {
+                "type": "urlContains",
+                "expected": "/login"
+              },
+              "aiContext": {
+                "purposeOfStep": "Open the application login page",
+                "dataFlowDescription": "Browser loads React application login route",
+                "impacts": ["UI rendering", "React router"]
+              }
+            },
+            {
+              "stepNumber": 2,
+              "stepId": "enter-email",
+              "description": "Enter email address",
+              "action": {
+                "type": "type",
+                "target": {
+                  "selector": "input[name='email']",
+                  "selectorType": "css",
+                  "alternativeSelectors": [
+                    "input[type='email']",
+                    "#email",
+                    "[data-testid='email-input']"
+                  ]
+                },
+                "parameters": {
+                  "value": "test@az1.ai",
+                  "waitBefore": 500
+                }
+              },
+              "validation": {
+                "type": "attributeEquals",
+                "target": {
+                  "selector": "input[name='email']",
+                  "selectorType": "css"
+                },
+                "expected": "test@az1.ai",
+                "operator": "equals"
+              },
+              "errorHandling": {
+                "retryCount": 2,
+                "retryDelay": 1000
+              }
+            },
+            {
+              "stepNumber": 3,
+              "stepId": "enter-password",
+              "description": "Enter password",
+              "action": {
+                "type": "type",
+                "target": {
+                  "selector": "input[name='password']",
+                  "selectorType": "css",
+                  "alternativeSelectors": [
+                    "input[type='password']",
+                    "#password",
+                    "[data-testid='password-input']"
+                  ]
+                },
+                "parameters": {
+                  "value": "TestPass123!"
+                }
+              },
+              "validation": {
+                "type": "elementVisible",
+                "target": {
+                  "selector": "input[name='password']",
+                  "selectorType": "css"
+                },
+                "expected": true
+              }
+            },
+            {
+              "stepNumber": 4,
+              "stepId": "submit-login",
+              "description": "Click login button",
+              "action": {
+                "type": "click",
+                "target": {
+                  "selector": "button[type='submit']",
+                  "selectorType": "css",
+                  "alternativeSelectors": [
+                    "button:has-text('Login')",
+                    "[data-testid='login-button']",
+                    ".login-button"
+                  ]
+                },
+                "parameters": {
+                  "waitAfter": 3000
+                }
+              },
+              "validation": {
+                "type": "networkRequestMade",
+                "expected": {
+                  "url": "/api/auth/login",
+                  "method": "POST",
+                  "statusCode": 200
+                }
+              },
+              "errorHandling": {
+                "criticalError": true
+              },
+              "aiContext": {
+                "purposeOfStep": "Submit login credentials to backend",
+                "dataFlowDescription": "POST request to /api/auth/login with email/password, expects JWT token response",
+                "dependsOn": ["enter-email", "enter-password"],
+                "impacts": ["authentication", "session creation"]
+              }
+            },
+            {
+              "stepNumber": 5,
+              "stepId": "verify-redirect",
+              "description": "Verify redirect to dashboard",
+              "action": {
+                "type": "wait",
+                "target": {},
+                "parameters": {
+                  "value": 2000
+                }
+              },
+              "validation": {
+                "type": "urlContains",
+                "expected": "/dashboard"
+              },
+              "aiContext": {
+                "purposeOfStep": "Confirm successful authentication redirects to dashboard",
+                "dataFlowDescription": "React router should navigate to protected dashboard route"
+              }
+            },
+            {
+              "stepNumber": 6,
+              "stepId": "verify-user-data",
+              "description": "Verify user data is displayed",
+              "action": {
+                "type": "wait",
+                "target": {},
+                "parameters": {
+                  "value": 1000
+                }
+              },
+              "validation": {
+                "type": "textContains",
+                "target": {
+                  "selector": "[data-testid='user-name']",
+                  "selectorType": "css",
+                  "alternativeSelectors": [
+                    ".user-name",
+                    ".header-user-info"
+                  ]
+                },
+                "expected": "Test User"
+              },
+              "extractData": {
+                "variableName": "loggedInUserName",
+                "dataType": "text"
+              }
+            }
+          ],
+          "expectedResults": {
+            "successCriteria": [
+              "User successfully logs in",
+              "JWT token is stored",
+              "User is redirected to dashboard",
+              "User information is displayed"
+            ],
+            "failureCriteria": [
+              "Login fails with error",
+              "No redirect occurs",
+              "Error message is displayed"
+            ],
+            "performanceCriteria": {
+              "maxResponseTime": 3000,
+              "maxMemoryUsage": 100,
+              "maxCPUUsage": 50
+            }
+          },
+          "testData": {
+            "inputs": {
+              "validEmail": "test@az1.ai",
+              "validPassword": "TestPass123!",
+              "expectedUserName": "Test User"
+            }
+          },
+          "aiInstructions": {
+            "context": "This test verifies the basic login functionality. The application uses JWT tokens for authentication.",
+            "debuggingHints": [
+              "Check if the test user exists in the database",
+              "Verify the password hash matches",
+              "Check network tab for API response",
+              "Verify JWT token is stored in localStorage or cookies",
+              "Check React DevTools for authentication state"
+            ],
+            "commonIssues": [
+              "Test user not seeded in database",
+              "Password hashing mismatch",
+              "CORS issues preventing API calls",
+              "Frontend not connected to backend",
+              "Authentication middleware not configured"
+            ],
+            "recoveryStrategies": [
+              "If login fails, check API logs for error details",
+              "Verify database connection is working",
+              "Check if authentication routes are properly configured",
+              "Ensure frontend API_URL environment variable is set"
+            ]
+          }
+        },
+        {
+          "id": "TC-000002",
+          "name": "Login Failure with Invalid Credentials",
+          "description": "Verify proper error handling for invalid login attempts",
+          "type": "functional",
+          "priority": "high",
+          "steps": [
+            {
+              "stepNumber": 1,
+              "stepId": "navigate-to-login",
+              "description": "Navigate to login page",
+              "action": {
+                "type": "navigate",
+                "target": {},
+                "parameters": {
+                  "url": "http://localhost:5173/login"
+                }
+              },
+              "validation": {
+                "type": "urlContains",
+                "expected": "/login"
+              }
+            },
+            {
+              "stepNumber": 2,
+              "stepId": "enter-invalid-email",
+              "description": "Enter invalid email",
+              "action": {
+                "type": "type",
+                "target": {
+                  "selector": "input[name='email']",
+                  "selectorType": "css"
+                },
+                "parameters": {
+                  "value": "invalid@az1.ai"
+                }
+              },
+              "validation": {
+                "type": "attributeEquals",
+                "target": {
+                  "selector": "input[name='email']",
+                  "selectorType": "css"
+                },
+                "expected": "invalid@az1.ai"
+              }
+            },
+            {
+              "stepNumber": 3,
+              "stepId": "enter-wrong-password",
+              "description": "Enter wrong password",
+              "action": {
+                "type": "type",
+                "target": {
+                  "selector": "input[name='password']",
+                  "selectorType": "css"
+                },
+                "parameters": {
+                  "value": "WrongPassword123!"
+                }
+              },
+              "validation": {
+                "type": "elementVisible",
+                "target": {
+                  "selector": "input[name='password']",
+                  "selectorType": "css"
+                },
+                "expected": true
+              }
+            },
+            {
+              "stepNumber": 4,
+              "stepId": "submit-invalid-login",
+              "description": "Submit invalid login",
+              "action": {
+                "type": "click",
+                "target": {
+                  "selector": "button[type='submit']",
+                  "selectorType": "css"
+                },
+                "parameters": {
+                  "waitAfter": 2000
+                }
+              },
+              "validation": {
+                "type": "networkRequestMade",
+                "expected": {
+                  "url": "/api/auth/login",
+                  "method": "POST",
+                  "statusCode": 401
+                }
+              }
+            },
+            {
+              "stepNumber": 5,
+              "stepId": "verify-error-message",
+              "description": "Verify error message is displayed",
+              "action": {
+                "type": "wait",
+                "target": {},
+                "parameters": {
+                  "value": 1000
+                }
+              },
+              "validation": {
+                "type": "elementVisible",
+                "target": {
+                  "selector": "[role='alert']",
+                  "selectorType": "css",
+                  "alternativeSelectors": [
+                    ".error-message",
+                    ".login-error",
+                    "[data-testid='error-message']"
+                  ]
+                },
+                "expected": true
+              },
+              "aiContext": {
+                "purposeOfStep": "Verify user-friendly error message is shown",
+                "debuggingHints": [
+                  "Check if error component is rendered",
+                  "Verify error state in React components",
+                  "Check API response for error details"
+                ]
+              }
+            },
+            {
+              "stepNumber": 6,
+              "stepId": "verify-no-redirect",
+              "description": "Verify user stays on login page",
+              "action": {
+                "type": "wait",
+                "target": {},
+                "parameters": {
+                  "value": 500
+                }
+              },
+              "validation": {
+                "type": "urlContains",
+                "expected": "/login"
+              }
+            }
+          ],
+          "expectedResults": {
+            "successCriteria": [
+              "Login fails with 401 status",
+              "Error message is displayed",
+              "User remains on login page",
+              "No authentication token is stored"
+            ]
+          },
+          "aiInstructions": {
+            "context": "This negative test ensures proper error handling for failed login attempts",
+            "debuggingHints": [
+              "Verify API returns proper error status",
+              "Check if frontend handles 401 responses",
+              "Ensure error messages are user-friendly"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "TS-0002",
+      "name": "Two-Factor Authentication Test Suite",
+      "description": "Tests for 2FA functionality",
+      "priority": "critical",
+      "testCases": [
+        {
+          "id": "TC-000003",
+          "name": "Complete 2FA Verification",
+          "description": "Verify 2FA process works correctly",
+          "type": "functional",
+          "priority": "critical",
+          "preconditions": [
+            {
+              "description": "User has 2FA enabled",
+              "setupSteps": [
+                {
+                  "type": "databaseQuery",
+                  "target": {},
+                  "parameters": {
+                    "query": "UPDATE users SET two_factor_enabled = true, two_factor_secret = 'test-secret' WHERE email = 'test@az1.ai'"
+                  }
+                }
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "stepNumber": 1,
+              "stepId": "complete-initial-login",
+              "description": "Complete initial login",
+              "action": {
+                "type": "customAction",
+                "target": {},
+                "parameters": {
+                  "function": "performLogin",
+                  "args": {
+                    "email": "test@az1.ai",
+                    "password": "TestPass123!"
+                  }
+                }
+              },
+              "validation": {
+                "type": "urlContains",
+                "expected": "/verify-2fa"
+              }
+            },
+            {
+              "stepNumber": 2,
+              "stepId": "enter-2fa-code",
+              "description": "Enter 2FA verification code",
+              "action": {
+                "type": "type",
+                "target": {
+                  "selector": "input[name='code']",
+                  "selectorType": "css",
+                  "alternativeSelectors": [
+                    "[data-testid='2fa-code-input']",
+                    ".verification-code-input"
+                  ]
+                },
+                "parameters": {
+                  "value": "123456"
+                }
+              },
+              "validation": {
+                "type": "attributeEquals",
+                "target": {
+                  "selector": "input[name='code']",
+                  "selectorType": "css"
+                },
+                "expected": "123456"
+              }
+            },
+            {
+              "stepNumber": 3,
+              "stepId": "submit-2fa",
+              "description": "Submit 2FA code",
+              "action": {
+                "type": "click",
+                "target": {
+                  "selector": "button[type='submit']",
+                  "selectorType": "css",
+                  "alternativeSelectors": [
+                    "button:has-text('Verify')",
+                    "[data-testid='verify-button']"
+                  ]
+                },
+                "parameters": {
+                  "waitAfter": 2000
+                }
+              },
+              "validation": {
+                "type": "networkRequestMade",
+                "expected": {
+                  "url": "/api/auth/verify-2fa",
+                  "method": "POST"
+                }
+              }
+            },
+            {
+              "stepNumber": 4,
+              "stepId": "verify-dashboard-access",
+              "description": "Verify access to dashboard after 2FA",
+              "action": {
+                "type": "wait",
+                "target": {},
+                "parameters": {
+                  "value": 2000
+                }
+              },
+              "validation": {
+                "type": "urlContains",
+                "expected": "/dashboard"
+              }
+            }
+          ],
+          "expectedResults": {
+            "successCriteria": [
+              "2FA page is shown after initial login",
+              "Valid code allows access",
+              "User is fully authenticated"
+            ]
+          },
+          "aiInstructions": {
+            "context": "2FA adds an extra security layer. The test uses a static code for testing purposes.",
+            "debuggingHints": [
+              "Check if 2FA is properly configured for test user",
+              "Verify 2FA secret is set in database",
+              "For testing, the backend might accept a static code like '123456'",
+              "Check if session is properly updated after 2FA"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

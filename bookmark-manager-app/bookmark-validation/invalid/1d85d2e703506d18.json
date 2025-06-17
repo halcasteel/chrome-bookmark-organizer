@@ -1,0 +1,25 @@
+{
+  "id": "1d85d2e703506d18",
+  "originalBookmark": {
+    "url": "http://localhost:8000/startup_dashboard.html",
+    "title": "Startup Pitch Deck Analysis Dashboard",
+    "addDate": "2025-03-21T04:40:42.000Z",
+    "icon": null
+  },
+  "url": "http://localhost:8000/startup_dashboard.html",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 3953,
+  "error": "net::ERR_CONNECTION_REFUSED at http://localhost:8000/startup_dashboard.html",
+  "metadata": {
+    "title": "Startup Pitch Deck Analysis Dashboard",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T02:37:22.200Z"
+}

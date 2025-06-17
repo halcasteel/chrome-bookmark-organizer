@@ -1,0 +1,52 @@
+{
+  "id": "a2006f1a4434938a",
+  "originalBookmark": {
+    "url": "https://myscale.com/pricing/",
+    "title": "MyScale | Pricing",
+    "addDate": "2025-03-18T00:33:42.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACuElEQVQ4jV2TwWudVRDFfzNzv/e9F/NAAyXVJNZaqLYBt4JCpRu7tlt3RYkKugvU3dtlV6gEaqvkT3CvbkordK8iJruaRNpQU0jTvO/l3jvj4hUJnu2ZH8M5wwgAhIAEwJ07+T1xvSYRl2stiwCa0q7C3SKxsbLS/HKSEV7oxo0YvDLrax7xuYr1cslE1AAQMWmaBq81q/Htw92966PRa0cAAqGjEf2l+fJDfyZdOTzsHMJBdOpP1wEOobMvDbSb1J/2D55cXV2dHyuIL8zntf5MunLwrJvkDF2H1Roy5YJaQ7ouLBfh4LCb9Pv24cvDuTUQl43143c9cb/WkJyrnn/LZGHJ+OP3zN4jFwROnbJYfsf4e9vZ3KzRNBJmyUvJH2ix+My0acCpBVlcUi4uq1xYNvGQ8CpxYVnl4rLJ4utKLQgQpqkxs5Wk2KVSc4igIkIp4A5n3rAYDIq4B2fOWrgjuYCoIIKWkkOwS6mUvCgKqkgQqE5L6w+Q068KtQozMwhBmEJEICLiXiB0IXFCEaAGR89h/x/n/NuGB+zuOHNzhtm01v/mCdGUmh1VI4IQESKmxtamx9k3jXPnjK0/PSJcPEAQIgiVhKVmRx2/l6yRCDwiSAmGQ9jerhIuARI720WGQyGlaYQIPKVGCL+XJMrt6vIxiJpFbD90mUyIbgwPHmRRgfFY4rdfnb3HTjICRIrnUqvcFoDvbuWbM4P01bPDblIKjTvStnB8PE3c6wmTCZgRZuThsN+Ou7z+yUrvS4XQ3cfp60lXfxzO9tumCdo2agTRtkLbTjO3LTWlYDjbb8eT+vPTg/3rEKogPhrJ0V+P9q5Ocvkmpbb0mkFSVY14cRlV7fX6yVKv5mNff7r15KPV1dPPQVz+/87f38rvq+q1GlyuNS8SoJp2TeWuu298+kVz/yTzL36FeEWRwMTJAAAAAElFTkSuQmCC"
+  },
+  "url": "https://myscale.com/pricing/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 22203,
+  "error": null,
+  "metadata": {
+    "title": "MyScale | Pricing",
+    "description": "Get started for free and discover the vector performance that surpasses that of specialized vector databases.",
+    "keywords": [
+      "myscale",
+      "myscale database",
+      "myscale vector database",
+      "myscale ai",
+      "myscale vector",
+      "myscale illustration",
+      "image search",
+      "vector",
+      "search console",
+      "database",
+      "sql",
+      "search engine",
+      "gpt 4",
+      "gpt 3",
+      "dbms",
+      "high performance",
+      "vector images",
+      "vector art",
+      "vector graphics",
+      "llm",
+      "word2vec"
+    ],
+    "ogImage": "https://d3lhz231q7ogjd.cloudfront.net/website/myscale-thumbnail.jpg",
+    "favicon": "https://myscale.com/favicon.ico",
+    "language": "en",
+    "author": null,
+    "canonical": "https://myscale.com/pricing/",
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/a2006f1a4434938a-screenshot.png",
+  "timestamp": "2025-06-17T02:38:22.849Z"
+}

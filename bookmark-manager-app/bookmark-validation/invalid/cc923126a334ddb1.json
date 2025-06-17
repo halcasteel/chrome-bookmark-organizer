@@ -1,0 +1,25 @@
+{
+  "id": "cc923126a334ddb1",
+  "originalBookmark": {
+    "url": "https://www.xda-developers.com/using-n8n-automate-workflow/",
+    "title": "I just started using n8n to automate my workflow, and I wish I had sooner",
+    "addDate": "2025-05-24T06:24:30.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACPklEQVQ4jYWRTUhUURTHf+feN2/Gj9FyVBRFWkT0sYwWkaGtWgStanBRCIVBtGrjqoX7QggXEbTqg2CGCqKWUdCiloEhgYEUKH6NpjSjM+/de1qMPtJCf3Dhwr33d875XwGYv3q3SX/PXRIliEUia42NfFTqe3n/NcC5F7MXbZBqd87FYiRENe5plOKT813lACAVVNvi1fLDDCadCQLCIM18pfITeAOwrOmJMJfrcxVw1Q2IqtUs/h1QF6jDR+rjyMfRQrXywIrxDj8LeICo/OtePLPRA86YsOGmgIRB1gPUBUGsAikRKR359HiUXXwbPjyxvT9RWLoiQq7qVBOBhIEAioj52H/hYH934zpFEIoOgIJagNblyRYBA6ppKwJgkjIi4JEf895JseiEok/O8uLJi7Nxxan4+sstEoGqCoK27e7/b1ZWQEVRTRxB0gAoINkGY98PDgZLHzo0n4xQMEx1iOvMWRFEEd0h0CDWLYc7O/l29Z/K+bwDWIPV3uKSE5CdIa4HolDzaOP0meHbGTGuHEelo5+fPgM49uj7kGlqykXVSqjeNyLUtkMMAGoaWSvS3GIz2JQZtyIs1irTwHMA25odT/d2dodlcLUYraxBedMmgiXKpcxmdWSVDVLGnO7KNF/z+FJ9LFxtffFWPF1uVx/HQpAyovFatqn036DHOB4uDIzMzA1c/7ol2JPkGwtctsrJ1BhTtc1aNCqITaIuFCwF3bn2QMbAfDk1dOfVocED+3WwF+kbkNrv0h+ut/xSWKvByQAAAABJRU5ErkJggg=="
+  },
+  "url": "https://www.xda-developers.com/using-n8n-automate-workflow/",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 30938,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "I just started using n8n to automate my workflow, and I wish I had sooner",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T04:03:53.308Z"
+}

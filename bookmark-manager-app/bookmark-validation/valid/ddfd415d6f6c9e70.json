@@ -1,0 +1,30 @@
+{
+  "id": "ddfd415d6f6c9e70",
+  "originalBookmark": {
+    "url": "http://www.karildaniels.com/",
+    "title": "Karil Daniels - Filmography",
+    "addDate": "2022-02-05T17:52:03.000Z",
+    "icon": null
+  },
+  "url": "http://www.karildaniels.com/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 2680,
+  "error": null,
+  "metadata": {
+    "title": "Karil Daniels - Filmography",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/ddfd415d6f6c9e70-screenshot.png",
+  "timestamp": "2025-06-17T07:36:23.071Z"
+}

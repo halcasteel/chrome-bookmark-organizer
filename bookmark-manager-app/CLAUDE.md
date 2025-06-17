@@ -20,28 +20,67 @@ This script is the **ONLY** supported way to start the application. It handles:
 
 **Never start services individually** - the startup script ensures proper initialization order and dependency management.
 
-## Current State (June 2025)
+## Current State (June 17, 2025 - Updated)
+
+### 🔄 MAJOR ARCHITECTURE MIGRATION IN PROGRESS
+
+**Status**: Migrating to Google A2A (Agent2Agent) standard-compliant architecture
+**Timeline**: 8-week systematic refactoring
+**Phase**: 2 - Agent Migration (Week 2-3)
+
+#### Migration Goals
+- ✅ Industry-standard agent interoperability following Google A2A protocol
+- ✅ Task-centric workflow management with immutable artifacts
+- ✅ Real-time progress streaming via Server-Sent Events (SSE)
+- ✅ Enterprise-grade security and scalability patterns
+- ✅ Replace Puppeteer with Playwright across all validation
+- ✅ Integrate Claude Code processing (replace OpenAI dependency)
+
+#### Key Documents
+- `AGENT_ARCHITECTURE_DESIGN_A2A.md` - Complete A2A design specification
+- `MIGRATION_CHECKLIST.md` - 8-week phase-by-phase migration plan
 
 ### ✅ Completed
-- Unified logging system across entire stack (30+ files)
-- Production-ready startup script with comprehensive monitoring
-- Environment configuration consolidation (single .env file)
-- Redis port conflict resolution (now using 6382)
-- PostgreSQL port configuration (now using 5434)
-- Project cleanup - archived 74+ non-essential files
-- Comprehensive dependency analysis
-- WebSocket implementation for real-time updates
-- Async import system with progress tracking
-- Fixed all import path errors for unifiedLogger
-- Added comprehensive error logging throughout codebase
-- Fixed backend crash during login (Winston EPIPE error)
-- Reset admin@az1.ai password to "changeme123"
+- **Foundation (Phase 1)**:
+  - A2A base agent class with full test coverage
+  - A2A task manager with integration tests
+  - Database schema for tasks/artifacts/messages
+  - Agent discovery endpoints
+  - REAL TESTING philosophy - NO MOCKS
+
+- **Agents (Phase 2)**:
+  - Import Agent - parses HTML bookmarks
+  - Validation Agent - validates URLs with Playwright
+  - Enrichment Agent - AI categorization and tagging
+  - Categorization Agent - smart organization
+
+- **Production Optimizations**:
+  - Browser pool management (5x performance)
+  - Concurrent processing with rate limiting
+  - Database batch operations
+  - Multi-layer caching (in-memory + Redis)
+  - Resource lifecycle management
+
+- **Infrastructure**:
+  - Unified logging system across entire stack
+  - Production-ready startup script
+  - Environment consolidation
+  - Fixed port conflicts (PostgreSQL: 5434, Redis: 6382)
+  - Project cleanup - archived 74+ non-essential files
+
+### 🚧 Current Tasks
+- [ ] Create Embedding Agent for vector search
+- [ ] Register all agents with Task Manager
+- [ ] Update API routes to use A2A Task Manager
+- [ ] Integrate A2A system with main application
+- [ ] Migrate existing data to new system
+- [ ] Remove old orchestrator code
 
 ### ❌ Known Issues
-- **Authentication is broken** - users cannot log in properly
-- **WebSocket connections failing** - showing as disconnected in frontend
-- 2FA verification may have issues
-- Some API endpoints return 404 or have CORS issues
+- **A2A system partially integrated** - Import A2A page exists but needs testing
+- **WebSocket verification failing** - but doesn't affect main functionality
+- **No bookmarks in database** - expected, need to import some first
+- Frontend dependencies resolved (Chakra UI icons fixed)
 
 ## Architecture Highlights
 
@@ -156,23 +195,25 @@ Key variables in `.env`:
 When working on this codebase:
 1. Always use the startup script - never start services manually
 2. Check logs first when debugging issues
-3. The application currently has authentication problems
-4. Port numbers are non-standard (PostgreSQL: 5434, Redis: 6382)
-5. All async operations use Bull queues with Redis
-6. Frontend uses strict TypeScript - no `any` types
+3. Port numbers are non-standard (PostgreSQL: 5434, Redis: 6382)
+4. All async operations use Bull queues with Redis
+5. Frontend uses strict TypeScript - no `any` types
+6. Frontend uses Chakra UI - use Chakra icons, not external icon libraries
 7. All database operations should use transactions
-8. WebSocket is used for real-time updates
+8. WebSocket is used for real-time updates (has minor issues)
 9. All logging must use unifiedLogger - never use console.log
 10. Import paths: services use `./unifiedLogger.js`, others use `../services/unifiedLogger.js`
 11. Always include service and method context in log messages
 12. The admin user is admin@az1.ai with password "changeme123"
+13. **TESTING: NEVER USE MOCKS** - All tests must use real services (real database, real file system, real Redis, etc.). This is the "REAL TESTING" philosophy. No mocks, no fakes, no stubs - only real integration with actual services.
+14. Database has comprehensive schema with 24 tables including A2A architecture support
+15. Recent migration (005_schema_improvements.sql) added performance indexes and constraints
 
 ## Next Priority Tasks
-1. Fix authentication/login functionality (highest priority)
-2. Debug WebSocket connection issues
-3. Verify 2FA implementation
-4. Test bookmark import workflow with large files
-5. Validate AI classification features
-6. Ensure all API endpoints are properly connected
-7. Fix CORS issues for WebSocket connections
-8. Test unified logging system under load
+1. Test A2A import functionality with real bookmark files
+2. Complete A2A agent registration with Task Manager
+3. Debug WebSocket frame error (low priority - not affecting functionality)
+4. Test bookmark import workflow end-to-end
+5. Validate AI enrichment and categorization
+6. Performance test with large bookmark files (10k+ bookmarks)
+7. Complete migration from old orchestrator to A2A system

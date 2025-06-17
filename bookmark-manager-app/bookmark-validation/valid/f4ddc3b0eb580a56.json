@@ -1,0 +1,32 @@
+{
+  "id": "f4ddc3b0eb580a56",
+  "originalBookmark": {
+    "url": "https://store.dji.com/cart",
+    "title": "My Shopping Cart",
+    "addDate": "2022-05-18T00:52:37.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB5klEQVQ4ja2TvWtUURDFf+e+lygBMUFSiIVbaLWdIFgIIikVbLKNnaCyb0nEVrC4/4HBoCn8wEKxWDut06cQq6xIUEyzusF1lWCi69t3LLJrvlQQPdW9M3dmzsycC/+I5E/OGGMYHx8P5XI5NBoN/+qNfnMewL/xe+tdMcawNapSqSQA2VRWqU1n89mV7Em1Wj00YLWTgQBXYmV4rDnmTqdTUCapx3q3Nl2tgyaBJXo6luf5t263m5RKpbzdbierq6tSjDFttVs3A5zpcxsB9mNdR54EjhvuBrNucRn5HoXWEBfBz9PWh9ZZicwb0S8lHthOFPzOVhlA0lvweWCPrK8WJ4FRYCWVNPFzVtKNW7O37wDUpmuXwCPAZwrWEEf6bb8HjvYTz6dQnNocaLFWvVotufAQ9mQ/65LlfcAw5k0RSGUOAOsqkoUUNLq5Gj0MPQAZyAFbfhzghA0ONEJByRv1XrdarVdpT8VEcDgsqWc7SezcgTEKnUasUHAQcQ4gmAXx/ZEZfubg5Xq93t0mnhhjGmPMs6nsgsR9oNdfcwBeOGdibm6uM1g9QBpjDIuLiwJoNpva6MXLMtcc9EWFgkLxcSjsfTozO/NpILJyuewYY8FfYCC6XcZd6Ms17LD12P43/g9+AMSaz+a4hTjBAAAAAElFTkSuQmCC"
+  },
+  "url": "https://store.dji.com/cart",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 13221,
+  "error": null,
+  "metadata": {
+    "title": "My Shopping Cart",
+    "description": "DJI Cart",
+    "keywords": [
+      "DJI Cart"
+    ],
+    "ogImage": null,
+    "favicon": "https://store-cdn.djiits.com/assets/images/icon/favicon-72a9b70c43eb2e079e62d4db6633cdd2.ico",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/f4ddc3b0eb580a56-screenshot.png",
+  "timestamp": "2025-06-17T06:14:57.372Z"
+}

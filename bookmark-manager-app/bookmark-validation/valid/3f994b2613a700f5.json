@@ -1,0 +1,30 @@
+{
+  "id": "3f994b2613a700f5",
+  "originalBookmark": {
+    "url": "https://vimeo.com/venturebeat",
+    "title": "VentureBeat",
+    "addDate": "2024-01-29T22:41:56.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABb0lEQVQ4jaWQzStEURjGf+eei/lgZiifxWKUonxbjFJSihVZ2Cll/hNbZWGDsrFSimwoC6WEJH+ASWbKR+QrYYa51xyLmbmamTtlzLM6Pe95fs97jmDzeQAlVgE/hekSoaYFGy/nQEuBYQuiFREG8Gt2bpNLwyVFhtdXKZloKMGZ5WcAyjSY73ASHvGw1e+2/MVuJ6dDFWwG3Cx0OjMAevrgKRFsBdwMVSet4RqdOodGs1tjqrHUCgSqpP0GHl2wfm2wfWcAIIBen+TwyaRz780KXLwn7AHXsQRL4S/mQl/WsN2bbOv2/bauROL5/wDg6Nnk3VQAdHklLimYbXUAsHtvWhvmBRgJ2HswARiv1zkYLKfNI3mMK2bOotnXcwEAO6kWhxT0+CTRb8XkyQe3n4mcu7aAtSuDp3jyGa+GYuz4g/3UVtnS7cw3MxkardVZDse5ieU2pyXYeFF5p3+QBoSKyIc0hAoCkX+EIwgV/AGVDG4oj8QxkwAAAABJRU5ErkJggg=="
+  },
+  "url": "https://vimeo.com/venturebeat",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 18382,
+  "error": null,
+  "metadata": {
+    "title": "VentureBeat",
+    "description": "VentureBeat is a member of Vimeo, the home for high quality videos and the people who love them.",
+    "keywords": [],
+    "ogImage": "https://i.vimeocdn.com/portrait/2496738_640x640?sig=5b5edb7b239c722d483506fb29152a6fc624042ee398ecc7d55505c1666b4995&v=1&region=us",
+    "favicon": "https://f.vimeocdn.com/images_v6/favicon.ico?d4564a51385a05604267256e98d77e4281ebdd09",
+    "language": "en",
+    "author": null,
+    "canonical": "https://vimeo.com/venturebeat",
+    "contentType": "profile",
+    "siteName": "Vimeo",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/3f994b2613a700f5-screenshot.png",
+  "timestamp": "2025-06-17T04:26:36.006Z"
+}

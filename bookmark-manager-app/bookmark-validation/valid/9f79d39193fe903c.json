@@ -1,0 +1,30 @@
+{
+  "id": "9f79d39193fe903c",
+  "originalBookmark": {
+    "url": "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N300000016boHEAQ",
+    "title": "Salesforce Pardot",
+    "addDate": "2024-12-20T01:22:02.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABOElEQVQ4jaWTMUtCURiGn+94kzBriIpGvTREw136A9IkzTXWYCAN/gLHaI6gTcQfUJs4NzW0FA4tXaygIaQkLEw09HxNt0gruvpNZ3me97yc84mqCmOMGQcGcIKDFC4cnFkXrEtEfbov9wD05+PEm++65bV/EoiqihzVosRkDyEHxIAWUAJmENaAB6we0KbMVD9Kr9XR7GrvS1C6SaNUkD8rNUHPEJlD8VE91J2laiDYB/Ih69fBpILE55AwwCL0d40UrxNAbgQBwIrBOBtAYjTeXBlgcsT0R5CCQbUCvP4TaqBSBY6xrGsm6QevkEIlg6gHeANQHeih0kA0T3finMhT69s/AJATDG+3LtaWQZY/E2Ebay6x2tGsO3RTGVwmKd4tIDaNkRgqp0wna7qJ/a3TkCDsjL2NHyKFfdEY1UyUAAAAAElFTkSuQmCC"
+  },
+  "url": "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N300000016boHEAQ",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 20790,
+  "error": null,
+  "metadata": {
+    "title": "Salesforce Pardot | Salesforce AppExchange",
+    "description": "Meet Pardot: Smarter marketing automation on the world's #1 CRM. Pardot empowers marketing and sales teams to work together to find and nurture leads, close more deals, and maximize return on investment.",
+    "keywords": [],
+    "ogImage": "https://appexchange.salesforce.com/partners/servlet/servlet.FileDownload?file=00P3000000P3W20EAF",
+    "favicon": "https://www.salesforce.com/etc/designs/sfdc-www/en_us/favicon.ico",
+    "language": "en",
+    "author": null,
+    "canonical": "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N300000016boHEAQ",
+    "contentType": "website",
+    "siteName": "Salesforce AppExchange | Leading Enterprise Cloud Marketplace",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/9f79d39193fe903c-screenshot.png",
+  "timestamp": "2025-06-17T04:05:10.837Z"
+}

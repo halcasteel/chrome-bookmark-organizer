@@ -1,0 +1,30 @@
+{
+  "id": "d578df4e54719bb4",
+  "originalBookmark": {
+    "url": "https://devtud.medium.com/upload-files-in-google-drive-with-golang-and-google-drive-api-d686fb62f884",
+    "title": "Upload files in Google Drive with Golang and Google Drive API | by devtud | Medium",
+    "addDate": "2021-12-07T05:10:24.000Z",
+    "icon": null
+  },
+  "url": "https://devtud.medium.com/upload-files-in-google-drive-with-golang-and-google-drive-api-d686fb62f884",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 22647,
+  "error": null,
+  "metadata": {
+    "title": "Upload files in Google Drive with Golang and Google Drive API | by devtud | Medium",
+    "description": "In this post we’ll go step by step to uploading a file in Google Drive using Golang and the Google Drive API V3.",
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://miro.medium.com/v2/5d8de952517e8160e40ef9841c781cdc14a5db313057fa3c3de41c6f5b494b19",
+    "language": "en",
+    "author": "devtud",
+    "canonical": "https://devtud.medium.com/upload-files-in-google-drive-with-golang-and-google-drive-api-d686fb62f884",
+    "contentType": "article",
+    "siteName": "Medium",
+    "publishedTime": "2021-02-27T17:52:38.744Z",
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/d578df4e54719bb4-screenshot.png",
+  "timestamp": "2025-06-17T05:48:03.451Z"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "ada82c98c3980362",
+  "originalBookmark": {
+    "url": "http://localhost:5173/bookmarks",
+    "title": "Bookmark Manager",
+    "addDate": "2025-06-16T03:35:11.000Z",
+    "icon": null
+  },
+  "url": "http://localhost:5173/bookmarks",
+  "valid": true,
+  "statusCode": 304,
+  "loadTime": 13172,
+  "error": null,
+  "metadata": {
+    "title": "Bookmark Manager",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "http://localhost:5173/bookmark-icon.svg",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/ada82c98c3980362-screenshot.png",
+  "timestamp": "2025-06-17T01:54:30.935Z"
+}

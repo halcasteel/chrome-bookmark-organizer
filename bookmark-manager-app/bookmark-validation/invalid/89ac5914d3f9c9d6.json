@@ -1,0 +1,25 @@
+{
+  "id": "89ac5914d3f9c9d6",
+  "originalBookmark": {
+    "url": "http://localhost:8080/",
+    "title": "DocForge - Professional Document Platform",
+    "addDate": "2025-05-29T07:49:53.000Z",
+    "icon": null
+  },
+  "url": "http://localhost:8080/",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 985,
+  "error": "net::ERR_CONNECTION_REFUSED at http://localhost:8080/",
+  "metadata": {
+    "title": "DocForge - Professional Document Platform",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T03:36:47.957Z"
+}

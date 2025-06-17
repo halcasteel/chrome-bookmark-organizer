@@ -1,0 +1,25 @@
+{
+  "id": "ddbf7f9f1ae1c096",
+  "originalBookmark": {
+    "url": "https://www.expedia.com/trips/egti-MUS-6WQ-00IR/details/Nzk1MWY3MGYtZGFkOC01NzUzLWEwNTctZDNkNzE2NjI1NjRjOzk1M2U0MjIzLTUzMmMtNDgxYi05MGFiLTAzZDZlZGY5NTYxOF8wOzA?tripsSandbox=1667374601%2C822063606",
+    "title": "Flight to Orlando | Expedia",
+    "addDate": "2023-05-09T17:59:25.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB4ElEQVQ4jY2Ty2pTURSGv7WyT1rxiti0NPVSL5WCFDNy7siZUwe+QEdFo8VZdaJgDepEodP6Bo58AYemOmishRQxQoqioFLtOclaDk7S5qS2uGDDZrO/f11Yv/jqpUNGXAaZBob4v/gC/lzJV0IHngUGAVT3Jt3BnSGQWSNxaa+WmiDDArQM1hrC701B/gUDRw87xYJ3n5oBpADQasPiy8CTxZAK9CiIOCpgDmeOOwtzMWPDjjmFAIgqLL1XXr3OMVpwRLYyoAqNprD+TcCh/gm+/xDGRhwcCQBmMHnaWJiLM3BO4U1NufM4T/MriKanN0L3MpCHwYFtWBSWasrdZxEfPgoTJ52fGxAnWYGMXmfCiEB1Wbk5H/F2RZmaMB7c6PRt2fEG+kIEqjWl/Cji3Yoydd6o3E44e8Jw7//dV4EIJC14+iJQXe7AtxIuThpt2wlnKjCDXxtC22C86Fy93GbmeovSpOG7wFsCqlBvCOX5PCPHnPszCQf3O1FIhbs7YQ77Bjwz7EC6YBInQmM9/ZlTiAKZnt2FIwfg2pUW40XH0qq2V3kzhrXPSj5yTo36Dk9sxlCrKxfOGVEuzQo0pb1autc1UxeyXXoWpXcef8AfBiVfMWJAps32tnMPvGXnv4f1x8dyE8+gAAAAAElFTkSuQmCC"
+  },
+  "url": "https://www.expedia.com/trips/egti-MUS-6WQ-00IR/details/Nzk1MWY3MGYtZGFkOC01NzUzLWEwNTctZDNkNzE2NjI1NjRjOzk1M2U0MjIzLTUzMmMtNDgxYi05MGFiLTAzZDZlZGY5NTYxOF8wOzA?tripsSandbox=1667374601%2C822063606",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 30464,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "Flight to Orlando | Expedia",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T05:14:45.087Z"
+}

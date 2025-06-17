@@ -1,0 +1,25 @@
+{
+  "id": "2bfbaa68c07452d6",
+  "originalBookmark": {
+    "url": "https://forms.gle/TBS",
+    "title": "Dynamic Link Not Found",
+    "addDate": "2025-01-21T20:33:38.000Z",
+    "icon": null
+  },
+  "url": "https://forms.gle/TBS",
+  "valid": false,
+  "statusCode": 404,
+  "loadTime": 3527,
+  "error": "HTTP 404",
+  "metadata": {
+    "title": "Dynamic Link Not Found",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T09:24:50.738Z"
+}

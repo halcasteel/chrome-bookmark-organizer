@@ -27,8 +27,11 @@ import {
   FiSettings,
   FiTag,
   FiX,
+  FiShield,
+  FiActivity,
 } from 'react-icons/fi'
 import { IconType } from 'react-icons'
+import { useAuth } from '../contexts/AuthContext'
 
 interface NavItemProps {
   icon?: IconType
@@ -87,6 +90,7 @@ interface SidebarContentProps {
 const SidebarContent: React.FC<SidebarContentProps> = ({ onClose }) => {
   const bg = useColorModeValue('white', 'gray.800')
   const borderColor = useColorModeValue('gray.200', 'gray.700')
+  const { user } = useAuth()
 
   interface NavItemData {
     name: string
@@ -99,6 +103,7 @@ const SidebarContent: React.FC<SidebarContentProps> = ({ onClose }) => {
     { name: 'Bookmarks', icon: FiBookmark, path: '/bookmarks' },
     { name: 'Search', icon: FiSearch, path: '/search' },
     { name: 'Import', icon: FiUpload, path: '/import' },
+    { name: 'Import (A2A)', icon: FiUpload, path: '/import-a2a' },
     { name: 'Collections', icon: FiFolderPlus, path: '/collections' },
     { name: 'Tags', icon: FiTag, path: '/tags' },
   ]
@@ -147,6 +152,18 @@ const SidebarContent: React.FC<SidebarContentProps> = ({ onClose }) => {
       <NavItem icon={FiSettings} to="/settings" onClick={onClose}>
         Settings
       </NavItem>
+      
+      {user?.role === 'admin' && (
+        <>
+          <Divider my={4} />
+          <NavItem icon={FiShield} to="/admin" onClick={onClose}>
+            Admin Dashboard
+          </NavItem>
+          <NavItem icon={FiActivity} to="/test-management" onClick={onClose}>
+            Test Management
+          </NavItem>
+        </>
+      )}
     </Box>
   )
 }

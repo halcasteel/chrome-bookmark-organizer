@@ -1,0 +1,30 @@
+{
+  "id": "c2ad8cdf0c253b68",
+  "originalBookmark": {
+    "url": "https://arxiv.org/search/?query=Yann+LeCun&searchtype=all&source=header&start=50",
+    "title": "Search | arXiv e-print repository",
+    "addDate": "2025-04-14T20:00:44.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACoklEQVQ4jXWT3UuTURzHP8983GZO10qbsjbIUmGNXjQoyC7ELArCBKOXe6/6J7rMi66CiqCgqJBIEHqB6OWiKJg5DU1d2IvVytb21Nyex/ls8/l18UiTqHP4cn4cDt/z/f6+5ygIMQCv7qVBa2A2OIvlsPjfcBac7InvZiYYJ+VLoQJt9b/q2P+mm+BCkPP+8+Tdefv0MqAAjjJB0/cmTkydJPYzxlDbEOoGbQOnn52mdaGFaOMIJaWE4y0EpiCkgwV8qoX5bVDnq6dvog9RhJZ0M/6MHzXryRINRUlmkmz6sZk9V5vo9r7l2E5oqAMR+JqEm89h7kc7ua0G1zrPYrgNstVZQBAspKKoyt7LYbl7xyOFJUTXEdO0oeuIuYjcuFkt/vseYdW03SmwnCqxo3KaA4d1cgYMDCik05BO27Weh94jBl3zOvwq9+RPe9bMQk8TVLqgUIB4HJaWbMTj9l5VNfQEQP2wOpcVKf57yOQkUiohuRwyPm6vq+vlEvIiitQ++dsCUKiERRM0DcbGIBIBl8tGJAKjo6D9BMOEovMfFjJBiM5B0YREwpZtmrb06WmYnwczDy+/QH5jmUBBEACK0H5dZbBjmfoGIRoFw7BjrKqCjr3w7iMcm4b3x8tXqwBqSaVmqYatNT1cuPWKU0en6NwHlgIIYEFsAm7f24WzLw+OqbKCxlSj9I73EjACOKSCiy2XsOJzHMxCpBYsgdc5eOSD7WsP0aV1MhweJulNkq5No7oLbvyGn1AmxIPmB3wOz0EYrmQo570e8IJWfMz6ER/9sX4KSoHByCAVmXOZM2OBMSiC03IyGZpEHAJVgG8FbpvHqrBIrE3Q+q2VmfoZnoafoiA8BPDoHlxFF5pP++9XXnk3bElsYaF6gdS6FL8BWABCPAy3VtMAAAAASUVORK5CYII="
+  },
+  "url": "https://arxiv.org/search/?query=Yann+LeCun&searchtype=all&source=header&start=50",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 13589,
+  "error": null,
+  "metadata": {
+    "title": "Search | arXiv e-print repository",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://static.arxiv.org/static/base/1.0.0a5/images/icons/favicon-32x32.png",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/c2ad8cdf0c253b68-screenshot.png",
+  "timestamp": "2025-06-17T02:19:41.226Z"
+}

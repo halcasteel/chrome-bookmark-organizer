@@ -1,0 +1,30 @@
+{
+  "id": "cba779c1df70e0ed",
+  "originalBookmark": {
+    "url": "https://labs.google/lll/en/experiments/tiny-lesson",
+    "title": "Little Language Lessons",
+    "addDate": "2025-05-02T08:23:21.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABmElEQVQ4jZVSra4yMRCdFpbdDXQRi0LgMCRogiJB4HkH9AbDPgQkGBIMAoeAF+AFMBjCKgIJCtYgMCTbtN3OFb0BLvkQ3zHt9HRmzvwA/CfIu0EpHQwG5XI5l8sBgBAijuPRaKS1fv35COC6bhAEjDHGWBAErut+z0WIcYiiyPd93/f3+71xMJRB9nlDRADwPM+27VKpRAhxXbdYLCZJYqhPSZRSAGg2m5TSOI6v1yultNFoPKl/SCoUCofDIQxD8xKG4fF4ZIy9S/oTfjqdbjYby7IIIZlMhlK6Xq8nk8lnEhOg0+nc7/d6vU4IMbTjOP1+XwjRarX+lE4I8TzvXQwAdLvd7XYrpUTE3W73EmaO8XiMiLVaDQCq1ep8PkdERNRaK6UQcTgcvpK0223OuVIqiqLFYnG73RAxTVMppdY6TVOlFOfcCAMAWK1WaZqafhtwzoUQUkoppRAiSRKl1HK5/B3c6XSilDqO8yzAtu33HlqWBQDn8/l3+fL5fK/Xq1QqSqmPRTAzzmazl8tlNps9Ho+vq/UNP2HkxZ2wxWEvAAAAAElFTkSuQmCC"
+  },
+  "url": "https://labs.google/lll/en/experiments/tiny-lesson",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 11689,
+  "error": null,
+  "metadata": {
+    "title": "Little Language Lessons",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://labs.google/lll/favicon-96x96.png",
+    "language": "en",
+    "author": "Aaron Wade",
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/cba779c1df70e0ed-screenshot.png",
+  "timestamp": "2025-06-17T03:41:35.331Z"
+}

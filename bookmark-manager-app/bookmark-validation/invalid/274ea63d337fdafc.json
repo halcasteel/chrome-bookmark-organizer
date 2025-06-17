@@ -1,0 +1,25 @@
+{
+  "id": "274ea63d337fdafc",
+  "originalBookmark": {
+    "url": "https://racepass.globalcyclingnetwork.com/home",
+    "title": "GCN+ Live racing, Highlights &amp; Analysis + Documentaries, Shows &amp; Adventure Films",
+    "addDate": "2022-03-17T16:46:50.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACA0lEQVQ4ja2Tz2sTURDHP/Oy2a21YBIbU9EelEJRSsGLqZ7EIngp4lEPova/kEoFf9JD8eJBBO+CiiIU613rDxCRgmAEjwmptZTmxybZfeNhs0nUeCg4lxm+zMyb9+bz5NWurLI9U0DaHrPN4r/MUY0GEBFUteN7NUQg1v4YwRGRTrc47qfRq/V4R+OTwrDTGdO+mbXdokQCtRYxBqxVAEUxGoYElQqSTGI8l8TgTjS0hHUfcV3EcRDXJajVsEELW/dVQdRaBcFBlfGF26Sn8jTW1tBWk9LT5+TOnsHbO4IxhmrhGxuv3zA6e4nC/HUpvnyh41euSqNUwkkdzzN48ADvZmYYPXced98I+y9eYGNlhc+XZ/Eyw1hVJh8+oPjoMWPX5igtLzE0MUFldRWTyh+lWS5jGz5Bvc7wiZNkT02z+f4DJjlA4DfwcjnESVBYXKD1Y51DN2/gZndT/fIVeTt9Wsfm5yC0hLUqfrFIsLVF+tgU1m+AWjY/fqK1/pPCnVukJ4/Yw/fvmfKTZ/b74l2RJXdIjedhPBdJOISVKmG1QjKT6SxbwxANgmgTzaYigrYCzI4BZDm1R7EWokcFYxBj0CAA1Wi1pgusiKiqihijai2OifCDRBcU4n33MQU1EaEqIjiqGuPXztAuef3iqIkQo4zI77+xB9l/xHG+Cv/hN/4CoFLti6yCo1YAAAAASUVORK5CYII="
+  },
+  "url": "https://racepass.globalcyclingnetwork.com/home",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 3435,
+  "error": "net::ERR_CERT_DATE_INVALID at https://racepass.globalcyclingnetwork.com/home",
+  "metadata": {
+    "title": "GCN+ Live racing, Highlights &amp; Analysis + Documentaries, Shows &amp; Adventure Films",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T06:09:00.561Z"
+}

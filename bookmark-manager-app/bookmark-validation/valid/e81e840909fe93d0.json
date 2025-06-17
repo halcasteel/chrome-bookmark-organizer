@@ -1,0 +1,30 @@
+{
+  "id": "e81e840909fe93d0",
+  "originalBookmark": {
+    "url": "https://cloud.google.com/billing/docs/how-to/manual-payment#make-manual-payment",
+    "title": "Make a manual payment or pay early  |  Cloud Billing  |  Google Cloud",
+    "addDate": "2025-01-21T05:57:01.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB0UlEQVQ4jb2SPWhTURTHf+fmvSh+FETQ+oEuWdQMUhsQdKiBxlXBRAkipTgIbk6NAcnSwa10bREVBGkUB13ShhoEF79wUDedjPiBgk0bTN5793R4fa2N0QqCZ7rc/8f5n3Mv/GPJ74DPg6mDorIfQEXfbJt5+vKvDD6lD2VEZAxkXwfxtVV7afvs8+mf782qrunUkIipdIoBFA482HOmkh6dH+qa4GOmP2kCeQG4S4rHgt4Jj3Lq/t7TR24lLgB4Fu2rFTe/AnAig/ju+RE3MeeaLS2w5quT+D627ng7NCgxfjs2PQ5cBFxRGQHOLifwZ9xzFq6JEOtIXnZiXl6O4Q+UdL1xF94DWwFP4fzD4qabplWJJ1WY7CIGNM6XcE+1kvwQeLYEuAKTA6ONpDGODkdzq9oJJ+btsNgs6F3nm5+THO3IzvGCPKoTkYlBh8WrulNAFsCx7i7JND/8mmSlBq8u7Ax8rYdPIGWj0IzAtrSO/kkM4Pt2maM2aIpfjZ9Q9B5ArdUbFOZSTyCKbeh5d31FbcXB6GEI9yViTwqAV3WnHrV6s8VGP/7qv0XP2xvdo4iUZy9vzBkAJ+blrzT6Cp6a+lojoNQRCra9Ib8m97/UIrtZpE0pOY75AAAAAElFTkSuQmCC"
+  },
+  "url": "https://cloud.google.com/billing/docs/how-to/manual-payment#make-manual-payment",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 5828,
+  "error": null,
+  "metadata": {
+    "title": "Make a manual payment or pay early  |  Cloud Billing  |  Google Cloud",
+    "description": null,
+    "keywords": [],
+    "ogImage": "https://cloud.google.com/_static/cloud/images/social-icon-google-cloud-1200-630.png",
+    "favicon": "https://www.gstatic.com/devrel-devsite/prod/v31bf0d5ece3babea9777b807f088a03e9bb2225d007f11b8410e9c896eb213a6/cloud/images/favicons/onecloud/favicon.ico",
+    "language": "en",
+    "author": null,
+    "canonical": "https://cloud.google.com/billing/docs/how-to/manual-payment",
+    "contentType": "website",
+    "siteName": "Google Cloud",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/e81e840909fe93d0-screenshot.png",
+  "timestamp": "2025-06-17T09:23:04.184Z"
+}

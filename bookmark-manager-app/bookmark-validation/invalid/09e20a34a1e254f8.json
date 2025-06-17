@@ -1,0 +1,25 @@
+{
+  "id": "09e20a34a1e254f8",
+  "originalBookmark": {
+    "url": "http://localhost:3001/test-upload.html",
+    "title": "Test VCF File Upload",
+    "addDate": "2025-04-10T18:58:18.000Z",
+    "icon": null
+  },
+  "url": "http://localhost:3001/test-upload.html",
+  "valid": false,
+  "statusCode": 404,
+  "loadTime": 4362,
+  "error": "HTTP 404",
+  "metadata": {
+    "title": "Test VCF File Upload",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T03:46:14.910Z"
+}

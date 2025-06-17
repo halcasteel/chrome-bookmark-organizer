@@ -1,0 +1,35 @@
+{
+  "id": "4eeca58891729624",
+  "originalBookmark": {
+    "url": "http://youtube.com/watch?v=CAOlQaLVJdw",
+    "title": "https://www.youtube.com/watch?v=CAOlQaLVJdw",
+    "addDate": "2020-01-01T03:09:01.000Z",
+    "icon": null
+  },
+  "url": "http://youtube.com/watch?v=CAOlQaLVJdw",
+  "valid": true,
+  "statusCode": 307,
+  "loadTime": 21916,
+  "error": null,
+  "metadata": {
+    "title": "ALBERT KING & STEVIE RAY VAUGHN-\"TEXAS FLOOD JAM\" - YouTube",
+    "description": "2 LEGENDARY GUITARIST HAVING AN AWESOME TIME JAMMING",
+    "keywords": [
+      "ALBERT KING",
+      "STEVIE RAY VAUGHN",
+      "BLUES",
+      "ROCK"
+    ],
+    "ogImage": "https://i.ytimg.com/vi/CAOlQaLVJdw/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGHIgNihOMA8=&rs=AOn4CLAtHiSyPIbJWYjkjhS6lT3eqvjwWQ",
+    "favicon": "https://www.youtube.com/s/desktop/606e092f/img/logos/favicon_32x32.png",
+    "language": "en",
+    "author": null,
+    "canonical": "https://www.youtube.com/watch?v=CAOlQaLVJdw",
+    "contentType": "video.other",
+    "siteName": "YouTube",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/4eeca58891729624-screenshot.png",
+  "timestamp": "2025-06-17T07:28:13.041Z"
+}

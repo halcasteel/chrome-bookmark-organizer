@@ -1,0 +1,32 @@
+{
+  "id": "40e12a662987de81",
+  "originalBookmark": {
+    "url": "https://docs.companyenrich.com/docs/getting-started",
+    "title": "Getting Started",
+    "addDate": "2025-03-14T06:52:08.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABS0lEQVQ4jaWSv0sCYRzGP+/blZ6cYLXoEIQQtAQODdEgBC7RYlOTuDSFBNHQ4NwYUa0RSXv9Af2ChpCGaL2ClBIqSi7IPMvzriWk80RIv+PL9/nwPN/nFb6MviJgHVD535gOZIU/o1e7EDchsgcxgCp7EAOgtHscUAT76QiJ8QDXD1+c6p9snhhYtuPZ9ThQpCCXjjAf0wj6JSNDCtNRldXEIH1SdAZIKdhNhUnGNACK5TpXxRoAU1GV5ZkQrQwXYCkeYmEyCEDJsJjdKbF2+MpbpQFAfCzA3ITWIYLXIeDN7ZL4M3pzQ0rBXircdFEs18kXaoR+y7q4q7J1ZvD3lq4WbNth8eAZnyJIxjRGh/uxHbh9+SZfMNk+f6e1CE8Llu2Qzj1xdFPho2bzaFhc3ptsHBs02tToitDN9PwTJWD2oDelA9kuIaYD2R8FBWvZCcydHwAAAABJRU5ErkJggg=="
+  },
+  "url": "https://docs.companyenrich.com/docs/getting-started",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 23683,
+  "error": null,
+  "metadata": {
+    "title": "Getting Started",
+    "description": "This page will help you get started with Company Enrich API. You'll be up and running in a jiffy!",
+    "keywords": [
+      ""
+    ],
+    "ogImage": null,
+    "favicon": "https://files.readme.io/edc6646bd16445ace73a0869447ceef3e87681e6cbccb9807eddfd3bd8cfe940-favicon.ico",
+    "language": "en",
+    "author": null,
+    "canonical": "https://docs.companyenrich.com/docs/getting-started",
+    "contentType": "website",
+    "siteName": "Company Enrich",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/40e12a662987de81-screenshot.png",
+  "timestamp": "2025-06-17T02:38:53.293Z"
+}

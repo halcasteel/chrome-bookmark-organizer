@@ -1,0 +1,30 @@
+{
+  "id": "731fd635e06de74b",
+  "originalBookmark": {
+    "url": "https://lightroom.adobe.com/libraries/9f4ded4332c442ae95acff042aa22f80/assets?tab=square_grid&panel=organize",
+    "title": "Adobe Lightroom",
+    "addDate": "2023-01-01T15:01:28.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACJElEQVQ4jX2SvWpUURSFv3XOvfObjOMYUqgBwcJCFGKTzuQBBH968QF8BwULG7HURvABBK1sLBUsrIKFqI0kJgRCdJiZmMydufeebXEmmUTU1RzOZv+svfYSR9FZasHPyecUx3Ek3v0wOIgKgLnF09T9E3BXwQxJ2B/1MWAgQXjHsLzLj9WtBBB1/xRfvU6Zx9wQwLnD/tNZFvv46g3qIwE3BRdmWWhtgGtihVNak5KUMNoHm9CQi4MxCGagAGGPjcGCo9MWRoF3Cft9za/c5tK918JXRFkIOZEPxXBXZHuQj4RIMAo6bSV0e0ajFSeYmUsrzjeaUQbnYDykcf4KyUwHK3Ll/Z2QbX0VSQW6PUvotIVMmIEkCwErJ9Sdh/GAExdXOHPtDvluxsarx8rWP0JaVWRwqFHcURIgLJRQFmABK3PC2Pj08BbFYAfqs1FohJteyaaFocBV6qjWBJ8CRsgLil+92DSuC8BxBma4tEZtPuHy/TdU5jzfnj8i5GOqnRT5FCtGUzsAByIaIUClYf0v77X+IiOMDN9I2N/8DMD3l8+wMgfJMAkLRrdvorPUomlrQBuAfAijDEQUttaIDEdDo9k+auAeezqX0N0eMzM/AJ3EQka14anPRMdp4kqAWhPKEsxKpBrYgO722MFahuUPAPBpDXyKKQXFV36yvFKUpDEHYs1apkOTn11chsoymtzn77CJu96yufr2aN6/Cv4HAfwGuujxbb0p8F4AAAAASUVORK5CYII="
+  },
+  "url": "https://lightroom.adobe.com/libraries/9f4ded4332c442ae95acff042aa22f80/assets?tab=square_grid&panel=organize",
+  "valid": true,
+  "statusCode": 302,
+  "loadTime": 19515,
+  "error": null,
+  "metadata": {
+    "title": "Adobe ID",
+    "description": "Adobe ID",
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://auth.services.adobe.com/favicon.ico",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/731fd635e06de74b-screenshot.png",
+  "timestamp": "2025-06-17T05:19:46.335Z"
+}

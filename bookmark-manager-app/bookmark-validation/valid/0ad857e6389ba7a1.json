@@ -1,0 +1,40 @@
+{
+  "id": "0ad857e6389ba7a1",
+  "originalBookmark": {
+    "url": "https://zaiste.net/posts/shell-commands-rust/",
+    "title": "Rewritten in Rust: Modern Alternatives of Command-Line Tools",
+    "addDate": "2022-01-12T05:20:44.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHUlEQVQ4jaWQsY6CQBRFD4MYiIV+ARIaEyus9x9IqPwAKktbF7eTmsTO1o6EXzFWFpZSY2FIyBLDbmdkmWXDeru5b+55d0axLOtDCPEO9OmmsqqqjWLb9uc/wg+IeCEM0O/9dFRVZTweS29fLhfu93vNawAGgwFRFNUv9XpomsZ8Pud6vbYDbrcbrus+zoZhsN1uORwOjTCAkHZ90nK5JM9zdruddN5o8CzP83Ach8Vi0Xj7nw2m0ym+7xOGIVmW/bpEChiNRqzXa/b7Pcfjsa1kEyCEYLVacT6fieO4NQySP5hMJsxmM4qiIEmS2iwIAk6nU81TbNv+ejZ0Xcc0Tem2NE0piqId0FUCKF/Il+pwOBSKorwBatdwVVWbb+HrVjSWnUFqAAAAAElFTkSuQmCC"
+  },
+  "url": "https://zaiste.net/posts/shell-commands-rust/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 19568,
+  "error": null,
+  "metadata": {
+    "title": "Rewritten in Rust: Modern Alternatives of Command-Line Tools · Zaiste Programming",
+    "description": "\nShell is the essential tool for every programmer. The more familiar you become with the available tools, the more efficient you can be with",
+    "keywords": [
+      "programming",
+      "software",
+      "typescript",
+      "ruby",
+      "python",
+      "javascript",
+      "clojure",
+      "dart",
+      "flutter"
+    ],
+    "ogImage": null,
+    "favicon": null,
+    "language": "en",
+    "author": "Jakub Neander",
+    "canonical": "https://zaiste.net/posts/shell-commands-rust/",
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/0ad857e6389ba7a1-screenshot.png",
+  "timestamp": "2025-06-17T05:56:02.429Z"
+}

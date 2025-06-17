@@ -1,0 +1,25 @@
+{
+  "id": "0aecbffddaae1dc6",
+  "originalBookmark": {
+    "url": "http://localhost:8080/",
+    "title": "localhost",
+    "addDate": "2025-03-19T00:04:32.000Z",
+    "icon": null
+  },
+  "url": "http://localhost:8080/",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 2094,
+  "error": "net::ERR_CONNECTION_REFUSED at http://localhost:8080/",
+  "metadata": {
+    "title": "localhost",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T02:37:36.158Z"
+}

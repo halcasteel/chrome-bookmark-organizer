@@ -1,0 +1,30 @@
+{
+  "id": "f063c2e2bd2e8c00",
+  "originalBookmark": {
+    "url": "https://freshman.tech/linting-golang/#integrating-golangci-lint-in-your-editor",
+    "title": "A guide to linting Go programs",
+    "addDate": "2022-01-14T22:44:04.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAACBklEQVQ4jV2SS2hTQRSGzzl37s1N0lDTBmJjUCwGC0oVoXTngwrSRXGpK0HXLt266FZXSrsRhIJFfGxE3CiNLyokWsEHtsZotQRCTbA2mqT3kTuni7mdRmcxi5nv8D9msDA3hYgAwMyIyMzMLJkRgAEQgIgQAQAVIBQEAGomkDJmRyxLIAIgykC22q6UEjEERBcNiNATsxdLlcVS5W+z7TheZmf/2LFhwzBga1FIAwAwIly/8ejW3WcMnN2VOnRw78PHr2fvv0jEo4GUyosIB6SMx+zCQunm7JOrk+dPHj9MiH3JxHxhKR6LaD+IGCogouP6ucGB0+Oj9x7Mr1Tqnt9ZeFdeKlcmTo002w5psjA3pRMLw7CjlikMAIja1uSVOwPp5LmzJ+q//pgiTPtPS4BQ/lYtvv2yseEi0dOX7yfGR2v1hmWZqm4iou6WTFN8+PTj63I1m+kvvvm8f192cHc6CGRYiopRzE/rGSnZFEZvb+x3o3Xh4rXLl86MHMnV6g0VUu3boZmZCF3Pd11/5nY+Go0M5bLV1TVEVPT2OyhanQqD2o73/NXHsaPDphCKVrcKIOVMW4pErOXvqz9r6weG9vidDm3RKvT/CswsBK1Uaiy5J24HkrUXrYDF/LQWYQbDwLX1ZqvlZNJ9SOEvJiKdQUDXQoQg4FQykU7tcD1fl6MTAsAmhMAUXT0aCnEAAAAASUVORK5CYII="
+  },
+  "url": "https://freshman.tech/linting-golang/#integrating-golangci-lint-in-your-editor",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 7335,
+  "error": null,
+  "metadata": {
+    "title": "A Complete Guide to Linting Go Programs",
+    "description": "This article demonstrates a comprehensive linting setup for Go projects, and discusses the best way to introduce it into an existing project.",
+    "keywords": [],
+    "ogImage": "https://ik.imagekit.io/freshman/golangci-lint_vscode_1__Soeghhn4x.png",
+    "favicon": "https://freshman.tech/images/favicon.png",
+    "language": "en",
+    "author": "Ayooluwa Isaiah",
+    "canonical": "https://freshman.tech/linting-golang/",
+    "contentType": "article",
+    "siteName": "Freshman — Articles and Tutorials on Software Development",
+    "publishedTime": "2021-06-02 18:40:00 +0100 +0100",
+    "modifiedTime": "2022-08-04 11:18:06 +0100 +0100"
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/f063c2e2bd2e8c00-screenshot.png",
+  "timestamp": "2025-06-17T05:57:20.690Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "8c4297ffd147867c",
+  "originalBookmark": {
+    "url": "chrome-extension://iebpjdmgckacbodjpijphcplhebcmeop/account.html",
+    "title": "Account | Table Capture",
+    "addDate": "2024-04-26T22:05:20.000Z",
+    "icon": null
+  },
+  "url": "chrome-extension://iebpjdmgckacbodjpijphcplhebcmeop/account.html",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 1009,
+  "error": "net::ERR_BLOCKED_BY_CLIENT at chrome-extension://iebpjdmgckacbodjpijphcplhebcmeop/account.html",
+  "metadata": {
+    "title": "Account | Table Capture",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T06:52:50.794Z"
+}

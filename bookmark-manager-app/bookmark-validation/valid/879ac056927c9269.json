@@ -1,0 +1,30 @@
+{
+  "id": "879ac056927c9269",
+  "originalBookmark": {
+    "url": "https://www.agentql.com/blog",
+    "title": "Blog | AgentQL",
+    "addDate": "2025-02-13T01:24:36.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAi0lEQVQ4jd2SMQqEMBREjViKB/CSnkRtLew8wzaCR5O3zYQdJSKrlQ6EwMyfn/xMsuw9AHLtAzACBRC0CnGD16bMHT80pjfGd5smZu6taAZqu0EtLqLfN2lNXIAqMWIlLaKNwiRiBT5AKT6YOWgvVbPKM+X7k64mcGuEVAJnj3iYxP8xWtH1j/RsfAGI111uMxzGoAAAAABJRU5ErkJggg=="
+  },
+  "url": "https://www.agentql.com/blog",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 13683,
+  "error": null,
+  "metadata": {
+    "title": "Blog | AgentQL",
+    "description": "Read the latest news and updates from AgentQL.",
+    "keywords": [],
+    "ogImage": "https://www.agentql.com/blog/opengraph-image-omdrk?6b61b49cafe87558",
+    "favicon": "https://www.agentql.com/favicon/favicon.png",
+    "language": "en",
+    "author": null,
+    "canonical": "https://www.agentql.com/blog",
+    "contentType": "website",
+    "siteName": "AgentQL",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/879ac056927c9269-screenshot.png",
+  "timestamp": "2025-06-17T08:38:15.683Z"
+}

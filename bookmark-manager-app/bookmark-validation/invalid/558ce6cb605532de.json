@@ -1,0 +1,25 @@
+{
+  "id": "558ce6cb605532de",
+  "originalBookmark": {
+    "url": "https://www.apollo.io/pricing",
+    "title": "Pricing | Apollo",
+    "addDate": "2025-02-07T07:30:05.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAwxJREFUOI1Vk01vVGUYhq/nfMz0TDul57SS4B8Qo2Fh2kZTxRaBiB8QoCHRsHHhwpWJcWFCtMQaiSFGF8REt4ZarDREV34ALUWssJEIv0Bjp6XtdNrOTGfOOe/tYoKJP+DJnee+7stWN+M//YAnswwHGJg5J6KS0R0aLSe2toTnGXkufB8BCgK8LOO+VRuJ0hTMJOcw56AUGXfvZvz8Y8pje32OHivQaIreXqPRAEmSzMIQvDzHgfA8s3LZFEUQhPD3X47JiSbTUy2iIgBcudzC5ZLnYSDyHOc5JzODPJPeOL1t0xdblHzj+bGQXbsg8MFzxv17Oa+fqvPWm9vWVTQ5B5KMpfU+NbJEUzM9gs5/n18oSRrQ4RcDvXAokNSvAwcDAbrwZUkbjURLa31aqcVipRarUo1VWY/10/WyDh0OBeijc5G+nu7R+KlQC4u9AvTJpyVJ/drOYtV2Ei3XYtlyLVbUZRQLUMAAmL+V8uFEAwkGhwNuL2aMjoWcfb+bSjXnt19Tdu/22LcvIChHxuxsmx++b7OzI+p18ciAx+BQwMhISObEwlzK3sd9jp+scfNGxuqqePudLkaGQ7woNO7cybg01Wb+WkoxNI68VGDueor5UAyNZ/eHXJ5pU62K4acDTowXeGowoJkK22wm+uNuRmXJMfJcyKP9PpMf17l2NWVoOOD27xnFonF2MuKZwRCAFqLdhuaOYLnWKaSexZL6df6zkgDdWOzVifFQ33zXozMfRAL0ytFQc7d6tbzRKf7BQwr/rPVpo5Hoi686xwcOdtDtHw306rFQ0oDOnY/+w3xptkf1NNHSep8CM+R5ZoUQXf0lNYAzEyWcg3LZuLmQUanmvPduiahkLMxnjI6FajRlvm9idSvJV2qx1rZjLW/E7uK33apUY7WV6MjLnU3MXOkkbjRj1bPErdcTrdRirW4leeD7eM4Zzkm+b3b8ZJHNTbHTgtdOFxkcCtizxyPLoNmEVkvmeQjMfB/PHmzG94KAJx7qnOeY7xvOiXLZKHpGvS2azY7SoP/p/C+TFLtjwWcA1QAAAABJRU5ErkJggg=="
+  },
+  "url": "https://www.apollo.io/pricing",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 32487,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "Pricing | Apollo",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T09:28:59.917Z"
+}

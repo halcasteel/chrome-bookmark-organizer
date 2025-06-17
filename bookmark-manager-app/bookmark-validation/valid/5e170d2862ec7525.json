@@ -1,0 +1,30 @@
+{
+  "id": "5e170d2862ec7525",
+  "originalBookmark": {
+    "url": "https://go.dev/play/",
+    "title": "Go Playground - The Go Programming Language",
+    "addDate": "2022-01-06T18:51:25.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABf0lEQVQ4je2STyjDYRjHP+9vr8naSTajbFb+pWwXzVrKwRE72cHNSSkHRWk5S5RydlpuaitNlAsptBzkTylN/kwtQ1KUrPm9Dr+azeYgV8/t/T7f9/N8n7cX/ljiuxCcmFYAt8kLKvkA4B0TDc1NAMQXZkQJwB8cVPbmVrIuL2abE4C2gK8I3Hh9yLuus3eaJHtzxn3ynEQ8KqQ/OKjsQ5NkH1K0u53M9XYgpcbE5gHSY0ByJweM9ncBcPuqc0YF9s4B/KA0gPTOKmabk2GPC1llwVFXz3p4JD992OMCwFFTzXp4BLPNSWYrBoCWiEeFTF98RVa58q/18aW3BXyIzBWJeFRohZ7lVysIyd3jE32zS8R63MR63ERObsBk6AMre0VcWXgwWaxMpRQAtc+XRMZCxt7pfaZSPhQCabGio8oDlGY0TEoQyBzSPT4LwO5imCNAy2FcLchdBMivKxRroXk2to8Rby/kQvMIveTL/AzIg1q8xem0Uk8Z6Xf1D4BPy+l6GhWC1hEAAAAASUVORK5CYII="
+  },
+  "url": "https://go.dev/play/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 8407,
+  "error": null,
+  "metadata": {
+    "title": "Go Playground - The Go Programming Language",
+    "description": null,
+    "keywords": [],
+    "ogImage": "https://go.dev/doc/gopher/gopher5logo.jpg",
+    "favicon": "https://go.dev/images/favicon-gopher.png",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/5e170d2862ec7525-screenshot.png",
+  "timestamp": "2025-06-17T05:55:28.855Z"
+}

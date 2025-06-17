@@ -1,0 +1,39 @@
+{
+  "id": "693b7c17b48ed888",
+  "originalBookmark": {
+    "url": "https://www.eznec.com/",
+    "title": "EZNEC Antenna Software by W7EL",
+    "addDate": "2022-05-26T17:56:50.000Z",
+    "icon": null
+  },
+  "url": "https://www.eznec.com/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 3148,
+  "error": null,
+  "metadata": {
+    "title": "EZNEC Antenna Software by W7EL",
+    "description": "Antenna analysis software by Roy Lewallen.",
+    "keywords": [
+      "w7el",
+      "Lewallen",
+      "antenna",
+      "antennas",
+      "EZNEC",
+      "antenna software",
+      "antenna modeling",
+      "antenna analysis"
+    ],
+    "ogImage": null,
+    "favicon": null,
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/693b7c17b48ed888-screenshot.png",
+  "timestamp": "2025-06-17T06:15:14.528Z"
+}

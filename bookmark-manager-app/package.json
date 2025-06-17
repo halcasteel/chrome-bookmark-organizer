@@ -13,19 +13,53 @@
     "dev:backend": "npm run dev --workspace=backend",
     "dev:frontend": "npm run dev --workspace=frontend",
     "build": "npm run build --workspaces",
-    "start": "npm run start --workspace=backend",
+    "start": "node start-services.js",
     "docker:build": "docker-compose build",
     "docker:up": "docker-compose up",
     "docker:down": "docker-compose down",
-    "import:watch": "npm run watch --workspace=backend"
+    "import:watch": "npm run watch --workspace=backend",
+    "logs": "bash scripts/log-helpers.sh tail",
+    "logs:errors": "bash scripts/log-helpers.sh errors",
+    "logs:auth": "bash scripts/log-helpers.sh auth",
+    "logs:websocket": "bash scripts/log-helpers.sh websocket",
+    "logs:stats": "bash scripts/log-helpers.sh stats",
+    "logs:clean": "rm -f logs/*.log && touch logs/unified.log && echo 'Logs cleaned!'",
+    "test": "node testing-framework/core/test-runner.js all",
+    "test:discover": "node testing-framework/core/test-runner.js discover",
+    "test:all": "node testing-framework/core/test-runner.js all",
+    "test:unit": "node testing-framework/core/test-runner.js unit",
+    "test:integration": "node testing-framework/core/test-runner.js integration",
+    "test:e2e": "node testing-framework/core/test-runner.js e2e",
+    "test:tdd": "node testing-framework/core/test-runner.js tdd",
+    "test:watch": "node testing-framework/core/test-runner.js watch",
+    "test:coverage": "node testing-framework/core/test-runner.js coverage",
+    "test:performance": "node testing-framework/core/test-runner.js performance",
+    "test:dashboard": "node testing-framework/core/test-runner.js dashboard",
+    "test:a2a": "vitest run tests/a2a/**/*.test.js",
+    "test:a2a:unit": "vitest run tests/a2a/unit/**/*.test.js",
+    "test:a2a:integration": "vitest run tests/a2a/integration/**/*.test.js",
+    "test:a2a:watch": "vitest watch tests/a2a/**/*.test.js",
+    "test:a2a:coverage": "vitest run --coverage tests/a2a/**/*.test.js",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:headed": "playwright test --headed",
+    "test:report": "playwright show-report",
+    "test:install": "playwright install",
+    "test:ci": "playwright test --reporter=html"
   },
   "devDependencies": {
-    "concurrently": "^9.1.2"
+    "@playwright/test": "^1.53.0",
+    "@vitest/coverage-v8": "^3.2.3",
+    "concurrently": "^9.1.2",
+    "supertest": "^7.1.1",
+    "vitest": "^3.2.3"
   },
   "engines": {
     "node": ">=18.0.0"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.2.4",
+    "playwright": "^1.53.0",
     "qrcode.react": "^4.2.0",
     "react-colorful": "^5.6.1"
   }

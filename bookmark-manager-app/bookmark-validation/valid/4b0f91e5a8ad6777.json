@@ -1,0 +1,30 @@
+{
+  "id": "4b0f91e5a8ad6777",
+  "originalBookmark": {
+    "url": "https://hai-production.s3.amazonaws.com/files/hai_ai_index_report_2025.pdf",
+    "title": "Artificial Intelligence Index Report 2025",
+    "addDate": "2025-04-09T13:39:37.000Z",
+    "icon": null
+  },
+  "url": "https://hai-production.s3.amazonaws.com/files/hai_ai_index_report_2025.pdf",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 5461,
+  "error": null,
+  "metadata": {
+    "title": null,
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/4b0f91e5a8ad6777-screenshot.png",
+  "timestamp": "2025-06-17T02:23:48.249Z"
+}

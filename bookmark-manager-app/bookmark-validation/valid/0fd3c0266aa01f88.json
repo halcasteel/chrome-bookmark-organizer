@@ -1,0 +1,30 @@
+{
+  "id": "0fd3c0266aa01f88",
+  "originalBookmark": {
+    "url": "https://info3.citi.com/1501/tran_Authorized_declined.vm?msgId=AIE-5b25fd1c93208d4d8bb5d5b125337cd7",
+    "title": "Action Required Page",
+    "addDate": "2025-03-11T02:54:10.000Z",
+    "icon": null
+  },
+  "url": "https://info3.citi.com/1501/tran_Authorized_declined.vm?msgId=AIE-5b25fd1c93208d4d8bb5d5b125337cd7",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 2367,
+  "error": null,
+  "metadata": {
+    "title": "Action Required Page",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/0fd3c0266aa01f88-screenshot.png",
+  "timestamp": "2025-06-17T08:51:15.029Z"
+}

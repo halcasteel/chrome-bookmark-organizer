@@ -1,0 +1,32 @@
+{
+  "id": "c4dc64d3ee4ba996",
+  "originalBookmark": {
+    "url": "https://blog.google/technology/google-deepmind/gemini-2-5-native-audio/",
+    "title": "Gemini 2.5’s native audio capabilities",
+    "addDate": "2025-06-06T09:40:18.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACOElEQVR4nHxTS2gTURQ9700ycVo14KYqaqyfgBSsVqiYimjron4WgkhQqbQuWsWFAReiayuKCwvFTwqu3IqCgtRPRIMuuigB0WA01UZBsUVrC23jpDPTeyfJMJmWXLjMmzfnnnPffWckPGFZVpNhGHHKL5R6KT9T3qVv27x44SqsMU2zX0p5GlWCMAOEiQkhZh0CLiaFZ4qi7LZ0HfknD5BPDMLIfYNlmPCF1iPQ1g7tSBRCVUHYJGHbmcQmoI17rGyO/8bkpRjmRkcWVVd37ETwen+5kziRnBF8ZnofZuWJsx22KqtoR09AbY4AUkIfeof/b14i2HsTypp1bs7tPmLqIXUY6TisfzlAURC8cQv+hkYH5W/YitrOHpvMM49uHz1b7WHo97Gs8yOMqa6KYic8xaVoZYKQPcjpNGRNAf7IoQpE29XpBVW7Niu4cmwJL+t9zq5lVT6rhD7naoxylBczgQ2YwlI8/vmpApy4XOvk3i1FvZVBxz5fmeAVr7IrOnDybwTXMkNIjacXqGZ+mXibKUo3b3QaT4iSPVO6UcCpFxcxMvkdqvQjGj6IllVNkEJieOwDHqUmMPsjinCdijtdGkSxicaykeJ0ld1jM39wPtmLLJEsFpsCLejbF0MdHYGu8DYZ6VzZyhqRDNLGHt0s4GH2OZ7mknY3oJmGlq/G/rURHA8fhuYLMP412fgAZd79M2nE2sedoEqwMmEucDG/Cy+AZ8IOQ9Fg9eVp88CocIAK37vx8wAAAP//RmZ8AAAAAAZJREFUAwALd/lEhBJNxwAAAABJRU5ErkJggg=="
+  },
+  "url": "https://blog.google/technology/google-deepmind/gemini-2-5-native-audio/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 22717,
+  "error": null,
+  "metadata": {
+    "title": "Gemini 2.5’s native audio capabilities",
+    "description": "Gemini 2.5 has new capabilities in AI-powered audio dialog and generation.",
+    "keywords": [
+      "None"
+    ],
+    "ogImage": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/capability__native-audio_16-9_121.width-1300.jpg",
+    "favicon": "https://blog.google/favicon.ico",
+    "language": "en-us",
+    "author": null,
+    "canonical": "https://blog.google/technology/google-deepmind/gemini-2-5-native-audio/",
+    "contentType": "article",
+    "siteName": "Google",
+    "publishedTime": "2025-06-03",
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/c4dc64d3ee4ba996-screenshot.png",
+  "timestamp": "2025-06-17T02:03:50.359Z"
+}

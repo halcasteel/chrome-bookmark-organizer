@@ -1,0 +1,25 @@
+{
+  "id": "f40c7add01cb8bf4",
+  "originalBookmark": {
+    "url": "https://app.datacamp.com/workspace/w/17545ce1-a1fd-442a-be98-54774032f6aa",
+    "title": "ChatBot workspace",
+    "addDate": "2023-12-29T03:55:13.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABwUlEQVQ4jYWTsW4TQRiEv9mzz0FAHJlYAiKZBt4BEBU1AR4ACtIgQUSPRMMTICToqOAZaFGeASFFIQ0FluKCxBGJAj57h+L2zmekwC+tdov9Z+efmVV2sGFskDAgGwNI9VkSp1UgXa6aCUIGRWMJSdj+D4CNDJZwYXw+w0sBTY3tf4KE6mAZiogebaOnuzD8jXuthG+UHnLaSYA1AzLB8axc/Tba3IW3Q4iGdN9Z0kWCpEur1kAiGHw2g+cDOJyhJ19L6s8G8LNARzN8Jiu1Sn31CBWyZkajCawt4RvLUBi+HKMH2/jDCDqLerTmcjSs6gRMIAh4P4KtMb67CvdW4Ves6S8AWCbYOA8wNXr9Db3bwzeX8aur0G3B0RTiYi7mNkZwW+j7BG3swP4U317Bt7q4l6PRBMV5LrzggoSi4VwGm5fxiwF+eQ1f6cDWGMWIL7TLppSLisU8iRay8MOLcL2LDk/gfh/aQuuf4dMB5EoRmDPQwl+oRqlGzAV5gI8/0JshvtODx2twMisjLyWAv8vJlJheWmnDeAr7BfTzOoWSmjY2+8v0lR9LZXNLcKkDxSk2Nqu2qcp+pjLSsRy1yeAPyljvrOxNUdwAAAAASUVORK5CYII="
+  },
+  "url": "https://app.datacamp.com/workspace/w/17545ce1-a1fd-442a-be98-54774032f6aa",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 32690,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "ChatBot workspace",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T04:36:58.636Z"
+}

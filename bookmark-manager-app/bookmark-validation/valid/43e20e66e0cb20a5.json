@@ -1,0 +1,30 @@
+{
+  "id": "43e20e66e0cb20a5",
+  "originalBookmark": {
+    "url": "https://www.getupnext.com/introducing",
+    "title": "Introducing Upnext",
+    "addDate": "2022-07-11T23:41:21.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACeklEQVQ4jUWTT4iWVRTGf8997/d9Mx/OOFqiiwItxBTGKUMIXNhC2jktgtTErSsLghIZM8gyWhSC4k4IpFmIIOiq1m0SYcghmMWUi6EoB1LR+fP9ee99XNzXusvD/Z3Dc87ziOadmfbxduDDZPZiRgAkpACAMeTMWhWYS+bKhVu6DpYAZqZ9rhM5nw11wgAhoJRg2IecoIq4PYJiBTL0E59/fVtfauaw3+9Erg8zORsLqhCgv4a742j7JEy8iJeX0P3fMCa12igGqv6Q41HiYxvbZEEMFV57CnveQodPwpaXARDgxTm4cZG48oi66mCJT4Jgb50BqEIFq0/Q1EF04lyB++vwYAlstHMfeu8jsKnqGgS7A6JrUAho9Ql+/W04dhpiC2z4cxF+/L4sOifYtd/smESDHlJgJNhYAdZX8NRBdPRTCLEAd3+Cm5fgr0W4OgOPlsFZbHkJpwQIRwU0WIed+9CJz0CCuoYgeG0/rD6G+Z/h0AcwthkUYOVxc16j+NwHCmXChglod0pt/AV48x2Y2Ao7Jkvt4QO4fw9anSJRZ6edJVQPy503bYXN2+DANLwy1TQXOEO/B9e+gN9/xSNdlDOOErIhtkqT5SX0x70CvToFdYIqFHj2AizO4dENKOfi1IDpCWzjEFBswdgm+PdvqIcQ4//wwh0YHSuTG2YtGBZi8Xty8bsl/PAfWH0Kg3X44StY+AV3x3FO5W/DzEebbxWYlZFNLVGpQsM+vvEdSsOiubsR5QSGFERopF/8L0ztivOmaKbETINe2UV7FHITshhQCNCvmzCBBfLZd32kEqdS5g1B100iochqEtGrxPwgc/mb25oFeAY5cCHG6hCJZwAAAABJRU5ErkJggg=="
+  },
+  "url": "https://www.getupnext.com/introducing",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 13809,
+  "error": null,
+  "metadata": {
+    "title": "Introducing Upnext",
+    "description": "A little over 2 years ago, we embarked on a mission to build a radically better reader. Since then, we iterated and worked through hundreds of feature requests with an incredible group of beta testers.",
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://cdn.prod.website-files.com/5edeb0e6c233e0191ba539a1/632ab11d272edc57f0edbdd8_favicon-32x32.png",
+    "language": null,
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/43e20e66e0cb20a5-screenshot.png",
+  "timestamp": "2025-06-17T05:39:00.192Z"
+}

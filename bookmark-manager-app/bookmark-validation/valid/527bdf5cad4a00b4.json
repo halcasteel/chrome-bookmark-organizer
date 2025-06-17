@@ -1,0 +1,30 @@
+{
+  "id": "527bdf5cad4a00b4",
+  "originalBookmark": {
+    "url": "http://myanalytics.microsoft.com/?v=focus",
+    "title": "https://myanalytics.microsoft.com/?v=focus",
+    "addDate": "2020-02-24T19:13:56.000Z",
+    "icon": null
+  },
+  "url": "http://myanalytics.microsoft.com/?v=focus",
+  "valid": true,
+  "statusCode": 307,
+  "loadTime": 9142,
+  "error": null,
+  "metadata": {
+    "title": "Sign in to your account",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://aadcdn.msauth.net/shared/1.0/content/images/favicon_a_eupayfgghqiai7k9sol6lg2.ico",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/527bdf5cad4a00b4-screenshot.png",
+  "timestamp": "2025-06-17T07:25:48.461Z"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "fd7409fa463ffc53",
+  "originalBookmark": {
+    "url": "https://www.crunchbase.com/login",
+    "title": "Log In | Crunchbase",
+    "addDate": "2024-12-30T01:13:14.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA+ElEQVQ4jdWTvWoCQRSFv41r8AdExASyCJrFYhVsRK3Tp1AU8R20sbOPEEgnWvoCYqXWFj6AphZBYhM0gopgCkmxKaZQVxQ2NuY093LunG+4MCN587rO36XfXBAG4B8AYo8QvL8AkIxCXDUB8Dgh4gN5byJbhOdxHgNk421vOfhcgc0KqYrwX7MwmoHihlITOu8nAOWMCA2nkE2A9iD8eg9eWhBSoFE4A3DcwvJb9KMZbH9Ev9jsqsN6ZoVaF9pFGEzgSYN0VfilZ9AUiAXEmX1JxqccV0G9g94Qvtbg94LLDmEFxnPofxzk9SOASV3BX5ABMytIRuMXnzc6kUXDr9QAAAAASUVORK5CYII="
+  },
+  "url": "https://www.crunchbase.com/login",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 21603,
+  "error": null,
+  "metadata": {
+    "title": "Log In | Crunchbase",
+    "description": "Discover innovative companies and the people behind them.",
+    "keywords": [],
+    "ogImage": "https://images.crunchbase.com/c_fit,h_256,w_256/t5jzq5uykwdw3y0ftdt0.png",
+    "favicon": "https://www.crunchbase.com/favicon.ico?v=2.0",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": "Crunchbase",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/fd7409fa463ffc53-screenshot.png",
+  "timestamp": "2025-06-17T07:54:24.888Z"
+}

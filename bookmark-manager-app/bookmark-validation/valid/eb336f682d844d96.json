@@ -1,0 +1,30 @@
+{
+  "id": "eb336f682d844d96",
+  "originalBookmark": {
+    "url": "http://books.google.com.br/books?id=ci59DwAAQBAJ&pg=PA383&lpg=PA383&dq=ipfs+domains&source=bl&ots=Efkgu4fs9F&sig=ACfU3U3QbwVftJq72VXjKnJitzvYb5jj1g&hl=en&sa=X&ved=2ahUKEwj1gOnwttznAhXXHrkGHfBHCIQQ6AEwJ3oECGEQAQ",
+    "title": "https://books.google.com.br/books?id=ci59DwAAQBAJ&amp;pg=PA383&amp;lpg=PA383&amp;dq=ipfs+domains&amp;source=bl&amp;ots=Efkgu4fs9F&amp;sig=ACfU3U3QbwVftJq72VXjKnJitzvYb5jj1g&amp;hl=en&amp;sa=X&amp;ved=2ahUKEwj1gOnwttznAhXXHrkGHfBHCIQQ6AEwJ3oECGEQAQ",
+    "addDate": "2020-02-19T01:16:11.000Z",
+    "icon": null
+  },
+  "url": "http://books.google.com.br/books?id=ci59DwAAQBAJ&pg=PA383&lpg=PA383&dq=ipfs+domains&source=bl&ots=Efkgu4fs9F&sig=ACfU3U3QbwVftJq72VXjKnJitzvYb5jj1g&hl=en&sa=X&ved=2ahUKEwj1gOnwttznAhXXHrkGHfBHCIQQ6AEwJ3oECGEQAQ",
+  "valid": true,
+  "statusCode": 307,
+  "loadTime": 6785,
+  "error": null,
+  "metadata": {
+    "title": "Blockchain By Example: A developer's guide to creating decentralized ... - Bellaj Badr, Richard Horrocks, Xun (Brian) Wu - Google Books",
+    "description": "Implement decentralized blockchain applications to build scalable DappsKey FeaturesUnderstand the blockchain ecosystem and its terminologiesImplement smart contracts, wallets, and consensus protocolsDesign and develop decentralized applications using Bitcoin, Ethereum, and HyperledgerBook DescriptionThe Blockchain is a revolution promising a new world without middlemen. Technically, it is an immutable and tamper-proof distributed ledger of all transactions across a peer-to-peer network. With this book, you will get to grips with the blockchain ecosystem to build real-world projects.This book will walk you through the process of building multiple blockchain projects with different complexity levels and hurdles. Each project will teach you just enough about the field&#39;s leading technologies, Bitcoin, Ethereum, Quorum, and Hyperledger in order to be productive from the outset. As you make your way through the chapters, you will cover the major challenges that are associated with blockchain ecosystems such as scalability, integration, and distributed file management. In the concluding chapters, you’ll learn to build blockchain projects for business, run your ICO, and even create your own cryptocurrency. Blockchain by Example also covers a range of projects such as Bitcoin payment systems, supply chains on Hyperledger, and developing a Tontine Bank Every is using Ethereum.By the end of this book, you will not only be able to tackle common issues in the blockchain ecosystem, but also design and build reliable and scalable distributed systems.What you will learnGrasp decentralized technology fundamentals to master blockchain principlesBuild blockchain projects on Bitcoin, Ethereum, and HyperledgerCreate your currency and a payment application using BitcoinImplement decentralized apps and supply chain systems using HyperledgerWrite smart contracts, run your ICO, and build a Tontine decentralized app using EthereumImplement distributed file management with blockchainIntegrate blockchain into existing systems in your organizationWho this book is forIf you are keen on learning how to build your own blockchain decentralized applications from scratch, then this book is for you. It explains all the basic concepts required to develop intermediate projects and will teach you to implement the building blocks of a blockchain ecosystem.",
+    "keywords": [],
+    "ogImage": "https://books.google.com.br/books/publisher/content?id=ci59DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE72t1C9uLlJ3a3Q66KnWlYLzy0UOLE-oCkYGTg9Lri9FBHTSJ1P2BXQ7fqPLXBKJqkArYVLDgLh-GOMvqLLA33Rn8hNi5E5mKW2v7c9WAfdujmPmEEaxEPps3bWVybNBsh7MJrH6",
+    "favicon": null,
+    "language": null,
+    "author": null,
+    "canonical": "https://books.google.com/books/about/Blockchain_By_Example.html?id=ci59DwAAQBAJ",
+    "contentType": "book",
+    "siteName": "Google Books",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/eb336f682d844d96-screenshot.png",
+  "timestamp": "2025-06-17T07:26:25.263Z"
+}

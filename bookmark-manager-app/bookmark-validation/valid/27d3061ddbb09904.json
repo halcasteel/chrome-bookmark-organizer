@@ -1,0 +1,30 @@
+{
+  "id": "27d3061ddbb09904",
+  "originalBookmark": {
+    "url": "https://www.accordbox.com/blog/scrapy-tutorial-7-how-use-xpath-scrapy/#:~:text=Basic%20points%20of%20Xpath,-First%2C%20we%20can&text=For%20example%2C%20we%20can%20use,to%20extract%20info%20for%20us.",
+    "title": "Scrapy Tutorial #7: How to use XPath with Scrapy | AccordBox",
+    "addDate": "2024-01-01T19:35:52.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACbUlEQVQ4jU2TwWudRRTFf+d+8/JMtIKKaatS60JJq4KrQmljl30tFoIuiugfIFJjcBE3rVt3tpsUpAtxFaFtUOjGTRfddNlSEooabSNCya7QGJK+mTkuvu8lzjBw72E4986dcwSnXgO+RwywIRAVCAAJG8C4wypGGMfPkD9P4CuQBjhnRIMBsbskwG3sLreB+AiaLDhZQRVJ4Ni57Y5ml8w7hLa7bDNARgS4LeUKLhrry2P9ABe6kkKjEHXbqYO7WnaT0LWr33hq6oBqNXfurvLpJ9+qafq2EEStpdB2K9KIOSJc8xMNBtOemTm+0/jhw6/z0+JNbtz4VbDHUAXjo9kojSbsYkHjL2c/VK3Grty5+wd/r61z5MgUEduYZ1RK9a1bK2xsbIEagwaOdNrwvo8dn/NwmF1r9ePHGz74xseGY56YGHh5ec2jNTd3ucJRRzrzJABc2yHPzs6QUoMkFhdv8vDBGsSzbG6uc+HClZ3vmJ8/y4sv7aPmLZIi7PIvb7/zls58cNSlVOWcuXhpicnJV1i4/AUlF1JKnDt3iUeP1t3vP0fTJMBOApnC1/NnPT4+JoDrS7f5/bc/Sb0+eydfYHr6XQBWV//xwsKPwPNAH+gpatn2vv2v+tChA7p/f83Lyw+4+N01QyIPh5w//wP37v3FyspDnzjxnl6efNNNM2FFD4SFBiWlUEQrMIDh0yxoWi060xvrASginLMppYwkupEw5GGpnUbbF0UaKQ6ix/CpOwnWkT86KYsAfoFegwCFCAW2QGr9gQiJiPa0GNAL8PUE9TMo21in/2cdgTt77PoI5A6rUJZg66v/ABfyKLm9TLgBAAAAAElFTkSuQmCC"
+  },
+  "url": "https://www.accordbox.com/blog/scrapy-tutorial-7-how-use-xpath-scrapy/#:~:text=Basic%20points%20of%20Xpath,-First%2C%20we%20can&text=For%20example%2C%20we%20can%20use,to%20extract%20info%20for%20us.",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 8800,
+  "error": null,
+  "metadata": {
+    "title": "Scrapy Tutorial #7: How to use XPath with Scrapy | AccordBox",
+    "description": "In this Scrapy tutorial, I will talk about how to use XPath in scrapy to extract info and how to help you quickly write XPath expressions.",
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://www.accordbox.com/static/images/icon.f6b5b72f15e2.png",
+    "language": null,
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/27d3061ddbb09904-screenshot.png",
+  "timestamp": "2025-06-17T04:35:58.209Z"
+}

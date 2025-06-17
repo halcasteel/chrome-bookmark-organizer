@@ -1,0 +1,30 @@
+{
+  "id": "9e286a00a434123e",
+  "originalBookmark": {
+    "url": "https://okmij.org/ftp/Haskell/",
+    "title": "Haskell Programming",
+    "addDate": "2025-01-23T21:08:15.000Z",
+    "icon": null
+  },
+  "url": "https://okmij.org/ftp/Haskell/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 3909,
+  "error": null,
+  "metadata": {
+    "title": "Haskell Programming",
+    "description": "The index page for the Haskell portion of the site; Haskell tips and tricks",
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "author": null,
+    "canonical": "http://okmij.org/ftp/Haskell/index.html",
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/9e286a00a434123e-screenshot.png",
+  "timestamp": "2025-06-17T08:42:46.679Z"
+}

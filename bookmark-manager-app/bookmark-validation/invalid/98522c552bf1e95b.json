@@ -1,0 +1,25 @@
+{
+  "id": "98522c552bf1e95b",
+  "originalBookmark": {
+    "url": "https://data.chhs.ca.gov/dataset/community-care-licensing-residential-elder-care-facility-locations",
+    "title": "Community Care Licensing - Residential Elder Care Facility Locations - Dataset - California Health and Human Services Open Data Portal",
+    "addDate": "2024-10-27T22:38:49.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAACXUlEQVQ4jWVTS0iUYRQ99/tnfp3JyUfOQI4ZmpONgiVBRg9aSEUUuWkRtS9xVQQtatmuRa6CoHURuAlMcshEUcPGNBtjdHxmjagTTjnja2b+794WPwxUZ3Xh3sPh3nMuiQggAAEQYTADgDKISESICH+DmBkgQACACDYVsKdFRESUUiICgIiImYW1Mhw7I6+MqR6zsj7r8RtHW2G6ATEM4x8Fh4iQUsLaiLyODvelpD/oJW99C1xFACxLzy4uBwNVLEIAETmIiAEDVk/cNb9bu68Q4Y2K2+T6ODRR5C4EMPolFgxUCTOIiMghIoqwAzNqVbb533mcOnOw4kV32O8tnl1LRqYXmxpq7H3slRQRicCAkLNweZNS2DO2kFyaHDvfcqL5WK3WnM1ZANi+HkAirLUYhpr5nuh+1O5IL1e4LJ9za7TxYUGJ1+Vg/37vxXPHbY5SSlmaDUN1dg2s/kzdvdWaTOfWLE9Gqzb9cnsjebjmQP+HSPuDp19j34hIa3YwiyiZnotHl9YDLYFYpnR+3ZVwq7q5yOeVUDSekt30tctnLIttn5Rt5d5iz9Dwp46uhZS7yqtSI7/LOuIN8USq7dBKc9ORN73hbDYHQARKBESU/JW+euHk4/s3yny+VeW75Jl50hArL7AGQyHTdG7vZkMD47bLZGltKBWeiBWYzsZgde/guDLdpXPddVPP366W1Jnr751nPadvXr9yyu12iZ2ZPJg5X2/1Pcvc823e8UmkU0SEtd0lZra1ACiltGZAiAjZ7dyPSYJQeTV5fEqRIhKA7BjmkQ/p/8G2f+APRP9SOZnjkL4AAAAASUVORK5CYII="
+  },
+  "url": "https://data.chhs.ca.gov/dataset/community-care-licensing-residential-elder-care-facility-locations",
+  "valid": false,
+  "statusCode": 404,
+  "loadTime": 6132,
+  "error": "HTTP 404",
+  "metadata": {
+    "title": "Community Care Licensing - Residential Elder Care Facility Locations - Dataset - California Health and Human Services Open Data Portal",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T07:02:57.269Z"
+}

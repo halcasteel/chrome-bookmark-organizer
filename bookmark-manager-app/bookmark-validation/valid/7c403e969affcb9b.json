@@ -1,0 +1,30 @@
+{
+  "id": "7c403e969affcb9b",
+  "originalBookmark": {
+    "url": "https://jira.ti-apps.aws.grail.com/browse/SEC-1419",
+    "title": "[SEC-1419] Security Review - Grail&#39;s ERP: Oracle Netsuite - Grail, Inc.",
+    "addDate": "2022-11-30T17:49:52.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACMElEQVQ4jX2TTU8TURSGn3PnzrRFtAJRTNBUWr8WbogLExIThSiiicEFf8SdH5BaCFF/hQt3JBhDlPgTTDTGpUopLBFQQpF2Zu7McUEkfBTO+j5P3nPuOdCqRtUD6BlvDF6oaB8AZTUt3x4GM/L1ZuF5XL/8UheLE3rxMIk5AE9LwsNvA0G+450Vrz1NKdiAj8UpvURZ0v0Ssx8++ah+69ip7hlrkhPGSIwjVqXXesy1kpjdcKGsA8fbsm+zGZOHNI7DyBeDr5HGqhRbSYSyGsqS9k7pDd9j1jU1H25uxI1G5BtrNjpOd/mo5kglwicQYcElDC88kR+U1QhAaVL7vQyzGtGpSeoUbBhTX1v+c7un2HVGhBkcQorDxxehlqTcqT6WeSlMan9g+YAjj6pTI8ZYVqOQB4vj8gmgNKEjns8bdeSABG9bEnoMGg8ihBABEEVBAc9idwYs5BWMAiiIgEJkhFQAChXty2SZU0c3jhiLL5a/sWO4sd4stndmX0uCakJsAgLge+wYqj2TpZ0hlip6zcvwXhO6cUR4BApbm2vrGWONyeXaYi9nAxV+RhFDS2NSAzWGsqSMqlcdly9JyH3xWMYSaEpslLYglzHNet2FjiBNtJo2uLc0JrXtb5TtFnbvwp4kCS5NnK4s//aDTLYq2czdlRfZ+f+p927itCT7kvwSi03F+uFWs1qvbxyAjzymwpj2XXmlq2efbi0w/Ll02DEdKTlf0evnyuHVo+B/SEUktAYiEfYAAAAASUVORK5CYII="
+  },
+  "url": "https://jira.ti-apps.aws.grail.com/browse/SEC-1419",
+  "valid": true,
+  "statusCode": 302,
+  "loadTime": 5447,
+  "error": null,
+  "metadata": {
+    "title": "GRAIL - Sign In",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://ok14static.oktacdn.com/bc/image/fileStoreRecord?id=fs065k28caCW3MSL4697",
+    "language": null,
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/7c403e969affcb9b-screenshot.png",
+  "timestamp": "2025-06-17T06:24:36.496Z"
+}

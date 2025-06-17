@@ -101,31 +101,12 @@ class UnifiedLoggerService extends EventEmitter {
         hostname: process.env.HOSTNAME || 'localhost'
       },
       transports: [
-        // Unified log file - everything goes here
+        // ONE unified log file - EVERYTHING goes here
         new winston.transports.File({
           filename: path.join(this.logDir, 'unified.log'),
           maxsize: 10485760, // 10MB
           maxFiles: 10,
           tailable: true
-        }),
-        
-        // Error-only file for quick error scanning
-        new winston.transports.File({
-          filename: path.join(this.logDir, 'errors.log'),
-          level: 'error',
-          maxsize: 5242880, // 5MB
-          maxFiles: 5
-        }),
-        
-        // Service-specific logs
-        new winston.transports.File({
-          filename: path.join(this.logDir, 'services.log'),
-          maxsize: 5242880, // 5MB
-          maxFiles: 5,
-          format: winston.format.combine(
-            winston.format.timestamp(),
-            winston.format.json()
-          )
         }),
         
         // Console output with pretty formatting
@@ -410,7 +391,7 @@ class UnifiedLoggerService extends EventEmitter {
 
   getLogStats() {
     const stats = {};
-    const logFiles = ['unified.log', 'errors.log', 'services.log'];
+    const logFiles = ['unified.log'];
     
     logFiles.forEach(file => {
       try {

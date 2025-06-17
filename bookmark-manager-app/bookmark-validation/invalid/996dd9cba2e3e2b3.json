@@ -1,0 +1,25 @@
+{
+  "id": "996dd9cba2e3e2b3",
+  "originalBookmark": {
+    "url": "https://www.sweetwater.com/tracking/32792--22189790",
+    "title": "SweetTrack | Sweetwater",
+    "addDate": "2020-03-28T06:21:17.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACk0lEQVQ4jX2QS0hUYRTH/+f77jczd8bKBwqVFqGmSSHRoiCIIXpQQVAxRoEWFdEqglQyglqELTIKWtSiLGoRaLQoelGQmxbRAwrJHvSCqGxCp+zOzJ177zktejiN1lmdP+ec/znnRxgnqtpPTyE71qLhzWJFLkE9fPvly1kc3+kW9lJBLpVtZ2pDsdB12MXV4mVAWgPQ4HTq1tvM4Bp0tTn5Bmo0PUAAYCK6lSZWVIsz/Nhz0wuCbyPrxP2e1SWTl1ZFpjYBABI9+veUlWfAAlCDePWeMGvGtTcHW+4BwOyOk5c5bS00ko4VvqDyBQEiIFaeKwSzsnpPTw0A9B/asb7idm/9nBc3TwAAepuC8S5QwAF2yVzVpON+SDVq8u/W7T1/IQfu7uvc9GQ84DRGbz4TnjFNd2lY2yUaMwoKkv6eE8p2v3J0K7panP8Z/Imaju4GWFYzoDYqFZ5G0Qj4a+rwy87mdkAIIBlrkEjo2pmrFma1sWXE3H9/tGlo8u5T0yfY4StBrKhBO8NPG59vmdvbiz8M/oIYR7ltwJdCsZIbkViwAQA+Htn2zgq8O1rbZCHnF15q5Ys+JDN1hHdapMwnrJ2y7/TtkHBJRusViqBMYA/83D76giXxuNUHIFlersqTSd5V4x7zXOecKSpdbDw8I60BUwxKDQ3artf1YN488zrTRImKOP8b4slHDSWfh1fbnKxKh6xsylT2o3T+RWylkcJWGli0ZD+DoUgLwMhSoMpyzkjUc7yMCUVCgc9R33c/RScV5bQOWyLsB0TqFz36sGy5iACAAEQgZrACQBZ0AChiCDE0CxgEJgLxKH5r2MvlfpYUBAArBgcGlu+T4QCaCWmjYBGLrzxoLwwlCkIMAuEH+fEPZ0JFTpMAAAAASUVORK5CYII="
+  },
+  "url": "https://www.sweetwater.com/tracking/32792--22189790",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 31838,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "SweetTrack | Sweetwater",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T07:33:09.299Z"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "b68ee856f489dc4c",
+  "originalBookmark": {
+    "url": "https://www.geoss.com.au/eun_mara/",
+    "title": "Eun Mara - Main page",
+    "addDate": "2023-01-12T02:54:45.000Z",
+    "icon": null
+  },
+  "url": "https://www.geoss.com.au/eun_mara/",
+  "valid": true,
+  "statusCode": 301,
+  "loadTime": 4781,
+  "error": null,
+  "metadata": {
+    "title": "Eun Mara - Main page",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/b68ee856f489dc4c-screenshot.png",
+  "timestamp": "2025-06-17T05:18:33.283Z"
+}

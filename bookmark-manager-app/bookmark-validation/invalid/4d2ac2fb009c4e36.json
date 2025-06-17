@@ -1,0 +1,25 @@
+{
+  "id": "4d2ac2fb009c4e36",
+  "originalBookmark": {
+    "url": "http://localhost:36299/?state=uWhYWhPz5yVozdUqVDg44T8jmumWCr&code=4/0AbUR2VOcISrTOEQIhvD6FtsFvvOaPrzxjYl-vVmklR9IVrQ-kn4v5Lnsl6u7Gi0IJvYsaw&scope=https://www.googleapis.com/auth/drive.readonly",
+    "title": "localhost:36299/?state=uWhYWhPz5yVozdUqVDg44T8jmumWCr&amp;code=4/0AbUR2VOcISrTOEQIhvD6FtsFvvOaPrzxjYl-vVmklR9IVrQ-kn4v5Lnsl6u7Gi0IJvYsaw&amp;scope=https://www.googleapis.com/auth/drive.readonly",
+    "addDate": "2023-05-29T10:07:56.000Z",
+    "icon": null
+  },
+  "url": "http://localhost:36299/?state=uWhYWhPz5yVozdUqVDg44T8jmumWCr&code=4/0AbUR2VOcISrTOEQIhvD6FtsFvvOaPrzxjYl-vVmklR9IVrQ-kn4v5Lnsl6u7Gi0IJvYsaw&scope=https://www.googleapis.com/auth/drive.readonly",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 1461,
+  "error": "net::ERR_CONNECTION_REFUSED at http://localhost:36299/?state=uWhYWhPz5yVozdUqVDg44T8jmumWCr&code=4/0AbUR2VOcISrTOEQIhvD6FtsFvvOaPrzxjYl-vVmklR9IVrQ-kn4v5Lnsl6u7Gi0IJvYsaw&scope=https://www.googleapis.com/auth/drive.readonly",
+  "metadata": {
+    "title": "localhost:36299/?state=uWhYWhPz5yVozdUqVDg44T8jmumWCr&amp;code=4/0AbUR2VOcISrTOEQIhvD6FtsFvvOaPrzxjYl-vVmklR9IVrQ-kn4v5Lnsl6u7Gi0IJvYsaw&amp;scope=https://www.googleapis.com/auth/drive.readonly",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T05:07:34.152Z"
+}

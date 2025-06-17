@@ -1,0 +1,25 @@
+{
+  "id": "879b2f1de8e77243",
+  "originalBookmark": {
+    "url": "http://localhost:3003/contacts",
+    "title": "Contact Management System",
+    "addDate": "2025-04-12T22:31:12.000Z",
+    "icon": null
+  },
+  "url": "http://localhost:3003/contacts",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 1700,
+  "error": "net::ERR_CONNECTION_REFUSED at http://localhost:3003/contacts",
+  "metadata": {
+    "title": "Contact Management System",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T03:46:07.061Z"
+}

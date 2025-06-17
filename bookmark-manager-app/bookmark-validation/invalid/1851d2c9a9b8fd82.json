@@ -1,0 +1,25 @@
+{
+  "id": "1851d2c9a9b8fd82",
+  "originalBookmark": {
+    "url": "https://docs.near.org/docs/develop/contracts/rust/intro",
+    "title": "Building a Smart Contract in Rust | NEAR Documentation",
+    "addDate": "2022-01-12T05:31:36.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAC3UlEQVQ4jWVTTWhcZRQ9937f9+bNRppmGgxuBIMbKS506cZWN6IFoQ904aIIryFQTDIZJpnVt5r8ToIUQjooDbhQmIKg4katLrpwoUsXhgjdyEjbNG4G3rzv57rIm6L2Li+cc+45l0PtdvtlpVRPa10riqK1tbX1s7WWrbURTw/lef5Mo9E4YOYZ59yyVkr1lFKXvfcwxtxZXl6+ZK09AkAA5F9gBhCnp6c3tdbviQiYucci0nDOBeecENFztVrtztLS0vkKTBNlAHFlZeWdJEmuF0UB51wAcIEBOHU2vzvnTo0xF9M0vQ2ArLU0IVlcXDxXr9c/iTHeB/CL1loRUclEFGu1GgB8ycwfxRihtb7S6XS2rbUxz3MNQOr1+qdaa1cUxRvM/GOSJBCRyCJCIgIAF9bX1z8LIdyszm52Op0b/X7ftdvt68z84nA4fG17e/sPIjofYwQAYhFBFUgEQMfHx0ve+2+UUiCindXV1Usi8uvp6embBwcH9ytLnugsHiYiEBHk7AwZDAaxLMtr3vvfiCghos+J6MH+/v5fWZYlAIQm6Oo1ZzFXyyzLTK/XezQajd4KITxQSs0w87fNZrMxGAwcgInYfwmqJQ0Gg3JhYeHZNE1nROR9ESm11i8lSXI7yzKutOiJ9QoMABqAzM/PPz81NfUdEb2ysbFxV0RWQgjQWr89Nze3B0BijE+sMwBhZojI41ar9cLs7Oy9GOPR5ubmrTzPTbfbvQmgBwBKqRtra2sfAHhYEQgTEZdliRjj62mafu+9N8Ph8EMA1O/3vbWWu91uy3v/FTMjxvgxgHfH4zFEhLWIJN77AOBVZsZoNLpyeHj496QL1loAkKIorgH4yRhzcTwenwMQiMgwgIfGGJWmKcqyvLWzs/N1Fe4kaQFAe3t7j8fj8VUR+dMYQ8YYRUSPOMbYFJG73vsvTk5O2pPi/K/GYq3l3d3dI+fcVa31vRDCDyGE5j91Y20AGusYwgAAAABJRU5ErkJggg=="
+  },
+  "url": "https://docs.near.org/docs/develop/contracts/rust/intro",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 31311,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "Building a Smart Contract in Rust | NEAR Documentation",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T05:56:07.647Z"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "e48b96c7e6d68674",
+  "originalBookmark": {
+    "url": "https://smhs.gwu.edu/alumni/transcripts-diplomas",
+    "title": "Transcripts &amp; Diplomas | The School of Medicine &amp; Health Sciences",
+    "addDate": "2022-04-13T15:25:16.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB5ElEQVQ4jcWSTU8TYRSFz30dp512Sqe12C8oFXBCm1oJrR+piSEuXJhIkLBoWDZxY1ywcGFc+COMCzfu3UlY8BuMSoLENFhc1AIVzIDFzjQzFN7XRQvREF00Jp7Vvcl97jnJvcD/FqUuRm9eH0/O9AIvr9YWJavpGFtf91d7WdC0WgaddJ7QBAsnipCVGA7sbV5ffwG1LwunsQbTLJ+iAwN30LZqDAAQT83Tpcklzts/+O7mEm/b3yC7IswbzLJI+uEJ5PONdStGI/lnAHHA7R+mQrEFNZg+5eLVxunKvRoABjWYptzUGgAJaiBDuekKACbB3z8Js7ECc68T0x/KgzMZjNvYN1ZAgsOrZVlEfyBkJYZzQ1Pw9um0t7EoAC4BHGCCHZtSPPMYbs8wSFbF8oJOxsYCRUZLIhi9LT6/LVF87BGIOP/y4UmHcGtJKhRteEITv0XvRAT84Vt0Y04gcfkpAEa5u2W6NrsNQAKAMzi0Gzg6bJB+9SVjske4lAEWSkxDUZOof3oOx9qiqF5C+d194MAEh8PQtsXu5msAoF9dWf+FIs66znPHqmKn+gpOs9I9cR4t43130g01MArz+0cAoMHBQCY1FC789WP+oPXqzhvJpyhaPKbpvSyoG2alF+7f6ifnDZr4IJEC+gAAAABJRU5ErkJggg=="
+  },
+  "url": "https://smhs.gwu.edu/alumni/transcripts-diplomas",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 23984,
+  "error": null,
+  "metadata": {
+    "title": "Transcripts & Diplomas | School of Medicine and Health Sciences",
+    "description": "Information for SMHS alumni regarding transcripts and diplomas.",
+    "keywords": [],
+    "ogImage": "https://smhs.gwu.edu/sites/g/files/zaskib1151/files/2023-07/smhs_m.d._graduation_ag-5192_2.jpg",
+    "favicon": "https://smhs.gwu.edu/themes/custom/smhsbootstrap/favicon.ico",
+    "language": "en",
+    "author": null,
+    "canonical": "https://smhs.gwu.edu/alumni/transcripts-diplomas",
+    "contentType": "website",
+    "siteName": "School of Medicine and Health Sciences",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/e48b96c7e6d68674-screenshot.png",
+  "timestamp": "2025-06-17T06:12:41.059Z"
+}

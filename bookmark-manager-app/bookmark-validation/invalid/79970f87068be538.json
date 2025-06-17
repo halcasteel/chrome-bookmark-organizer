@@ -1,0 +1,25 @@
+{
+  "id": "79970f87068be538",
+  "originalBookmark": {
+    "url": "http://peo-document-repository.appoci.oraclecorp.com/pages/viewpage.action?spaceKey=AESG&title=Oracle+Document+Cloud+Service+Application+Download",
+    "title": "OraDocs",
+    "addDate": "2020-02-07T20:56:55.000Z",
+    "icon": null
+  },
+  "url": "http://peo-document-repository.appoci.oraclecorp.com/pages/viewpage.action?spaceKey=AESG&title=Oracle+Document+Cloud+Service+Application+Download",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 784,
+  "error": "net::ERR_NAME_NOT_RESOLVED at http://peo-document-repository.appoci.oraclecorp.com/pages/viewpage.action?spaceKey=AESG&title=Oracle+Document+Cloud+Service+Application+Download",
+  "metadata": {
+    "title": "OraDocs",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T05:25:30.509Z"
+}

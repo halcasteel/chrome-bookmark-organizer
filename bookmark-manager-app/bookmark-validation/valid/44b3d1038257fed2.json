@@ -1,0 +1,30 @@
+{
+  "id": "44b3d1038257fed2",
+  "originalBookmark": {
+    "url": "https://www.irs.gov/payments/direct-pay-help",
+    "title": "Direct Pay Help | Internal Revenue Service",
+    "addDate": "2022-02-23T20:14:41.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAACuElEQVQ4jWWSXUiTARSGj3Ob2z73p5tfNreJlVtrMsx0i+kuqkWBxRQDqdlVEnhRrd1E0l2lQRgSbKDdlBiBYDMWkaPQmZVzOUbh5qKh+3HN+e2X/Tl1XXwghu/F4YFzDhze85YUi0U4oGgqm8tvH+bQD7YIe+QJYHqjBa+13c8nrC4A0A5M6Y2W4UmbJ4DhY8Ts1vaIeUku5t178dm/kQSAUbOjt73xdmfL8KQNZdEEKNMXTugMFjG/Un9FUcptbL/z5B2Tjdjc6xplvUom7Ncqr56VAsCCK+gJxnZ2dlUyofacdOS9Y7dYJMrFPDqHAQAfBrv5VUwqmRhNZfVGCwAIUCbKorn9GAA8fDWnkgl84QQBAMb6NQCgM1im7d6pr56egSkAUMmE03bvzUsn07mC1elDaGQBygzHM4Rrj00AYHX65py+tgY+ykLOn6pz+zGUhYj5lS4fVsNlIDSyrks+bfcGIkkiANw1WCKx9Fi/poJOVUh49fyKxZWQQsJbcAetzjUAaDp2aMS8BAAIhUQY6lN7f4d62xtRFhJNZQEgl9/GHbzYcmTU7ACAcDzDplPZdGo6VyAcF1Sanl0PxzP4bZ4AtugJxVLZ78vBcgqZy0ZQFm3vVwiFVPoTpKclNYPj802iamltVdutl2sbCe96fMaxanj3Y/y+5kQt96P9D7WMhLJom8ksEQB6Hpm4bOSBtm1idpnLRjpaRQDgCydM855wPA0AbDoVd9ntxwgdraLUZlKjrJcdRd1+bKhPvbgS6lE34Dwx61r9G28WVQciSXyzdHLMyK1ieIIxmyvIYdK06obXn37NOH3UMpKuS/70zbfLShGrnBKIpDpbxRda6krwtOKJevtlJZ3ZEgk5zaLqabt3I5pGaOTBG2cqGJRoMqeQ8AAAivuUyReCkeR+zuQLxf/1DxCGVnSY4hvNAAAAAElFTkSuQmCC"
+  },
+  "url": "https://www.irs.gov/payments/direct-pay-help",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 14150,
+  "error": null,
+  "metadata": {
+    "title": "Direct Pay help | Internal Revenue Service",
+    "description": "Get answers to common questions about making payments with Direct Pay, including payment types accepted, identity verification, and confirmation your payment was made.",
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://www.irs.gov/themes/custom/pup_base/favicon.ico",
+    "language": "en",
+    "author": null,
+    "canonical": "https://www.irs.gov/payments/direct-pay-help",
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/44b3d1038257fed2-screenshot.png",
+  "timestamp": "2025-06-17T05:44:23.369Z"
+}

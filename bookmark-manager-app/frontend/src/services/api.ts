@@ -39,7 +39,8 @@ const api: AxiosInstance = axios.create({
 api.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
     const token = localStorage.getItem('token')
-    if (token && config.headers) {
+    // Fix: Check if token exists and is not 'undefined' string
+    if (token && token !== 'undefined' && token !== 'null' && config.headers) {
       config.headers.Authorization = `Bearer ${token}`
     }
     return config

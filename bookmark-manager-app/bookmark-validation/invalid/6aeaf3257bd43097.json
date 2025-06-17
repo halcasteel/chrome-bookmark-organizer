@@ -1,0 +1,25 @@
+{
+  "id": "6aeaf3257bd43097",
+  "originalBookmark": {
+    "url": "https://www.thesaascfo.com/",
+    "title": "https://www.thesaascfo.com/",
+    "addDate": "2025-03-21T13:22:02.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAlklEQVQ4jWO0St7LQApgYWBg8FI8Xl1dTYxq65R9LAwMDI8ePWJgYGC0LoGIHm32sq7dhsn+f7SHgYGBiST3kKOBBc462uxFkI2iAau7Ufzg5DRk/XDnDoRNih/OkuSHs8YMxticBIl5ZNthbAYGJB0sDAwMnz59Sk9PJ2iTnJwcA4MlCwMDwyPuVIa/hJ125T4DAwMDABUSPOyxh0/XAAAAAElFTkSuQmCC"
+  },
+  "url": "https://www.thesaascfo.com/",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 31343,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "https://www.thesaascfo.com/",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T02:23:16.159Z"
+}

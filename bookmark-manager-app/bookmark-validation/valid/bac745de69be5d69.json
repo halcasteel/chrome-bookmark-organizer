@@ -1,0 +1,30 @@
+{
+  "id": "bac745de69be5d69",
+  "originalBookmark": {
+    "url": "https://datastax.github.io/graph-rag",
+    "title": "https://datastax.github.io/graph-rag",
+    "addDate": "2025-04-07T16:36:20.000Z",
+    "icon": null
+  },
+  "url": "https://datastax.github.io/graph-rag",
+  "valid": true,
+  "statusCode": 301,
+  "loadTime": 7550,
+  "error": null,
+  "metadata": {
+    "title": "GraphRAG",
+    "description": "None",
+    "keywords": [],
+    "ogImage": "https://datastax.github.io/graph-rag/assets/images/social/index.png",
+    "favicon": "https://datastax.github.io/graph-rag/assets/images/favicon.png",
+    "language": "en",
+    "author": null,
+    "canonical": "https://datastax.github.io/graph-rag/",
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/bac745de69be5d69-screenshot.png",
+  "timestamp": "2025-06-17T02:25:59.428Z"
+}

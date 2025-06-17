@@ -1,0 +1,25 @@
+{
+  "id": "e8bdf27a0b9b6350",
+  "originalBookmark": {
+    "url": "https://app.demo.eyev.ai/",
+    "title": "app.demo.eyev.ai",
+    "addDate": "2025-04-25T00:16:25.000Z",
+    "icon": null
+  },
+  "url": "https://app.demo.eyev.ai/",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 25761,
+  "error": "net::ERR_NAME_NOT_RESOLVED at https://app.demo.eyev.ai/",
+  "metadata": {
+    "title": "app.demo.eyev.ai",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T02:16:40.493Z"
+}

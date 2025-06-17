@@ -1,0 +1,25 @@
+{
+  "id": "1d41dd4d3d1b18a9",
+  "originalBookmark": {
+    "url": "https://www.ups.com/track?loc=en_US&tracknum=1Z57E7190391601820&requester=ST&fromrecent=1/trackdetails",
+    "title": "Tracking | UPS - United States",
+    "addDate": "2022-06-26T07:35:50.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAC1klEQVQ4jQXBb2hVZRwH8O/vOc859+zcu+aa191529W76d1Wm44Cr7LcizJ9M4iZyAj8E4nhehOhrBe9qTf6YlRGL4wRCEIKtYIoWIglFtrQmUSCeDHnnXe65v1ztp157jnneX5+PsTMAErF+VrxmlydK5dum8GC9iuWILuxScWSa9K9YUPGWtvXlu0mZlr1/HtXJmhxqjXxJBGD3WQhHoOrnixGlWqwvFyvefVIk+c3JvuGduwbk089f/XO+W15Aq1BoK7PuH9OFy/+VS48WPUVK4BAEqSk+vid2sDIcQkiaTfBCmeuVk59U7jxj7vEbAEWECNohiGYQX4ENuJCCAkCgcc/K5z89gEAAhwgAALAZ8QBV0OCVwABYmbxXMKYvl4tPXaPDqV6U/b4aLYvY5/+MDd5+pX9gy0V4OCu1h+/3vbea83e04iIpBC07AVvvb5OSeduoX5gKFOuBDvzrV+dmx0b7U6nih8c6vjkzP1ilTs6CYAgZiGouhKteJHSXHWDQPPDkv/lz3Ol+WBnf/LRIz+XdS7/XSMIgAUTERCTFEbs1zWBAEhJBmBbovCwsufErYF88tzYprCumCHAHDI8n3MbE725eGNCCiJp0p6+pvT6WGlBtyWN7yZne7qeb3BMIhYRW+3Z9MSFeXdZHzvYOfn7Ymkh7Ew7nx7vPvv93NSV/794v2f/8Ibxs3cCJcEGwoj/u/T5vh7DAfrjpgMcGVh3+8z2jKBWoB3oNEQbiS0O/ph4tx4oIQ1O9Awffnt7/1rMeqENOLaImaw0NxpkEblKm4YeHWnPvnrIlAJKKc08f/fmxVNvHNthrzfQ1WDufak5A7QAKeDNLkx+tPXe9E/1kLVWpDUzaxKiVi6X//3h1qULl3+7MXVtSRsY3JoYzG/K796benmk+YXNgjWDiFkDxFqRMDRQWXjsz/4y8+t5d8kb2DUczw21dLxoAqwVSBDRM8IVU29IbJh2AAAAAElFTkSuQmCC"
+  },
+  "url": "https://www.ups.com/track?loc=en_US&tracknum=1Z57E7190391601820&requester=ST&fromrecent=1/trackdetails",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 33874,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "Tracking | UPS - United States",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T05:38:37.687Z"
+}

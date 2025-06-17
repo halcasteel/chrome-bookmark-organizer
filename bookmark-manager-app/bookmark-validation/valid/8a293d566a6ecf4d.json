@@ -1,0 +1,30 @@
+{
+  "id": "8a293d566a6ecf4d",
+  "originalBookmark": {
+    "url": "https://arxiv.org/abs/2502.08524",
+    "title": "[2502.08524] LLM Pretraining with Continuous Concepts",
+    "addDate": "2025-06-14T18:23:40.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACSElEQVQ4jYWTXUhTYRzGn/dsp7ON5mRbXzb3dUiHYBfR50XfFmVkUYihdGG7GcSELuoyZldiERGVEOEKjg1PszpuWiCkQbUuKqJuCo0SutHGiqNbuu2ct4s50+Os5/L/8v/xPM/7vgAAChDJyX+IO/nbKIhAo1AoxGhnRREAkBye8yPeahpz8Z3LLfcJ4S0DolC7HAgxN9+V4H10wOW9EQIYABAbG3UA8Kg3fPypJCqxB8KFhdB5qxQgI3BzGTcrlTO6gykl371ufCywGcj1R+76TWbzndlsTiLfJ5vq29qyhZXFWQkAGqmsrDDruGEry1UlZTmMa5c+l9ntHWl56u2kPFHX2nru10LXukVZASYoy3KTkXudyyqHWB2zZ4WcrpvhXZ+UtWuOnjrWMlGq4EWiADlMRzkpEBh64qlWBivcSryq5rkEmGmJZe3VEALQs2Kiw3TySF3uwG41ryrUmMvvYjwbuslc7n8B5lwQi15Vgfp9IDu3q2RmFhSwl7KvBVAKkN97N7VN/0gOsxzH6BsbSLq25mPu6+hp0CUGSkeAZ+tKXOy0sYk3DGux6EnwDKt/90IFIVTrYokDEQ6jafV6YZVKN2bu9fZlpqfCVpPJx3z5FhWE62XQ9DAPKDZscBmu2AizP0loj358rKXhRLM/lfp5y2az7ig3WG8CJf5F8dnGHN7mV14fHXDyXSFAX4wFAPFo5PLLZ4O0XxTaSxVPAOCxw70t7uSD2vlfyP32oViU9os9fs35/0UpLUAeRq7GosL74vwPjULWOHd1/GoAAAAASUVORK5CYII="
+  },
+  "url": "https://arxiv.org/abs/2502.08524",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 17618,
+  "error": null,
+  "metadata": {
+    "title": "[2502.08524] LLM Pretraining with Continuous Concepts",
+    "description": "Abstract page for arXiv paper 2502.08524: LLM Pretraining with Continuous Concepts",
+    "keywords": [],
+    "ogImage": "/static/browse/0.3.4/images/arxiv-logo-fb.png",
+    "favicon": "https://arxiv.org/static/browse/0.3.4/images/icons/favicon-32x32.png",
+    "language": "en",
+    "author": null,
+    "canonical": "https://arxiv.org/abs/2502.08524",
+    "contentType": "website",
+    "siteName": "arXiv.org",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/8a293d566a6ecf4d-screenshot.png",
+  "timestamp": "2025-06-17T01:55:59.245Z"
+}

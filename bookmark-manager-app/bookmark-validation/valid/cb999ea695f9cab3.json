@@ -1,0 +1,37 @@
+{
+  "id": "cb999ea695f9cab3",
+  "originalBookmark": {
+    "url": "https://translate.google.com/?sl=en&tl=pt&text=Please%20I%20need%20the%20SVG%20same%20color%20and%20good%20quality%2C%20is%20it%20possible%20today%3F&op=translate",
+    "title": "Google Translate",
+    "addDate": "2025-02-19T12:31:34.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACOUlEQVQ4jX2ST0hUURTGf/e+Ny/nn4ma05BOlIYFTZsGoj9Gi2gTRLUoCIpA3bRq1SpoIGpXSyFpWVCrNpFQG1GCiHBRGJkSKISmpM6Yo857954W8ydngrlw4HIv3znf951PXX28+tRop18ELICAACIQNiunX9xJjdPg6EA5/aBBaVRdbZimgUZgAC2UJ9ZNF0BcdS2bnfQaNXClcpP/P5WOuK2HI5+npqanPc+1ruuKtWCMRWuRQiF46VaAu+LQ3+fTHoX5HDx6GyIQmFmN9p4p/u6NRiM4jkZECIUcRIR43LnoVigP9Pm8+eIwMaeJN0FgS++zuQjL+QU8r0A8FkEpVeuBLevtaBYm5jRnD1nunvd5eMkHwIji21KE4laRe8PPERFESrRFhKqExbzi6F7Lu6+a3Aac7LFVY8dnLKsLExzs6uTZyCjLa+t0Jdq5cCrzz8QnYyEG+3xunDAs5RVDo051K2sk2RlvI92T4MfPedLdKY4c2Ie1FrfMhoUc3H8dqtmIlGn6othUnYy8/0C4yeN4uhff93EcBy1SMottJdvAFRnfcy1sFQNQCmMM1lqCIKgNkgC2bJLdBhZgNt/MuWMZ0t0pXo19xBhbkhBsbg1pz7tVnycRUAqU0oiAweVXsZVMqpmWWAQRCzjULrXuZLOfIuOTi+sAsZjD7ZsJkokwSoHWGqUUunGDTGH/Hnc2vEMzeKWN9tZQNQOVHDRsAJDcbR9cv9xMssNBxCJS0m6MYWnlz/BfVT0X3fHmE3AAAAAASUVORK5CYII="
+  },
+  "url": "https://translate.google.com/?sl=en&tl=pt&text=Please%20I%20need%20the%20SVG%20same%20color%20and%20good%20quality%2C%20is%20it%20possible%20today%3F&op=translate",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 21033,
+  "error": null,
+  "metadata": {
+    "title": "Google Translate",
+    "description": "Google's service, offered free of charge, instantly translates words, phrases, and web pages between English and over 100 other languages.",
+    "keywords": [
+      "translate",
+      "translations",
+      "translation",
+      "translator",
+      "machine translation",
+      "online translation"
+    ],
+    "ogImage": null,
+    "favicon": "https://www.gstatic.com/translate/favicon.ico",
+    "language": "en-US",
+    "author": null,
+    "canonical": "https://translate.google.com/",
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/cb999ea695f9cab3-screenshot.png",
+  "timestamp": "2025-06-17T08:28:13.832Z"
+}

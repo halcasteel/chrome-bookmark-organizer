@@ -1,0 +1,30 @@
+{
+  "id": "831ea74576417043",
+  "originalBookmark": {
+    "url": "https://outlook.office.com/mail/inbox",
+    "title": "Mail - Casteel, Hal - Outlook",
+    "addDate": "2020-12-01T18:13:51.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAQklEQVQ4jWP87if3nwEH4Nz0iLF+FwNO+UY3BkYmXJLEglEDqGAAxYCRYcl7nPHMECPI+H8n7nTA6D6aDgaHARQDAKgRDRsLiHU6AAAAAElFTkSuQmCC"
+  },
+  "url": "https://outlook.office.com/mail/inbox",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 183905,
+  "error": "Page.captureScreenshot timed out. Increase the 'protocolTimeout' setting in launch/connect calls for a higher timeout if needed.",
+  "metadata": {
+    "title": "Outlook",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://outlook.office.com/mail/favicon.ico",
+    "language": null,
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T05:25:29.458Z"
+}

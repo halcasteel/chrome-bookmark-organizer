@@ -1,0 +1,102 @@
+{
+  "id": "PLAN-001",
+  "name": "Authentication Test Suite",
+  "version": "1.0.0",
+  "description": "Test authentication flows",
+  "test_cases": [
+    {
+      "id": "TEST-FE-AUTH-LOGIN-001",
+      "test_id": "TEST-FE-AUTH-LOGIN-001",
+      "name": "User Login Flow",
+      "description": "Test user login with valid credentials",
+      "category": "authentication",
+      "test_data": {
+        "email": "admin@az1.ai",
+        "password": "changeme123"
+      },
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepId": "navigate-to-login",
+          "description": "Navigate to login page",
+          "action": {
+            "type": "navigate",
+            "parameters": {
+              "url": "http://localhost:5173/login",
+              "waitUntil": "networkidle"
+            }
+          },
+          "validation": {
+            "type": "urlContains",
+            "expected": "/login"
+          }
+        },
+        {
+          "stepNumber": 2,
+          "stepId": "enter-email",
+          "description": "Enter email address",
+          "action": {
+            "type": "fill",
+            "target": {
+              "selector": "input[placeholder*=\"@az1.ai\"]"
+            },
+            "parameters": {
+              "value": "admin@az1.ai"
+            }
+          },
+          "validation": {
+            "type": "attributeEquals",
+            "target": {
+              "selector": "input[placeholder*=\"@az1.ai\"]"
+            },
+            "expected": "admin@az1.ai"
+          }
+        },
+        {
+          "stepNumber": 3,
+          "stepId": "enter-password",
+          "description": "Enter password",
+          "action": {
+            "type": "fill",
+            "target": {
+              "selector": "input[placeholder=\"Enter your password\"]"
+            },
+            "parameters": {
+              "value": "changeme123"
+            }
+          }
+        },
+        {
+          "stepNumber": 4,
+          "stepId": "click-submit",
+          "description": "Click login button",
+          "action": {
+            "type": "click",
+            "target": {
+              "selector": "button:has-text(\"Sign In\")"
+            },
+            "parameters": {
+              "waitAfter": 2000
+            }
+          },
+          "criticalError": true
+        },
+        {
+          "stepNumber": 5,
+          "stepId": "verify-dashboard",
+          "description": "Verify successful login",
+          "action": {
+            "type": "wait",
+            "parameters": {
+              "value": 1000
+            }
+          },
+          "validation": {
+            "type": "urlContains",
+            "expected": "/dashboard"
+          }
+        }
+      ]
+    }
+  ]
+}

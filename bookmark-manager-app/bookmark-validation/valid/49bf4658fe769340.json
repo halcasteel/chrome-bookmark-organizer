@@ -1,0 +1,30 @@
+{
+  "id": "49bf4658fe769340",
+  "originalBookmark": {
+    "url": "https://secure.ssa.gov/iClaim/Apn001View.action",
+    "title": "Re-entry Number, Identification, Apply for Benefits, Social Security",
+    "addDate": "2023-10-05T18:12:14.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVUlEQVQ4jd2SQQrAIAwEx/9/Kj/bXhQbElEEsXQgiIOuIQgJkpT5IxQAwdaLpd7/BJIvMLPgvE8D2oGR69670MXMvdewaekjl4Uuz2A6iwv85yfu8wAH03LodjZn6QAAAABJRU5ErkJggg=="
+  },
+  "url": "https://secure.ssa.gov/iClaim/Apn001View.action",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 7329,
+  "error": null,
+  "metadata": {
+    "title": "Apply for Benefits, Social Security",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/49bf4658fe769340-screenshot.png",
+  "timestamp": "2025-06-17T04:48:31.674Z"
+}

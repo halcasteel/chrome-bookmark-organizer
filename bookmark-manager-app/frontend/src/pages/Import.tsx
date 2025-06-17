@@ -66,9 +66,12 @@ interface ImportResult {
 const Import: React.FC = () => {
   const [uploadProgress, setUploadProgress] = useState(0)
   const [importResult, setImportResult] = useState<ImportResult | null>(null)
+  const [activeImport, setActiveImport] = useState<any>(null)
   const cardBg = useColorModeValue('white', 'gray.800')
   const dropzoneBg = useColorModeValue('gray.50', 'gray.700')
   const borderColor = useColorModeValue('gray.300', 'gray.600')
+  const { isOpen: isProgressOpen, onOpen: onProgressOpen, onClose: onProgressClose } = useDisclosure()
+  const { socket } = useSocket()
 
   const uploadMutation = useMutation({
     mutationFn: async (file: File) => {
@@ -122,6 +125,49 @@ const Import: React.FC = () => {
         return 'red'
       default:
         return 'gray'
+    }
+  }
+
+  const getPhaseIcon = (phase: string) => {
+    switch (phase) {
+      case 'uploading':
+        return FiUploadCloud
+      case 'processing':
+        return FiActivity
+      case 'completed':
+        return FiCheckCircle
+      default:
+        return FiFile
+    }
+  }
+
+  const getPhaseColor = (phase: string): string => {
+    switch (phase) {
+      case 'uploading':
+        return 'blue'
+      case 'processing':
+        return 'purple'
+      case 'completed':
+        return 'green'
+      case 'failed':
+        return 'red'
+      default:
+        return 'gray'
+    }
+  }
+
+  const getPhaseText = (phase: string): string => {
+    switch (phase) {
+      case 'uploading':
+        return 'Uploading file...'
+      case 'processing':
+        return 'Processing bookmarks...'
+      case 'completed':
+        return 'Import completed!'
+      case 'failed':
+        return 'Import failed'
+      default:
+        return 'Preparing import...'
     }
   }
 

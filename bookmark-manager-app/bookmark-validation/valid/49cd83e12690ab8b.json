@@ -1,0 +1,30 @@
+{
+  "id": "49cd83e12690ab8b",
+  "originalBookmark": {
+    "url": "https://accelerate.masschallenge.org/dashboard/universal-navigation/getting-started/",
+    "title": "MassChallenge",
+    "addDate": "2025-02-18T18:49:21.000Z",
+    "icon": null
+  },
+  "url": "https://accelerate.masschallenge.org/dashboard/universal-navigation/getting-started/",
+  "valid": true,
+  "statusCode": 302,
+  "loadTime": 14693,
+  "error": null,
+  "metadata": {
+    "title": "Register or Login - MassChallenge",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://accelerate-assets-production.s3.amazonaws.com/static/img/favicon.ico",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/49cd83e12690ab8b-screenshot.png",
+  "timestamp": "2025-06-17T08:36:37.566Z"
+}

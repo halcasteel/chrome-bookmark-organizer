@@ -1,0 +1,30 @@
+{
+  "id": "9cf735a19a19bac7",
+  "originalBookmark": {
+    "url": "https://tv.pymnts.com/",
+    "title": "PYMNTS TV",
+    "addDate": "2025-01-28T20:56:27.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABY0lEQVQ4jaWTsWoCQRRFz+wuqzaKoIXY2KkfYFo/wVoQscsHWOZDbLYRsdFuWz/A3sZ+ibgkhbjoEnZgJkXMxMS4aHLhMQPv3Ttv7psBeASeAX1nvAJP/JH8GZE4bchkMuRyOW5BHMckSQKAA1Aul+n3+9i2jdY6lWxZFnEcMx6PiaLoQ6DRaLDdbpnP59i2DYBSyhDOoZRiMBhQq9VYrVYfAkIIDocDUkqklADU63X2+z1hGF50cTwejbB1kT2h1+vh+z7dbpd8Pv8tJ4T4utI1AcdxaLVaeJ7HcDjEdd3f664JAARBwGg0YjqdGtdvFvB9n8lkwnq9Tp2MEfjp9nK5vEo6r3UANpsN7XabYrEIQDabpVAoGLO01ux2O5IkwbIsKpUKi8UCAAFoIQTVapVSqYRSimazSafTMSdJKZnNZgRBgBCCMAzNeM1TTmtTa53qw8s/PlNsAy7wcFrvwRvgvQNMCaqd8LZxHQAAAABJRU5ErkJggg=="
+  },
+  "url": "https://tv.pymnts.com/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 18065,
+  "error": null,
+  "metadata": {
+    "title": "PYMNTS TV",
+    "description": "Banks are rushing to add merchant acquiring, betting that in-house card acceptance will lock in SMB loyalty.",
+    "keywords": [],
+    "ogImage": "https://cf-images.eu-west-1.prod.boltdns.net/v1/static/6415959430001/1c8049a2-92f4-4f52-94d0-c2fbfe8b6965/58fd936c-bb0f-47bc-8340-c3e25d408609/1280x720/match/image.jpg",
+    "favicon": "https://images.gallerysites.net/?image=https://players.brightcove.net/6415959430001/portal_assets/6415959430001-d6d0b0f0-2419-48a3-bcd4-5fb4feffd7be.pymnts-tv-logo.png&height=196&width=196",
+    "language": "en-us",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/9cf735a19a19bac7-screenshot.png",
+  "timestamp": "2025-06-17T08:40:56.152Z"
+}

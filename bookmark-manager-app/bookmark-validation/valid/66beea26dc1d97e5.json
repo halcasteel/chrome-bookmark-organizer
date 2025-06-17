@@ -1,0 +1,30 @@
+{
+  "id": "66beea26dc1d97e5",
+  "originalBookmark": {
+    "url": "https://developers.google.com/custom-search",
+    "title": "Programmable Search Engine  |  Google for Developers",
+    "addDate": "2023-05-29T10:07:56.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACu0lEQVQ4jW2TT2hcVRTGv3PfnTdv8seUqqEdk1LB5o8JWkWLwZLEpCWgImQxOxcuhCxEqwsb3AiiCxvsvm6CoAvBra5U2tKIJoWiYBsTbTNJ46Jp82dMXmbee/fcr5tJE1K/zT0Xvt/hHDifoC6SRkR8vR6Ccyc92QEARmQe1l4RkYv7vQ/g+nuc3v9AVeV+ee/o/fckn617BXsLkoP0foUkPclseSlLr1116dXfXHa7nPndVndI9u+wO/ARkr+KSNHHW9n2N5M2mbooenuRUAdTbJOwr59Nb7/jTFNzDsAygD4RWTb1Lc6KSJE1l21NfGqr334F1GrMDwyLHRwR/W+LurYOb6xVwgFoAzC+s8ITVL3lSZ9MT7q7r57g6thbTGb/3B166S+StfrHkaSS/IfkYQu4bhh7ROgQFL4zDaNlmue+kLCrB845XCsTPt8J3PRIUsfWFkF3EQLgKICnLSBNAAyzNWVt1US9OWN6HwdVkTri/a9r2NyOUcgbJCpyqif059+kAYJAVR6xAFIAwqDRWAnN+nZKjRN57GAAUcXoixbO51CpekzNeT7aDAECEEIAiUlTXfRe70nQaMqNA/6D1Q45N3cZiUtQCEN8+HoBH70R4VBzhCSjHDssBISeuBsEWLD5MLzhqNOGfM20n9F//16T38s/Yau2iuH2lwUEppbnOX39JXQVezHyTKgALDxnxJpZAYBqtfpKPp//WUTkj3uz+tnMhWB+fQGbbpueRGMukJ6W5/HJCx9r96EoIIVJkgwVCoVLQlJEhKo6boz5HAA209j9uPQL5jfK4ryi88CTPH20DwfCFgsAzrnxXC438dA5p2n6Xqau8lAOdi5AuaGq7+5lBPtUqVSeihqiMSPmhCdb62lcATGtql9GUXRzP7M3lQ8alkqlII7jYhzHxVKpFPyfBwDuA52X3jZCWVxVAAAAAElFTkSuQmCC"
+  },
+  "url": "https://developers.google.com/custom-search",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 4979,
+  "error": null,
+  "metadata": {
+    "title": "Programmable Search Engine  |  Google for Developers",
+    "description": "Build and manage a search engine for your site.",
+    "keywords": [],
+    "ogImage": "https://www.gstatic.com/devrel-devsite/prod/v7aeef7f1393bb1d75a4489145c511cdd5aeaa8e13ad0a83ec1b5b03612e66330/developers/images/opengraph/indigo.png",
+    "favicon": "https://www.gstatic.com/devrel-devsite/prod/v7aeef7f1393bb1d75a4489145c511cdd5aeaa8e13ad0a83ec1b5b03612e66330/developers/images/favicon-new.png",
+    "language": "en",
+    "author": null,
+    "canonical": "https://developers.google.com/custom-search",
+    "contentType": "website",
+    "siteName": "Google for Developers",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/66beea26dc1d97e5-screenshot.png",
+  "timestamp": "2025-06-17T05:07:55.713Z"
+}

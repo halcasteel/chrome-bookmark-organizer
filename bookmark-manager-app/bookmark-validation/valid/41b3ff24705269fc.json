@@ -1,0 +1,30 @@
+{
+  "id": "41b3ff24705269fc",
+  "originalBookmark": {
+    "url": "https://keep.google.com/",
+    "title": "Google Keep",
+    "addDate": "2021-11-23T19:57:42.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABOElEQVQ4jZWTu0oDQRSGv5ld1w0IIhibgIWdIPoINgG7FNYieQiDPoKabX0CbbUWb+U+gFhZ2CgWghJBSCKbORYzXsadxfhXM2f2fP85Z3aUCJoL9tBsMWI8RYChS5MdJefsM0GH9zGTP5UAQzIll0jQeQQotxbnGqgkLiULoCdhfhNm1+z++RQeD8EMv6HORMkZ4gFUDZaPYG7dBz+dwPUGSN8L61LZjXY5GWys0eZ3xT5AAfVWoFmnestvIQiI0mpAlP4BMEAvrwb0cvvND8Ul3P0BzKxCPA1f81VQvNoz3zJwCwLoGKaWQLt2zADebsAUpRb8CpwZSsPKMdQWbKx/B/liKTkMABCBlytIb+1+8GBjAVX/yoI3gpA7EWgKMpIQGjswXZGcAIaucs95F03nn885o8n2B3dQWu6Kjz6cAAAAAElFTkSuQmCC"
+  },
+  "url": "https://keep.google.com/",
+  "valid": true,
+  "statusCode": 302,
+  "loadTime": 7580,
+  "error": null,
+  "metadata": {
+    "title": "Sign in - Google Accounts",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": "en-US",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/41b3ff24705269fc-screenshot.png",
+  "timestamp": "2025-06-17T05:45:45.491Z"
+}

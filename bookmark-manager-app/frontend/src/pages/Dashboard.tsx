@@ -151,7 +151,8 @@ const Dashboard: React.FC = () => {
     if (socket && connected && user?.role === 'admin') {
       socket.on('orchestrator:health', (health) => {
         setOrchestratorHealth(health)
-        queryClient.invalidateQueries({ queryKey: ['orchestrator-dashboard'] })
+        // Don't invalidate queries here - we already have refetchInterval set
+        // This prevents excessive API requests when receiving WebSocket events
       })
 
       // Subscribe to orchestrator updates

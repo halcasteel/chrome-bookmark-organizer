@@ -1,0 +1,37 @@
+{
+  "id": "2e48a457858257f7",
+  "originalBookmark": {
+    "url": "https://dl.acm.org/doi/10.1145/3656409",
+    "title": "GenSQL: A Probabilistic Programming System for Querying Generative Models of Database Tables | Proceedings of the ACM on Programming Languages",
+    "addDate": "2024-07-11T03:21:59.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABqElEQVQ4ja1SPe/5YBS9T7VlMoiNQXdzTRKDUWJpP4OXuSTSiMnUXQxMNgkGu8UqxFt8AVGatFVJS0V7fwPh/2L8nenJzXnuufecC/A3CCEAQFEURVHwyyCEMAzDcRwhRBAEURQBIBgMPgW/sAEglUqtVqtareY4zv1+L5fLw+EwFov9yQy8X/F4PJlMapomy3IoFCKEZDKZxWLhum4kEjkej57nff6xLNvv93u9nqqqpmkiou/7j8fjdDrV6/XNZsNx3L/zFAoFy7JkWRYEQVGUw+HQbDYR0TCMarX6pr0WEkXRtm3f94vFoqZplUplOp1KkoSIiGhZliAIL7vfIr7vA4Druqqquq5L0/T5fN7v97fbjabpV3uAACISQrbbLUVRPM/ruj4YDHiez2azk8lkNpuFw+FWq9XtdgkhiPixaLlcNhoNXdefY3ieh4iapnU6nfF4/AzkY6vjOOv12rZtAOA4jmGYQCBgGIaiKPP5vN1um6b5JexoNDoajUql0vV6vVwukiTtdrt0Ov097GfpKZ3P53O5HAAkEgmWZd8b/x7e5/1/7x/3uNJONHiYgwAAAABJRU5ErkJggg=="
+  },
+  "url": "https://dl.acm.org/doi/10.1145/3656409",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 28899,
+  "error": null,
+  "metadata": {
+    "title": "GenSQL: A Probabilistic Programming System for Querying Generative Models of Database Tables | Proceedings of the ACM on Programming Languages",
+    "description": " This article presents GenSQL, a probabilistic programming system for querying probabilistic\ngenerative models of database tables. By augmenting SQL with only a few key primitives\nfor querying probabilistic models, GenSQL enables complex Bayesian ...",
+    "keywords": [
+      "AutoML",
+      "Bayesian data analysis",
+      "generative modeling",
+      "probabilistic programming",
+      "query language",
+      "semantics and correctness"
+    ],
+    "ogImage": "https://dl.acm.org/cms/asset/3c01edb7-46fb-4b58-a936-b79392985a62/3554317.cover.jpg",
+    "favicon": "https://dl.acm.org/pb-assets/head-metadata/favicon-32x32-1574252172003.png",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "Article",
+    "siteName": "Proceedings of the ACM on Programming Languages",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/2e48a457858257f7-screenshot.png",
+  "timestamp": "2025-06-17T07:19:08.856Z"
+}

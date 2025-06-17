@@ -1,0 +1,25 @@
+{
+  "id": "15150fce9420b337",
+  "originalBookmark": {
+    "url": "chrome-extension://fdjamakpfbbddfjaooikfcpapjohcfmg/index.html#/chrome-welcome",
+    "title": "Dashlane",
+    "addDate": "2024-03-18T23:37:46.000Z",
+    "icon": null
+  },
+  "url": "chrome-extension://fdjamakpfbbddfjaooikfcpapjohcfmg/index.html#/chrome-welcome",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 3329,
+  "error": "net::ERR_BLOCKED_BY_CLIENT at chrome-extension://fdjamakpfbbddfjaooikfcpapjohcfmg/index.html#/chrome-welcome",
+  "metadata": {
+    "title": "Dashlane",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T04:20:15.744Z"
+}

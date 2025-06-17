@@ -1,0 +1,30 @@
+{
+  "id": "328fd45b8b9eb4e8",
+  "originalBookmark": {
+    "url": "https://community.openai.com/t/i-am-getting-ratelimiterror/124977",
+    "title": "I am getting RateLimitError - API - OpenAI Developer Forum",
+    "addDate": "2023-06-09T05:30:49.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABpklEQVQ4jWXTTYjNYRQG8N+97obxNabcTMSUKJLYTqFoppEFY4GUhWi2kg020jSLWSgbpSyExYgFRj7DRLHRpMhsfEQ0PkKJaahrbJ7b/F2n3t7e8573vM/znHOYtFL2ebiMbxjHY3T430pQzmEKJjAHd/EHXViAa7iJW0l8BE2JV8qaQAVn0ILOJN6Cg/iCi5iK7WjGBozW4WzEiyRqRxvu4xW2JqalAP8qBuqHdvzAHjzCCuzHpdwvwll8xiDmYxbeY24ZfTiBU4FYwS/cw2G8ji5tGMNwaI2huYzFuFIQchw17MMbbEY39mJbxO0IpdH6b9U8monWVOcYzoXGbxzHmvhX4wGOQn+4w9pwH8GugmjdQbQOn+Lrig6a4hzGylwewHVsSilHcCg6vAzdVfhYCeyvKdsd3MbuiDcYyP1psmmhV0sfvIPZEauKhem8DzhfQHQSvViKZ0H1PTRInW8UOLdmX4+nobc8CWv5cEdxMKp4HmV7sBMX4uspxA2E1vSGAQQzUpYhPExP9Ma/DKfxNtNaH8B/R7PBOvEEP8N3CEsa4/8ChyRpMs7NTEUAAAAASUVORK5CYII="
+  },
+  "url": "https://community.openai.com/t/i-am-getting-ratelimiterror/124977",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 29463,
+  "error": null,
+  "metadata": {
+    "title": "I am getting RateLimitError - API - OpenAI Developer Community",
+    "description": "for below code: \nimport openai \nopenai.api_key =‘My_Key’ \ndf[‘embeddings’] = df.text.apply(lambda x: openai.Embedding.create(input=x, engine=‘text-embedding-ada-002’)[‘data’][0][‘embedding’]) \ndf.to_csv(‘processed/embedd&hellip;",
+    "keywords": [],
+    "ogImage": "https://us1.discourse-cdn.com/openai1/original/4X/0/4/c/04c8546833f0824a49d21f50e2b08dd44bfd3d05.png",
+    "favicon": "https://us1.discourse-cdn.com/openai1/optimized/4X/0/9/e/09e6028ae29015201ba12d4ade0ec72250797f89_2_32x32.svg",
+    "language": "en",
+    "author": null,
+    "canonical": "https://community.openai.com/t/i-am-getting-ratelimiterror/124977",
+    "contentType": "website",
+    "siteName": "OpenAI Developer Community",
+    "publishedTime": "2023-03-28T16:18:33+00:00",
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/328fd45b8b9eb4e8-screenshot.png",
+  "timestamp": "2025-06-17T05:01:56.510Z"
+}

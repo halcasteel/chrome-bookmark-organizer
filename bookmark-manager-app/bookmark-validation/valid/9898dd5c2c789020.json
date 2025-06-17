@@ -1,0 +1,30 @@
+{
+  "id": "9898dd5c2c789020",
+  "originalBookmark": {
+    "url": "https://www.google.com/finance/",
+    "title": "Google Finance - Stock Market Prices, Real-time Quotes &amp; Business News",
+    "addDate": "2022-02-24T18:47:42.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAapJREFUOI2dUjtoVFEQPTP37WbVSJL1syxEkYjGCCGFRLuABisLo7VNGlEsbKyVYGthJdhYBotARMRSxDRJwBSCIP6CP4hKNB/383bfzLF4+zOducXAvZzfnRkhif850ZZ7i+90AkFUREiKSPou23dIZUgC5uTj5eer1bWLh8/mc71OV9GthNSUEJWoQtxZevB+/dNw/uipYq+7a+ggtLVJeMzNBSTek+3ek+sLGszpbGOiljbgooHld7542iVY7ZwjAAyKoAJIiuxwsMTXfiHZoCBJLIgYk1ItefJSYqtfGFVtOcAdIcQvnm3cmgqDpb1XjuR3n/w5v1zsObS/qzD1NKbWz5/IamgSGumrce37t8LIwNvC/dc/jt0ce9StA7cfFgb7K5NjO+qGKDQjCSAiVqrsG+pfuTZ9fab48fPvy2cmXn2pZ7LVu5d2dWXgbHRSSLoZVJPFuTfl/NWl4+MHyuPDuRvTpZGD0b3JnZkIZoiCtLLQ3d2d5NwHzi5UnST5ddX+VJykmaeYtLZXg6RIGhDmDCr/jr/RfSHZwQEBFQBg82+d6O0s318OdgxGGPaYsQAAAABJRU5ErkJggg=="
+  },
+  "url": "https://www.google.com/finance/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 17466,
+  "error": null,
+  "metadata": {
+    "title": "Google Finance - Stock Market Prices, Real-time Quotes & Business News",
+    "description": "Google Finance provides real-time market quotes, international exchanges, up-to-date financial news, and analytics to help you make more informed trading and investment decisions.",
+    "keywords": [],
+    "ogImage": "https://ssl.gstatic.com/finance/favicon/finance_770x402.png",
+    "favicon": "https://www.gstatic.com/finance/favicon/favicon.png",
+    "language": "en-US",
+    "author": null,
+    "canonical": "https://www.google.com/finance/",
+    "contentType": "website",
+    "siteName": "Google Finance",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/9898dd5c2c789020-screenshot.png",
+  "timestamp": "2025-06-17T05:44:14.461Z"
+}

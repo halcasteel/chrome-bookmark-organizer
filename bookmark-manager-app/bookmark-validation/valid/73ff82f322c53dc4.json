@@ -1,0 +1,33 @@
+{
+  "id": "73ff82f322c53dc4",
+  "originalBookmark": {
+    "url": "https://www.sec.gov/about/divisions-offices/division-economic-risk-analysis/data/financial-statement-and-notes-data-set",
+    "title": "SEC.gov | Financial Statement and Notes Data Sets",
+    "addDate": "2023-06-09T14:25:00.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACZ0lEQVQ4jaWS3UvTYRzFP/v506bOTZvTlZm2qKaEFa0IjcxAQovyrTJvjPwDiiBCUAi6K7qOLoK6STBJLamkFHszmogl+UI0p+LbluY2f5t7/3WxUofeeeC5Oc95zvf7HA5sEoqNSPvbElmnWojifkta0opfr9NHESMtpbIx24bDFqapX0P/VAIAR3Z4uJy/hDoZRsfTyal6pVhnMNJSKhv32nnYpuJWRyZOtzpqkibRxf3KCepKPIz+TFsxEf8LjNk2mjsF6lu1OGO0kBSIMnAGtVx7GkAjWqkqtK3wAoC987TscsDVlhxqDMOU6c2R27AvcoAyvZkawxBXmvfhckTerBjo1PM09Sbhduroc2ZyST9ILkPUV+ZxtiifQ+IAFfphzK6duJ06nvUnolMvrm5ALPRNJRCn9AAQQGSL6CdBrSM3xYdSCLIcUDDj1xCn9PBlUgWxIaIycIXjyFKNkypKfF3cRlW2nXfP2yHo5XzGBB8WMjGIsywpZ/AFVwMW/o0kT7+M1ydyIsVCry0FSWmku6GW7hsXGA7l0eM+SJF2jBGvgcPb3RBYY+CQkqk9usiMX8WcaKTizDn6pmUetDzh3st2XMt+rp9K47GrAoBqkxOHlLz6hZTiLoU8aJJvl8zR2GYidfIXWoWAd/4FQUU8MaEsOj98ZM5awN1qC/p0GYWpK7oHVouShioX/tAAd94YmCedDuEYkiBint0Dgo/G8m/cvOjGaolfySCqymOtx+Vdu718/yHw6PNWeqcja+ZnOKgr+MOB/WGsFiWG8k/rq7wW7p5COUElRXEeSUXiyfcb6jeFvxKn6JWLIpawAAAAAElFTkSuQmCC"
+  },
+  "url": "https://www.sec.gov/about/divisions-offices/division-economic-risk-analysis/data/financial-statement-and-notes-data-set",
+  "valid": true,
+  "statusCode": 301,
+  "loadTime": 14788,
+  "error": null,
+  "metadata": {
+    "title": "SEC.gov | Financial Statement and Notes Data Sets",
+    "description": "The data sets provide the text and detailed numeric information in all financial statements and their notes extracted from exhibits to corporate financial reports filed with the Commission using eXtensible Business Reporting Language (XBRL).",
+    "keywords": [
+      "XBRL filings",
+      "SEC Markets and Data"
+    ],
+    "ogImage": null,
+    "favicon": "https://www.sec.gov/themes/custom/uswds_sec/assets/img/favicons/favicon.ico",
+    "language": "en",
+    "author": null,
+    "canonical": "https://www.sec.gov/data-research/sec-markets-data/financial-statement-notes-data-sets",
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/73ff82f322c53dc4-screenshot.png",
+  "timestamp": "2025-06-17T05:01:18.805Z"
+}

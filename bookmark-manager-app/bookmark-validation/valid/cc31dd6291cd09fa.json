@@ -1,0 +1,30 @@
+{
+  "id": "cc31dd6291cd09fa",
+  "originalBookmark": {
+    "url": "https://www.linkedin.com/learning/me/assigned?u=42751868",
+    "title": "Your Assigned Courses",
+    "addDate": "2019-09-17T12:42:58.000Z",
+    "icon": null
+  },
+  "url": "https://www.linkedin.com/learning/me/assigned?u=42751868",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 7057,
+  "error": null,
+  "metadata": {
+    "title": "LinkedIn Learning | Login",
+    "description": "LinkedIn Learning login page",
+    "keywords": [],
+    "ogImage": "false",
+    "favicon": "https://static.licdn.com/aero-v1/sc/h/al2o9zrvru7aqj8e1x2rzsrca",
+    "language": "en",
+    "author": null,
+    "canonical": "/learning-login/",
+    "contentType": "article",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/cc31dd6291cd09fa-screenshot.png",
+  "timestamp": "2025-06-17T05:25:21.051Z"
+}

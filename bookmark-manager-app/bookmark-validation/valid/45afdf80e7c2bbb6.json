@@ -1,0 +1,30 @@
+{
+  "id": "45afdf80e7c2bbb6",
+  "originalBookmark": {
+    "url": "https://earthly.dev/blog/command-line-tools/",
+    "title": "6 Command Line Tools for Productive Programmers - Earthly Blog",
+    "addDate": "2022-01-12T07:13:43.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACdUlEQVQ4jaWTwWtcZRTFf/e+b96bzGSGSWpaLRTblGDVhcRudFGlIOpKClrciHQl/gkugwvBpQhuXHQfURDRgiBIRCuiLa2EKm3UaiXRWNqmyZvpvPfucdFazcIieOAu7oVz7uFyLvxP2D+b1/VMr0eaCWgqcrvG2qUF+7S+k0ACQNhRFr3H+8cC5hyVBTG5g10fAifQ0QwW4/ZOQ38J+K2ZHuONeaPcl9i8AnVlZFcT2aPHdWSAvdNgppv1N/mmA8kWeav7G+vPjxh3nbwwLpq4LiPrlEwcm9fSx0FpaTzh49wvfWuHrmy7QW+leu2FWV65B8Yjkmd8SeJVK0DL8Uh2Og5XBaMGa7dC1cnTZy48wcGXasyU5Rf1wLDytzeGXjzUJwkc7cla9p1vat1PVkdATSIilyo87+7bNdP/eS3NnkILbnyvJTIOUVI/d698blIMw62w81puPuGHeJDCRoREZoSyzIG1jdTMr9hTvyeMhIAM3l01td0sAnVszu/qz8bYxmyFW9Eeqtv52hQ17mm6U3IQOOEEL+OUOEmBDyv8Rg1ThdRTZlFPuFmBMfCq2ovneDR8QDT7D2y8t8M5YGcJ3qRHRWJIYjToEFNta2TU3Yy6VUiZU4Xt9eZG/8eoy6/cfbrl7acNZHxEzjz72cRoqAeJ++vgcYkRgXbO8HCemA5BkZ1daqWfVkNFV+jXbVHehjN6EWM3NVuTfXbuHvCkpcsXOvlnp6ROO5Aqto77bYJkSMaC/FZGPwdyWvQ3S66XdbXSzs//UkcrCdqN9M257rOr/+4AYFl3k5O4DAz+iPv2fIEzJSg51ynWscN3fLT/hD8BI+MTtYhRJ7MAAAAASUVORK5CYII="
+  },
+  "url": "https://earthly.dev/blog/command-line-tools/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 20361,
+  "error": null,
+  "metadata": {
+    "title": "6 Command Line Tools for Productive Programmers - Earthly Blog",
+    "description": "In this article, the author shares six command-line tools that can enhance productivity for programmers. These tools include `broot` for navigating...",
+    "keywords": [],
+    "ogImage": "/blog/generated/assets/images/command-line-tools/header-800-5b28c8ae5.jpg",
+    "favicon": "https://earthly.dev/blog/assets/images/favicon.png",
+    "language": "en",
+    "author": "Adam Gordon Bell",
+    "canonical": "https://earthly.dev/blog/command-line-tools/",
+    "contentType": "article",
+    "siteName": "Earthly Blog",
+    "publishedTime": "2021-07-23T00:00:00-04:00",
+    "modifiedTime": "2023-07-14T00:00:00-04:00"
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/45afdf80e7c2bbb6-screenshot.png",
+  "timestamp": "2025-06-17T05:56:45.200Z"
+}

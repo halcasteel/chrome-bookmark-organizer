@@ -1,0 +1,25 @@
+{
+  "id": "ca91a431edb73852",
+  "originalBookmark": {
+    "url": "https://www.tetro.com.br/casa-caf%C3%A9",
+    "title": "Casa Café | TETRO",
+    "addDate": "2022-07-17T00:49:20.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABXklEQVQ4jZWSvaoCMRCFZyZxUVHRoKCwCgo21mInoha2gq/qE1gIlhbb+NMuaLMgbLFxk9wilxix0VN9ySRzMpNBrTUAGGMQEQAQ0bEFY8zbAaUU/CLycwCAM3RLC87/5fDpbsHtW/Esy4wxnPM8zznn1oGIbAqtNSISkQVjDEopC4XC51u11vaag3+H7Xa73++bzWaxWCQiIno8HkmSTCaTNE0vl0un0wnD8HA4MMbm8znNZjOl1Hg8LpfLt9sNAKbTqZRysVhEUbRerzebzfV6Xa1Wy+XyeDxyIUS/3+92u6fTKUkSIUQYhr1eTwhRr9eHw2GtVqtWq7vdjnPeaDRQKRXHcaVSOZ/PWZaVSqXBYJCmabvdjuO41WoFQXC/36MoIqLRaPRftF+ZbYiUMgiCPM8RkTFmGw0A+Hw+/Z/y/0hrzRjzo4jIXdg1zh8nxy+HX2eJ+7m/0ducfKM/aSnRXGCxd70AAAAASUVORK5CYII="
+  },
+  "url": "https://www.tetro.com.br/casa-caf%C3%A9",
+  "valid": false,
+  "statusCode": 404,
+  "loadTime": 4682,
+  "error": "HTTP 404",
+  "metadata": {
+    "title": "Casa Café | TETRO",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T05:38:40.191Z"
+}

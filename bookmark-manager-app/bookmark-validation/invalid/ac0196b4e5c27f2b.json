@@ -1,0 +1,25 @@
+{
+  "id": "ac0196b4e5c27f2b",
+  "originalBookmark": {
+    "url": "https://about.crunchbase.com/multisession-logout/",
+    "title": "Multi Session Logout - Crunchbase",
+    "addDate": "2025-02-07T07:30:05.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABvklEQVQ4jZ3TsWuTQRgG8N8lX2qjNgWp2USLCiIoVVCkCAoiohZ1FUH3oghOLg7uipN/QHUShA6Cg6tdhILQTk4OLQ5iq8Q0+Zo2OYdL0hREqAcH7909z/Pe8957YWw6RjsfEQGx8B/kbeOfAjFSCISQ4h0J9Mj1nGYrxX8TKQwSdI0VQprNFpeOc2ac9U2Khe3YvkDsMguBfJNaMx2utbgzmURqq7TaCdPn9G8QU+Z6zpEq1ycoZcQWjRZDGRdPpbN6nmrSU8h0r/w75955ntxi6QfVUaae86vBo6tMHmW8ytNZXs+xdzhpZLDZYd8eHk9x/xUfFpi+zFiFcok3n7j7kptneXabd5/JN1JNCtCJZEVKRZZWaDRYXOJnnSxjpU67zvJqwpSKidO3MFTke42ZOd4+YP4rF45x4wVrOQ+vsH+Ec4eZ+ZiwI10LodfKMaanunaSEweYnWdxmdOHqFaYOMiXb7xfYFcmhpBaOYxNxxhjqmxALWd9g5Fy8t/cYLOdPA9lVFLmGKMQgpgh9ls1MFom7KbTod1hOCOUqJQTphOFXsJeDQJbG5249cYhpDAO7A1iewI7/c5hcPEHsH+kymN6rSUAAAAASUVORK5CYII="
+  },
+  "url": "https://about.crunchbase.com/multisession-logout/",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 31221,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "Multi Session Logout - Crunchbase",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T09:28:52.361Z"
+}

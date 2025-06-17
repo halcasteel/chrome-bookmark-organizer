@@ -1,0 +1,30 @@
+{
+  "id": "96b6d133cc46c5bd",
+  "originalBookmark": {
+    "url": "http://google.com/travel/flights/saves?curr=USD&gl=br&hl=en&authuser=0&origin=https%3A%2F%2Fwww.google.com",
+    "title": "https://www.google.com/travel/flights/saves?curr=USD&amp;gl=br&amp;hl=en&amp;authuser=0&amp;origin=https%3A%2F%2Fwww.google.com",
+    "addDate": "2020-02-04T02:27:25.000Z",
+    "icon": null
+  },
+  "url": "http://google.com/travel/flights/saves?curr=USD&gl=br&hl=en&authuser=0&origin=https%3A%2F%2Fwww.google.com",
+  "valid": true,
+  "statusCode": 307,
+  "loadTime": 11775,
+  "error": null,
+  "metadata": {
+    "title": "Google Flights",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://www.gstatic.com/images/branding/product/2x/travel_flights_96dp_maskable.png",
+    "language": "en",
+    "author": null,
+    "canonical": "https://www.google.com/travel/flights/unsupported",
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/96b6d133cc46c5bd-screenshot.png",
+  "timestamp": "2025-06-17T07:27:18.006Z"
+}

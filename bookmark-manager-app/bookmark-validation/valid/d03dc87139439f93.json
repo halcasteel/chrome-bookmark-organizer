@@ -1,0 +1,30 @@
+{
+  "id": "d03dc87139439f93",
+  "originalBookmark": {
+    "url": "https://colab.research.google.com/github/pinecone-io/examples/blob/master/generation/langchain/handbook/00-langchain-intro.ipynb",
+    "title": "00-langchain-intro.ipynb - Colaboratory",
+    "addDate": "2023-06-05T04:40:51.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB3ElEQVQ4jdWSv2uTcRDGP3dp3rxNqGJaIRHFChWHIjo42kUHg0WoUKpFaglCFwWxgyBuha4iLoIIWQQVXAUpLlXwR0EHFQUJqRCt1sGqTfL2Td/3ew4mGOxf0JuOe7jn7p57YFOFGfJ/TdpA8z6DJBg2Ya8aqwZPvZDHbCUKQ46qccRgG45PYjxMKq9ljFgMtH4zMZ7si2eB3R3kdYHLDg4KTAB+x9Tl9V86s3DH3ZLli5lj0u1K3f3NvNcXfwBe4sibkBahinEaUISqGRURdq6vJPY0Fr0VazClpnbBhZIPFr1nVmckNUrRqzOCYwYYAtRgHsdwqkbBAgqNijfvGtJrwnkFDgG4kHv+JB8BpMgaio+RA5oiXE+N8VaKrPkTlONAH/1VTw5o+y5NbpBXWiJHKvzohFRctpVGCrxqNZxau80AgJXwiQmAb0A6/Kknq+e2ZJemSH+dTh83ZLxFsCDfL2UKpFwp3d/MJbPxOxNeiLHDhB4xlqLfidFGJRlFgb5XpGbYIJAFviAy2X7jmWRvPIuwq2PTwGKurL7x98WBngUybT+BlE3c1dy14ME/I91lP12cQBkQqJnxxDPmPj+n6XVlhlxsh8VJj6mVE1E8t/1GWBawDXbdfPEHbri/KuPXYrwAAAAASUVORK5CYII="
+  },
+  "url": "https://colab.research.google.com/github/pinecone-io/examples/blob/master/generation/langchain/handbook/00-langchain-intro.ipynb",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 20662,
+  "error": null,
+  "metadata": {
+    "title": "Google Colab",
+    "description": null,
+    "keywords": [],
+    "ogImage": "https://colab.research.google.com/img/colab_favicon_256px.png",
+    "favicon": "https://ssl.gstatic.com/colaboratory-static/common/0e2cf93c8154467de61b9971d09ea862/img/favicon.ico",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "article",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/d03dc87139439f93-screenshot.png",
+  "timestamp": "2025-06-17T05:10:29.212Z"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "bf2a2ef5aaaf3bff",
+  "url": "http://localhost:8080/v1/objects?class=DocumentChunk&filter={%22path%22:[%22chunk_id%22],%22operator%22:%22Equal%22,%22valueInt%22:1}",
+  "title": "localhost:8080/v1/objects?class=DocumentChunk&amp;filter={&quot;path&quot;:[&quot;chunk_id&quot;],&quot;operator&quot;:&quot;Equal&quot;,&quot;valueInt&quot;:1}",
+  "addDate": "2024-10-30T03:34:18.000Z",
+  "icon": null,
+  "status": "pending",
+  "createdAt": "2025-06-17T01:54:29.979Z"
+}

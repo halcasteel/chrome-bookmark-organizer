@@ -1,0 +1,30 @@
+{
+  "id": "6b00f26cf80899a0",
+  "originalBookmark": {
+    "url": "https://developers.google.com/drive/api/v3/reference/files/list",
+    "title": "Files: list  |  Google Drive API  |  Google Developers",
+    "addDate": "2021-12-07T19:03:05.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACMElEQVQ4jaWTS0iUURTHf+d+M85oOb4SQ6OFYAbRgxbRpkUPKYwUsSDoSVDroEVtaykE1aKoFpERBLqIQIsWBomCjRYRQZTRJtQWSSYz+Zjv/lt8nw+QatGBwz333vO65/+/SKqQ1CXJSwrj9U+y3KdLUgWxIUmFfwQvT1KI7S6TJMADFqsUFgzAXICAUB6AhAu04BOrMym+lQxJOGf8RbwkMzOLEmCSvPcyzOQMEzDT8xiAdHMrAPc/9mHAqQ17wAwvCWTOnMx7L7Ooq5mRYXKddygMDVCY/UXdo2cM1aTZ2XkOS6ZoWreNS9sPs7tuy0I3OBBjY9O8udbJ3PmT2GAfoTlKmg6i2lrqS6pobdiFmXj+9S0tvVc48+I6X35+i4aWn/U6fXOa8Yk8e3MDHJ3uofH4IdjXRggsjO3B5ywd2bu8n86j+RwN5WsZbr9KInCQWZ3gU1EZveVtvE43c6SymPY5UVwkvDko5DiR6qe55ik3EpXc/l5FY2YTySDA5L2m8uLh4DxPhmeZzBvyns3rAzqOraIqNc589gDhj3ekHVgqyUTNBaobLhIky4iHGEE0OuG593KO/g8hgfPcOltKY+kIcwM7cADVLVj9ZRKZrTHyPoJRkgmTMxkYr0YLZEqMjbUOYWgqC/OTuDX7I/AVCpyZmZaIBCYQEU/iCmAIFvfClg4WibSCymH8KlvkZFTDbCWVHdANuNhLgAXOcM4wW9AAs4BlwT6O6eZ/v/Nvwwmu1r04AVkAAAAASUVORK5CYII="
+  },
+  "url": "https://developers.google.com/drive/api/v3/reference/files/list",
+  "valid": true,
+  "statusCode": 301,
+  "loadTime": 6832,
+  "error": null,
+  "metadata": {
+    "title": "Method: files.list  |  Google Drive  |  Google for Developers",
+    "description": null,
+    "keywords": [],
+    "ogImage": "https://www.gstatic.com/devrel-devsite/prod/v7aeef7f1393bb1d75a4489145c511cdd5aeaa8e13ad0a83ec1b5b03612e66330/developers/images/opengraph/white.png",
+    "favicon": "https://www.gstatic.com/devrel-devsite/prod/v7aeef7f1393bb1d75a4489145c511cdd5aeaa8e13ad0a83ec1b5b03612e66330/developers/images/favicon-new.png",
+    "language": "en",
+    "author": null,
+    "canonical": "https://developers.google.com/workspace/drive/api/reference/rest/v3/files/list",
+    "contentType": "website",
+    "siteName": "Google for Developers",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/6b00f26cf80899a0-screenshot.png",
+  "timestamp": "2025-06-17T05:49:34.404Z"
+}

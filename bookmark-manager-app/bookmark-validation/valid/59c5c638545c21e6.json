@@ -1,0 +1,30 @@
+{
+  "id": "59c5c638545c21e6",
+  "originalBookmark": {
+    "url": "chrome://newtab/",
+    "title": "Intranet",
+    "addDate": "2022-05-02T21:59:37.000Z",
+    "icon": null
+  },
+  "url": "chrome://newtab/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 9603,
+  "error": null,
+  "metadata": {
+    "title": "New Tab",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/59c5c638545c21e6-screenshot.png",
+  "timestamp": "2025-06-17T06:34:53.400Z"
+}

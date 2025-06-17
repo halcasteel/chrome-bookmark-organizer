@@ -1,0 +1,30 @@
+{
+  "id": "85b4752b834bcd12",
+  "originalBookmark": {
+    "url": "https://medium.com/mlearning-ai/using-chatgpt-api-to-ask-contextual-questions-within-your-application-a80b6a76da98",
+    "title": "Using ChatGPT API to ask contextual questions within your application | by Sriram Parthasarathy | MLearning.ai | Medium",
+    "addDate": "2023-06-08T06:57:01.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABk0lEQVQ4jaWTsYoiQRCGv+7emUFBmER8BF/AAwNfwFARFBTBSJjAVDQQzIwW7kEMRjAwMxBMDQ18ABMzA2HsrQscG9275WS3oGn4q/7qv6v/BngHEsACH4D8Z32ktVfgXaUg6a54LVytfuisjDH3ZhhjnhjGmDt2JwsgKpWkvqlA9ANJ9ft94jhmuVwyHA7JZrOO0Ww2GQwGAPi+r9KcQiklQRDIfD6Xz7HdbiWTyUipVHJYq9WSTqcj4/FYAHkTERqNBvV6nSRJUOom6Hq9Ui6XiaKIfD6PiGCtpd1uczweCcMQgDeAarWKtdYNSymFUgprLbVajfP57HLFYvFpyBrA8zx38mMopTDGoLV+wkTcY90arFYrtNZOprWWJEnQWrNYLNjtdi53OBw4nU5cLhfXUXzflziO/xrifr+XMAylUqk4rNvtSq/Xk8lkcvfPzRBBEMhoNJL1ei2bzUZms5kUCgVn4SiKZDqdiud5EgSB5HK514z0+c7/MhJfWfmR/IWV+amVMUAI/HpU/QJZ0i/9+w8yEPFCQJmzEwAAAABJRU5ErkJggg=="
+  },
+  "url": "https://medium.com/mlearning-ai/using-chatgpt-api-to-ask-contextual-questions-within-your-application-a80b6a76da98",
+  "valid": true,
+  "statusCode": 302,
+  "loadTime": 27931,
+  "error": null,
+  "metadata": {
+    "title": "Using ChatGPT API to ask contextual questions within your application | by Sriram Parthasarathy | Medium",
+    "description": "This article walks through how to use ChatGPT API to have a conversation by asking contextual questions. We will go through step by step instructions including sample code on how to ask contextual…",
+    "keywords": [],
+    "ogImage": "https://miro.medium.com/v2/da:true/resize:fit:609/0*y-MY9WIyn7CMBpi-",
+    "favicon": "https://miro.medium.com/v2/5d8de952517e8160e40ef9841c781cdc14a5db313057fa3c3de41c6f5b494b19",
+    "language": "en",
+    "author": "Sriram Parthasarathy",
+    "canonical": "https://medium.com/@busterram/using-chatgpt-api-to-ask-contextual-questions-within-your-application-a80b6a76da98",
+    "contentType": "article",
+    "siteName": "Medium",
+    "publishedTime": "2023-03-14T17:34:29.348Z",
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/85b4752b834bcd12-screenshot.png",
+  "timestamp": "2025-06-17T05:08:19.772Z"
+}

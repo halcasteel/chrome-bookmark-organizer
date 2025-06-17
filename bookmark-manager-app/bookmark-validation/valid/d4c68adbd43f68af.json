@@ -1,0 +1,30 @@
+{
+  "id": "d4c68adbd43f68af",
+  "originalBookmark": {
+    "url": "https://www.sciencedirect.com/science/article/pii/S0923753420360580",
+    "title": "Sensitive and specific multi-cancer detection and localization using methylation signatures in cell-free DNA - ScienceDirect",
+    "addDate": "2022-05-09T15:21:50.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABpUlEQVQ4jZWSPWsUYRSFn/POxLhO4iYkIRg0H6QQtNCUooVWdmKliI3/wMZaJtEUkt5SrK1iZWGzXboFO0EhayExLGqhs8OanfdYmF02oLI55eXwnHu4V84JZbJ0OxJWg921VRr3JAuUMiy7IoQrtouJx62HACmAUVSkbjGDfEtwBrQraQdHDwAB274q601/lConQmsb2PbWfFaUtYuCBXCzVi0/gEbsm5UTi42VTfD0AHBkxSIxoe+WoRH/BAy1wB+Ay38HjKAQem8dk3fHBtio3Dy7UOulX5W3Pg+AI0evX8gc06c/YHl4/O8NzGKhpXuddUWES8pZYE2JNRoAzkm6azCAIAPqruRh038A2jk1ldxnvB7Zm3RnbHeOSi8VYjIaQI58+3jQP6Pz6+2OWs/xWHvUCkd5eaMHvAYonyytxIrpLP/UPPYfAFToTgh0geboZzyUt+YzmRuYfTis0H52fjI7KE4XvXROMAEgM9sJi2s/N9JfgxqB8bKM14BLVWAPIPUrks777iOT3lTgJHgG9MWwisILOVaD+MgJwxTwHbwP8Btw6KpFvWuj3wAAAABJRU5ErkJggg=="
+  },
+  "url": "https://www.sciencedirect.com/science/article/pii/S0923753420360580",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 16722,
+  "error": null,
+  "metadata": {
+    "title": "Sensitive and specific multi-cancer detection and localization using methylation signatures in cell-free DNA - ScienceDirect",
+    "description": "Early cancer detection could identify tumors at a time when outcomes are superior and treatment is less morbid. This prospective case-control sub-stud…",
+    "keywords": [],
+    "ogImage": "https://ars.els-cdn.com/content/image/1-s2.0-S0923753420X00093-cov150h.gif",
+    "favicon": "https://sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/103/images/favSD.ico",
+    "language": "en-US",
+    "author": null,
+    "canonical": "https://www.sciencedirect.com/science/article/pii/S0923753420360580",
+    "contentType": "article",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/d4c68adbd43f68af-screenshot.png",
+  "timestamp": "2025-06-17T06:36:54.091Z"
+}

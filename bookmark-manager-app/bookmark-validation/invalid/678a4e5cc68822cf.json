@@ -1,0 +1,25 @@
+{
+  "id": "678a4e5cc68822cf",
+  "originalBookmark": {
+    "url": "https://suitesuccess.publishpath.com/Default.aspx?shortcut=assets",
+    "title": "SuiteSuccess Assets | SuiteSuccess",
+    "addDate": "1970-01-01T00:00:00.000Z",
+    "icon": null
+  },
+  "url": "https://suitesuccess.publishpath.com/Default.aspx?shortcut=assets",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 32211,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "SuiteSuccess Assets | SuiteSuccess",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T05:24:25.178Z"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "3f0ba7c0d7517266",
+  "originalBookmark": {
+    "url": "https://48north.com/magazine/",
+    "title": "48° North Magazine - 48° North",
+    "addDate": "2023-01-05T06:16:01.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABb0lEQVQ4jaXTPUjVYRQG8N/fe9HcLC3SiMYg0cQIaqpWoaE1iGiLlj4Gw63FxaZwbgpsEBRpiCCIJPAD+iCDICKKhoigD6slP27Dff5xvWgEneWc85yXc57nfc9b2GgV1LCevAVF4vXUiuCw5n+t0pSfRA/eJj+EqziK11hGBy7iMJZKmnAwFO825N+C1fAEnbiJKUxjopoiXI7/Hn9OXW8/9mMSp9GN62jHjbLBAIbwEdvSYC8eh+YSPgd/jmtYwWw14AgWorEn2DNcQW8YbMcLjOM8VnGrQB/mcQIXsC/xLjxtaHgvl3wGbZHQWsUo5rCI4YY7OY4dmEFXZB5I0534IftSw3s8xKcULuF+mgr9ZYxpsha8xK9Qb0NrJnbgTc59wQfsVn+ZSnwhWtrTbBoPUriDr5FyNkxHGgZvajOYTXxMfSfKRXqFPamV/+NPUOTQEVTxKPggTuEnbuPdVpM3s+JfsGag1Pa377zBfgP3xVTwkdweBAAAAABJRU5ErkJggg=="
+  },
+  "url": "https://48north.com/magazine/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 16246,
+  "error": null,
+  "metadata": {
+    "title": "48° North Magazine - 48° North",
+    "description": "48° North publishes stories about sailing and boating in the Pacific Northwest. In print and online, articles inspire, entertain, and inform.",
+    "keywords": [],
+    "ogImage": "https://48north.com/wp-content/uploads/2020/04/April-2020-Cover-Photo.jpg",
+    "favicon": "https://48north.com/wp-content/uploads/2024/05/cropped-logo-48-north-32x32.png",
+    "language": "en-US",
+    "author": null,
+    "canonical": "https://48north.com/magazine/",
+    "contentType": "article",
+    "siteName": "48° North",
+    "publishedTime": null,
+    "modifiedTime": "2025-05-30T16:36:21+00:00"
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/3f0ba7c0d7517266-screenshot.png",
+  "timestamp": "2025-06-17T05:19:37.714Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "ae9986628ffc3d68",
+  "originalBookmark": {
+    "url": "https://www.kwglobalsolutions.com/",
+    "title": "Home | My Site",
+    "addDate": "2024-09-13T19:08:25.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAHUlEQVQ4jWP8//8/IwMFgIkSzaMGjBowasBgMgAAZ6YDHjftVz8AAAAASUVORK5CYII="
+  },
+  "url": "https://www.kwglobalsolutions.com/",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 31033,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "Home | My Site",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T07:09:54.121Z"
+}

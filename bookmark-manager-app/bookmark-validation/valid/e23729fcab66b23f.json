@@ -1,0 +1,44 @@
+{
+  "id": "e23729fcab66b23f",
+  "originalBookmark": {
+    "url": "https://apps.apple.com/app/apple-store/id719765848",
+    "title": "Connecting to Apple Music.",
+    "addDate": "2024-12-27T14:30:09.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABwUlEQVQ4jZVSMWgUURB98/9uLnEPr0iOEzUYvURCiGAjWomdCNZ2lsK1ViKCVhYWdja2FopoZSlBA0FIIxaCCkEkRxLOkHDi3ebu/uz/zyIx7t5VDq+ZmfcYZubJ8Q8Z/iciKIdKJA5LRkYFriAgcGXKzEygNUCthBebQUNRIFrIA7E4gdtz1gV8+hVerUM98mMMHKF/4SjKN83Q6rFk8Ox7SHuUImF4BxKVBEmE5VbY6AQ7sqGBIo/xgFuzFsTbpr93LjpVkuCYJxg4HsIPeLkq107al2v+YyvMH5WbdWMVeY4RJZQ245jnsRiNhWh7j6+/ZRvt8K7pb9TthUmJPWNPKEUpJ56k5TG5cymenzRHYixOmXafa212HZebvnE+zojNDvcyPlrVrzvBwAGOQQnPbo8r6/7Lz+CViUWvh+efs9MVOVMRr6CjKCJRpoqH713jYlwry+MV7TruHz4LqCZyfdZ64v7SYKtDAxgoqUwEV+vRONBNqX26Pl2fwXFrNzxddbVEZsrCAaGU6QcdAlZwtmq2u9xJmfcPiVKEuar5sRtSBxHI9N3f+z1PGEBG3EYgEEYODPLv03aYeRBSbP0B7HEXjgJCwaYAAAAASUVORK5CYII="
+  },
+  "url": "https://apps.apple.com/app/apple-store/id719765848",
+  "valid": true,
+  "statusCode": 301,
+  "loadTime": 12957,
+  "error": null,
+  "metadata": {
+    "title": "Time Buddy - Easy Time Zones on the App Store",
+    "description": "World Time Buddy is a popular visual world clock, time zone converter and scheduler. Millions of people rely on our app and website to schedule calls, meetings…",
+    "keywords": [
+      "Time Buddy - Easy Time Zones",
+      "Helloka",
+      "Productivity",
+      "Business",
+      "ios apps",
+      "app",
+      "appstore",
+      "app store",
+      "iphone",
+      "ipad",
+      "ipod touch",
+      "itouch",
+      "itunes"
+    ],
+    "ogImage": "https://is1-ssl.mzstatic.com/image/thumb/Purple114/v4/97/43/b1/9743b12d-6a0b-35c1-1aac-1ed9a6af8fbd/AppIcon-1x_U007emarketing-0-6-0-85-220.png/1200x630wa.png",
+    "favicon": "https://apps.apple.com/assets/images/favicon/favicon-apps-48-fad34e0d87e86dcf72ded1faff4ba9d0.png",
+    "language": "en-US",
+    "author": null,
+    "canonical": "https://apps.apple.com/us/app/time-buddy-easy-time-zones/id719765848",
+    "contentType": "website",
+    "siteName": "App Store",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/e23729fcab66b23f-screenshot.png",
+  "timestamp": "2025-06-17T07:52:09.684Z"
+}

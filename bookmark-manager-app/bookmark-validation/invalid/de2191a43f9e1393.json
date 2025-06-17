@@ -1,0 +1,25 @@
+{
+  "id": "de2191a43f9e1393",
+  "originalBookmark": {
+    "url": "https://refjava.us.oracle.com/usre/CorpServ/Incident.htm",
+    "title": "Safety Incident Report",
+    "addDate": "2021-02-03T14:33:48.000Z",
+    "icon": null
+  },
+  "url": "https://refjava.us.oracle.com/usre/CorpServ/Incident.htm",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 1790,
+  "error": "net::ERR_NAME_NOT_RESOLVED at https://refjava.us.oracle.com/usre/CorpServ/Incident.htm",
+  "metadata": {
+    "title": "Safety Incident Report",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T05:32:08.715Z"
+}

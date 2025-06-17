@@ -1,0 +1,25 @@
+{
+  "id": "d099bf5072be1fb3",
+  "originalBookmark": {
+    "url": "https://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000",
+    "title": "PlantUML Web Server",
+    "addDate": "2024-09-29T06:15:07.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACi0lEQVQ4jZ2SW0hTARjH/+dsKme65X06Hbaal8RLKpsGJU3yoYJCJOkCXZ70KYx8i4oiKQpCurB8DF8UIpJAH8phKuiWOPGCMp3mVu3Y3OZ2nJftbF9PiaQP2ff0/R6+H3/4/sB/jNlsvjAwMHCdiCSS/R7P2L/ndX/qb9Wo0vlgMBhl9ytgWZadiD/qXvYJsQBeSPcrAAApFx9W52VuqbNSSvadYFeinUBEkr32vXiXwNze2fi2+sqw4HKlEf1K8A40d/80t7UCgMVi1VXl109ZLFbd3wIGAPpaX9+3Pe24l5SbwyJRNlnVJK7nKOYrKd2A0TlJZ8ONobPra1tyeaLMd/dNS3NvKPPMLZ1ivDAr5ZHkw82HRofxfUucXMZo62uhLC1QWp73ZuecM4DTnodK7ivyOr7GlRoa4PetcR+7+mrTinOXjhcof6QpZDUSt+bUyzy77QATEhlxYxN+uxMBmwf2wQXklK+BE/phKI/CNu+ENLkc1uHp2GXzqLqo7OBqYYGmiLXn6zF26eJImEHUMzUP99gMACDCZcC3FQNENgAAumo9vvSNAABksVKpVp1xGgBYFohsHatZ9DRd7QqDIgDA6QuEut72aNJhPaJRwmzcNX9F3QOospXIUKesvTO1hU+crEwCAInx8R1+zhfOP1JVNshlJswmJHP5dR3PZPGKxBj/qi8c4Cq8Gt3lZIZh4Fhy+p+8us1qczVyhmEQCoUIAPB5/JvBOLTYOO0SCnmenwuFQmQymSgSiRARkdVqJZfLtc09PT0kiiIFAgFx+5+TC86SCae3mOf5OSIij8dDf0YQBNrc3NzmlZUVIiIKBAIis7MUDodbJYpCf2pq6qF/qXEwGBR/A/UdQ5762m8GAAAAAElFTkSuQmCC"
+  },
+  "url": "https://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 32056,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "PlantUML Web Server",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T07:07:24.778Z"
+}

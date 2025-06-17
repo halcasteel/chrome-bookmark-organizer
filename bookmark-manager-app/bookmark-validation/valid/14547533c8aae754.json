@@ -1,0 +1,30 @@
+{
+  "id": "14547533c8aae754",
+  "originalBookmark": {
+    "url": "https://www.office.com/?auth=1",
+    "title": "Home | Microsoft 365",
+    "addDate": "2024-10-21T08:05:04.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACnklEQVQ4jXVTS0hVURRd+5xz7/ukz+dLUUuCIisqggiiwKBJIAXZzAipSYMI+hCRUtSsj9GgZjUoKipslEqZ0G/iJBxEIERkWETwrFC73nfvPfdzdoPn51G2J+fsw16LxV5nEf5TO4++aZR1hQ6Ry8Ao1fvq5KqJxebo74fBY59Sn7P6xJPJb+eoaVlO5jOgjHKQkheFG954frxFV86LyubhhfH2UsEe/To90aPjKAdmgAgQlCMletBUNbp7oNheiVEAcLn7a22txY8iUJsCEEQaMAzwrEZFIEuALFpNturb83pyCJY48GxHfkoAgLSSKxrcpsHQDDADzLMXUQYjJUFpVT5t2SYseWVegQ9qTQAYZoCAGAAbFJGYxyQJlFYdIqsakVGglAApAVKytYLAqAiEGGXl+apCnxkbO/TqwRYHAPYO/zxvxn/cpzXL9yFrgSQBQsj5JbqG4TLDYcY0GDX5xpG3zzuduUUNtNbPFO4+HUldvQfxYQyUVaCMWnDBBeCgDP7FBkVO6v62tzpbU1/wJHK3hqCu9YI8b4FghhkOG0yxQZENPiZh56Yz75vnwD2HB5vzVbWdNUtqUKiuQ/24g6rbLxZsLIHjhBk+GzhxiJnQq3f96ZF8x92zN1u2YcqZvAQWdb72oOIIKctG5stMMk/wG8mwG8fr3ciH7zsIvSmsU6rx0Nqtd2wSSNs24jhdliw0ojiCSuLheYLvJuqWgbPCL022NZgYB1duwPalzSj5Jbi+C0sq2JaNxJjy/ycaKkF3/5OFdzd1u5Lqmo7C1UEYwAt8eNqDF/jwtY8gDMZ0pE+furWrf9EsbD6S6k/7YmPCSZcxxmEwCAQhpCOl7ErI3VgJXjSNc/Xy+kRDHIT7tQ4BTb3tlxaP8x97Sy5AI5MhAwAAAABJRU5ErkJggg=="
+  },
+  "url": "https://www.office.com/?auth=1",
+  "valid": true,
+  "statusCode": 302,
+  "loadTime": 6137,
+  "error": null,
+  "metadata": {
+    "title": "Sign in to your Microsoft account",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://logincdn.msauth.net/16.000.30647.2/images/favicon.ico",
+    "language": "EN-US",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/14547533c8aae754-screenshot.png",
+  "timestamp": "2025-06-17T07:04:41.401Z"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "e99e89960fb05889",
+  "originalBookmark": {
+    "url": "https://az1.ai/",
+    "title": "Privacy error",
+    "addDate": "2025-02-07T07:30:05.000Z",
+    "icon": null
+  },
+  "url": "https://az1.ai/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 6997,
+  "error": null,
+  "metadata": {
+    "title": "AZ1.AI - Agentic Systems Development & Deployment",
+    "description": "AZ1.AI - Agentic system development and deployment services",
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://az1.ai/favicon.svg",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/e99e89960fb05889-screenshot.png",
+  "timestamp": "2025-06-17T09:27:42.941Z"
+}

@@ -377,7 +377,7 @@ const Settings: React.FC = () => {
                   <VStack align="stretch" spacing={4}>
                     <Text fontSize="lg" fontWeight="medium">Resources</Text>
                     <VStack align="stretch" spacing={2}>
-                      <Link href="https://github.com/yourusername/bookmark-manager" isExternal color="brand.500">
+                      <Link href={import.meta.env.VITE_GITHUB_REPO_URL || "https://github.com/halcasteel/chrome-bookmark-organizer"} isExternal color="brand.500">
                         GitHub Repository
                       </Link>
                       <Link href="/docs" color="brand.500">

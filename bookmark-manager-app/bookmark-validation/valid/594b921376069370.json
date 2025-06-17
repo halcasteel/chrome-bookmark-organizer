@@ -1,0 +1,30 @@
+{
+  "id": "594b921376069370",
+  "originalBookmark": {
+    "url": "chrome://bookmarks/",
+    "title": "Bookmarks",
+    "addDate": "2025-01-13T04:00:45.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA0UlEQVR42mOgKVAofSUBwmQbIFX8sg6EydJsPPM/q3Txy2fSJS+fgtik2176Klyq+MV/EAaxidKk3fCfTab6jbRUxStD6ZIXJ2AGgNggMZAcSA2GRpmyN2Yg50I0EMYgtSA9KIbIFr8xBQbYC0KaQWpAarFHW8V7BamSF9dwaQbJgdTgDQfZ0pfKuAwAyREO/ZLXvrgMAMkRk3g6ERpengVjhP87CRoADOGjQPweGPfZDQ3/mUAYxAaJgeQIpgOgopnKJZ/F0OVAYiA5cDoYVAAAobHQtwJezwUAAAAASUVORK5CYII="
+  },
+  "url": "chrome://bookmarks/",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 6968,
+  "error": null,
+  "metadata": {
+    "title": "Bookmarks",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/594b921376069370-screenshot.png",
+  "timestamp": "2025-06-17T08:12:56.778Z"
+}

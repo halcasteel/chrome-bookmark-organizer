@@ -1,0 +1,30 @@
+{
+  "id": "291a562305f11bd2",
+  "originalBookmark": {
+    "url": "https://www.keh.com/sell/reversecheckout/order/quotes",
+    "title": "My Quotes",
+    "addDate": "2022-11-28T01:29:48.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAA3klEQVQ4jc2RMUvDcBTEfy95TaM4OAsKLg46OAjGQOeYxc3N2dEP4LcTOgrSRdzcnFzEQtNI8j+HiCaCYLfedAfvuOOevV/nrIJopeu1N0hIP7xPviXEtye7SLa1nUwuUIj3DrRcjM+vop19FnPPCuZvo7MyvL7wscSsS5ClG56X48sbQrAkjY8nSMQ+Oi08Lz0rLN0E9SsZIQDxYYY7Em2DhAJ11a/k3bXqqnm4a58f/Sgj8vbp3pIUqZlNm9mUKFZdgQE2+LREV9LAvjJ/wQfKrCuKBsv8Mev/sIaGT4jvVWnfbLWSAAAAAElFTkSuQmCC"
+  },
+  "url": "https://www.keh.com/sell/reversecheckout/order/quotes",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 21038,
+  "error": null,
+  "metadata": {
+    "title": "My Quotes",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://www.keh.com/static/version1749971834/frontend/Keh/hyva/en_US/Magento_Theme/favicon.ico",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/291a562305f11bd2-screenshot.png",
+  "timestamp": "2025-06-17T05:33:08.057Z"
+}

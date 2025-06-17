@@ -10,6 +10,7 @@ import pg from 'pg';
 import Redis from 'ioredis';
 import { io } from 'socket.io-client';
 import { createWriteStream } from 'fs';
+import unifiedLogger from './backend/src/services/unifiedLogger.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -44,51 +45,35 @@ class Logger {
   }
 
   async initLogFile(name, filePath) {
-    const stream = createWriteStream(filePath, { flags: 'a' });
-    this.logStreams[name] = stream;
-    stream.write(`\n${'='.repeat(80)}\n`);
-    stream.write(`Session started at ${new Date().toISOString()}\n`);
-    stream.write(`${'='.repeat(80)}\n\n`);
+    // No longer creating separate log files - everything goes to unified.log
+    unifiedLogger.info(`Starting ${name} service`, {
+      service: 'startup',
+      source: 'init',
+      serviceName: name
+    });
   }
 
   log(level, message, details = null) {
-    const colorMap = {
-      info: this.colors.blue,
-      success: this.colors.green,
-      error: this.colors.red,
-      warn: this.colors.yellow,
-      debug: this.colors.dim,
+    // Map our custom levels to Winston levels
+    const levelMap = {
+      success: 'info',
+      debug: 'debug',
+      info: 'info',
+      warn: 'warn',
+      error: 'error'
     };
 
-    const prefix = {
-      info: '[INFO]',
-      success: '[OK]',
-      error: '[ERROR]',
-      warn: '[WARN]',
-      debug: '[DEBUG]',
-    };
-
-    const timestamp = this.timestamp();
-    const color = colorMap[level] || '';
-    const prefixText = prefix[level] || '[LOG]';
-
-    // Console output with color
-    console.log(`${this.colors.dim}${timestamp}${this.colors.reset} ${color}${prefixText}${this.colors.reset} ${message}`);
+    const winstonLevel = levelMap[level] || 'info';
     
-    if (details) {
-      const lines = details.split('\n');
-      lines.forEach(line => {
-        console.log(`${this.colors.dim}         └─${this.colors.reset} ${line}`);
-      });
-    }
+    // Create context object for unified logger
+    const context = {
+      service: 'startup',
+      source: 'start-services',
+      details: details
+    };
 
-    // Write to all log files
-    Object.values(this.logStreams).forEach(stream => {
-      stream.write(`${timestamp} ${prefixText} ${message}\n`);
-      if (details) {
-        stream.write(`         Details: ${details}\n`);
-      }
-    });
+    // Use unified logger
+    unifiedLogger.log(winstonLevel, message, context);
   }
 
   section(title) {
@@ -115,30 +100,31 @@ class Logger {
     const message = data.toString().trim();
     if (!message) return;
 
-    const stream = this.logStreams[name];
-    if (stream) {
-      stream.write(`[${type}] ${message}\n`);
-    }
+    // Log to unified logger based on content and type
+    const context = {
+      service: name.toLowerCase(),
+      source: 'process-output',
+      stream: type
+    };
 
-    // Smart console output based on content
     if (type === 'stderr') {
       if (message.toLowerCase().includes('error')) {
-        this.log('error', `${name}: ${message}`);
+        unifiedLogger.error(message, null, context);
       } else if (message.toLowerCase().includes('warn')) {
-        this.log('warn', `${name}: ${message}`);
+        unifiedLogger.warn(message, context);
       } else {
-        this.log('debug', `${name} stderr: ${message}`);
+        unifiedLogger.debug(message, context);
       }
     } else {
       // stdout - look for important messages
       if (message.includes('Server running') || message.includes('listening')) {
-        this.log('success', `${name}: Server is running`);
+        unifiedLogger.info(`Server is running`, { ...context, message });
       } else if (message.includes('Connected to')) {
-        this.log('info', `${name}: ${message}`);
+        unifiedLogger.info(message, context);
       } else if (message.includes('ready in') || message.includes('Local:')) {
-        this.log('success', `${name}: Ready - ${message}`);
+        unifiedLogger.info(`Ready - ${message}`, context);
       } else {
-        this.log('debug', `${name}: ${message}`);
+        unifiedLogger.debug(message, context);
       }
     }
   }
@@ -546,6 +532,62 @@ async function startFrontend() {
   return true;
 }
 
+async function startWorkers() {
+  log.section('Background Workers');
+  
+  const workersPath = path.join(__dirname, 'backend');
+  await log.initLogFile('workers', path.join(config.logDir, 'workers.log'));
+  
+  // Load .env file to get all environment variables including OPENAI_API_KEY
+  const dotenv = await import('dotenv');
+  const envConfig = dotenv.config({ path: path.join(__dirname, '.env') });
+  
+  const env = {
+    ...process.env,
+    NODE_ENV: 'development',
+    DATABASE_URL: `postgresql://${config.postgres.user}:${config.postgres.password}@${config.postgres.host}:${config.postgres.port}/${config.postgres.database}`,
+    REDIS_URL: `redis://${config.redis.host}:${config.redis.port}`,
+    // Explicitly pass the OpenAI key from the root .env file
+    OPENAI_API_KEY: process.env.OPENAI_API_KEY,
+    OPENAI_CATEGORIZATION_ENABLED: process.env.OPENAI_CATEGORIZATION_ENABLED || 'true',
+  };
+  
+  log.log('info', 'Starting background workers for import processing...');
+  log.log('debug', `OpenAI API Key configured: ${env.OPENAI_API_KEY ? 'Yes' : 'No'}`);
+  
+  const workersProcess = spawn('node', ['src/workers/index.js'], {
+    cwd: workersPath,
+    env,
+    stdio: ['ignore', 'pipe', 'pipe']
+  });
+  
+  workersProcess.stdout.on('data', data => log.streamLog('workers', 'stdout', data));
+  workersProcess.stderr.on('data', data => log.streamLog('workers', 'stderr', data));
+  
+  workersProcess.on('error', error => {
+    log.log('error', 'Failed to start workers process', error.message);
+  });
+  
+  // Give workers time to initialize
+  await new Promise(resolve => setTimeout(resolve, 3000));
+  
+  // Check if workers started successfully
+  try {
+    // Workers don't have an HTTP endpoint, so we just check if the process is running
+    if (workersProcess.pid) {
+      log.log('success', 'Background workers started successfully');
+      log.log('info', 'Workers are processing: validation, enrichment, categorization');
+      return true;
+    } else {
+      log.log('error', 'Workers process failed to start');
+      return false;
+    }
+  } catch (error) {
+    log.log('error', 'Failed to verify workers status', error.message);
+    return false;
+  }
+}
+
 async function verifyServices() {
   log.section('Service Verification');
   
@@ -581,33 +623,71 @@ async function verifyServices() {
     }
   }
   
-  // WebSocket
+  // WebSocket - First get a valid JWT token for authentication
   log.log('info', 'Testing WebSocket connection...');
-  const wsTest = await new Promise((resolve) => {
-    const socket = io(`http://${config.backend.host}:${config.backend.port}`, {
-      transports: ['websocket'],
-      timeout: 5000,
+  let wsTest = false;
+  
+  try {
+    // First, authenticate to get a token
+    const authResponse = await fetch(`http://${config.backend.host}:${config.backend.port}/api/auth/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: 'admin@az1.ai',
+        password: 'changeme123'
+      })
     });
     
-    const timeout = setTimeout(() => {
-      socket.disconnect();
-      log.log('error', '✗ WebSocket: Connection timeout');
-      resolve(false);
-    }, 5000);
-    
-    socket.on('connect', () => {
-      clearTimeout(timeout);
-      log.log('success', '✓ WebSocket: Connected');
-      socket.disconnect();
-      resolve(true);
-    });
-    
-    socket.on('connect_error', (error) => {
-      clearTimeout(timeout);
-      log.log('error', `✗ WebSocket: ${error.message}`);
-      resolve(false);
-    });
-  });
+    if (authResponse.ok) {
+      const { token } = await authResponse.json();
+      
+      // Now test WebSocket with valid token
+      wsTest = await new Promise((resolve) => {
+        const socket = io(`http://${config.backend.host}:${config.backend.port}`, {
+          auth: { token }, // Provide authentication token
+          transports: ['websocket', 'polling'], // Allow both transports like frontend
+          timeout: 8000,
+        });
+        
+        const timeout = setTimeout(() => {
+          socket.disconnect();
+          log.log('error', '✗ WebSocket: Connection timeout');
+          resolve(false);
+        }, 8000);
+        
+        socket.on('connect', () => {
+          clearTimeout(timeout);
+          log.log('success', '✓ WebSocket: Connected with authentication');
+          socket.disconnect();
+          resolve(true);
+        });
+        
+        socket.on('connect_error', (error) => {
+          clearTimeout(timeout);
+          log.log('error', `✗ WebSocket connect_error: ${error.message} (type: ${error.type})`);
+          log.log('error', `✗ WebSocket error details: ${JSON.stringify({
+            description: error.description,
+            context: error.context,
+            name: error.name,
+            stack: error.stack?.substring(0, 200)
+          })}`);
+          socket.disconnect();
+          resolve(false);
+        });
+        
+        socket.on('connection_confirmed', (data) => {
+          log.log('success', `✓ WebSocket: Connection confirmed for user ${data.userId}`);
+        });
+      });
+    } else {
+      log.log('error', '✗ WebSocket: Failed to authenticate for WebSocket test');
+      wsTest = false;
+    }
+  } catch (error) {
+    log.log('error', `✗ WebSocket catch error: ${error.message}`);
+    log.log('error', `✗ WebSocket catch stack: ${error.stack?.substring(0, 300)}`);
+    wsTest = false;
+  }
   
   if (wsTest) passed++;
   
@@ -632,6 +712,7 @@ async function showStatus() {
   console.log(`   Redis:       ${config.redis.port}`);
   console.log(`   Backend:     ${config.backend.port}`);
   console.log(`   Frontend:    ${config.frontend.port}`);
+  console.log(`   Workers:     Running (validation, enrichment, categorization)`);
   
   console.log('\n🤖 AI Features:');
   console.log(`   OpenAI API:        ${config.features.aiEnabled ? '✓ Configured' : '✗ Not configured'}`);
@@ -688,6 +769,7 @@ async function main() {
     { name: 'Redis', fn: startRedis, critical: true },
     { name: 'Database Schema', fn: applyDatabaseSchema, critical: true },
     { name: 'Backend Server', fn: startBackend, critical: true },
+    { name: 'Background Workers', fn: startWorkers, critical: true },
     { name: 'Frontend Server', fn: startFrontend, critical: false },
     { name: 'Service Verification', fn: verifyServices, critical: false },
   ];

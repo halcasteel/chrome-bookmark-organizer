@@ -1,0 +1,25 @@
+{
+  "id": "e3eb27c643c49c1d",
+  "originalBookmark": {
+    "url": "http://127.0.0.1:8080/",
+    "title": "Gradio",
+    "addDate": "2023-06-08T05:33:59.000Z",
+    "icon": null
+  },
+  "url": "http://127.0.0.1:8080/",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 1500,
+  "error": "net::ERR_CONNECTION_REFUSED at http://127.0.0.1:8080/",
+  "metadata": {
+    "title": "Gradio",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T05:02:32.754Z"
+}

@@ -1,0 +1,89 @@
+Test ID,Test Name,Test Type,Priority,Page/Module,Feature,Component Path,API Endpoint,HTTP Method,Test Category,Positive/Negative,Prerequisites,Test Steps,Expected Result,Actual Result,Status,Automated,Automation Script,Manual Tester,Test Date,Requirements ID,User Story ID,Bug ID,Dependencies,Environment,Browser,Test Data,Preconditions,Postconditions,Clean Up Required,Performance Target,Security Considerations,Accessibility Requirements,Risk Level,Business Impact,Technical Complexity,Execution Time,Last Updated,Version,Notes
+AUTH-FORM-001-POS,Login with valid credentials,Functional,P0,Authentication,Login Form,frontend/src/pages/Login.tsx,/api/auth/login,POST,Authentication,Positive,User account exists,"1. Navigate to /login
+2. Enter valid email
+3. Enter valid password
+4. Click login button",User redirected to dashboard,,Not Tested,Yes,tests/e2e/auth.spec.js,,,REQ-001,US-001,,Database|Redis,Development,Chrome|Firefox|Safari,"email: admin@az1.ai
+password: changeme123",Application running,User logged in,No,<3s,HTTPS required,WCAG 2.1 AA,High,Critical,Low,5s,2025-06-16,1.0,
+AUTH-FORM-002-NEG,Login with invalid password,Functional,P0,Authentication,Login Form,frontend/src/pages/Login.tsx,/api/auth/login,POST,Authentication,Negative,User account exists,"1. Navigate to /login
+2. Enter valid email
+3. Enter invalid password
+4. Click login button",Error message displayed,,Not Tested,Yes,tests/e2e/auth.spec.js,,,REQ-001,US-001,,Database|Redis,Development,Chrome|Firefox|Safari,"email: admin@az1.ai
+password: wrongpass",Application running,User not logged in,No,<1s,No sensitive data in error,WCAG 2.1 AA,Medium,High,Low,3s,2025-06-16,1.0,
+AUTH-FORM-003-NEG,Login with non-existent email,Functional,P0,Authentication,Login Form,frontend/src/pages/Login.tsx,/api/auth/login,POST,Authentication,Negative,None,"1. Navigate to /login
+2. Enter non-existent email
+3. Enter any password
+4. Click login button",Generic error message,,Not Tested,Yes,tests/e2e/auth.spec.js,,,REQ-001,US-001,,Database|Redis,Development,Chrome|Firefox|Safari,"email: fake@example.com
+password: anypass",Application running,User not logged in,No,<1s,Prevent user enumeration,WCAG 2.1 AA,High,High,Low,3s,2025-06-16,1.0,
+AUTH-INPT-001-NEG,Email field validation,Functional,P1,Authentication,Email Input,frontend/src/pages/Login.tsx,N/A,N/A,Validation,Negative,None,"1. Navigate to /login
+2. Enter invalid email format
+3. Tab out of field",Validation error shown,,Not Tested,Yes,tests/e2e/auth.spec.js,,,REQ-002,US-001,,None,Development,Chrome|Firefox|Safari,email: notanemail,Application running,Validation displayed,No,<100ms,None,WCAG 2.1 AA,Low,Medium,Low,2s,2025-06-16,1.0,
+AUTH-BTN-001-POS,Submit button enabled state,Functional,P1,Authentication,Submit Button,frontend/src/pages/Login.tsx,N/A,N/A,UI,Positive,None,"1. Navigate to /login
+2. Fill all required fields
+3. Verify submit button",Button is enabled,,Not Tested,Yes,tests/e2e/auth.spec.js,,,REQ-003,US-001,,None,Development,Chrome|Firefox|Safari,Valid form data,Application running,Button enabled,No,<100ms,None,WCAG 2.1 AA,Low,Low,Low,2s,2025-06-16,1.0,
+AUTH-SEC-001-NEG,SQL injection in login,Security,P0,Authentication,Login Form,frontend/src/pages/Login.tsx,/api/auth/login,POST,Security,Negative,None,"1. Navigate to /login
+2. Enter SQL injection payload
+3. Submit form",No SQL execution,,Not Tested,Yes,tests/security/auth-security.spec.js,,,REQ-004,US-001,,Database,Development,Chrome,"email: admin' OR '1'='1
+password: ' OR '1'='1",Application running,No unauthorized access,No,<1s,Input sanitization,N/A,Critical,Critical,Medium,5s,2025-06-16,1.0,
+AUTH-PERF-001,Login response time,Performance,P1,Authentication,Login API,frontend/src/pages/Login.tsx,/api/auth/login,POST,Performance,Positive,User exists,"1. Navigate to /login
+2. Enter valid credentials
+3. Submit form
+4. Measure response time",Response < 1 second,,Not Tested,Yes,tests/performance/auth-perf.spec.js,,,REQ-005,US-001,,Database|Redis,Development,Chrome,Valid credentials,Application running,Performance logged,No,<1s,None,N/A,Medium,High,Low,5s,2025-06-16,1.0,
+BOOK-FORM-001-POS,Add bookmark with all fields,Functional,P0,Bookmarks,Add Bookmark Form,frontend/src/pages/Bookmarks.tsx,/api/bookmarks,POST,CRUD,Positive,User logged in,"1. Navigate to /bookmarks
+2. Click Add Bookmark
+3. Fill all fields
+4. Submit form",Bookmark created,,Not Tested,Yes,tests/e2e/bookmarks.spec.js,,,REQ-010,US-010,,Database|Auth,Development,Chrome|Firefox|Safari,Complete bookmark data,User authenticated,Bookmark saved,Yes,<2s,XSS protection,WCAG 2.1 AA,Medium,High,Medium,5s,2025-06-16,1.0,
+BOOK-FORM-002-NEG,Add bookmark without URL,Functional,P0,Bookmarks,Add Bookmark Form,frontend/src/pages/Bookmarks.tsx,/api/bookmarks,POST,CRUD,Negative,User logged in,"1. Navigate to /bookmarks
+2. Click Add Bookmark
+3. Leave URL empty
+4. Submit form",Validation error,,Not Tested,Yes,tests/e2e/bookmarks.spec.js,,,REQ-010,US-010,,Auth,Development,Chrome|Firefox|Safari,Incomplete data,User authenticated,Form not submitted,No,<100ms,None,WCAG 2.1 AA,Low,Medium,Low,3s,2025-06-16,1.0,
+BOOK-SRCH-001-POS,Search bookmarks by title,Functional,P0,Bookmarks,Search,frontend/src/pages/Bookmarks.tsx,/api/bookmarks/search,GET,Search,Positive,Bookmarks exist,"1. Navigate to /bookmarks
+2. Enter search term
+3. Press Enter",Matching results shown,,Not Tested,Yes,tests/e2e/bookmarks.spec.js,,,REQ-011,US-011,,Database|Auth,Development,Chrome|Firefox|Safari,search: example,User has bookmarks,Search results displayed,No,<500ms,None,WCAG 2.1 AA,Medium,High,Low,3s,2025-06-16,1.0,
+BOOK-DEL-001-POS,Delete single bookmark,Functional,P0,Bookmarks,Delete,frontend/src/pages/Bookmarks.tsx,/api/bookmarks/:id,DELETE,CRUD,Positive,Bookmark exists,"1. Navigate to /bookmarks
+2. Click delete on bookmark
+3. Confirm deletion",Bookmark removed,,Not Tested,Yes,tests/e2e/bookmarks.spec.js,,,REQ-012,US-012,,Database|Auth,Development,Chrome|Firefox|Safari,Existing bookmark ID,User owns bookmark,Bookmark deleted,Yes,<1s,Authorization check,WCAG 2.1 AA,Medium,Medium,Low,3s,2025-06-16,1.0,
+IMPT-UPLD-001-POS,Upload valid bookmark file,Functional,P0,Import,File Upload,frontend/src/pages/Import.tsx,/api/import,POST,Import,Positive,User logged in,"1. Navigate to /import
+2. Select HTML file
+3. Click upload",Import successful,,Not Tested,Yes,tests/e2e/import.spec.js,,,REQ-020,US-020,,Auth|FileSystem,Development,Chrome|Firefox|Safari,Valid HTML file,User authenticated,Bookmarks imported,Yes,<30s,File size limits,WCAG 2.1 AA,High,High,High,30s,2025-06-16,1.0,
+IMPT-UPLD-002-NEG,Upload invalid file type,Functional,P0,Import,File Upload,frontend/src/pages/Import.tsx,/api/import,POST,Import,Negative,User logged in,"1. Navigate to /import
+2. Select non-HTML file
+3. Attempt upload",Error message shown,,Not Tested,Yes,tests/e2e/import.spec.js,,,REQ-020,US-020,,Auth,Development,Chrome|Firefox|Safari,PDF file,User authenticated,Upload rejected,No,<100ms,File type validation,WCAG 2.1 AA,Low,Medium,Low,3s,2025-06-16,1.0,
+IMPT-WSKT-001-POS,Import progress updates,Functional,P1,Import,WebSocket,frontend/src/pages/Import.tsx,ws://localhost:3001,WebSocket,Real-time,Positive,Import in progress,"1. Start import
+2. Monitor progress
+3. Verify updates",Real-time updates,,Not Tested,Yes,tests/e2e/import.spec.js,,,REQ-021,US-020,,WebSocket|Auth,Development,Chrome|Firefox|Safari,Large file import,Import started,Progress tracked,No,Real-time,Secure WebSocket,N/A,Medium,High,Medium,Variable,2025-06-16,1.0,
+COLL-FORM-001-POS,Create new collection,Functional,P1,Collections,Create Form,frontend/src/pages/Collections.tsx,/api/collections,POST,CRUD,Positive,User logged in,"1. Navigate to /collections
+2. Click Create
+3. Fill form
+4. Submit",Collection created,,Not Tested,Yes,tests/e2e/collections.spec.js,,,REQ-030,US-030,,Database|Auth,Development,Chrome|Firefox|Safari,Collection data,User authenticated,Collection saved,Yes,<1s,None,WCAG 2.1 AA,Low,Medium,Low,3s,2025-06-16,1.0,
+ADMN-VIEW-001-POS,Access admin dashboard,Functional,P0,Admin,Dashboard Access,frontend/src/pages/AdminDashboard.tsx,/api/admin/health,GET,Authorization,Positive,Admin user,"1. Login as admin
+2. Navigate to /admin",Dashboard displayed,,Not Tested,Yes,tests/e2e/admin-dashboard.spec.js,,,REQ-040,US-040,,Auth|Roles,Development,Chrome|Firefox|Safari,Admin credentials,Admin logged in,Dashboard viewed,No,<2s,Role-based access,WCAG 2.1 AA,High,Critical,Medium,5s,2025-06-16,1.0,
+ADMN-VIEW-002-NEG,Non-admin access attempt,Functional,P0,Admin,Dashboard Access,frontend/src/pages/AdminDashboard.tsx,/api/admin/health,GET,Authorization,Negative,Regular user,"1. Login as user
+2. Navigate to /admin",Access denied,,Not Tested,Yes,tests/e2e/admin-dashboard.spec.js,,,REQ-040,US-040,,Auth|Roles,Development,Chrome|Firefox|Safari,User credentials,User logged in,Access blocked,No,<100ms,Authorization,WCAG 2.1 AA,High,Critical,Low,3s,2025-06-16,1.0,
+ADMN-LOGS-001-POS,View system logs,Functional,P1,Admin,Logs Viewer,frontend/src/components/admin/LogsViewer.tsx,/api/admin/logs,GET,Monitoring,Positive,Admin user,"1. Access admin dashboard
+2. Click Logs tab
+3. View logs",Logs displayed,,Not Tested,Yes,tests/e2e/admin-dashboard.spec.js,,,REQ-041,US-041,,Database|Auth,Development,Chrome|Firefox|Safari,None,Admin authenticated,Logs viewed,No,<3s,Log sanitization,WCAG 2.1 AA,Medium,High,Medium,5s,2025-06-16,1.0,
+PERF-LOAD-001,Dashboard load time,Performance,P1,Dashboard,Page Load,frontend/src/pages/Dashboard.tsx,/api/dashboard,GET,Performance,Positive,User logged in,"1. Login
+2. Measure dashboard load
+3. Record time",Load < 3 seconds,,Not Tested,Yes,tests/performance/dashboard-perf.spec.js,,,REQ-050,US-005,,All services,Development,Chrome|Firefox|Safari,None,User authenticated,Metrics recorded,No,<3s,None,N/A,Medium,High,Low,5s,2025-06-16,1.0,
+PERF-API-001,Bookmark list API response,Performance,P1,Bookmarks,API Performance,backend/src/routes/bookmarks.js,/api/bookmarks,GET,Performance,Positive,1000 bookmarks,"1. Create test data
+2. Call API
+3. Measure response",Response < 1 second,,Not Tested,Yes,tests/performance/api-perf.spec.js,,,REQ-051,US-010,,Database,Development,N/A,Large dataset,Test data created,Performance logged,Yes,<1s,Query optimization,N/A,High,High,Medium,10s,2025-06-16,1.0,
+ACC-NAV-001,Keyboard navigation,Accessibility,P1,All Pages,Navigation,All components,N/A,N/A,Accessibility,Positive,None,"1. Use Tab key
+2. Navigate all elements
+3. Verify focus visible",All elements reachable,,Not Tested,Yes,tests/accessibility/navigation.spec.js,,,REQ-060,US-001,,None,Development,Chrome|Firefox|Safari,None,Application running,Navigation tested,No,N/A,None,WCAG 2.1 AA,High,High,Low,10s,2025-06-16,1.0,
+ACC-SCRN-001,Screen reader compatibility,Accessibility,P1,All Pages,Screen Reader,All components,N/A,N/A,Accessibility,Positive,Screen reader,"1. Enable screen reader
+2. Navigate pages
+3. Verify announcements",Content readable,,Not Tested,Semi,tests/accessibility/screen-reader.spec.js,,,REQ-061,US-001,,None,Development,Chrome|Firefox|Safari,None,Screen reader on,Compatibility verified,No,N/A,None,WCAG 2.1 AA,High,High,Medium,15s,2025-06-16,1.0,
+INT-DB-001,Database connection failure,Integration,P0,All Pages,Database,backend/src/db/index.js,All endpoints,All,Integration,Negative,DB down,"1. Stop database
+2. Try any operation
+3. Check error handling",Graceful error,,Not Tested,Yes,tests/integration/database.spec.js,,,REQ-070,US-001,,Database,Development,N/A,None,Database stopped,Error handled,Yes,<5s,No data leak,N/A,Critical,Critical,Medium,5s,2025-06-16,1.0,
+INT-REDIS-001,Redis cache failure,Integration,P1,All Pages,Cache,backend/src/config/redis.js,All endpoints,All,Integration,Negative,Redis down,"1. Stop Redis
+2. Use application
+3. Verify functionality",App works slowly,,Not Tested,Yes,tests/integration/redis.spec.js,,,REQ-071,US-001,,Redis,Development,N/A,None,Redis stopped,Fallback active,Yes,Variable,None,N/A,Medium,Medium,Low,5s,2025-06-16,1.0,
+E2E-USER-001,Complete user journey,E2E,P0,Multiple,User Flow,Multiple components,Multiple,Multiple,E2E,Positive,None,"1. Register user
+2. Login
+3. Add bookmarks
+4. Create collection
+5. Import file
+6. Search
+7. Logout",All steps complete,,Not Tested,Yes,tests/e2e/user-journey.spec.js,,,REQ-080,US-001,,All services,Development,Chrome|Firefox|Safari,Test user data,Clean state,User data created,Yes,<60s,None,WCAG 2.1 AA,High,Critical,High,60s,2025-06-16,1.0,

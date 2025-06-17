@@ -1,0 +1,30 @@
+{
+  "id": "9a0d3a1cfe02df69",
+  "originalBookmark": {
+    "url": "https://docs.google.com/document/d/1YR3htOQb-HCa5vlUIlgoFrJa0CZvh3k3rSrfPqIPQio/edit?tab=t.0#heading=h.udebyymvzeiv",
+    "title": "Questions for Odoo - Google Docs",
+    "addDate": "2025-01-10T13:42:03.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAdElEQVQ4jWN0bvse////nwkMDIwCDKSBB4yMzA2MTm1f7jP8Z1AgUTMMfGCiQDMDAwODAAsyb28VN1G6nNu+wtlMFNjOwMDAwIDiAmSTiQXUdcFoGOAPA1yuGxxh8IECBzxgYmBgKGRgZHhAut7/HxgYGBoB3s8g7yv6EgQAAAAASUVORK5CYII="
+  },
+  "url": "https://docs.google.com/document/d/1YR3htOQb-HCa5vlUIlgoFrJa0CZvh3k3rSrfPqIPQio/edit?tab=t.0#heading=h.udebyymvzeiv",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 18736,
+  "error": null,
+  "metadata": {
+    "title": "Questions for Odoo - Google Docs",
+    "description": "Questions for Odoo  Does the External API work in the trail plan?  Using the Odoo External API (`models.execute_kw()`) on Python, how to? * How to digitally sign the sales order? * Create 12 months contract (using Subscription?) We get: `<Fault 2: \"Object sale.subscription doesn't exist\">` * Do r...",
+    "keywords": [],
+    "ogImage": "https://lh7-us.googleusercontent.com/docs/AHkbwyIB-bdzuX-M1L3z4Ls1EU_Afyy-nUZOunMzJt7I0b1lRnomJgraCwF2tqiXg2021jKpvPExp4M8qLja_pUlCxJl_48croDl3tnK7RbyQIgBapWurf_v=w1200-h630-p",
+    "favicon": "https://ssl.gstatic.com/docs/documents/images/kix-favicon-2023q4.ico",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "article",
+    "siteName": "Google Docs",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/9a0d3a1cfe02df69-screenshot.png",
+  "timestamp": "2025-06-17T08:03:15.402Z"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "a99fa83a93c317c5",
+  "originalBookmark": {
+    "url": "https://portfolio.adobe.com/start",
+    "title": "Adobe Portfolio | Build your own personalized website",
+    "addDate": "2023-01-01T15:00:14.000Z",
+    "icon": null
+  },
+  "url": "https://portfolio.adobe.com/start",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 5489,
+  "error": null,
+  "metadata": {
+    "title": "Adobe Portfolio | Build your own personalized website",
+    "description": "Quickly and simply build a personalized website to showcase your creative work with Adobe Portfolio. Now included free with any Creative Cloud subscription.",
+    "keywords": [],
+    "ogImage": "https://portfolio.adobe.com/img/share-card.png",
+    "favicon": "https://portfolio.adobe.com/favicon.ico?cb=7d8b5be2c496bb8a7559",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/a99fa83a93c317c5-screenshot.png",
+  "timestamp": "2025-06-17T05:20:05.144Z"
+}

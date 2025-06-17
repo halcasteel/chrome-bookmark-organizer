@@ -1,0 +1,25 @@
+{
+  "id": "3d33c1b76fd223e4",
+  "originalBookmark": {
+    "url": "https://app.notta.ai/7289702913083555840/folders",
+    "title": "All Files | Notta",
+    "addDate": "2025-02-24T04:23:02.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACmUlEQVQ4jSXMPa9lYxzG4d/9vKy1196zz1HMizFihETipZBoREfiCyhUjFKnpzpRTOdDCFGiodEo6BSiGJIhk8iYZozJnOOcs/daz/O/Fa4PcAlg+MTveM1Hxs+QqRqQKjBYrCFtZK1BE04DS91wJ3XdfHBdn2l10+8y+dMoEsn2AFSgojSBJmBtNMlpgjxAnaRScOrcKHXxUSRJzS1GMh1yQSq4yQrBKstJlkOuhrKjjStKCY5K3fNE67ZWZAkuFPQo5LKzrmwgDXDc0HmVD8NKTR6L87CTh+QnSz5jUP1/d0ffvo3vRyg6vPk0ZODnY/PxXfTDmXzJVul4zNaQVUs9I3kQvaNc8bUD65VDAPHjPTi1eeNx8dUL8NYvodun9qWMSoKxkMpwimOxSpd7tvYNWhfvf2e+vg91Y16+ZL58TXx4DT74qevqKGesseJSz1Aswh1FgnWFO3+bb26Z65dhG+aPv4LbDwrPb8WLZ52Ds9CUYKxWSTMojCyWDELsZrM5hYMTs56D53onL4lM4qlHCxciWGczFChpxg4rk5zOUYRRF/U4OByD7RyMc2NoBcJcfTizxZ7UNRZcUkcGEqEhy1OVSjbpJDgYg4Ohs9l1RkEtcOV48TqaJgVDDhWZUCglJ+9PrN//xA8eWof/wmplNjU4PO+c3F047ckX/pl1WLtHuobs0Euvxw4xpAxdMK2txwZ7W5surjqX68JlzVzJzRfZazs3b1NjpFPlfcHclfSsgzYUcp7tHiE5OdGUmqnJrmqqDq/UqF76JIpify8FOjJYokQ3DkEkew7FHrwLPIfSbKfWSXNn7C5laa5zP0q3vtfnvfMe+DfM7MDRoHfcF9ObiMWOFtBtep9L59f9/vzGxS9e/ew/hCKGJTUq7Y8AAAAASUVORK5CYII="
+  },
+  "url": "https://app.notta.ai/7289702913083555840/folders",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 32535,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "All Files | Notta",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T08:20:02.980Z"
+}

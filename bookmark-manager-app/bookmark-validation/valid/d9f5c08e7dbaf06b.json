@@ -1,0 +1,30 @@
+{
+  "id": "d9f5c08e7dbaf06b",
+  "originalBookmark": {
+    "url": "https://www.nature.com/articles/s42256-025-01047-1",
+    "title": "A multimodal conversational agent for DNA, RNA and protein tasks | Nature Machine Intelligence",
+    "addDate": "2025-06-09T02:04:25.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABiUlEQVQ4jaWTv2oiURTGf17jjDqgMDAQxEJEWLTRwnIeQF/AMm+wlXkAIZ2k2pR2qbZNaZEu7YAvMF2KoEzGYhCcyJwtcm+YJCYkmw9O891z7nf+wmvYwBj4C9wDT9ruNTfWPkdxCvwBYkA+sFj7nB4Lvvkk8K3dmE+KgAVcAGcAxWKRRqNBq9UiSRKGwyG+7+M4Duv1mizLAH7pUm7RdUWAWJYls9lMwjCU5XIp8/lc4jgWEZEoimQymeSziICx0souQJqmWJZFu92m0+mw2WyYTqesVitc12U0GuXLdoGzE8DPs2EYAhDHMYvFgu12S6/XYzAY4DgOSilTBoCv3nbUPIoIIgLA4XAAoFAovGu++mimX4UCHvKEUcmrHVE2eFDAXZ4pl8ugx6nUc4KlUgkA27ZfOI07BVwDj4bxPI8sy7Btm2q1CkCtVgOgXq9TqVSM6yNwXdCLdAn8Buh2uzSbTfb7PUEQsNvt6Pf7eJ5HkiQEQUCapgBXwLn57b9XOY8fHZPBt8/5H0pupxP4DfF0AAAAAElFTkSuQmCC"
+  },
+  "url": "https://www.nature.com/articles/s42256-025-01047-1",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 11754,
+  "error": null,
+  "metadata": {
+    "title": "A multimodal conversational agent for DNA, RNA and protein tasks | Nature Machine Intelligence",
+    "description": "Language models are thriving, powering conversational agents that assist and empower humans to solve a number of tasks. Recently, these models were extended to support additional modalities including vision, audio and video, demonstrating impressive capabilities across multiple domains, including healthcare. Still, conversational agents remain limited in biology as they cannot yet fully comprehend biological sequences. Meanwhile, high-performance foundation models for biological sequences have been built through self-supervision over sequencing data, but these need to be fine-tuned for each specific application, preventing generalization between tasks. In addition, these models are not conversational, which limits their utility to users with coding capabilities. Here we propose to bridge the gap between biology foundation models and conversational agents by introducing ChatNT, a multimodal conversational agent with an advanced understanding of biological sequences. ChatNT achieves new state-of-the-art results on the Nucleotide Transformer benchmark while being able to solve all tasks at once, in English, and to generalize to unseen questions. In addition, we have curated a set of more biologically relevant instruction tasks from DNA, RNA and proteins, spanning multiple species, tissues and biological processes. ChatNT reaches performance on par with state-of-the-art specialized methods on those tasks. We also present a perplexity-based technique to help calibrate the confidence of our model predictions. By applying attribution methods through the English decoder and DNA encoder, we demonstrate that ChatNT’s answers are based on biologically coherent features such as detecting the promoter TATA motif or splice site dinucleotides. Our framework for genomics instruction tuning can be extended to more tasks and data modalities (for example, structure and imaging), making it a widely applicable tool for biology. ChatNT provides a potential direction for building generally capable agents that understand biology from first principles while being accessible to users with no coding background. De Almeida, Richard and colleagues leverage transfer learning to create ChatNT, a multimodal conversational agent for DNA, RNA and protein sequences that can be instructed in natural language.",
+    "keywords": [],
+    "ogImage": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs42256-025-01047-1/MediaObjects/42256_2025_1047_Fig1_HTML.png",
+    "favicon": "https://www.nature.com/static/images/favicons/nature/favicon-48x48-b52890008c.png",
+    "language": "en",
+    "author": null,
+    "canonical": "https://www.nature.com/articles/s42256-025-01047-1",
+    "contentType": "article",
+    "siteName": "Nature",
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/d9f5c08e7dbaf06b-screenshot.png",
+  "timestamp": "2025-06-17T03:29:58.098Z"
+}

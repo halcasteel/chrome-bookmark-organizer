@@ -1,0 +1,25 @@
+{
+  "id": "17fd8034a70c708a",
+  "originalBookmark": {
+    "url": "https://elevenlabs.io/",
+    "title": "Free Text to Speech &amp; AI Voice Generator | ElevenLabs",
+    "addDate": "2025-06-06T15:57:02.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABK0lEQVQ4jZWTMW7cMBBFHykacKm77OkSuPEZ1nApHUFHMgwB6oLYlRounwtRASOsjOQDAw45/w+H5BC1U3+qb+pNLdWO2NdvlftDDajPd0hnOMafgvoL6AGBjg3mnEOMEYBSCiklgVDjt+r/DmoGYg2EmmgnHmHDASixigMQVICwrivjODLPM/M8M44j67rScqpFmjOVnLOqy7IIOE2T0zQJuCyLqpXzR5OackMImxtjJMZISumveSXRaiInKKXc9Y84TfCvOE2wl3z0j0jt06iBWnIphZwz7ZyNRKtJ93bt+55hGLhcLgAMw0Df9wB0XWerCW4pv2ueM7jfwQKU2p57wJzz8Sg2dqvjewSu9Q/EppKQUjr2Q2jaeOe/oD6qr+rnf3znD/WqPnwB+/9fyRY3SngAAAAASUVORK5CYII="
+  },
+  "url": "https://elevenlabs.io/",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 31393,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "Free Text to Speech &amp; AI Voice Generator | ElevenLabs",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T03:31:56.374Z"
+}

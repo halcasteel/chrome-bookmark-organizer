@@ -1,0 +1,25 @@
+{
+  "id": "7e4bc1b6f5a5d75a",
+  "originalBookmark": {
+    "url": "https://coin98.com/",
+    "title": "Coin98 Finance",
+    "addDate": "2021-12-08T22:54:53.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAACnklEQVQ4jYWSTUhUURzF//9778ybD0dHfWJDikxWYKGEKebXTFRYVARhYCREUIgFQ5HUKghBgpBs0aLALKRApA8k0XCT2rRRJxRNcVHaoCYOI6PjvPfG8b17W7w2rjqbA+f8zu7gxje/EAIR4X8yMWaaEIJzEEIAICFACAAA58A5AAhCkBAwMWZOORfpaYxZCQiRSBipHQ4AkpU4nQwANM1QkwYlAABMAIAQTjv9NBLtHVor8EjNl/bmyhIALK0ln/Usq5oRuJJ/yOtQkpwSJIYhXE72+FW4vmUmrukDX9f9NyZXItvrG6kzN6eC3zfmFpS65sm5BcUuEc4FsUv4e0Vr61x88eDg567SUE95moM8f7fcOxRRNGO679jYQFVulrXjzZLDSTkHZrXQ8GoSCZ6rlbciKZdsravM/vFTqavOftJyoH80qqV46y3v5pauqgYhwLRto8jrsEvkUVe4o2X/9Mxmd/9q4HJeWXHG2abJ+UXFwnBPjtT3tERwAQAQHandnvC/bz/sdlGPbLVZ0VfmVkPH60/I+/JsC4OVkeGaqpL0iuL05Lg/OlrLKMWEyk/XZI+9LR8JxTyy5DvqVhLG2Gy8LVDozXPoKaMtUHg+MLUaTcmZFqLrPDOdXX84394dbrpTWH0ko7RhPDQfL8x3DH6NAgHmZAPBqOy2uF1M1wVDRF0X9adyGu7P/lpJLi6piFhVnHHvav7FuzNVjRN2iX4Zj71uLXLa6WbCwFjQx7lIc9DhiVjnhz8FHtvtxvysDMYoTszGX35cTaaMaxc8JyuyEqpBCGIs6AMAc2O1UeCwpeg7OgcBTjuVbAQQd7Z5XNEpQQBgAICIhEBC40IxAJEgmJ2S5AnVMAFK8N/5TENEigBk18kp2ZWY2F8HDj0PS6qfCgAAAABJRU5ErkJggg=="
+  },
+  "url": "https://coin98.com/",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 31702,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "Coin98 Finance",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T05:50:31.320Z"
+}

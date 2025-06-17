@@ -1,0 +1,25 @@
+{
+  "id": "d85a018bd1a2cc31",
+  "originalBookmark": {
+    "url": "https://medium.com/geekculture/a-simple-guide-to-chatgpt-api-with-python-c147985ae28#id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjYwODNkZDU5ODE2NzNmNjYxZmRlOWRhZTY0NmI2ZjAzODBhMDE0NWMiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJuYmYiOjE2ODU2NzA3MDksImF1ZCI6IjIxNjI5NjAzNTgzNC1rMWs2cWUwNjBzMnRwMmEyamFtNGxqZGNtczAwc3R0Zy5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjEwMjY0MjUxNjQwMDkzODAxODczOSIsImVtYWlsIjoiaGFsLmNhc3RlZWxAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF6cCI6IjIxNjI5NjAzNTgzNC1rMWs2cWUwNjBzMnRwMmEyamFtNGxqZGNtczAwc3R0Zy5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsIm5hbWUiOiJIYWwgQ2FzdGVlbCIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQWNIVHRkS01yTXFzdGdCcnRfTFFEUE96bWpOV2xCMlZOYVd5NjZSMjN2bDF4Yz1zOTYtYyIsImdpdmVuX25hbWUiOiJIYWwiLCJmYW1pbHlfbmFtZSI6IkNhc3RlZWwiLCJpYXQiOjE2ODU2NzEwMDksImV4cCI6MTY4NTY3NDYwOSwianRpIjoiNWJiYTRlNGU5MDc4ZTgyNWQwNjliY2Y4OTcwMmIxM2JmODJhM2M0NCJ9.BB3GE3m3PKu2d2h1OhCOkHZYG4R4u0FMXzvs0Za8vsbX-WHgt0RPVD-o96NUootHKcxkRmPSrdhm7i4L0D-bPnRE24DPr3JGXBL4ieBJJtoJgOhq2LeV8xh6sHgMl885oEhiSY7SVLD-UZJZp80R5JkywNVHfoZWA4m2ShdzeEvcvLt1R5bLeZmBUyYOIrjnOqR1KLRrhVmERBsWNwc29m7gRb7Y-EmivCzby3uB206tdCx-FjM5yVpY1J44-UfKPi2JBfXd8BlsBq8bqBiCffus8wHTOY-l1-GFB7UaE7K2Gx6KGdXiJx7IbNAlHLjNl7VnJmxshZ-W7onTFzjaJw",
+    "title": "A Simple Guide to The (New) ChatGPT API with Python | by The PyCoach | Geek Culture | Medium",
+    "addDate": "2023-06-02T01:57:01.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABk0lEQVQ4jaWTsYoiQRCGv+7emUFBmER8BF/AAwNfwFARFBTBSJjAVDQQzIwW7kEMRjAwMxBMDQ18ABMzA2HsrQscG9275WS3oGn4q/7qv6v/BngHEsACH4D8Z32ktVfgXaUg6a54LVytfuisjDH3ZhhjnhjGmDt2JwsgKpWkvqlA9ANJ9ft94jhmuVwyHA7JZrOO0Ww2GQwGAPi+r9KcQiklQRDIfD6Xz7HdbiWTyUipVHJYq9WSTqcj4/FYAHkTERqNBvV6nSRJUOom6Hq9Ui6XiaKIfD6PiGCtpd1uczweCcMQgDeAarWKtdYNSymFUgprLbVajfP57HLFYvFpyBrA8zx38mMopTDGoLV+wkTcY90arFYrtNZOprWWJEnQWrNYLNjtdi53OBw4nU5cLhfXUXzflziO/xrifr+XMAylUqk4rNvtSq/Xk8lkcvfPzRBBEMhoNJL1ei2bzUZms5kUCgVn4SiKZDqdiud5EgSB5HK514z0+c7/MhJfWfmR/IWV+amVMUAI/HpU/QJZ0i/9+w8yEPFCQJmzEwAAAABJRU5ErkJggg=="
+  },
+  "url": "https://medium.com/geekculture/a-simple-guide-to-chatgpt-api-with-python-c147985ae28#id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjYwODNkZDU5ODE2NzNmNjYxZmRlOWRhZTY0NmI2ZjAzODBhMDE0NWMiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJuYmYiOjE2ODU2NzA3MDksImF1ZCI6IjIxNjI5NjAzNTgzNC1rMWs2cWUwNjBzMnRwMmEyamFtNGxqZGNtczAwc3R0Zy5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjEwMjY0MjUxNjQwMDkzODAxODczOSIsImVtYWlsIjoiaGFsLmNhc3RlZWxAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF6cCI6IjIxNjI5NjAzNTgzNC1rMWs2cWUwNjBzMnRwMmEyamFtNGxqZGNtczAwc3R0Zy5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsIm5hbWUiOiJIYWwgQ2FzdGVlbCIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQWNIVHRkS01yTXFzdGdCcnRfTFFEUE96bWpOV2xCMlZOYVd5NjZSMjN2bDF4Yz1zOTYtYyIsImdpdmVuX25hbWUiOiJIYWwiLCJmYW1pbHlfbmFtZSI6IkNhc3RlZWwiLCJpYXQiOjE2ODU2NzEwMDksImV4cCI6MTY4NTY3NDYwOSwianRpIjoiNWJiYTRlNGU5MDc4ZTgyNWQwNjliY2Y4OTcwMmIxM2JmODJhM2M0NCJ9.BB3GE3m3PKu2d2h1OhCOkHZYG4R4u0FMXzvs0Za8vsbX-WHgt0RPVD-o96NUootHKcxkRmPSrdhm7i4L0D-bPnRE24DPr3JGXBL4ieBJJtoJgOhq2LeV8xh6sHgMl885oEhiSY7SVLD-UZJZp80R5JkywNVHfoZWA4m2ShdzeEvcvLt1R5bLeZmBUyYOIrjnOqR1KLRrhVmERBsWNwc29m7gRb7Y-EmivCzby3uB206tdCx-FjM5yVpY1J44-UfKPi2JBfXd8BlsBq8bqBiCffus8wHTOY-l1-GFB7UaE7K2Gx6KGdXiJx7IbNAlHLjNl7VnJmxshZ-W7onTFzjaJw",
+  "valid": false,
+  "statusCode": null,
+  "loadTime": 30584,
+  "error": "Navigation timeout of 30000 ms exceeded",
+  "metadata": {
+    "title": "A Simple Guide to The (New) ChatGPT API with Python | by The PyCoach | Geek Culture | Medium",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T05:11:06.587Z"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "9e50a5f57a5a50b4",
+  "originalBookmark": {
+    "url": "https://login.veevavault.com/auth/login",
+    "title": "https://login.veevavault.com/auth/login",
+    "addDate": "2022-05-21T00:39:27.000Z",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB8klEQVQ4jX2SzWtTQRTFz7kzCbWKxS6EQv3YxI+9oP4PboryaKVSQXCZf0H8IyIuTCFZi4gpirpUEJOus8rCXRNcCNoW33t597jIB61pemFgGM6c87tzh3n9xhuH1ggNAN6jfJGl8AzAAgQBAAgC+Ku8eO4h/DLXewGrJF5HsHgB2h04V2iWDAurxUJnXLqLI2Xkt2FR+mHmTwSsyrBH6qXFfX0JUksAJE8CuCzqFcFUAiSARCqpbpafpbAuAJRa8bd/NVZ7qYxNEH0IVxh8czgsPpFqE8B4tXPgA6JtALoGok9nk9VeagAQF0OH5JgCD2IoXRRYpzGlMZW4Hd2XKK4LQCBb8bDYBQADACbdjFRjRKHLpD/Kpc+k2jR28iE/ItoGpAqpgdybrPbSqcGEImhKcb8UuOJSzYdFLZbsAoX10QW24oF3po872TDpZgoTClwyYascF3bKIXsL+EMIFVADSY1J+jGDKQX4bkyxlufpzQzlq4QnOiF9xoBJN5OpCaIvadWMjwHbgjDqnWoeTZ8xmE5kTFG4Nul6qtFH2ol/vP2/fsaASTejqwnDnoQlF5ZJDYTjvc81AIB4fjQREiDnp881YNLNBDRA9o34qcJmep+GnXQIAPGc7RYH3gIZw37+fZ7u1Mrq128dbldun6b5ByRnDruHIC9mAAAAAElFTkSuQmCC"
+  },
+  "url": "https://login.veevavault.com/auth/login",
+  "valid": true,
+  "statusCode": 200,
+  "loadTime": 5302,
+  "error": null,
+  "metadata": {
+    "title": null,
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": "https://login.veevavault.com/auth/images/favicon.ico",
+    "language": "en",
+    "author": null,
+    "canonical": null,
+    "contentType": "website",
+    "siteName": null,
+    "publishedTime": null,
+    "modifiedTime": null
+  },
+  "screenshot": "/home/halcasteel/BOOKMARKS/bookmark-manager-app/bookmark-validation/valid/9e50a5f57a5a50b4-screenshot.png",
+  "timestamp": "2025-06-17T06:45:16.983Z"
+}

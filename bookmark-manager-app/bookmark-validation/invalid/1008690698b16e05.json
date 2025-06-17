@@ -1,0 +1,25 @@
+{
+  "id": "1008690698b16e05",
+  "originalBookmark": {
+    "url": "http://localhost:3001/",
+    "title": "HarmonyAI",
+    "addDate": "2025-03-28T22:44:42.000Z",
+    "icon": null
+  },
+  "url": "http://localhost:3001/",
+  "valid": false,
+  "statusCode": 404,
+  "loadTime": 6233,
+  "error": "HTTP 404",
+  "metadata": {
+    "title": "HarmonyAI",
+    "description": null,
+    "keywords": [],
+    "ogImage": null,
+    "favicon": null,
+    "language": null,
+    "contentType": null
+  },
+  "screenshot": null,
+  "timestamp": "2025-06-17T03:56:18.461Z"
+}
