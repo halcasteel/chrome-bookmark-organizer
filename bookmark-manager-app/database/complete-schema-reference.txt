@@ -1,0 +1,1538 @@
+=== DATABASE INFORMATION ===
+  database_name   |                                                  postgres_version                                                   | database_size 
+------------------+---------------------------------------------------------------------------------------------------------------------+---------------
+ bookmark_manager | PostgreSQL 16.8 (Debian 16.8-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit |     296423907
+(1 row)
+
+
+=== EXTENSIONS ===
+  oid  |  extname  | extowner | extnamespace | extrelocatable | extversion | extconfig | extcondition 
+-------+-----------+----------+--------------+----------------+------------+-----------+--------------
+ 16727 | pgcrypto  |       10 |         2200 | t              | 1.3        |           | 
+ 13564 | plpgsql   |       10 |           11 | f              | 1.0        |           | 
+ 16716 | uuid-ossp |       10 |         2200 | t              | 1.1        |           | 
+ 16388 | vector    |       10 |         2200 | t              | 0.8.0      |           | 
+(4 rows)
+
+
+=== SCHEMAS ===
+ schema_name 
+-------------
+ pg_toast
+ public
+(2 rows)
+
+
+=== TABLES WITH DETAILS ===
+ schemaname |       tablename        | tableowner | total_size 
+------------+------------------------+------------+------------
+ public     | _sqlx_migrations       | admin      | 32 kB
+ public     | a2a_agent_capabilities | admin      | 64 kB
+ public     | a2a_artifacts          | admin      | 128 kB
+ public     | a2a_messages           | admin      | 128 kB
+ public     | a2a_task_progress      | admin      | 40 kB
+ public     | a2a_tasks              | admin      | 256 kB
+ public     | bookmark_collections   | admin      | 8192 bytes
+ public     | bookmark_embeddings    | admin      | 1640 kB
+ public     | bookmark_metadata      | admin      | 40 kB
+ public     | bookmark_tags          | admin      | 24 kB
+ public     | bookmarks              | admin      | 3216 kB
+ public     | collections            | admin      | 40 kB
+ public     | import_history         | admin      | 112 kB
+ public     | log_aggregations       | admin      | 248 kB
+ public     | log_ai_analysis        | admin      | 80 kB
+ public     | problem_reports        | admin      | 32 kB
+ public     | system_logs            | admin      | 268 MB
+ public     | tags                   | admin      | 56 kB
+ public     | test_audit_trail       | admin      | 16 kB
+ public     | test_cases             | admin      | 48 kB
+ public     | test_executions        | admin      | 56 kB
+ public     | test_plans             | admin      | 16 kB
+ public     | test_runs              | admin      | 24 kB
+ public     | test_step_executions   | admin      | 16 kB
+ public     | test_suites            | admin      | 16 kB
+ public     | users                  | admin      | 96 kB
+(26 rows)
+
+
+=== DETAILED TABLE STRUCTURES ===
+psql:/home/halcasteel/BOOKMARKS/bookmark-manager-app/database/generate-schema-report.sql:30: error: Did not find any relation named "a2a_agents".
+                                                   Table "public.a2a_messages"
+   Column   |           Type           | Collation | Nullable |   Default   | Storage  | Compression | Stats target | Description 
+------------+--------------------------+-----------+----------+-------------+----------+-------------+--------------+-------------
+ id         | character varying(255)   |           | not null |             | extended |             |              | 
+ task_id    | character varying(255)   |           | not null |             | extended |             |              | 
+ agent_type | character varying(255)   |           | not null |             | extended |             |              | 
+ type       | character varying(50)    |           | not null |             | extended |             |              | 
+ content    | text                     |           | not null |             | extended |             |              | 
+ timestamp  | timestamp with time zone |           | not null | now()       | plain    |             |              | 
+ metadata   | jsonb                    |           |          | '{}'::jsonb | extended |             |              | 
+Indexes:
+    "a2a_messages_pkey" PRIMARY KEY, btree (id)
+    "idx_a2a_messages_agent_type" btree (agent_type)
+    "idx_a2a_messages_task_id" btree (task_id)
+    "idx_a2a_messages_task_recent" btree (task_id, "timestamp" DESC)
+    "idx_a2a_messages_timestamp" btree ("timestamp")
+    "idx_a2a_messages_type" btree (type)
+Check constraints:
+    "a2a_messages_type_check" CHECK (type::text = ANY (ARRAY['progress'::character varying, 'status'::character varying, 'error'::character varying, 'warning'::character varying, 'info'::character varying, 'completion'::character varying]::text[]))
+Foreign-key constraints:
+    "a2a_messages_task_id_fkey" FOREIGN KEY (task_id) REFERENCES a2a_tasks(id) ON DELETE CASCADE
+Access method: heap
+
+psql:/home/halcasteel/BOOKMARKS/bookmark-manager-app/database/generate-schema-report.sql:32: error: Did not find any relation named "a2a_task_artifacts".
+                                                        Table "public.a2a_tasks"
+      Column       |           Type           | Collation | Nullable |   Default   | Storage  | Compression | Stats target | Description 
+-------------------+--------------------------+-----------+----------+-------------+----------+-------------+--------------+-------------
+ id                | character varying(255)   |           | not null |             | extended |             |              | 
+ type              | character varying(255)   |           | not null |             | extended |             |              | 
+ status            | character varying(50)    |           | not null |             | extended |             |              | 
+ created           | timestamp with time zone |           | not null | now()       | plain    |             |              | 
+ updated           | timestamp with time zone |           | not null | now()       | plain    |             |              | 
+ workflow_type     | character varying(255)   |           |          |             | extended |             |              | 
+ workflow_agents   | text[]                   |           |          |             | extended |             |              | 
+ current_agent     | character varying(255)   |           |          |             | extended |             |              | 
+ current_step      | integer                  |           |          | 0           | plain    |             |              | 
+ total_steps       | integer                  |           |          |             | plain    |             |              | 
+ context           | jsonb                    |           | not null | '{}'::jsonb | extended |             |              | 
+ user_id           | uuid                     |           |          |             | plain    |             |              | 
+ metadata          | jsonb                    |           |          | '{}'::jsonb | extended |             |              | 
+ error_message     | text                     |           |          |             | extended |             |              | 
+ current_job_id    | character varying(255)   |           |          |             | extended |             |              | 
+ current_job_queue | character varying(255)   |           |          |             | extended |             |              | 
+Indexes:
+    "a2a_tasks_pkey" PRIMARY KEY, btree (id)
+    "idx_a2a_tasks_active" btree (status, updated) WHERE status::text = ANY (ARRAY['pending'::character varying, 'running'::character varying]::text[])
+    "idx_a2a_tasks_context_gin" gin (context jsonb_path_ops)
+    "idx_a2a_tasks_created" btree (created)
+    "idx_a2a_tasks_metadata_gin" gin (metadata jsonb_path_ops)
+    "idx_a2a_tasks_status" btree (status)
+    "idx_a2a_tasks_type" btree (type)
+    "idx_a2a_tasks_user_id" btree (user_id)
+    "idx_a2a_tasks_workflow_current" btree (workflow_type, current_agent, status)
+    "idx_a2a_tasks_workflow_type" btree (workflow_type)
+Check constraints:
+    "a2a_tasks_status_check" CHECK (status::text = ANY (ARRAY['pending'::character varying, 'running'::character varying, 'completed'::character varying, 'failed'::character varying, 'cancelled'::character varying]::text[]))
+Foreign-key constraints:
+    "a2a_tasks_user_id_fkey" FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+Referenced by:
+    TABLE "a2a_artifacts" CONSTRAINT "a2a_artifacts_task_id_fkey" FOREIGN KEY (task_id) REFERENCES a2a_tasks(id) ON DELETE CASCADE
+    TABLE "a2a_messages" CONSTRAINT "a2a_messages_task_id_fkey" FOREIGN KEY (task_id) REFERENCES a2a_tasks(id) ON DELETE CASCADE
+    TABLE "a2a_task_progress" CONSTRAINT "a2a_task_progress_task_id_fkey" FOREIGN KEY (task_id) REFERENCES a2a_tasks(id) ON DELETE CASCADE
+Triggers:
+    trigger_update_task_timestamp BEFORE UPDATE ON a2a_tasks FOR EACH ROW EXECUTE FUNCTION update_task_timestamp()
+Access method: heap
+
+                                                   Table "public.bookmark_collections"
+    Column     |           Type           | Collation | Nullable |      Default      | Storage | Compression | Stats target | Description 
+---------------+--------------------------+-----------+----------+-------------------+---------+-------------+--------------+-------------
+ bookmark_id   | uuid                     |           | not null |                   | plain   |             |              | 
+ collection_id | uuid                     |           | not null |                   | plain   |             |              | 
+ position      | integer                  |           |          |                   | plain   |             |              | 
+ created_at    | timestamp with time zone |           |          | CURRENT_TIMESTAMP | plain   |             |              | 
+ updated_at    | timestamp with time zone |           |          | CURRENT_TIMESTAMP | plain   |             |              | 
+Indexes:
+    "bookmark_collections_pkey" PRIMARY KEY, btree (bookmark_id, collection_id)
+Foreign-key constraints:
+    "bookmark_collections_bookmark_id_fkey" FOREIGN KEY (bookmark_id) REFERENCES bookmarks(id) ON DELETE CASCADE
+    "bookmark_collections_collection_id_fkey" FOREIGN KEY (collection_id) REFERENCES collections(id) ON DELETE CASCADE
+Triggers:
+    update_bookmark_collections_updated_at BEFORE UPDATE ON bookmark_collections FOR EACH ROW EXECUTE FUNCTION update_updated_at_column()
+Access method: heap
+
+                                                                 Table "public.bookmark_embeddings"
+    Column     |           Type           | Collation | Nullable |                   Default                   | Storage  | Compression | Stats target | Description 
+---------------+--------------------------+-----------+----------+---------------------------------------------+----------+-------------+--------------+-------------
+ id            | uuid                     |           | not null | uuid_generate_v4()                          | plain    |             |              | 
+ bookmark_id   | uuid                     |           | not null |                                             | plain    |             |              | 
+ embedding     | vector(1536)             |           |          |                                             | external |             |              | 
+ model_version | character varying(50)    |           |          | 'text-embedding-ada-002'::character varying | extended |             |              | 
+ created_at    | timestamp with time zone |           |          | CURRENT_TIMESTAMP                           | plain    |             |              | 
+Indexes:
+    "bookmark_embeddings_pkey" PRIMARY KEY, btree (id)
+    "bookmark_embeddings_bookmark_id_key" UNIQUE CONSTRAINT, btree (bookmark_id)
+    "idx_bookmark_embeddings_bookmark_id" btree (bookmark_id)
+    "idx_bookmark_embeddings_vector" ivfflat (embedding vector_cosine_ops)
+Foreign-key constraints:
+    "bookmark_embeddings_bookmark_id_fkey" FOREIGN KEY (bookmark_id) REFERENCES bookmarks(id) ON DELETE CASCADE
+Access method: heap
+
+                                                      Table "public.bookmark_tags"
+   Column    |           Type           | Collation | Nullable |      Default      | Storage | Compression | Stats target | Description 
+-------------+--------------------------+-----------+----------+-------------------+---------+-------------+--------------+-------------
+ bookmark_id | uuid                     |           | not null |                   | plain   |             |              | 
+ tag_id      | uuid                     |           | not null |                   | plain   |             |              | 
+ created_at  | timestamp with time zone |           |          | CURRENT_TIMESTAMP | plain   |             |              | 
+ updated_at  | timestamp with time zone |           |          | CURRENT_TIMESTAMP | plain   |             |              | 
+Indexes:
+    "bookmark_tags_pkey" PRIMARY KEY, btree (bookmark_id, tag_id)
+Foreign-key constraints:
+    "bookmark_tags_bookmark_id_fkey" FOREIGN KEY (bookmark_id) REFERENCES bookmarks(id) ON DELETE CASCADE
+    "bookmark_tags_tag_id_fkey" FOREIGN KEY (tag_id) REFERENCES tags(id) ON DELETE CASCADE
+Triggers:
+    update_bookmark_tags_updated_at BEFORE UPDATE ON bookmark_tags FOR EACH ROW EXECUTE FUNCTION update_updated_at_column()
+Access method: heap
+
+                                                                                                                          Table "public.bookmarks"
+      Column       |           Type           | Collation | Nullable |            Default            | Storage  | Compression | Stats target |                                                         Description                                                          
+-------------------+--------------------------+-----------+----------+-------------------------------+----------+-------------+--------------+------------------------------------------------------------------------------------------------------------------------------
+ id                | uuid                     |           | not null | uuid_generate_v4()            | plain    |             |              | 
+ user_id           | uuid                     |           | not null |                               | plain    |             |              | 
+ url               | text                     |           | not null |                               | extended |             |              | 
+ title             | text                     |           | not null |                               | extended |             |              | 
+ description       | text                     |           |          |                               | extended |             |              | 
+ domain            | character varying(255)   |           |          |                               | extended |             |              | 
+ favicon_url       | text                     |           |          |                               | extended |             |              | 
+ is_valid          | boolean                  |           |          | true                          | plain    |             |              | DEPRECATED: Use status field instead
+ last_checked      | timestamp with time zone |           |          |                               | plain    |             |              | Timestamp of last validation check
+ http_status       | integer                  |           |          |                               | plain    |             |              | 
+ content_hash      | character varying(64)    |           |          |                               | extended |             |              | 
+ created_at        | timestamp with time zone |           |          | CURRENT_TIMESTAMP             | plain    |             |              | 
+ updated_at        | timestamp with time zone |           |          | CURRENT_TIMESTAMP             | plain    |             |              | 
+ imported_at       | timestamp with time zone |           |          |                               | plain    |             |              | 
+ chrome_add_date   | bigint                   |           |          |                               | plain    |             |              | 
+ is_deleted        | boolean                  |           |          | false                         | plain    |             |              | DEPRECATED: Use status field instead. Archived bookmarks have status=archived
+ is_dead           | boolean                  |           |          | false                         | plain    |             |              | DEPRECATED: Use status field instead
+ favicon           | text                     |           |          |                               | extended |             |              | 
+ enriched          | boolean                  |           |          | false                         | plain    |             |              | 
+ import_id         | uuid                     |           |          |                               | plain    |             |              | 
+ validation_errors | jsonb                    |           |          | '[]'::jsonb                   | extended |             |              | Array of validation error objects with code and message
+ check_attempts    | integer                  |           |          | 0                             | plain    |             |              | Number of validation attempts made
+ enrichment_data   | jsonb                    |           |          | '{}'::jsonb                   | extended |             |              | Additional metadata from AI enrichment
+ ai_tags           | text[]                   |           |          | '{}'::text[]                  | extended |             |              | AI-generated tags for categorization
+ ai_summary        | text                     |           |          |                               | extended |             |              | AI-generated summary of the bookmark content
+ screenshot_url    | text                     |           |          |                               | extended |             |              | URL to screenshot of the bookmark page
+ status            | character varying(50)    |           |          | 'imported'::character varying | extended |             |              | Unified status field replacing is_valid/is_dead/is_deleted booleans. Values: imported, validated, enriched, failed, archived
+Indexes:
+    "bookmarks_pkey" PRIMARY KEY, btree (id)
+    "bookmarks_user_id_url_key" UNIQUE CONSTRAINT, btree (user_id, url)
+    "idx_bookmarks_ai_tags" gin (ai_tags)
+    "idx_bookmarks_check_attempts" btree (check_attempts)
+    "idx_bookmarks_created_at" btree (created_at DESC)
+    "idx_bookmarks_dead_status" btree (is_dead, last_checked)
+    "idx_bookmarks_description_gin" gin (to_tsvector('english'::regconfig, COALESCE(description, ''::text)))
+    "idx_bookmarks_domain" btree (domain)
+    "idx_bookmarks_enriched" btree (enriched, user_id)
+    "idx_bookmarks_enriched_created" btree (enriched, created_at DESC) WHERE enriched = true
+    "idx_bookmarks_enrichment_data_gin" gin (enrichment_data jsonb_path_ops) WHERE enrichment_data IS NOT NULL AND enrichment_data <> '{}'::jsonb
+    "idx_bookmarks_import_id" btree (import_id)
+    "idx_bookmarks_is_valid" btree (is_valid)
+    "idx_bookmarks_needs_check" btree (id) WHERE last_checked IS NULL
+    "idx_bookmarks_status" btree (status)
+    "idx_bookmarks_status_user_created" btree (status, user_id, created_at DESC)
+    "idx_bookmarks_title_gin" gin (to_tsvector('english'::regconfig, title))
+    "idx_bookmarks_user_created" btree (user_id, created_at DESC)
+    "idx_bookmarks_user_enriched_valid_created" btree (user_id, enriched, is_valid, created_at DESC) INCLUDE (title, url, domain) WHERE is_deleted = false
+    "idx_bookmarks_user_id" btree (user_id)
+    "idx_bookmarks_user_status_created" btree (user_id, is_valid, created_at DESC)
+    "idx_bookmarks_user_status_domain" btree (user_id, status, domain) WHERE status::text <> 'archived'::text
+    "idx_bookmarks_validation_errors_gin" gin (validation_errors jsonb_path_ops) WHERE validation_errors IS NOT NULL AND validation_errors <> '[]'::jsonb
+    "idx_bookmarks_validation_status" btree (is_valid, last_checked)
+Check constraints:
+    "bookmarks_status_check" CHECK (status::text = ANY (ARRAY['imported'::character varying, 'validated'::character varying, 'enriched'::character varying, 'failed'::character varying, 'archived'::character varying]::text[]))
+Foreign-key constraints:
+    "bookmarks_import_id_fkey" FOREIGN KEY (import_id) REFERENCES import_history(id)
+    "bookmarks_user_id_fkey" FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+Referenced by:
+    TABLE "bookmark_collections" CONSTRAINT "bookmark_collections_bookmark_id_fkey" FOREIGN KEY (bookmark_id) REFERENCES bookmarks(id) ON DELETE CASCADE
+    TABLE "bookmark_embeddings" CONSTRAINT "bookmark_embeddings_bookmark_id_fkey" FOREIGN KEY (bookmark_id) REFERENCES bookmarks(id) ON DELETE CASCADE
+    TABLE "bookmark_metadata" CONSTRAINT "bookmark_metadata_bookmark_id_fkey" FOREIGN KEY (bookmark_id) REFERENCES bookmarks(id) ON DELETE CASCADE
+    TABLE "bookmark_tags" CONSTRAINT "bookmark_tags_bookmark_id_fkey" FOREIGN KEY (bookmark_id) REFERENCES bookmarks(id) ON DELETE CASCADE
+Triggers:
+    trigger_ensure_metadata_for_enriched AFTER UPDATE OF enriched ON bookmarks FOR EACH ROW EXECUTE FUNCTION ensure_metadata_for_enriched_bookmarks()
+    update_bookmarks_updated_at BEFORE UPDATE ON bookmarks FOR EACH ROW EXECUTE FUNCTION update_updated_at_column()
+Access method: heap
+
+                                                        Table "public.collections"
+   Column    |           Type           | Collation | Nullable |      Default       | Storage  | Compression | Stats target | Description 
+-------------+--------------------------+-----------+----------+--------------------+----------+-------------+--------------+-------------
+ id          | uuid                     |           | not null | uuid_generate_v4() | plain    |             |              | 
+ user_id     | uuid                     |           | not null |                    | plain    |             |              | 
+ name        | character varying(255)   |           | not null |                    | extended |             |              | 
+ description | text                     |           |          |                    | extended |             |              | 
+ is_public   | boolean                  |           |          | false              | plain    |             |              | 
+ share_token | character varying(32)    |           |          |                    | extended |             |              | 
+ created_at  | timestamp with time zone |           |          | CURRENT_TIMESTAMP  | plain    |             |              | 
+ updated_at  | timestamp with time zone |           |          | CURRENT_TIMESTAMP  | plain    |             |              | 
+Indexes:
+    "collections_pkey" PRIMARY KEY, btree (id)
+    "collections_share_token_key" UNIQUE CONSTRAINT, btree (share_token)
+    "idx_collections_share_token" btree (share_token)
+    "idx_collections_user_id" btree (user_id)
+Foreign-key constraints:
+    "collections_user_id_fkey" FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+Referenced by:
+    TABLE "bookmark_collections" CONSTRAINT "bookmark_collections_collection_id_fkey" FOREIGN KEY (collection_id) REFERENCES collections(id) ON DELETE CASCADE
+Triggers:
+    update_collections_updated_at BEFORE UPDATE ON collections FOR EACH ROW EXECUTE FUNCTION update_updated_at_column()
+Access method: heap
+
+                                                                                  Table "public.import_history"
+       Column       |           Type           | Collation | Nullable |           Default            | Storage  | Compression | Stats target |                    Description                    
+--------------------+--------------------------+-----------+----------+------------------------------+----------+-------------+--------------+---------------------------------------------------
+ id                 | uuid                     |           | not null | uuid_generate_v4()           | plain    |             |              | 
+ user_id            | uuid                     |           | not null |                              | plain    |             |              | 
+ filename           | character varying(255)   |           | not null |                              | extended |             |              | 
+ file_size          | bigint                   |           |          |                              | plain    |             |              | 
+ total_bookmarks    | integer                  |           |          |                              | plain    |             |              | 
+ new_bookmarks      | integer                  |           |          |                              | plain    |             |              | 
+ updated_bookmarks  | integer                  |           |          |                              | plain    |             |              | 
+ failed_bookmarks   | integer                  |           |          |                              | plain    |             |              | 
+ status             | character varying(50)    |           |          | 'pending'::character varying | extended |             |              | 
+ error_message      | text                     |           |          |                              | extended |             |              | 
+ started_at         | timestamp with time zone |           |          | CURRENT_TIMESTAMP            | plain    |             |              | 
+ completed_at       | timestamp with time zone |           |          |                              | plain    |             |              | 
+ file_name          | character varying(255)   |           |          |                              | extended |             |              | 
+ total_count        | integer                  |           |          |                              | plain    |             |              | 
+ processed_count    | integer                  |           |          |                              | plain    |             |              | 
+ created_at         | timestamp with time zone |           |          | CURRENT_TIMESTAMP            | plain    |             |              | 
+ total_invalid      | integer                  |           |          | 0                            | plain    |             |              | Total number of invalid bookmarks in this import
+ total_enriched     | integer                  |           |          | 0                            | plain    |             |              | Total number of enriched bookmarks in this import
+ validation_details | jsonb                    |           |          | '{}'::jsonb                  | extended |             |              | Detailed validation statistics and errors
+ updated_at         | timestamp with time zone |           |          | CURRENT_TIMESTAMP            | plain    |             |              | 
+Indexes:
+    "import_history_pkey" PRIMARY KEY, btree (id)
+    "idx_import_history_user_created" btree (user_id, created_at DESC)
+    "idx_import_history_user_id" btree (user_id)
+    "idx_import_history_user_status" btree (user_id, status, started_at DESC)
+Check constraints:
+    "import_history_status_check" CHECK (status::text = ANY (ARRAY['pending'::character varying, 'processing'::character varying, 'completed'::character varying, 'failed'::character varying, 'cancelled'::character varying]::text[]))
+Foreign-key constraints:
+    "import_history_user_id_fkey" FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+Referenced by:
+    TABLE "bookmarks" CONSTRAINT "bookmarks_import_id_fkey" FOREIGN KEY (import_id) REFERENCES import_history(id)
+Triggers:
+    update_import_history_updated_at BEFORE UPDATE ON import_history FOR EACH ROW EXECUTE FUNCTION update_updated_at_column()
+Access method: heap
+
+psql:/home/halcasteel/BOOKMARKS/bookmark-manager-app/database/generate-schema-report.sql:40: error: Did not find any relation named "import_mappings".
+                                                                Table "public.tags"
+   Column   |           Type           | Collation | Nullable |           Default            | Storage  | Compression | Stats target | Description 
+------------+--------------------------+-----------+----------+------------------------------+----------+-------------+--------------+-------------
+ id         | uuid                     |           | not null | uuid_generate_v4()           | plain    |             |              | 
+ user_id    | uuid                     |           | not null |                              | plain    |             |              | 
+ name       | character varying(100)   |           | not null |                              | extended |             |              | 
+ color      | character varying(7)     |           |          | '#3182ce'::character varying | extended |             |              | 
+ created_at | timestamp with time zone |           |          | CURRENT_TIMESTAMP            | plain    |             |              | 
+ updated_at | timestamp with time zone |           |          | CURRENT_TIMESTAMP            | plain    |             |              | 
+Indexes:
+    "tags_pkey" PRIMARY KEY, btree (id)
+    "idx_tags_user_id" btree (user_id)
+    "tags_user_id_name_key" UNIQUE CONSTRAINT, btree (user_id, name)
+Foreign-key constraints:
+    "tags_user_id_fkey" FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+Referenced by:
+    TABLE "bookmark_tags" CONSTRAINT "bookmark_tags_tag_id_fkey" FOREIGN KEY (tag_id) REFERENCES tags(id) ON DELETE CASCADE
+Triggers:
+    update_tags_updated_at BEFORE UPDATE ON tags FOR EACH ROW EXECUTE FUNCTION update_updated_at_column()
+Access method: heap
+
+                                                                  Table "public.users"
+       Column        |           Type           | Collation | Nullable |          Default          | Storage  | Compression | Stats target | Description 
+---------------------+--------------------------+-----------+----------+---------------------------+----------+-------------+--------------+-------------
+ id                  | uuid                     |           | not null | uuid_generate_v4()        | plain    |             |              | 
+ email               | character varying(255)   |           | not null |                           | extended |             |              | 
+ password_hash       | character varying(255)   |           | not null |                           | extended |             |              | 
+ name                | character varying(255)   |           |          |                           | extended |             |              | 
+ two_factor_enabled  | boolean                  |           | not null | false                     | plain    |             |              | 
+ two_factor_secret   | character varying(255)   |           |          |                           | extended |             |              | 
+ two_factor_verified | boolean                  |           |          | false                     | plain    |             |              | 
+ recovery_codes      | jsonb                    |           |          |                           | extended |             |              | 
+ last_login          | timestamp with time zone |           |          |                           | plain    |             |              | 
+ created_at          | timestamp with time zone |           |          | CURRENT_TIMESTAMP         | plain    |             |              | 
+ updated_at          | timestamp with time zone |           |          | CURRENT_TIMESTAMP         | plain    |             |              | 
+ role                | character varying(50)    |           |          | 'user'::character varying | extended |             |              | 
+Indexes:
+    "users_pkey" PRIMARY KEY, btree (id)
+    "idx_users_email" btree (email)
+    "users_email_key" UNIQUE CONSTRAINT, btree (email)
+Check constraints:
+    "users_email_check" CHECK (email::text ~~ '%@az1.ai'::text)
+Referenced by:
+    TABLE "a2a_tasks" CONSTRAINT "a2a_tasks_user_id_fkey" FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    TABLE "bookmarks" CONSTRAINT "bookmarks_user_id_fkey" FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    TABLE "collections" CONSTRAINT "collections_user_id_fkey" FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    TABLE "import_history" CONSTRAINT "import_history_user_id_fkey" FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    TABLE "tags" CONSTRAINT "tags_user_id_fkey" FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+Triggers:
+    update_users_updated_at BEFORE UPDATE ON users FOR EACH ROW EXECUTE FUNCTION update_updated_at_column()
+Access method: heap
+
+
+=== ALL COLUMNS WITH DATA TYPES ===
+       table_name       |     column_name      |          data_type          | character_maximum_length | is_nullable |                column_default                
+------------------------+----------------------+-----------------------------+--------------------------+-------------+----------------------------------------------
+ _sqlx_migrations       | version              | bigint                      |                          | NO          | 
+ _sqlx_migrations       | description          | text                        |                          | NO          | 
+ _sqlx_migrations       | installed_on         | timestamp with time zone    |                          | NO          | now()
+ _sqlx_migrations       | success              | boolean                     |                          | NO          | 
+ _sqlx_migrations       | checksum             | bytea                       |                          | NO          | 
+ _sqlx_migrations       | execution_time       | bigint                      |                          | NO          | 
+ a2a_agent_capabilities | agent_type           | character varying           |                      255 | NO          | 
+ a2a_agent_capabilities | version              | character varying           |                       50 | NO          | '1.0.0'::character varying
+ a2a_agent_capabilities | description          | text                        |                          | YES         | 
+ a2a_agent_capabilities | capabilities         | jsonb                       |                          | NO          | 
+ a2a_agent_capabilities | endpoints            | jsonb                       |                          | NO          | 
+ a2a_agent_capabilities | authentication       | ARRAY                       |                          | YES         | ARRAY['bearer'::text]
+ a2a_agent_capabilities | protocols            | ARRAY                       |                          | YES         | ARRAY['a2a'::text, 'http'::text]
+ a2a_agent_capabilities | status               | character varying           |                       50 | YES         | 'active'::character varying
+ a2a_agent_capabilities | last_heartbeat       | timestamp with time zone    |                          | YES         | 
+ a2a_agent_capabilities | created              | timestamp with time zone    |                          | NO          | now()
+ a2a_agent_capabilities | updated              | timestamp with time zone    |                          | NO          | now()
+ a2a_artifacts          | id                   | character varying           |                      255 | NO          | 
+ a2a_artifacts          | task_id              | character varying           |                      255 | NO          | 
+ a2a_artifacts          | agent_type           | character varying           |                      255 | NO          | 
+ a2a_artifacts          | type                 | character varying           |                      255 | NO          | 
+ a2a_artifacts          | mime_type            | character varying           |                      255 | NO          | 'application/json'::character varying
+ a2a_artifacts          | data                 | jsonb                       |                          | NO          | 
+ a2a_artifacts          | created              | timestamp with time zone    |                          | NO          | now()
+ a2a_artifacts          | immutable            | boolean                     |                          | NO          | true
+ a2a_artifacts          | size_bytes           | integer                     |                          | YES         | 
+ a2a_artifacts          | checksum             | character varying           |                      255 | YES         | 
+ a2a_artifacts          | metadata             | jsonb                       |                          | YES         | '{}'::jsonb
+ a2a_messages           | id                   | character varying           |                      255 | NO          | 
+ a2a_messages           | task_id              | character varying           |                      255 | NO          | 
+ a2a_messages           | agent_type           | character varying           |                      255 | NO          | 
+ a2a_messages           | type                 | character varying           |                       50 | NO          | 
+ a2a_messages           | content              | text                        |                          | NO          | 
+ a2a_messages           | timestamp            | timestamp with time zone    |                          | NO          | now()
+ a2a_messages           | metadata             | jsonb                       |                          | YES         | '{}'::jsonb
+ a2a_task_progress      | task_id              | character varying           |                      255 | NO          | 
+ a2a_task_progress      | agent_type           | character varying           |                      100 | NO          | 
+ a2a_task_progress      | status               | character varying           |                       50 | NO          | 'pending'::character varying
+ a2a_task_progress      | started              | timestamp without time zone |                          | YES         | 
+ a2a_task_progress      | completed            | timestamp without time zone |                          | YES         | 
+ a2a_task_progress      | error_message        | text                        |                          | YES         | 
+ a2a_task_progress      | attempts             | integer                     |                          | YES         | 0
+ a2a_task_progress      | job_id               | character varying           |                      255 | YES         | 
+ a2a_task_progress      | progress_data        | jsonb                       |                          | YES         | '{}'::jsonb
+ a2a_task_progress      | created              | timestamp without time zone |                          | YES         | now()
+ a2a_task_progress      | updated              | timestamp without time zone |                          | YES         | now()
+ a2a_tasks              | id                   | character varying           |                      255 | NO          | 
+ a2a_tasks              | type                 | character varying           |                      255 | NO          | 
+ a2a_tasks              | status               | character varying           |                       50 | NO          | 
+ a2a_tasks              | created              | timestamp with time zone    |                          | NO          | now()
+ a2a_tasks              | updated              | timestamp with time zone    |                          | NO          | now()
+ a2a_tasks              | workflow_type        | character varying           |                      255 | YES         | 
+ a2a_tasks              | workflow_agents      | ARRAY                       |                          | YES         | 
+ a2a_tasks              | current_agent        | character varying           |                      255 | YES         | 
+ a2a_tasks              | current_step         | integer                     |                          | YES         | 0
+ a2a_tasks              | total_steps          | integer                     |                          | YES         | 
+ a2a_tasks              | context              | jsonb                       |                          | NO          | '{}'::jsonb
+ a2a_tasks              | user_id              | uuid                        |                          | YES         | 
+ a2a_tasks              | metadata             | jsonb                       |                          | YES         | '{}'::jsonb
+ a2a_tasks              | error_message        | text                        |                          | YES         | 
+ a2a_tasks              | current_job_id       | character varying           |                      255 | YES         | 
+ a2a_tasks              | current_job_queue    | character varying           |                      255 | YES         | 
+ bookmark_collections   | bookmark_id          | uuid                        |                          | NO          | 
+ bookmark_collections   | collection_id        | uuid                        |                          | NO          | 
+ bookmark_collections   | position             | integer                     |                          | YES         | 
+ bookmark_collections   | created_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ bookmark_collections   | updated_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ bookmark_embeddings    | id                   | uuid                        |                          | NO          | uuid_generate_v4()
+ bookmark_embeddings    | bookmark_id          | uuid                        |                          | NO          | 
+ bookmark_embeddings    | embedding            | USER-DEFINED                |                          | YES         | 
+ bookmark_embeddings    | model_version        | character varying           |                       50 | YES         | 'text-embedding-ada-002'::character varying
+ bookmark_embeddings    | created_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ bookmark_metadata      | id                   | uuid                        |                          | NO          | uuid_generate_v4()
+ bookmark_metadata      | bookmark_id          | uuid                        |                          | NO          | 
+ bookmark_metadata      | og_title             | text                        |                          | YES         | 
+ bookmark_metadata      | og_description       | text                        |                          | YES         | 
+ bookmark_metadata      | og_image             | text                        |                          | YES         | 
+ bookmark_metadata      | keywords             | ARRAY                       |                          | YES         | 
+ bookmark_metadata      | author               | character varying           |                      255 | YES         | 
+ bookmark_metadata      | published_date       | date                        |                          | YES         | 
+ bookmark_metadata      | content_snippet      | text                        |                          | YES         | 
+ bookmark_metadata      | language             | character varying           |                       10 | YES         | 
+ bookmark_metadata      | reading_time         | integer                     |                          | YES         | 
+ bookmark_metadata      | extracted_at         | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ bookmark_metadata      | category             | character varying           |                      100 | YES         | 
+ bookmark_metadata      | subcategory          | character varying           |                      100 | YES         | 
+ bookmark_metadata      | canonical_url        | text                        |                          | YES         | 
+ bookmark_metadata      | content_type         | text                        |                          | YES         | 
+ bookmark_metadata      | updated_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ bookmark_tags          | bookmark_id          | uuid                        |                          | NO          | 
+ bookmark_tags          | tag_id               | uuid                        |                          | NO          | 
+ bookmark_tags          | created_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ bookmark_tags          | updated_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ bookmarks              | id                   | uuid                        |                          | NO          | uuid_generate_v4()
+ bookmarks              | user_id              | uuid                        |                          | NO          | 
+ bookmarks              | url                  | text                        |                          | NO          | 
+ bookmarks              | title                | text                        |                          | NO          | 
+ bookmarks              | description          | text                        |                          | YES         | 
+ bookmarks              | domain               | character varying           |                      255 | YES         | 
+ bookmarks              | favicon_url          | text                        |                          | YES         | 
+ bookmarks              | is_valid             | boolean                     |                          | YES         | true
+ bookmarks              | last_checked         | timestamp with time zone    |                          | YES         | 
+ bookmarks              | http_status          | integer                     |                          | YES         | 
+ bookmarks              | content_hash         | character varying           |                       64 | YES         | 
+ bookmarks              | created_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ bookmarks              | updated_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ bookmarks              | imported_at          | timestamp with time zone    |                          | YES         | 
+ bookmarks              | chrome_add_date      | bigint                      |                          | YES         | 
+ bookmarks              | is_deleted           | boolean                     |                          | YES         | false
+ bookmarks              | is_dead              | boolean                     |                          | YES         | false
+ bookmarks              | favicon              | text                        |                          | YES         | 
+ bookmarks              | enriched             | boolean                     |                          | YES         | false
+ bookmarks              | import_id            | uuid                        |                          | YES         | 
+ bookmarks              | validation_errors    | jsonb                       |                          | YES         | '[]'::jsonb
+ bookmarks              | check_attempts       | integer                     |                          | YES         | 0
+ bookmarks              | enrichment_data      | jsonb                       |                          | YES         | '{}'::jsonb
+ bookmarks              | ai_tags              | ARRAY                       |                          | YES         | '{}'::text[]
+ bookmarks              | ai_summary           | text                        |                          | YES         | 
+ bookmarks              | screenshot_url       | text                        |                          | YES         | 
+ bookmarks              | status               | character varying           |                       50 | YES         | 'imported'::character varying
+ collections            | id                   | uuid                        |                          | NO          | uuid_generate_v4()
+ collections            | user_id              | uuid                        |                          | NO          | 
+ collections            | name                 | character varying           |                      255 | NO          | 
+ collections            | description          | text                        |                          | YES         | 
+ collections            | is_public            | boolean                     |                          | YES         | false
+ collections            | share_token          | character varying           |                       32 | YES         | 
+ collections            | created_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ collections            | updated_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ import_history         | id                   | uuid                        |                          | NO          | uuid_generate_v4()
+ import_history         | user_id              | uuid                        |                          | NO          | 
+ import_history         | filename             | character varying           |                      255 | NO          | 
+ import_history         | file_size            | bigint                      |                          | YES         | 
+ import_history         | total_bookmarks      | integer                     |                          | YES         | 
+ import_history         | new_bookmarks        | integer                     |                          | YES         | 
+ import_history         | updated_bookmarks    | integer                     |                          | YES         | 
+ import_history         | failed_bookmarks     | integer                     |                          | YES         | 
+ import_history         | status               | character varying           |                       50 | YES         | 'pending'::character varying
+ import_history         | error_message        | text                        |                          | YES         | 
+ import_history         | started_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ import_history         | completed_at         | timestamp with time zone    |                          | YES         | 
+ import_history         | file_name            | character varying           |                      255 | YES         | 
+ import_history         | total_count          | integer                     |                          | YES         | 
+ import_history         | processed_count      | integer                     |                          | YES         | 
+ import_history         | created_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ import_history         | total_invalid        | integer                     |                          | YES         | 0
+ import_history         | total_enriched       | integer                     |                          | YES         | 0
+ import_history         | validation_details   | jsonb                       |                          | YES         | '{}'::jsonb
+ import_history         | updated_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ log_aggregations       | id                   | integer                     |                          | NO          | nextval('log_aggregations_id_seq'::regclass)
+ log_aggregations       | period_start         | timestamp with time zone    |                          | NO          | 
+ log_aggregations       | period_end           | timestamp with time zone    |                          | NO          | 
+ log_aggregations       | aggregation_type     | character varying           |                       50 | NO          | 
+ log_aggregations       | service              | character varying           |                       50 | YES         | 
+ log_aggregations       | level                | character varying           |                       10 | YES         | 
+ log_aggregations       | total_count          | integer                     |                          | NO          | 0
+ log_aggregations       | error_count          | integer                     |                          | NO          | 0
+ log_aggregations       | avg_duration_ms      | numeric                     |                          | YES         | 
+ log_aggregations       | p95_duration_ms      | numeric                     |                          | YES         | 
+ log_aggregations       | unique_users         | integer                     |                          | YES         | 0
+ log_aggregations       | metadata             | jsonb                       |                          | YES         | 
+ log_ai_analysis        | id                   | integer                     |                          | NO          | nextval('log_ai_analysis_id_seq'::regclass)
+ log_ai_analysis        | created_at           | timestamp with time zone    |                          | NO          | now()
+ log_ai_analysis        | period_start         | timestamp with time zone    |                          | NO          | 
+ log_ai_analysis        | period_end           | timestamp with time zone    |                          | NO          | 
+ log_ai_analysis        | analysis_type        | character varying           |                       50 | NO          | 
+ log_ai_analysis        | severity             | character varying           |                       20 | NO          | 
+ log_ai_analysis        | title                | character varying           |                      200 | NO          | 
+ log_ai_analysis        | description          | text                        |                          | NO          | 
+ log_ai_analysis        | affected_services    | ARRAY                       |                          | YES         | 
+ log_ai_analysis        | recommendations      | jsonb                       |                          | YES         | 
+ log_ai_analysis        | confidence_score     | numeric                     |                          | YES         | 
+ log_ai_analysis        | metadata             | jsonb                       |                          | YES         | 
+ problem_reports        | id                   | uuid                        |                          | NO          | uuid_generate_v4()
+ problem_reports        | pr_number            | character varying           |                       50 | NO          | 
+ problem_reports        | issue_id             | uuid                        |                          | YES         | 
+ problem_reports        | type                 | character varying           |                       20 | NO          | 
+ problem_reports        | title                | character varying           |                      500 | NO          | 
+ problem_reports        | description          | text                        |                          | NO          | 
+ problem_reports        | steps_to_reproduce   | text                        |                          | YES         | 
+ problem_reports        | expected_behavior    | text                        |                          | YES         | 
+ problem_reports        | actual_behavior      | text                        |                          | YES         | 
+ problem_reports        | impact_analysis      | text                        |                          | YES         | 
+ problem_reports        | workaround           | text                        |                          | YES         | 
+ problem_reports        | priority             | character varying           |                       20 | NO          | 
+ problem_reports        | category             | character varying           |                      100 | YES         | 
+ problem_reports        | reported_by          | character varying           |                      255 | NO          | 
+ problem_reports        | reported_date        | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ problem_reports        | resolution           | text                        |                          | YES         | 
+ problem_reports        | resolution_date      | timestamp with time zone    |                          | YES         | 
+ problem_reports        | status               | character varying           |                       50 | YES         | 'open'::character varying
+ problem_reports        | attachments          | jsonb                       |                          | YES         | 
+ problem_reports        | created_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ problem_reports        | updated_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ system_logs            | id                   | bigint                      |                          | NO          | nextval('system_logs_id_seq'::regclass)
+ system_logs            | timestamp            | timestamp with time zone    |                          | NO          | now()
+ system_logs            | level                | character varying           |                       10 | NO          | 
+ system_logs            | service              | character varying           |                       50 | NO          | 
+ system_logs            | source               | character varying           |                      100 | YES         | 
+ system_logs            | message              | text                        |                          | NO          | 
+ system_logs            | metadata             | jsonb                       |                          | YES         | 
+ system_logs            | error_type           | character varying           |                      100 | YES         | 
+ system_logs            | error_message        | text                        |                          | YES         | 
+ system_logs            | error_stack          | text                        |                          | YES         | 
+ system_logs            | user_id              | uuid                        |                          | YES         | 
+ system_logs            | request_id           | character varying           |                       50 | YES         | 
+ system_logs            | duration_ms          | integer                     |                          | YES         | 
+ system_logs            | status_code          | integer                     |                          | YES         | 
+ tags                   | id                   | uuid                        |                          | NO          | uuid_generate_v4()
+ tags                   | user_id              | uuid                        |                          | NO          | 
+ tags                   | name                 | character varying           |                      100 | NO          | 
+ tags                   | color                | character varying           |                        7 | YES         | '#3182ce'::character varying
+ tags                   | created_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ tags                   | updated_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ test_audit_trail       | id                   | uuid                        |                          | NO          | uuid_generate_v4()
+ test_audit_trail       | run_id               | character varying           |                       50 | NO          | 
+ test_audit_trail       | action               | character varying           |                      100 | NO          | 
+ test_audit_trail       | actor                | character varying           |                      100 | NO          | 
+ test_audit_trail       | timestamp            | timestamp with time zone    |                          | NO          | 
+ test_audit_trail       | ip_address           | inet                        |                          | YES         | 
+ test_audit_trail       | user_agent           | text                        |                          | YES         | 
+ test_audit_trail       | action_details       | jsonb                       |                          | YES         | 
+ test_audit_trail       | system_state         | jsonb                       |                          | YES         | 
+ test_cases             | id                   | uuid                        |                          | NO          | uuid_generate_v4()
+ test_cases             | suite_id             | uuid                        |                          | YES         | 
+ test_cases             | test_id              | character varying           |                      100 | NO          | 
+ test_cases             | name                 | character varying           |                      500 | NO          | 
+ test_cases             | description          | text                        |                          | YES         | 
+ test_cases             | type                 | character varying           |                       50 | NO          | 
+ test_cases             | category             | character varying           |                       50 | YES         | 
+ test_cases             | preconditions        | text                        |                          | YES         | 
+ test_cases             | test_data            | jsonb                       |                          | YES         | 
+ test_cases             | steps                | jsonb                       |                          | NO          | 
+ test_cases             | expected_results     | jsonb                       |                          | NO          | 
+ test_cases             | actual_results       | jsonb                       |                          | YES         | 
+ test_cases             | requirements         | ARRAY                       |                          | YES         | 
+ test_cases             | user_stories         | ARRAY                       |                          | YES         | 
+ test_cases             | priority             | character varying           |                       20 | YES         | 'medium'::character varying
+ test_cases             | automated            | boolean                     |                          | YES         | false
+ test_cases             | test_script_path     | character varying           |                      500 | YES         | 
+ test_cases             | created_by           | character varying           |                      255 | NO          | 
+ test_cases             | created_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ test_cases             | updated_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ test_executions        | id                   | uuid                        |                          | NO          | uuid_generate_v4()
+ test_executions        | test_case_id         | uuid                        |                          | YES         | 
+ test_executions        | execution_id         | character varying           |                      100 | NO          | 
+ test_executions        | run_id               | uuid                        |                          | YES         | 
+ test_executions        | status               | character varying           |                       50 | NO          | 
+ test_executions        | started_at           | timestamp with time zone    |                          | YES         | 
+ test_executions        | completed_at         | timestamp with time zone    |                          | YES         | 
+ test_executions        | duration_ms          | integer                     |                          | YES         | 
+ test_executions        | executed_by          | character varying           |                      255 | YES         | 
+ test_executions        | environment          | jsonb                       |                          | YES         | 
+ test_executions        | test_data_used       | jsonb                       |                          | YES         | 
+ test_executions        | steps_executed       | jsonb                       |                          | YES         | 
+ test_executions        | screenshots          | ARRAY                       |                          | YES         | 
+ test_executions        | videos               | ARRAY                       |                          | YES         | 
+ test_executions        | logs                 | text                        |                          | YES         | 
+ test_executions        | error_message        | text                        |                          | YES         | 
+ test_executions        | error_stack          | text                        |                          | YES         | 
+ test_executions        | failure_type         | character varying           |                      100 | YES         | 
+ test_executions        | retry_count          | integer                     |                          | YES         | 0
+ test_executions        | notes                | text                        |                          | YES         | 
+ test_executions        | created_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ test_plans             | id                   | uuid                        |                          | NO          | uuid_generate_v4()
+ test_plans             | name                 | character varying           |                      255 | NO          | 
+ test_plans             | version              | character varying           |                       50 | NO          | 
+ test_plans             | description          | text                        |                          | YES         | 
+ test_plans             | scope                | text                        |                          | YES         | 
+ test_plans             | objectives           | jsonb                       |                          | YES         | 
+ test_plans             | acceptance_criteria  | jsonb                       |                          | YES         | 
+ test_plans             | risk_assessment      | jsonb                       |                          | YES         | 
+ test_plans             | created_by           | character varying           |                      255 | NO          | 
+ test_plans             | approved_by          | character varying           |                      255 | YES         | 
+ test_plans             | approval_date        | timestamp with time zone    |                          | YES         | 
+ test_plans             | status               | character varying           |                       50 | YES         | 'draft'::character varying
+ test_plans             | created_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ test_plans             | updated_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ test_runs              | id                   | uuid                        |                          | NO          | uuid_generate_v4()
+ test_runs              | run_id               | character varying           |                       50 | NO          | 
+ test_runs              | started_at           | timestamp with time zone    |                          | NO          | 
+ test_runs              | completed_at         | timestamp with time zone    |                          | YES         | 
+ test_runs              | status               | character varying           |                       20 | NO          | 
+ test_runs              | environment          | jsonb                       |                          | NO          | 
+ test_runs              | test_plan_checksum   | character varying           |                       64 | NO          | 
+ test_runs              | total_tests          | integer                     |                          | YES         | 
+ test_runs              | passed               | integer                     |                          | YES         | 
+ test_runs              | failed               | integer                     |                          | YES         | 
+ test_runs              | skipped              | integer                     |                          | YES         | 
+ test_runs              | artifacts_path       | character varying           |                      500 | NO          | 
+ test_runs              | created_by           | character varying           |                      100 | NO          | 
+ test_runs              | machine_info         | jsonb                       |                          | YES         | 
+ test_runs              | git_commit           | character varying           |                       40 | YES         | 
+ test_runs              | git_branch           | character varying           |                      100 | YES         | 
+ test_step_executions   | id                   | uuid                        |                          | NO          | uuid_generate_v4()
+ test_step_executions   | execution_id         | character varying           |                      100 | NO          | 
+ test_step_executions   | step_number          | integer                     |                          | NO          | 
+ test_step_executions   | step_id              | character varying           |                      100 | NO          | 
+ test_step_executions   | action_type          | character varying           |                       50 | NO          | 
+ test_step_executions   | target_element       | text                        |                          | YES         | 
+ test_step_executions   | input_data           | jsonb                       |                          | YES         | 
+ test_step_executions   | started_at           | timestamp with time zone    |                          | NO          | 
+ test_step_executions   | completed_at         | timestamp with time zone    |                          | YES         | 
+ test_step_executions   | duration_ms          | integer                     |                          | YES         | 
+ test_step_executions   | status               | character varying           |                       20 | NO          | 
+ test_step_executions   | screenshot_before    | character varying           |                      500 | YES         | 
+ test_step_executions   | screenshot_after     | character varying           |                      500 | YES         | 
+ test_step_executions   | screenshot_checksum  | character varying           |                       64 | YES         | 
+ test_step_executions   | error_details        | jsonb                       |                          | YES         | 
+ test_step_executions   | validation_results   | jsonb                       |                          | YES         | 
+ test_step_executions   | audit_metadata       | jsonb                       |                          | NO          | 
+ test_suites            | id                   | uuid                        |                          | NO          | uuid_generate_v4()
+ test_suites            | plan_id              | uuid                        |                          | YES         | 
+ test_suites            | name                 | character varying           |                      255 | NO          | 
+ test_suites            | description          | text                        |                          | YES         | 
+ test_suites            | layer                | character varying           |                       50 | NO          | 
+ test_suites            | module               | character varying           |                      100 | NO          | 
+ test_suites            | priority             | character varying           |                       20 | YES         | 'medium'::character varying
+ test_suites            | estimated_duration   | integer                     |                          | YES         | 
+ test_suites            | dependencies         | jsonb                       |                          | YES         | 
+ test_suites            | tags                 | ARRAY                       |                          | YES         | 
+ test_suites            | created_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ test_suites            | updated_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ users                  | id                   | uuid                        |                          | NO          | uuid_generate_v4()
+ users                  | email                | character varying           |                      255 | NO          | 
+ users                  | password_hash        | character varying           |                      255 | NO          | 
+ users                  | name                 | character varying           |                      255 | YES         | 
+ users                  | two_factor_enabled   | boolean                     |                          | NO          | false
+ users                  | two_factor_secret    | character varying           |                      255 | YES         | 
+ users                  | two_factor_verified  | boolean                     |                          | YES         | false
+ users                  | recovery_codes       | jsonb                       |                          | YES         | 
+ users                  | last_login           | timestamp with time zone    |                          | YES         | 
+ users                  | created_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ users                  | updated_at           | timestamp with time zone    |                          | YES         | CURRENT_TIMESTAMP
+ users                  | role                 | character varying           |                       50 | YES         | 'user'::character varying
+ v_active_tasks         | id                   | character varying           |                      255 | YES         | 
+ v_active_tasks         | type                 | character varying           |                      255 | YES         | 
+ v_active_tasks         | status               | character varying           |                       50 | YES         | 
+ v_active_tasks         | workflow_type        | character varying           |                      255 | YES         | 
+ v_active_tasks         | current_agent        | character varying           |                      255 | YES         | 
+ v_active_tasks         | current_step         | integer                     |                          | YES         | 
+ v_active_tasks         | total_steps          | integer                     |                          | YES         | 
+ v_active_tasks         | progress_percentage  | numeric                     |                          | YES         | 
+ v_active_tasks         | created              | timestamp with time zone    |                          | YES         | 
+ v_active_tasks         | updated              | timestamp with time zone    |                          | YES         | 
+ v_active_tasks         | user_id              | uuid                        |                          | YES         | 
+ v_active_tasks         | artifact_count       | bigint                      |                          | YES         | 
+ v_active_tasks         | message_count        | bigint                      |                          | YES         | 
+ v_agent_performance    | agent_type           | character varying           |                      255 | YES         | 
+ v_agent_performance    | version              | character varying           |                       50 | YES         | 
+ v_agent_performance    | agent_status         | character varying           |                       50 | YES         | 
+ v_agent_performance    | total_tasks          | bigint                      |                          | YES         | 
+ v_agent_performance    | completed_tasks      | bigint                      |                          | YES         | 
+ v_agent_performance    | failed_tasks         | bigint                      |                          | YES         | 
+ v_agent_performance    | avg_duration_seconds | numeric                     |                          | YES         | 
+ v_task_history         | id                   | character varying           |                      255 | YES         | 
+ v_task_history         | type                 | character varying           |                      255 | YES         | 
+ v_task_history         | status               | character varying           |                       50 | YES         | 
+ v_task_history         | workflow_type        | character varying           |                      255 | YES         | 
+ v_task_history         | created              | timestamp with time zone    |                          | YES         | 
+ v_task_history         | updated              | timestamp with time zone    |                          | YES         | 
+ v_task_history         | duration             | interval                    |                          | YES         | 
+ v_task_history         | user_id              | uuid                        |                          | YES         | 
+ v_task_history         | user_email           | character varying           |                      255 | YES         | 
+ v_task_history         | artifact_count       | bigint                      |                          | YES         | 
+ v_task_history         | message_count        | bigint                      |                          | YES         | 
+ v_task_history         | last_error           | text                        |                          | YES         | 
+(366 rows)
+
+
+=== PRIMARY KEYS ===
+       table_name       |       constraint_name       |  column_name  
+------------------------+-----------------------------+---------------
+ _sqlx_migrations       | _sqlx_migrations_pkey       | version
+ a2a_agent_capabilities | a2a_agent_capabilities_pkey | agent_type
+ a2a_artifacts          | a2a_artifacts_pkey          | id
+ a2a_messages           | a2a_messages_pkey           | id
+ a2a_task_progress      | a2a_task_progress_pkey      | agent_type
+ a2a_task_progress      | a2a_task_progress_pkey      | task_id
+ a2a_tasks              | a2a_tasks_pkey              | id
+ bookmark_collections   | bookmark_collections_pkey   | bookmark_id
+ bookmark_collections   | bookmark_collections_pkey   | collection_id
+ bookmark_embeddings    | bookmark_embeddings_pkey    | id
+ bookmark_metadata      | bookmark_metadata_pkey      | id
+ bookmark_tags          | bookmark_tags_pkey          | bookmark_id
+ bookmark_tags          | bookmark_tags_pkey          | tag_id
+ bookmarks              | bookmarks_pkey              | id
+ collections            | collections_pkey            | id
+ import_history         | import_history_pkey         | id
+ log_aggregations       | log_aggregations_pkey       | id
+ log_ai_analysis        | log_ai_analysis_pkey        | id
+ problem_reports        | problem_reports_pkey        | id
+ system_logs            | system_logs_pkey            | id
+ tags                   | tags_pkey                   | id
+ test_audit_trail       | test_audit_trail_pkey       | id
+ test_cases             | test_cases_pkey             | id
+ test_executions        | test_executions_pkey        | id
+ test_plans             | test_plans_pkey             | id
+ test_runs              | test_runs_pkey              | id
+ test_step_executions   | test_step_executions_pkey   | id
+ test_suites            | test_suites_pkey            | id
+ users                  | users_pkey                  | id
+(29 rows)
+
+
+=== FOREIGN KEYS ===
+      table_name      |  column_name  | foreign_table_name | foreign_column_name | update_rule | delete_rule 
+----------------------+---------------+--------------------+---------------------+-------------+-------------
+ a2a_artifacts        | task_id       | a2a_tasks          | id                  | NO ACTION   | CASCADE
+ a2a_messages         | task_id       | a2a_tasks          | id                  | NO ACTION   | CASCADE
+ a2a_task_progress    | task_id       | a2a_tasks          | id                  | NO ACTION   | CASCADE
+ a2a_tasks            | user_id       | users              | id                  | NO ACTION   | CASCADE
+ bookmark_collections | bookmark_id   | bookmarks          | id                  | NO ACTION   | CASCADE
+ bookmark_collections | collection_id | collections        | id                  | NO ACTION   | CASCADE
+ bookmark_embeddings  | bookmark_id   | bookmarks          | id                  | NO ACTION   | CASCADE
+ bookmark_metadata    | bookmark_id   | bookmarks          | id                  | NO ACTION   | CASCADE
+ bookmark_tags        | bookmark_id   | bookmarks          | id                  | NO ACTION   | CASCADE
+ bookmark_tags        | tag_id        | tags               | id                  | NO ACTION   | CASCADE
+ bookmarks            | import_id     | import_history     | id                  | NO ACTION   | NO ACTION
+ bookmarks            | user_id       | users              | id                  | NO ACTION   | CASCADE
+ collections          | user_id       | users              | id                  | NO ACTION   | CASCADE
+ import_history       | user_id       | users              | id                  | NO ACTION   | CASCADE
+ tags                 | user_id       | users              | id                  | NO ACTION   | CASCADE
+ test_cases           | suite_id      | test_suites        | id                  | NO ACTION   | CASCADE
+ test_executions      | test_case_id  | test_cases         | id                  | NO ACTION   | CASCADE
+ test_suites          | plan_id       | test_plans         | id                  | NO ACTION   | CASCADE
+(18 rows)
+
+
+=== UNIQUE CONSTRAINTS ===
+     table_name      |                         constraint_name                         |                          columns                           
+---------------------+-----------------------------------------------------------------+------------------------------------------------------------
+ bookmark_embeddings | bookmark_embeddings_bookmark_id_key                             | bookmark_id
+ bookmark_metadata   | bookmark_metadata_bookmark_id_key                               | bookmark_id
+ bookmarks           | bookmarks_user_id_url_key                                       | url, user_id
+ collections         | collections_share_token_key                                     | share_token
+ log_aggregations    | log_aggregations_period_start_period_end_aggregation_type_s_key | period_end, level, service, period_start, aggregation_type
+ problem_reports     | problem_reports_pr_number_key                                   | pr_number
+ tags                | tags_user_id_name_key                                           | name, user_id
+ test_cases          | test_cases_test_id_key                                          | test_id
+ test_executions     | test_executions_execution_id_key                                | execution_id
+ test_runs           | test_runs_run_id_key                                            | run_id
+ users               | users_email_key                                                 | email
+(11 rows)
+
+
+=== CHECK CONSTRAINTS ===
+       table_name       |           constraint_name           |                                                                                                        check_clause                                                                                                        
+------------------------+-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ _sqlx_migrations       | 2200_18005_6_not_null               | execution_time IS NOT NULL
+ _sqlx_migrations       | 2200_18005_5_not_null               | checksum IS NOT NULL
+ _sqlx_migrations       | 2200_18005_4_not_null               | success IS NOT NULL
+ _sqlx_migrations       | 2200_18005_1_not_null               | version IS NOT NULL
+ _sqlx_migrations       | 2200_18005_2_not_null               | description IS NOT NULL
+ _sqlx_migrations       | 2200_18005_3_not_null               | installed_on IS NOT NULL
+ a2a_agent_capabilities | 2200_17786_5_not_null               | endpoints IS NOT NULL
+ a2a_agent_capabilities | 2200_17786_10_not_null              | created IS NOT NULL
+ a2a_agent_capabilities | 2200_17786_11_not_null              | updated IS NOT NULL
+ a2a_agent_capabilities | a2a_agent_capabilities_status_check | (((status)::text = ANY ((ARRAY['active'::character varying, 'inactive'::character varying, 'deprecated'::character varying])::text[])))
+ a2a_agent_capabilities | 2200_17786_1_not_null               | agent_type IS NOT NULL
+ a2a_agent_capabilities | 2200_17786_2_not_null               | version IS NOT NULL
+ a2a_agent_capabilities | 2200_17786_4_not_null               | capabilities IS NOT NULL
+ a2a_artifacts          | 2200_17747_4_not_null               | type IS NOT NULL
+ a2a_artifacts          | 2200_17747_2_not_null               | task_id IS NOT NULL
+ a2a_artifacts          | 2200_17747_5_not_null               | mime_type IS NOT NULL
+ a2a_artifacts          | 2200_17747_6_not_null               | data IS NOT NULL
+ a2a_artifacts          | 2200_17747_1_not_null               | id IS NOT NULL
+ a2a_artifacts          | 2200_17747_7_not_null               | created IS NOT NULL
+ a2a_artifacts          | 2200_17747_8_not_null               | immutable IS NOT NULL
+ a2a_artifacts          | 2200_17747_3_not_null               | agent_type IS NOT NULL
+ a2a_messages           | 2200_17767_5_not_null               | content IS NOT NULL
+ a2a_messages           | 2200_17767_1_not_null               | id IS NOT NULL
+ a2a_messages           | 2200_17767_2_not_null               | task_id IS NOT NULL
+ a2a_messages           | 2200_17767_3_not_null               | agent_type IS NOT NULL
+ a2a_messages           | a2a_messages_type_check             | (((type)::text = ANY ((ARRAY['progress'::character varying, 'status'::character varying, 'error'::character varying, 'warning'::character varying, 'info'::character varying, 'completion'::character varying])::text[])))
+ a2a_messages           | 2200_17767_6_not_null               | timestamp IS NOT NULL
+ a2a_messages           | 2200_17767_4_not_null               | type IS NOT NULL
+ a2a_task_progress      | 2200_17933_3_not_null               | status IS NOT NULL
+ a2a_task_progress      | 2200_17933_1_not_null               | task_id IS NOT NULL
+ a2a_task_progress      | 2200_17933_2_not_null               | agent_type IS NOT NULL
+ a2a_tasks              | 2200_17724_4_not_null               | created IS NOT NULL
+ a2a_tasks              | 2200_17724_11_not_null              | context IS NOT NULL
+ a2a_tasks              | a2a_tasks_status_check              | (((status)::text = ANY ((ARRAY['pending'::character varying, 'running'::character varying, 'completed'::character varying, 'failed'::character varying, 'cancelled'::character varying])::text[])))
+ a2a_tasks              | 2200_17724_1_not_null               | id IS NOT NULL
+ a2a_tasks              | 2200_17724_2_not_null               | type IS NOT NULL
+ a2a_tasks              | 2200_17724_3_not_null               | status IS NOT NULL
+ a2a_tasks              | 2200_17724_5_not_null               | updated IS NOT NULL
+ bookmark_collections   | 2200_16863_2_not_null               | collection_id IS NOT NULL
+ bookmark_collections   | 2200_16863_1_not_null               | bookmark_id IS NOT NULL
+ bookmark_embeddings    | 2200_16797_1_not_null               | id IS NOT NULL
+ bookmark_embeddings    | 2200_16797_2_not_null               | bookmark_id IS NOT NULL
+ bookmark_metadata      | 2200_16894_1_not_null               | id IS NOT NULL
+ bookmark_metadata      | 2200_16894_2_not_null               | bookmark_id IS NOT NULL
+ bookmark_tags          | 2200_16829_2_not_null               | tag_id IS NOT NULL
+ bookmark_tags          | 2200_16829_1_not_null               | bookmark_id IS NOT NULL
+ bookmarks              | 2200_16779_3_not_null               | url IS NOT NULL
+ bookmarks              | 2200_16779_2_not_null               | user_id IS NOT NULL
+ bookmarks              | 2200_16779_1_not_null               | id IS NOT NULL
+ bookmarks              | 2200_16779_4_not_null               | title IS NOT NULL
+ bookmarks              | bookmarks_status_check              | (((status)::text = ANY ((ARRAY['imported'::character varying, 'validated'::character varying, 'enriched'::character varying, 'failed'::character varying, 'archived'::character varying])::text[])))
+ collections            | 2200_16845_2_not_null               | user_id IS NOT NULL
+ collections            | 2200_16845_3_not_null               | name IS NOT NULL
+ collections            | 2200_16845_1_not_null               | id IS NOT NULL
+ import_history         | 2200_16879_1_not_null               | id IS NOT NULL
+ import_history         | 2200_16879_2_not_null               | user_id IS NOT NULL
+ import_history         | import_history_status_check         | (((status)::text = ANY ((ARRAY['pending'::character varying, 'processing'::character varying, 'completed'::character varying, 'failed'::character varying, 'cancelled'::character varying])::text[])))
+ import_history         | 2200_16879_3_not_null               | filename IS NOT NULL
+ log_aggregations       | 2200_16965_2_not_null               | period_start IS NOT NULL
+ log_aggregations       | 2200_16965_1_not_null               | id IS NOT NULL
+ log_aggregations       | 2200_16965_7_not_null               | total_count IS NOT NULL
+ log_aggregations       | 2200_16965_8_not_null               | error_count IS NOT NULL
+ log_aggregations       | 2200_16965_4_not_null               | aggregation_type IS NOT NULL
+ log_aggregations       | 2200_16965_3_not_null               | period_end IS NOT NULL
+ log_ai_analysis        | 2200_16979_3_not_null               | period_start IS NOT NULL
+ log_ai_analysis        | 2200_16979_2_not_null               | created_at IS NOT NULL
+ log_ai_analysis        | 2200_16979_8_not_null               | description IS NOT NULL
+ log_ai_analysis        | 2200_16979_7_not_null               | title IS NOT NULL
+ log_ai_analysis        | 2200_16979_6_not_null               | severity IS NOT NULL
+ log_ai_analysis        | 2200_16979_5_not_null               | analysis_type IS NOT NULL
+ log_ai_analysis        | 2200_16979_4_not_null               | period_end IS NOT NULL
+ log_ai_analysis        | 2200_16979_1_not_null               | id IS NOT NULL
+ problem_reports        | 2200_17475_2_not_null               | pr_number IS NOT NULL
+ problem_reports        | 2200_17475_5_not_null               | title IS NOT NULL
+ problem_reports        | 2200_17475_6_not_null               | description IS NOT NULL
+ problem_reports        | 2200_17475_1_not_null               | id IS NOT NULL
+ problem_reports        | 2200_17475_12_not_null              | priority IS NOT NULL
+ problem_reports        | 2200_17475_14_not_null              | reported_by IS NOT NULL
+ problem_reports        | 2200_17475_4_not_null               | type IS NOT NULL
+ system_logs            | 2200_16949_1_not_null               | id IS NOT NULL
+ system_logs            | 2200_16949_2_not_null               | timestamp IS NOT NULL
+ system_logs            | 2200_16949_3_not_null               | level IS NOT NULL
+ system_logs            | 2200_16949_4_not_null               | service IS NOT NULL
+ system_logs            | 2200_16949_6_not_null               | message IS NOT NULL
+ tags                   | 2200_16814_3_not_null               | name IS NOT NULL
+ tags                   | 2200_16814_1_not_null               | id IS NOT NULL
+ tags                   | 2200_16814_2_not_null               | user_id IS NOT NULL
+ test_audit_trail       | 2200_17626_5_not_null               | timestamp IS NOT NULL
+ test_audit_trail       | 2200_17626_1_not_null               | id IS NOT NULL
+ test_audit_trail       | 2200_17626_2_not_null               | run_id IS NOT NULL
+ test_audit_trail       | 2200_17626_4_not_null               | actor IS NOT NULL
+ test_audit_trail       | 2200_17626_3_not_null               | action IS NOT NULL
+ test_cases             | 2200_17421_6_not_null               | type IS NOT NULL
+ test_cases             | 2200_17421_11_not_null              | expected_results IS NOT NULL
+ test_cases             | 2200_17421_18_not_null              | created_by IS NOT NULL
+ test_cases             | 2200_17421_3_not_null               | test_id IS NOT NULL
+ test_cases             | 2200_17421_4_not_null               | name IS NOT NULL
+ test_cases             | 2200_17421_10_not_null              | steps IS NOT NULL
+ test_cases             | 2200_17421_1_not_null               | id IS NOT NULL
+ test_executions        | 2200_17440_5_not_null               | status IS NOT NULL
+ test_executions        | 2200_17440_3_not_null               | execution_id IS NOT NULL
+ test_executions        | 2200_17440_1_not_null               | id IS NOT NULL
+ test_plans             | 2200_17394_9_not_null               | created_by IS NOT NULL
+ test_plans             | 2200_17394_2_not_null               | name IS NOT NULL
+ test_plans             | 2200_17394_1_not_null               | id IS NOT NULL
+ test_plans             | 2200_17394_3_not_null               | version IS NOT NULL
+ test_runs              | 2200_17607_7_not_null               | test_plan_checksum IS NOT NULL
+ test_runs              | 2200_17607_6_not_null               | environment IS NOT NULL
+ test_runs              | 2200_17607_5_not_null               | status IS NOT NULL
+ test_runs              | 2200_17607_3_not_null               | started_at IS NOT NULL
+ test_runs              | 2200_17607_2_not_null               | run_id IS NOT NULL
+ test_runs              | 2200_17607_1_not_null               | id IS NOT NULL
+ test_runs              | 2200_17607_13_not_null              | created_by IS NOT NULL
+ test_runs              | 2200_17607_12_not_null              | artifacts_path IS NOT NULL
+ test_step_executions   | 2200_17618_2_not_null               | execution_id IS NOT NULL
+ test_step_executions   | 2200_17618_11_not_null              | status IS NOT NULL
+ test_step_executions   | 2200_17618_8_not_null               | started_at IS NOT NULL
+ test_step_executions   | 2200_17618_5_not_null               | action_type IS NOT NULL
+ test_step_executions   | 2200_17618_4_not_null               | step_id IS NOT NULL
+ test_step_executions   | 2200_17618_3_not_null               | step_number IS NOT NULL
+ test_step_executions   | 2200_17618_17_not_null              | audit_metadata IS NOT NULL
+ test_step_executions   | 2200_17618_1_not_null               | id IS NOT NULL
+ test_suites            | 2200_17405_1_not_null               | id IS NOT NULL
+ test_suites            | 2200_17405_3_not_null               | name IS NOT NULL
+ test_suites            | 2200_17405_5_not_null               | layer IS NOT NULL
+ test_suites            | 2200_17405_6_not_null               | module IS NOT NULL
+ users                  | 2200_16764_1_not_null               | id IS NOT NULL
+ users                  | 2200_16764_2_not_null               | email IS NOT NULL
+ users                  | 2200_16764_5_not_null               | two_factor_enabled IS NOT NULL
+ users                  | 2200_16764_3_not_null               | password_hash IS NOT NULL
+ users                  | users_email_check                   | (((email)::text ~~ '%@az1.ai'::text))
+(131 rows)
+
+
+=== INDEXES ===
+ schemaname |       tablename        |                            indexname                            |                                                                                             indexdef                                                                                             
+------------+------------------------+-----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ public     | _sqlx_migrations       | _sqlx_migrations_pkey                                           | CREATE UNIQUE INDEX _sqlx_migrations_pkey ON public._sqlx_migrations USING btree (version)
+ public     | a2a_agent_capabilities | a2a_agent_capabilities_pkey                                     | CREATE UNIQUE INDEX a2a_agent_capabilities_pkey ON public.a2a_agent_capabilities USING btree (agent_type)
+ public     | a2a_artifacts          | a2a_artifacts_pkey                                              | CREATE UNIQUE INDEX a2a_artifacts_pkey ON public.a2a_artifacts USING btree (id)
+ public     | a2a_artifacts          | idx_a2a_artifacts_agent_type                                    | CREATE INDEX idx_a2a_artifacts_agent_type ON public.a2a_artifacts USING btree (agent_type)
+ public     | a2a_artifacts          | idx_a2a_artifacts_created                                       | CREATE INDEX idx_a2a_artifacts_created ON public.a2a_artifacts USING btree (created)
+ public     | a2a_artifacts          | idx_a2a_artifacts_task_agent                                    | CREATE INDEX idx_a2a_artifacts_task_agent ON public.a2a_artifacts USING btree (task_id, agent_type)
+ public     | a2a_artifacts          | idx_a2a_artifacts_task_id                                       | CREATE INDEX idx_a2a_artifacts_task_id ON public.a2a_artifacts USING btree (task_id)
+ public     | a2a_artifacts          | idx_a2a_artifacts_type                                          | CREATE INDEX idx_a2a_artifacts_type ON public.a2a_artifacts USING btree (type)
+ public     | a2a_messages           | a2a_messages_pkey                                               | CREATE UNIQUE INDEX a2a_messages_pkey ON public.a2a_messages USING btree (id)
+ public     | a2a_messages           | idx_a2a_messages_agent_type                                     | CREATE INDEX idx_a2a_messages_agent_type ON public.a2a_messages USING btree (agent_type)
+ public     | a2a_messages           | idx_a2a_messages_task_id                                        | CREATE INDEX idx_a2a_messages_task_id ON public.a2a_messages USING btree (task_id)
+ public     | a2a_messages           | idx_a2a_messages_task_recent                                    | CREATE INDEX idx_a2a_messages_task_recent ON public.a2a_messages USING btree (task_id, "timestamp" DESC)
+ public     | a2a_messages           | idx_a2a_messages_timestamp                                      | CREATE INDEX idx_a2a_messages_timestamp ON public.a2a_messages USING btree ("timestamp")
+ public     | a2a_messages           | idx_a2a_messages_type                                           | CREATE INDEX idx_a2a_messages_type ON public.a2a_messages USING btree (type)
+ public     | a2a_task_progress      | a2a_task_progress_pkey                                          | CREATE UNIQUE INDEX a2a_task_progress_pkey ON public.a2a_task_progress USING btree (task_id, agent_type)
+ public     | a2a_task_progress      | idx_a2a_task_progress_status                                    | CREATE INDEX idx_a2a_task_progress_status ON public.a2a_task_progress USING btree (status)
+ public     | a2a_task_progress      | idx_a2a_task_progress_task_id                                   | CREATE INDEX idx_a2a_task_progress_task_id ON public.a2a_task_progress USING btree (task_id)
+ public     | a2a_task_progress      | idx_a2a_task_progress_updated                                   | CREATE INDEX idx_a2a_task_progress_updated ON public.a2a_task_progress USING btree (updated DESC)
+ public     | a2a_tasks              | a2a_tasks_pkey                                                  | CREATE UNIQUE INDEX a2a_tasks_pkey ON public.a2a_tasks USING btree (id)
+ public     | a2a_tasks              | idx_a2a_tasks_active                                            | CREATE INDEX idx_a2a_tasks_active ON public.a2a_tasks USING btree (status, updated) WHERE ((status)::text = ANY ((ARRAY['pending'::character varying, 'running'::character varying])::text[]))
+ public     | a2a_tasks              | idx_a2a_tasks_context_gin                                       | CREATE INDEX idx_a2a_tasks_context_gin ON public.a2a_tasks USING gin (context jsonb_path_ops)
+ public     | a2a_tasks              | idx_a2a_tasks_created                                           | CREATE INDEX idx_a2a_tasks_created ON public.a2a_tasks USING btree (created)
+ public     | a2a_tasks              | idx_a2a_tasks_metadata_gin                                      | CREATE INDEX idx_a2a_tasks_metadata_gin ON public.a2a_tasks USING gin (metadata jsonb_path_ops)
+ public     | a2a_tasks              | idx_a2a_tasks_status                                            | CREATE INDEX idx_a2a_tasks_status ON public.a2a_tasks USING btree (status)
+ public     | a2a_tasks              | idx_a2a_tasks_type                                              | CREATE INDEX idx_a2a_tasks_type ON public.a2a_tasks USING btree (type)
+ public     | a2a_tasks              | idx_a2a_tasks_user_id                                           | CREATE INDEX idx_a2a_tasks_user_id ON public.a2a_tasks USING btree (user_id)
+ public     | a2a_tasks              | idx_a2a_tasks_workflow_current                                  | CREATE INDEX idx_a2a_tasks_workflow_current ON public.a2a_tasks USING btree (workflow_type, current_agent, status)
+ public     | a2a_tasks              | idx_a2a_tasks_workflow_type                                     | CREATE INDEX idx_a2a_tasks_workflow_type ON public.a2a_tasks USING btree (workflow_type)
+ public     | bookmark_collections   | bookmark_collections_pkey                                       | CREATE UNIQUE INDEX bookmark_collections_pkey ON public.bookmark_collections USING btree (bookmark_id, collection_id)
+ public     | bookmark_embeddings    | bookmark_embeddings_bookmark_id_key                             | CREATE UNIQUE INDEX bookmark_embeddings_bookmark_id_key ON public.bookmark_embeddings USING btree (bookmark_id)
+ public     | bookmark_embeddings    | bookmark_embeddings_pkey                                        | CREATE UNIQUE INDEX bookmark_embeddings_pkey ON public.bookmark_embeddings USING btree (id)
+ public     | bookmark_embeddings    | idx_bookmark_embeddings_bookmark_id                             | CREATE INDEX idx_bookmark_embeddings_bookmark_id ON public.bookmark_embeddings USING btree (bookmark_id)
+ public     | bookmark_embeddings    | idx_bookmark_embeddings_vector                                  | CREATE INDEX idx_bookmark_embeddings_vector ON public.bookmark_embeddings USING ivfflat (embedding vector_cosine_ops)
+ public     | bookmark_metadata      | bookmark_metadata_bookmark_id_key                               | CREATE UNIQUE INDEX bookmark_metadata_bookmark_id_key ON public.bookmark_metadata USING btree (bookmark_id)
+ public     | bookmark_metadata      | bookmark_metadata_pkey                                          | CREATE UNIQUE INDEX bookmark_metadata_pkey ON public.bookmark_metadata USING btree (id)
+ public     | bookmark_metadata      | idx_bookmark_metadata_category                                  | CREATE INDEX idx_bookmark_metadata_category ON public.bookmark_metadata USING btree (category) WHERE (category IS NOT NULL)
+ public     | bookmark_metadata      | idx_bookmark_metadata_category_subcategory                      | CREATE INDEX idx_bookmark_metadata_category_subcategory ON public.bookmark_metadata USING btree (category, subcategory) WHERE (category IS NOT NULL)
+ public     | bookmark_tags          | bookmark_tags_pkey                                              | CREATE UNIQUE INDEX bookmark_tags_pkey ON public.bookmark_tags USING btree (bookmark_id, tag_id)
+ public     | bookmarks              | bookmarks_pkey                                                  | CREATE UNIQUE INDEX bookmarks_pkey ON public.bookmarks USING btree (id)
+ public     | bookmarks              | bookmarks_user_id_url_key                                       | CREATE UNIQUE INDEX bookmarks_user_id_url_key ON public.bookmarks USING btree (user_id, url)
+ public     | bookmarks              | idx_bookmarks_ai_tags                                           | CREATE INDEX idx_bookmarks_ai_tags ON public.bookmarks USING gin (ai_tags)
+ public     | bookmarks              | idx_bookmarks_check_attempts                                    | CREATE INDEX idx_bookmarks_check_attempts ON public.bookmarks USING btree (check_attempts)
+ public     | bookmarks              | idx_bookmarks_created_at                                        | CREATE INDEX idx_bookmarks_created_at ON public.bookmarks USING btree (created_at DESC)
+ public     | bookmarks              | idx_bookmarks_dead_status                                       | CREATE INDEX idx_bookmarks_dead_status ON public.bookmarks USING btree (is_dead, last_checked)
+ public     | bookmarks              | idx_bookmarks_description_gin                                   | CREATE INDEX idx_bookmarks_description_gin ON public.bookmarks USING gin (to_tsvector('english'::regconfig, COALESCE(description, ''::text)))
+ public     | bookmarks              | idx_bookmarks_domain                                            | CREATE INDEX idx_bookmarks_domain ON public.bookmarks USING btree (domain)
+ public     | bookmarks              | idx_bookmarks_enriched                                          | CREATE INDEX idx_bookmarks_enriched ON public.bookmarks USING btree (enriched, user_id)
+ public     | bookmarks              | idx_bookmarks_enriched_created                                  | CREATE INDEX idx_bookmarks_enriched_created ON public.bookmarks USING btree (enriched, created_at DESC) WHERE (enriched = true)
+ public     | bookmarks              | idx_bookmarks_enrichment_data_gin                               | CREATE INDEX idx_bookmarks_enrichment_data_gin ON public.bookmarks USING gin (enrichment_data jsonb_path_ops) WHERE ((enrichment_data IS NOT NULL) AND (enrichment_data <> '{}'::jsonb))
+ public     | bookmarks              | idx_bookmarks_import_id                                         | CREATE INDEX idx_bookmarks_import_id ON public.bookmarks USING btree (import_id)
+ public     | bookmarks              | idx_bookmarks_is_valid                                          | CREATE INDEX idx_bookmarks_is_valid ON public.bookmarks USING btree (is_valid)
+ public     | bookmarks              | idx_bookmarks_needs_check                                       | CREATE INDEX idx_bookmarks_needs_check ON public.bookmarks USING btree (id) WHERE (last_checked IS NULL)
+ public     | bookmarks              | idx_bookmarks_status                                            | CREATE INDEX idx_bookmarks_status ON public.bookmarks USING btree (status)
+ public     | bookmarks              | idx_bookmarks_status_user_created                               | CREATE INDEX idx_bookmarks_status_user_created ON public.bookmarks USING btree (status, user_id, created_at DESC)
+ public     | bookmarks              | idx_bookmarks_title_gin                                         | CREATE INDEX idx_bookmarks_title_gin ON public.bookmarks USING gin (to_tsvector('english'::regconfig, title))
+ public     | bookmarks              | idx_bookmarks_user_created                                      | CREATE INDEX idx_bookmarks_user_created ON public.bookmarks USING btree (user_id, created_at DESC)
+ public     | bookmarks              | idx_bookmarks_user_enriched_valid_created                       | CREATE INDEX idx_bookmarks_user_enriched_valid_created ON public.bookmarks USING btree (user_id, enriched, is_valid, created_at DESC) INCLUDE (title, url, domain) WHERE (is_deleted = false)
+ public     | bookmarks              | idx_bookmarks_user_id                                           | CREATE INDEX idx_bookmarks_user_id ON public.bookmarks USING btree (user_id)
+ public     | bookmarks              | idx_bookmarks_user_status_created                               | CREATE INDEX idx_bookmarks_user_status_created ON public.bookmarks USING btree (user_id, is_valid, created_at DESC)
+ public     | bookmarks              | idx_bookmarks_user_status_domain                                | CREATE INDEX idx_bookmarks_user_status_domain ON public.bookmarks USING btree (user_id, status, domain) WHERE ((status)::text <> 'archived'::text)
+ public     | bookmarks              | idx_bookmarks_validation_errors_gin                             | CREATE INDEX idx_bookmarks_validation_errors_gin ON public.bookmarks USING gin (validation_errors jsonb_path_ops) WHERE ((validation_errors IS NOT NULL) AND (validation_errors <> '[]'::jsonb))
+ public     | bookmarks              | idx_bookmarks_validation_status                                 | CREATE INDEX idx_bookmarks_validation_status ON public.bookmarks USING btree (is_valid, last_checked)
+ public     | collections            | collections_pkey                                                | CREATE UNIQUE INDEX collections_pkey ON public.collections USING btree (id)
+ public     | collections            | collections_share_token_key                                     | CREATE UNIQUE INDEX collections_share_token_key ON public.collections USING btree (share_token)
+ public     | collections            | idx_collections_share_token                                     | CREATE INDEX idx_collections_share_token ON public.collections USING btree (share_token)
+ public     | collections            | idx_collections_user_id                                         | CREATE INDEX idx_collections_user_id ON public.collections USING btree (user_id)
+ public     | import_history         | idx_import_history_user_created                                 | CREATE INDEX idx_import_history_user_created ON public.import_history USING btree (user_id, created_at DESC)
+ public     | import_history         | idx_import_history_user_id                                      | CREATE INDEX idx_import_history_user_id ON public.import_history USING btree (user_id)
+ public     | import_history         | idx_import_history_user_status                                  | CREATE INDEX idx_import_history_user_status ON public.import_history USING btree (user_id, status, started_at DESC)
+ public     | import_history         | import_history_pkey                                             | CREATE UNIQUE INDEX import_history_pkey ON public.import_history USING btree (id)
+ public     | log_aggregations       | idx_log_aggregations_period                                     | CREATE INDEX idx_log_aggregations_period ON public.log_aggregations USING btree (period_start DESC, period_end DESC)
+ public     | log_aggregations       | idx_log_aggregations_type_period                                | CREATE INDEX idx_log_aggregations_type_period ON public.log_aggregations USING btree (aggregation_type, period_start DESC)
+ public     | log_aggregations       | log_aggregations_period_start_period_end_aggregation_type_s_key | CREATE UNIQUE INDEX log_aggregations_period_start_period_end_aggregation_type_s_key ON public.log_aggregations USING btree (period_start, period_end, aggregation_type, service, level)
+ public     | log_aggregations       | log_aggregations_pkey                                           | CREATE UNIQUE INDEX log_aggregations_pkey ON public.log_aggregations USING btree (id)
+ public     | log_ai_analysis        | idx_ai_analysis_created                                         | CREATE INDEX idx_ai_analysis_created ON public.log_ai_analysis USING btree (created_at DESC)
+ public     | log_ai_analysis        | idx_ai_analysis_severity                                        | CREATE INDEX idx_ai_analysis_severity ON public.log_ai_analysis USING btree (severity, created_at DESC)
+ public     | log_ai_analysis        | idx_log_ai_analysis_created                                     | CREATE INDEX idx_log_ai_analysis_created ON public.log_ai_analysis USING btree (created_at DESC)
+ public     | log_ai_analysis        | log_ai_analysis_pkey                                            | CREATE UNIQUE INDEX log_ai_analysis_pkey ON public.log_ai_analysis USING btree (id)
+ public     | problem_reports        | idx_problem_reports_status                                      | CREATE INDEX idx_problem_reports_status ON public.problem_reports USING btree (status)
+ public     | problem_reports        | problem_reports_pkey                                            | CREATE UNIQUE INDEX problem_reports_pkey ON public.problem_reports USING btree (id)
+ public     | problem_reports        | problem_reports_pr_number_key                                   | CREATE UNIQUE INDEX problem_reports_pr_number_key ON public.problem_reports USING btree (pr_number)
+ public     | system_logs            | idx_logs_error                                                  | CREATE INDEX idx_logs_error ON public.system_logs USING btree (error_type, "timestamp" DESC) WHERE (error_type IS NOT NULL)
+ public     | system_logs            | idx_logs_level                                                  | CREATE INDEX idx_logs_level ON public.system_logs USING btree (level, "timestamp" DESC)
+ public     | system_logs            | idx_logs_metadata                                               | CREATE INDEX idx_logs_metadata ON public.system_logs USING gin (metadata)
+ public     | system_logs            | idx_logs_service                                                | CREATE INDEX idx_logs_service ON public.system_logs USING btree (service, "timestamp" DESC)
+ public     | system_logs            | idx_logs_timestamp                                              | CREATE INDEX idx_logs_timestamp ON public.system_logs USING btree ("timestamp" DESC)
+ public     | system_logs            | idx_system_logs_level_timestamp                                 | CREATE INDEX idx_system_logs_level_timestamp ON public.system_logs USING btree (level, "timestamp" DESC)
+ public     | system_logs            | idx_system_logs_service_timestamp                               | CREATE INDEX idx_system_logs_service_timestamp ON public.system_logs USING btree (service, "timestamp" DESC)
+ public     | system_logs            | idx_system_logs_timestamp                                       | CREATE INDEX idx_system_logs_timestamp ON public.system_logs USING btree ("timestamp" DESC)
+ public     | system_logs            | idx_system_logs_timestamp_service                               | CREATE INDEX idx_system_logs_timestamp_service ON public.system_logs USING btree ("timestamp", service)
+ public     | system_logs            | system_logs_pkey                                                | CREATE UNIQUE INDEX system_logs_pkey ON public.system_logs USING btree (id)
+ public     | tags                   | idx_tags_user_id                                                | CREATE INDEX idx_tags_user_id ON public.tags USING btree (user_id)
+ public     | tags                   | tags_pkey                                                       | CREATE UNIQUE INDEX tags_pkey ON public.tags USING btree (id)
+ public     | tags                   | tags_user_id_name_key                                           | CREATE UNIQUE INDEX tags_user_id_name_key ON public.tags USING btree (user_id, name)
+ public     | test_audit_trail       | test_audit_trail_pkey                                           | CREATE UNIQUE INDEX test_audit_trail_pkey ON public.test_audit_trail USING btree (id)
+ public     | test_cases             | idx_test_cases_automated                                        | CREATE INDEX idx_test_cases_automated ON public.test_cases USING btree (automated)
+ public     | test_cases             | idx_test_cases_suite_id                                         | CREATE INDEX idx_test_cases_suite_id ON public.test_cases USING btree (suite_id)
+ public     | test_cases             | idx_test_cases_test_id                                          | CREATE INDEX idx_test_cases_test_id ON public.test_cases USING btree (test_id)
+ public     | test_cases             | test_cases_pkey                                                 | CREATE UNIQUE INDEX test_cases_pkey ON public.test_cases USING btree (id)
+ public     | test_cases             | test_cases_test_id_key                                          | CREATE UNIQUE INDEX test_cases_test_id_key ON public.test_cases USING btree (test_id)
+ public     | test_executions        | idx_test_executions_run_id                                      | CREATE INDEX idx_test_executions_run_id ON public.test_executions USING btree (run_id)
+ public     | test_executions        | idx_test_executions_started_at                                  | CREATE INDEX idx_test_executions_started_at ON public.test_executions USING btree (started_at DESC)
+ public     | test_executions        | idx_test_executions_status                                      | CREATE INDEX idx_test_executions_status ON public.test_executions USING btree (status)
+ public     | test_executions        | idx_test_executions_test_case_id                                | CREATE INDEX idx_test_executions_test_case_id ON public.test_executions USING btree (test_case_id)
+ public     | test_executions        | test_executions_execution_id_key                                | CREATE UNIQUE INDEX test_executions_execution_id_key ON public.test_executions USING btree (execution_id)
+ public     | test_executions        | test_executions_pkey                                            | CREATE UNIQUE INDEX test_executions_pkey ON public.test_executions USING btree (id)
+ public     | test_plans             | test_plans_pkey                                                 | CREATE UNIQUE INDEX test_plans_pkey ON public.test_plans USING btree (id)
+ public     | test_runs              | test_runs_pkey                                                  | CREATE UNIQUE INDEX test_runs_pkey ON public.test_runs USING btree (id)
+ public     | test_runs              | test_runs_run_id_key                                            | CREATE UNIQUE INDEX test_runs_run_id_key ON public.test_runs USING btree (run_id)
+ public     | test_step_executions   | test_step_executions_pkey                                       | CREATE UNIQUE INDEX test_step_executions_pkey ON public.test_step_executions USING btree (id)
+ public     | test_suites            | test_suites_pkey                                                | CREATE UNIQUE INDEX test_suites_pkey ON public.test_suites USING btree (id)
+ public     | users                  | idx_users_email                                                 | CREATE INDEX idx_users_email ON public.users USING btree (email)
+ public     | users                  | users_email_key                                                 | CREATE UNIQUE INDEX users_email_key ON public.users USING btree (email)
+ public     | users                  | users_pkey                                                      | CREATE UNIQUE INDEX users_pkey ON public.users USING btree (id)
+(114 rows)
+
+
+=== SEQUENCES ===
+ sequence_schema |      sequence_name      | data_type | start_value | minimum_value |    maximum_value    | increment 
+-----------------+-------------------------+-----------+-------------+---------------+---------------------+-----------
+ public          | log_aggregations_id_seq | integer   | 1           | 1             | 2147483647          | 1
+ public          | log_ai_analysis_id_seq  | integer   | 1           | 1             | 2147483647          | 1
+ public          | system_logs_id_seq      | bigint    | 1           | 1             | 9223372036854775807 | 1
+(3 rows)
+
+
+=== VIEWS ===
+      view_name      |                                                                             view_definition                                                                              
+---------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ v_active_tasks      |  SELECT t.id,                                                                                                                                                           +
+                     |     t.type,                                                                                                                                                             +
+                     |     t.status,                                                                                                                                                           +
+                     |     t.workflow_type,                                                                                                                                                    +
+                     |     t.current_agent,                                                                                                                                                    +
+                     |     t.current_step,                                                                                                                                                     +
+                     |     t.total_steps,                                                                                                                                                      +
+                     |     round(                                                                                                                                                              +
+                     |         CASE                                                                                                                                                            +
+                     |             WHEN (t.total_steps > 0) THEN (((t.current_step)::numeric / (t.total_steps)::numeric) * (100)::numeric)                                                     +
+                     |             ELSE (0)::numeric                                                                                                                                           +
+                     |         END, 2) AS progress_percentage,                                                                                                                                 +
+                     |     t.created,                                                                                                                                                          +
+                     |     t.updated,                                                                                                                                                          +
+                     |     t.user_id,                                                                                                                                                          +
+                     |     count(DISTINCT a.id) AS artifact_count,                                                                                                                             +
+                     |     count(DISTINCT m.id) AS message_count                                                                                                                               +
+                     |    FROM ((a2a_tasks t                                                                                                                                                   +
+                     |      LEFT JOIN a2a_artifacts a ON (((t.id)::text = (a.task_id)::text)))                                                                                                 +
+                     |      LEFT JOIN a2a_messages m ON (((t.id)::text = (m.task_id)::text)))                                                                                                  +
+                     |   WHERE ((t.status)::text = ANY ((ARRAY['pending'::character varying, 'running'::character varying])::text[]))                                                          +
+                     |   GROUP BY t.id;
+ v_agent_performance |  SELECT ac.agent_type,                                                                                                                                                  +
+                     |     ac.version,                                                                                                                                                         +
+                     |     ac.status AS agent_status,                                                                                                                                          +
+                     |     count(DISTINCT t.id) AS total_tasks,                                                                                                                                +
+                     |     count(DISTINCT                                                                                                                                                      +
+                     |         CASE                                                                                                                                                            +
+                     |             WHEN ((t.status)::text = 'completed'::text) THEN t.id                                                                                                       +
+                     |             ELSE NULL::character varying                                                                                                                                +
+                     |         END) AS completed_tasks,                                                                                                                                        +
+                     |     count(DISTINCT                                                                                                                                                      +
+                     |         CASE                                                                                                                                                            +
+                     |             WHEN ((t.status)::text = 'failed'::text) THEN t.id                                                                                                          +
+                     |             ELSE NULL::character varying                                                                                                                                +
+                     |         END) AS failed_tasks,                                                                                                                                           +
+                     |     round(avg(EXTRACT(epoch FROM (m2."timestamp" - m1."timestamp"))), 2) AS avg_duration_seconds                                                                        +
+                     |    FROM ((((a2a_agent_capabilities ac                                                                                                                                   +
+                     |      LEFT JOIN a2a_artifacts a ON (((ac.agent_type)::text = (a.agent_type)::text)))                                                                                     +
+                     |      LEFT JOIN a2a_tasks t ON (((a.task_id)::text = (t.id)::text)))                                                                                                     +
+                     |      LEFT JOIN a2a_messages m1 ON ((((t.id)::text = (m1.task_id)::text) AND ((m1.type)::text = 'progress'::text) AND ((m1.metadata ->> 'progress'::text) = '0'::text))))+
+                     |      LEFT JOIN a2a_messages m2 ON ((((t.id)::text = (m2.task_id)::text) AND ((m2.type)::text = 'completion'::text))))                                                   +
+                     |   GROUP BY ac.agent_type, ac.version, ac.status;
+ v_task_history      |  SELECT t.id,                                                                                                                                                           +
+                     |     t.type,                                                                                                                                                             +
+                     |     t.status,                                                                                                                                                           +
+                     |     t.workflow_type,                                                                                                                                                    +
+                     |     t.created,                                                                                                                                                          +
+                     |     t.updated,                                                                                                                                                          +
+                     |     (t.updated - t.created) AS duration,                                                                                                                                +
+                     |     t.user_id,                                                                                                                                                          +
+                     |     u.email AS user_email,                                                                                                                                              +
+                     |     count(DISTINCT a.id) AS artifact_count,                                                                                                                             +
+                     |     count(DISTINCT m.id) AS message_count,                                                                                                                              +
+                     |     max(                                                                                                                                                                +
+                     |         CASE                                                                                                                                                            +
+                     |             WHEN ((m.type)::text = 'error'::text) THEN m.content                                                                                                        +
+                     |             ELSE NULL::text                                                                                                                                             +
+                     |         END) AS last_error                                                                                                                                              +
+                     |    FROM (((a2a_tasks t                                                                                                                                                  +
+                     |      LEFT JOIN users u ON ((t.user_id = u.id)))                                                                                                                         +
+                     |      LEFT JOIN a2a_artifacts a ON (((t.id)::text = (a.task_id)::text)))                                                                                                 +
+                     |      LEFT JOIN a2a_messages m ON (((t.id)::text = (m.task_id)::text)))                                                                                                  +
+                     |   GROUP BY t.id, u.email                                                                                                                                                +
+                     |   ORDER BY t.created DESC;
+(3 rows)
+
+
+=== FUNCTIONS ===
+              routine_name              | routine_type |   return_type    |                                             routine_definition                                              
+----------------------------------------+--------------+------------------+-------------------------------------------------------------------------------------------------------------
+ armor                                  | FUNCTION     | text             | pg_armor
+ armor                                  | FUNCTION     | text             | pg_armor
+ array_to_halfvec                       | FUNCTION     | USER-DEFINED     | array_to_halfvec
+ array_to_halfvec                       | FUNCTION     | USER-DEFINED     | array_to_halfvec
+ array_to_halfvec                       | FUNCTION     | USER-DEFINED     | array_to_halfvec
+ array_to_halfvec                       | FUNCTION     | USER-DEFINED     | array_to_halfvec
+ array_to_sparsevec                     | FUNCTION     | USER-DEFINED     | array_to_sparsevec
+ array_to_sparsevec                     | FUNCTION     | USER-DEFINED     | array_to_sparsevec
+ array_to_sparsevec                     | FUNCTION     | USER-DEFINED     | array_to_sparsevec
+ array_to_sparsevec                     | FUNCTION     | USER-DEFINED     | array_to_sparsevec
+ array_to_vector                        | FUNCTION     | USER-DEFINED     | array_to_vector
+ array_to_vector                        | FUNCTION     | USER-DEFINED     | array_to_vector
+ array_to_vector                        | FUNCTION     | USER-DEFINED     | array_to_vector
+ array_to_vector                        | FUNCTION     | USER-DEFINED     | array_to_vector
+ audit_test_changes                     | FUNCTION     | trigger          |                                                                                                            +
+                                        |              |                  | BEGIN                                                                                                      +
+                                        |              |                  |     INSERT INTO test_audit_log (entity_type, entity_id, action, changes, performed_by)                     +
+                                        |              |                  |     VALUES (                                                                                               +
+                                        |              |                  |         TG_TABLE_NAME,                                                                                     +
+                                        |              |                  |         CASE WHEN TG_OP = 'DELETE' THEN OLD.id ELSE NEW.id END,                                            +
+                                        |              |                  |         TG_OP,                                                                                             +
+                                        |              |                  |         CASE                                                                                               +
+                                        |              |                  |             WHEN TG_OP = 'INSERT' THEN row_to_json(NEW)                                                    +
+                                        |              |                  |             WHEN TG_OP = 'UPDATE' THEN jsonb_build_object('old', row_to_json(OLD), 'new', row_to_json(NEW))+
+                                        |              |                  |             WHEN TG_OP = 'DELETE' THEN row_to_json(OLD)                                                    +
+                                        |              |                  |         END,                                                                                               +
+                                        |              |                  |         COALESCE(current_setting('app.current_user', true), 'system')                                      +
+                                        |              |                  |     );                                                                                                     +
+                                        |              |                  |     RETURN NEW;                                                                                            +
+                                        |              |                  | END;                                                                                                       +
+                                        |              |                  | 
+ avg                                    |              | USER-DEFINED     | aggregate_dummy
+ avg                                    |              | USER-DEFINED     | aggregate_dummy
+ binary_quantize                        | FUNCTION     | bit              | binary_quantize
+ binary_quantize                        | FUNCTION     | bit              | halfvec_binary_quantize
+ calculate_test_metrics                 | FUNCTION     | void             |                                                                                                            +
+                                        |              |                  | DECLARE                                                                                                    +
+                                        |              |                  |     v_total INTEGER;                                                                                       +
+                                        |              |                  |     v_executed INTEGER;                                                                                    +
+                                        |              |                  |     v_passed INTEGER;                                                                                      +
+                                        |              |                  |     v_failed INTEGER;                                                                                      +
+                                        |              |                  |     v_blocked INTEGER;                                                                                     +
+                                        |              |                  |     v_skipped INTEGER;                                                                                     +
+                                        |              |                  | BEGIN                                                                                                      +
+                                        |              |                  |     SELECT                                                                                                 +
+                                        |              |                  |         COUNT(DISTINCT tc.id),                                                                             +
+                                        |              |                  |         COUNT(DISTINCT CASE WHEN te.status IS NOT NULL THEN tc.id END),                                    +
+                                        |              |                  |         COUNT(DISTINCT CASE WHEN te.status = 'passed' THEN tc.id END),                                     +
+                                        |              |                  |         COUNT(DISTINCT CASE WHEN te.status = 'failed' THEN tc.id END),                                     +
+                                        |              |                  |         COUNT(DISTINCT CASE WHEN te.status = 'blocked' THEN tc.id END),                                    +
+                                        |              |                  |         COUNT(DISTINCT CASE WHEN te.status = 'skipped' THEN tc.id END)                                     +
+                                        |              |                  |     INTO v_total, v_executed, v_passed, v_failed, v_blocked, v_skipped                                     +
+                                        |              |                  |     FROM test_cases tc                                                                                     +
+                                        |              |                  |     LEFT JOIN test_executions te ON tc.id = te.test_case_id AND te.run_id = p_run_id;                      +
+                                        |              |                  |                                                                                                            +
+                                        |              |                  |     INSERT INTO test_metrics (                                                                             +
+                                        |              |                  |         run_id, metric_date, total_tests, tests_executed,                                                  +
+                                        |              |                  |         tests_passed, tests_failed, tests_blocked, tests_skipped,                                          +
+                                        |              |                  |         pass_rate, automation_rate                                                                         +
+                                        |              |                  |     ) VALUES (                                                                                             +
+                                        |              |                  |         p_run_id, CURRENT_DATE, v_total, v_executed,                                                       +
+                                        |              |                  |         v_passed, v_failed, v_blocked, v_skipped,                                                          +
+                                        |              |                  |         CASE WHEN v_executed > 0 THEN (v_passed::DECIMAL / v_executed) * 100 ELSE 0 END,                   +
+                                        |              |                  |         (SELECT COUNT(*)::DECIMAL / v_total * 100 FROM test_cases WHERE automated = true)                  +
+                                        |              |                  |     );                                                                                                     +
+                                        |              |                  | END;                                                                                                       +
+                                        |              |                  | 
+ cosine_distance                        | FUNCTION     | double precision | sparsevec_cosine_distance
+ cosine_distance                        | FUNCTION     | double precision | cosine_distance
+ cosine_distance                        | FUNCTION     | double precision | halfvec_cosine_distance
+ crypt                                  | FUNCTION     | text             | pg_crypt
+ dearmor                                | FUNCTION     | bytea            | pg_dearmor
+ decrypt                                | FUNCTION     | bytea            | pg_decrypt
+ decrypt_iv                             | FUNCTION     | bytea            | pg_decrypt_iv
+ digest                                 | FUNCTION     | bytea            | pg_digest
+ digest                                 | FUNCTION     | bytea            | pg_digest
+ encrypt                                | FUNCTION     | bytea            | pg_encrypt
+ encrypt_iv                             | FUNCTION     | bytea            | pg_encrypt_iv
+ ensure_metadata_for_enriched_bookmarks | FUNCTION     | trigger          |                                                                                                            +
+                                        |              |                  | BEGIN                                                                                                      +
+                                        |              |                  |     -- If bookmark is being marked as enriched                                                             +
+                                        |              |                  |     IF NEW.enriched = true AND OLD.enriched = false THEN                                                   +
+                                        |              |                  |         -- Check if metadata exists                                                                        +
+                                        |              |                  |         IF NOT EXISTS (                                                                                    +
+                                        |              |                  |             SELECT 1 FROM bookmark_metadata                                                                +
+                                        |              |                  |             WHERE bookmark_id = NEW.id                                                                     +
+                                        |              |                  |         ) THEN                                                                                             +
+                                        |              |                  |             -- Create minimal metadata record                                                              +
+                                        |              |                  |             INSERT INTO bookmark_metadata (bookmark_id, extracted_at)                                      +
+                                        |              |                  |             VALUES (NEW.id, NOW());                                                                        +
+                                        |              |                  |         END IF;                                                                                            +
+                                        |              |                  |     END IF;                                                                                                +
+                                        |              |                  |     RETURN NEW;                                                                                            +
+                                        |              |                  | END;                                                                                                       +
+                                        |              |                  | 
+ gen_random_bytes                       | FUNCTION     | bytea            | pg_random_bytes
+ gen_random_uuid                        | FUNCTION     | uuid             | pg_random_uuid
+ gen_salt                               | FUNCTION     | text             | pg_gen_salt_rounds
+ gen_salt                               | FUNCTION     | text             | pg_gen_salt
+ get_task_progress                      | FUNCTION     | record           |                                                                                                            +
+                                        |              |                  | BEGIN                                                                                                      +
+                                        |              |                  |     RETURN QUERY                                                                                           +
+                                        |              |                  |     SELECT                                                                                                 +
+                                        |              |                  |         t.id,                                                                                              +
+                                        |              |                  |         t.status,                                                                                          +
+                                        |              |                  |         t.current_agent,                                                                                   +
+                                        |              |                  |         ROUND(CASE                                                                                         +
+                                        |              |                  |             WHEN t.total_steps > 0 THEN (t.current_step::NUMERIC / t.total_steps) * 100                    +
+                                        |              |                  |             ELSE COALESCE((m.metadata->>'progress')::NUMERIC, 0)                                           +
+                                        |              |                  |         END, 2) as progress_percentage,                                                                    +
+                                        |              |                  |         m.content as last_message,                                                                         +
+                                        |              |                  |         COUNT(DISTINCT a.id) as artifact_count                                                             +
+                                        |              |                  |     FROM a2a_tasks t                                                                                       +
+                                        |              |                  |     LEFT JOIN a2a_artifacts a ON t.id = a.task_id                                                          +
+                                        |              |                  |     LEFT JOIN LATERAL (                                                                                    +
+                                        |              |                  |         SELECT content, metadata                                                                           +
+                                        |              |                  |         FROM a2a_messages                                                                                  +
+                                        |              |                  |         WHERE task_id = t.id                                                                               +
+                                        |              |                  |         ORDER BY timestamp DESC                                                                            +
+                                        |              |                  |         LIMIT 1                                                                                            +
+                                        |              |                  |     ) m ON true                                                                                            +
+                                        |              |                  |     WHERE t.id = p_task_id                                                                                 +
+                                        |              |                  |     GROUP BY t.id, m.content, m.metadata;                                                                  +
+                                        |              |                  | END;                                                                                                       +
+                                        |              |                  | 
+ halfvec                                | FUNCTION     | USER-DEFINED     | halfvec
+ halfvec_accum                          | FUNCTION     | ARRAY            | halfvec_accum
+ halfvec_add                            | FUNCTION     | USER-DEFINED     | halfvec_add
+ halfvec_avg                            | FUNCTION     | USER-DEFINED     | halfvec_avg
+ halfvec_cmp                            | FUNCTION     | integer          | halfvec_cmp
+ halfvec_combine                        | FUNCTION     | ARRAY            | vector_combine
+ halfvec_concat                         | FUNCTION     | USER-DEFINED     | halfvec_concat
+ halfvec_eq                             | FUNCTION     | boolean          | halfvec_eq
+ halfvec_ge                             | FUNCTION     | boolean          | halfvec_ge
+ halfvec_gt                             | FUNCTION     | boolean          | halfvec_gt
+ halfvec_in                             | FUNCTION     | USER-DEFINED     | halfvec_in
+ halfvec_l2_squared_distance            | FUNCTION     | double precision | halfvec_l2_squared_distance
+ halfvec_le                             | FUNCTION     | boolean          | halfvec_le
+ halfvec_lt                             | FUNCTION     | boolean          | halfvec_lt
+ halfvec_mul                            | FUNCTION     | USER-DEFINED     | halfvec_mul
+ halfvec_ne                             | FUNCTION     | boolean          | halfvec_ne
+ halfvec_negative_inner_product         | FUNCTION     | double precision | halfvec_negative_inner_product
+ halfvec_out                            | FUNCTION     | cstring          | halfvec_out
+ halfvec_recv                           | FUNCTION     | USER-DEFINED     | halfvec_recv
+ halfvec_send                           | FUNCTION     | bytea            | halfvec_send
+ halfvec_spherical_distance             | FUNCTION     | double precision | halfvec_spherical_distance
+ halfvec_sub                            | FUNCTION     | USER-DEFINED     | halfvec_sub
+ halfvec_to_float4                      | FUNCTION     | ARRAY            | halfvec_to_float4
+ halfvec_to_sparsevec                   | FUNCTION     | USER-DEFINED     | halfvec_to_sparsevec
+ halfvec_to_vector                      | FUNCTION     | USER-DEFINED     | halfvec_to_vector
+ halfvec_typmod_in                      | FUNCTION     | integer          | halfvec_typmod_in
+ hamming_distance                       | FUNCTION     | double precision | hamming_distance
+ hmac                                   | FUNCTION     | bytea            | pg_hmac
+ hmac                                   | FUNCTION     | bytea            | pg_hmac
+ hnsw_bit_support                       | FUNCTION     | internal         | hnsw_bit_support
+ hnsw_halfvec_support                   | FUNCTION     | internal         | hnsw_halfvec_support
+ hnsw_sparsevec_support                 | FUNCTION     | internal         | hnsw_sparsevec_support
+ hnswhandler                            | FUNCTION     | index_am_handler | hnswhandler
+ inner_product                          | FUNCTION     | double precision | halfvec_inner_product
+ inner_product                          | FUNCTION     | double precision | inner_product
+ inner_product                          | FUNCTION     | double precision | sparsevec_inner_product
+ ivfflat_bit_support                    | FUNCTION     | internal         | ivfflat_bit_support
+ ivfflat_halfvec_support                | FUNCTION     | internal         | ivfflat_halfvec_support
+ ivfflathandler                         | FUNCTION     | index_am_handler | ivfflathandler
+ jaccard_distance                       | FUNCTION     | double precision | jaccard_distance
+ l1_distance                            | FUNCTION     | double precision | l1_distance
+ l1_distance                            | FUNCTION     | double precision | halfvec_l1_distance
+ l1_distance                            | FUNCTION     | double precision | sparsevec_l1_distance
+ l2_distance                            | FUNCTION     | double precision | halfvec_l2_distance
+ l2_distance                            | FUNCTION     | double precision | l2_distance
+ l2_distance                            | FUNCTION     | double precision | sparsevec_l2_distance
+ l2_norm                                | FUNCTION     | double precision | sparsevec_l2_norm
+ l2_norm                                | FUNCTION     | double precision | halfvec_l2_norm
+ l2_normalize                           | FUNCTION     | USER-DEFINED     | halfvec_l2_normalize
+ l2_normalize                           | FUNCTION     | USER-DEFINED     | l2_normalize
+ l2_normalize                           | FUNCTION     | USER-DEFINED     | sparsevec_l2_normalize
+ migrate_bookmark_status_fields         | FUNCTION     | void             |                                                                                                            +
+                                        |              |                  | BEGIN                                                                                                      +
+                                        |              |                  |     -- Update status based on current boolean fields                                                       +
+                                        |              |                  |     UPDATE bookmarks                                                                                       +
+                                        |              |                  |     SET status = CASE                                                                                      +
+                                        |              |                  |         WHEN is_deleted = true THEN 'archived'                                                             +
+                                        |              |                  |         WHEN is_dead = true THEN 'failed'                                                                  +
+                                        |              |                  |         WHEN is_valid = false THEN 'failed'                                                                +
+                                        |              |                  |         WHEN enriched = true THEN 'enriched'                                                               +
+                                        |              |                  |         WHEN is_valid = true AND enriched = false THEN 'validated'                                         +
+                                        |              |                  |         ELSE 'imported'                                                                                    +
+                                        |              |                  |     END                                                                                                    +
+                                        |              |                  |     WHERE status IS NULL OR status = 'imported';                                                           +
+                                        |              |                  |                                                                                                            +
+                                        |              |                  |     -- Log migration                                                                                       +
+                                        |              |                  |     RAISE NOTICE 'Migrated bookmark status fields for % bookmarks',                                        +
+                                        |              |                  |         (SELECT COUNT(*) FROM bookmarks);                                                                  +
+                                        |              |                  | END;                                                                                                       +
+                                        |              |                  | 
+ pgp_armor_headers                      | FUNCTION     | record           | pgp_armor_headers
+ pgp_key_id                             | FUNCTION     | text             | pgp_key_id_w
+ pgp_pub_decrypt                        | FUNCTION     | text             | pgp_pub_decrypt_text
+ pgp_pub_decrypt                        | FUNCTION     | text             | pgp_pub_decrypt_text
+ pgp_pub_decrypt                        | FUNCTION     | text             | pgp_pub_decrypt_text
+ pgp_pub_decrypt_bytea                  | FUNCTION     | bytea            | pgp_pub_decrypt_bytea
+ pgp_pub_decrypt_bytea                  | FUNCTION     | bytea            | pgp_pub_decrypt_bytea
+ pgp_pub_decrypt_bytea                  | FUNCTION     | bytea            | pgp_pub_decrypt_bytea
+ pgp_pub_encrypt                        | FUNCTION     | bytea            | pgp_pub_encrypt_text
+ pgp_pub_encrypt                        | FUNCTION     | bytea            | pgp_pub_encrypt_text
+ pgp_pub_encrypt_bytea                  | FUNCTION     | bytea            | pgp_pub_encrypt_bytea
+ pgp_pub_encrypt_bytea                  | FUNCTION     | bytea            | pgp_pub_encrypt_bytea
+ pgp_sym_decrypt                        | FUNCTION     | text             | pgp_sym_decrypt_text
+ pgp_sym_decrypt                        | FUNCTION     | text             | pgp_sym_decrypt_text
+ pgp_sym_decrypt_bytea                  | FUNCTION     | bytea            | pgp_sym_decrypt_bytea
+ pgp_sym_decrypt_bytea                  | FUNCTION     | bytea            | pgp_sym_decrypt_bytea
+ pgp_sym_encrypt                        | FUNCTION     | bytea            | pgp_sym_encrypt_text
+ pgp_sym_encrypt                        | FUNCTION     | bytea            | pgp_sym_encrypt_text
+ pgp_sym_encrypt_bytea                  | FUNCTION     | bytea            | pgp_sym_encrypt_bytea
+ pgp_sym_encrypt_bytea                  | FUNCTION     | bytea            | pgp_sym_encrypt_bytea
+ search_bookmarks_semantic              | FUNCTION     | record           |                                                                                                            +
+                                        |              |                  | BEGIN                                                                                                      +
+                                        |              |                  |     RETURN QUERY                                                                                           +
+                                        |              |                  |     SELECT                                                                                                 +
+                                        |              |                  |         b.id,                                                                                              +
+                                        |              |                  |         b.url,                                                                                             +
+                                        |              |                  |         b.title,                                                                                           +
+                                        |              |                  |         b.description,                                                                                     +
+                                        |              |                  |         1 - (be.embedding <=> query_embedding) as similarity                                               +
+                                        |              |                  |     FROM bookmarks b                                                                                       +
+                                        |              |                  |     JOIN bookmark_embeddings be ON b.id = be.bookmark_id                                                   +
+                                        |              |                  |     WHERE b.user_id = user_id_param                                                                        +
+                                        |              |                  |         AND b.is_valid = true                                                                              +
+                                        |              |                  |         AND 1 - (be.embedding <=> query_embedding) > similarity_threshold                                  +
+                                        |              |                  |     ORDER BY be.embedding <=> query_embedding                                                              +
+                                        |              |                  |     LIMIT limit_param;                                                                                     +
+                                        |              |                  | END;                                                                                                       +
+                                        |              |                  | 
+ sparsevec                              | FUNCTION     | USER-DEFINED     | sparsevec
+ sparsevec_cmp                          | FUNCTION     | integer          | sparsevec_cmp
+ sparsevec_eq                           | FUNCTION     | boolean          | sparsevec_eq
+ sparsevec_ge                           | FUNCTION     | boolean          | sparsevec_ge
+ sparsevec_gt                           | FUNCTION     | boolean          | sparsevec_gt
+ sparsevec_in                           | FUNCTION     | USER-DEFINED     | sparsevec_in
+ sparsevec_l2_squared_distance          | FUNCTION     | double precision | sparsevec_l2_squared_distance
+ sparsevec_le                           | FUNCTION     | boolean          | sparsevec_le
+ sparsevec_lt                           | FUNCTION     | boolean          | sparsevec_lt
+ sparsevec_ne                           | FUNCTION     | boolean          | sparsevec_ne
+ sparsevec_negative_inner_product       | FUNCTION     | double precision | sparsevec_negative_inner_product
+ sparsevec_out                          | FUNCTION     | cstring          | sparsevec_out
+ sparsevec_recv                         | FUNCTION     | USER-DEFINED     | sparsevec_recv
+ sparsevec_send                         | FUNCTION     | bytea            | sparsevec_send
+ sparsevec_to_halfvec                   | FUNCTION     | USER-DEFINED     | sparsevec_to_halfvec
+ sparsevec_to_vector                    | FUNCTION     | USER-DEFINED     | sparsevec_to_vector
+ sparsevec_typmod_in                    | FUNCTION     | integer          | sparsevec_typmod_in
+ subvector                              | FUNCTION     | USER-DEFINED     | subvector
+ subvector                              | FUNCTION     | USER-DEFINED     | halfvec_subvector
+ sum                                    |              | USER-DEFINED     | aggregate_dummy
+ sum                                    |              | USER-DEFINED     | aggregate_dummy
+ update_task_status                     | FUNCTION     | void             |                                                                                                            +
+                                        |              |                  | BEGIN                                                                                                      +
+                                        |              |                  |     UPDATE a2a_tasks                                                                                       +
+                                        |              |                  |     SET                                                                                                    +
+                                        |              |                  |         status = p_status,                                                                                 +
+                                        |              |                  |         updated = NOW(),                                                                                   +
+                                        |              |                  |         error_message = COALESCE(p_error_message, error_message)                                           +
+                                        |              |                  |     WHERE id = p_task_id;                                                                                  +
+                                        |              |                  | END;                                                                                                       +
+                                        |              |                  | 
+ update_task_timestamp                  | FUNCTION     | trigger          |                                                                                                            +
+                                        |              |                  | BEGIN                                                                                                      +
+                                        |              |                  |     NEW.updated = NOW();                                                                                   +
+                                        |              |                  |     RETURN NEW;                                                                                            +
+                                        |              |                  | END;                                                                                                       +
+                                        |              |                  | 
+ update_updated_at_column               | FUNCTION     | trigger          |                                                                                                            +
+                                        |              |                  | BEGIN                                                                                                      +
+                                        |              |                  |     NEW.updated_at = NOW();                                                                                +
+                                        |              |                  |     RETURN NEW;                                                                                            +
+                                        |              |                  | END;                                                                                                       +
+                                        |              |                  | 
+ uuid_generate_v1                       | FUNCTION     | uuid             | uuid_generate_v1
+ uuid_generate_v1mc                     | FUNCTION     | uuid             | uuid_generate_v1mc
+ uuid_generate_v3                       | FUNCTION     | uuid             | uuid_generate_v3
+ uuid_generate_v4                       | FUNCTION     | uuid             | uuid_generate_v4
+ uuid_generate_v5                       | FUNCTION     | uuid             | uuid_generate_v5
+ uuid_nil                               | FUNCTION     | uuid             | uuid_nil
+ uuid_ns_dns                            | FUNCTION     | uuid             | uuid_ns_dns
+ uuid_ns_oid                            | FUNCTION     | uuid             | uuid_ns_oid
+ uuid_ns_url                            | FUNCTION     | uuid             | uuid_ns_url
+ uuid_ns_x500                           | FUNCTION     | uuid             | uuid_ns_x500
+ vector                                 | FUNCTION     | USER-DEFINED     | vector
+ vector_accum                           | FUNCTION     | ARRAY            | vector_accum
+ vector_add                             | FUNCTION     | USER-DEFINED     | vector_add
+ vector_avg                             | FUNCTION     | USER-DEFINED     | vector_avg
+ vector_cmp                             | FUNCTION     | integer          | vector_cmp
+ vector_combine                         | FUNCTION     | ARRAY            | vector_combine
+ vector_concat                          | FUNCTION     | USER-DEFINED     | vector_concat
+ vector_dims                            | FUNCTION     | integer          | halfvec_vector_dims
+ vector_dims                            | FUNCTION     | integer          | vector_dims
+ vector_eq                              | FUNCTION     | boolean          | vector_eq
+ vector_ge                              | FUNCTION     | boolean          | vector_ge
+ vector_gt                              | FUNCTION     | boolean          | vector_gt
+ vector_in                              | FUNCTION     | USER-DEFINED     | vector_in
+ vector_l2_squared_distance             | FUNCTION     | double precision | vector_l2_squared_distance
+ vector_le                              | FUNCTION     | boolean          | vector_le
+ vector_lt                              | FUNCTION     | boolean          | vector_lt
+ vector_mul                             | FUNCTION     | USER-DEFINED     | vector_mul
+ vector_ne                              | FUNCTION     | boolean          | vector_ne
+ vector_negative_inner_product          | FUNCTION     | double precision | vector_negative_inner_product
+ vector_norm                            | FUNCTION     | double precision | vector_norm
+ vector_out                             | FUNCTION     | cstring          | vector_out
+ vector_recv                            | FUNCTION     | USER-DEFINED     | vector_recv
+ vector_send                            | FUNCTION     | bytea            | vector_send
+ vector_spherical_distance              | FUNCTION     | double precision | vector_spherical_distance
+ vector_sub                             | FUNCTION     | USER-DEFINED     | vector_sub
+ vector_to_float4                       | FUNCTION     | ARRAY            | vector_to_float4
+ vector_to_halfvec                      | FUNCTION     | USER-DEFINED     | vector_to_halfvec
+ vector_to_sparsevec                    | FUNCTION     | USER-DEFINED     | vector_to_sparsevec
+ vector_typmod_in                       | FUNCTION     | integer          | vector_typmod_in
+(173 rows)
+
+
+=== TRIGGERS ===
+              trigger_name              | event_manipulation |  event_object_table  |                     action_statement                      | action_timing 
+----------------------------------------+--------------------+----------------------+-----------------------------------------------------------+---------------
+ trigger_update_task_timestamp          | UPDATE             | a2a_tasks            | EXECUTE FUNCTION update_task_timestamp()                  | BEFORE
+ update_bookmark_collections_updated_at | UPDATE             | bookmark_collections | EXECUTE FUNCTION update_updated_at_column()               | BEFORE
+ update_bookmark_metadata_updated_at    | UPDATE             | bookmark_metadata    | EXECUTE FUNCTION update_updated_at_column()               | BEFORE
+ update_bookmark_tags_updated_at        | UPDATE             | bookmark_tags        | EXECUTE FUNCTION update_updated_at_column()               | BEFORE
+ trigger_ensure_metadata_for_enriched   | UPDATE             | bookmarks            | EXECUTE FUNCTION ensure_metadata_for_enriched_bookmarks() | AFTER
+ update_bookmarks_updated_at            | UPDATE             | bookmarks            | EXECUTE FUNCTION update_updated_at_column()               | BEFORE
+ update_collections_updated_at          | UPDATE             | collections          | EXECUTE FUNCTION update_updated_at_column()               | BEFORE
+ update_import_history_updated_at       | UPDATE             | import_history       | EXECUTE FUNCTION update_updated_at_column()               | BEFORE
+ update_tags_updated_at                 | UPDATE             | tags                 | EXECUTE FUNCTION update_updated_at_column()               | BEFORE
+ audit_test_cases                       | UPDATE             | test_cases           | EXECUTE FUNCTION audit_test_changes()                     | AFTER
+ audit_test_cases                       | INSERT             | test_cases           | EXECUTE FUNCTION audit_test_changes()                     | AFTER
+ audit_test_cases                       | DELETE             | test_cases           | EXECUTE FUNCTION audit_test_changes()                     | AFTER
+ audit_test_executions                  | DELETE             | test_executions      | EXECUTE FUNCTION audit_test_changes()                     | AFTER
+ audit_test_executions                  | INSERT             | test_executions      | EXECUTE FUNCTION audit_test_changes()                     | AFTER
+ audit_test_executions                  | UPDATE             | test_executions      | EXECUTE FUNCTION audit_test_changes()                     | AFTER
+ audit_test_plans                       | UPDATE             | test_plans           | EXECUTE FUNCTION audit_test_changes()                     | AFTER
+ audit_test_plans                       | DELETE             | test_plans           | EXECUTE FUNCTION audit_test_changes()                     | AFTER
+ audit_test_plans                       | INSERT             | test_plans           | EXECUTE FUNCTION audit_test_changes()                     | AFTER
+ update_users_updated_at                | UPDATE             | users                | EXECUTE FUNCTION update_updated_at_column()               | BEFORE
+(19 rows)
+
+
+=== USER DEFINED TYPES ===
+ schema_name |       type_name        | type_type | type_category 
+-------------+------------------------+-----------+---------------
+ public      | _sqlx_migrations       | c         | composite
+ public      | a2a_agent_capabilities | c         | composite
+ public      | a2a_artifacts          | c         | composite
+ public      | a2a_messages           | c         | composite
+ public      | a2a_task_progress      | c         | composite
+ public      | a2a_tasks              | c         | composite
+ public      | bookmark_collections   | c         | composite
+ public      | bookmark_embeddings    | c         | composite
+ public      | bookmark_metadata      | c         | composite
+ public      | bookmark_tags          | c         | composite
+ public      | bookmarks              | c         | composite
+ public      | collections            | c         | composite
+ public      | import_history         | c         | composite
+ public      | log_aggregations       | c         | composite
+ public      | log_ai_analysis        | c         | composite
+ public      | problem_reports        | c         | composite
+ public      | system_logs            | c         | composite
+ public      | tags                   | c         | composite
+ public      | test_audit_trail       | c         | composite
+ public      | test_cases             | c         | composite
+ public      | test_executions        | c         | composite
+ public      | test_plans             | c         | composite
+ public      | test_runs              | c         | composite
+ public      | test_step_executions   | c         | composite
+ public      | test_suites            | c         | composite
+ public      | users                  | c         | composite
+ public      | v_active_tasks         | c         | composite
+ public      | v_agent_performance    | c         | composite
+ public      | v_task_history         | c         | composite
+ public      | validation_status      | e         | enum
+(30 rows)
+
+
+=== ENUM VALUES ===
+     enum_name     | enum_value | sort_order 
+-------------------+------------+------------
+ validation_status | pending    |          1
+ validation_status | valid      |          2
+ validation_status | invalid    |          3
+ validation_status | redirect   |          4
+ validation_status | error      |          5
+(5 rows)
+
