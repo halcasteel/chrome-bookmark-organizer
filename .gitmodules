@@ -1,0 +1,3 @@
+[submodule "bookmark-manager-app/CLAUDE-CODE-CORE-MASTER-PROMPTS"]
+	path = bookmark-manager-app/CLAUDE-CODE-CORE-MASTER-PROMPTS
+	url = https://github.com/AZ1-ai/CLAUDE-CODE-CORE-MASTER-PROMPTS.git
