@@ -3,6 +3,7 @@ import Bull from 'bull';
 import db from '../config/database.js';
 import unifiedLogger from './unifiedLogger.js';
 import websocketService from './websocketService.js';
+import a2aTaskManager from './a2aTaskManager.js';
 
 // Redis configuration
 const redisConfig = process.env.REDIS_URL ? 
@@ -13,11 +14,19 @@ const redisConfig = process.env.REDIS_URL ?
   };
 
 /**
- * Orchestrator Service - Manages autonomous agents and workflow coordination
+ * Orchestrator Service - MIGRATION IN PROGRESS TO A2A
  * 
- * This service acts as the central coordinator for the agentic system,
- * managing multiple autonomous agents that handle different aspects of
- * bookmark processing (validation, enrichment, categorization, etc.)
+ * This service is being migrated to use A2A Task Manager.
+ * It now acts as an adapter layer, delegating to A2A while maintaining
+ * backward compatibility with existing routes.
+ * 
+ * TODO: Once all routes are updated to use A2A directly, this service can be removed.
+ * 
+ * Migration Status:
+ * - startWorkflow: ✅ Delegates to A2A createTask
+ * - getDashboardData: ✅ Uses A2A task stats
+ * - performHealthCheck: ✅ Uses A2A agent health
+ * - Other methods: 🚧 Still using Bull queues
  */
 class OrchestratorService extends EventEmitter {
   constructor() {
@@ -94,48 +103,72 @@ class OrchestratorService extends EventEmitter {
 
   /**
    * Start a workflow for a bookmark or batch of bookmarks
+   * MIGRATION: This now delegates to A2A Task Manager
    */
   async startWorkflow(workflowType, bookmarkIds, options = {}) {
-    const workflowId = `workflow_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-    const workflow = this.workflows[workflowType] || this.workflows.standard;
-    
-    unifiedLogger.info('Starting workflow', {
+    unifiedLogger.info('Starting workflow (delegating to A2A)', {
       service: 'orchestratorService',
       source: 'startWorkflow',
-      workflowId,
       type: workflowType,
       bookmarkCount: bookmarkIds.length,
-      agents: workflow,
       options
     });
     
-    // Create workflow record
-    const workflowData = {
-      id: workflowId,
-      type: workflowType,
-      bookmarkIds,
-      agents: workflow,
-      currentAgent: 0,
-      startTime: Date.now(),
-      status: 'running',
-      progress: {},
-      results: {},
-      options,
+    // Map old workflow types to A2A workflow types
+    const workflowMap = {
+      'standard': 'reprocess',
+      'quick': 'quick_import',
+      'full': 'full_import',
+      'validation': 'validation_only',
+      'enrichment': 'enrichment_only'
     };
     
-    this.activeWorkflows.set(workflowId, workflowData);
+    const a2aWorkflowType = workflowMap[workflowType] || 'reprocess';
     
-    // Start first agent in the workflow
-    await this.executeNextAgent(workflowId);
-    
-    // Emit workflow started event
-    this.emit('workflow:started', {
-      workflowId,
-      type: workflowType,
-      bookmarkCount: bookmarkIds.length,
-    });
-    
-    return workflowId;
+    try {
+      // Create A2A task
+      const task = await a2aTaskManager.createTask(a2aWorkflowType, {
+        bookmarkIds,
+        userId: options.userId,
+        ...options
+      });
+      
+      // Store task reference for backward compatibility
+      const workflowData = {
+        id: task.id,
+        type: workflowType,
+        bookmarkIds,
+        agents: task.workflow.agents,
+        currentAgent: task.workflow.currentStep,
+        startTime: new Date(task.created).getTime(),
+        status: task.status,
+        progress: {},
+        results: {},
+        options,
+        a2aTaskId: task.id // Reference to A2A task
+      };
+      
+      this.activeWorkflows.set(task.id, workflowData);
+      
+      // Emit workflow started event for backward compatibility
+      this.emit('workflow:started', {
+        workflowId: task.id,
+        type: workflowType,
+        bookmarkCount: bookmarkIds.length,
+      });
+      
+      return task.id;
+      
+    } catch (error) {
+      unifiedLogger.error('Failed to start A2A workflow', {
+        service: 'orchestratorService',
+        source: 'startWorkflow',
+        error: error.message,
+        type: workflowType,
+        a2aType: a2aWorkflowType
+      });
+      throw error;
+    }
   }
 
   /**
@@ -436,49 +469,76 @@ class OrchestratorService extends EventEmitter {
 
   /**
    * Perform health check on all agents
+   * MIGRATION: Uses A2A agent health data
    */
   async performHealthCheck() {
     const startTime = Date.now();
-    unifiedLogger.debug('Performing health check', {
+    unifiedLogger.debug('Performing health check (A2A)', {
       service: 'orchestratorService',
       source: 'performHealthCheck'
     });
 
-    const health = {
-      agents: {},
-      workflows: {
-        active: this.activeWorkflows.size,
-        details: [],
-      },
-      timestamp: Date.now(),
-    };
-    
-    // Check each agent
-    for (const [agentType, queue] of Object.entries(this.queues)) {
-      await this.updateAgentStatus(agentType);
-      const status = this.agentStatus.get(agentType);
+    try {
+      // Get A2A task stats
+      const taskStats = await a2aTaskManager.getTaskStats();
       
-      health.agents[agentType] = {
-        ...status,
-        healthy: status.failed < 100, // Simple health check
+      // Get registered agents
+      const registeredAgents = await a2aTaskManager.getRegisteredAgents();
+      
+      // Build agent health status
+      const agentHealth = {};
+      for (const agent of registeredAgents) {
+        agentHealth[agent.agentType] = {
+          type: agent.agentType,
+          healthy: true,
+          status: 'active',
+          version: agent.version,
+          lastUpdated: Date.now()
+        };
+      }
+      
+      // Get active tasks
+      const activeTasks = Array.from(a2aTaskManager.activeTasks.values());
+      
+      const health = {
+        agents: agentHealth,
+        workflows: {
+          active: activeTasks.length,
+          details: activeTasks.map(task => ({
+            id: task.id,
+            type: task.workflow.type,
+            status: task.status,
+            progress: {
+              percentage: Math.round((task.workflow.currentStep / task.workflow.totalSteps) * 100),
+              currentStep: task.workflow.currentStep,
+              totalSteps: task.workflow.totalSteps
+            },
+            duration: Date.now() - new Date(task.created).getTime()
+          }))
+        },
+        timestamp: Date.now(),
+        taskStats
+      };
+      
+      // Broadcast health status
+      websocketService.emitOrchestratorHealth(health);
+      
+      return health;
+      
+    } catch (error) {
+      unifiedLogger.error('Health check failed', {
+        service: 'orchestratorService',
+        source: 'performHealthCheck',
+        error: error.message
+      });
+      
+      return {
+        agents: {},
+        workflows: { active: 0, details: [] },
+        timestamp: Date.now(),
+        error: error.message
       };
     }
-    
-    // Check workflows
-    for (const [workflowId, workflow] of this.activeWorkflows) {
-      health.workflows.details.push({
-        id: workflowId,
-        type: workflow.type,
-        status: workflow.status,
-        progress: this.calculateOverallProgress(workflow),
-        duration: Date.now() - workflow.startTime,
-      });
-    }
-    
-    // Broadcast health status
-    websocketService.emitOrchestratorHealth(health);
-    
-    return health;
   }
 
   /**
@@ -562,35 +622,88 @@ class OrchestratorService extends EventEmitter {
 
   /**
    * Get orchestrator dashboard data
+   * MIGRATION: Now includes A2A task data
    */
   async getDashboardData() {
-    const health = await this.performHealthCheck();
-    
-    // Add queue statistics
-    const queueStats = {};
-    for (const [agentType, queue] of Object.entries(this.queues)) {
-      const counts = await queue.getJobCounts();
-      const workers = await queue.getWorkers();
+    try {
+      // Get A2A task stats
+      const taskStats = await a2aTaskManager.getTaskStats();
       
-      queueStats[agentType] = {
-        counts,
-        workers: workers.length,
-        isPaused: await queue.isPaused(),
+      // Get registered agents
+      const registeredAgents = await a2aTaskManager.getRegisteredAgents();
+      
+      // Build agent status from A2A agents
+      const agentStatus = {};
+      for (const agent of registeredAgents) {
+        agentStatus[agent.agentType] = {
+          type: agent.agentType,
+          version: agent.version,
+          status: 'active',
+          capabilities: agent.capabilities ? Object.keys(agent.capabilities.inputs || {}) : []
+        };
+      }
+      
+      // Get active tasks from A2A (convert to workflow format for compatibility)
+      const activeTasks = Array.from(a2aTaskManager.activeTasks.values());
+      const activeWorkflows = activeTasks.map(task => ({
+        id: task.id,
+        type: task.workflow.type,
+        status: task.status,
+        progress: {
+          percentage: Math.round((task.workflow.currentStep / task.workflow.totalSteps) * 100),
+          currentStep: task.workflow.currentStep,
+          totalSteps: task.workflow.totalSteps
+        },
+        startTime: new Date(task.created).getTime(),
+        bookmarkCount: task.context.bookmarkIds ? task.context.bookmarkIds.length : 0
+      }));
+      
+      // Build health data
+      const health = {
+        agents: agentStatus,
+        workflows: {
+          active: activeTasks.length,
+          details: activeWorkflows
+        },
+        timestamp: Date.now(),
+        taskStats
+      };
+      
+      // Legacy queue stats (empty since we're not using Bull anymore)
+      const queueStats = {};
+      for (const agentType of Object.keys(agentStatus)) {
+        queueStats[agentType] = {
+          counts: {
+            waiting: 0,
+            active: taskStats.running || 0,
+            completed: taskStats.completed || 0,
+            failed: taskStats.failed || 0
+          },
+          workers: 1, // A2A agents are singleton workers
+          isPaused: false
+        };
+      }
+      
+      return {
+        health,
+        queueStats,
+        activeWorkflows
+      };
+      
+    } catch (error) {
+      unifiedLogger.error('Failed to get dashboard data', {
+        service: 'orchestratorService',
+        source: 'getDashboardData',
+        error: error.message
+      });
+      
+      // Return empty data on error
+      return {
+        health: { agents: {}, workflows: { active: 0, details: [] }, timestamp: Date.now() },
+        queueStats: {},
+        activeWorkflows: []
       };
     }
-    
-    return {
-      health,
-      queueStats,
-      activeWorkflows: Array.from(this.activeWorkflows.values()).map(w => ({
-        id: w.id,
-        type: w.type,
-        status: w.status,
-        progress: this.calculateOverallProgress(w),
-        startTime: w.startTime,
-        bookmarkCount: w.bookmarkIds.length,
-      })),
-    };
   }
 
   /**

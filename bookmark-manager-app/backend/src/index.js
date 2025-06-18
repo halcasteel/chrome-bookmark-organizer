@@ -23,6 +23,7 @@ import importA2ARoutes from './routes/importA2A.js';
 import searchRoutes from './routes/search.js';
 import statsRoutes from './routes/stats.js';
 import orchestratorRoutes from './routes/orchestrator.js';
+import a2aTaskRoutes from './routes/a2aTasks.js';
 import adminRoutes from './routes/admin.js';
 import validationRoutes from './routes/validation.js';
 import logRoutes from './routes/logs.js';
@@ -97,7 +98,8 @@ app.use('/api/import', authenticate, importRoutes); // Old import routes (still 
 app.use('/api/import/a2a', authenticate, importA2ARoutes); // New A2A import routes
 app.use('/api/search', authenticate, searchRoutes);
 app.use('/api/stats', authenticate, statsRoutes);
-app.use('/api/orchestrator', authenticate, orchestratorRoutes);
+app.use('/api/orchestrator', authenticate, orchestratorRoutes); // Deprecated - use /api/a2a instead
+app.use('/api/a2a', authenticate, a2aTaskRoutes); // New A2A task management routes
 app.use('/api/admin', authenticate, adminRoutes);
 app.use('/api/validation', validationRoutes);
 app.use('/api/logs', logRoutes);

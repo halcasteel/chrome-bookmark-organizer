@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import db from '../config/database.js';
 import unifiedLogger from './unifiedLogger.js';
 import { JSDOM } from 'jsdom';
-import orchestratorService from './orchestratorService.js';
+import a2aTaskManager from './a2aTaskManager.js';
 import websocketService from './websocketService.js';
 
 /**
@@ -109,23 +109,24 @@ class ImportServiceAsync {
 
       await client.query('COMMIT');
       
-      // Start orchestrated workflow for all imported bookmarks
-      const workflowId = await orchestratorService.startWorkflow('standard', allInsertedIds, {
+      // Start A2A workflow for all imported bookmarks
+      const task = await a2aTaskManager.createTask('reprocess', {
+        bookmarkIds: allInsertedIds,
         userId,
         importId,
-        workflowType: 'import',
+        priority: 'normal'
       });
       
-      unifiedLogger.info('Orchestrated workflow started for imported bookmarks', {
+      unifiedLogger.info('A2A workflow started for imported bookmarks', {
         service: 'import',
         source: 'importFromFileAsync',
         userId,
         importId,
-        workflowId,
+        taskId: task.id,
         bookmarkCount: allInsertedIds.length,
         workflow: {
-          type: 'standard',
-          context: 'import'
+          type: task.workflow.type,
+          agents: task.workflow.agents
         }
       });
 

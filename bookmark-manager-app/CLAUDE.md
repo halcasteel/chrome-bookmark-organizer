@@ -109,8 +109,8 @@ This script is the **ONLY** supported way to start the application. It handles:
 - **Backend**: Node.js 20+, Express, ES6 modules
 - **Database**: PostgreSQL 15 with pgvector extension
 - **Cache/Queue**: Redis with Bull for job processing
-- **AI**: OpenAI API for classification and embeddings
-- **Validation**: Puppeteer for URL checking
+- **AI**: Claude Code for classification and embeddings (no API key needed), with OpenAI as fallback
+- **Browser Automation**: Playwright for ALL headless browser operations (URL validation, content extraction, screenshots) - NEVER use Puppeteer
 
 ## File Structure (Post-Cleanup)
 ```
@@ -158,7 +158,7 @@ Key variables in `.env`:
 - `DATABASE_URL`: PostgreSQL connection (port 5434)
 - `REDIS_URL`: Redis connection (port 6382)
 - `JWT_SECRET`: Authentication token secret
-- `OPENAI_API_KEY`: For AI features
+- `OPENAI_API_KEY`: For AI features (fallback only - Claude Code handles primary AI tasks)
 - `ENABLE_2FA`: Two-factor authentication (true)
 - `LOG_LEVEL`: Logging verbosity (info)
 
@@ -208,6 +208,8 @@ When working on this codebase:
 13. **TESTING: NEVER USE MOCKS** - All tests must use real services (real database, real file system, real Redis, etc.). This is the "REAL TESTING" philosophy. No mocks, no fakes, no stubs - only real integration with actual services.
 14. Database has comprehensive schema with 24 tables including A2A architecture support
 15. Recent migration (005_schema_improvements.sql) added performance indexes and constraints
+16. **BROWSER AUTOMATION: ALWAYS USE PLAYWRIGHT** - Never use Puppeteer. All headless browser operations must use Playwright for consistency, better performance, and superior JavaScript handling.
+17. **AI PROVIDER: CLAUDE CODE FIRST** - Use Claude Code tasks for embeddings, classification, and enrichment (no API key needed). OpenAI is only a fallback option.
 
 ## Next Priority Tasks
 1. Test A2A import functionality with real bookmark files

@@ -139,7 +139,8 @@ const Dashboard: React.FC = () => {
   const { data: orchestratorData } = useQuery<OrchestratorData>({
     queryKey: ['orchestrator-dashboard'],
     queryFn: async () => {
-      const response = await api.get<OrchestratorData>('/orchestrator/dashboard')
+      // Use new A2A endpoint
+      const response = await api.get<OrchestratorData>('/a2a/dashboard')
       return response.data
     },
     refetchInterval: 30000, // Refresh every 30 seconds to avoid rate limiting
@@ -166,7 +167,7 @@ const Dashboard: React.FC = () => {
 
   const pauseAgentMutation = useMutation({
     mutationFn: async (agentType: string) => {
-      await api.post(`/orchestrator/agent/${agentType}/pause`)
+      await api.post(`/a2a/agent/${agentType}/pause`)
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['orchestrator-dashboard'] })
@@ -175,7 +176,7 @@ const Dashboard: React.FC = () => {
 
   const resumeAgentMutation = useMutation({
     mutationFn: async (agentType: string) => {
-      await api.post(`/orchestrator/agent/${agentType}/resume`)
+      await api.post(`/a2a/agent/${agentType}/resume`)
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['orchestrator-dashboard'] })
@@ -274,10 +275,10 @@ const Dashboard: React.FC = () => {
               <Card bg={cardBg}>
                 <CardBody>
                   <Heading size="md" mb={4}>Bookmarks by Domain</Heading>
-                  {stats?.domainStats && stats.domainStats.length > 0 && (
-                    <Box h="300px" w="100%" minH="300px">
-                      <ResponsiveContainer width="100%" height="100%">
-                        <BarChart data={stats.domainStats.slice(0, 10)}>
+                  {stats?.domainStats && stats.domainStats.length > 0 ? (
+                    <Box h="300px" w="100%" minH="300px" position="relative">
+                      <ResponsiveContainer width="100%" height={300}>
+                        <BarChart data={stats.domainStats.slice(0, 10)} margin={{ top: 20, right: 30, left: 20, bottom: 100 }}>
                           <CartesianGrid strokeDasharray="3 3" />
                           <XAxis dataKey="domain" angle={-45} textAnchor="end" height={100} />
                           <YAxis />
@@ -286,7 +287,7 @@ const Dashboard: React.FC = () => {
                         </BarChart>
                       </ResponsiveContainer>
                     </Box>
-                  )}
+                  ) : null}
                   {(!stats?.domainStats || stats.domainStats.length === 0) && (
                     <Box h="300px" display="flex" alignItems="center" justifyContent="center">
                       <Text color="gray.500">No domain statistics available</Text>

@@ -1,4 +1,4 @@
-import puppeteer from 'puppeteer';
+import { chromium } from 'playwright';
 import db from '../config/database.js';
 import unifiedLogger from '../services/unifiedLogger.js';
 
@@ -30,18 +30,23 @@ class ValidationAgent {
     
     if (this.browserPromise) return this.browserPromise;
     
-    this.browserPromise = puppeteer.launch({
-      headless: 'new',
+    this.browserPromise = chromium.launch({
+      headless: true,
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
         '--disable-dev-shm-usage',
-        '--disable-gpu',
-        '--no-first-run',
-        '--no-zygote',
-        '--single-process',
-        '--disable-extensions',
+        '--disable-gpu'
       ],
+      timeout: 30000  // 30 second timeout
+    }).catch(error => {
+      unifiedLogger.error('Failed to launch browser', {
+        service: 'validationAgent',
+        method: 'initBrowser',
+        error: error.message,
+        stack: error.stack
+      });
+      throw error;
     });
     
     this.browser = await this.browserPromise;
@@ -137,9 +142,10 @@ class ValidationAgent {
     const page = await browser.newPage();
     
     try {
-      // Set timeout and user agent
-      await page.setDefaultNavigationTimeout(30000);
-      await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36');
+      // Set user agent
+      await page.setExtraHTTPHeaders({
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+      });
       
       // Track response
       let responseStatus = null;
@@ -160,14 +166,46 @@ class ValidationAgent {
         }
       });
       
-      // Navigate to URL
+      // Navigate to URL with better JS support
       const response = await page.goto(url, {
-        waitUntil: 'domcontentloaded',
+        waitUntil: 'networkidle',  // Playwright uses 'networkidle' not 'networkidle0'
         timeout: 30000,
       });
       
-      // Get page metrics
-      const metrics = await page.metrics();
+      // Wait for the page to fully render
+      await page.waitForTimeout(2000);
+      
+      // Ensure we capture the response status
+      if (!responseStatus && response) {
+        responseStatus = response.status();
+      }
+      
+      // Log the captured status for debugging
+      unifiedLogger.info('Response status captured', {
+        service: 'validationAgent',
+        method: 'validateUrl',
+        url,
+        responseStatus,
+        hasResponse: !!response,
+        finalUrl
+      });
+      
+      // Human-like scrolling to trigger lazy-loaded content
+      await this.performHumanLikeScroll(page);
+      
+      // Take screenshot for visual validation
+      const screenshotPath = `/tmp/bookmark-validation-${Date.now()}.png`;
+      await page.screenshot({
+        path: screenshotPath,
+        fullPage: true
+      });
+      
+      // If we didn't capture status from event, use navigation response
+      if (!responseStatus && response) {
+        responseStatus = response.status();
+      }
+      
+      // Get page timing metrics (Playwright doesn't have page.metrics())
       const timing = await page.evaluate(() => {
         const perf = window.performance.timing;
         return {
@@ -186,6 +224,17 @@ class ValidationAgent {
                      responseStatus < 400 && 
                      !isErrorPage;
       
+      // Log validation decision for debugging
+      unifiedLogger.info('Validation decision', {
+        service: 'validationAgent',
+        method: 'validateUrl',
+        url,
+        responseStatus,
+        isValid,
+        isErrorPage,
+        statusCheck: responseStatus >= 200 && responseStatus < 400
+      });
+      
       const result = {
         isValid,
         metadata: {
@@ -197,11 +246,6 @@ class ValidationAgent {
           contentLength: responseHeaders['content-length'],
           server: responseHeaders['server'],
           timing,
-          metrics: {
-            jsHeapUsed: metrics.JSHeapUsedSize,
-            documents: metrics.Documents,
-            frames: metrics.Frames,
-          },
         },
       };
       
@@ -332,15 +376,13 @@ class ValidationAgent {
            is_dead = $2,
            http_status = $3,
            last_checked = $4,
-           redirect_url = $5,
-           updated_at = $6
-       WHERE id = $7`,
+           updated_at = $5
+       WHERE id = $6`,
       [
         isValid,
         !isValid,
         metadata.statusCode || null,
         new Date(),
-        metadata.finalUrl !== metadata.url ? metadata.finalUrl : null,
         new Date(),
         bookmarkId,
       ]
@@ -366,6 +408,51 @@ class ValidationAgent {
       isValid,
       statusCode: metadata?.statusCode
     });
+  }
+
+  /**
+   * Perform human-like scrolling on the page
+   */
+  async performHumanLikeScroll(page) {
+    const scrollHeight = await page.evaluate(() => document.body.scrollHeight);
+    const viewportHeight = await page.evaluate(() => window.innerHeight);
+    let currentPosition = 0;
+    const scrollStep = viewportHeight * 0.8; // Scroll 80% of viewport at a time
+    
+    while (currentPosition < scrollHeight) {
+      // Random delay between scrolls (100-300ms)
+      const delay = Math.floor(Math.random() * 200) + 100;
+      await page.waitForTimeout(delay);
+      
+      // Smooth scroll with easing
+      await page.evaluate((scrollTo) => {
+        window.scrollTo({
+          top: scrollTo,
+          behavior: 'smooth'
+        });
+      }, currentPosition);
+      
+      currentPosition += scrollStep;
+      
+      // Wait for any lazy-loaded content
+      await page.waitForTimeout(500);
+      
+      // Update scroll height in case new content loaded
+      const newScrollHeight = await page.evaluate(() => document.body.scrollHeight);
+      if (newScrollHeight > scrollHeight) {
+        scrollHeight = newScrollHeight;
+      }
+    }
+    
+    // Scroll back to top
+    await page.evaluate(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    await page.waitForTimeout(500);
   }
 
   /**

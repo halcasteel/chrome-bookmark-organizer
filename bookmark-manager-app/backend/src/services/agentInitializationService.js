@@ -1,12 +1,15 @@
 import { EventEmitter } from 'events';
 import unifiedLogger from './unifiedLogger.js';
 import a2aTaskManager from './a2aTaskManager.js';
+import agentExecutor from './agentExecutor.js';
+import queueConfig from '../config/queueConfig.js';
 
 // Import all A2A agents
 import importAgent from '../agents/importAgent.js';
 import validationAgent from '../agents/validationAgentA2A.js';
 import enrichmentAgent from '../agents/enrichmentAgentA2A.js';
 import categorizationAgent from '../agents/categorizationAgentA2A.js';
+import embeddingAgent from '../agents/embeddingAgentA2A.js';
 
 /**
  * Agent Initialization Service
@@ -45,17 +48,22 @@ class AgentInitializationService extends EventEmitter {
     });
 
     try {
-      // Import all agents dynamically
-      const agents = await Promise.all([
-        import('../agents/importAgent.js'),
-        import('../agents/validationAgentA2A.js'),
-        import('../agents/enrichmentAgentA2A.js'),
-        import('../agents/categorizationAgentA2A.js')
-      ]);
+      // Configure agents with queue settings for hybrid execution
+      const agentConfigs = [
+        { agent: importAgent, config: queueConfig.agents.import },
+        { agent: validationAgent, config: queueConfig.agents.validation },
+        { agent: enrichmentAgent, config: queueConfig.agents.enrichment },
+        { agent: categorizationAgent, config: queueConfig.agents.categorization },
+        { agent: embeddingAgent, config: queueConfig.agents.embedding }
+      ];
       
-      // Register each agent
-      for (const module of agents) {
-        await this.registerAgent(module.default);
+      // Register each agent with queue configuration
+      for (const { agent, config } of agentConfigs) {
+        // Apply queue configuration
+        agent.concurrency = config.concurrency;
+        agent.rateLimit = config.rateLimit;
+        
+        await this.registerAgent(agent);
       }
       
       // Perform health checks
@@ -388,8 +396,9 @@ class AgentInitializationService extends EventEmitter {
     this.healthCheckResults.clear();
     this.initialized = false;
     
-    // Also reset the task manager so it doesn't have stale agent references
+    // Also reset the task manager and executor
     await a2aTaskManager.reset();
+    await agentExecutor.shutdown();
   }
 }
 

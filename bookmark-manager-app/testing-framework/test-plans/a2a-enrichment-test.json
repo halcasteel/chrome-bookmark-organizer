@@ -1,0 +1,415 @@
+{
+  "testPlan": {
+    "id": "TP-20250617-190000",
+    "name": "A2A Bookmark Enrichment Test Plan",
+    "version": "1.0.0",
+    "description": "Test A2A agent workflow: Import → Validation → Enrichment → Categorization",
+    "metadata": {
+      "createdBy": "a2a-test-generator",
+      "createdAt": "2025-06-17T19:00:00Z",
+      "tags": ["a2a", "enrichment", "integration", "agents"],
+      "approvedBy": "admin@az1.ai",
+      "approvalDate": "2025-06-17T19:00:00Z"
+    }
+  },
+  "testSuites": [
+    {
+      "id": "TS-A2A-001",
+      "name": "A2A Import and Enrichment Suite",
+      "description": "Tests full A2A workflow from bookmark import through enrichment",
+      "priority": "critical",
+      "testCases": [
+        {
+          "id": "TC-A2A-001",
+          "name": "Complete A2A Bookmark Import and Enrichment",
+          "description": "Import bookmarks file and verify A2A agents process it correctly",
+          "type": "e2e",
+          "priority": "critical",
+          "preconditions": [
+            {
+              "description": "Create test user and bookmark file",
+              "setupSteps": [
+                {
+                  "type": "executeScript",
+                  "target": {},
+                  "parameters": {
+                    "script": "const testUserId = crypto.randomUUID(); const testEmail = `test-a2a-${Date.now()}@az1.ai`; await db.query('INSERT INTO users (id, email, password_hash, name, role, two_factor_enabled) VALUES ($1, $2, $3, $4, $5, $6)', [testUserId, testEmail, '$2b$10$dummy', 'A2A Test User', 'user', false]); context.testUserId = testUserId; context.testEmail = testEmail;"
+                  }
+                },
+                {
+                  "type": "executeScript",
+                  "target": {},
+                  "parameters": {
+                    "script": "const bookmarkFile = path.join(process.cwd(), 'test-bookmarks-real.html'); context.bookmarkFile = bookmarkFile;"
+                  }
+                }
+              ]
+            }
+          ],
+          "steps": [
+            {
+              "stepNumber": 1,
+              "stepId": "login-as-test-user",
+              "description": "Login as test user",
+              "action": {
+                "type": "navigate",
+                "target": {},
+                "parameters": {
+                  "url": "http://localhost:5173/login",
+                  "waitUntil": "networkidle"
+                }
+              },
+              "validation": {
+                "type": "urlContains",
+                "expected": "/login"
+              },
+              "aiContext": {
+                "purposeOfStep": "Access the application to test A2A import",
+                "dataFlowDescription": "Navigate to login page to authenticate"
+              }
+            },
+            {
+              "stepNumber": 2,
+              "stepId": "perform-login",
+              "description": "Fill and submit login form",
+              "action": {
+                "type": "executeScript",
+                "target": {},
+                "parameters": {
+                  "script": "await page.fill('input[name=\"email\"]', context.testEmail); await page.fill('input[name=\"password\"]', 'dummy'); await page.click('button[type=\"submit\"]'); await page.waitForNavigation();"
+                }
+              },
+              "validation": {
+                "type": "urlContains",
+                "expected": "/dashboard"
+              },
+              "errorHandling": {
+                "retryCount": 2,
+                "retryDelay": 2000,
+                "criticalError": true
+              }
+            },
+            {
+              "stepNumber": 3,
+              "stepId": "navigate-to-a2a-import",
+              "description": "Navigate to A2A import page",
+              "action": {
+                "type": "navigate",
+                "target": {},
+                "parameters": {
+                  "url": "http://localhost:5173/import/a2a",
+                  "waitUntil": "networkidle"
+                }
+              },
+              "validation": {
+                "type": "urlContains",
+                "expected": "/import/a2a"
+              },
+              "aiContext": {
+                "purposeOfStep": "Access the A2A import interface",
+                "dataFlowDescription": "Navigate to A2A-specific import page"
+              }
+            },
+            {
+              "stepNumber": 4,
+              "stepId": "screenshot-import-page",
+              "description": "Take screenshot of import page",
+              "action": {
+                "type": "screenshot",
+                "target": {},
+                "parameters": {
+                  "fullPage": true,
+                  "path": "screenshots/a2a-import-page.png"
+                }
+              },
+              "validation": {
+                "type": "elementVisible",
+                "target": {
+                  "selector": "button:has-text('Choose File')",
+                  "alternativeSelectors": [
+                    "input[type='file']",
+                    "[data-testid='file-input']"
+                  ]
+                },
+                "expected": true
+              }
+            },
+            {
+              "stepNumber": 5,
+              "stepId": "upload-bookmark-file",
+              "description": "Upload bookmark file for A2A processing",
+              "action": {
+                "type": "uploadFile",
+                "target": {
+                  "selector": "input[type='file']"
+                },
+                "parameters": {
+                  "filePath": "test-bookmarks-real.html",
+                  "waitAfter": 2000
+                }
+              },
+              "validation": {
+                "type": "textContains",
+                "target": {
+                  "selector": "body"
+                },
+                "expected": "test-bookmarks-real.html"
+              },
+              "aiContext": {
+                "purposeOfStep": "Upload bookmark file to trigger A2A workflow",
+                "dataFlowDescription": "File is uploaded and triggers import agent"
+              }
+            },
+            {
+              "stepNumber": 6,
+              "stepId": "submit-import",
+              "description": "Submit import to start A2A processing",
+              "action": {
+                "type": "click",
+                "target": {
+                  "selector": "button:has-text('Import')",
+                  "alternativeSelectors": [
+                    "button[type='submit']",
+                    "[data-testid='import-button']"
+                  ]
+                },
+                "parameters": {
+                  "waitAfter": 3000
+                }
+              },
+              "validation": {
+                "type": "networkRequestMade",
+                "expected": {
+                  "url": "/api/import/a2a/upload",
+                  "method": "POST",
+                  "statusCode": 200
+                }
+              },
+              "errorHandling": {
+                "criticalError": true
+              }
+            },
+            {
+              "stepNumber": 7,
+              "stepId": "monitor-a2a-progress",
+              "description": "Monitor A2A task progress",
+              "action": {
+                "type": "wait",
+                "target": {},
+                "parameters": {
+                  "timeout": 30000
+                }
+              },
+              "validation": {
+                "type": "customValidation",
+                "expected": {
+                  "function": "monitorA2AProgress",
+                  "description": "Monitor task progress through agents: import → validation → enrichment → categorization"
+                }
+              },
+              "aiContext": {
+                "purposeOfStep": "Track A2A agents processing the bookmarks",
+                "dataFlowDescription": "SSE/WebSocket updates show agent progress",
+                "debuggingHints": [
+                  "Check /api/import/a2a/task/{taskId}/stream for SSE updates",
+                  "Monitor a2a_tasks table for status changes",
+                  "Check a2a_artifacts table for agent outputs"
+                ]
+              }
+            },
+            {
+              "stepNumber": 8,
+              "stepId": "screenshot-progress",
+              "description": "Take screenshot of progress indicators",
+              "action": {
+                "type": "screenshot",
+                "target": {},
+                "parameters": {
+                  "fullPage": true,
+                  "path": "screenshots/a2a-progress.png"
+                }
+              },
+              "validation": {
+                "type": "elementVisible",
+                "target": {
+                  "selector": "[role='progressbar']",
+                  "alternativeSelectors": [
+                    ".progress",
+                    "[data-testid='progress-indicator']"
+                  ]
+                },
+                "expected": true
+              }
+            },
+            {
+              "stepNumber": 9,
+              "stepId": "wait-for-completion",
+              "description": "Wait for A2A workflow completion",
+              "action": {
+                "type": "wait",
+                "target": {},
+                "parameters": {
+                  "timeout": 60000
+                }
+              },
+              "validation": {
+                "type": "textContains",
+                "target": {
+                  "selector": "body"
+                },
+                "expected": "Import completed"
+              }
+            },
+            {
+              "stepNumber": 10,
+              "stepId": "navigate-to-bookmarks",
+              "description": "Navigate to bookmarks to verify enrichment",
+              "action": {
+                "type": "navigate",
+                "target": {},
+                "parameters": {
+                  "url": "http://localhost:5173/bookmarks",
+                  "waitUntil": "networkidle"
+                }
+              },
+              "validation": {
+                "type": "urlContains",
+                "expected": "/bookmarks"
+              }
+            },
+            {
+              "stepNumber": 11,
+              "stepId": "screenshot-enriched-bookmarks",
+              "description": "Take screenshot of enriched bookmarks",
+              "action": {
+                "type": "screenshot",
+                "target": {},
+                "parameters": {
+                  "fullPage": true,
+                  "path": "screenshots/a2a-enriched-bookmarks.png"
+                }
+              },
+              "validation": {
+                "type": "elementVisible",
+                "target": {
+                  "selector": ".bookmark-card",
+                  "alternativeSelectors": [
+                    "[data-testid='bookmark-item']",
+                    ".bookmark-list-item"
+                  ]
+                },
+                "expected": true
+              }
+            },
+            {
+              "stepNumber": 12,
+              "stepId": "verify-enrichment-data",
+              "description": "Verify bookmarks have been enriched",
+              "action": {
+                "type": "databaseQuery",
+                "target": {},
+                "parameters": {
+                  "query": "SELECT b.id, b.url, b.title, b.enriched, b.category, b.ai_summary, bm.tags FROM bookmarks b LEFT JOIN bookmark_metadata bm ON b.id = bm.bookmark_id WHERE b.user_id = $1 ORDER BY b.created_at DESC LIMIT 10",
+                  "params": ["context.testUserId"]
+                }
+              },
+              "validation": {
+                "type": "customValidation",
+                "expected": {
+                  "function": "verifyEnrichmentData",
+                  "criteria": [
+                    "At least 80% of bookmarks should be enriched",
+                    "All valid bookmarks should have categories",
+                    "AI summaries should be present for enriched bookmarks"
+                  ]
+                }
+              },
+              "extractData": {
+                "variableName": "enrichmentResults",
+                "dataType": "databaseResult"
+              }
+            },
+            {
+              "stepNumber": 13,
+              "stepId": "check-a2a-artifacts",
+              "description": "Verify A2A artifacts were created",
+              "action": {
+                "type": "databaseQuery",
+                "target": {},
+                "parameters": {
+                  "query": "SELECT agent_type, type, created FROM a2a_artifacts WHERE task_id IN (SELECT id FROM a2a_tasks WHERE user_id = $1) ORDER BY created",
+                  "params": ["context.testUserId"]
+                }
+              },
+              "validation": {
+                "type": "customValidation",
+                "expected": {
+                  "function": "verifyA2AArtifacts",
+                  "expectedArtifacts": [
+                    "import: bookmark_import_result",
+                    "validation: bookmark_validation_result",
+                    "enrichment: bookmark_enrichment_result",
+                    "categorization: bookmark_categorization_result"
+                  ]
+                }
+              }
+            }
+          ],
+          "expectedResults": {
+            "successCriteria": [
+              "Bookmarks are successfully imported via A2A workflow",
+              "All A2A agents process the bookmarks in sequence",
+              "Bookmarks are validated, enriched, and categorized",
+              "Progress is displayed in real-time",
+              "A2A artifacts are created for each agent",
+              "Enriched bookmarks appear in the bookmarks list"
+            ],
+            "failureCriteria": [
+              "Import fails with error",
+              "A2A workflow does not complete",
+              "Bookmarks are not enriched",
+              "No progress updates are shown",
+              "Artifacts are missing"
+            ],
+            "performanceCriteria": {
+              "maxResponseTime": 60000,
+              "maxMemoryUsage": 200,
+              "maxCPUUsage": 70
+            }
+          },
+          "testData": {
+            "inputs": {
+              "bookmarkFile": "test-bookmarks-real.html",
+              "expectedBookmarkCount": 16,
+              "expectedAgents": ["import", "validation", "enrichment", "categorization"]
+            }
+          },
+          "aiInstructions": {
+            "context": "This test verifies the complete A2A agent workflow. The system uses A2A Task Manager to orchestrate agents.",
+            "debuggingHints": [
+              "Check if all agents are registered with agentInitializationService",
+              "Verify A2A Task Manager is running",
+              "Check a2a_tasks table for task status",
+              "Monitor a2a_messages table for agent progress",
+              "Check browser console for WebSocket/SSE errors",
+              "Verify bookmark file exists and is readable"
+            ],
+            "commonIssues": [
+              "Agents not registered on startup",
+              "File upload not working in test environment",
+              "SSE connection not established",
+              "Database permissions for test user",
+              "Enrichment service timeouts"
+            ],
+            "recoveryStrategies": [
+              "If import fails, check file permissions and format",
+              "If agents don't run, verify agentInitializationService.initialize() was called",
+              "If enrichment fails, check AI service configuration",
+              "Monitor logs/unified.log for detailed error messages"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

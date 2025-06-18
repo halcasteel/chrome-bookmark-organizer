@@ -787,7 +787,8 @@ async function main() {
         name: step.name, 
         success, 
         duration: `${duration}s`,
-        error: null 
+        error: null,
+        critical: step.critical 
       });
       
       if (!success && step.critical) {
@@ -806,7 +807,8 @@ async function main() {
         name: step.name, 
         success: false, 
         duration: `${((Date.now() - startTime) / 1000).toFixed(1)}s`,
-        error: error.message 
+        error: error.message,
+        critical: step.critical 
       });
       
       if (step.critical) break;
@@ -824,13 +826,19 @@ async function main() {
   })));
   
   const successCount = results.filter(r => r.success).length;
+  const criticalFailures = results.filter(r => !r.success && r.critical);
   const totalDuration = ((Date.now() - log.startTime) / 1000).toFixed(1);
   
   if (successCount === results.length) {
     log.log('success', `All services started successfully in ${totalDuration}s! 🎉`);
     await showStatus();
+  } else if (criticalFailures.length === 0) {
+    log.log('warn', `Startup completed with warnings: ${successCount}/${results.length} services started`);
+    log.log('info', 'Non-critical services failed but core services are running');
+    await showStatus();
+    // Don't exit - let services continue running
   } else {
-    log.log('error', `Startup incomplete: ${successCount}/${results.length} services started`);
+    log.log('error', `Critical failure: ${criticalFailures.length} critical services failed`);
     log.log('info', 'Check the log files for detailed error information');
     process.exit(1);
   }

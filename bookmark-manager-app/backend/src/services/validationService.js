@@ -4,6 +4,7 @@ import * as cheerio from 'cheerio';
 import crypto from 'crypto';
 import unifiedLogger from './unifiedLogger.js';
 import openaiService from './openaiService.js';
+import validationAgent from '../agents/validationAgent.js';
 
 class ValidationService {
   constructor() {
@@ -63,8 +64,15 @@ class ValidationService {
       );
       
       try {
-        // STEP 1: Check if URL is accessible (headless browser check)
-        const content = await this.fetchWithTimeout(bookmark.url);
+        // STEP 1: Use validation agent for browser-based validation
+        const validationResult = await validationAgent.validateUrl(bookmark.url);
+        
+        // Extract content from validation result
+        const content = {
+          status: validationResult.metadata?.statusCode || 0,
+          html: '', // Validation agent doesn't return HTML currently
+          text: validationResult.isValid ? 'Page loaded successfully' : ''
+        };
         
         // If we get here, the URL returned a successful response (2xx status)
         // Now we can proceed with content extraction and AI categorization
@@ -103,21 +111,25 @@ class ValidationService {
         await query(`
           UPDATE bookmarks 
           SET 
-            is_valid = true,
-            is_dead = false,
-            http_status = $2,
+            is_valid = $2,
+            is_dead = $3,
+            http_status = $4,
             last_checked = NOW(),
-            validation_errors = NULL,
-            enrichment_data = $3,
-            ai_tags = $4,
-            ai_summary = $5,
-            enriched = $6
+            validation_errors = $5,
+            enrichment_data = $6,
+            ai_tags = $7,
+            ai_summary = $8,
+            enriched = $9
           WHERE id = $1
         `, [
           bookmarkId,
-          content.status,
+          validationResult.isValid,
+          !validationResult.isValid,
+          validationResult.metadata?.statusCode || null,
+          validationResult.isValid ? null : JSON.stringify([validationResult.metadata?.error || 'Validation failed']),
           {
             ...metadata,
+            ...validationResult.metadata,
             contentHash,
             contentLength: content.text?.length || 0,
             validatedAt: new Date().toISOString()
@@ -151,7 +163,7 @@ class ValidationService {
           duration: Date.now() - startTime
         });
         
-        return { ...bookmark, is_valid: true, enriched: !!aiData.category };
+        return { ...bookmark, is_valid: validationResult.isValid, is_dead: !validationResult.isValid, enriched: !!aiData.category };
         
       } catch (validationError) {
         // Handle validation failure - URL is not accessible

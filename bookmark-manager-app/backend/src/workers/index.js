@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import Bull from 'bull';
 import unifiedLogger from '../services/unifiedLogger.js';
-import orchestratorService from '../services/orchestratorService.js';
+import agentInitializationService from '../services/agentInitializationService.js';
 import validationAgent from '../agents/validationAgent.js';
 import enrichmentAgent from '../agents/enrichmentAgent.js';
 import websocketService from '../services/websocketService.js';
@@ -13,8 +13,8 @@ dotenv.config();
 const redisConfig = process.env.REDIS_URL ? 
   process.env.REDIS_URL : 
   {
-    port: 6379,
-    host: 'localhost',
+    port: parseInt(process.env.REDIS_PORT || '6382'),
+    host: process.env.REDIS_HOST || 'localhost',
   };
 
 // Worker instances
@@ -114,19 +114,19 @@ async function startWorkers() {
       agents: Array.from(workers.keys())
     });
     
-    // Set up periodic orchestrator health checks
+    // Set up periodic A2A agent health checks
     setInterval(async () => {
       try {
-        const health = await orchestratorService.performHealthCheck();
-        unifiedLogger.info('Orchestrator health check completed', {
+        const health = await agentInitializationService.checkHealth();
+        unifiedLogger.info('A2A agent health check completed', {
           service: 'workers',
           method: 'healthCheck',
           agentsCount: Object.keys(health.agents).length,
-          activeWorkflows: health.workflows.active,
-          status: 'healthy'
+          allHealthy: health.healthy,
+          status: health.healthy ? 'healthy' : 'degraded'
         });
       } catch (error) {
-        unifiedLogger.error('Orchestrator health check failed', {
+        unifiedLogger.error('A2A agent health check failed', {
           service: 'workers',
           method: 'healthCheck',
           error: error.message,

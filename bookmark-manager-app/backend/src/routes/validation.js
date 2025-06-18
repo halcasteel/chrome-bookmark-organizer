@@ -1,6 +1,7 @@
 import express from 'express';
 import { query } from '../db/index.js';
 import validationService from '../services/validationService.js';
+import a2aTaskManager from '../services/a2aTaskManager.js';
 import unifiedLogger from '../services/unifiedLogger.js';
 import { authenticate } from '../middleware/auth.js';
 
@@ -162,12 +163,44 @@ router.post('/validate/:id', authenticate, async (req, res) => {
     
     // Reset validation attempts for manual validation
     await query(
-      'UPDATE bookmarks SET check_attempts = 0 WHERE id = $1',
+      'UPDATE bookmarks SET check_attempts = 0, last_checked = NULL WHERE id = $1',
       [id]
     );
     
-    // Validate the bookmark
-    const result = await validationService.validateBookmark(id);
+    // Create A2A validation task
+    const task = await a2aTaskManager.createTask('validation_only', {
+      userId: req.user.id,
+      bookmarkIds: [id]
+    });
+    
+    // Wait for task completion (with timeout)
+    const timeout = 30000; // 30 seconds
+    const startTime = Date.now();
+    
+    while (task.status === 'pending' || task.status === 'in_progress') {
+      if (Date.now() - startTime > timeout) {
+        return res.status(408).json({ error: 'Validation timeout' });
+      }
+      
+      // Check task status
+      const updatedTask = a2aTaskManager.getTask(task.id);
+      if (updatedTask) {
+        task.status = updatedTask.status;
+        task.artifacts = updatedTask.artifacts;
+      }
+      
+      if (task.status === 'pending' || task.status === 'in_progress') {
+        await new Promise(resolve => setTimeout(resolve, 500));
+      }
+    }
+    
+    // Get the updated bookmark
+    const resultQuery = await query(
+      'SELECT * FROM bookmarks WHERE id = $1',
+      [id]
+    );
+    
+    const result = resultQuery.rows[0];
     
     unifiedLogger.info('Bookmark validation completed', {
       service: 'api',

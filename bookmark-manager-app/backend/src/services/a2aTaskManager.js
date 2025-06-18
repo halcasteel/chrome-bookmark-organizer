@@ -2,6 +2,7 @@ import { EventEmitter } from 'events';
 import db from '../db/index.js';
 import unifiedLogger from './unifiedLogger.js';
 import websocketService from './websocketService.js';
+import agentExecutor from './agentExecutor.js';
 
 /**
  * A2A-Compliant Task Management Service
@@ -134,7 +135,7 @@ export class A2ATaskManager extends EventEmitter {
     await this.updateTaskStatus(task);
 
     try {
-      unifiedLogger.info('Executing agent', {
+      unifiedLogger.info('Executing agent via queue', {
         service: 'a2aTaskManager',
         method: 'executeNextAgent',
         taskId: task.id,
@@ -142,11 +143,28 @@ export class A2ATaskManager extends EventEmitter {
         step: `${currentStep + 1}/${agents.length}`
       });
       
-      // Process with agent
-      const updatedTask = await agent.processTask(task);
+      // Execute agent through AgentExecutor for distributed processing
+      const job = await agentExecutor.executeAgent(agentType, task, {
+        priority: task.context.priority === 'high' ? 1 : 0,
+        attempts: 3,
+        backoff: {
+          type: 'exponential',
+          delay: 2000
+        }
+      });
       
-      // Handle agent completion
-      await this.onAgentComplete(updatedTask, agentType);
+      // Wait for job completion
+      job.finished().then(async (updatedTask) => {
+        // Handle agent completion
+        await this.onAgentComplete(updatedTask, agentType);
+      }).catch(async (error) => {
+        // Handle job failure
+        await this.failTask(task, error.message);
+      });
+      
+      // Store job reference
+      task.metadata.currentJobId = job.id;
+      task.metadata.currentJobQueue = `a2a-${agentType}`;
       
     } catch (error) {
       await this.failTask(task, error.message);
@@ -696,7 +714,10 @@ export class A2ATaskManager extends EventEmitter {
     
     this.agents.set(agent.agentType, agent);
     
-    unifiedLogger.info('Agent registered with task manager', {
+    // Also register with AgentExecutor for queue-based execution
+    await agentExecutor.registerAgent(agent);
+    
+    unifiedLogger.info('Agent registered with task manager and executor', {
       service: 'a2aTaskManager',
       method: 'registerAgent',
       agentType: agent.agentType,

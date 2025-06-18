@@ -1,7 +1,7 @@
 import express from 'express';
 import { query, getClient } from '../db/index.js';
 import unifiedLogger from '../services/unifiedLogger.js';
-import orchestratorService from '../services/orchestratorService.js';
+import a2aTaskManager from '../services/a2aTaskManager.js';
 
 const router = express.Router();
 
@@ -212,17 +212,20 @@ router.post('/', async (req, res) => {
       
       await client.query('COMMIT');
       
-      // Queue the bookmark for validation and enrichment using orchestrator
-      await orchestratorService.startWorkflow('standard', [bookmark.id], {
+      // Queue the bookmark for validation and enrichment using A2A Task Manager directly
+      const task = await a2aTaskManager.createTask('reprocess', {
+        bookmarkIds: [bookmark.id],
         userId: req.user.id,
         priority: 'normal'
       });
       
-      unifiedLogger.info('Bookmark created and queued for validation workflow', {
+      unifiedLogger.info('Bookmark created and queued for A2A workflow', {
         service: 'api',
         source: 'POST /bookmarks',
         userId: req.user.id,
         bookmarkId: bookmark.id,
+        taskId: task.id,
+        workflowType: 'reprocess',
         url: bookmark.url,
         title: bookmark.title,
         tagCount: tags.length,
