@@ -16,9 +16,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 ### Production Architecture
 - **Rust Backend ONLY** - Node.js backend is being completely removed
-- **Rust Project Location**: `./rust-migration/`
+- **Rust Project Location**: `./rust-backend/` (consolidated from separate repo)
 - **Status**: All 4 microservices complete and operational
-- **GitHub**: https://github.com/AZ1-ai/bookmark-manager
+- **Previous GitHub**: https://github.com/AZ1-ai/bookmark-manager (now consolidated here)
 
 ### Latest Checkpoint
 - **File**: `2025-06-19-0253-CHECKPOINT.md`
@@ -34,7 +34,7 @@ node start-services.js  # This now ONLY starts Docker containers
 
 ### Step 2: Start Rust Backend Services
 ```bash
-cd rust-migration
+cd rust-backend
 cargo build --release
 
 # Start all services (or use upcoming start script)
@@ -103,12 +103,13 @@ cd frontend && npm run dev
 ### Project Structure
 ```
 bookmark-manager-app/
-├── rust-migration/        # Production Rust backend
+├── rust-backend/         # Production Rust backend (consolidated)
 ├── frontend/             # React frontend (needs API updates)
 ├── backend/              # DEPRECATED - to be removed
 ├── database/             # Shared schemas
-├── archive/              # Checkpoint archives
-└── 2025-06-19-0253-CHECKPOINT.md  # Latest checkpoint
+├── ai-ops-core/          # AI-Ops documentation
+├── docs/                 # Project documentation
+└── archive/              # Historical checkpoints
 ```
 
 ### Checkpoint Command Notes
@@ -117,3 +118,42 @@ bookmark-manager-app/
 - Automatically generates markdown documentation
 - Stores checkpoint in `/archive/` with timestamp
 - Helps track project evolution and maintain detailed historical records
+
+## 🧪 TDD Integration Approach
+**IMPORTANT**: We follow Test-Driven Development (TDD) for all integration work.
+
+### Current Integration Status (2025-06-19)
+- **Total Tasks**: 83 (13 completed, 70 pending)
+- **Approach**: Write failing tests first, then implement solutions
+- **Critical Path**: Fix configuration inconsistencies blocking all progress
+
+### Test-First Workflow
+1. **Set up test infrastructure** before making any changes
+2. **Write failing tests** for each configuration/feature
+3. **Implement minimal code** to make tests pass
+4. **Refactor** for quality and performance
+5. **Run continuous tests** during development
+
+### Key Test Commands
+```bash
+# Run all tests
+npm test
+
+# Run Rust tests
+cd rust-backend && cargo test
+
+# Run integration tests
+npm run test:integration
+
+# Watch mode for continuous testing
+npm test -- --watch
+```
+
+### Critical Configuration Issues to Fix
+1. **Database credentials mismatch**: Some use `bookmarkuser:bookmarkpass`, others use `admin:admin`
+2. **Frontend pointing to wrong backend**: Currently points to port 3001 (Node.js) instead of 8000 (Rust)
+3. **Docker ports mismatch**: PostgreSQL on 5432 vs 5434, Redis on 6379 vs 6382
+4. **Database name inconsistency**: Some use `bookmarks`, should be `bookmark_manager`
+
+**Remember**: No manual testing! All verification should be through automated tests.
+```

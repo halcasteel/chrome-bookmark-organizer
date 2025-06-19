@@ -1,0 +1,64 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/shared",
+    "crates/domain",
+    "services/gateway",
+    "services/auth",
+    "services/bookmarks",
+    "services/import",
+    "services/search",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Bookmarks Platform Team"]
+license = "MIT"
+
+[workspace.dependencies]
+# Web framework
+actix-web = "4.5"
+actix-cors = "0.7"
+actix-web-httpauth = "0.8"
+actix-web-actors = "4.3"
+
+# Async runtime
+tokio = { version = "1.37", features = ["full"] }
+futures = "0.3"
+
+# Database
+sqlx = { version = "0.7", features = ["runtime-tokio-native-tls", "postgres", "uuid", "chrono", "migrate"] }
+redis = { version = "0.25", features = ["aio", "tokio-comp", "connection-manager"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Authentication
+jsonwebtoken = "9.2"
+argon2 = "0.5"
+
+# Utils
+uuid = { version = "1.7", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+tracing-actix-web = "0.7"
+thiserror = "1.0"
+anyhow = "1.0"
+dotenv = "0.15"
+
+# Validation
+validator = { version = "0.18", features = ["derive"] }
+
+# HTTP Client
+reqwest = { version = "0.11", features = ["json", "stream"] }
+
+# Testing
+mockall = "0.12"
+actix-rt = "2.9"
+
+# Internal crates
+shared = { path = "crates/shared" }
+domain = { path = "crates/domain" }

@@ -1,0 +1,30 @@
+[package]
+name = "search-service"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "search-service"
+path = "src/main.rs"
+
+[dependencies]
+actix-web.workspace = true
+actix-cors.workspace = true
+tokio.workspace = true
+sqlx.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+uuid.workspace = true
+chrono.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+tracing-actix-web.workspace = true
+validator.workspace = true
+anyhow.workspace = true
+dotenv.workspace = true
+reqwest = { version = "0.11", features = ["json"] }
+pgvector.workspace = true
+
+# Internal dependencies
+domain.workspace = true
+shared.workspace = true

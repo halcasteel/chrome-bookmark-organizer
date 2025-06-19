@@ -1,0 +1,32 @@
+[package]
+name = "import-service"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "import-service"
+path = "src/main.rs"
+
+[dependencies]
+actix-web.workspace = true
+actix-cors.workspace = true
+actix-multipart = "0.7"
+tokio.workspace = true
+sqlx.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+uuid.workspace = true
+chrono.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+tracing-actix-web.workspace = true
+validator.workspace = true
+anyhow.workspace = true
+dotenv.workspace = true
+futures-util = "0.3"
+tempfile = "3.8"
+scraper = "0.17"
+
+# Internal dependencies
+domain.workspace = true
+shared.workspace = true

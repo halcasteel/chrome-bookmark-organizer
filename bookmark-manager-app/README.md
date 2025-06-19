@@ -77,7 +77,7 @@ bookmark-manager-app/
 │   ├── src/                 # Source code
 │   └── scripts/             # Utility scripts
 │
-├── rust-migration/          # Rust microservices (production)
+├── rust-backend/            # Rust microservices (production)
 │   ├── services/            # Individual services
 │   │   ├── auth/           # Authentication service (port 8001)
 │   │   ├── bookmarks/      # Bookmarks CRUD (port 8002)
@@ -121,9 +121,9 @@ bookmark-manager-app/
    node start-services.js
    ```
 
-3. **Start Rust backend** (in rust-migration/)
+3. **Start Rust backend**
    ```bash
-   cd rust-migration
+   cd rust-backend
    cargo build --release
    ./target/release/gateway
    ```
@@ -149,7 +149,7 @@ bookmark-manager-app/
 ### Running Tests
 ```bash
 # Backend tests
-cd rust-migration
+cd rust-backend
 cargo test
 
 # Frontend tests

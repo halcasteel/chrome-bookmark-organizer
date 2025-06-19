@@ -1,0 +1,37 @@
+[package]
+name = "import-agent"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+a2a = { path = "../../a2a" }
+domain = { path = "../../domain" }
+
+# Async runtime
+tokio = { workspace = true }
+async-trait = { workspace = true }
+
+# Database
+sqlx = { workspace = true }
+
+# HTML parsing
+select = "0.6"
+scraper = "0.18"
+
+# Serialization
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+# Error handling
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+
+# Logging
+tracing = { workspace = true }
+
+# Utilities
+chrono = { workspace = true }
+uuid = { workspace = true }
+url = "2.5"
+base64 = "0.21"
+sha2 = "0.10"

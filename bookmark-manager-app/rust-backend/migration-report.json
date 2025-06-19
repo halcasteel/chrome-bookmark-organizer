@@ -1,0 +1,115 @@
+{
+  "timestamp": "2025-06-18T23:33:15.174Z",
+  "database": "bookmark_manager",
+  "tables": {
+    "_sqlx_migrations": {
+      "rowCount": 1,
+      "columns": "6"
+    },
+    "a2a_agent_capabilities": {
+      "rowCount": 5,
+      "columns": "11"
+    },
+    "a2a_artifacts": {
+      "rowCount": 0,
+      "columns": "11"
+    },
+    "a2a_messages": {
+      "rowCount": 0,
+      "columns": "7"
+    },
+    "a2a_task_progress": {
+      "rowCount": 0,
+      "columns": "11"
+    },
+    "a2a_tasks": {
+      "rowCount": 1,
+      "columns": "16"
+    },
+    "bookmark_collections": {
+      "rowCount": 0,
+      "columns": "5"
+    },
+    "bookmark_embeddings": {
+      "rowCount": 0,
+      "columns": "5"
+    },
+    "bookmark_metadata": {
+      "rowCount": 0,
+      "columns": "17"
+    },
+    "bookmark_tags": {
+      "rowCount": 0,
+      "columns": "4"
+    },
+    "bookmarks": {
+      "rowCount": 16,
+      "columns": "27"
+    },
+    "collections": {
+      "rowCount": 0,
+      "columns": "8"
+    },
+    "import_history": {
+      "rowCount": 10,
+      "columns": "20"
+    },
+    "log_aggregations": {
+      "rowCount": 801,
+      "columns": "12"
+    },
+    "log_ai_analysis": {
+      "rowCount": 18,
+      "columns": "12"
+    },
+    "problem_reports": {
+      "rowCount": 0,
+      "columns": "21"
+    },
+    "system_logs": {
+      "rowCount": 451234,
+      "columns": "14"
+    },
+    "tags": {
+      "rowCount": 11,
+      "columns": "6"
+    },
+    "test_audit_trail": {
+      "rowCount": 0,
+      "columns": "9"
+    },
+    "test_cases": {
+      "rowCount": 0,
+      "columns": "20"
+    },
+    "test_executions": {
+      "rowCount": 0,
+      "columns": "21"
+    },
+    "test_plans": {
+      "rowCount": 0,
+      "columns": "14"
+    },
+    "test_runs": {
+      "rowCount": 0,
+      "columns": "16"
+    },
+    "test_step_executions": {
+      "rowCount": 0,
+      "columns": "17"
+    },
+    "test_suites": {
+      "rowCount": 0,
+      "columns": "12"
+    },
+    "users": {
+      "rowCount": 13,
+      "columns": "12"
+    }
+  },
+  "summary": {
+    "totalTables": 26,
+    "totalRows": 452110,
+    "readyForMigration": true
+  }
+}

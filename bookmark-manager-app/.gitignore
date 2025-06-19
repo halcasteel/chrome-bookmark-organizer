@@ -66,5 +66,19 @@ tree-clean.txt
 # Database
 *.sql.bak
 postgres_data/
+
+# Rust
+target/
+**/*.rs.bk
+Cargo.lock
+rust-backend/target/
+rust-backend/.cargo/
+rust-backend/venv/
+
+# Python (for scripts)
+venv/
+*.pyc
+__pycache__/
+
 # Archived files
 _archive/

@@ -1,0 +1,121 @@
+graph TB
+    %% External Layer
+    subgraph "External Layer"
+        USER[User/Client]
+        INGRESS[K8s Ingress<br/>NGINX/Istio]
+    end
+
+    %% API Gateway
+    subgraph "API Gateway Layer"
+        GW[Gateway Service<br/>Rust/Actix]
+        RL[Rate Limiter]
+        CB[Circuit Breaker]
+        SD[Service Discovery<br/>K8s API]
+    end
+
+    %% Core Services
+    subgraph "Core Services"
+        AUTH[Auth Service<br/>JWT/2FA]
+        BOOK[Bookmarks Service<br/>CRUD Operations]
+        IMPORT[Import Service<br/>HTML Processing]
+        ENRICH[Enrichment Service<br/>AI/ML Processing]
+        TASK[Task Service<br/>A2A Orchestration]
+    end
+
+    %% Data Stores
+    subgraph "Data Layer"
+        PG[(PostgreSQL<br/>Primary Store)]
+        REDIS[(Redis<br/>Cache/Sessions)]
+        S3[(S3/MinIO<br/>File Storage)]
+    end
+
+    %% Event Infrastructure
+    subgraph "Event Infrastructure"
+        NATS[NATS JetStream<br/>Event Bus]
+        EVENTS{Event Types:<br/>- Created<br/>- Updated<br/>- Deleted<br/>- ValidationRequested<br/>- EnrichmentCompleted}
+    end
+
+    %% Observability
+    subgraph "Observability Stack"
+        PROM[Prometheus<br/>Metrics]
+        JAEGER[Jaeger<br/>Distributed Tracing]
+        GRAFANA[Grafana<br/>Dashboards]
+    end
+
+    %% Request Flow
+    USER -->|HTTPS| INGRESS
+    INGRESS -->|Route| GW
+    GW -->|Check Limits| RL
+    GW -->|Health Check| CB
+    GW -->|Discover| SD
+
+    %% Service Interactions
+    GW -->|Authenticate| AUTH
+    GW -->|CRUD Ops| BOOK
+    GW -->|Import Request| IMPORT
+    GW -->|Enrich Request| ENRICH
+    GW -->|Task Request| TASK
+
+    %% Auth Flow
+    AUTH -->|Session| REDIS
+    AUTH -->|User Data| PG
+
+    %% Bookmark Flow
+    BOOK -->|Store| PG
+    BOOK -->|Cache| REDIS
+    BOOK -->|Publish Event| NATS
+
+    %% Import Flow
+    IMPORT -->|Store Files| S3
+    IMPORT -->|Metadata| PG
+    IMPORT -->|Publish Event| NATS
+
+    %% Enrichment Flow
+    ENRICH -->|Get Data| PG
+    ENRICH -->|Cache Results| REDIS
+    ENRICH -->|Publish Event| NATS
+
+    %% Task Orchestration
+    TASK -->|Subscribe| NATS
+    TASK -->|Coordinate| NATS
+    TASK -->|Status| PG
+
+    %% Event Subscriptions
+    NATS -->|ValidationRequested| TASK
+    NATS -->|Created| ENRICH
+    NATS -->|Imported| ENRICH
+    NATS -->|Events| EVENTS
+
+    %% Metrics Collection
+    GW -.->|Metrics| PROM
+    AUTH -.->|Metrics| PROM
+    BOOK -.->|Metrics| PROM
+    IMPORT -.->|Metrics| PROM
+    ENRICH -.->|Metrics| PROM
+    TASK -.->|Metrics| PROM
+
+    %% Tracing
+    GW -.->|Traces| JAEGER
+    AUTH -.->|Traces| JAEGER
+    BOOK -.->|Traces| JAEGER
+    IMPORT -.->|Traces| JAEGER
+    ENRICH -.->|Traces| JAEGER
+    TASK -.->|Traces| JAEGER
+
+    %% Monitoring
+    PROM -->|Query| GRAFANA
+    JAEGER -->|Traces| GRAFANA
+
+    %% Styling
+    classDef gateway fill:#ff6b6b,stroke:#fff,color:#fff
+    classDef service fill:#4ecdc4,stroke:#fff,color:#fff
+    classDef data fill:#f7b731,stroke:#fff,color:#fff
+    classDef infra fill:#a55eea,stroke:#fff,color:#fff
+    classDef external fill:#00d9ff,stroke:#fff,color:#fff
+    classDef event fill:#45aaf2,stroke:#fff,color:#fff
+
+    class USER,INGRESS external
+    class GW,RL,CB,SD gateway
+    class AUTH,BOOK,IMPORT,ENRICH,TASK service
+    class PG,REDIS,S3 data
+    class NATS,EVENTS,PROM,JAEGER,GRAFANA infra
