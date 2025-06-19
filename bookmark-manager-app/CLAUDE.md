@@ -1,54 +1,103 @@
 # CLAUDE.md - AI Assistant Context for Bookmark Manager Application
 
-**Last Updated**: June 18, 2025 - 03:45 AM
+**Last Updated**: 2025-06-19T02:53:00-04:00
 
 ## Project Overview
 This is a production-grade bookmark management application with AI-powered features, built with React/TypeScript frontend and Node.js/Express backend. The application is designed for the @az1.ai domain with mandatory 2FA authentication.
 
-## 🚨 IMPORTANT: Rust Migration In Progress
-A Rust microservices platform is being built to replace this Node.js backend:
-- **Rust Project Location**: `/home/halcasteel/RUST-ACTIX-MIGRATION/`
-- **Rust Documentation**: `/home/halcasteel/RUST-ACTIX-MIGRATION/CLAUDE.md`
-- **Status**: Auth service complete, other services in development
+## 🚨 CRITICAL UPDATE: Rust Backend is Production - Node.js Deprecated
+**Decision Date**: 2025-06-19T02:46:00-04:00
+
+### Production Architecture
+- **Rust Backend ONLY** - Node.js backend is being completely removed
+- **Rust Project Location**: `./rust-migration/`
+- **Status**: All 4 microservices complete and operational
 - **GitHub**: https://github.com/AZ1-ai/bookmark-manager
 
-Both applications share the same PostgreSQL database (port 5434).
+### Latest Checkpoint
+- **File**: `2025-06-19-0253-CHECKPOINT.md`
+- **Status**: Rust migration complete, frontend integration needed
+- **Active TODO**: `2025-06-19-0253-TODO.md`
 
 ## 🚨 CRITICAL: How to Run the Application
 
-**ALWAYS use the unified startup script:**
+### Step 1: Start Infrastructure (PostgreSQL & Redis)
 ```bash
-node start-services.js
+node start-services.js  # This now ONLY starts Docker containers
 ```
 
-This script is the **ONLY** supported way to start the application. It handles:
-- Docker container orchestration (PostgreSQL on 5434, Redis on 6382)
-- Health checks and dependency management
-- Database migrations
-- Service startup with proper logging
-- Real-time progress monitoring
-- Graceful error handling
+### Step 2: Start Rust Backend Services
+```bash
+cd rust-migration
+cargo build --release
 
-**Never start services individually** - the startup script ensures proper initialization order and dependency management.
+# Start all services (or use upcoming start script)
+./target/release/auth-service &
+./target/release/bookmarks-service &
+./target/release/import-service &
+./target/release/search-service &
+GATEWAY_PORT=8000 ./target/release/gateway
+```
+
+### Step 3: Configure Frontend
+```bash
+# Update frontend/.env
+VITE_API_URL=http://localhost:8000/api
+
+# Start frontend
+cd frontend && npm run dev
+```
 
 ## Help Commands
 - The project includes a comprehensive CLAUDE command palette with powerful automation commands
 - Use `#HELP` to display all available commands
-- Available commands include:
+- Key commands:
+  - `#CHK:` - Create comprehensive checkpoint with all documentation
   - `#FIX:` - Diagnose and fix issues automatically
+  - `#TODO` - Manage task lists and priorities
   - `#REVIEW` - Comprehensive code review with AI
   - `#DEBUG` - Interactive debugging assistant
   - `#SHIP` - Complete deployment pipeline
   - `#MONITOR` - Real-time system monitoring
   - `#PERF` - Performance analysis and optimization
-  - And many more detailed in the command palette documentation
+  - And many more detailed in `CLAUDE-CODE-CORE-MASTER-PROMPTS/`
 
-## Next Autonomous Trigger Configuration Tasks
-1. Configure autonomous trigger patterns from CLAUDE-CODE-CORE-MASTER-PROMPTS
-2. Implement automated command routing
-3. Create trigger mappings for different project phases
-4. Set up advanced AI-driven task prioritization
-5. Develop context-aware command execution framework
+## Current Focus: Frontend Integration with Rust
 
-## Remaining Content
-(Rest of the previous file content remains the same)
+### Immediate Tasks
+1. Update all frontend API endpoints to use Rust backend (port 8000)
+2. Modify authentication flow for Rust JWT format
+3. Handle Rust API response format differences
+4. Remove all Node.js backend references
+5. Test core functionality with Rust backend
+
+### Known Issues
+- WebSocket support not implemented in Rust yet
+- 2FA flow incomplete
+- A2A agents not integrated with Rust import service
+
+## Key Information
+
+### Credentials
+- **Admin**: admin@az1.ai / changeme123
+- **Database**: bookmark_manager on port 5434
+- **Redis**: Port 6382
+
+### Service Ports
+- **Frontend**: 5173
+- **Rust Gateway**: 8000
+- **Auth Service**: 8001 (internal)
+- **Bookmarks Service**: 8002 (internal)
+- **Import Service**: 8003 (internal)
+- **Search Service**: 8004 (internal)
+
+### Project Structure
+```
+bookmark-manager-app/
+├── rust-migration/        # Production Rust backend
+├── frontend/             # React frontend (needs API updates)
+├── backend/              # DEPRECATED - to be removed
+├── database/             # Shared schemas
+├── archive/              # Checkpoint archives
+└── 2025-06-19-0253-CHECKPOINT.md  # Latest checkpoint
+```
