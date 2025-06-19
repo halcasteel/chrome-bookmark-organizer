@@ -68,6 +68,9 @@ cd frontend && npm run dev
   - `#PERF` - Performance analysis and optimization
   - And many more detailed in `CLAUDE-CODE-CORE-MASTER-PROMPTS/`
 
+## ⚠️ IMPORTANT: CLAUDE-CODE-CORE-MASTER-PROMPTS Directory
+**DO NOT MODIFY** the `CLAUDE-CODE-CORE-MASTER-PROMPTS/` directory unless specifically instructed by the user. This directory contains template files that should remain unchanged. If you need to create project-specific versions of these files, copy them to the project root directory first. Always ask for user confirmation before making any changes to this directory.
+
 ## Current Focus: Frontend Integration with Rust
 
 ### Immediate Tasks
