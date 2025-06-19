@@ -5,6 +5,12 @@
 ## Project Overview
 This is a production-grade bookmark management application with AI-powered features, built with React/TypeScript frontend and Node.js/Express backend. The application is designed for the @az1.ai domain with mandatory 2FA authentication.
 
+## 🚨 CRITICAL: Environment Setup
+```bash
+# Add Rust to PATH - REQUIRED for all Rust commands
+export PATH="$HOME/.cargo/bin:$PATH"
+```
+
 ## 🚨 CRITICAL UPDATE: Rust Backend is Production - Node.js Deprecated
 **Decision Date**: 2025-06-19T02:46:00-04:00
 
@@ -101,3 +107,10 @@ bookmark-manager-app/
 ├── archive/              # Checkpoint archives
 └── 2025-06-19-0253-CHECKPOINT.md  # Latest checkpoint
 ```
+
+### Checkpoint Command Notes
+- `#CHK:` used to create comprehensive system checkpoints
+- Always includes system state, configuration, and current progress
+- Automatically generates markdown documentation
+- Stores checkpoint in `/archive/` with timestamp
+- Helps track project evolution and maintain detailed historical records
