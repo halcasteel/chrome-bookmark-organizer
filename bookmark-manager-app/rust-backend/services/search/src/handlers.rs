@@ -84,7 +84,7 @@ pub async fn search_bookmarks(
             limit,
             offset,
             query.archived,
-            query.tags.as_deref(),
+            query.tags.as_ref(),
         )
         .await
         .map_err(|e| actix_web::error::ErrorInternalServerError(e.to_string()))?
@@ -99,7 +99,7 @@ pub async fn search_bookmarks(
             limit,
             offset,
             query.archived,
-            query.tags.as_deref(),
+            query.tags.as_ref(),
         )
         .await
         .map_err(|e| actix_web::error::ErrorInternalServerError(e.to_string()))?

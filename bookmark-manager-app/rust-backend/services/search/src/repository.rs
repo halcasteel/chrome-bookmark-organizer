@@ -18,14 +18,15 @@ pub async fn fulltext_search(
     
     // Build the WHERE clause
     let mut where_clauses = vec!["b.user_id = $1"];
+    let mut dynamic_where_clauses = Vec::new();
     let mut param_count = 1;
     
     if let Some(archived) = archived {
         param_count += 1;
         if archived {
-            where_clauses.push(&format!("b.status = ${}", param_count));
+            dynamic_where_clauses.push(format!("b.status = ${}", param_count));
         } else {
-            where_clauses.push(&format!("b.status != ${}", param_count));
+            dynamic_where_clauses.push(format!("b.status != ${}", param_count));
         }
     }
     
@@ -41,14 +42,19 @@ pub async fn fulltext_search(
                 .map(|(i, _)| format!("${}", param_count + 3 + i))
                 .collect();
             
-            where_clauses.push(&format!(
+            dynamic_where_clauses.push(format!(
                 "EXISTS (SELECT 1 FROM bookmark_tags bt JOIN tags t ON bt.tag_id = t.id WHERE bt.bookmark_id = b.id AND t.name = ANY(ARRAY[{}]))",
                 tag_placeholders.join(", ")
             ));
         }
     }
     
-    let where_clause = where_clauses.join(" AND ");
+    // Combine static and dynamic where clauses
+    let mut all_where_clauses = where_clauses;
+    for clause in &dynamic_where_clauses {
+        all_where_clauses.push(clause.as_str());
+    }
+    let where_clause = all_where_clauses.join(" AND ");
     
     // Build and execute count query
     let count_query = format!(
@@ -156,14 +162,15 @@ pub async fn semantic_search(
     
     // Build WHERE clause
     let mut where_clauses = vec!["b.user_id = $1"];
+    let mut dynamic_where_clauses = Vec::new();
     let mut param_count = 1;
     
     if let Some(archived) = archived {
         param_count += 1;
         if archived {
-            where_clauses.push(&format!("b.status = ${}", param_count));
+            dynamic_where_clauses.push(format!("b.status = ${}", param_count));
         } else {
-            where_clauses.push(&format!("b.status != ${}", param_count));
+            dynamic_where_clauses.push(format!("b.status != ${}", param_count));
         }
     }
     
@@ -175,14 +182,19 @@ pub async fn semantic_search(
                 .map(|(i, _)| format!("${}", param_count + 2 + i))
                 .collect();
             
-            where_clauses.push(&format!(
+            dynamic_where_clauses.push(format!(
                 "EXISTS (SELECT 1 FROM bookmark_tags bt JOIN tags t ON bt.tag_id = t.id WHERE bt.bookmark_id = b.id AND t.name = ANY(ARRAY[{}]))",
                 tag_placeholders.join(", ")
             ));
         }
     }
     
-    let where_clause = where_clauses.join(" AND ");
+    // Combine static and dynamic where clauses
+    let mut all_where_clauses = where_clauses;
+    for clause in &dynamic_where_clauses {
+        all_where_clauses.push(clause.as_str());
+    }
+    let where_clause = all_where_clauses.join(" AND ");
     
     // Count query
     let count_query = format!(
@@ -301,7 +313,7 @@ pub async fn find_related_bookmarks(
             
             let text = format!(
                 "{} {} {}",
-                bookmark.title.unwrap_or_default(),
+                bookmark.title,
                 bookmark.description.unwrap_or_default(),
                 bookmark.url
             );

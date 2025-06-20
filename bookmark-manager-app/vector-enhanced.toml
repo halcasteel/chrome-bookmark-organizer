@@ -1,0 +1,224 @@
+# Enhanced Vector Configuration for Dual Storage (PostgreSQL + Elasticsearch)
+# This configuration sends logs to both storage backends
+
+# Global options
+[api]
+enabled = true
+address = "0.0.0.0:8686"
+
+# Sources - Where logs come from
+
+# Rust services logs (via file)
+[sources.rust_services]
+type = "file"
+include = ["/tmp/rust-services.log"]
+read_from = "beginning"
+
+# Frontend logs (via HTTP endpoint)
+[sources.frontend_logs]
+type = "http_server"
+address = "0.0.0.0:8687"
+encoding = "json"
+path = "/logs"
+method = "POST"
+
+# Docker container logs
+[sources.docker_logs]
+type = "docker_logs"
+include_containers = ["bookmark-*"]
+
+# Syslog for system logs
+[sources.syslog]
+type = "syslog"
+address = "0.0.0.0:5514"
+mode = "tcp"
+
+# Transforms - Process and enrich logs
+
+# Parse and enrich logs
+[transforms.parse_and_enrich]
+type = "remap"
+inputs = ["rust_services", "frontend_logs", "docker_logs", "syslog"]
+source = '''
+  # Ensure timestamp exists
+  .timestamp = .timestamp || now()
+  
+  # Normalize log level
+  if exists(.level) {
+    .level = upcase!(.level)
+  } else if exists(.severity) {
+    .level = upcase!(.severity)
+  } else {
+    .level = "INFO"
+  }
+  
+  # Add correlation ID
+  .correlation_id = .correlation_id || .request_id || .trace_id || uuid_v4()
+  
+  # Add hostname and environment
+  .hostname = get_hostname!()
+  .environment = "production"
+  
+  # Extract service name
+  if !exists(.service) {
+    if exists(.container_name) {
+      .service = .container_name
+    } else if exists(.target) {
+      .service = split!(.target, "::")[0]
+    } else {
+      .service = "unknown"
+    }
+  }
+  
+  # Parse error details
+  if .level == "ERROR" {
+    .error_details = {
+      "message": .message,
+      "stack_trace": .stack_trace,
+      "error_type": .error_type || "unknown"
+    }
+  }
+  
+  # Extract performance metrics
+  if exists(.duration_ms) || exists(.response_time) {
+    .performance_metrics = {
+      "duration_ms": .duration_ms || .response_time,
+      "endpoint": .endpoint || .path,
+      "method": .method
+    }
+  }
+  
+  # Add AI analysis flags
+  .ai_analysis = {
+    "requires_attention": includes(["ERROR", "FATAL"], .level),
+    "is_security_event": exists(.auth_event) || exists(.security_event),
+    "is_performance_issue": to_float(.duration_ms || 0) > 1000
+  }
+'''
+
+# Filter out debug logs in production
+[transforms.filter_production]
+type = "filter"
+inputs = ["parse_and_enrich"]
+condition = '.level != "DEBUG" && .level != "TRACE"'
+
+# Add PostgreSQL-specific fields
+[transforms.postgres_format]
+type = "remap"
+inputs = ["filter_production"]
+source = '''
+  # Prepare for PostgreSQL application_logs table
+  .pg_record = {
+    "timestamp": .timestamp,
+    "level": .level,
+    "service": .service,
+    "target": .target,
+    "message": .message,
+    "correlation_id": .correlation_id,
+    "request_id": .request_id,
+    "user_id": .user_id,
+    "span_id": .span_id,
+    "parent_span_id": .parent_span_id,
+    "fields": encode_json(.fields || {}),
+    "error_details": if exists(.error_details) { encode_json(.error_details) } else { null },
+    "performance_metrics": if exists(.performance_metrics) { encode_json(.performance_metrics) } else { null }
+  }
+'''
+
+# Add Elasticsearch-specific fields
+[transforms.elastic_format]
+type = "remap"
+inputs = ["filter_production"]
+source = '''
+  # Add Elasticsearch index metadata
+  ._index = "logs-" + format_timestamp!(.timestamp, "%Y.%m.%d")
+  ._type = "_doc"
+  
+  # Add computed fields for Elasticsearch
+  .@timestamp = .timestamp
+  .severity_numeric = if .level == "ERROR" { 5 } else if .level == "WARN" { 4 } else if .level == "INFO" { 3 } else { 2 }
+  
+  # Add tags for easy filtering
+  .tags = []
+  if .ai_analysis.requires_attention { .tags = push!(.tags, "requires-attention") }
+  if .ai_analysis.is_security_event { .tags = push!(.tags, "security") }
+  if .ai_analysis.is_performance_issue { .tags = push!(.tags, "performance") }
+'''
+
+# Route logs by type for specialized processing
+[transforms.route_by_severity]
+type = "route"
+inputs = ["filter_production"]
+[transforms.route_by_severity.route]
+  critical = '.level == "ERROR" || .level == "FATAL"'
+  warning = '.level == "WARN" || .level == "WARNING"'
+  info = '.level == "INFO"'
+
+# Sinks - Where logs go
+
+# PostgreSQL sink via HTTP API (requires a small service to handle DB writes)
+[sinks.postgres_logs]
+type = "http"
+inputs = ["postgres_format"]
+uri = "http://localhost:8688/api/logs"
+encoding.codec = "json"
+encoding.only_fields = ["pg_record"]
+batch.max_events = 100
+batch.timeout_secs = 5
+request.timeout_secs = 30
+healthcheck.enabled = true
+
+# Elasticsearch sink for analytics
+[sinks.elasticsearch]
+type = "elasticsearch"
+inputs = ["elastic_format"]
+endpoints = ["http://localhost:9200"]
+bulk.index = "logs-%Y.%m.%d"
+bulk.action = "create"
+encoding.only_fields = ["timestamp", "level", "service", "message", "correlation_id", "user_id", "fields", "error_details", "performance_metrics", "tags", "ai_analysis"]
+batch.max_events = 500
+batch.timeout_secs = 10
+healthcheck.enabled = true
+
+# High-priority alerts to Elasticsearch
+[sinks.elastic_alerts]
+type = "elasticsearch"
+inputs = ["route_by_severity.critical"]
+endpoints = ["http://localhost:9200"]
+bulk.index = "alerts-%Y.%m.%d"
+batch.max_events = 10
+batch.timeout_secs = 1
+
+# File sinks for backup and debugging
+[sinks.file_backup]
+type = "file"
+inputs = ["filter_production"]
+path = "/home/halcasteel/BOOKMARKS/bookmark-manager-app/logs/backup/all-%Y-%m-%d.json"
+encoding.codec = "json"
+compression = "gzip"
+
+# Console output for monitoring
+[sinks.console_monitor]
+type = "console"
+inputs = ["route_by_severity.critical", "route_by_severity.warning"]
+encoding.codec = "text"
+encoding.only_fields = ["timestamp", "level", "service", "message"]
+target = "stdout"
+
+# AI-Ops Core real-time stream
+[sinks.aiops_stream]
+type = "socket"
+inputs = ["filter_production"]
+address = "127.0.0.1:9500"
+mode = "tcp"
+encoding.codec = "json"
+
+# Metrics sink for monitoring Vector itself
+[sinks.internal_metrics]
+type = "prometheus_exporter"
+inputs = ["internal_metrics"]
+address = "0.0.0.0:9598"
+
+# Health check
+[healthchecks.readiness]
+enabled = true

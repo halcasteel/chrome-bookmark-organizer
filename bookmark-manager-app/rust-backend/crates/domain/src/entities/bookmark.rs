@@ -8,15 +8,17 @@ pub struct Bookmark {
     pub id: Uuid,
     pub user_id: Uuid,
     pub url: String,
-    pub title: String,
+    pub title: String,  // NOT NULL in database
     pub description: Option<String>,
     pub domain: Option<String>,
     pub favicon_url: Option<String>,
-    pub is_valid: bool,
+    pub is_valid: Option<bool>,
     pub last_checked: Option<DateTime<Utc>>,
     pub http_status: Option<i32>,
     pub content_hash: Option<String>,
-    pub status: String,
+    pub status: Option<String>,     // Status column exists in DB
+    pub is_deleted: Option<bool>,
+    pub is_dead: Option<bool>,
     pub created_at: DateTime<Utc>,
     pub updated_at: DateTime<Utc>,
 }
@@ -48,18 +50,22 @@ pub struct UpdateBookmarkDto {
 
     pub tags: Option<Vec<String>>,
     pub status: Option<String>,
+    pub is_deleted: Option<bool>,
+    pub is_dead: Option<bool>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, sqlx::FromRow)]
 pub struct BookmarkDto {
     pub id: Uuid,
     pub url: String,
-    pub title: String,
+    pub title: String,  // NOT NULL in database
     pub description: Option<String>,
     pub favicon_url: Option<String>,
     pub tags: Vec<String>,
-    pub status: String,
-    pub is_valid: bool,
+    pub status: Option<String>,
+    pub is_valid: Option<bool>,
+    pub is_deleted: Option<bool>,
+    pub is_dead: Option<bool>,
     pub last_checked: Option<DateTime<Utc>>,
     pub created_at: DateTime<Utc>,
     pub updated_at: DateTime<Utc>,
@@ -76,6 +82,8 @@ impl From<Bookmark> for BookmarkDto {
             tags: vec![], // Tags need to be loaded separately
             status: bookmark.status,
             is_valid: bookmark.is_valid,
+            is_deleted: bookmark.is_deleted,
+            is_dead: bookmark.is_dead,
             last_checked: bookmark.last_checked,
             created_at: bookmark.created_at,
             updated_at: bookmark.updated_at,

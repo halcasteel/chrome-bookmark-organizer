@@ -7,9 +7,6 @@
 enabled = true
 address = "0.0.0.0:8686"
 
-# Data directory for Vector's internal state
-data_dir = "/tmp/vector"
-
 # Sources - Where logs come from
 
 # Rust services logs (via file)
@@ -106,13 +103,13 @@ condition = '.level != "DEBUG" && .level != "TRACE"'
 type = "reduce"
 inputs = ["filter_debug"]
 group_by = ["service", "error_type"]
-merge_strategies = {
-  "count" = "sum"
-  "first_seen" = "min"
-  "last_seen" = "max"
-}
 condition = '.level == "ERROR"'
 expire_after_ms = 60000
+
+[transforms.error_aggregation.merge_strategies]
+count = "sum"
+first_seen = "min"
+last_seen = "max"
 
 # Route logs by type
 [transforms.route_logs]
@@ -177,15 +174,14 @@ type = "prometheus_exporter"
 inputs = ["internal_metrics"]
 address = "0.0.0.0:9598"
 
-# PostgreSQL sink for long-term storage
-[sinks.postgres_logs]
-type = "postgres"
-inputs = ["filter_debug"]
-endpoint = "postgres://admin:admin@localhost:5434/bookmark_manager"
-table = "application_logs"
-encoding.codec = "json"
-batch.max_events = 100
-batch.timeout_secs = 10
+# HTTP sink for database logging (will need a separate service to write to PostgreSQL)
+# [sinks.postgres_logs]
+# type = "http"
+# inputs = ["filter_debug"]
+# uri = "http://localhost:8688/logs"
+# encoding.codec = "json"
+# batch.max_events = 100
+# batch.timeout_secs = 10
 
 # TCP sink for AI-Ops Core real-time processing
 [sinks.aiops_stream]

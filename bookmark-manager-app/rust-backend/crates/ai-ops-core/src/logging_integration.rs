@@ -1,10 +1,11 @@
 use crate::{
-    agents::{Agent, AgentCapability, AgentContext, AgentDecision},
-    events::{Event, EventSeverity, EventType},
-    knowledge::{Solution, SolutionOutcome},
-    patterns::{Pattern, PatternType},
+    agent::{UniversalAgent, AgentType, Capability, Decision, Context, AgentStatus, EventPattern, 
+            Experience, Knowledge, CollaborationRequest, CollaborationResponse, AgentState, Health},
+    events::{Event, EventType, EventSeverity},
+    knowledge::{KnowledgeNode, KnowledgeGraph, Solution, SolutionOutcome, Pattern, PatternType},
+    patterns::{UniversalPattern, PatternLibrary, PatternCategory, PatternId},
+    AgentId, Result, Error,
 };
-use anyhow::Result;
 use async_trait::async_trait;
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
@@ -325,23 +326,39 @@ impl LogMonitoringAgent {
 }
 
 #[async_trait]
-impl Agent for LogMonitoringAgent {
-    fn id(&self) -> Uuid {
-        Uuid::new_v4() // Should be persistent
+impl UniversalAgent for LogMonitoringAgent {
+    fn id(&self) -> AgentId {
+        self.id
+    }
+
+    fn agent_type(&self) -> AgentType {
+        AgentType::LogAnalyzer
     }
 
     fn name(&self) -> &str {
         "Log Monitoring Agent"
     }
 
-    fn capabilities(&self) -> Vec<AgentCapability> {
+    fn capabilities(&self) -> Vec<Capability> {
         vec![
-            AgentCapability::Monitor,
-            AgentCapability::Analyze,
+            Capability::LogAnalysis,
+            Capability::AnomalyDetection,
         ]
     }
 
-    async fn process_event(&self, event: Event, context: AgentContext) -> Result<AgentDecision> {
+    fn subscriptions(&self) -> Vec<EventPattern> {
+        vec![
+            EventPattern {
+                event_types: vec![EventType::ServiceFailure, EventType::DatabaseError],
+                source_filter: None,
+                metadata_filters: HashMap::new(),
+            }
+        ]
+    }
+
+    async fn process(&mut self, event: Event) -> Result<Vec<Event>> {
+        let mut events = Vec::new();
+        
         // Analyze log-based events
         match &event.event_type {
             EventType::ServiceFailure | EventType::DatabaseError => {
@@ -362,49 +379,74 @@ impl Agent for LogMonitoringAgent {
                     }
                 }
 
-                // Generate analysis
-                let analysis = serde_json::json!({
-                    "related_errors": related_logs.len(),
-                    "error_types": error_types,
-                    "time_span_minutes": 6,
-                });
-
-                Ok(AgentDecision {
-                    should_act: related_logs.len() > 10, // Act if many errors
-                    confidence: 0.8,
-                    recommended_actions: vec![
-                        "Analyze error patterns".to_string(),
-                        "Check service health".to_string(),
-                    ],
-                    metadata: analysis,
-                })
+                // Generate analysis event if significant errors found
+                if related_logs.len() > 10 {
+                    events.push(Event {
+                        id: Uuid::new_v4(),
+                        timestamp: Utc::now(),
+                        event_type: EventType::Custom("LogPatternDetected".to_string()),
+                        source: self.id.to_string(),
+                        severity: EventSeverity::Medium,
+                        service_id: event.service_id.clone(),
+                        correlation_id: event.correlation_id.clone(),
+                        metadata: serde_json::json!({
+                            "related_errors": related_logs.len(),
+                            "error_types": error_types,
+                            "time_span_minutes": 6,
+                            "patterns_detected": true
+                        }),
+                    });
+                }
             }
-            _ => Ok(AgentDecision {
-                should_act: false,
-                confidence: 0.0,
-                recommended_actions: vec![],
-                metadata: serde_json::Value::Null,
+            _ => {}
+        }
+        
+        Ok(events)
+    }
+
+    async fn learn(&mut self, experience: Experience) -> Result<Knowledge> {
+        // Learn from log patterns
+        let confidence = if experience.outcome.success { 0.8 } else { 0.3 };
+        
+        Ok(Knowledge {
+            knowledge_type: crate::agent::KnowledgeType::Pattern,
+            content: serde_json::json!({
+                "experience": experience,
+                "learned_at": Utc::now(),
             }),
+            confidence,
+            applicable_contexts: vec![Context {
+                environment: HashMap::new(),
+                constraints: vec![],
+                requirements: vec![],
+            }],
+        })
+    }
+
+    async fn collaborate(&mut self, request: CollaborationRequest) -> Result<CollaborationResponse> {
+        Ok(CollaborationResponse {
+            request_id: request.request_id,
+            responder: self.id,
+            response_type: crate::agent::ResponseType::Accepted,
+            content: serde_json::json!({
+                "message": "Ready to collaborate on log analysis"
+            }),
+        })
+    }
+
+    async fn status(&self) -> AgentStatus {
+        AgentStatus {
+            state: AgentState::Idle,
+            health: Health::Healthy,
+            current_load: 0.0,
+            active_tasks: 0,
+            last_activity: Utc::now(),
+            metrics: HashMap::new(),
         }
     }
 
-    async fn execute_action(&self, action: String, context: AgentContext) -> Result<()> {
-        match action.as_str() {
-            "Analyze error patterns" => {
-                let patterns = self.analyze_patterns().await?;
-                info!("Found {} error patterns", patterns.len());
-                // Store patterns in knowledge base
-            }
-            _ => {
-                warn!("Unknown action: {}", action);
-            }
-        }
-        Ok(())
-    }
-
-    async fn learn_from_outcome(&self, outcome: SolutionOutcome, context: AgentContext) -> Result<()> {
-        // Update patterns based on solution outcomes
-        info!("Learning from outcome: {:?}", outcome);
+    async fn shutdown(&mut self) -> Result<()> {
+        info!("Log monitoring agent shutting down");
         Ok(())
     }
 }

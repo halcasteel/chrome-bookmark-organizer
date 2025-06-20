@@ -9,6 +9,7 @@ license = "MIT"
 [dependencies]
 # Async runtime
 tokio = { workspace = true }
+tokio-util = { workspace = true }
 async-trait = { workspace = true }
 
 # Web framework

@@ -109,7 +109,7 @@ pub async fn import_bookmarks(
             let import_id = repository::create_import_record(
                 &state.db_pool,
                 claims.sub,
-                filename,
+                &filename,
                 bookmarks.len() as i32,
             )
             .await

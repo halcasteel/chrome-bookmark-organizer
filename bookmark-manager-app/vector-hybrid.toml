@@ -1,0 +1,231 @@
+# Vector Configuration for Hybrid Logging (PostgreSQL + Elasticsearch)
+# This configuration collects logs and sends to both storage backends
+
+# Global options
+[api]
+enabled = true
+address = "0.0.0.0:8686"
+
+# Sources - Where logs come from
+
+# Rust services logs (via file)
+[sources.rust_services]
+type = "file"
+include = ["/tmp/rust-services.log"]
+read_from = "beginning"
+
+# Frontend logs (via HTTP endpoint)
+[sources.frontend_logs]
+type = "http_server"
+address = "0.0.0.0:8687"
+encoding = "json"
+path = "/logs"
+method = "POST"
+
+# Docker container logs
+[sources.docker_logs]
+type = "docker_logs"
+include_containers = ["bookmark-*"]
+
+# Syslog for system logs
+[sources.syslog]
+type = "syslog"
+address = "0.0.0.0:5514"
+mode = "tcp"
+
+# Transforms - Process and enrich logs
+
+# Parse Rust tracing logs
+[transforms.parse_rust]
+type = "remap"
+inputs = ["rust_services"]
+source = '''
+  # Parse tracing format
+  . = parse_regex!(.message, r'^(?P<timestamp>\S+)\s+(?P<level>\w+)\s+(?P<target>\S+):\s+(?P<message>.+)$')
+  
+  # Add metadata
+  .service = "rust-backend"
+  .environment = "production"
+  
+  # Normalize level
+  .level = upcase!(.level)
+'''
+
+# Parse frontend logs
+[transforms.parse_frontend]
+type = "remap"
+inputs = ["frontend_logs"]
+source = '''
+  # Frontend logs are already JSON, just add metadata
+  .service = "frontend"
+  .environment = "production"
+  .timestamp = .timestamp || now()
+  
+  # Extract user context if available
+  if exists(.userId) {
+    .user_context = {
+      "id": .userId,
+      "email": .userEmail
+    }
+  }
+'''
+
+# Add correlation IDs and enrich
+[transforms.add_correlation]
+type = "remap"
+inputs = ["parse_rust", "parse_frontend"]
+source = '''
+  # Add or preserve correlation ID
+  .correlation_id = .correlation_id || .request_id || .trace_id || uuid_v4()
+  
+  # Add hostname
+  .hostname = get_hostname!()
+  
+  # Parse severity for alerting
+  .severity = if includes(["ERROR", "FATAL"], .level) {
+    "high"
+  } else if includes(["WARN", "WARNING"], .level) {
+    "medium"
+  } else {
+    "low"
+  }
+  
+  # Extract performance metrics if available
+  if exists(.duration_ms) {
+    .performance_metrics = {
+      "duration_ms": .duration_ms,
+      "api_calls": .api_calls || 0,
+      "cache_hits": .cache_hits || 0,
+      "cache_misses": .cache_misses || 0
+    }
+  }
+  
+  # Extract error details if present
+  if .level == "ERROR" {
+    .error_details = {
+      "error_type": .error_type || "unknown",
+      "error_message": .error_message || .message,
+      "stack_trace": .stack_trace
+    }
+  }
+'''
+
+# Filter out debug logs for production
+[transforms.filter_debug]
+type = "filter"
+inputs = ["add_correlation"]
+condition = '.level != "DEBUG" && .level != "TRACE"'
+
+# Route logs by type
+[transforms.route_logs]
+type = "route"
+inputs = ["filter_debug"]
+
+[transforms.route_logs.route]
+errors = '.level == "ERROR"'
+warnings = '.level == "WARN" || .level == "WARNING"'
+info = '.level == "INFO"'
+performance = 'exists(.duration_ms) || exists(.response_time)'
+security = 'exists(.auth_event) || exists(.security_event)'
+
+# Sinks - Where logs go
+
+# Human-readable unified log
+[sinks.unified_log]
+type = "file"
+inputs = ["filter_debug"]
+path = "/home/halcasteel/BOOKMARKS/bookmark-manager-app/logs/unified.log"
+encoding.codec = "text"
+encoding.timestamp_format = "rfc3339"
+
+[sinks.unified_log.encoding]
+only_fields = ["timestamp", "level", "service", "message"]
+
+# Structured logs for AI agents (JSON)
+[sinks.structured_logs]
+type = "file"
+inputs = ["filter_debug"]
+path = "/home/halcasteel/BOOKMARKS/bookmark-manager-app/logs/structured/all.json"
+encoding.codec = "json"
+
+# Error-specific log
+[sinks.error_logs]
+type = "file"
+inputs = ["route_logs.errors"]
+path = "/home/halcasteel/BOOKMARKS/bookmark-manager-app/logs/structured/errors.json"
+encoding.codec = "json"
+
+# PostgreSQL sink via log-writer service
+[sinks.postgres_logs]
+type = "http"
+inputs = ["filter_debug"]
+uri = "http://localhost:8688/logs"
+encoding.codec = "json"
+method = "POST"
+
+[sinks.postgres_logs.batch]
+max_events = 100
+timeout_secs = 10
+
+[sinks.postgres_logs.request]
+headers.Content-Type = "application/json"
+
+# Elasticsearch sink for analytics
+[sinks.elasticsearch]
+type = "elasticsearch"
+inputs = ["filter_debug"]
+endpoints = ["http://localhost:9200"]
+index = "bookmark-logs-%Y.%m.%d"
+doc_type = "_doc"
+
+[sinks.elasticsearch.batch]
+max_events = 500
+timeout_secs = 10
+
+[sinks.elasticsearch.encoding]
+codec = "json"
+
+# Elasticsearch error index
+[sinks.elasticsearch_errors]
+type = "elasticsearch"
+inputs = ["route_logs.errors"]
+endpoints = ["http://localhost:9200"]
+index = "bookmark-errors-%Y.%m"
+doc_type = "_doc"
+
+[sinks.elasticsearch_errors.batch]
+max_events = 100
+timeout_secs = 5
+
+# Console output for development
+[sinks.console]
+type = "console"
+inputs = ["filter_debug"]
+encoding.codec = "text"
+target = "stdout"
+
+# Metrics sink for monitoring
+[sinks.metrics]
+type = "prometheus_exporter"
+inputs = ["internal_metrics"]
+address = "0.0.0.0:9598"
+
+# TCP sink for AI-Ops Core real-time processing
+[sinks.aiops_stream]
+type = "socket"
+inputs = ["filter_debug"]
+address = "127.0.0.1:9500"
+mode = "tcp"
+encoding.codec = "json"
+
+# Sink for AI-Ops high-priority events
+[sinks.aiops_priority]
+type = "socket"
+inputs = ["route_logs.errors", "route_logs.warnings"]
+address = "127.0.0.1:9501"
+mode = "tcp"
+encoding.codec = "json"
+
+# Health check
+[healthchecks.readiness]
+enabled = true

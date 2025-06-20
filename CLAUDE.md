@@ -6,7 +6,7 @@ The main application is in `bookmark-manager-app/`. Always work in that director
 To start the application:
 ```bash
 cd bookmark-manager-app
-node start-services.js  # THIS IS THE ONLY WAY TO RUN THE APP
+./scripts/services-manager.sh start  # THIS IS THE ONLY WAY TO RUN THE APP
 ```
 
 ## Project Overview
@@ -25,7 +25,7 @@ This repository contains a production-grade bookmark management application.
 1. **ALWAYS** start the application with:
    ```bash
    cd bookmark-manager-app
-   node start-services.js
+   ./scripts/services-manager.sh start
    ```
 
 2. **Current Issues:**

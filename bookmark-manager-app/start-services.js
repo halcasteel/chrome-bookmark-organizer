@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+// ⚠️ DEPRECATED: This script is deprecated in favor of ./scripts/services-manager.sh
+// Please use: ./scripts/services-manager.sh start
+// This file is kept for backward compatibility only
+
 import { exec, spawn } from 'child_process';
 import { promisify } from 'util';
 import fs from 'fs/promises';
@@ -10,7 +14,7 @@ import pg from 'pg';
 import Redis from 'ioredis';
 import { io } from 'socket.io-client';
 import { createWriteStream } from 'fs';
-import unifiedLogger from './backend/src/services/unifiedLogger.js';
+// Removed import of unifiedLogger from deprecated Node.js backend
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

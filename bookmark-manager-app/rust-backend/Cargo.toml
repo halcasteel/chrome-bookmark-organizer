@@ -29,6 +29,7 @@ actix-web-actors = "4.3"
 
 # Async runtime
 tokio = { version = "1.40", features = ["full"] }
+tokio-util = { version = "0.7", features = ["codec"] }
 futures = "0.3"
 
 # Database
@@ -47,7 +48,7 @@ argon2 = "0.5"
 uuid = { version = "1.7", features = ["v4", "serde"] }
 chrono = { version = "0.4", features = ["serde"] }
 tracing = "0.1"
-tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json", "time", "fmt"] }
 tracing-actix-web = "0.7"
 thiserror = "1.0"
 anyhow = "1.0"

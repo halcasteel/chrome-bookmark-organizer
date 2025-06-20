@@ -53,6 +53,7 @@ The Bookmark Manager is a full-stack web application that helps users organize, 
 - [**Deployment Guide**](docs/deployment/DEPLOYMENT-GUIDE.md) - Production deployment instructions
 - [**GCP Setup**](docs/GCP_SETUP.md) - Google Cloud Platform configuration
 - [**Logging Standards**](docs/LOGGING_STANDARDS.md) - Unified logging approach
+- [**Hybrid Logging Guide**](docs/HYBRID_LOGGING_GUIDE.md) - PostgreSQL + Elasticsearch logging
 - [**E2E Testing Guide**](docs/E2E_TESTING_GUIDE.md) - End-to-end testing documentation
 
 ### 🤖 Claude Command Palette
@@ -117,26 +118,18 @@ bookmark-manager-app/
    cd bookmark-manager-app
    ```
 
-2. **Start infrastructure**
+2. **Start all services**
    ```bash
-   node start-services.js
+   ./scripts/services-manager.sh start
    ```
 
-3. **Start Rust backend**
-   ```bash
-   cd rust-backend
-   cargo build --release
-   ./target/release/gateway
-   ```
+   This single command will:
+   - Start infrastructure (PostgreSQL, Redis, Vector)
+   - Build and start all Rust services
+   - Start the frontend development server
+   - Show comprehensive status
 
-4. **Start frontend** (in another terminal)
-   ```bash
-   cd frontend
-   npm install
-   npm run dev
-   ```
-
-5. **Access the application**
+3. **Access the application**
    - Frontend: http://localhost:5173
    - API Gateway: http://localhost:8000
    - API Docs: http://localhost:8000/docs
@@ -200,8 +193,14 @@ vim .env
 # Check service health
 curl http://localhost:8000/health
 
-# View logs
-tail -f logs/unified.log
+# View logs (multiple options)
+tail -f logs/unified.log                    # Human-readable
+cat logs/structured/errors.json | jq '.'    # Structured errors
+psql -c "SELECT * FROM recent_errors"       # Database logs (postgres mode)
+
+# Start with different logging modes
+LOGGING_MODE=postgres ./scripts/services-manager.sh start  # With PostgreSQL
+LOGGING_MODE=hybrid ./scripts/services-manager.sh start    # Full stack with Elasticsearch
 
 # Database access
 psql -h localhost -p 5434 -U admin -d bookmark_manager

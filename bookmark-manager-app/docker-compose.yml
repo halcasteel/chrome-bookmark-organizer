@@ -9,7 +9,7 @@ services:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
     ports:
-      - "5432:5432"
+      - "5434:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
@@ -23,7 +23,7 @@ services:
     image: redis:7-alpine
     container_name: bookmark-redis
     ports:
-      - "6379:6379"
+      - "6382:6379"
     volumes:
       - redis_data:/data
     command: redis-server --appendonly yes --maxmemory 512mb --maxmemory-policy allkeys-lru
@@ -33,35 +33,7 @@ services:
       timeout: 5s
       retries: 5
 
-  backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-      target: ${BUILD_TARGET:-development}
-    container_name: bookmark-backend
-    ports:
-      - "3001:3001"
-    environment:
-      NODE_ENV: ${NODE_ENV:-development}
-      PORT: 3001
-      DATABASE_URL: postgresql://admin:admin@postgres:5432/bookmark_manager
-      REDIS_URL: redis://redis:6379
-      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:5173}
-      JWT_SECRET: ${JWT_SECRET:-local-dev-secret}
-      OPENAI_API_KEY: ${OPENAI_API_KEY}
-      DEFAULT_USER_ID: ${DEFAULT_USER_ID}
-      BOOKMARK_IMPORT_DIR: /app/imports
-      CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost:5173,http://localhost:80}
-    volumes:
-      - ./backend:/app
-      - /app/node_modules
-      - bookmark_imports:/app/imports
-    depends_on:
-      postgres:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
-    command: npm run dev
+  # Node.js backend removed - using Rust backend on port 8000
 
   frontend:
     build:
@@ -72,33 +44,18 @@ services:
     ports:
       - "5173:5173"
     environment:
-      VITE_API_URL: ${VITE_API_URL:-http://localhost:3001/api}
+      VITE_API_URL: ${VITE_API_URL:-http://localhost:8000/api}
     volumes:
       - ./frontend:/app
       - /app/node_modules
     depends_on:
-      - backend
-    command: npm run dev
-
-  file-watcher:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-      target: ${BUILD_TARGET:-development}
-    container_name: bookmark-file-watcher
-    environment:
-      NODE_ENV: ${NODE_ENV:-development}
-      DATABASE_URL: postgresql://admin:admin@postgres:5432/bookmark_manager
-      DEFAULT_USER_ID: ${DEFAULT_USER_ID}
-      BOOKMARK_IMPORT_DIR: /imports
-    volumes:
-      - ${LOCAL_IMPORT_DIR:-./imports}:/imports
-      - ./backend:/app
-      - /app/node_modules
-    depends_on:
       postgres:
         condition: service_healthy
-    command: npm run watch
+      redis:
+        condition: service_healthy
+    command: npm run dev
+
+  # File-watcher removed - import functionality moved to Rust import service
 
   nginx:
     image: nginx:alpine

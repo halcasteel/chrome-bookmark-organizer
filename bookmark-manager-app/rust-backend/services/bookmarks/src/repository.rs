@@ -12,23 +12,20 @@ pub async fn list_bookmarks(
 ) -> Result<(Vec<BookmarkDto>, i64), sqlx::Error> {
     // Count query
     let mut count_query = String::from("SELECT COUNT(DISTINCT b.id) FROM bookmarks b WHERE b.user_id = $1");
-    let mut count_binds = vec![];
+    let mut count_binds: Vec<&str> = vec![];
     
-    if archived.is_some() {
-        count_query.push_str(" AND b.status = $2");
-        count_binds.push("archived");
+    if archived.unwrap_or(false) {
+        count_query.push_str(" AND b.status = 'archived'");
     } else {
-        count_query.push_str(" AND b.status != $2");
-        count_binds.push("archived");
+        count_query.push_str(" AND (b.status != 'archived' OR b.status IS NULL)");
     }
     
     if tag.is_some() {
-        count_query.push_str(" AND EXISTS (SELECT 1 FROM bookmark_tags bt JOIN tags t ON bt.tag_id = t.id WHERE bt.bookmark_id = b.id AND t.name = $3)");
+        count_query.push_str(" AND EXISTS (SELECT 1 FROM bookmark_tags bt JOIN tags t ON bt.tag_id = t.id WHERE bt.bookmark_id = b.id AND t.name = $2)");
     }
     
     let mut count_query_builder = sqlx::query_scalar(&count_query);
     count_query_builder = count_query_builder.bind(user_id);
-    count_query_builder = count_query_builder.bind(&count_binds[0]);
     if let Some(tag) = tag {
         count_query_builder = count_query_builder.bind(tag);
     }
@@ -39,7 +36,7 @@ pub async fn list_bookmarks(
     let mut main_query = String::from(r#"
         SELECT 
             b.id, b.url, b.title, b.description, b.favicon_url,
-            b.status, b.is_valid, b.last_checked,
+            b.status, b.is_valid, b.is_deleted, b.is_dead, b.last_checked,
             b.created_at, b.updated_at,
             COALESCE(array_agg(DISTINCT t.name) FILTER (WHERE t.name IS NOT NULL), '{}') as tags
         FROM bookmarks b
@@ -47,25 +44,24 @@ pub async fn list_bookmarks(
         LEFT JOIN tags t ON bt.tag_id = t.id
         WHERE b.user_id = $1"#);
     
-    if archived.is_some() {
-        main_query.push_str(" AND b.status = $2");
+    if archived.unwrap_or(false) {
+        main_query.push_str(" AND b.status = 'archived'");
     } else {
-        main_query.push_str(" AND b.status != $2");
+        main_query.push_str(" AND (b.status != 'archived' OR b.status IS NULL)");
     }
     
     if tag.is_some() {
-        main_query.push_str(" AND EXISTS (SELECT 1 FROM bookmark_tags bt2 JOIN tags t2 ON bt2.tag_id = t2.id WHERE bt2.bookmark_id = b.id AND t2.name = $3)");
+        main_query.push_str(" AND EXISTS (SELECT 1 FROM bookmark_tags bt2 JOIN tags t2 ON bt2.tag_id = t2.id WHERE bt2.bookmark_id = b.id AND t2.name = $2)");
     }
     
     main_query.push_str(" GROUP BY b.id ORDER BY b.created_at DESC LIMIT $");
-    let limit_param = if tag.is_some() { 4 } else { 3 };
+    let limit_param = if tag.is_some() { 3 } else { 2 };
     main_query.push_str(&limit_param.to_string());
     main_query.push_str(" OFFSET $");
     main_query.push_str(&(limit_param + 1).to_string());
     
     let mut query_builder = sqlx::query_as::<_, BookmarkDto>(&main_query);
     query_builder = query_builder.bind(user_id);
-    query_builder = query_builder.bind("archived");
     if let Some(tag) = tag {
         query_builder = query_builder.bind(tag);
     }
@@ -82,12 +78,10 @@ pub async fn get_bookmark(
     user_id: Uuid,
     bookmark_id: Uuid,
 ) -> Result<Option<BookmarkDto>, sqlx::Error> {
-    let bookmark = sqlx::query_as!(
-        BookmarkDto,
-        r#"
+    let query = r#"
         SELECT 
             b.id, b.url, b.title, b.description, b.favicon_url,
-            b.status, b.is_valid, b.last_checked,
+            b.status, b.is_valid, b.is_deleted, b.is_dead, b.last_checked,
             b.created_at, b.updated_at,
             COALESCE(array_agg(DISTINCT t.name) FILTER (WHERE t.name IS NOT NULL), '{}') as tags
         FROM bookmarks b
@@ -95,12 +89,13 @@ pub async fn get_bookmark(
         LEFT JOIN tags t ON bt.tag_id = t.id
         WHERE b.id = $1 AND b.user_id = $2
         GROUP BY b.id
-        "#,
-        bookmark_id,
-        user_id
-    )
-    .fetch_optional(pool)
-    .await?;
+    "#;
+    
+    let bookmark = sqlx::query_as::<_, BookmarkDto>(query)
+        .bind(bookmark_id)
+        .bind(user_id)
+        .fetch_optional(pool)
+        .await?;
     
     Ok(bookmark)
 }
@@ -122,7 +117,7 @@ pub async fn create_bookmark(
     sqlx::query!(
         r#"
         INSERT INTO bookmarks (id, user_id, url, title, description, domain, status, created_at, updated_at)
-        VALUES ($1, $2, $3, $4, $5, $6, 'imported', NOW(), NOW())
+        VALUES ($1, $2, $3, $4, $5, $6, 'active', NOW(), NOW())
         "#,
         bookmark_id,
         user_id,
@@ -191,6 +186,14 @@ pub async fn update_bookmark(
         update_fields.push("status = $6");
         params.push("status".to_string());
     }
+    if dto.is_deleted.is_some() {
+        update_fields.push("is_deleted = $7");
+        params.push("is_deleted".to_string());
+    }
+    if dto.is_dead.is_some() {
+        update_fields.push("is_dead = $8");
+        params.push("is_dead".to_string());
+    }
     
     let update_query = format!(
         "UPDATE bookmarks SET {} WHERE id = $1 AND user_id = $2",
@@ -207,6 +210,8 @@ pub async fn update_bookmark(
             "title" => query_builder = query_builder.bind(dto.title.as_ref()),
             "description" => query_builder = query_builder.bind(dto.description.as_ref()),
             "status" => query_builder = query_builder.bind(dto.status.as_ref()),
+            "is_deleted" => query_builder = query_builder.bind(dto.is_deleted.as_ref()),
+            "is_dead" => query_builder = query_builder.bind(dto.is_dead.as_ref()),
             _ => {}
         }
     }

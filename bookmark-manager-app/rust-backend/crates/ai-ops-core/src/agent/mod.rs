@@ -16,12 +16,18 @@ pub mod service;
 pub mod analysis;
 pub mod builder;
 pub mod coordinator;
+pub mod root_cause;
+pub mod fix_executor;
+pub mod learning;
 
 pub use base::BaseAgent;
 pub use service::ServiceAgent;
 pub use analysis::AnalysisAgent;
 pub use builder::BuilderAgent;
 pub use coordinator::AgentCoordinator;
+pub use root_cause::RootCauseAnalysisAgent;
+pub use fix_executor::FixExecutorAgent;
+pub use learning::LearningAgent;
 
 /// Unique identifier for an agent instance
 pub type AgentId = Uuid;
@@ -136,6 +142,15 @@ pub struct Experience {
     pub outcome: Outcome,
     pub duration: std::time::Duration,
     pub metadata: HashMap<String, serde_json::Value>,
+}
+
+/// Decision made by an agent
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct Decision {
+    pub action: Option<Action>,
+    pub delegate_to: Option<AgentId>,
+    pub confidence: f64,
+    pub reasoning: String,
 }
 
 /// Action taken by an agent

@@ -241,7 +241,7 @@ impl KnowledgeGraph {
                 let solution_data: Solution = serde_json::from_value(solution.1)?;
                 solution_candidates.push(SolutionCandidate {
                     solution: solution_data,
-                    confidence: problem.2 * solution.2,
+                    confidence: problem.2 as f64 * solution.2,
                     similar_problem_id: problem.0,
                 });
             }
@@ -369,6 +369,17 @@ pub struct Solution {
     pub attempt_count: u32,
     pub success_count: u32,
     pub avg_resolution_time: Option<std::time::Duration>,
+}
+
+/// Outcome of applying a solution
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct SolutionOutcome {
+    pub solution_id: NodeId,
+    pub problem_id: NodeId,
+    pub success: bool,
+    pub execution_time: std::time::Duration,
+    pub error: Option<String>,
+    pub metrics: HashMap<String, serde_json::Value>,
 }
 
 /// Pattern representation

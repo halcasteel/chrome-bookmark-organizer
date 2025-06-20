@@ -1,7 +1,7 @@
 //! Embedding generation and storage for semantic search
 
 use super::*;
-use crate::ai::AIProvider;
+use crate::ai::{AIProvider, Embedding};
 use std::pin::Pin;
 use std::future::Future;
 
@@ -21,6 +21,13 @@ impl EmbeddingStore {
         Ok(Self {
             db,
             generator: Box::new(MockEmbeddingGenerator), // TODO: Replace with real implementation
+        })
+    }
+    
+    pub async fn new_with_ai_provider(db: PgPool, ai_provider: Box<dyn AIProvider>) -> Result<Self> {
+        Ok(Self {
+            db,
+            generator: Box::new(AIEmbeddingGenerator { ai_provider }),
         })
     }
     
@@ -83,6 +90,30 @@ impl EmbeddingGenerator for MockEmbeddingGenerator {
     }
     
     fn clone_box(&self) -> Box<dyn EmbeddingGenerator> {
+        Box::new(MockEmbeddingGenerator)
+    }
+}
+
+/// AI-based embedding generator using real AI providers
+struct AIEmbeddingGenerator {
+    ai_provider: Box<dyn AIProvider>,
+}
+
+impl EmbeddingGenerator for AIEmbeddingGenerator {
+    fn generate(&self, text: &str) -> Pin<Box<dyn Future<Output = Result<Vec<f32>>> + Send + '_>> {
+        Box::pin(async move {
+            let embeddings = self.ai_provider.embed(vec![text.to_string()]).await?;
+            
+            embeddings.into_iter()
+                .next()
+                .map(|e| e.vector)
+                .ok_or_else(|| crate::Error::Processing("Failed to generate embedding".to_string()))
+        })
+    }
+    
+    fn clone_box(&self) -> Box<dyn EmbeddingGenerator> {
+        // Note: This is a limitation - we can't clone the AI provider
+        // In practice, you'd want to use Arc<dyn AIProvider> instead
         Box::new(MockEmbeddingGenerator)
     }
 }

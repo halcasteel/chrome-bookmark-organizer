@@ -3,6 +3,7 @@ use actix_web::{middleware, web, App, HttpServer};
 use anyhow::Result;
 use shared::{config::Config, middleware::auth::JwtAuth};
 use sqlx::postgres::PgPoolOptions;
+use std::sync::Arc;
 use tracing::info;
 use tracing_actix_web::TracingLogger;
 
@@ -52,7 +53,7 @@ async fn main() -> Result<()> {
     });
     
     // Create JWT service for auth middleware
-    let jwt_service = web::Data::new(shared::auth::JwtService::new(&config.jwt_secret));
+    let jwt_service = Arc::new(shared::auth::JwtService::new(&config.jwt_secret));
     
     // Start server
     HttpServer::new(move || {
@@ -63,13 +64,13 @@ async fn main() -> Result<()> {
             
         App::new()
             .app_data(state.clone())
-            .app_data(jwt_service.clone())
+            .app_data(web::Data::new(jwt_service.clone()))
             .wrap(cors)
             .wrap(TracingLogger::default())
             .wrap(middleware::NormalizePath::trim())
             .service(
                 web::scope("/import")
-                    .wrap(JwtAuth::new(jwt_service.get_ref().clone()))
+                    .wrap(JwtAuth::new(jwt_service.clone()))
                     .route("/upload", web::post().to(handlers::import_bookmarks))
                     .route("/status", web::get().to(handlers::get_import_status))
                     .route("/history", web::get().to(handlers::get_user_imports))

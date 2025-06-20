@@ -2,7 +2,7 @@ use anyhow::Result;
 use serde::{Deserialize, Serialize};
 use std::io::Write;
 use std::sync::Arc;
-use tracing::{Event, Level, Subscriber};
+use tracing::{Event, Subscriber};
 use tracing_subscriber::{
     fmt::{self, format::FmtSpan, time::UtcTime},
     layer::SubscriberExt,
@@ -102,8 +102,7 @@ where
         let target = metadata.target();
         
         // Get current span context
-        let current_span = ctx.current_span();
-        let span_id = current_span.as_ref().map(|s| s.id().into_u64().to_string());
+        let span_id = ctx.current_span().id().map(|id| id.into_u64().to_string());
         
         // Create structured log entry
         let mut fields = serde_json::Map::new();

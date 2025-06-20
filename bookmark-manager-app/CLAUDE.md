@@ -21,40 +21,39 @@ export PATH="$HOME/.cargo/bin:$PATH"
 - **Previous GitHub**: https://github.com/AZ1-ai/bookmark-manager (now consolidated here)
 
 ### Latest Checkpoint & TODO
-- **Checkpoint**: [`CHECKPOINT-2025-01-19T21-15-00Z.md`](CHECKPOINT-2025-01-19T21-15-00Z.md) - Unified logging system complete
-- **TODO List**: [`TODO-2025-01-19T21-30-00Z.md`](TODO-2025-01-19T21-30-00Z.md) - 88 tasks (15 completed, 73 pending)
-- **Status**: Unified logging with Vector implemented, AI-Ops Core integrated
+- **Checkpoint**: [`rust-backend/2025-06-20-1208-CHECKPOINT.md`](rust-backend/2025-06-20-1208-CHECKPOINT.md) - AI-Ops Core and unified logging complete
+- **TODO List**: [`rust-backend/2025-06-20-1208-TODO.md`](rust-backend/2025-06-20-1208-TODO.md) - 16 prioritized tasks
+- **Status**: AI-Ops autonomous infrastructure management implemented, all Rust services operational
 
 ## 🚨 CRITICAL: How to Run the Application
 
-### Step 1: Start Infrastructure (PostgreSQL & Redis)
+### The ONLY Way to Start Services:
 ```bash
-node start-services.js  # This now ONLY starts Docker containers
-```
-
-### Step 2: Start All Services with Unified Logging
-```bash
-# Option 1: Full lifecycle management (recommended)
 ./scripts/services-manager.sh start
-
-# Option 2: Simple startup
-./scripts/start-all-with-logging.sh
-
-# This will:
-# - Start Vector for unified logging
-# - Build and start all Rust services
-# - Start AI-Ops monitor
-# - Start frontend
-# - Show comprehensive status
 ```
 
-### Step 3: Configure Frontend
+This command will:
+- Start infrastructure (PostgreSQL, Redis, Vector)
+- Build and start all Rust services
+- Start AI-Ops monitor
+- Start frontend development server
+- Show comprehensive status
+
+### Other Commands:
+```bash
+./scripts/services-manager.sh stop     # Stop all services
+./scripts/services-manager.sh restart  # Restart all services
+./scripts/services-manager.sh status   # Show service status
+./scripts/services-manager.sh check    # Health check all services
+./scripts/services-manager.sh clean    # Stop all and clean logs
+```
+
+### Frontend Configuration
+The frontend is automatically started by `services-manager.sh start`.
+If you need to configure it manually:
 ```bash
 # Update frontend/.env
 VITE_API_URL=http://localhost:8000/api
-
-# Start frontend
-cd frontend && npm run dev
 ```
 
 ## Help Commands
@@ -135,15 +134,47 @@ bookmark-manager-app/
 - Stores checkpoint in `/archive/` with timestamp
 - Helps track project evolution and maintain detailed historical records
 
+## 📊 Logging System
+The application uses a sophisticated hybrid logging system:
+
+### Logging Modes
+- **Basic** (default): File-based only, minimal overhead
+- **PostgreSQL**: Adds database storage for queries/audit
+- **Hybrid**: Full stack with Elasticsearch analytics
+
+### Start with Different Modes
+```bash
+# Basic (default)
+./scripts/services-manager.sh start
+
+# With PostgreSQL logging
+LOGGING_MODE=postgres ./scripts/services-manager.sh start
+
+# Full hybrid (Elasticsearch + Kibana)
+LOGGING_MODE=hybrid ./scripts/services-manager.sh start
+```
+
+### Key Features
+- Unified logs in `logs/unified.log` (human-readable)
+- Structured JSON in `logs/structured/*.json` (AI-searchable)
+- Real-time streaming to AI-Ops Core agents
+- PostgreSQL functions for log analysis
+- Elasticsearch for full-text search (hybrid mode)
+- Automatic log rotation and retention policies
+
+See [Hybrid Logging Guide](docs/HYBRID_LOGGING_GUIDE.md) for details.
+
 ## 🧪 TDD Integration Approach
 **IMPORTANT**: We follow Test-Driven Development (TDD) for all integration work.
 
 ### Current Integration Status (2025-01-19)
-- **Total Tasks**: 88 (15 completed, 73 pending)
+- **Total Tasks**: 88 (18 completed, 70 pending)
 - **Recent Achievements**: 
   - ✅ Unified logging system with Vector
+  - ✅ Hybrid logging with PostgreSQL + Elasticsearch
   - ✅ AI-Ops Core logging integration
   - ✅ Comprehensive startup/shutdown scripts
+  - ✅ Modular logging modes (basic/postgres/hybrid)
 - **Critical Path**: Fix configuration inconsistencies blocking all progress
 
 ### Test-First Workflow

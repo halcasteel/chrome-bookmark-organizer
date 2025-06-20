@@ -26,6 +26,16 @@ pub use store::EventStore;
 /// Unique event identifier
 pub type EventId = Uuid;
 
+/// Event severity levels
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+pub enum EventSeverity {
+    Debug,
+    Info,
+    Warning,
+    Error,
+    Critical,
+}
+
 /// Universal event structure
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Event {
@@ -37,6 +47,7 @@ pub struct Event {
     pub correlation_id: Option<EventId>,
     pub causation_id: Option<EventId>,
     pub metadata: EventMetadata,
+    pub severity: EventSeverity,
 }
 
 impl Event {
@@ -48,6 +59,7 @@ impl Event {
             event_type,
             source,
             payload,
+            severity: EventSeverity::Info,
             correlation_id: None,
             causation_id: None,
             metadata: EventMetadata::default(),

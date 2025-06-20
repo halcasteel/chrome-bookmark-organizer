@@ -14,10 +14,12 @@ use crate::{Result, Error};
 pub mod detection;
 pub mod application;
 pub mod evolution;
+pub mod log_patterns;
 
 pub use detection::{PatternDetector, DetectionResult};
 pub use application::{PatternApplicator, ApplicationResult};
 pub use evolution::{PatternEvolver, EvolutionResult};
+pub use log_patterns::{LogPatternMatcher, LogPattern, PatternMatchType, MatchResult, LogPatternBuilder};
 
 /// Universal pattern that can be applied across different contexts
 #[derive(Debug, Clone, Serialize, Deserialize)]

@@ -3,6 +3,9 @@
 
 set -e
 
+# Add Rust to PATH (from .claude/CLAUDE.md)
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -131,16 +134,20 @@ start_services() {
     
     # Start infrastructure
     echo -e "${GREEN}Step 1: Starting infrastructure...${NC}"
-    node start-services.js
-    
-    # Start Vector
-    echo -e "${GREEN}Step 2: Starting Vector for unified logging...${NC}"
-    if ! check_process "vector"; then
-        ./scripts/start-vector.sh
-        sleep 3
+    # Check if containers are already running
+    if docker ps | grep -q bookmark-postgres && docker ps | grep -q bookmark-redis; then
+        echo -e "${YELLOW}Infrastructure containers are already running${NC}"
     else
-        echo -e "${YELLOW}Vector is already running${NC}"
+        echo "Starting PostgreSQL and Redis containers..."
+        docker-compose up -d postgres redis
+        sleep 5  # Wait for services to be ready
     fi
+    
+    # Start logging system
+    echo -e "${GREEN}Step 2: Starting logging system...${NC}"
+    # Default to basic mode, can be overridden with LOGGING_MODE env var
+    LOGGING_MODE=${LOGGING_MODE:-basic}
+    ./scripts/start-logging.sh $LOGGING_MODE
     
     # Build Rust services
     echo -e "${GREEN}Step 3: Building Rust services...${NC}"

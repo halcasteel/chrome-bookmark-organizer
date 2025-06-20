@@ -10,12 +10,12 @@ pub struct ImportRecord {
     pub id: Uuid,
     pub user_id: Uuid,
     pub filename: String,
-    pub status: String,
-    pub total_count: i32,
-    pub processed_count: i32,
+    pub status: Option<String>,  // nullable in DB
+    pub total_bookmarks: Option<i32>,  // different column name
+    pub processed_count: Option<i32>,  // nullable in DB
     pub new_bookmarks: Option<i32>,
     pub failed_bookmarks: Option<i32>,
-    pub created_at: DateTime<Utc>,
+    pub started_at: Option<DateTime<Utc>>,  // different column name
     pub completed_at: Option<DateTime<Utc>>,
 }
 
@@ -29,7 +29,7 @@ pub async fn create_import_record(
     
     sqlx::query!(
         r#"
-        INSERT INTO import_history (id, user_id, filename, status, total_count, processed_count, new_bookmarks, failed_bookmarks)
+        INSERT INTO import_history (id, user_id, filename, status, total_bookmarks, processed_count, new_bookmarks, failed_bookmarks)
         VALUES ($1, $2, $3, $4, $5, 0, 0, 0)
         "#,
         import_id,
@@ -112,8 +112,8 @@ pub async fn get_import_status(
     sqlx::query_as!(
         ImportRecord,
         r#"
-        SELECT id, user_id, filename, status, total_count, processed_count, 
-               new_bookmarks, failed_bookmarks, created_at, completed_at
+        SELECT id, user_id, filename, status, total_bookmarks, processed_count, 
+               new_bookmarks, failed_bookmarks, started_at, completed_at
         FROM import_history
         WHERE id = $1 AND user_id = $2
         "#,
@@ -131,11 +131,11 @@ pub async fn get_user_imports(
     sqlx::query_as!(
         ImportRecord,
         r#"
-        SELECT id, user_id, filename, status, total_count, processed_count,
-               new_bookmarks, failed_bookmarks, created_at, completed_at
+        SELECT id, user_id, filename, status, total_bookmarks, processed_count,
+               new_bookmarks, failed_bookmarks, started_at, completed_at
         FROM import_history
         WHERE user_id = $1
-        ORDER BY created_at DESC
+        ORDER BY started_at DESC
         LIMIT 50
         "#,
         user_id
