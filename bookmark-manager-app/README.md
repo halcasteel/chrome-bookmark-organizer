@@ -26,7 +26,8 @@ The Bookmark Manager is a full-stack web application that helps users organize, 
 ### 🎯 Quick Start
 - [**README.md**](README.md) - You are here!
 - [**CLAUDE.md**](CLAUDE.md) - AI assistant context and instructions
-- [**CHECKPOINT.md**](CHECKPOINT.md) - Latest development status
+- [**CHECKPOINT-2025-01-19T21-15-00Z.md**](CHECKPOINT-2025-01-19T21-15-00Z.md) - Latest development checkpoint
+- [**TODO-2025-01-19T21-30-00Z.md**](TODO-2025-01-19T21-30-00Z.md) - Current task list with 88 items
 
 ### 🧠 AI-Ops Core Documentation
 - [**Foundation Guide**](ai-ops-core/FOUNDATION-GUIDE.md) - Complete technical reference

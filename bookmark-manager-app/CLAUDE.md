@@ -1,6 +1,6 @@
 # CLAUDE.md - AI Assistant Context for Bookmark Manager Application
 
-**Last Updated**: 2025-06-19T02:53:00-04:00
+**Last Updated**: 2025-01-19T21:30:00Z
 
 ## Project Overview
 This is a production-grade bookmark management application with AI-powered features, built with React/TypeScript frontend and Node.js/Express backend. The application is designed for the @az1.ai domain with mandatory 2FA authentication.
@@ -20,10 +20,10 @@ export PATH="$HOME/.cargo/bin:$PATH"
 - **Status**: All 4 microservices complete and operational
 - **Previous GitHub**: https://github.com/AZ1-ai/bookmark-manager (now consolidated here)
 
-### Latest Checkpoint
-- **File**: `2025-06-19-0253-CHECKPOINT.md`
-- **Status**: Rust migration complete, frontend integration needed
-- **Active TODO**: `2025-06-19-0253-TODO.md`
+### Latest Checkpoint & TODO
+- **Checkpoint**: [`CHECKPOINT-2025-01-19T21-15-00Z.md`](CHECKPOINT-2025-01-19T21-15-00Z.md) - Unified logging system complete
+- **TODO List**: [`TODO-2025-01-19T21-30-00Z.md`](TODO-2025-01-19T21-30-00Z.md) - 88 tasks (15 completed, 73 pending)
+- **Status**: Unified logging with Vector implemented, AI-Ops Core integrated
 
 ## 🚨 CRITICAL: How to Run the Application
 
@@ -32,17 +32,20 @@ export PATH="$HOME/.cargo/bin:$PATH"
 node start-services.js  # This now ONLY starts Docker containers
 ```
 
-### Step 2: Start Rust Backend Services
+### Step 2: Start All Services with Unified Logging
 ```bash
-cd rust-backend
-cargo build --release
+# Option 1: Full lifecycle management (recommended)
+./scripts/services-manager.sh start
 
-# Start all services (or use upcoming start script)
-./target/release/auth-service &
-./target/release/bookmarks-service &
-./target/release/import-service &
-./target/release/search-service &
-GATEWAY_PORT=8000 ./target/release/gateway
+# Option 2: Simple startup
+./scripts/start-all-with-logging.sh
+
+# This will:
+# - Start Vector for unified logging
+# - Build and start all Rust services
+# - Start AI-Ops monitor
+# - Start frontend
+# - Show comprehensive status
 ```
 
 ### Step 3: Configure Frontend
@@ -99,16 +102,29 @@ cd frontend && npm run dev
 - **Bookmarks Service**: 8002 (internal)
 - **Import Service**: 8003 (internal)
 - **Search Service**: 8004 (internal)
+- **AI-Ops Monitor**: 8500
+- **Vector API**: 8686
+- **Vector Frontend Logs**: 8687
+- **Vector Metrics**: 9598
 
 ### Project Structure
 ```
 bookmark-manager-app/
 ├── rust-backend/         # Production Rust backend (consolidated)
+│   ├── services/        # Microservices (auth, bookmarks, import, search, gateway, aiops-monitor)
+│   └── crates/          # Shared libraries (ai-ops-core, domain, shared)
 ├── frontend/             # React frontend (needs API updates)
 ├── backend/              # DEPRECATED - to be removed
 ├── database/             # Shared schemas
+├── logs/                 # Unified logging output
+│   ├── unified.log      # Human-readable combined log
+│   └── structured/      # AI-searchable JSON logs
+├── scripts/              # Development and management scripts
+│   ├── services-manager.sh    # Full lifecycle management
+│   └── start-all-with-logging.sh  # Simple startup
 ├── ai-ops-core/          # AI-Ops documentation
 ├── docs/                 # Project documentation
+├── vector.toml           # Vector logging configuration
 └── archive/              # Historical checkpoints
 ```
 
@@ -122,9 +138,12 @@ bookmark-manager-app/
 ## 🧪 TDD Integration Approach
 **IMPORTANT**: We follow Test-Driven Development (TDD) for all integration work.
 
-### Current Integration Status (2025-06-19)
-- **Total Tasks**: 83 (13 completed, 70 pending)
-- **Approach**: Write failing tests first, then implement solutions
+### Current Integration Status (2025-01-19)
+- **Total Tasks**: 88 (15 completed, 73 pending)
+- **Recent Achievements**: 
+  - ✅ Unified logging system with Vector
+  - ✅ AI-Ops Core logging integration
+  - ✅ Comprehensive startup/shutdown scripts
 - **Critical Path**: Fix configuration inconsistencies blocking all progress
 
 ### Test-First Workflow
@@ -156,4 +175,3 @@ npm test -- --watch
 4. **Database name inconsistency**: Some use `bookmarks`, should be `bookmark_manager`
 
 **Remember**: No manual testing! All verification should be through automated tests.
-```

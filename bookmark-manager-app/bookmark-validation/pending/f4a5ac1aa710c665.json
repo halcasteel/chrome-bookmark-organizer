@@ -1,9 +1,0 @@
-{
-  "id": "f4a5ac1aa710c665",
-  "url": "https://console.cloud.google.com/logs/query;cursorTimestamp=2024-12-25T17:21:44.805249739Z;duration=P7D?authuser=5&project=proud-gate-445817-n2",
-  "title": "Logs Explorer – Logging – My First Project – Google Cloud console",
-  "addDate": "2024-12-25T17:57:15.000Z",
-  "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACNElEQVQ4jaWSvU8UURTFz33vzSyz7sywsEhcoFPjR8AYOjvspTHbWFhamhAjtNuZ0Kglf4AmSmOIfwDFQmGkkZAQo9HEkLB8Lewus8zOvHsthBXjYkg8yS1ebs7Lub97gf8Uld+Ka+LNx1opDwCspHF1L3q5udd2Yk8TdgH0n3IcvzMtK/Plm02amdsLg1x73w8HIBAc1newvZkMb0XtJVImL2yFADrxCyCkNAmntUY9GTViLAvzRvNguyAACLzdiiIATkE7mQtsExB1/BARKO0gja32s5pMNqOIQEOe50EAHLWi4SDsk8ZBfYeT2HKXBGAmQGqNyIpZ24qSWwU1s/794D4ADBfMu2/JUQ271esYGQGgutP7UcXC8zstM7/wJZlfnJi98nB1gK3w11djzwCgNLXsnWsL448+OveKDXlfHXxBUNkeo2coY3MjoVshrXLC/NcISmniY4gKAMrlidSmsqucoNSM2x9aTV6CNkWlnUAZJ1SOG3TKOKFyMgFABT+ryXSyKOTTuP4mbdqnftHthU0rDO6a4A+InVlAitlGq6/HagBqpanly78g6n9CVCufG3K8XwFBzgPutMz4VZ9WFgEiIgXljz74lM8X3V43dCt0ZM+G2D9Ym5xeHzUnCZhpw3jBE8O1u60mu+hzLmmtIYq7XiLHh8bP6t+dG6U118v3eLatqPdiPTcU+BWldY6tFTr1g4iI0oasTfab9eQ24QxNTq/7flaf2W9EVhZmrzV+AqeqHwTmPCBsAAAAAElFTkSuQmCC",
-  "status": "pending",
-  "createdAt": "2025-06-17T01:54:30.098Z"
-}

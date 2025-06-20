@@ -1,0 +1,208 @@
+# Vector Configuration for Unified Logging
+# This configuration collects logs from all services and outputs to both
+# human-readable and AI-searchable formats
+
+# Global options
+[api]
+enabled = true
+address = "0.0.0.0:8686"
+
+# Data directory for Vector's internal state
+data_dir = "/tmp/vector"
+
+# Sources - Where logs come from
+
+# Rust services logs (via file)
+[sources.rust_services]
+type = "file"
+include = ["/tmp/rust-services.log"]
+read_from = "beginning"
+
+# Frontend logs (via HTTP endpoint)
+[sources.frontend_logs]
+type = "http_server"
+address = "0.0.0.0:8687"
+encoding = "json"
+path = "/logs"
+method = "POST"
+
+# Docker container logs
+[sources.docker_logs]
+type = "docker_logs"
+include_containers = ["bookmark-*"]
+
+# Syslog for system logs
+[sources.syslog]
+type = "syslog"
+address = "0.0.0.0:5514"
+mode = "tcp"
+
+# Transforms - Process and enrich logs
+
+# Parse Rust tracing logs
+[transforms.parse_rust]
+type = "remap"
+inputs = ["rust_services"]
+source = '''
+  # Parse tracing format
+  . = parse_regex!(.message, r'^(?P<timestamp>\S+)\s+(?P<level>\w+)\s+(?P<target>\S+):\s+(?P<message>.+)$')
+  
+  # Add metadata
+  .service = "rust-backend"
+  .environment = "production"
+  
+  # Normalize level
+  .level = upcase!(.level)
+'''
+
+# Parse frontend logs
+[transforms.parse_frontend]
+type = "remap"
+inputs = ["frontend_logs"]
+source = '''
+  # Frontend logs are already JSON, just add metadata
+  .service = "frontend"
+  .environment = "production"
+  .timestamp = .timestamp || now()
+  
+  # Extract user context if available
+  if exists(.userId) {
+    .user_context = {
+      "id": .userId,
+      "email": .userEmail
+    }
+  }
+'''
+
+# Add correlation IDs
+[transforms.add_correlation]
+type = "remap"
+inputs = ["parse_rust", "parse_frontend"]
+source = '''
+  # Add or preserve correlation ID
+  .correlation_id = .correlation_id || .request_id || .trace_id || uuid_v4()
+  
+  # Add hostname
+  .hostname = get_hostname!()
+  
+  # Parse severity
+  .severity = if includes(["ERROR", "FATAL"], .level) {
+    "high"
+  } else if includes(["WARN", "WARNING"], .level) {
+    "medium"
+  } else {
+    "low"
+  }
+'''
+
+# Filter out debug logs for production
+[transforms.filter_debug]
+type = "filter"
+inputs = ["add_correlation"]
+condition = '.level != "DEBUG" && .level != "TRACE"'
+
+# Aggregate errors for AI analysis
+[transforms.error_aggregation]
+type = "reduce"
+inputs = ["filter_debug"]
+group_by = ["service", "error_type"]
+merge_strategies = {
+  "count" = "sum"
+  "first_seen" = "min"
+  "last_seen" = "max"
+}
+condition = '.level == "ERROR"'
+expire_after_ms = 60000
+
+# Route logs by type
+[transforms.route_logs]
+type = "route"
+inputs = ["filter_debug"]
+[transforms.route_logs.route]
+  errors = '.level == "ERROR"'
+  warnings = '.level == "WARN" || .level == "WARNING"'
+  info = '.level == "INFO"'
+  performance = 'exists(.duration_ms) || exists(.response_time)'
+  security = 'exists(.auth_event) || exists(.security_event)'
+
+# Sinks - Where logs go
+
+# Human-readable unified log
+[sinks.unified_log]
+type = "file"
+inputs = ["filter_debug"]
+path = "/home/halcasteel/BOOKMARKS/bookmark-manager-app/logs/unified.log"
+encoding.codec = "text"
+encoding.timestamp_format = "rfc3339"
+encoding.only_fields = ["timestamp", "level", "service", "message"]
+
+# Structured logs for AI agents (JSON)
+[sinks.structured_logs]
+type = "file"
+inputs = ["filter_debug"]
+path = "/home/halcasteel/BOOKMARKS/bookmark-manager-app/logs/structured/all.json"
+encoding.codec = "json"
+
+# Error-specific log for AI troubleshooting
+[sinks.error_logs]
+type = "file"
+inputs = ["route_logs.errors"]
+path = "/home/halcasteel/BOOKMARKS/bookmark-manager-app/logs/structured/errors.json"
+encoding.codec = "json"
+
+# Performance metrics log
+[sinks.performance_logs]
+type = "file"
+inputs = ["route_logs.performance"]
+path = "/home/halcasteel/BOOKMARKS/bookmark-manager-app/logs/structured/performance.json"
+encoding.codec = "json"
+
+# Security events log
+[sinks.security_logs]
+type = "file"
+inputs = ["route_logs.security"]
+path = "/home/halcasteel/BOOKMARKS/bookmark-manager-app/logs/structured/security.json"
+encoding.codec = "json"
+
+# Console output for development
+[sinks.console]
+type = "console"
+inputs = ["filter_debug"]
+encoding.codec = "text"
+target = "stdout"
+
+# Metrics sink for monitoring
+[sinks.metrics]
+type = "prometheus_exporter"
+inputs = ["internal_metrics"]
+address = "0.0.0.0:9598"
+
+# PostgreSQL sink for long-term storage
+[sinks.postgres_logs]
+type = "postgres"
+inputs = ["filter_debug"]
+endpoint = "postgres://admin:admin@localhost:5434/bookmark_manager"
+table = "application_logs"
+encoding.codec = "json"
+batch.max_events = 100
+batch.timeout_secs = 10
+
+# TCP sink for AI-Ops Core real-time processing
+[sinks.aiops_stream]
+type = "socket"
+inputs = ["filter_debug"]
+address = "127.0.0.1:9500"
+mode = "tcp"
+encoding.codec = "json"
+
+# Sink for AI-Ops high-priority events
+[sinks.aiops_priority]
+type = "socket"
+inputs = ["route_logs.errors", "route_logs.warnings"]
+address = "127.0.0.1:9501"
+mode = "tcp"
+encoding.codec = "json"
+
+# Health check
+[healthchecks.readiness]
+enabled = true

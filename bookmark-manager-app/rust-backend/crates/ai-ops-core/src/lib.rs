@@ -25,6 +25,7 @@ pub mod ai;
 pub mod patterns;
 pub mod construction;
 pub mod error;
+pub mod logging_integration;
 
 // Re-export main types
 pub use agent::{UniversalAgent, AgentType, Capability};
@@ -35,6 +36,7 @@ pub use ai::{AIProvider, AIInput, AIOutput};
 pub use patterns::{UniversalPattern, PatternLibrary};
 pub use construction::{ToolBuilder, ToolSpecification};
 pub use error::{Error, Result};
+pub use logging_integration::{LogEventAdapter, LogMonitoringAgent, LogEvent};
 
 /// Version information
 pub const VERSION: &str = env!("CARGO_PKG_VERSION");

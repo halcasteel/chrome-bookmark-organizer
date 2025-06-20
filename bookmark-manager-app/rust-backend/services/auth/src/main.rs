@@ -4,13 +4,12 @@ use anyhow::Result;
 use dotenv::dotenv;
 use sqlx::postgres::PgPoolOptions;
 use std::sync::Arc;
-use tracing::{info, Level};
-use tracing_subscriber::FmtSubscriber;
+use tracing::info;
 
 mod handlers;
 mod repository;
 
-use shared::{auth::JwtService, config::Config};
+use shared::{auth::JwtService, config::Config, logging::init_unified_logging};
 
 pub struct AppState {
     pub db_pool: sqlx::PgPool,
@@ -22,11 +21,8 @@ async fn main() -> Result<()> {
     // Load environment variables
     dotenv().ok();
 
-    // Initialize tracing
-    let subscriber = FmtSubscriber::builder()
-        .with_max_level(Level::INFO)
-        .finish();
-    tracing::subscriber::set_global_default(subscriber)?;
+    // Initialize unified logging
+    init_unified_logging("auth-service")?;
 
     // Load configuration
     let config = Config::from_env()?;

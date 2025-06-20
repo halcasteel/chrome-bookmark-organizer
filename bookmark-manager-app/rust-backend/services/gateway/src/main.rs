@@ -4,8 +4,7 @@ use anyhow::Result;
 use dotenv::dotenv;
 use serde_json::json;
 use std::collections::HashMap;
-use tracing::{info, Level};
-use tracing_subscriber::FmtSubscriber;
+use tracing::info;
 
 mod proxy;
 mod static_files;
@@ -27,11 +26,8 @@ async fn main() -> Result<()> {
     // Load environment variables
     dotenv().ok();
 
-    // Initialize tracing
-    let subscriber = FmtSubscriber::builder()
-        .with_max_level(Level::INFO)
-        .finish();
-    tracing::subscriber::set_global_default(subscriber)?;
+    // Initialize unified logging
+    shared::logging::init_unified_logging("gateway")?;
 
     let host = std::env::var("GATEWAY_HOST").unwrap_or_else(|_| "0.0.0.0".to_string());
     let port = std::env::var("GATEWAY_PORT")

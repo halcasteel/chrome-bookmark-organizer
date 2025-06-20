@@ -1,9 +1,0 @@
-{
-  "id": "4d422c76a03ea502",
-  "url": "https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?response_type=code&redirect_uri=https%3A%2F%2Fdag.ti-apps.aws.grail.com%2Fdag%2Fmodule.php%2Foidc%2Flinkback.php&client_id=986321808105-olvbppc5gn7m3fdkhiec8dmd9j3ljsu4.apps.googleusercontent.com&nonce=ic%2BHfgPc9eMt%2BWIMzQdPn%2BFGIkXBDK3r5V7N3i6b3fRgoS0G0z3QWQ%3D%3D&state=_452131048da8a8ce1993a3c89e163b97133c2e4203%3Ahttps%3A%2F%2Fdag.ti-apps.aws.grail.com%2Fdag%2Fsaml2%2Fidp%2FSSOService.php%3Fspentityid%3Dhttps%253A%252F%252Fgrailbio.my.salesforce.com%26cookieTime%3D1674510276%26RelayState%3D%252Fvisualforce%252Fsession%253Furl%253Dhttps%25253A%25252F%25252Fgrailbio--simpplr.visualforce.com%25252Fapex%25252Fsimpplr__app%25253Fu%25253D%2525252F&scope=openid%20email%20profile&service=lso&o2v=2&flowName=GeneralOAuthFlow",
-  "title": "Sign in - Google Accounts",
-  "addDate": "2023-01-23T21:44:48.000Z",
-  "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACOElEQVR4nHxTS2gTURQ9700ycVo14KYqaqyfgBSsVqiYimjron4WgkhQqbQuWsWFAReiayuKCwvFTwqu3IqCgtRPRIMuuigB0WA01UZBsUVrC23jpDPTeyfJMJmWXLjMmzfnnnPffWckPGFZVpNhGHHKL5R6KT9T3qVv27x44SqsMU2zX0p5GlWCMAOEiQkhZh0CLiaFZ4qi7LZ0HfknD5BPDMLIfYNlmPCF1iPQ1g7tSBRCVUHYJGHbmcQmoI17rGyO/8bkpRjmRkcWVVd37ETwen+5kziRnBF8ZnofZuWJsx22KqtoR09AbY4AUkIfeof/b14i2HsTypp1bs7tPmLqIXUY6TisfzlAURC8cQv+hkYH5W/YitrOHpvMM49uHz1b7WHo97Gs8yOMqa6KYic8xaVoZYKQPcjpNGRNAf7IoQpE29XpBVW7Niu4cmwJL+t9zq5lVT6rhD7naoxylBczgQ2YwlI8/vmpApy4XOvk3i1FvZVBxz5fmeAVr7IrOnDybwTXMkNIjacXqGZ+mXibKUo3b3QaT4iSPVO6UcCpFxcxMvkdqvQjGj6IllVNkEJieOwDHqUmMPsjinCdijtdGkSxicaykeJ0ld1jM39wPtmLLJEsFpsCLejbF0MdHYGu8DYZ6VzZyhqRDNLGHt0s4GH2OZ7mknY3oJmGlq/G/rURHA8fhuYLMP412fgAZd79M2nE2sedoEqwMmEucDG/Cy+AZ8IOQ9Fg9eVp88CocIAK37vx8wAAAP//RmZ8AAAAAAZJREFUAwALd/lEhBJNxwAAAABJRU5ErkJggg==",
-  "status": "pending",
-  "createdAt": "2025-06-17T01:54:29.454Z"
-}
